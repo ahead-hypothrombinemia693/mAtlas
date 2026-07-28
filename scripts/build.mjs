@@ -61,7 +61,7 @@ const jsOutput = outputs.find(([name, info]) => info.entryPoint?.endsWith('src/m
 if (!jsOutput) throw new Error('Bundler did not emit the application JavaScript entry.');
 const cssOutput = outputs.find(([name, info]) => info.entryPoint?.endsWith('src/main.ts') && name.endsWith('.css'))?.[0]
   ?? outputs.find(([name]) => name.endsWith('.css'))?.[0];
-const publicPath = (output) => `./${relative(distPath, output).replaceAll('\\', '/')}`;
+const publicPath = (output) => `/${relative(distPath, output).replaceAll('\\', '/')}`;
 const assetTags = [
   cssOutput ? `<link rel="stylesheet" href="${publicPath(cssOutput)}">` : '',
   `<script type="module" src="${publicPath(jsOutput)}"></script>`
