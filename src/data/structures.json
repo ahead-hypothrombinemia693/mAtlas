@@ -23,19 +23,11 @@
       "describes-governs",
       "composition",
       "classification",
-      "field-excitation",
-      "mediates-interaction",
       "couples-interacts",
-      "binds-forms",
       "mathematical-limit",
-      "controlled-approximation",
       "effective-theory",
       "model-realization",
-      "approximation-method",
-      "phenomenological-model",
-      "theory-extension",
       "emergence",
-      "limit-approximation",
       "state-description",
       "transformation-process"
     ],
@@ -403,13 +395,13 @@
       "defaultVisible": true
     },
     "composition": {
-      "label": "Composition",
-      "short": "constituent",
-      "description": "The source is a constituent or necessary component of the target composite system. The edge does not imply that the target is a simple classical sum of its parts.",
+      "label": "Physical constitution / realization",
+      "short": "constitutes",
+      "description": "The source is a material constituent, structural component, or underlying quantum field whose excitation realizes the target physical system or particle. The edge label and detail must distinguish composition from field excitation; neither implies a simple classical sum of parts.",
       "color": "#b45309",
       "endpointLabels": {
-        "source": "Constituent of",
-        "target": "Composed from"
+        "source": "Constitutes / realizes",
+        "target": "Constituted / realized by"
       },
       "lineStyle": "solid",
       "activeInDataset": true,
@@ -427,58 +419,6 @@
       "lineStyle": "dotted",
       "activeInDataset": true,
       "defaultVisible": true
-    },
-    "field-excitation": {
-      "label": "Field excitation",
-      "short": "excitation",
-      "description": "The target particle is the quantum excitation associated with the source quantum field.",
-      "color": "#be123c",
-      "endpointLabels": {
-        "source": "Has quantum excitation",
-        "target": "Quantum excitation of"
-      },
-      "lineStyle": "dashed",
-      "activeInDataset": true,
-      "defaultVisible": true
-    },
-    "mediates-interaction": {
-      "label": "Mediates interaction",
-      "short": "mediates",
-      "description": "The source gauge boson mediates the target interaction in the corresponding quantum field theory.",
-      "color": "#dc2626",
-      "endpointLabels": {
-        "source": "Mediates",
-        "target": "Mediated by"
-      },
-      "lineStyle": "solid",
-      "activeInDataset": false,
-      "defaultVisible": true
-    },
-    "binds-forms": {
-      "label": "Binds / forms",
-      "short": "binds",
-      "description": "The source interaction is principally responsible for binding or stabilizing the target composite system in the stated effective regime.",
-      "color": "#c2410c",
-      "endpointLabels": {
-        "source": "Binds / forms",
-        "target": "Bound / formed by"
-      },
-      "lineStyle": "solid",
-      "activeInDataset": true,
-      "defaultVisible": true
-    },
-    "limit-approximation": {
-      "label": "Limit / approximation",
-      "short": "limit",
-      "description": "The target is recovered as an approximation, effective description, or limiting regime of the source, under conditions stated in the edge detail.",
-      "color": "#0f766e",
-      "endpointLabels": {
-        "source": "Has limit / approximation",
-        "target": "Limit / approximation of"
-      },
-      "lineStyle": "dotted",
-      "activeInDataset": false,
-      "defaultVisible": false
     },
     "state-description": {
       "label": "State / property description",
@@ -507,26 +447,13 @@
       "defaultVisible": true
     },
     "mathematical-limit": {
-      "label": "Mathematical / asymptotic limit",
-      "short": "limit",
-      "description": "The target theory or law is recovered from the source in a stated asymptotic or parameter limit, such as $c\\to\\infty$, $\\hbar\\to0$, weak field, or low velocity. A limit is stronger and more specific than a generic approximation.",
+      "label": "Limit / controlled approximation",
+      "short": "limit / approx",
+      "description": "The target is recovered from the source either in a stated mathematical or asymptotic limit, or through a quantitatively controlled approximation with identified small parameters or omitted terms. The edge label and detail must state which case applies and its regime of validity.",
       "color": "#0f766e",
       "endpointLabels": {
-        "source": "Has mathematical limit",
-        "target": "Recovered as limit of"
-      },
-      "lineStyle": "dotted",
-      "activeInDataset": true,
-      "defaultVisible": true
-    },
-    "controlled-approximation": {
-      "label": "Controlled approximation",
-      "short": "approximates",
-      "description": "The target is obtained from the source by neglecting or expanding in quantitatively identified small effects within a stated regime. The edge detail must name the control parameter or omitted terms.",
-      "color": "#0d9488",
-      "endpointLabels": {
-        "source": "Approximates as",
-        "target": "Controlled approximation to"
+        "source": "Has limiting / approximate regime",
+        "target": "Recovered by limit / approximation"
       },
       "lineStyle": "dotted",
       "activeInDataset": true,
@@ -559,65 +486,26 @@
       "defaultVisible": true
     },
     "couples-interacts": {
-      "label": "Couples / interacts",
-      "short": "couples",
-      "description": "The source field, particle, charge, or current couples to the target field or interaction through the stated term or quantum number. This does not imply classical composition or literal exchange outside the applicable formulation.",
+      "label": "Physical interaction / binding",
+      "short": "interacts",
+      "description": "The source field, particle, charge, current, or interaction couples to, acts on, binds, forms, or stabilizes the target in the stated regime. The edge label and detail must identify the exact coupling, interaction, or binding claim and its qualifications.",
       "color": "#dc2626",
       "endpointLabels": {
-        "source": "Couples to",
-        "target": "Coupled to by"
+        "source": "Interacts with / binds",
+        "target": "Interacts with / bound by"
       },
       "lineStyle": "solid",
       "activeInDataset": true,
       "defaultVisible": true
     },
     "model-realization": {
-      "label": "Model realization",
-      "short": "model",
-      "description": "The target is a model, idealization, or concrete realization framed by the source theory. A model may add assumptions and parameter choices without being a controlled approximation.",
+      "label": "Model / approximation method",
+      "short": "model / method",
+      "description": "The target is a model, idealization, restricted ansatz, approximation scheme, phenomenological fit, or historical representation used for the source system or theory. It need not have a universal small error parameter and is not thereby a controlled limit or effective theory. The edge label and detail must identify the precise status.",
       "color": "#4f46e5",
       "endpointLabels": {
-        "source": "Has model realization",
-        "target": "Model of"
-      },
-      "lineStyle": "dashed",
-      "activeInDataset": true,
-      "defaultVisible": true
-    },
-    "approximation-method": {
-      "label": "Approximation method",
-      "short": "approximation",
-      "description": "The target is an approximation scheme or restricted ansatz for the source problem. It may be systematic or variational without possessing a universal small error parameter.",
-      "color": "#0f766e",
-      "endpointLabels": {
-        "source": "Approximated by method",
-        "target": "Approximation method for"
-      },
-      "lineStyle": "dotted",
-      "activeInDataset": true,
-      "defaultVisible": true
-    },
-    "phenomenological-model": {
-      "label": "Phenomenological / historical model",
-      "short": "model",
-      "description": "The target is a simplified, fitted, semiclassical, or historical model of the source. It captures selected behavior but is not a controlled effective theory derived from the source.",
-      "color": "#a16207",
-      "endpointLabels": {
-        "source": "Represented by model",
-        "target": "Phenomenological model of"
-      },
-      "lineStyle": "dotted",
-      "activeInDataset": true,
-      "defaultVisible": true
-    },
-    "theory-extension": {
-      "label": "Theory extension",
-      "short": "extends",
-      "description": "The target extends the source by adding operators, degrees of freedom, interactions, or assumptions while retaining the source as a limit or leading sector.",
-      "color": "#7c3aed",
-      "endpointLabels": {
-        "source": "Extends to",
-        "target": "Extension of"
+        "source": "Has model / approximation",
+        "target": "Model / approximation of"
       },
       "lineStyle": "dashed",
       "activeInDataset": true,
@@ -28021,7 +27909,7 @@
       "id": "angular_to_jjcoupling",
       "source": "many_electron_atom",
       "target": "jj_coupling",
-      "type": "approximation-method",
+      "type": "model-realization",
       "label": "$jj$ coupling regime",
       "detail": "$jj$ coupling is useful when individual spin–orbit couplings dominate residual interelectronic angular coupling.",
       "citations": [
@@ -28033,7 +27921,7 @@
       "id": "angular_to_lscoupling",
       "source": "many_electron_atom",
       "target": "ls_coupling",
-      "type": "approximation-method",
+      "type": "model-realization",
       "label": "LS coupling regime",
       "detail": "LS coupling is useful when electrostatic interactions dominate individual spin–orbit couplings in a many-electron atom.",
       "citations": [
@@ -28260,7 +28148,7 @@
       "id": "atom_to_rutherford",
       "source": "atom",
       "target": "rutherford_model",
-      "type": "phenomenological-model",
+      "type": "model-realization",
       "label": "historical nuclear model",
       "detail": "The Rutherford model captures the concentration of positive charge in a nucleus but fails as a stable classical atom.",
       "citations": [
@@ -28302,7 +28190,7 @@
       "id": "atomic_h_to_infinite_mass",
       "source": "atomic_hamiltonian",
       "target": "infinite_nuclear_mass_approximation",
-      "type": "controlled-approximation",
+      "type": "mathematical-limit",
       "label": "neglect nuclear recoil",
       "detail": "Fixing the nucleus is controlled by small electron-to-nuclear mass ratios, but precision work restores recoil and mass-polarization terms.",
       "citations": [
@@ -28316,7 +28204,7 @@
       "id": "atomic_h_to_coulomb_h",
       "source": "atomic_hamiltonian",
       "target": "nonrelativistic_coulomb_hamiltonian",
-      "type": "controlled-approximation",
+      "type": "mathematical-limit",
       "label": "leading nonrelativistic Coulomb model",
       "detail": "The Coulomb Hamiltonian follows when transverse-photon, relativistic, radiative, recoil, and finite-size effects are smaller than the required accuracy.",
       "citations": [
@@ -29534,7 +29422,7 @@
       "id": "em_to_electrostatics",
       "source": "classical_electromagnetism",
       "target": "electrostatics",
-      "type": "controlled-approximation",
+      "type": "mathematical-limit",
       "label": "stationary-source regime",
       "detail": "Electrostatics neglects time dependence and induction/radiation effects for stationary or quasistatic configurations.",
       "citations": [
@@ -30349,7 +30237,7 @@
       "id": "dirac_to_darwin",
       "source": "dirac_equation",
       "target": "darwin_term",
-      "type": "controlled-approximation",
+      "type": "mathematical-limit",
       "label": "Foldy–Wouthuysen term",
       "detail": "The Darwin contact term appears at order $1/c^2$ in the low-energy Foldy–Wouthuysen expansion of Dirac dynamics in an electric field.",
       "citations": [
@@ -30389,7 +30277,7 @@
       "id": "dirac_to_spinorbit",
       "source": "dirac_equation",
       "target": "spin_orbit_coupling",
-      "type": "controlled-approximation",
+      "type": "mathematical-limit",
       "label": "Foldy–Wouthuysen spin–orbit term",
       "detail": "Spin–orbit coupling appears at order $1/c^2$ in the low-energy expansion of Dirac dynamics, with many-electron and nuclear corrections treated separately.",
       "citations": [
@@ -30548,7 +30436,7 @@
       "id": "binding_to_atom",
       "source": "electromagnetic_binding",
       "target": "atom",
-      "type": "binds-forms",
+      "type": "couples-interacts",
       "label": "electron–nucleus bound system",
       "detail": "Electromagnetic attraction binds electrons to the nucleus, while electron repulsion and fermionic statistics shape many-electron structure.",
       "citations": [
@@ -30606,7 +30494,7 @@
       "id": "em_binds_atom",
       "source": "electromagnetic_interaction",
       "target": "atom",
-      "type": "binds-forms",
+      "type": "couples-interacts",
       "label": "electron–nucleus binding",
       "detail": "Electromagnetic attraction between electrons and nuclei binds atoms; quantum mechanics determines stable states and spectra.",
       "citations": [
@@ -30648,7 +30536,7 @@
       "id": "em_binds_molecule",
       "source": "electromagnetic_interaction",
       "target": "molecule",
-      "type": "binds-forms",
+      "type": "couples-interacts",
       "label": "molecular electronic binding",
       "detail": "Molecular binding arises from quantum states of electrons and nuclei interacting electromagnetically, together with nuclear motion and symmetry constraints.",
       "citations": [
@@ -30768,7 +30656,7 @@
       "id": "enucleus_to_atom",
       "source": "electron_nucleus_coulomb_interaction",
       "target": "atom",
-      "type": "binds-forms",
+      "type": "couples-interacts",
       "label": "principal atomic binding interaction",
       "detail": "Electron–nucleus attraction is the principal binding interaction of an atom.",
       "citations": [
@@ -31020,7 +30908,7 @@
       "id": "relmomentum_to_kineticcorr",
       "source": "energy_momentum_four_vector",
       "target": "relativistic_kinetic_correction",
-      "type": "controlled-approximation",
+      "type": "mathematical-limit",
       "label": "low-momentum expansion",
       "detail": "Expanding $E=\\sqrt{p^2c^2+m^2c^4}$ yields the leading relativistic kinetic correction.",
       "citations": [
@@ -32278,7 +32166,7 @@
       "id": "gr_to_weak_field",
       "source": "general_relativity",
       "target": "weak_field_gravity",
-      "type": "controlled-approximation",
+      "type": "mathematical-limit",
       "label": "small metric perturbation",
       "detail": "Linearized gravity expands $g_{\\mu\\nu}=\\eta_{\\mu\\nu}+h_{\\mu\\nu}$ for small $h$.",
       "citations": [
@@ -32335,7 +32223,7 @@
       "id": "gluonfield_to_gluon",
       "source": "gluon_field",
       "target": "gluon",
-      "type": "field-excitation",
+      "type": "composition",
       "label": "gluon quanta",
       "detail": "Gluons are the gauge-field quanta in perturbative and asymptotic descriptions; isolated gluons are confined.",
       "citations": [
@@ -32923,7 +32811,7 @@
       "id": "higgsfield_to_higgsboson_precise",
       "source": "higgs_field",
       "target": "higgs_boson",
-      "type": "field-excitation",
+      "type": "composition",
       "label": "physical scalar excitation",
       "detail": "The Higgs boson is the observed scalar excitation about the Higgs vacuum.",
       "citations": [
@@ -34829,7 +34717,7 @@
       "id": "manyatom_to_central",
       "source": "many_electron_atom",
       "target": "central_field_approximation",
-      "type": "approximation-method",
+      "type": "model-realization",
       "label": "spherical effective potential",
       "detail": "Central-field models average nonspherical and correlation effects into a radial one-electron potential.",
       "citations": [
@@ -34858,7 +34746,7 @@
       "id": "manyatom_to_hf",
       "source": "many_electron_atom",
       "target": "hartree_fock_method",
-      "type": "approximation-method",
+      "type": "model-realization",
       "label": "single-determinant mean field",
       "detail": "Hartree–Fock is a variational restriction to a single Slater determinant; it gives an upper bound within that ansatz but omits correlation beyond the determinant and is not generally controlled by a universal small parameter.",
       "citations": [
@@ -34872,7 +34760,7 @@
       "id": "manyatom_to_hartree",
       "source": "many_electron_atom",
       "target": "hartree_method",
-      "type": "approximation-method",
+      "type": "model-realization",
       "label": "product-state mean field",
       "detail": "Hartree theory restricts the many-electron wavefunction to a product of orbitals.",
       "citations": [
@@ -34886,7 +34774,7 @@
       "id": "manyatom_to_independent",
       "source": "many_electron_atom",
       "target": "independent_particle_model",
-      "type": "approximation-method",
+      "type": "model-realization",
       "label": "effective one-electron states",
       "detail": "Independent-particle models neglect explicit correlated motion beyond an average field, while enforcing fermion antisymmetry as appropriate.",
       "citations": [
@@ -35649,7 +35537,7 @@
       "id": "nuclearforce_binds_nucleus",
       "source": "nuclear_force",
       "target": "atomic_nucleus",
-      "type": "binds-forms",
+      "type": "couples-interacts",
       "label": "nuclear binding",
       "detail": "Effective nuclear forces bind many nuclei against nucleon separation, opposed by proton Coulomb repulsion and modified by quantum statistics.",
       "citations": [
@@ -35663,7 +35551,7 @@
       "id": "nuclearforce_binds_deuteron",
       "source": "nuclear_force",
       "target": "deuteron",
-      "type": "binds-forms",
+      "type": "couples-interacts",
       "label": "two-nucleon binding",
       "detail": "The deuteron is the shallow bound state of the proton–neutron interaction.",
       "citations": [
@@ -35703,7 +35591,7 @@
       "id": "nuclear_many_to_drop",
       "source": "nuclear_many_body_system",
       "target": "liquid_drop_model",
-      "type": "phenomenological-model",
+      "type": "model-realization",
       "label": "bulk collective description",
       "detail": "The liquid-drop model coarse-grains the nucleus into bulk and surface energy terms.",
       "citations": [
@@ -35716,7 +35604,7 @@
       "id": "nuclear_many_to_meanfield",
       "source": "nuclear_many_body_system",
       "target": "nuclear_mean_field",
-      "type": "approximation-method",
+      "type": "model-realization",
       "label": "self-consistent one-body field",
       "detail": "Mean-field theory replaces much of the many-body interaction by self-consistent fields.",
       "citations": [
@@ -35730,7 +35618,7 @@
       "id": "nuclear_many_to_shell",
       "source": "nuclear_many_body_system",
       "target": "nuclear_shell_model",
-      "type": "approximation-method",
+      "type": "model-realization",
       "label": "valence-space effective Hamiltonian",
       "detail": "The shell model truncates to selected single-particle orbitals and an effective interaction.",
       "citations": [
@@ -36167,7 +36055,7 @@
       "id": "pauli_to_schrodinger",
       "source": "pauli_equation",
       "target": "schrodinger_equation",
-      "type": "controlled-approximation",
+      "type": "mathematical-limit",
       "label": "neglect spin coupling",
       "detail": "For spin-independent interactions or after suppressing spin terms, the Pauli equation reduces to Schrödinger dynamics.",
       "citations": [
@@ -36270,7 +36158,7 @@
       "id": "photonfield_to_photon",
       "source": "photon_field",
       "target": "photon",
-      "type": "field-excitation",
+      "type": "composition",
       "label": "photon quantum",
       "detail": "The photon is the quantum excitation of the electromagnetic gauge field.",
       "citations": [
@@ -37147,7 +37035,7 @@
       "id": "qcd_to_constituent_model",
       "source": "quantum_chromodynamics",
       "target": "constituent_quark_model",
-      "type": "phenomenological-model",
+      "type": "model-realization",
       "label": "dressed-quark hadron model",
       "detail": "The constituent-quark model is a phenomenological low-energy model of selected hadron properties, not a controlled universal reduction of QCD.",
       "citations": [
@@ -37350,7 +37238,7 @@
       "id": "qed_to_atomicqed",
       "source": "quantum_electrodynamics",
       "target": "atomic_qed_corrections",
-      "type": "controlled-approximation",
+      "type": "mathematical-limit",
       "label": "bound-state perturbative corrections",
       "detail": "Atomic QED computes radiative corrections in expansions adapted to bound states, with nonperturbative-in-$Z\\alpha$ methods for high $Z$.",
       "citations": [
@@ -37363,7 +37251,7 @@
       "id": "qed_to_breit",
       "source": "quantum_electrodynamics",
       "target": "breit_interaction",
-      "type": "controlled-approximation",
+      "type": "mathematical-limit",
       "label": "one-transverse-photon correction",
       "detail": "The Breit operator is a leading low-frequency, one-transverse-photon relativistic correction to instantaneous Coulomb interaction, not the full QED interaction.",
       "citations": [
@@ -37586,7 +37474,7 @@
       "id": "field_to_particle_state",
       "source": "quantum_field_operator",
       "target": "one_particle_state",
-      "type": "field-excitation",
+      "type": "composition",
       "label": "interpolated one-particle state",
       "detail": "A suitably smeared field acting on the vacuum can have overlap with one-particle states; the relation is theory- and stability-dependent.",
       "citations": [
@@ -37741,7 +37629,7 @@
       "id": "qft_to_pertqft",
       "source": "quantum_field_theory",
       "target": "perturbative_qft",
-      "type": "approximation-method",
+      "type": "model-realization",
       "label": "coupling / loop expansion",
       "detail": "Perturbative QFT is a loop or coupling expansion around a solvable theory. It is often asymptotic rather than convergent and is quantitatively useful only in appropriate coupling and kinematic regimes.",
       "citations": [
@@ -37822,7 +37710,7 @@
       "id": "qm_to_bohr",
       "source": "quantum_mechanics",
       "target": "bohr_model",
-      "type": "phenomenological-model",
+      "type": "model-realization",
       "label": "semiclassical correspondence model",
       "detail": "The Bohr model is a semiclassical approximation superseded by wave mechanics.",
       "citations": [
@@ -37947,7 +37835,7 @@
       "id": "qm_to_perturb",
       "source": "quantum_mechanics",
       "target": "quantum_perturbation_theory",
-      "type": "controlled-approximation",
+      "type": "mathematical-limit",
       "label": "small perturbation expansion",
       "detail": "Perturbation theory expands around a solvable Hamiltonian in a controlled small parameter when convergence or asymptotic accuracy permits.",
       "citations": [
@@ -38003,7 +37891,7 @@
       "id": "qm_to_variational",
       "source": "quantum_mechanics",
       "target": "variational_method",
-      "type": "approximation-method",
+      "type": "model-realization",
       "label": "trial-state restriction",
       "detail": "The variational method restricts the state search to a parameterized family and optimizes the energy.",
       "citations": [
@@ -38280,7 +38168,7 @@
       "id": "quarkfield_to_quark",
       "source": "quark_field",
       "target": "quark",
-      "type": "field-excitation",
+      "type": "composition",
       "label": "quark quanta",
       "detail": "Quark particles are excitations/asymptotic partonic states of quark fields, though isolated quarks are not asymptotic states in the confined regime.",
       "citations": [
@@ -38370,7 +38258,7 @@
       "id": "reducedmass_to_rydberg",
       "source": "reduced_mass_approximation",
       "target": "rydberg_formula",
-      "type": "controlled-approximation",
+      "type": "mathematical-limit",
       "label": "finite-mass Rydberg correction",
       "detail": "Replacing the electron mass by the reduced mass gives the leading finite-nuclear-mass correction to hydrogenic gross structure.",
       "citations": [
@@ -38715,7 +38603,7 @@
       "id": "rutherford_to_bohr",
       "source": "rutherford_model",
       "target": "bohr_model",
-      "type": "phenomenological-model",
+      "type": "model-realization",
       "label": "quantized-orbit supplement",
       "detail": "The Bohr model adds ad hoc quantization to the Rutherford atom and works mainly for hydrogenic gross spectra.",
       "citations": [
@@ -40138,7 +40026,7 @@
       "id": "sm_to_smeft",
       "source": "standard_model",
       "target": "standard_model_effective_field_theory",
-      "type": "theory-extension",
+      "type": "add-data",
       "label": "higher-dimension operator extension",
       "detail": "SMEFT extends the Standard Model Lagrangian by higher-dimension operators built from Standard Model fields and symmetries. It is an EFT of unspecified heavy new physics, not an effective reduction of the Standard Model itself.",
       "citations": [
@@ -40689,7 +40577,7 @@
       "id": "threebody_to_nucleus",
       "source": "three_nucleon_force",
       "target": "atomic_nucleus",
-      "type": "binds-forms",
+      "type": "couples-interacts",
       "label": "many-nucleon binding contribution",
       "detail": "Three-nucleon forces contribute to nuclear binding, spectra, and saturation.",
       "citations": [
@@ -41715,7 +41603,7 @@
       "id": "wfield_to_w",
       "source": "w_field",
       "target": "w_boson",
-      "type": "field-excitation",
+      "type": "composition",
       "label": "$W^\\pm$ quantum",
       "detail": "The charged $W$ bosons are excitations of the charged weak fields.",
       "citations": [
@@ -41888,7 +41776,7 @@
       "id": "zfield_to_z",
       "source": "z_field",
       "target": "z_boson",
-      "type": "field-excitation",
+      "type": "composition",
       "label": "$Z$ quantum",
       "detail": "The $Z$ boson is the excitation of the massive neutral $Z$ field.",
       "citations": [
@@ -42290,7 +42178,7 @@
       "id": "leptonfield_to_lepton",
       "source": "lepton_field",
       "target": "lepton",
-      "type": "field-excitation",
+      "type": "composition",
       "label": "leptonic particle states",
       "detail": "After electroweak symmetry breaking and mass diagonalization, lepton fields interpolate charged-lepton and neutrino particle states; unstable particles appear as resonances rather than exact asymptotic states.",
       "citations": [
