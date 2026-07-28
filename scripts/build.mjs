@@ -82,6 +82,7 @@ await Promise.all([
   cp(new URL('src/site.webmanifest', root), new URL('site.webmanifest', dist)),
   cp(new URL('src/web-app-manifest-192x192.png', root), new URL('web-app-manifest-192x192.png', dist)),
   cp(new URL('src/web-app-manifest-512x512.png', root), new URL('web-app-manifest-512x512.png', dist)),
+  cp(new URL('src/404.html', root), new URL('404.html', dist)),
   cp(new URL('LICENSE', root), new URL('LICENSE', dist)),
   cp(new URL('NOTICE', root), new URL('NOTICE', dist)),
   cp(new URL('THIRD_PARTY_NOTICES.txt', root), new URL('THIRD_PARTY_NOTICES.txt', dist))
