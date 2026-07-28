@@ -1,13 +1,11 @@
-declare const __GRAPH_DATA_URL__: string;
+export type NodeKind = 'structure' | 'junction';
+export type LineStyle = 'solid' | 'dashed' | 'dotted';
+export type LayoutName = 'atlas' | 'breadthfirst' | 'cose-bilkent';
+export type CrossFieldVisibility = 'contextual' | 'all' | 'hidden';
+export type HistoryMode = 'push' | 'replace' | null;
+export type MathText = string;
 
-type NodeKind = 'structure' | 'junction';
-type LineStyle = 'solid' | 'dashed' | 'dotted';
-type LayoutName = 'atlas' | 'breadthfirst' | 'cose-bilkent';
-type CrossFieldVisibility = 'contextual' | 'all' | 'hidden';
-type HistoryMode = 'push' | 'replace' | null;
-type MathText = string; // Prose with inline LaTeX explicitly delimited by $...$.
-
-interface GraphMeta {
+export interface GraphMeta {
   title: string;
   version: string;
   description: string;
@@ -20,7 +18,7 @@ interface GraphMeta {
   [key: string]: unknown;
 }
 
-interface FieldDefinition {
+export interface FieldDefinition {
   label: string;
   shortLabel?: string;
   color: string;
@@ -29,14 +27,14 @@ interface FieldDefinition {
   description: MathText;
 }
 
-interface DomainDefinition {
+export interface DomainDefinition {
   label: string;
   color: string;
   order: number;
   field: string;
 }
 
-interface EdgeTypeDefinition {
+export interface EdgeTypeDefinition {
   label: string;
   short: string;
   description: MathText;
@@ -50,26 +48,26 @@ interface EdgeTypeDefinition {
   defaultVisible?: boolean;
 }
 
-interface SourceDefinition {
+export interface SourceDefinition {
   label: string;
   title: string;
   url: string;
   kind: string;
 }
 
-interface CombinationDefinition {
+export interface CombinationDefinition {
   inputs: string[];
   compatibility: MathText;
   output: string;
 }
 
-interface DetailSection {
+export interface DetailSection {
   title: string;
   body?: MathText;
   items?: MathText[];
 }
 
-interface GraphNode {
+export interface GraphNode {
   id: string;
   label: string;
   primaryField?: string;
@@ -93,7 +91,7 @@ interface GraphNode {
   combination?: CombinationDefinition;
 }
 
-interface GraphEdge {
+export interface GraphEdge {
   id: string;
   source: string;
   target: string;
@@ -106,7 +104,7 @@ interface GraphEdge {
   junctionId?: string;
 }
 
-interface GraphData {
+export interface GraphData {
   meta: GraphMeta;
   fields: Record<string, FieldDefinition>;
   domains: Record<string, DomainDefinition>;
@@ -117,7 +115,7 @@ interface GraphData {
   edges: GraphEdge[];
 }
 
-interface AppState {
+export interface AppState {
   selectedFields: Set<string>;
   selectedDomains: Set<string>;
   selectedEdgeTypes: Set<string>;
@@ -133,7 +131,7 @@ interface AppState {
   detailsOpen: boolean;
 }
 
-interface PersistedUiStateV1 {
+export interface PersistedUiStateV1 {
   version: 1;
   fields?: string[];
   domains: string[];
@@ -147,7 +145,18 @@ interface PersistedUiStateV1 {
   layout: LayoutName;
 }
 
-interface LabelMetrics {
+export interface UrlUiState {
+  fields?: string[];
+  domains?: string[];
+  edgeTypes?: string[];
+  crossFieldVisibility?: CrossFieldVisibility;
+  edgeLabels?: boolean;
+  junctions?: boolean;
+  edgeZoomActivation?: boolean;
+  layout?: LayoutName;
+}
+
+export interface LabelMetrics {
   targetScreenPx: number;
   minGraphPx: number;
   maxGraphPx: number;
@@ -155,38 +164,30 @@ interface LabelMetrics {
   maxHeight: number;
 }
 
-interface SelectionTarget {
+export interface SelectionTarget {
   kind: 'node' | 'edge';
   id: string;
 }
 
-declare var GRAPH_DATA: GraphData;
-declare const cytoscape: (options: unknown) => any;
-declare const katex: {
-  renderToString(expression: string, options?: {
-    displayMode?: boolean;
-    output?: 'html' | 'mathml' | 'htmlAndMathml';
-    throwOnError?: boolean;
-    strict?: boolean | 'ignore' | 'warn' | 'error';
-    trust?: boolean;
-  }): string;
-};
-
-interface Window {
-  cy?: any;
+export interface Point {
+  x: number;
+  y: number;
 }
 
-declare module 'cytoscape' {
-  const cytoscape: any;
-  export default cytoscape;
+export interface OrganicTopology {
+  key: string;
+  nodeIds: string[];
+  edgePairs: Array<[string, string]>;
 }
 
-declare module 'cytoscape-cose-bilkent' {
-  const extension: any;
-  export default extension;
+export interface RelationEntry {
+  nodeId: string;
+  edgeId: string;
+  edgeLabel: string;
+  direction: 'source' | 'target';
 }
 
-declare module 'katex' {
-  const katex: any;
-  export default katex;
+export interface RelationGroup {
+  label: string;
+  relations: RelationEntry[];
 }

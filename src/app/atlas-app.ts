@@ -1,0 +1,576 @@
+import type cytoscape from 'cytoscape';
+import { byId, escapeHtml, query as $, queryAll as $$ } from '../core/dom.js';
+import { GraphModel } from '../model/graph-model.js';
+import { createInitialState, parseStoredUiState, parseUrlUiState, serializeUiState, sameIdSet, UI_STATE_STORAGE_KEY } from '../state/ui-state.js';
+import { LabelSizer } from '../graph/label-sizer.js';
+import { createGraph } from '../graph/create-graph.js';
+import { LayoutManager } from '../graph/layout-manager.js';
+import { GraphViewController } from '../graph/graph-view-controller.js';
+import { MathRenderer } from '../ui/math-renderer.js';
+import { DetailsController } from '../ui/details-controller.js';
+import { SvgExporter } from '../ui/svg-exporter.js';
+import { FieldBandController } from '../ui/field-band-controller.js';
+import { PanelController } from '../ui/panel-controller.js';
+import { TooltipController } from '../ui/tooltip-controller.js';
+import { FilterControls } from '../ui/filter-controls.js';
+import { LocationController } from './location-controller.js';
+import type { AppState, GraphData, GraphNode, HistoryMode, LayoutName, SelectionTarget } from '../types.js';
+
+export async function startAtlasApp(): Promise<void> {
+  'use strict';
+
+  const graphDataUrl = new URL(__GRAPH_DATA_URL__, document.baseURI).toString();
+  const graphResponse = await fetch(graphDataUrl, { cache: 'force-cache' });
+  if (!graphResponse.ok) throw new Error(`Unable to load graph data (${graphResponse.status}).`);
+  const graphData = await graphResponse.json() as GraphData;
+  const graphEl = document.getElementById('graph');
+  if (!(graphEl instanceof HTMLElement)) throw new Error('Missing #graph element.');
+
+  const model = new GraphModel(graphData);
+  const { fieldOrder, domainOrder, edgeTypeOrder, defaultEdgeTypeIds } = model;
+  const nodeRecord = model.nodeRecord;
+  const nodeFieldIds = (node: GraphNode): string[] => model.nodeFieldIds(node);
+  const nodeDomainLabels = (node: GraphNode): string[] => model.nodeDomainLabels(node);
+  const nodeFieldLabels = (node: GraphNode): string[] => model.nodeFieldLabels(node);
+  const knownStateIds = {
+    fieldIds: model.knownFieldIds,
+    domainIds: model.knownDomainIds,
+    edgeTypeIds: model.knownEdgeTypeIds
+  };
+  let state: AppState;
+  const locationController = new LocationController({
+    model,
+    getState: () => state,
+    fieldOrder,
+    domainOrder,
+    edgeTypeOrder
+  });
+  const scopedDefaultFieldIds = locationController.scopedDefaultFieldIds();
+  const scopedDefaultDomainIds = locationController.scopedDefaultDomainIds();
+
+  function readStoredUiState() {
+    try {
+      const raw = window.localStorage.getItem(UI_STATE_STORAGE_KEY);
+      const parsed = parseStoredUiState(raw, knownStateIds);
+      if (raw && !parsed) window.localStorage.removeItem(UI_STATE_STORAGE_KEY);
+      // Intentionally disabled for now: validate stored state, but do not restore it.
+      return null;
+    } catch {
+      return null;
+    }
+  }
+
+  function readUrlUiState() {
+    return parseUrlUiState(new URL(window.location.href).searchParams, knownStateIds);
+  }
+
+  function writeStoredUiState(): void {
+    try {
+      window.localStorage.setItem(
+        UI_STATE_STORAGE_KEY,
+        JSON.stringify(serializeUiState(state, fieldOrder, domainOrder, edgeTypeOrder))
+      );
+    } catch {
+      // Storage can be unavailable; preference changes should still work for this session.
+    }
+  }
+
+
+  const storedUiState = readStoredUiState();
+  const urlUiState = readUrlUiState();
+  const conceptPageDefaults = locationController.conceptPageDefaultTaxonomy();
+
+  state = createInitialState(urlUiState, storedUiState, {
+    fields: conceptPageDefaults?.fields ?? scopedDefaultFieldIds,
+    domains: conceptPageDefaults?.domains ?? scopedDefaultDomainIds,
+    edgeTypes: defaultEdgeTypeIds
+  });
+
+
+  function persistUiState(): void {
+    writeStoredUiState();
+    locationController.write(locationController.parseSelection(), 'replace');
+  }
+
+  const labelSizer = new LabelSizer();
+  const mathRenderer = new MathRenderer();
+  const renderMathText = (value: unknown): string => mathRenderer.renderText(value);
+
+  const cy = createGraph(graphEl, model, labelSizer);
+  window.cy = cy;
+
+
+  const panelController = new PanelController({ cy, state, domainCount: domainOrder.length });
+  const fieldBandController = new FieldBandController({
+    cy,
+    model,
+    state,
+    isMobileLayout: () => panelController.isMobileLayout()
+  });
+  const scheduleFieldBands = (): void => fieldBandController.schedule();
+  const isMobileLayout = (): boolean => panelController.isMobileLayout();
+  const syncPanelUi = (): void => panelController.sync();
+  const setPanelOpen = (panel: 'filters' | 'details', open: boolean): void => panelController.setOpen(panel, open);
+  const togglePanel = (panel: 'filters' | 'details'): void => panelController.toggle(panel);
+  const toggleMaximizedGraph = (): void => panelController.toggleMaximized();
+  const openDetailsPanel = (): void => panelController.openDetails();
+  const updateFiltersToggleCount = (): void => panelController.updateFiltersToggleCount();
+
+  const layoutManager = new LayoutManager({
+    cy,
+    model,
+    state,
+    onStateChange: persistUiState,
+    onLayoutSettled: scheduleFieldBands
+  });
+
+  function runLayout(name: LayoutName = state.layout, fitAfter = true): void {
+    layoutManager.run(name, fitAfter);
+  }
+
+  const graphView = new GraphViewController({
+    cy,
+    model,
+    state,
+    labelSizer,
+    runLayout,
+    scheduleFieldBands,
+    updateFiltersToggleCount
+  });
+  const updateSemanticLabelSizes = (force = false): void => graphView.updateSemanticLabelSizes(force);
+  const scheduleEdgeZoomStyles = (): void => graphView.scheduleEdgeZoomStyles();
+  const applyFilters = (options: { relayout?: boolean } = {}): void => graphView.applyFilters(options);
+  const visibleGraphElements = (): cytoscape.CollectionReturnValue => graphView.visibleElements();
+  const fitVisibleGraph = (): void => graphView.fitVisible();
+  const syncNeighborhoodButton = (): void => graphView.syncNeighborhoodButton();
+  const setNeighborhoodHighlight = (active: boolean, elementId: string | null = null, fitAfter = false): void =>
+    graphView.setNeighborhoodHighlight(active, elementId, fitAfter);
+  const toggleNeighborhoodHighlight = (): void => graphView.toggleNeighborhoodHighlight();
+
+  const filterControls = new FilterControls({
+    model,
+    state,
+    persist: persistUiState,
+    applyFilters,
+    runLayout,
+    scheduleEdgeZoomStyles
+  });
+  const buildFilters = (): void => filterControls.build();
+  const syncPreferenceControls = (): void => filterControls.syncPreferences();
+  const updateFieldNavActiveState = (): void => filterControls.updateFieldNavActiveState();
+
+  const parseSelectionLocation = (options: { includeTemplateSelection?: boolean } = {}): SelectionTarget | null =>
+    locationController.parseSelection(options);
+  const writeLocationState = (target: SelectionTarget | null, mode: Exclude<HistoryMode, null> = 'replace'): void =>
+    locationController.write(target, mode);
+  const syncDocumentMetadata = (target: SelectionTarget | null): void => locationController.syncDocumentMetadata(target);
+
+  const detailsController = new DetailsController({
+    model,
+    cy,
+    math: mathRenderer,
+    conceptPageUrl: (nodeId) => locationController.conceptPageUrl(nodeId),
+    itemUrl: (itemId, itemKind) => locationController.itemUrl(itemId, itemKind),
+    permalinkUrl: (itemId, itemKind) => locationController.itemUrl(itemId, itemKind),
+    githubEditUrl: (itemId) => locationController.githubEditUrl(itemId),
+    activateNode: (id) => { activateNode(id, { center: true, zoomIn: true, historyMode: 'push' }); },
+    activateEdge: (id) => { activateEdge(id, { center: true, zoomIn: true, historyMode: 'push' }); },
+    openPanel: openDetailsPanel
+  });
+
+  function showNodeDetails(id: string): void {
+    detailsController.showNode(id);
+  }
+
+  function showEdgeDetails(id: string): void {
+    detailsController.showEdge(id);
+  }
+
+  function showEmptyDetails(): void {
+    detailsController.showEmpty();
+    syncDocumentMetadata(null);
+  }
+
+  function ensureNodeVisible(id: string): void {
+    const element = cy.getElementById(id);
+    if (!element || element.empty() || !element.hasClass('filter-hidden')) return;
+    const record = nodeRecord.get(id);
+    if (!record) return;
+    for (const fieldId of nodeFieldIds(record)) state.selectedFields.add(fieldId);
+    state.selectedDomains.add(record.primaryDomain);
+    $$<HTMLInputElement>('[data-field]').forEach((input) => { input.checked = state.selectedFields.has(input.dataset.field ?? ''); });
+    const checkbox = $<HTMLInputElement>(`[data-domain="${CSS.escape(record.primaryDomain)}"]`);
+    if (checkbox) checkbox.checked = true;
+    if (record.kind === 'junction') {
+      state.showJunctions = true;
+      byId<HTMLInputElement>('junctionsToggle').checked = true;
+    }
+    persistUiState();
+    applyFilters({ relayout: false });
+  }
+
+  const getDetailsPanelYOffset = (): number => panelController.detailsPanelYOffset();
+
+  function animateElementCenter(element: cytoscape.CollectionReturnValue, targetZoom: number, pointer?: { x: number; y: number }, duration = 260): void {
+    const offsetY = getDetailsPanelYOffset();
+    const worldPos = element.position();
+    if (pointer) {
+      const targetPan = {
+        x: pointer.x - worldPos.x * targetZoom,
+        y: pointer.y - worldPos.y * targetZoom
+      };
+      cy.animate({ zoom: targetZoom, pan: targetPan }, { duration });
+      return;
+    }
+
+    const viewportWidth = cy.width();
+    const viewportHeight = cy.height();
+    const targetPan = {
+      x: viewportWidth / 2 - worldPos.x * targetZoom,
+      y: viewportHeight / 2 - offsetY - worldPos.y * targetZoom
+    };
+    cy.animate({ zoom: targetZoom, pan: targetPan }, { duration });
+  }
+
+  function animateElementCenterCurrentZoom(element: cytoscape.CollectionReturnValue, pointer?: { x: number; y: number }, duration = 220): void {
+    const targetZoom = cy.zoom();
+    animateElementCenter(element, targetZoom, pointer, duration);
+  }
+
+  function activateNode(id: string, {
+    center = false,
+    zoomIn = false,
+    pointer,
+    historyMode = 'push'
+  }: { center?: boolean; zoomIn?: boolean; pointer?: { x: number; y: number }; historyMode?: HistoryMode } = {}): boolean {
+    const element = cy.getElementById(id);
+    if (!element || element.empty()) return false;
+    ensureNodeVisible(id);
+    cy.$(':selected').unselect();
+    element.select();
+    setNeighborhoodHighlight(true, id, false);
+    showNodeDetails(id);
+    syncDocumentMetadata({ kind: 'node', id });
+    if (historyMode) writeLocationState({ kind: 'node', id }, historyMode);
+
+    if (center) {
+      if (zoomIn) {
+        const targetZoom = Math.min(1.1, Math.max(cy.zoom(), 0.78));
+        animateElementCenter(element, targetZoom, pointer, 260);
+      } else {
+        animateElementCenterCurrentZoom(element, pointer, 220);
+      }
+    }
+    return true;
+  }
+
+  function activateEdge(id: string, {
+    center = false,
+    zoomIn = false,
+    historyMode = 'push'
+  }: { center?: boolean; zoomIn?: boolean; pointer?: { x: number; y: number }; historyMode?: HistoryMode } = {}): boolean {
+    const element = cy.getElementById(id);
+    if (!element || element.empty()) return false;
+    cy.$(':selected').unselect();
+    element.select();
+    setNeighborhoodHighlight(true, id, false);
+    showEdgeDetails(id);
+    syncDocumentMetadata({ kind: 'edge', id });
+    if (historyMode) writeLocationState({ kind: 'edge', id }, historyMode);
+    if (center) {
+      if (zoomIn) {
+        const targetZoom = Math.min(1.1, Math.max(cy.zoom(), 0.78));
+        cy.animate({ center: { eles: element }, zoom: targetZoom }, { duration: 260 });
+      } else {
+        cy.animate({ center: { eles: element } }, { duration: 220 });
+      }
+    }
+    return true;
+  }
+
+  function clearSelection({ historyMode = 'push' }: { historyMode?: HistoryMode } = {}): void {
+    cy.$(':selected').unselect();
+    setNeighborhoodHighlight(false, null, false);
+    showEmptyDetails();
+    if (historyMode) writeLocationState(null, historyMode);
+  }
+
+  function selectAndCenter(id: string): void {
+    activateNode(id, { center: true, zoomIn: true, historyMode: 'push' });
+  }
+
+  function applySelectionFromLocation({ initial = false }: { initial?: boolean } = {}): void {
+    const target = parseSelectionLocation({ includeTemplateSelection: initial });
+    const selected = cy.$(':selected').first();
+
+    if (!target) {
+      if (selected && !selected.empty()) clearSelection({ historyMode: null });
+      if (initial) showEmptyDetails();
+      return;
+    }
+
+    const alreadySelected = selected && !selected.empty()
+      && selected.id() === target.id
+      && ((target.kind === 'node' && selected.isNode()) || (target.kind === 'edge' && selected.isEdge()));
+    if (alreadySelected) return;
+
+    if (target.kind === 'node') {
+      activateNode(target.id, { center: true, zoomIn: !initial, historyMode: null });
+    } else {
+      activateEdge(target.id, { center: true, historyMode: null });
+    }
+  }
+
+  function applyUiStateFromLocation(): void {
+    const next = readUrlUiState();
+    const nextFields = next.fields ?? [...state.selectedFields];
+    const nextDomains = next.domains ?? [...state.selectedDomains];
+    const nextEdgeTypes = next.edgeTypes ?? [...state.selectedEdgeTypes];
+    const nextCrossFieldVisibility = next.crossFieldVisibility ?? state.crossFieldVisibility;
+    const nextEdgeLabels = next.edgeLabels ?? state.showEdgeLabels;
+    const nextJunctions = next.junctions ?? state.showJunctions;
+    const nextEdgeZoomActivation = next.edgeZoomActivation ?? state.edgeZoomActivation;
+    const nextLayout = next.layout ?? state.layout;
+
+    const fieldsChanged = !sameIdSet(state.selectedFields, nextFields);
+    const domainsChanged = !sameIdSet(state.selectedDomains, nextDomains);
+    const edgeTypesChanged = !sameIdSet(state.selectedEdgeTypes, nextEdgeTypes);
+    const crossFieldChanged = state.crossFieldVisibility !== nextCrossFieldVisibility;
+    const edgeLabelsChanged = state.showEdgeLabels !== nextEdgeLabels;
+    const junctionsChanged = state.showJunctions !== nextJunctions;
+    const edgeZoomChanged = state.edgeZoomActivation !== nextEdgeZoomActivation;
+    const layoutChanged = state.layout !== nextLayout;
+
+    if (!fieldsChanged && !domainsChanged && !edgeTypesChanged && !crossFieldChanged
+      && !edgeLabelsChanged && !junctionsChanged && !layoutChanged) return;
+
+    state.selectedFields = new Set(nextFields);
+    state.selectedDomains = new Set(nextDomains);
+    state.selectedEdgeTypes = new Set(nextEdgeTypes);
+    state.crossFieldVisibility = nextCrossFieldVisibility;
+    state.showEdgeLabels = nextEdgeLabels;
+    state.showJunctions = nextJunctions;
+    state.edgeZoomActivation = nextEdgeZoomActivation;
+    state.layout = nextLayout;
+
+    buildFilters();
+    syncPreferenceControls();
+    updateFieldNavActiveState();
+    writeStoredUiState();
+    applyFilters({ relayout: fieldsChanged || domainsChanged || junctionsChanged || edgeZoomChanged || layoutChanged });
+  }
+
+  function applyLocationState({ initial = false } = {}): void {
+    if (!initial) applyUiStateFromLocation();
+    const target = parseSelectionLocation({ includeTemplateSelection: initial });
+    writeLocationState(target, 'replace');
+    applySelectionFromLocation({ initial });
+  }
+
+  function clearSearch(clearInput = false): void {
+    state.searchQuery = '';
+    cy.elements().removeClass('search-match');
+    if (clearInput) byId<HTMLInputElement>('searchInput').value = '';
+  }
+
+  function performSearch(): void {
+    const raw = byId<HTMLInputElement>('searchInput').value.trim();
+    clearSearch();
+    if (!raw) return;
+    const query = raw.toLocaleLowerCase();
+    state.searchQuery = query;
+    const matches = graphData.nodes.filter((node) => {
+      const haystack = [
+        node.label,
+        node.summary,
+        ...(node.carriers || []),
+        ...(node.data || []),
+        ...(node.axioms || []),
+        node.notes || '',
+        ...(node.sections || []).flatMap((section) => [section.title, section.body || '', ...(section.items || [])]),
+        node.conceptType || '',
+        node.scale || '',
+        node.status || '',
+        ...nodeFieldLabels(node),
+        ...nodeDomainLabels(node)
+      ].join(' ').toLocaleLowerCase();
+      return haystack.includes(query);
+    });
+    if (!matches.length) {
+      byId('status').textContent = `No concept matches “${raw}”.`;
+      return;
+    }
+    const matchIds = new Set(matches.map((node) => node.id));
+    cy.nodes().filter((node) => matchIds.has(node.id())).addClass('search-match');
+    const exact = matches.find((node) => node.label.toLocaleLowerCase() === query) ?? matches[0];
+    if (!exact) return;
+    selectAndCenter(exact.id);
+    byId('status').textContent = `${matches.length} search match${matches.length === 1 ? '' : 'es'} for “${raw}”.`;
+  }
+
+  const tooltipController = new TooltipController();
+  const showTooltip = (html: string, event: cytoscape.EventObject | MouseEvent): void => tooltipController.show(html, event);
+  const positionTooltip = (event: cytoscape.EventObject | MouseEvent): void => tooltipController.position(event);
+
+  function clearHover(): void {
+    cy.elements().removeClass('hover-dim hover-emphasis');
+    tooltipController.hide();
+  }
+
+  function buildHelp(): void {
+    const activeTypes = edgeTypeOrder.filter((id) => graphData.edgeTypes[id]?.activeInDataset !== false);
+    byId('helpContent').innerHTML = `
+      <p><strong>Vertical direction is meaningful:</strong> the graph begins with minimally structured carriers, especially <em>Set</em>, and generally moves downward as data or axioms are added. Horizontal placement only groups fields.</p>
+      <p>Drag to pan · wheel/pinch to zoom · click an item to highlight its neighbors · click blank space to clear</p>
+      <div class="edge-explainer">
+        ${activeTypes.map((id) => {
+          const type = graphData.edgeTypes[id];
+          if (!type) return '';
+          return `<div><span class="line-swatch ${escapeHtml(type.lineStyle || 'solid')}" style="display:inline-block;border-color:${escapeHtml(type.color)}"></span> <strong>${escapeHtml(type.label)}</strong></div><div>${escapeHtml(type.description)}</div>`;
+        }).join('')}
+      </div>
+      <h3>Domain filtering</h3>
+      <p>A structure may belong to several domains without being duplicated. Its full fill color and horizontal lane use its primary domain; a thin segmented color rail marks every domain membership. A node remains fully visible when any of its domains is enabled. Turning off all of its domains hides it unless it is transitively required by another visible structure, in which case it remains as 50% faded context.</p>
+      <h3>Construction diamonds</h3>
+      <p>A diamond means the result is not obtained by merely adding one axiom to one existing object. Several structures must coexist and satisfy compatibility laws. When diamonds are hidden, each construction is contracted into dashed direct edges from its inputs to its output. Labels beginning with <strong>jointly</strong> mean all of those incoming edges are required together—an AND, not a choice.</p>
+      <h3>Search, fit, and neighborhood highlighting</h3>
+      <p><strong>Search</strong> marks every matching structure and selects the best match without removing anything from the graph. <strong>Fit</strong> changes only the viewport so every structure allowed by the current filters fits on screen. Selecting a node or edge highlights its immediate neighborhood; <strong>Clear highlight</strong>, or a click on blank graph space, removes that emphasis. Neighborhood highlighting never hides graph elements.</p>
+      <h3>Panels and maximized graph</h3>
+      <p>The atlas starts with both sidebars hidden. Use the filter icon and details icon, or the slim tabs at the graph edges, to animate either sidebar in or out. Selecting a node or edge reopens Details. The fullscreen icon hides both sidebars and remembers their prior state.</p>
+      <h3>SVG export</h3>
+      <p><strong>SVG</strong> downloads the current filtered graph as a standalone vector document, including curved edges, annotations, domain rails, neighborhood emphasis, and the current selection. It can be opened in a browser or vector editor and printed without rasterizing the graph.</p>
+      <h3>Citations</h3>
+      <p>Source abbreviations on nodes are off initially to reduce clutter. Enable them under Display, or click any node or edge for citation links and source titles.</p>
+      <h3>Keyboard</h3>
+      <p><strong>/</strong> focuses search, <strong>F</strong> fits the filtered graph, and <strong>Escape</strong> clears search or closes mobile panels.</p>`;
+  }
+
+  const svgExporter = new SvgExporter(cy, model, state);
+  const exportVisibleSvg = (): void => svgExporter.exportVisible();
+
+  // Controls
+  filterControls.initialize();
+  buildHelp();
+
+  byId('fitButton').addEventListener('click', fitVisibleGraph);
+  byId('focusButton').addEventListener('click', toggleNeighborhoodHighlight);
+  byId('searchButton').addEventListener('click', performSearch);
+  byId<HTMLInputElement>('searchInput').addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') performSearch();
+  });
+  byId<HTMLInputElement>('searchInput').addEventListener('input', (event) => {
+    if (!(event.currentTarget as HTMLInputElement).value) clearSearch();
+  });
+
+  byId('helpButton').addEventListener('click', () => byId<HTMLDialogElement>('helpDialog').showModal());
+  byId('filtersToggle').addEventListener('click', () => togglePanel('filters'));
+  byId('detailsToggle').addEventListener('click', () => togglePanel('details'));
+  byId('filtersRailToggle').addEventListener('click', () => togglePanel('filters'));
+  byId('detailsRailToggle').addEventListener('click', () => togglePanel('details'));
+  byId('maximizeButton').addEventListener('click', toggleMaximizedGraph);
+  byId('exportSvgButton').addEventListener('click', exportVisibleSvg);
+  byId('detailsClose').addEventListener('click', () => setPanelOpen('details', false));
+
+  document.addEventListener('keydown', (event) => {
+    const targetTag = event.target instanceof Element ? event.target.tagName.toLowerCase() : '';
+    const typing = targetTag === 'input' || targetTag === 'textarea' || targetTag === 'select';
+    if (event.key === '/' && !typing) {
+      event.preventDefault();
+      byId<HTMLInputElement>('searchInput').focus();
+    } else if ((event.key === 'f' || event.key === 'F') && !typing) {
+      fitVisibleGraph();
+    } else if (event.key === 'Escape') {
+      if (isMobileLayout()) {
+        state.filtersOpen = false;
+        state.detailsOpen = false;
+        syncPanelUi();
+      }
+      if (state.searchQuery || byId<HTMLInputElement>('searchInput').value) {
+        byId<HTMLInputElement>('searchInput').value = '';
+        clearSearch();
+      }
+    }
+  });
+
+  // Graph interactions
+  cy.on('tap', 'node', (event) => {
+    activateNode((event.target as cytoscape.SingularElementReturnValue).id(), { center: false, historyMode: 'push' });
+  });
+  cy.on('tap', 'edge', (event) => {
+    activateEdge((event.target as cytoscape.SingularElementReturnValue).id(), { center: false, historyMode: 'push' });
+  });
+  cy.on('dbltap', 'node', (event) => {
+    const pointer = { x: event.renderedPosition.x, y: event.renderedPosition.y };
+    activateNode((event.target as cytoscape.SingularElementReturnValue).id(), { center: true, zoomIn: true, pointer, historyMode: 'push' });
+  });
+  cy.on('dbltap', 'edge', (event) => {
+    const pointer = { x: event.renderedPosition.x, y: event.renderedPosition.y };
+    activateEdge((event.target as cytoscape.SingularElementReturnValue).id(), { center: true, zoomIn: true, pointer, historyMode: 'push' });
+  });
+  cy.on('tap', (event) => {
+    if (event.target !== cy) return;
+    clearSelection({ historyMode: 'push' });
+    clearSearch(true);
+    setPanelOpen('details', false);
+  });
+  byId('status').addEventListener('click', (event) => {
+    const target = event.target as HTMLElement;
+    if (target.closest('#statusFiltersLink')) {
+      event.preventDefault();
+      setPanelOpen('filters', true);
+    }
+  });
+  cy.on('zoom', () => {
+    scheduleFieldBands();
+    scheduleEdgeZoomStyles();
+  });
+  cy.on('pan position', scheduleFieldBands);
+  cy.on('mouseover', 'node', (event) => {
+    const target = event.target as cytoscape.SingularElementReturnValue;
+    const record = nodeRecord.get(target.id());
+    if (!record) return;
+    //highlightNeighborhood(target);
+    const taxonomy = [...nodeFieldLabels(record), ...nodeDomainLabels(record)].join(' · ');
+    showTooltip(`<strong>${renderMathText(record.label)}</strong><span class="muted">${escapeHtml(taxonomy)}<br>${renderMathText(record.summary)}</span>`, event);
+  });
+  /*cy.on('mouseover', 'edge', (event) => {
+    const record = edgeRecord.get(event.target.id());
+    const type = graphData.edgeTypes[record.type];
+    //highlightNeighborhood(event.target);
+    const mode = record.synthetic ? 'Collapsed AND-construction' : type.label;
+    showTooltip(`<strong>${escapeHtml(record.label)}</strong><span class="muted">${escapeHtml(mode)} · ${escapeHtml(record.detail)}</span>`, event);
+  });*/
+  cy.on('mousemove', 'node', positionTooltip);
+  //cy.on('mousemove', 'edge', positionTooltip);
+  cy.on('mouseout', 'node', clearHover);
+  //cy.on('mouseout', 'edge', clearHover);
+
+  const graphContainer = byId('graph') as HTMLElement;
+  graphContainer.addEventListener('pointerleave', clearHover);
+
+
+  let locationSyncFrame = 0;
+  function scheduleLocationStateSync(): void {
+    if (locationSyncFrame) return;
+    locationSyncFrame = window.requestAnimationFrame(() => {
+      locationSyncFrame = 0;
+      applyLocationState({ initial: false });
+    });
+  }
+  window.addEventListener('hashchange', scheduleLocationStateSync);
+  window.addEventListener('popstate', scheduleLocationStateSync);
+  window.addEventListener('resize', () => { syncPanelUi(); scheduleFieldBands(); });
+
+  // Initial view
+  syncPanelUi();
+  applyFilters({ relayout: false });
+  runLayout(state.layout, false);
+  window.requestAnimationFrame(() => {
+    const visible = visibleGraphElements();
+    if (!visible.empty()) cy.fit(visible, 58);
+    updateSemanticLabelSizes(true);
+    applyLocationState({ initial: true });
+    syncNeighborhoodButton();
+    scheduleFieldBands();
+  });
+}

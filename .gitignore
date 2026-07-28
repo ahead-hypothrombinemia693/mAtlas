@@ -149,3 +149,6 @@ vite.config.ts.timestamp-*
 
 # GitHub Pages staging artifact
 .pages/
+
+# Unit-test compilation output
+.test-build/

@@ -1,0 +1,23 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "noEmit": false,
+    "outDir": ".test-build",
+    "rootDir": "src",
+    "declaration": false,
+    "sourceMap": false
+  },
+  "include": [
+    "src/types.ts",
+    "src/core/hash.ts",
+    "src/core/text.ts",
+    "src/model/graph-model.ts",
+    "src/state/ui-state.ts",
+    "src/graph/organic-layout-core.ts",
+    "src/app/location-controller.ts",
+    "src/graph/visibility-policy.ts",
+    "src/state/taxonomy-selection.ts"
+  ]
+}

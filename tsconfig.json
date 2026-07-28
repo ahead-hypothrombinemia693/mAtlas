@@ -7,16 +7,23 @@
       "DOM",
       "DOM.Iterable"
     ],
-    "strict": false,
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
     "noEmit": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "useDefineForClassFields": true,
     "moduleResolution": "Bundler",
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "exactOptionalPropertyTypes": true
   },
-  "files": [
-    "src/types.ts",
-    "src/main.ts"
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts"
   ]
 }

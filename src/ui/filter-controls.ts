@@ -1,0 +1,275 @@
+import { byId, escapeHtml, queryAll } from '../core/dom.js';
+import { isCrossFieldVisibility, isLayoutName } from '../state/ui-state.js';
+import { selectExclusiveDomain, selectExclusiveField } from '../state/taxonomy-selection.js';
+import type { GraphModel } from '../model/graph-model.js';
+import type { AppState, LayoutName } from '../types.js';
+
+export interface FilterControlsOptions {
+  model: GraphModel;
+  state: AppState;
+  persist: () => void;
+  applyFilters: (options?: { relayout?: boolean }) => void;
+  runLayout: (name: LayoutName, fitAfter: boolean) => void;
+  scheduleEdgeZoomStyles: () => void;
+}
+
+export class FilterControls {
+  constructor(private readonly options: FilterControlsOptions) {}
+
+  initialize(): void {
+    this.build();
+    this.syncPreferences();
+    this.updateFieldAllButtonLabel();
+    this.updateFieldNavActiveState();
+    this.buildDatalist();
+    this.bindEvents();
+  }
+
+  build(): void {
+    const { model, state } = this.options;
+    const fieldContainer = byId('fieldFilters');
+    fieldContainer.replaceChildren();
+
+    for (const fieldId of model.fieldOrder) {
+      const field = model.data.fields[fieldId];
+      if (!field) continue;
+      const fieldDomains = model.domainOrder.filter((domainId) => model.fieldForDomain(domainId) === fieldId);
+      const memberCount = model.data.nodes.filter((node) =>
+        node.kind === 'structure' && model.nodeFieldIds(node).includes(fieldId)).length;
+      const group = document.createElement('div');
+      group.className = 'field-filter-group';
+      group.dataset.fieldGroup = fieldId;
+
+      const fieldLabel = document.createElement('label');
+      fieldLabel.className = 'filter-item field-filter-item';
+      fieldLabel.title = field.description;
+      fieldLabel.innerHTML = `
+        <input type="checkbox" data-field="${escapeHtml(fieldId)}" ${state.selectedFields.has(fieldId) ? 'checked' : ''}>
+        <span class="swatch" style="background:${escapeHtml(field.color)}"></span>
+        <span><a href="#" class="filter-link filter-field-link" data-field-link="${escapeHtml(fieldId)}">${escapeHtml(field.label)}</a> <span class="filter-count">${memberCount}</span></span>`;
+      group.appendChild(fieldLabel);
+
+      const domainList = document.createElement('div');
+      domainList.className = 'domain-list';
+      for (const domainId of fieldDomains) {
+        const domain = model.data.domains[domainId];
+        if (!domain) continue;
+        const domainMemberCount = model.data.nodes.filter((node) =>
+          node.kind === 'structure' && model.nodeDomainIds(node).includes(domainId)).length;
+        const primaryCount = model.data.nodes.filter((node) =>
+          node.kind === 'structure' && node.primaryDomain === domainId).length;
+        const label = document.createElement('label');
+        label.className = 'filter-item domain-filter-item';
+        label.title = `${domainMemberCount} concepts belong to this domain; ${primaryCount} use it as their primary layout domain.`;
+        label.innerHTML = `
+          <input type="checkbox" data-domain="${escapeHtml(domainId)}" ${state.selectedDomains.has(domainId) ? 'checked' : ''}>
+          <span class="swatch" style="background:${escapeHtml(domain.color)}"></span>
+          <span><a href="#" class="filter-link filter-domain-link" data-domain-link="${escapeHtml(domainId)}">${escapeHtml(domain.label)}</a> <span class="filter-count">${domainMemberCount}</span></span>`;
+        domainList.appendChild(label);
+      }
+      group.appendChild(domainList);
+      fieldContainer.appendChild(group);
+    }
+
+    const edgeContainer = byId('edgeFilters');
+    edgeContainer.innerHTML = model.edgeTypeOrder
+      .filter((id) => model.data.edgeTypes[id]?.activeInDataset !== false)
+      .map((id) => {
+        const type = model.data.edgeTypes[id];
+        if (!type) return '';
+        return `<label class="filter-item" title="${escapeHtml(type.description)}">
+          <input type="checkbox" data-edge-type="${escapeHtml(id)}" ${state.selectedEdgeTypes.has(id) ? 'checked' : ''}>
+          <span class="line-swatch ${escapeHtml(type.lineStyle ?? 'solid')}" style="border-color:${escapeHtml(type.color)}"></span>
+          <span><span>${escapeHtml(type.label)}</span><div class="filter-description">${escapeHtml(type.short)}</div></span>
+        </label>`;
+      }).join('');
+  }
+
+  syncPreferences(): void {
+    const { state } = this.options;
+    byId<HTMLInputElement>('edgeLabelsToggle').checked = state.showEdgeLabels;
+    byId<HTMLInputElement>('junctionsToggle').checked = state.showJunctions;
+    byId<HTMLInputElement>('edgeZoomToggle').checked = state.edgeZoomActivation;
+    byId<HTMLSelectElement>('crossFieldSelect').value = state.crossFieldVisibility;
+    byId<HTMLSelectElement>('layoutSelect').value = state.layout;
+  }
+
+  updateFieldAllButtonLabel(): void {
+    const { model, state } = this.options;
+    const allSelected = state.selectedFields.size === model.fieldOrder.length
+      && state.selectedDomains.size === model.domainOrder.length;
+    byId<HTMLButtonElement>('fieldsAll').textContent = allSelected ? 'none' : 'all';
+  }
+
+  updateFieldNavActiveState(): void {
+    const activeScope = this.activeScopeLinkId();
+    queryAll<HTMLAnchorElement>('[data-scope-link]').forEach((link) => {
+      link.classList.toggle('active', link.dataset.scopeLink === activeScope);
+    });
+  }
+
+  private bindEvents(): void {
+    byId('fieldFilters').addEventListener('change', (event) => this.handleFieldOrDomainChange(event));
+    byId('fieldFilters').addEventListener('click', (event) => this.handleTaxonomyLink(event));
+    byId('edgeFilters').addEventListener('change', (event) => this.handleEdgeTypeChange(event));
+    byId('fieldsAll').addEventListener('click', () => this.toggleAllFields());
+    byId('edgesAll').addEventListener('click', () => this.toggleAllEdges());
+
+    byId<HTMLSelectElement>('crossFieldSelect').addEventListener('change', (event) => {
+      const value = (event.currentTarget as HTMLSelectElement).value;
+      if (!isCrossFieldVisibility(value)) return;
+      this.options.state.crossFieldVisibility = value;
+      this.commit(false);
+    });
+    byId<HTMLInputElement>('edgeLabelsToggle').addEventListener('change', (event) => {
+      this.options.state.showEdgeLabels = (event.currentTarget as HTMLInputElement).checked;
+      this.commit(false);
+    });
+    byId<HTMLInputElement>('edgeZoomToggle').addEventListener('change', (event) => {
+      this.options.state.edgeZoomActivation = (event.currentTarget as HTMLInputElement).checked;
+      this.commit(false);
+      this.options.scheduleEdgeZoomStyles();
+    });
+    byId<HTMLInputElement>('junctionsToggle').addEventListener('change', (event) => {
+      this.options.state.showJunctions = (event.currentTarget as HTMLInputElement).checked;
+      this.commit(true);
+    });
+    byId<HTMLSelectElement>('layoutSelect').addEventListener('change', (event) => {
+      const value = (event.currentTarget as HTMLSelectElement).value;
+      if (isLayoutName(value)) this.options.runLayout(value, true);
+    });
+  }
+
+  private handleFieldOrDomainChange(event: Event): void {
+    const input = event.target;
+    if (!(input instanceof HTMLInputElement)) return;
+    const fieldId = input.dataset.field;
+    if (fieldId) {
+      const fieldDomains = this.options.model.domainOrder.filter((domainId) =>
+        this.options.model.fieldForDomain(domainId) === fieldId);
+      this.setMembership(this.options.state.selectedFields, fieldId, input.checked);
+      fieldDomains.forEach((domainId) => this.setMembership(this.options.state.selectedDomains, domainId, input.checked));
+      this.syncTaxonomyCheckboxes();
+      this.commit(true);
+      return;
+    }
+
+    const domainId = input.dataset.domain;
+    if (!domainId) return;
+    if (input.checked) {
+      this.options.state.selectedDomains.add(domainId);
+      this.options.state.selectedFields.add(this.options.model.fieldForDomain(domainId));
+    } else {
+      this.options.state.selectedDomains.delete(domainId);
+    }
+    this.syncTaxonomyCheckboxes();
+    this.commit(true);
+  }
+
+  private handleTaxonomyLink(event: Event): void {
+    if (!(event.target instanceof HTMLAnchorElement)) return;
+    const fieldId = event.target.dataset.fieldLink;
+    const domainId = event.target.dataset.domainLink;
+    if (!fieldId && !domainId) return;
+    event.preventDefault();
+    event.stopPropagation();
+    if (fieldId) this.selectOnlyField(fieldId);
+    else if (domainId) this.selectOnlyDomain(domainId);
+  }
+
+  private handleEdgeTypeChange(event: Event): void {
+    if (!(event.target instanceof HTMLInputElement)) return;
+    const edgeTypeId = event.target.dataset.edgeType;
+    if (!edgeTypeId) return;
+    this.setMembership(this.options.state.selectedEdgeTypes, edgeTypeId, event.target.checked);
+    this.commit(false);
+  }
+
+  private selectOnlyField(fieldId: string): void {
+    const { model, state } = this.options;
+    const selection = selectExclusiveField(state.selectedFields, state.selectedDomains, fieldId, {
+      fieldOrder: model.fieldOrder,
+      domainOrder: model.domainOrder,
+      fieldForDomain: (domainId) => model.fieldForDomain(domainId)
+    });
+    state.selectedFields = selection.fields;
+    state.selectedDomains = selection.domains;
+    this.syncTaxonomyCheckboxes();
+    this.commit(true);
+  }
+
+  private selectOnlyDomain(domainId: string): void {
+    const { model, state } = this.options;
+    const selection = selectExclusiveDomain(state.selectedDomains, domainId, {
+      fieldOrder: model.fieldOrder,
+      domainOrder: model.domainOrder,
+      fieldForDomain: (id) => model.fieldForDomain(id)
+    });
+    state.selectedFields = selection.fields;
+    state.selectedDomains = selection.domains;
+    this.syncTaxonomyCheckboxes();
+    this.commit(true);
+  }
+
+  private toggleAllFields(): void {
+    const { model, state } = this.options;
+    const allSelected = state.selectedFields.size === model.fieldOrder.length
+      && state.selectedDomains.size === model.domainOrder.length;
+    state.selectedFields = new Set(allSelected ? [] : model.fieldOrder);
+    state.selectedDomains = new Set(allSelected ? [] : model.domainOrder);
+    this.syncTaxonomyCheckboxes();
+    this.commit(true);
+  }
+
+  private toggleAllEdges(): void {
+    const { model, state } = this.options;
+    const active = model.edgeTypeOrder.filter((id) => model.data.edgeTypes[id]?.activeInDataset !== false);
+    const allSelected = state.selectedEdgeTypes.size === active.length;
+    state.selectedEdgeTypes = new Set(allSelected ? [] : active);
+    queryAll<HTMLInputElement>('[data-edge-type]').forEach((input) => {
+      input.checked = state.selectedEdgeTypes.has(input.dataset.edgeType ?? '');
+    });
+    this.commit(false);
+  }
+
+  private syncTaxonomyCheckboxes(): void {
+    const { state } = this.options;
+    queryAll<HTMLInputElement>('[data-field]').forEach((input) => {
+      input.checked = state.selectedFields.has(input.dataset.field ?? '');
+    });
+    queryAll<HTMLInputElement>('[data-domain]').forEach((input) => {
+      input.checked = state.selectedDomains.has(input.dataset.domain ?? '');
+    });
+  }
+
+  private commit(relayout: boolean): void {
+    this.options.persist();
+    this.updateFieldAllButtonLabel();
+    this.updateFieldNavActiveState();
+    this.options.applyFilters({ relayout });
+  }
+
+  private activeScopeLinkId(): string | null {
+    const { model, state } = this.options;
+    if (state.selectedDomains.size === model.domainOrder.length) return 'global';
+    for (const fieldId of model.fieldOrder) {
+      const fieldDomains = model.domainOrder.filter((domainId) => model.fieldForDomain(domainId) === fieldId);
+      if (fieldDomains.length === state.selectedDomains.size
+        && fieldDomains.every((domainId) => state.selectedDomains.has(domainId))) return fieldId;
+    }
+    return null;
+  }
+
+  private buildDatalist(): void {
+    byId('conceptNames').innerHTML = this.options.model.data.nodes
+      .filter((node) => node.kind === 'structure')
+      .sort((left, right) => left.label.localeCompare(right.label))
+      .map((node) => `<option value="${escapeHtml(node.label)}"></option>`)
+      .join('');
+  }
+
+  private setMembership(set: Set<string>, id: string, enabled: boolean): void {
+    if (enabled) set.add(id);
+    else set.delete(id);
+  }
+}

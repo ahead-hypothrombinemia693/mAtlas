@@ -1,0 +1,246 @@
+import type cytoscape from 'cytoscape';
+import { byId } from '../core/dom.js';
+import type { GraphModel } from '../model/graph-model.js';
+import type { AppState, GraphEdge, LayoutName } from '../types.js';
+import type { LabelSizer } from './label-sizer.js';
+import { classifyNodeVisibility, isCrossFieldEdgeAllowed, isWrongJunctionMode } from './visibility-policy.js';
+
+export interface GraphViewControllerOptions {
+  cy: cytoscape.Core;
+  model: GraphModel;
+  state: AppState;
+  labelSizer: LabelSizer;
+  runLayout: (name: LayoutName, fitAfter: boolean) => void;
+  scheduleFieldBands: () => void;
+  updateFiltersToggleCount: () => void;
+}
+
+export class GraphViewController {
+  private lastLabelZoom: number | null = null;
+  private edgeZoomStyleFrame = 0;
+  private lastEdgeZoomActive: boolean | null = null;
+
+  constructor(private readonly options: GraphViewControllerOptions) {}
+
+  updateSemanticLabelSizes(force = false): void {
+    const { cy, model, labelSizer } = this.options;
+    const zoom = cy.zoom();
+    if (!force && this.lastLabelZoom !== null && Math.abs(zoom - this.lastLabelZoom) < 0.012) return;
+    this.lastLabelZoom = zoom;
+    cy.batch(() => {
+      cy.nodes().forEach((element) => {
+        const record = model.nodeRecord.get(element.id());
+        if (!record) return;
+        element.data('labelFontSize', labelSizer.semanticSize(record, zoom, String(element.data('displayLabel') ?? '')));
+      });
+    });
+  }
+
+  scheduleEdgeZoomStyles(): void {
+    if (this.edgeZoomStyleFrame) return;
+    this.edgeZoomStyleFrame = window.requestAnimationFrame(() => {
+      this.edgeZoomStyleFrame = 0;
+      this.updateEdgeZoomStyles();
+    });
+  }
+
+  applyFilters({ relayout = false }: { relayout?: boolean } = {}): void {
+    const { cy, model, state } = this.options;
+    const required = model.requiredNodeIds(state, (edge) => !model.isCrossFieldEdge(edge) || this.crossFieldEdgeAllowed(edge));
+
+    cy.batch(() => {
+      cy.elements().removeClass('filter-hidden dependency-faded dependency-context cross-field-edge');
+
+      cy.nodes().forEach((element) => {
+        const record = model.nodeRecord.get(element.id());
+        if (!record) {
+          element.addClass('filter-hidden');
+          return;
+        }
+        const visibility = classifyNodeVisibility(
+          record.kind,
+          model.nodeMatchesSelectedTaxonomy(record, state),
+          required.has(record.id),
+          state.showJunctions
+        );
+        if (visibility === 'hidden') element.addClass('filter-hidden');
+        else if (visibility === 'dependency-context') element.addClass('dependency-faded');
+      });
+
+      cy.edges().forEach((element) => {
+        const record = model.edgeRecord.get(element.id());
+        if (!record) {
+          element.addClass('filter-hidden');
+          return;
+        }
+        const endpointsHidden = element.source().hasClass('filter-hidden') || element.target().hasClass('filter-hidden');
+        const wrongJunctionMode = isWrongJunctionMode(
+          record,
+          model.nodeRecord.get(record.source)?.kind,
+          model.nodeRecord.get(record.target)?.kind,
+          state.showJunctions
+        );
+        const crossField = model.isCrossFieldEdge(record);
+        if (crossField) element.addClass('cross-field-edge');
+
+        if (!state.selectedEdgeTypes.has(record.type)
+          || endpointsHidden
+          || wrongJunctionMode
+          || !this.crossFieldEdgeAllowed(record)) {
+          element.addClass('filter-hidden');
+        } else if (element.source().hasClass('dependency-faded') || element.target().hasClass('dependency-faded')) {
+          element.addClass('dependency-context');
+        }
+        element.toggleClass('edge-labels-off', !state.showEdgeLabels);
+      });
+    });
+
+    if (state.neighborhoodActive) this.applyNeighborhoodHighlight(false);
+    this.updateStatus();
+    this.options.scheduleFieldBands();
+    this.options.updateFiltersToggleCount();
+    this.updateEdgeZoomStyles();
+    if (relayout) this.options.runLayout(state.layout, true);
+  }
+
+  visibleElements(): cytoscape.CollectionReturnValue {
+    return this.options.cy.elements().not('.filter-hidden');
+  }
+
+  fitVisible(): void {
+    const visible = this.visibleElements();
+    if (!visible.empty()) this.options.cy.fit(visible, 58);
+  }
+
+  neighborhoodFor(element: cytoscape.CollectionReturnValue): cytoscape.CollectionReturnValue {
+    return element.isNode()
+      ? element.closedNeighborhood()
+      : element.union(element.source()).union(element.target());
+  }
+
+  syncNeighborhoodButton(): void {
+    const { cy, state } = this.options;
+    const button = byId<HTMLButtonElement>('focusButton');
+    const selected = cy.$(':selected').first();
+    const hasSelection = Boolean(selected && !selected.empty());
+    button.disabled = !hasSelection;
+    button.setAttribute('aria-pressed', String(state.neighborhoodActive));
+    button.classList.toggle('active', state.neighborhoodActive);
+    button.title = !hasSelection
+      ? 'Select a node or edge to highlight its immediate neighborhood'
+      : state.neighborhoodActive
+        ? 'Remove the neighborhood emphasis without changing the selection'
+        : 'Highlight the selected item and its immediate neighbors';
+  }
+
+  applyNeighborhoodHighlight(fitAfter = false): void {
+    const { cy, state } = this.options;
+    cy.elements().removeClass('neighborhood-dim neighborhood-emphasis');
+    if (!state.neighborhoodActive || !state.neighborhoodElementId) {
+      this.syncNeighborhoodButton();
+      this.updateStatus();
+      return;
+    }
+
+    const selected = cy.getElementById(state.neighborhoodElementId);
+    if (!selected || selected.empty() || selected.hasClass('filter-hidden')) {
+      state.neighborhoodActive = false;
+      state.neighborhoodElementId = null;
+      this.syncNeighborhoodButton();
+      this.updateStatus();
+      return;
+    }
+
+    const neighborhood = this.neighborhoodFor(selected).not('.filter-hidden');
+    this.visibleElements().not(neighborhood).addClass('neighborhood-dim');
+    neighborhood.addClass('neighborhood-emphasis');
+    cy.nodes('.search-match').removeClass('neighborhood-dim');
+    if (fitAfter) cy.fit(neighborhood, 90);
+    this.syncNeighborhoodButton();
+    this.updateStatus();
+  }
+
+  setNeighborhoodHighlight(active: boolean, elementId: string | null = null, fitAfter = false): void {
+    const { cy, state } = this.options;
+    state.neighborhoodActive = active;
+    state.neighborhoodElementId = active ? elementId : null;
+    if (state.crossFieldVisibility === 'contextual') {
+      this.applyFilters({ relayout: false });
+      if (fitAfter && state.neighborhoodElementId) {
+        const selected = cy.getElementById(state.neighborhoodElementId);
+        if (selected && !selected.empty()) cy.fit(this.neighborhoodFor(selected).not('.filter-hidden'), 90);
+      }
+    } else {
+      this.applyNeighborhoodHighlight(fitAfter);
+    }
+  }
+
+  toggleNeighborhoodHighlight(): void {
+    const selected = this.options.cy.$(':selected').first();
+    if (!selected || selected.empty()) return;
+    this.setNeighborhoodHighlight(!this.options.state.neighborhoodActive, selected.id(), false);
+  }
+
+  updateStatus(): void {
+    const { cy, model, state } = this.options;
+    const visibleNodes = cy.nodes().not('.filter-hidden').filter((node) => model.nodeRecord.get(node.id())?.kind === 'structure');
+    const contextNodes = visibleNodes.filter('.dependency-faded');
+    const visibleJunctions = cy.nodes().not('.filter-hidden').filter((node) => model.nodeRecord.get(node.id())?.kind === 'junction');
+    const visibleEdges = cy.edges().not('.filter-hidden');
+    const collapsedConstructions = new Set(
+      visibleEdges.filter('[synthetic = 1]').map((edge) => edge.data('junctionId'))
+    ).size;
+    const contextText = contextNodes.length
+      ? `<span class="status-item" title="Faded prerequisites"><span class="material-icons">subdirectory_arrow_right</span>${contextNodes.length}</span>`
+      : '';
+    const junctionText = state.showJunctions
+      ? `<span class="status-item" title="Visible junctions"><span class="material-icons">change_history</span>${visibleJunctions.length}</span>`
+      : `<span class="status-item" title="Collapsed constructions"><span class="material-icons">change_history</span>${collapsedConstructions}</span>`;
+    const suffix = state.neighborhoodActive
+      ? '<span class="status-item" title="Neighborhood highlighted"><span class="material-icons">star</span></span>'
+      : '';
+    const crossFieldCount = visibleEdges.filter('.cross-field-edge').length;
+    const crossFieldText = crossFieldCount
+      ? `<span class="status-item" title="Cross-field relations"><span class="material-icons">swap_horiz</span>${crossFieldCount}</span>`
+      : '';
+    byId('status').innerHTML = `
+      <a href="#" id="statusFiltersLink" class="status-item status-link" title="Show filters">
+        <span class="material-icons">layers</span>
+        <strong class="status-link-text">${state.selectedDomains.size} of ${model.domainOrder.length} domains</strong>
+      </a>
+      <span class="status-item" title="Concepts"><span class="material-icons">auto_stories</span>${visibleNodes.length}</span>
+      ${contextText}${junctionText}
+      <span class="status-item" title="Relations"><span class="material-icons">call_split</span>${visibleEdges.length}</span>
+      ${crossFieldText}${suffix}`;
+  }
+
+  updateEdgeZoomStyles(): void {
+    const { cy, state } = this.options;
+    const activeAtZoom = state.edgeZoomActivation && cy.zoom() >= 0.65;
+    if (this.lastEdgeZoomActive === activeAtZoom) return;
+    this.lastEdgeZoomActive = activeAtZoom;
+
+    cy.edges().forEach((edge) => {
+      if (edge.hasClass('filter-hidden')) {
+        edge.style('opacity', 0);
+        edge.style('events', 'no');
+        return;
+      }
+      const baseOpacity = edge.hasClass('dependency-context') ? 0.46 : edge.hasClass('neighborhood-dim') ? 0.14 : 1;
+      if (!state.edgeZoomActivation) {
+        edge.style('opacity', baseOpacity);
+        edge.style('events', 'yes');
+      } else if (activeAtZoom) {
+        edge.style('opacity', baseOpacity);
+        edge.style('events', 'yes');
+      } else {
+        edge.style('opacity', 0.32);
+        edge.style('events', 'no');
+      }
+    });
+  }
+
+  private crossFieldEdgeAllowed(record: GraphEdge): boolean {
+    return isCrossFieldEdgeAllowed(record, this.options.model.isCrossFieldEdge(record), this.options.state);
+  }
+}
