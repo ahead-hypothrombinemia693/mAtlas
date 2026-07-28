@@ -58,7 +58,7 @@ export class LayoutManager {
       name: 'breadthfirst',
       directed: true,
       circle: false,
-      roots: ['set'],
+      roots: this.breadthFirstRoots(visible),
       spacingFactor: 1.22,
       avoidOverlap: true,
       nodeDimensionsIncludeLabels: true,
@@ -187,5 +187,47 @@ export class LayoutManager {
       nextBase += (levels.length ? Math.max(...levels) : 0) + 4;
     }
     return bases;
+  }
+
+  private breadthFirstRoots(visible: cytoscape.CollectionReturnValue): string[] {
+    const { model, state } = this.options;
+    const selectedDomains = state.selectedDomains;
+
+    const visibleSelectedNodes = visible.nodes().filter((node) => {
+      const record = model.nodeRecord.get(node.id());
+      return Boolean(record && model.nodeDomainIds(record).some((domainId) => selectedDomains.has(domainId)));
+    });
+
+    const rootIds = new Set<string>();
+    visibleSelectedNodes.forEach((node) => {
+      rootIds.add(node.id());
+    });
+
+    const visibleEdgeIds = new Set<string>();
+    visible.edges().forEach((edge) => {
+      visibleEdgeIds.add(edge.id());
+    });
+
+    const transitiveRoots = model.transitivePrerequisiteNodeIds(
+      [...rootIds],
+      (edge) => visibleEdgeIds.has(edge.id)
+    );
+
+    const transitiveNodes = visible.nodes().filter((node) => transitiveRoots.has(node.id()));
+    if (transitiveNodes.empty()) return [];
+
+    let minLevel = Number.POSITIVE_INFINITY;
+    transitiveNodes.forEach((node) => {
+      const record = model.nodeRecord.get(node.id());
+      if (!record) return;
+      minLevel = Math.min(minLevel, record.level);
+    });
+
+    return transitiveNodes
+      .filter((node) => {
+        const record = model.nodeRecord.get(node.id());
+        return Boolean(record && record.level === minLevel);
+      })
+      .map((node) => node.id());
   }
 }

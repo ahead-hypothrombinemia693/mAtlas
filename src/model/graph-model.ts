@@ -66,6 +66,26 @@ export class GraphModel {
       && this.nodeDomainIds(node).some((domainId) => state.selectedDomains.has(domainId));
   }
 
+  transitivePrerequisiteNodeIds(
+    rootNodeIds: readonly string[],
+    edgeAllowed: (edge: GraphEdge) => boolean
+  ): Set<string> {
+    const required = new Set(rootNodeIds);
+    const queue = [...rootNodeIds];
+
+    for (let index = 0; index < queue.length; index += 1) {
+      const targetId = queue[index];
+      if (!targetId) continue;
+      for (const edge of this.incomingBaseEdges.get(targetId) ?? []) {
+        if (!edgeAllowed(edge) || required.has(edge.source)) continue;
+        required.add(edge.source);
+        queue.push(edge.source);
+      }
+    }
+
+    return required;
+  }
+
   isCrossFieldEdge(edge: GraphEdge): boolean {
     const source = this.nodeRecord.get(edge.source);
     const target = this.nodeRecord.get(edge.target);
