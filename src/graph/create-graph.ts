@@ -93,20 +93,20 @@ export function createGraphElements(model: GraphModel, labels: LabelSizer): cyto
   return elements;
 }
 
-export const graphStyles: cytoscape.StylesheetCSS[] = [
+export const graphStyles: cytoscape.StylesheetJson = [
   {
     selector: 'node',
     style: {
-      shape: 'round-rectangle', width: 164, height: 58, padding: 4,
+      shape: 'round-rectangle', width: 164, height: 58, padding: '4px',
       'background-color': 'data(domainColor)', 'background-opacity': 0.92,
       'background-image': 'data(domainRailImage)', 'background-fit': 'cover',
       'background-repeat': 'no-repeat', 'background-clip': 'node', 'background-image-opacity': 1,
       'border-width': 2, 'border-color': '#ffffff', label: 'data(displayLabel)', color: '#ffffff',
       'font-size': 'data(labelFontSize)', 'font-weight': 600, 'text-wrap': 'wrap',
-      'text-overflow-wrap': 'whitespace', 'text-max-width': 144, 'text-halign': 'center',
+      'text-overflow-wrap': 'whitespace', 'text-max-width': '144px', 'text-halign': 'center',
       'text-valign': 'center', 'text-outline-width': 0, 'overlay-opacity': 0,
       'transition-property': 'opacity, border-width, border-color, background-opacity',
-      'transition-duration': '120ms'
+      'transition-duration': 120
     }
   },
   {
@@ -114,7 +114,7 @@ export const graphStyles: cytoscape.StylesheetCSS[] = [
     style: {
       width: 116, 'background-color': '#fff7ed', 'background-opacity': 1,
       'background-image': 'none', 'border-width': 3, 'border-color': '#b45309',
-      'border-style': 'dashed', color: '#7c2d12', 'text-max-width': 92
+      'border-style': 'dashed', color: '#7c2d12', 'text-max-width': '92px'
     }
   },
   {
@@ -123,20 +123,20 @@ export const graphStyles: cytoscape.StylesheetCSS[] = [
       width: 2.1, 'curve-style': 'bezier', 'control-point-distances': 'data(curveDistance)',
       'control-point-weights': 0.5, 'line-color': 'data(typeColor)',
       'target-arrow-color': 'data(typeColor)', 'target-arrow-shape': 'triangle',
-      'arrow-scale': 0.85, 'line-style': 'data(lineStyle)', label: 'data(label)',
+      'arrow-scale': 0.85, 'line-style': 'data(lineStyle)' as unknown as cytoscape.Css.Edge['line-style'], label: 'data(label)',
       'font-size': 9, 'font-weight': 600, color: '#334155', 'text-wrap': 'wrap',
-      'text-max-width': 120, 'text-background-color': '#ffffff', 'text-background-opacity': 0.88,
-      'text-background-padding': 3, 'text-border-width': 1, 'text-border-color': '#e2e8f0',
+      'text-max-width': '120px', 'text-background-color': '#ffffff', 'text-background-opacity': 0.88,
+      'text-background-padding': '3px', 'text-border-width': 1, 'text-border-color': '#e2e8f0',
       'text-border-opacity': 0.85, 'text-rotation': 'autorotate', 'source-distance-from-node': 4,
       'target-distance-from-node': 5, 'overlay-opacity': 0,
-      'transition-property': 'opacity, width', 'transition-duration': '120ms'
+      'transition-property': 'opacity, width', 'transition-duration': 120
     }
   },
   {
     selector: 'edge[synthetic = 1]',
     style: {
       width: 2.6, 'line-style': 'dashed', 'text-background-color': '#fff7ed',
-      'text-border-color': '#fed7aa', 'text-border-opacity': 1, 'text-max-width': 138
+      'text-border-color': '#fed7aa', 'text-border-opacity': 1, 'text-max-width': '138px'
     }
   },
   { selector: '.edge-labels-off', style: { label: '' } },
