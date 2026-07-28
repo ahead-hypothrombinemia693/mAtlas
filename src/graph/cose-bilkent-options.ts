@@ -11,7 +11,7 @@ export type CoseBilkentAnimation = 'during' | 'end' | false;
  * surface is kept here instead of allowing untyped layout dictionaries to
  * spread through the application.
  */
-export interface CoseBilkentLayoutOptions extends cytoscape.LayoutOptions {
+export type CoseBilkentLayoutOptions = cytoscape.LayoutOptions & {
   name: 'cose-bilkent';
   quality?: CoseBilkentQuality;
   ready?: () => void;

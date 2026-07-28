@@ -88,7 +88,7 @@ export class OrganicLayoutEngine {
       elements: scratchElements,
       layout: { name: 'preset' },
       style: [
-        { selector: 'node', style: { width: 164, height: 58, padding: 4, 'border-width': 2 } },
+        { selector: 'node', style: { width: 164, height: 58, padding: '4px', 'border-width': 2 } },
         { selector: 'node[kind = "junction"]', style: { width: 116, 'border-width': 3 } }
       ]
     });

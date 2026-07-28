@@ -93,7 +93,7 @@ export function createGraphElements(model: GraphModel, labels: LabelSizer): cyto
   return elements;
 }
 
-export const graphStyles: cytoscape.Stylesheet[] = [
+export const graphStyles: cytoscape.StylesheetCSS[] = [
   {
     selector: 'node',
     style: {

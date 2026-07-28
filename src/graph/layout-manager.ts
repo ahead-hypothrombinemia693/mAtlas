@@ -58,7 +58,7 @@ export class LayoutManager {
       name: 'breadthfirst',
       directed: true,
       circle: false,
-      roots: cy.$('#set'),
+      roots: ['set'],
       spacingFactor: 1.22,
       avoidOverlap: true,
       nodeDimensionsIncludeLabels: true,

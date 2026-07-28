@@ -112,10 +112,10 @@ export class GraphViewController {
     if (!visible.empty()) this.options.cy.fit(visible, 58);
   }
 
-  neighborhoodFor(element: cytoscape.CollectionReturnValue): cytoscape.CollectionReturnValue {
-    return element.isNode()
-      ? element.closedNeighborhood()
-      : element.union(element.source()).union(element.target());
+  neighborhoodFor(element: cytoscape.SingularElementReturnValue): cytoscape.CollectionReturnValue {
+    if (element.isNode()) return element.closedNeighborhood();
+    const edge = element as cytoscape.EdgeSingular;
+    return edge.union(edge.source()).union(edge.target());
   }
 
   syncNeighborhoodButton(): void {

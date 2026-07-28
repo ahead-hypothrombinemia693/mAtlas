@@ -16,8 +16,10 @@ export class SvgExporter {
 
   exportVisible(): void {
     const visibleNodes = this.cy.nodes().not('.filter-hidden');
-    const visibleEdges = this.cy.edges().not('.filter-hidden').filter((edge) =>
-      !edge.source().hasClass('filter-hidden') && !edge.target().hasClass('filter-hidden'));
+    const visibleEdges = this.cy.edges().not('.filter-hidden').filter((element) => {
+      const edge = element as cytoscape.EdgeSingular;
+      return !edge.source().hasClass('filter-hidden') && !edge.target().hasClass('filter-hidden');
+    });
     if (!visibleNodes.length) return;
 
     const box = visibleNodes.boundingBox({ includeLabels: false, includeOverlays: false });
