@@ -1,0 +1,30 @@
+{
+  "name": "human-knowledge-atlas",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Interactive, source-backed atlas connecting mathematics and physics across fields and scales.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "clean": "node scripts/clean.mjs",
+    "validate:data": "node scripts/validate-data.mjs",
+    "math:mark": "node scripts/mark-explicit-math.mjs --write",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/dev.mjs",
+    "preview": "node scripts/serve.mjs dist",
+    "test": "npm run typecheck && npm run build",
+    "build:pages": "npm run build && node scripts/prepare-pages.mjs"
+  },
+  "dependencies": {
+    "cytoscape": "^3.33.1",
+    "cytoscape-cose-bilkent": "^4.1.0",
+    "katex": "^0.18.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3",
+    "esbuild-wasm": "0.28.1"
+  }
+}

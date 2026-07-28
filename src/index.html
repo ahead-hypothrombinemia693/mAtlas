@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interactive, source-backed atlas connecting mathematics and physics across fields and scales.">
+  <meta name="atlas:root" content="https://atlas.madvay.com/">
+  <meta name="theme-color" content="#0b2d78">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Atlas of Fundamental Concepts">
+  <meta property="og:title" content="Atlas of Fundamental Concepts">
+  <meta property="og:description" content="Interactive, source-backed atlas connecting mathematics and physics across fields and scales.">
+  <meta property="og:url" content="https://atlas.madvay.com/">
+  <meta property="og:image" content="https://atlas.madvay.com/assets/atlas-logo.png">
+  <meta property="og:image:width" content="439">
+  <meta property="og:image:height" content="439">
+  <meta property="og:image:alt" content="Atlas of Fundamental Concepts logo">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://atlas.madvay.com/">
+  <link rel="icon" href="./favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="./favicon-96x96.png" sizes="96x96">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="./site.webmanifest">
+  <title>Atlas of Fundamental Concepts</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons" />
+  <!-- atlas:assets -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Atlas of Fundamental Concepts",
+      "alternateName": "mAtlas",
+      "url": "https://atlas.madvay.com/"
+    }
+  </script>
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="brand">
+        <button id="filtersToggle" class="button icon-button panel-button" aria-label="Toggle filters" aria-pressed="false" title="Show or hide filters">
+          <span class="material-icons" aria-hidden="true">filter_list</span>
+          <span class="panel-count" aria-hidden="true"></span>
+        </button>
+        <a class="brand-link" href="./" aria-label="Open the Atlas of Fundamental Concepts">
+          <img class="brand-logo" src="./assets/atlas-logo.png" alt="Atlas of Fundamental Concepts logo" width="58" height="58" decoding="async">
+        </a>
+        <div class="brand-copy">
+          <h1><a class="brand-link" href="./">Atlas of Fundamental Concepts</a></h1>
+          <nav class="field-nav" aria-label="Atlas scope"><a href="./" data-scope-link="global">All fields</a><a href="/math/" data-scope-link="mathematics">Mathematics</a><a href="/physics/" data-scope-link="physics">Physics</a></nav>
+          <p>&copy; 2026 <a href="https://advaymengle.com" target="_blank" rel="noopener">Advay Mengle</a> · <a href="https://github.com/madvay/mAtlas/blob/main/NOTICE" target="_blank" rel="noopener">Disclaimer / License</a> · <a href="https://github.com/madvay/mAtlas" target="_blank" rel="noopener">Edit me!</a></p>
+        </div>
+      </div>
+
+      <div class="toolbar" role="toolbar" aria-label="Graph controls">
+        <label class="search-box">
+          <span class="visually-hidden">Search concepts</span>
+          <input id="searchInput" list="conceptNames" type="search" placeholder="Search concepts…" autocomplete="off">
+          <datalist id="conceptNames"></datalist>
+        </label>
+        <button id="searchButton" class="button icon-button" aria-label="Search concepts" title="Find matching concepts and select the best match">
+          <span class="material-icons" aria-hidden="true">search</span>
+        </button>
+        <button id="focusButton" class="button icon-button" aria-pressed="false" title="Select a node or edge to highlight its immediate neighborhood" disabled>
+          <span class="material-icons" aria-hidden="true">highlight_alt</span>
+        </button>
+        <button id="fitButton" class="button icon-button" aria-label="Fit graph" title="Fit all concepts currently allowed by the filters into the viewport (F)">
+          <span class="material-icons" aria-hidden="true">fit_screen</span>
+        </button>
+        <select id="layoutSelect" class="select" aria-label="Layout">
+          <option value="atlas">Layered by field and domain</option>
+          <option value="cose-bilkent">Organic</option>
+          <option value="breadthfirst">Compact hierarchy</option>
+        </select>
+        <button id="detailsToggle" class="button icon-button panel-button" aria-label="Toggle details" aria-pressed="false" title="Show or hide details">
+          <span class="material-icons" aria-hidden="true">density_medium</span>
+        </button>
+        <button id="maximizeButton" class="button icon-button active" aria-pressed="true" title="Restore the sidebars">
+          <span class="material-icons" aria-hidden="true">fullscreen_exit</span>
+        </button>
+        <button id="exportSvgButton" class="button icon-button" aria-label="Export SVG" title="Download the current visible graph as SVG">
+          <span class="material-icons" aria-hidden="true">download</span>
+        </button>
+        <button id="helpButton" class="button icon-button" aria-haspopup="dialog" aria-label="Open key" title="Open key">
+          <span class="material-icons" aria-hidden="true">help_outline</span>
+        </button>
+      </div>
+    </header>
+
+    <div id="workspace" class="workspace filters-collapsed details-collapsed">
+      <aside id="filtersPanel" class="sidebar filters-panel" aria-label="Filters" aria-hidden="true">
+        <section>
+          <div class="section-heading">
+            <h2>Fields / Domains</h2>
+            <div class="section-actions">
+              <button id="fieldsAll" class="text-button">all</button>
+            </div>
+          </div>
+          <div id="fieldFilters" class="filter-list"></div>
+          <p class="filter-note">Multi-domain and future multi-field concepts remain visible when any membership is enabled. Required prerequisites remain at 50% opacity.</p>
+        </section>
+
+        <section>
+          <div class="section-heading">
+            <h2>Edge meanings</h2>
+            <button id="edgesAll" class="text-button">all</button>
+          </div>
+          <div id="edgeFilters" class="filter-list"></div>
+        </section>
+
+        <section>
+          <h2>Display</h2>
+          <label class="toggle-row"><input id="edgeLabelsToggle" type="checkbox" checked> Edge annotations</label>
+          <label class="toggle-row"><input id="edgeZoomToggle" type="checkbox" checked> Edge interaction only when zoomed in</label>
+          <label class="toggle-row"><input id="junctionsToggle" type="checkbox" checked> Construction junctions</label>
+          <label class="select-row" for="crossFieldSelect"><span>Cross-field links</span><select id="crossFieldSelect" class="select"><option value="contextual">Contextual</option><option value="all">All</option><option value="hidden">Hidden</option></select></label>
+        </section>
+
+        <section class="data-section">
+          <h2>Data</h2>
+          <a class="small-link" href="__ATLAS_DATA_URL__" target="_blank" rel="noopener">View graph data</a>
+          <a class="small-link" href="__ATLAS_SCHEMA_URL__" target="_blank" rel="noopener">View data schema</a>
+        </section>
+      </aside>
+
+      <main class="graph-shell">
+        <button id="filtersRailToggle" class="panel-rail-toggle left" aria-label="Toggle filters" title="Show or hide filters">‹</button>
+        <button id="detailsRailToggle" class="panel-rail-toggle right" aria-label="Toggle details" title="Show or hide details">›</button>
+        <div id="fieldBands" class="field-bands" aria-hidden="true"></div>
+        <div id="graph" role="application" aria-label="Interactive graph of connected concepts across mathematics and physics"></div>
+        <div id="tooltip" class="tooltip" role="tooltip" hidden></div>
+        <div class="graph-meta">
+          <div id="status" class="status" aria-live="polite"></div>
+        </div>
+      </main>
+
+      <article id="detailsPanel" class="sidebar details-panel" aria-label="Details" aria-hidden="true">
+        <div class="details-header">
+          <div>
+            <h2 id="detailTitle">Select a concept</h2>
+            <div id="detailEditLink" class="detail-edit-link"></div>
+          </div>
+          <button id="detailsClose" class="icon-button" aria-label="Close details" title="Hide details">×</button>
+        </div>
+        <div id="detailBody" class="detail-body">
+          <p>Click any concept, construction junction, or annotated edge.</p>
+          <p class="muted">Construction junctions are diamonds. They show where multiple structures must coexist on the same carrier and satisfy compatibility conditions.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <dialog id="helpDialog" class="help-dialog">
+    <form method="dialog" class="dialog-card">
+      <div class="dialog-header">
+        <div>
+          <div class="kicker">Reading the graph</div>
+          <h2>Edges state what changes</h2>
+        </div>
+        <button class="icon-button" value="close" aria-label="Close">×</button>
+      </div>
+      <div id="helpContent" class="dialog-content"></div>
+      <div class="dialog-actions">
+        <button class="button primary" value="close">Close</button>
+      </div>
+    </form>
+  </dialog>
+
+
+</body>
+</html>
