@@ -29,7 +29,9 @@
       "model-realization",
       "emergence",
       "state-description",
-      "transformation-process"
+      "transformation-process",
+      "historically-motivated",
+      "experimentally-verified-by"
     ],
     "domainOrder": [
       "set-theory",
@@ -58,7 +60,8 @@
       "quantum-field-theory",
       "particle-physics",
       "nuclear-physics",
-      "atomic-molecular-physics"
+      "atomic-molecular-physics",
+      "experiments-observations"
     ],
     "sourceFormat": "Canonical JSON; the build embeds it in the browser bundle and publishes a readable JSON copy.",
     "defaultField": "mathematics",
@@ -238,6 +241,12 @@
       "label": "Electromagnetism",
       "color": "#0891b2",
       "order": 102.5,
+      "field": "physics"
+    },
+    "experiments-observations": {
+      "label": "Experiments, observations & problems",
+      "color": "#be123c",
+      "order": 109,
       "field": "physics"
     }
   },
@@ -508,6 +517,32 @@
         "target": "Model / approximation of"
       },
       "lineStyle": "dashed",
+      "activeInDataset": true,
+      "defaultVisible": true
+    },
+    "historically-motivated": {
+      "label": "Historically motivated",
+      "short": "motivated",
+      "description": "The source experiment, observation, anomaly, or problem materially motivated the development, revision, or acceptance of the target concept. Historical influence is not logical derivation; the edge detail states the documented role and avoids retrospective origin myths.",
+      "color": "#be123c",
+      "endpointLabels": {
+        "source": "Historically motivated",
+        "target": "Historically motivated by"
+      },
+      "lineStyle": "dashed",
+      "activeInDataset": true,
+      "defaultVisible": true
+    },
+    "experimentally-verified-by": {
+      "label": "Experimentally tested / supported by",
+      "short": "tested by",
+      "description": "The source theory, law, entity, prediction, or structural claim is directly tested, supported, constrained, or established by the target experiment or observation. Experimental support is not final logical proof; the edge detail states exactly what was measured.",
+      "color": "#7e22ce",
+      "endpointLabels": {
+        "source": "Experimentally tested / supported by",
+        "target": "Tests / supports"
+      },
+      "lineStyle": "solid",
       "activeInDataset": true,
       "defaultVisible": true
     }
@@ -7328,6 +7363,666 @@
       "title": "Zero-dimensional space",
       "url": "https://en.wikipedia.org/wiki/Zero-dimensional_space",
       "kind": "expository"
+    },
+    "museo-galileo-inclined-plane": {
+      "label": "Museo Galileo — Galileo’s inclined-plane experiments",
+      "title": "Galileo’s inclined-plane experiments",
+      "url": "https://catalogue.museogalileo.it/section/ScienceOfMotion.html",
+      "kind": "museum historical reference"
+    },
+    "young-original": {
+      "label": "Royal Society — Young’s Bakerian Lecture on physical optics",
+      "title": "Young’s Bakerian Lecture on physical optics",
+      "url": "https://royalsocietypublishing.org/rstl/article/doi/10.1098/rstl.1804.0001/121319/I-The-Bakerian-Lecture-Experiments-and",
+      "kind": "primary historical article"
+    },
+    "aps-hertz": {
+      "label": "APS — Hertz’s experiments on electromagnetic waves",
+      "title": "Hertz’s experiments on electromagnetic waves",
+      "url": "https://meetings-archive.aps.org/tsf/2014/e6/2/",
+      "kind": "APS historical reference"
+    },
+    "aps-cavendish": {
+      "label": "APS — Cavendish weighs the world",
+      "title": "Cavendish weighs the world",
+      "url": "https://www.aps.org/apsnews/2008/06/1798-cavendish-weighs-world",
+      "kind": "authoritative historical reference"
+    },
+    "aps-oersted": {
+      "label": "APS — Ørsted and electromagnetism",
+      "title": "Ørsted and electromagnetism",
+      "url": "https://www.aps.org/apsnews/2008/07/1820-oersted-electromagnetism",
+      "kind": "authoritative historical reference"
+    },
+    "royal-institution-faraday": {
+      "label": "Royal Institution — Michael Faraday’s magnetic laboratory",
+      "title": "Michael Faraday’s magnetic laboratory",
+      "url": "https://www.rigb.org/explore-science/explore/collection/michael-faradays-magnetic-laboratory",
+      "kind": "museum and institutional reference"
+    },
+    "aps-michelson-morley": {
+      "label": "APS — Michelson and Morley report the ether-drift null result",
+      "title": "Michelson and Morley report the ether-drift null result",
+      "url": "https://www.aps.org/apsnews/2007/11/november-1887-michelson-uminiferous-ether",
+      "kind": "authoritative historical reference"
+    },
+    "aps-kennedy-thorndike": {
+      "label": "Physical Review — Experimental Establishment of the Relativity of Time",
+      "title": "Experimental Establishment of the Relativity of Time",
+      "url": "https://journals.aps.org/pr/abstract/10.1103/PhysRev.42.400",
+      "kind": "primary research article"
+    },
+    "aps-ives-stilwell": {
+      "label": "Physical Review — An Experimental Study of the Rate of a Moving Atomic Clock",
+      "title": "An Experimental Study of the Rate of a Moving Atomic Clock",
+      "url": "https://journals.aps.org/pr/abstract/10.1103/PhysRev.52.369",
+      "kind": "primary research article"
+    },
+    "einstein-online-classical-tests": {
+      "label": "Einstein Online — Classical tests of general relativity",
+      "title": "Classical tests of general relativity",
+      "url": "https://www.einstein-online.info/en/explandict/tests-of-general-relativity-classical/",
+      "kind": "Max Planck Institute reference"
+    },
+    "einstein-online-postnewton": {
+      "label": "Einstein Online — From Newton to Einstein: post-Newtonian tests",
+      "title": "From Newton to Einstein: post-Newtonian tests",
+      "url": "https://www.einstein-online.info/en/spotlight/postnewton/",
+      "kind": "Max Planck Institute reference"
+    },
+    "aps-pound-rebka": {
+      "label": "Physical Review Letters — Apparent Weight of Photons",
+      "title": "Apparent Weight of Photons",
+      "url": "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.4.337",
+      "kind": "primary research article"
+    },
+    "aps-shapiro-delay": {
+      "label": "Physical Review Letters — Fourth Test of General Relativity",
+      "title": "Fourth Test of General Relativity",
+      "url": "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.13.789",
+      "kind": "primary research article"
+    },
+    "nobel-hulse-taylor": {
+      "label": "Nobel Prize — The Nobel Prize in Physics 1993",
+      "title": "The Nobel Prize in Physics 1993",
+      "url": "https://www.nobelprize.org/prizes/physics/1993/summary/",
+      "kind": "Nobel Foundation scientific reference"
+    },
+    "ligo-gw150914": {
+      "label": "LIGO — GW150914 press release",
+      "title": "GW150914 press release",
+      "url": "https://www.ligo.caltech.edu/page/press-release-gw150914",
+      "kind": "official collaboration reference"
+    },
+    "nist-blackbody": {
+      "label": "NIST — Blackbody spectrum and Planck’s law",
+      "title": "Blackbody spectrum and Planck’s law",
+      "url": "https://www.nist.gov/image/600px-blackbody-svg1png",
+      "kind": "NIST scientific reference"
+    },
+    "nobel-photoelectric": {
+      "label": "Nobel Prize — The Nobel Prize in Physics 1921",
+      "title": "The Nobel Prize in Physics 1921",
+      "url": "https://www.nobelprize.org/prizes/physics/1921/summary/",
+      "kind": "Nobel Foundation scientific reference"
+    },
+    "nist-historical-constants": {
+      "label": "NIST — Historical measurements of fundamental constants, 1900–1920",
+      "title": "Historical measurements of fundamental constants, 1900–1920",
+      "url": "https://physics.nist.gov/cuu/Constants/historical1.html",
+      "kind": "NIST historical reference"
+    },
+    "nobel-thomson": {
+      "label": "Nobel Prize — The Nobel Prize in Physics 1906",
+      "title": "The Nobel Prize in Physics 1906",
+      "url": "https://www.nobelprize.org/prizes/physics/1906/summary/",
+      "kind": "Nobel Foundation scientific reference"
+    },
+    "aps-rutherford": {
+      "label": "APS — Rutherford and the discovery of the atomic nucleus",
+      "title": "Rutherford and the discovery of the atomic nucleus",
+      "url": "https://www.aps.org/apsnews/2006/05/rutherford-discovery-atomic-nucleus",
+      "kind": "authoritative historical reference"
+    },
+    "nist-atomic-spectrum-history": {
+      "label": "NIST — Atomic spectra and the development of quantum mechanics",
+      "title": "Atomic spectra and the development of quantum mechanics",
+      "url": "https://nvlpubs.nist.gov/nistpubs/sp958-lide/html/116-119.html",
+      "kind": "NIST historical and scientific reference"
+    },
+    "nobel-perrin": {
+      "label": "Nobel Prize — The Nobel Prize in Physics 1926",
+      "title": "The Nobel Prize in Physics 1926",
+      "url": "https://www.nobelprize.org/prizes/physics/1926/summary/",
+      "kind": "Nobel Foundation scientific reference"
+    },
+    "nobel-zeeman": {
+      "label": "Nobel Prize — The Nobel Prize in Physics 1902",
+      "title": "The Nobel Prize in Physics 1902",
+      "url": "https://www.nobelprize.org/prizes/physics/1902/summary/",
+      "kind": "Nobel Foundation scientific reference"
+    },
+    "nobel-aston": {
+      "label": "Nobel Prize — The Nobel Prize in Chemistry 1922",
+      "title": "The Nobel Prize in Chemistry 1922",
+      "url": "https://www.nobelprize.org/prizes/chemistry/1922/summary/",
+      "kind": "Nobel Foundation scientific reference"
+    },
+    "nobel-franck-hertz": {
+      "label": "Nobel Prize — The Nobel Prize in Physics 1925",
+      "title": "The Nobel Prize in Physics 1925",
+      "url": "https://www.nobelprize.org/prizes/physics/1925/summary/",
+      "kind": "Nobel Foundation scientific reference"
+    },
+    "aps-stern-gerlach": {
+      "label": "APS — The Stern–Gerlach experiment: from old quantum theory to spin",
+      "title": "The Stern–Gerlach experiment: from old quantum theory to spin",
+      "url": "https://meetings.aps.org/Meeting/APR23/Session/Q06.2",
+      "kind": "APS historical reference"
+    },
+    "nobel-compton": {
+      "label": "Nobel Prize — The Nobel Prize in Physics 1927",
+      "title": "The Nobel Prize in Physics 1927",
+      "url": "https://www.nobelprize.org/prizes/physics/1927/summary/",
+      "kind": "Nobel Foundation scientific reference"
+    },
+    "aps-davisson-germer": {
+      "label": "APS — Bell Laboratories and the Davisson–Germer experiment",
+      "title": "Bell Laboratories and the Davisson–Germer experiment",
+      "url": "https://www.aps.org/funding-recognition/historic-sites/bell-laboratories-building",
+      "kind": "APS historic-site reference"
+    },
+    "tonomura-double-slit": {
+      "label": "American Journal of Physics — Demonstration of single-electron buildup of an interference pattern",
+      "title": "Demonstration of single-electron buildup of an interference pattern",
+      "url": "https://doi.org/10.1119/1.16104",
+      "kind": "primary research article"
+    },
+    "epr-original": {
+      "label": "Physical Review — Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?",
+      "title": "Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?",
+      "url": "https://journals.aps.org/pr/abstract/10.1103/PhysRev.47.777",
+      "kind": "primary research article"
+    },
+    "nobel-bell-tests": {
+      "label": "Nobel Prize — The Nobel Prize in Physics 2022: entangled photons and Bell tests",
+      "title": "The Nobel Prize in Physics 2022: entangled photons and Bell tests",
+      "url": "https://www.nobelprize.org/prizes/physics/2022/popular-information/",
+      "kind": "Nobel Foundation scientific reference"
+    },
+    "aps-loophole-free-bell": {
+      "label": "Physical Review Letters — Significant-Loophole-Free Test of Bell’s Theorem",
+      "title": "Significant-Loophole-Free Test of Bell’s Theorem",
+      "url": "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.115.250401",
+      "kind": "primary research article"
+    },
+    "aharonov-bohm-experiment": {
+      "label": "Physical Review Letters — Shift of an Electron Interference Pattern by Enclosed Magnetic Flux",
+      "title": "Shift of an Electron Interference Pattern by Enclosed Magnetic Flux",
+      "url": "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.5.3",
+      "kind": "primary research article"
+    },
+    "nobel-lamb": {
+      "label": "Nobel Prize — The Nobel Prize in Physics 1955",
+      "title": "The Nobel Prize in Physics 1955",
+      "url": "https://www.nobelprize.org/prizes/physics/1955/summary/",
+      "kind": "Nobel Foundation scientific reference"
+    },
+    "nist-qed-tests": {
+      "label": "NIST — Tests of theory in Rydberg states of one-electron ions",
+      "title": "Tests of theory in Rydberg states of one-electron ions",
+      "url": "https://www.nist.gov/system/files/documents/pml/div684/fcdc/paper-2.pdf",
+      "kind": "NIST technical reference"
+    },
+    "nist-codata-2022": {
+      "label": "NIST / CODATA — CODATA recommended values of the fundamental physical constants: 2022",
+      "title": "CODATA recommended values of the fundamental physical constants: 2022",
+      "url": "https://physics.nist.gov/cuu/pdf/RevModPhys.97.025002.pdf",
+      "kind": "peer-reviewed reference"
+    },
+    "casimir-lamoreaux": {
+      "label": "Physical Review Letters — Demonstration of the Casimir Force in the 0.6 to 6 micrometer range",
+      "title": "Demonstration of the Casimir Force in the 0.6 to 6 micrometer range",
+      "url": "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.78.5",
+      "kind": "primary research article"
+    },
+    "nobel-decoherence": {
+      "label": "Nobel Prize — The Nobel Prize in Physics 2012",
+      "title": "The Nobel Prize in Physics 2012",
+      "url": "https://www.nobelprize.org/prizes/physics/2012/summary/",
+      "kind": "Nobel Foundation scientific reference"
+    },
+    "hom-original": {
+      "label": "Physical Review Letters — Measurement of Subpicosecond Time Intervals between Two Photons by Interference",
+      "title": "Measurement of Subpicosecond Time Intervals between Two Photons by Interference",
+      "url": "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.59.2044",
+      "kind": "primary research article"
+    },
+    "fullerene-interference": {
+      "label": "Nature — Wave–particle duality of C60 molecules",
+      "title": "Wave–particle duality of C60 molecules",
+      "url": "https://doi.org/10.1038/44348",
+      "kind": "primary research article"
+    },
+    "nobel-neutrino-advanced": {
+      "label": "Nobel Prize — Neutrino oscillations: advanced information",
+      "title": "Neutrino oscillations: advanced information",
+      "url": "https://www.nobelprize.org/uploads/2017/09/advanced-physicsprize2015.pdf",
+      "kind": "Nobel Foundation scientific reference"
+    },
+    "aps-positron": {
+      "label": "APS Journals — Anderson publishes the observation of the positron",
+      "title": "Anderson publishes the observation of the positron",
+      "url": "https://journals.aps.org/125years",
+      "kind": "APS historical reference"
+    },
+    "aps-chadwick": {
+      "label": "APS — Chadwick reports the discovery of the neutron",
+      "title": "Chadwick reports the discovery of the neutron",
+      "url": "https://www.aps.org/apsnews/2007/05/may-1932-chadwick-discovery-neutron",
+      "kind": "authoritative historical reference"
+    },
+    "nobel-pion": {
+      "label": "Nobel Prize — The Nobel Prize in Physics 1950",
+      "title": "The Nobel Prize in Physics 1950",
+      "url": "https://www.nobelprize.org/prizes/physics/1950/summary/",
+      "kind": "Nobel Foundation scientific reference"
+    },
+    "nobel-reines": {
+      "label": "Nobel Prize — The Nobel Prize in Physics 1995",
+      "title": "The Nobel Prize in Physics 1995",
+      "url": "https://www.nobelprize.org/prizes/physics/1995/summary/",
+      "kind": "Nobel Foundation scientific reference"
+    },
+    "wu-original": {
+      "label": "Physical Review — Experimental Test of Parity Conservation in Beta Decay",
+      "title": "Experimental Test of Parity Conservation in Beta Decay",
+      "url": "https://journals.aps.org/pr/abstract/10.1103/PhysRev.105.1413",
+      "kind": "primary research article"
+    },
+    "goldhaber-original": {
+      "label": "Physical Review — Helicity of Neutrinos",
+      "title": "Helicity of Neutrinos",
+      "url": "https://journals.aps.org/pr/abstract/10.1103/PhysRev.109.1015",
+      "kind": "primary research article"
+    },
+    "nobel-muon-neutrino": {
+      "label": "Nobel Prize — The Nobel Prize in Physics 1988",
+      "title": "The Nobel Prize in Physics 1988",
+      "url": "https://www.nobelprize.org/prizes/physics/1988/summary/",
+      "kind": "Nobel Foundation scientific reference"
+    },
+    "nobel-cp-violation": {
+      "label": "Nobel Prize — The Nobel Prize in Physics 1980",
+      "title": "The Nobel Prize in Physics 1980",
+      "url": "https://www.nobelprize.org/prizes/physics/1980/summary/",
+      "kind": "Nobel Foundation scientific reference"
+    },
+    "slac-dis": {
+      "label": "SLAC — Deep-inelastic scattering and the experimental discovery of quarks",
+      "title": "Deep-inelastic scattering and the experimental discovery of quarks",
+      "url": "https://conferences.slac.stanford.edu/sites/default/files/2024-12/NovRev-Riordan.pdf",
+      "kind": "SLAC historical reference"
+    },
+    "cern-electroweak-discoveries": {
+      "label": "CERN — Fifty years of electroweak discoveries",
+      "title": "Fifty years of electroweak discoveries",
+      "url": "https://home.cern/50-years-giant-electroweak-discoveries/",
+      "kind": "CERN historical reference"
+    },
+    "bnl-accelerator-history": {
+      "label": "Brookhaven National Laboratory — Accelerator discoveries at Brookhaven",
+      "title": "Accelerator discoveries at Brookhaven",
+      "url": "https://www.bnl.gov/about/history/accelerators.php",
+      "kind": "national laboratory historical reference"
+    },
+    "nobel-november-revolution": {
+      "label": "Nobel Prize — The Nobel Prize in Physics 1976",
+      "title": "The Nobel Prize in Physics 1976",
+      "url": "https://www.nobelprize.org/prizes/physics/1976/summary/",
+      "kind": "Nobel Foundation scientific reference"
+    },
+    "desy-gluon": {
+      "label": "DESY — The discovery of the gluon",
+      "title": "The discovery of the gluon",
+      "url": "https://www.desy.de/news/backgrounders/40_years_of_gluon/index_eng.html",
+      "kind": "laboratory historical reference"
+    },
+    "cern-wz": {
+      "label": "CERN — The Z boson",
+      "title": "The Z boson",
+      "url": "https://home.cern/science/physics/z-boson/",
+      "kind": "CERN reference overview"
+    },
+    "cern-lep": {
+      "label": "CERN — The Large Electron–Positron Collider",
+      "title": "The Large Electron–Positron Collider",
+      "url": "https://home.cern/science/accelerators/large-electron-positron-collider",
+      "kind": "CERN facility and science reference"
+    },
+    "fermilab-top": {
+      "label": "Fermilab — Discovery of the top quark",
+      "title": "Discovery of the top quark",
+      "url": "https://www.fnal.gov/pub/inquiring/physics/discoveries/top_quark.html",
+      "kind": "national laboratory historical reference"
+    },
+    "cern-higgs-discovery": {
+      "label": "CERN — How the Higgs boson was discovered",
+      "title": "How the Higgs boson was discovered",
+      "url": "https://home.cern/science/physics/higgs-boson/how/",
+      "kind": "CERN experiment reference"
+    },
+    "nobel-shell-model": {
+      "label": "Nobel Prize — The Nobel Prize in Physics 1963",
+      "title": "The Nobel Prize in Physics 1963",
+      "url": "https://www.nobelprize.org/prizes/physics/1963/summary/",
+      "kind": "Nobel Foundation scientific reference"
+    },
+    "wp-physics-galileo_inclined_plane_experiments": {
+      "label": "Wikipedia — Galileo’s inclined-plane experiments",
+      "title": "Galileo’s inclined-plane experiments",
+      "url": "https://en.wikipedia.org/wiki/Galileo_Galilei",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-cavendish_torsion_balance_experiment": {
+      "label": "Wikipedia — Cavendish torsion-balance experiment",
+      "title": "Cavendish torsion-balance experiment",
+      "url": "https://en.wikipedia.org/wiki/Cavendish_experiment",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-young_double_slit_experiment": {
+      "label": "Wikipedia — Young’s double-slit experiment",
+      "title": "Young’s double-slit experiment",
+      "url": "https://en.wikipedia.org/wiki/Young%27s_interference_experiment",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-oersted_compass_experiment": {
+      "label": "Wikipedia — Ørsted’s compass experiment",
+      "title": "Ørsted’s compass experiment",
+      "url": "https://en.wikipedia.org/wiki/%C3%98rsted%27s_law",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-faraday_induction_experiments": {
+      "label": "Wikipedia — Faraday’s induction experiments",
+      "title": "Faraday’s induction experiments",
+      "url": "https://en.wikipedia.org/wiki/Faraday%27s_law_of_induction",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-fizeau_moving_water_experiment": {
+      "label": "Wikipedia — Fizeau moving-water experiment",
+      "title": "Fizeau moving-water experiment",
+      "url": "https://en.wikipedia.org/wiki/Fizeau_experiment",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-mercury_perihelion_anomaly": {
+      "label": "Wikipedia — Mercury perihelion anomaly",
+      "title": "Mercury perihelion anomaly",
+      "url": "https://en.wikipedia.org/wiki/Tests_of_general_relativity",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-michelson_morley_experiment": {
+      "label": "Wikipedia — Michelson–Morley experiment",
+      "title": "Michelson–Morley experiment",
+      "url": "https://en.wikipedia.org/wiki/Michelson%E2%80%93Morley_experiment",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-hertz_electromagnetic_wave_experiments": {
+      "label": "Wikipedia — Hertz electromagnetic-wave experiments",
+      "title": "Hertz electromagnetic-wave experiments",
+      "url": "https://en.wikipedia.org/wiki/Heinrich_Hertz",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-eotvos_torsion_balance_experiments": {
+      "label": "Wikipedia — Eötvös torsion-balance experiments",
+      "title": "Eötvös torsion-balance experiments",
+      "url": "https://en.wikipedia.org/wiki/E%C3%B6tv%C3%B6s_experiment",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-eddington_eclipse_observations": {
+      "label": "Wikipedia — 1919 eclipse light-deflection observations",
+      "title": "1919 eclipse light-deflection observations",
+      "url": "https://en.wikipedia.org/wiki/Eddington_experiment",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-kennedy_thorndike_experiment": {
+      "label": "Wikipedia — Kennedy–Thorndike experiment",
+      "title": "Kennedy–Thorndike experiment",
+      "url": "https://en.wikipedia.org/wiki/Kennedy%E2%80%93Thorndike_experiment",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-ives_stilwell_experiment": {
+      "label": "Wikipedia — Ives–Stilwell experiment",
+      "title": "Ives–Stilwell experiment",
+      "url": "https://en.wikipedia.org/wiki/Ives%E2%80%93Stilwell_experiment",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-pound_rebka_experiment": {
+      "label": "Wikipedia — Pound–Rebka experiment",
+      "title": "Pound–Rebka experiment",
+      "url": "https://en.wikipedia.org/wiki/Pound%E2%80%93Rebka_experiment",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-shapiro_time_delay_measurement": {
+      "label": "Wikipedia — Shapiro time-delay measurement",
+      "title": "Shapiro time-delay measurement",
+      "url": "https://en.wikipedia.org/wiki/Shapiro_time_delay",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-hulse_taylor_binary_pulsar": {
+      "label": "Wikipedia — Hulse–Taylor binary-pulsar observations",
+      "title": "Hulse–Taylor binary-pulsar observations",
+      "url": "https://en.wikipedia.org/wiki/Hulse%E2%80%93Taylor_binary",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-gw150914_detection": {
+      "label": "Wikipedia — GW150914 gravitational-wave detection",
+      "title": "GW150914 gravitational-wave detection",
+      "url": "https://en.wikipedia.org/wiki/First_observation_of_gravitational_waves",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-balmer_hydrogen_spectrum_observations": {
+      "label": "Wikipedia — Balmer hydrogen-spectrum observations",
+      "title": "Balmer hydrogen-spectrum observations",
+      "url": "https://en.wikipedia.org/wiki/Balmer_series",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-perrin_brownian_motion_experiments": {
+      "label": "Wikipedia — Perrin Brownian-motion experiments",
+      "title": "Perrin Brownian-motion experiments",
+      "url": "https://en.wikipedia.org/wiki/Brownian_motion",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-blackbody_ultraviolet_catastrophe": {
+      "label": "Wikipedia — Blackbody spectrum and ultraviolet catastrophe",
+      "title": "Blackbody spectrum and ultraviolet catastrophe",
+      "url": "https://en.wikipedia.org/wiki/Ultraviolet_catastrophe",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-photoelectric_effect_experiments": {
+      "label": "Wikipedia — Photoelectric-effect experiments",
+      "title": "Photoelectric-effect experiments",
+      "url": "https://en.wikipedia.org/wiki/Photoelectric_effect",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-thomson_cathode_ray_experiments": {
+      "label": "Wikipedia — Thomson cathode-ray experiments",
+      "title": "Thomson cathode-ray experiments",
+      "url": "https://en.wikipedia.org/wiki/Cathode_ray",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-millikan_oil_drop_experiment": {
+      "label": "Wikipedia — Millikan oil-drop experiment",
+      "title": "Millikan oil-drop experiment",
+      "url": "https://en.wikipedia.org/wiki/Oil_drop_experiment",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-geiger_marsden_gold_foil_experiment": {
+      "label": "Wikipedia — Geiger–Marsden gold-foil experiment",
+      "title": "Geiger–Marsden gold-foil experiment",
+      "url": "https://en.wikipedia.org/wiki/Geiger%E2%80%93Marsden_experiments",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-moseley_xray_spectroscopy": {
+      "label": "Wikipedia — Moseley X-ray spectroscopy",
+      "title": "Moseley X-ray spectroscopy",
+      "url": "https://en.wikipedia.org/wiki/Moseley%27s_law",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-aston_mass_spectrograph_measurements": {
+      "label": "Wikipedia — Aston mass-spectrograph measurements",
+      "title": "Aston mass-spectrograph measurements",
+      "url": "https://en.wikipedia.org/wiki/Francis_William_Aston",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-franck_hertz_experiment": {
+      "label": "Wikipedia — Franck–Hertz experiment",
+      "title": "Franck–Hertz experiment",
+      "url": "https://en.wikipedia.org/wiki/Franck%E2%80%93Hertz_experiment",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-stern_gerlach_experiment": {
+      "label": "Wikipedia — Stern–Gerlach experiment",
+      "title": "Stern–Gerlach experiment",
+      "url": "https://en.wikipedia.org/wiki/Stern%E2%80%93Gerlach_experiment",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-compton_scattering_experiment": {
+      "label": "Wikipedia — Compton scattering experiment",
+      "title": "Compton scattering experiment",
+      "url": "https://en.wikipedia.org/wiki/Compton_scattering",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-davisson_germer_experiment": {
+      "label": "Wikipedia — Davisson–Germer electron-diffraction experiment",
+      "title": "Davisson–Germer electron-diffraction experiment",
+      "url": "https://en.wikipedia.org/wiki/Davisson%E2%80%93Germer_experiment",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-single_particle_double_slit_experiments": {
+      "label": "Wikipedia — Single-particle double-slit experiments",
+      "title": "Single-particle double-slit experiments",
+      "url": "https://en.wikipedia.org/wiki/Double-slit_experiment",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-epr_argument": {
+      "label": "Wikipedia — Einstein–Podolsky–Rosen argument",
+      "title": "Einstein–Podolsky–Rosen argument",
+      "url": "https://en.wikipedia.org/wiki/EPR_paradox",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-bell_test_experiments": {
+      "label": "Wikipedia — Bell-test experiments",
+      "title": "Bell-test experiments",
+      "url": "https://en.wikipedia.org/wiki/Bell_test",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-aharonov_bohm_interference_experiments": {
+      "label": "Wikipedia — Aharonov–Bohm interference experiments",
+      "title": "Aharonov–Bohm interference experiments",
+      "url": "https://en.wikipedia.org/wiki/Aharonov%E2%80%93Bohm_effect",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-electron_g_minus_2_measurements": {
+      "label": "Wikipedia — Electron anomalous-magnetic-moment measurements",
+      "title": "Electron anomalous-magnetic-moment measurements",
+      "url": "https://en.wikipedia.org/wiki/Anomalous_magnetic_dipole_moment",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-casimir_force_measurements": {
+      "label": "Wikipedia — Casimir-force measurements",
+      "title": "Casimir-force measurements",
+      "url": "https://en.wikipedia.org/wiki/Casimir_effect",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-hong_ou_mandel_experiment": {
+      "label": "Wikipedia — Hong–Ou–Mandel experiment",
+      "title": "Hong–Ou–Mandel experiment",
+      "url": "https://en.wikipedia.org/wiki/Hong%E2%80%93Ou%E2%80%93Mandel_effect",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-fullerene_matter_wave_interference": {
+      "label": "Wikipedia — Fullerene matter-wave interference",
+      "title": "Fullerene matter-wave interference",
+      "url": "https://en.wikipedia.org/wiki/Matter_wave",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-proton_radius_puzzle": {
+      "label": "Wikipedia — Proton-radius puzzle",
+      "title": "Proton-radius puzzle",
+      "url": "https://en.wikipedia.org/wiki/Proton_radius_puzzle",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-chadwick_neutron_experiment": {
+      "label": "Wikipedia — Chadwick neutron experiment",
+      "title": "Chadwick neutron experiment",
+      "url": "https://en.wikipedia.org/wiki/Discovery_of_the_neutron",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-cowan_reines_neutrino_experiment": {
+      "label": "Wikipedia — Cowan–Reines reactor-neutrino experiment",
+      "title": "Cowan–Reines reactor-neutrino experiment",
+      "url": "https://en.wikipedia.org/wiki/Cowan%E2%80%93Reines_neutrino_experiment",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-wu_parity_experiment": {
+      "label": "Wikipedia — Wu parity experiment",
+      "title": "Wu parity experiment",
+      "url": "https://en.wikipedia.org/wiki/Wu_experiment",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-goldhaber_neutrino_helicity_experiment": {
+      "label": "Wikipedia — Goldhaber neutrino-helicity experiment",
+      "title": "Goldhaber neutrino-helicity experiment",
+      "url": "https://en.wikipedia.org/wiki/Goldhaber_experiment",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-kaon_cp_violation_experiment": {
+      "label": "Wikipedia — Kaon CP-violation experiment",
+      "title": "Kaon CP-violation experiment",
+      "url": "https://en.wikipedia.org/wiki/CP_violation",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-solar_neutrino_problem": {
+      "label": "Wikipedia — Solar-neutrino deficit",
+      "title": "Solar-neutrino deficit",
+      "url": "https://en.wikipedia.org/wiki/Solar_neutrino_problem",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-slac_deep_inelastic_scattering": {
+      "label": "Wikipedia — SLAC deep-inelastic scattering experiments",
+      "title": "SLAC deep-inelastic scattering experiments",
+      "url": "https://en.wikipedia.org/wiki/Deep_inelastic_scattering",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-november_revolution_jpsi_discovery": {
+      "label": "Wikipedia — $J/\\psi$ discovery and the November Revolution",
+      "title": "$J/\\psi$ discovery and the November Revolution",
+      "url": "https://en.wikipedia.org/wiki/November_Revolution_(physics)",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-lep_precision_electroweak_measurements": {
+      "label": "Wikipedia — LEP precision electroweak measurements",
+      "title": "LEP precision electroweak measurements",
+      "url": "https://en.wikipedia.org/wiki/Large_Electron%E2%80%93Positron_Collider",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-super_k_atmospheric_neutrino_oscillation": {
+      "label": "Wikipedia — Super-Kamiokande atmospheric-neutrino result",
+      "title": "Super-Kamiokande atmospheric-neutrino result",
+      "url": "https://en.wikipedia.org/wiki/Super-Kamiokande",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-sno_solar_neutrino_flavor_change": {
+      "label": "Wikipedia — SNO solar-neutrino flavor-change measurement",
+      "title": "SNO solar-neutrino flavor-change measurement",
+      "url": "https://en.wikipedia.org/wiki/Sudbury_Neutrino_Observatory",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-rutherford_proton_transmutation": {
+      "label": "Wikipedia — Rutherford proton-transmutation experiment",
+      "title": "Rutherford proton-transmutation experiment",
+      "url": "https://en.wikipedia.org/wiki/Discovery_of_the_proton",
+      "kind": "encyclopedic reference"
     }
   },
   "nodes": [
@@ -27687,6 +28382,1544 @@
         "pdg-2026-neutrino",
         "pdg-rpp"
       ]
+    },
+    {
+      "id": "galileo_inclined_plane_experiments",
+      "label": "Galileo’s inclined-plane experiments",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "classical-mechanics",
+      "domains": [
+        "classical-mechanics",
+        "experiments-observations"
+      ],
+      "level": 9.5,
+      "kind": "structure",
+      "conceptType": "Canonical experiment",
+      "summary": "Galileo used inclined planes to slow free fall enough to measure approximately uniform acceleration and to replace Aristotelian motion with quantitative kinematics.",
+      "citations": [
+        "wp-physics-galileo_inclined_plane_experiments",
+        "museo-galileo-inclined-plane"
+      ],
+      "status": "Observed / performed",
+      "sections": [
+        {
+          "title": "Historical role",
+          "body": "The experiments helped establish mathematical laws of accelerated motion that became inputs to Newtonian mechanics; they did not by themselves contain Newton’s later dynamical laws."
+        }
+      ]
+    },
+    {
+      "id": "cavendish_torsion_balance_experiment",
+      "label": "Cavendish torsion-balance experiment",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "relativity",
+      "domains": [
+        "relativity",
+        "experiments-observations"
+      ],
+      "level": 12.5,
+      "kind": "structure",
+      "conceptType": "Canonical experiment",
+      "summary": "Cavendish’s 1798 torsion-balance measurements detected gravitational attraction between laboratory masses and determined the mean density of Earth.",
+      "citations": [
+        "wp-physics-cavendish_torsion_balance_experiment",
+        "aps-cavendish"
+      ],
+      "status": "Observed / performed",
+      "sections": [
+        {
+          "title": "Result",
+          "body": "The experiment supplied a terrestrial quantitative test of universal Newtonian gravitation; the modern value of $G$ is inferred when the result is expressed in later notation."
+        }
+      ]
+    },
+    {
+      "id": "young_double_slit_experiment",
+      "label": "Young’s double-slit experiment",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "electromagnetism",
+      "domains": [
+        "electromagnetism",
+        "experiments-observations"
+      ],
+      "level": 10.5,
+      "kind": "structure",
+      "conceptType": "Canonical experiment",
+      "summary": "Young’s early nineteenth-century interference experiment showed that light intensities form fringes when coherent paths overlap, providing strong evidence for a wave description of light.",
+      "citations": [
+        "wp-physics-young_double_slit_experiment",
+        "young-original"
+      ],
+      "status": "Observed / performed",
+      "sections": [
+        {
+          "title": "Scope",
+          "body": "This historical optical experiment is distinct from later single-particle double-slit experiments in quantum mechanics."
+        }
+      ]
+    },
+    {
+      "id": "oersted_compass_experiment",
+      "label": "Ørsted’s compass experiment",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "electromagnetism",
+      "domains": [
+        "electromagnetism",
+        "experiments-observations"
+      ],
+      "level": 10.5,
+      "kind": "structure",
+      "conceptType": "Canonical experiment",
+      "summary": "Ørsted observed in 1820 that an electric current deflects a nearby compass needle, establishing an empirical link between electricity and magnetism.",
+      "citations": [
+        "wp-physics-oersted_compass_experiment",
+        "aps-oersted"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "faraday_induction_experiments",
+      "label": "Faraday’s induction experiments",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "electromagnetism",
+      "domains": [
+        "electromagnetism",
+        "experiments-observations"
+      ],
+      "level": 11.5,
+      "kind": "structure",
+      "conceptType": "Canonical experiment",
+      "summary": "Faraday’s 1831 experiments showed that changing magnetic flux induces an electromotive effect and introduced field-based patterns that Maxwell later mathematized.",
+      "citations": [
+        "wp-physics-faraday_induction_experiments",
+        "royal-institution-faraday"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "fizeau_moving_water_experiment",
+      "label": "Fizeau moving-water experiment",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "relativity",
+      "domains": [
+        "relativity",
+        "experiments-observations"
+      ],
+      "level": 1.5,
+      "kind": "structure",
+      "conceptType": "Canonical experiment",
+      "summary": "Fizeau measured the speed of light in moving water in 1851, obtaining partial ether-drag behavior later explained by relativistic velocity addition.",
+      "citations": [
+        "wp-physics-fizeau_moving_water_experiment",
+        "einstein-special-relativity",
+        "tong-relativity"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "mercury_perihelion_anomaly",
+      "label": "Mercury perihelion anomaly",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "relativity",
+      "domains": [
+        "relativity",
+        "experiments-observations"
+      ],
+      "level": 2.5,
+      "kind": "structure",
+      "conceptType": "Observation / anomaly",
+      "summary": "Nineteenth-century orbital analyses found a residual advance of Mercury’s perihelion not accounted for by known Newtonian perturbations.",
+      "citations": [
+        "wp-physics-mercury_perihelion_anomaly",
+        "einstein-online-classical-tests"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "michelson_morley_experiment",
+      "label": "Michelson–Morley experiment",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "relativity",
+      "domains": [
+        "relativity",
+        "experiments-observations"
+      ],
+      "level": 1.5,
+      "kind": "structure",
+      "conceptType": "Canonical experiment",
+      "summary": "The 1887 interferometer experiment found no ether-wind fringe shift of the expected magnitude, sharply constraining stationary luminiferous-ether models.",
+      "citations": [
+        "wp-physics-michelson_morley_experiment",
+        "aps-michelson-morley"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "hertz_electromagnetic_wave_experiments",
+      "label": "Hertz electromagnetic-wave experiments",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "electromagnetism",
+      "domains": [
+        "electromagnetism",
+        "experiments-observations"
+      ],
+      "level": 14.5,
+      "kind": "structure",
+      "conceptType": "Canonical experiment",
+      "summary": "Hertz generated and detected radio-frequency electromagnetic waves in the late 1880s, confirming central wave predictions of Maxwellian electrodynamics.",
+      "citations": [
+        "wp-physics-hertz_electromagnetic_wave_experiments",
+        "aps-hertz",
+        "tong-em"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "eotvos_torsion_balance_experiments",
+      "label": "Eötvös torsion-balance experiments",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "relativity",
+      "domains": [
+        "relativity",
+        "experiments-observations"
+      ],
+      "level": 4.5,
+      "kind": "structure",
+      "conceptType": "Canonical experimental test",
+      "summary": "Eötvös and collaborators compared the accelerations of bodies of different composition, tightly testing equality of inertial and gravitational mass.",
+      "citations": [
+        "wp-physics-eotvos_torsion_balance_experiments",
+        "einstein-general-relativity",
+        "tong-gr"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "eddington_eclipse_observations",
+      "label": "1919 eclipse light-deflection observations",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "relativity",
+      "domains": [
+        "relativity",
+        "experiments-observations"
+      ],
+      "level": 4.2,
+      "kind": "structure",
+      "conceptType": "Canonical observational test",
+      "summary": "Eclipse expeditions in 1919 measured the apparent displacement of stars near the Sun and were interpreted as supporting Einstein’s predicted gravitational deflection of light.",
+      "citations": [
+        "wp-physics-eddington_eclipse_observations",
+        "einstein-online-classical-tests"
+      ],
+      "status": "Observed / performed",
+      "sections": [
+        {
+          "title": "Qualification",
+          "body": "The 1919 data were historically influential but less precise than later radio and optical measurements of light deflection."
+        }
+      ]
+    },
+    {
+      "id": "kennedy_thorndike_experiment",
+      "label": "Kennedy–Thorndike experiment",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "relativity",
+      "domains": [
+        "relativity",
+        "experiments-observations"
+      ],
+      "level": 5.5,
+      "kind": "structure",
+      "conceptType": "Canonical experimental test",
+      "summary": "The 1932 unequal-arm interferometer test constrained changes in light speed associated with Earth’s changing velocity and, together with Michelson–Morley, tested Lorentz transformations.",
+      "citations": [
+        "wp-physics-kennedy_thorndike_experiment",
+        "aps-kennedy-thorndike"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "ives_stilwell_experiment",
+      "label": "Ives–Stilwell experiment",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "relativity",
+      "domains": [
+        "relativity",
+        "experiments-observations"
+      ],
+      "level": 6,
+      "kind": "structure",
+      "conceptType": "Canonical experimental test",
+      "summary": "Ives and Stilwell measured the transverse Doppler effect using moving ions, providing an early quantitative test of relativistic time dilation.",
+      "citations": [
+        "wp-physics-ives_stilwell_experiment",
+        "aps-ives-stilwell"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "pound_rebka_experiment",
+      "label": "Pound–Rebka experiment",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "relativity",
+      "domains": [
+        "relativity",
+        "experiments-observations"
+      ],
+      "level": 6.5,
+      "kind": "structure",
+      "conceptType": "Canonical experimental test",
+      "summary": "The 1959–1960 Mössbauer experiment measured the gravitational frequency shift of gamma rays over a vertical height in Earth’s field.",
+      "citations": [
+        "wp-physics-pound_rebka_experiment",
+        "aps-pound-rebka"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "shapiro_time_delay_measurement",
+      "label": "Shapiro time-delay measurement",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "relativity",
+      "domains": [
+        "relativity",
+        "experiments-observations"
+      ],
+      "level": 7,
+      "kind": "structure",
+      "conceptType": "Canonical observational test",
+      "summary": "Radar ranging to planets measured the extra propagation time of signals passing near the Sun, testing the relativistic gravitational time delay.",
+      "citations": [
+        "wp-physics-shapiro_time_delay_measurement",
+        "aps-shapiro-delay",
+        "einstein-online-postnewton"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "hulse_taylor_binary_pulsar",
+      "label": "Hulse–Taylor binary-pulsar observations",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "relativity",
+      "domains": [
+        "relativity",
+        "experiments-observations"
+      ],
+      "level": 8,
+      "kind": "structure",
+      "conceptType": "Canonical observational test",
+      "summary": "Long-term timing of PSR B1913+16 revealed orbital decay agreeing with general-relativistic energy loss by gravitational radiation.",
+      "citations": [
+        "wp-physics-hulse_taylor_binary_pulsar",
+        "nobel-hulse-taylor"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "gw150914_detection",
+      "label": "GW150914 gravitational-wave detection",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "relativity",
+      "domains": [
+        "relativity",
+        "experiments-observations"
+      ],
+      "level": 9,
+      "kind": "structure",
+      "conceptType": "Canonical observational test",
+      "summary": "LIGO observed a transient waveform from a binary-black-hole merger in 2015, the first direct detection of gravitational waves and a strong-field test of general relativity.",
+      "citations": [
+        "wp-physics-gw150914_detection",
+        "ligo-gw150914"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "balmer_hydrogen_spectrum_observations",
+      "label": "Balmer hydrogen-spectrum observations",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "atomic-molecular-physics",
+      "domains": [
+        "atomic-molecular-physics",
+        "experiments-observations"
+      ],
+      "level": 30,
+      "kind": "structure",
+      "conceptType": "Canonical observation",
+      "summary": "The visible hydrogen lines summarized by Balmer’s 1885 formula exhibited a regular discrete spectrum that classical atomic models could not explain.",
+      "citations": [
+        "wp-physics-balmer_hydrogen_spectrum_observations",
+        "nist-atomic-spectrum-history"
+      ],
+      "status": "Observed / performed",
+      "sections": [
+        {
+          "title": "Historical role",
+          "body": "Hydrogen spectroscopy motivated empirical spectral formulas and later the Bohr model; modern quantum mechanics explains the levels and transition amplitudes."
+        }
+      ]
+    },
+    {
+      "id": "perrin_brownian_motion_experiments",
+      "label": "Perrin Brownian-motion experiments",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "atomic-molecular-physics",
+      "domains": [
+        "atomic-molecular-physics",
+        "experiments-observations"
+      ],
+      "level": 29,
+      "kind": "structure",
+      "conceptType": "Canonical experiment program",
+      "summary": "Jean Perrin’s quantitative studies of Brownian particles tested Einstein’s statistical theory, estimated Avogadro’s number by several methods, and supplied strong evidence for molecular and atomic reality.",
+      "citations": [
+        "wp-physics-perrin_brownian_motion_experiments",
+        "nobel-perrin"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "anomalous_zeeman_observations",
+      "label": "Anomalous Zeeman-effect observations",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "quantum-mechanics",
+      "domains": [
+        "quantum-mechanics",
+        "experiments-observations"
+      ],
+      "level": 7.5,
+      "kind": "structure",
+      "conceptType": "Observation / theoretical problem",
+      "summary": "Spectral-line splittings more complex than the normal Zeeman triplet resisted orbital explanations and became an important clue toward electron spin and modern angular-momentum theory.",
+      "citations": [
+        "wp-physics-zeeman_effect",
+        "nobel-zeeman",
+        "nist-atomic-spectrum-history"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "blackbody_ultraviolet_catastrophe",
+      "label": "Blackbody spectrum and ultraviolet catastrophe",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "quantum-mechanics",
+      "domains": [
+        "quantum-mechanics",
+        "experiments-observations"
+      ],
+      "level": 1,
+      "kind": "structure",
+      "conceptType": "Observation / theoretical problem",
+      "summary": "Measured blackbody spectra remained finite at high frequency, while classical equipartition produced the divergent Rayleigh–Jeans prediction known as the ultraviolet catastrophe.",
+      "citations": [
+        "wp-physics-blackbody_ultraviolet_catastrophe",
+        "nist-blackbody"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "photoelectric_effect_experiments",
+      "label": "Photoelectric-effect experiments",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "quantum-mechanics",
+      "domains": [
+        "quantum-mechanics",
+        "experiments-observations"
+      ],
+      "level": 1.5,
+      "kind": "structure",
+      "conceptType": "Canonical experiment",
+      "summary": "Photoelectron energies depend on light frequency rather than intensity alone and show a threshold frequency, behavior explained by quantized light energy.",
+      "citations": [
+        "wp-physics-photoelectric_effect_experiments",
+        "nobel-photoelectric",
+        "nist-historical-constants"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "thomson_cathode_ray_experiments",
+      "label": "Thomson cathode-ray experiments",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "particle-physics",
+      "domains": [
+        "particle-physics",
+        "experiments-observations"
+      ],
+      "level": 12.5,
+      "kind": "structure",
+      "conceptType": "Discovery experiment",
+      "summary": "J. J. Thomson’s deflection measurements showed that cathode rays consist of negatively charged particles with a common charge-to-mass ratio, establishing the electron as a constituent of matter.",
+      "citations": [
+        "wp-physics-thomson_cathode_ray_experiments",
+        "nobel-thomson"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "millikan_oil_drop_experiment",
+      "label": "Millikan oil-drop experiment",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "particle-physics",
+      "domains": [
+        "particle-physics",
+        "experiments-observations"
+      ],
+      "level": 13,
+      "kind": "structure",
+      "conceptType": "Canonical measurement",
+      "summary": "Millikan and collaborators measured charges on suspended droplets and found them in integer multiples of an elementary charge, enabling a precision value of $e$.",
+      "citations": [
+        "wp-physics-millikan_oil_drop_experiment",
+        "nist-historical-constants"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "geiger_marsden_gold_foil_experiment",
+      "label": "Geiger–Marsden gold-foil experiment",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "nuclear-physics",
+      "domains": [
+        "nuclear-physics",
+        "experiments-observations"
+      ],
+      "level": 22.5,
+      "kind": "structure",
+      "conceptType": "Discovery experiment",
+      "summary": "Large-angle alpha-particle scattering from thin foils contradicted diffuse-charge atomic models and led Rutherford to a compact, positively charged nucleus.",
+      "citations": [
+        "wp-physics-geiger_marsden_gold_foil_experiment",
+        "aps-rutherford"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "moseley_xray_spectroscopy",
+      "label": "Moseley X-ray spectroscopy",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "atomic-molecular-physics",
+      "domains": [
+        "atomic-molecular-physics",
+        "experiments-observations"
+      ],
+      "level": 28,
+      "kind": "structure",
+      "conceptType": "Canonical measurement",
+      "summary": "Moseley found that characteristic X-ray frequencies track an integer nuclear charge, establishing atomic number as a physical ordering principle.",
+      "citations": [
+        "wp-physics-moseley_xray_spectroscopy",
+        "nist-atomic-spectrum-history"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "aston_mass_spectrograph_measurements",
+      "label": "Aston mass-spectrograph measurements",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "nuclear-physics",
+      "domains": [
+        "nuclear-physics",
+        "experiments-observations"
+      ],
+      "level": 26.5,
+      "kind": "structure",
+      "conceptType": "Discovery and measurement program",
+      "summary": "Aston separated isotopes by mass-to-charge ratio and established isotope masses and packing-fraction regularities central to nuclide and binding-energy systematics.",
+      "citations": [
+        "wp-physics-aston_mass_spectrograph_measurements",
+        "nobel-aston"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "franck_hertz_experiment",
+      "label": "Franck–Hertz experiment",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "atomic-molecular-physics",
+      "domains": [
+        "atomic-molecular-physics",
+        "experiments-observations"
+      ],
+      "level": 32,
+      "kind": "structure",
+      "conceptType": "Canonical experiment",
+      "summary": "Electrons lose energy to mercury atoms in discrete increments, providing direct evidence for quantized atomic excitation energies.",
+      "citations": [
+        "wp-physics-franck_hertz_experiment",
+        "nobel-franck-hertz"
+      ],
+      "status": "Observed / performed",
+      "sections": [
+        {
+          "title": "Historical qualification",
+          "body": "Franck and Hertz initially interpreted the observed threshold as ionization; its later interpretation as discrete excitation energy supplied the canonical quantum-level test."
+        }
+      ]
+    },
+    {
+      "id": "stern_gerlach_experiment",
+      "label": "Stern–Gerlach experiment",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "quantum-mechanics",
+      "domains": [
+        "quantum-mechanics",
+        "experiments-observations"
+      ],
+      "level": 7.5,
+      "kind": "structure",
+      "conceptType": "Canonical experiment",
+      "summary": "A beam of silver atoms split into discrete components in an inhomogeneous magnetic field, demonstrating space quantization and later becoming a canonical manifestation of spin-$1/2$.",
+      "citations": [
+        "wp-physics-stern_gerlach_experiment",
+        "aps-stern-gerlach"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "compton_scattering_experiment",
+      "label": "Compton scattering experiment",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "quantum-mechanics",
+      "domains": [
+        "quantum-mechanics",
+        "experiments-observations"
+      ],
+      "level": 13,
+      "kind": "structure",
+      "conceptType": "Canonical experiment",
+      "summary": "X-ray scattering exhibited a wavelength shift determined by scattering angle, quantitatively supporting photon energy and momentum.",
+      "citations": [
+        "wp-physics-compton_scattering_experiment",
+        "nobel-compton"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "davisson_germer_experiment",
+      "label": "Davisson–Germer electron-diffraction experiment",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "quantum-mechanics",
+      "domains": [
+        "quantum-mechanics",
+        "experiments-observations"
+      ],
+      "level": 7,
+      "kind": "structure",
+      "conceptType": "Canonical experiment",
+      "summary": "Electrons scattered from a nickel crystal produced diffraction peaks with the de Broglie wavelength, directly demonstrating matter-wave behavior.",
+      "citations": [
+        "wp-physics-davisson_germer_experiment",
+        "aps-davisson-germer"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "single_particle_double_slit_experiments",
+      "label": "Single-particle double-slit experiments",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "quantum-mechanics",
+      "domains": [
+        "quantum-mechanics",
+        "experiments-observations"
+      ],
+      "level": 8.5,
+      "kind": "structure",
+      "conceptType": "Canonical experiment family",
+      "summary": "Electron, neutron, atom, and molecule experiments build interference patterns from individually detected particles, displaying superposition amplitudes and probabilistic detection.",
+      "citations": [
+        "wp-physics-single_particle_double_slit_experiments",
+        "tonomura-double-slit"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "epr_argument",
+      "label": "Einstein–Podolsky–Rosen argument",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "quantum-mechanics",
+      "domains": [
+        "quantum-mechanics",
+        "experiments-observations"
+      ],
+      "level": 7.5,
+      "kind": "structure",
+      "conceptType": "Thought experiment / foundational problem",
+      "summary": "The 1935 EPR argument used entangled correlations to challenge the completeness of quantum mechanics under locality and separability assumptions.",
+      "citations": [
+        "wp-physics-epr_argument",
+        "epr-original"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "bell_test_experiments",
+      "label": "Bell-test experiments",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "quantum-mechanics",
+      "domains": [
+        "quantum-mechanics",
+        "experiments-observations"
+      ],
+      "level": 10,
+      "kind": "structure",
+      "conceptType": "Canonical experiment family",
+      "summary": "Bell tests measure correlations between separated entangled systems and violate Bell inequalities, excluding broad classes of local hidden-variable models under the tested assumptions.",
+      "citations": [
+        "wp-physics-bell_test_experiments",
+        "nobel-bell-tests",
+        "aps-loophole-free-bell"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "aharonov_bohm_interference_experiments",
+      "label": "Aharonov–Bohm interference experiments",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "quantum-mechanics",
+      "domains": [
+        "quantum-mechanics",
+        "experiments-observations"
+      ],
+      "level": 13,
+      "kind": "structure",
+      "conceptType": "Canonical experiment",
+      "summary": "Electron-interference phases respond to enclosed magnetic flux even when the electrons traverse regions with negligible magnetic field, testing the gauge-potential structure of quantum mechanics.",
+      "citations": [
+        "wp-physics-aharonov_bohm_interference_experiments",
+        "aharonov-bohm-experiment"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "lamb_retherford_experiment",
+      "label": "Lamb–Retherford experiment",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "atomic-molecular-physics",
+      "domains": [
+        "atomic-molecular-physics",
+        "experiments-observations"
+      ],
+      "level": 34,
+      "kind": "structure",
+      "conceptType": "Canonical precision experiment",
+      "summary": "Microwave spectroscopy showed that hydrogen’s $2S_{1/2}$ and $2P_{1/2}$ levels are not degenerate, revealing the Lamb shift and driving renormalized QED calculations.",
+      "citations": [
+        "wp-physics-lamb_shift",
+        "nobel-lamb",
+        "nist-qed-tests"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "electron_g_minus_2_measurements",
+      "label": "Electron anomalous-magnetic-moment measurements",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "quantum-field-theory",
+      "domains": [
+        "quantum-field-theory",
+        "experiments-observations"
+      ],
+      "level": 11,
+      "kind": "structure",
+      "conceptType": "Canonical precision test",
+      "summary": "Measurements of the electron magnetic-moment anomaly, compared with high-order calculations, provide one of the most precise quantitative tests of QED.",
+      "citations": [
+        "wp-physics-electron_g_minus_2_measurements",
+        "nist-codata-2022"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "casimir_force_measurements",
+      "label": "Casimir-force measurements",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "quantum-field-theory",
+      "domains": [
+        "quantum-field-theory",
+        "experiments-observations"
+      ],
+      "level": 11,
+      "kind": "structure",
+      "conceptType": "Canonical precision test",
+      "summary": "Measurements of forces between closely spaced conductors agree with QED calculations of boundary-dependent electromagnetic fluctuations and material response.",
+      "citations": [
+        "wp-physics-casimir_force_measurements",
+        "casimir-lamoreaux"
+      ],
+      "status": "Observed / performed",
+      "sections": [
+        {
+          "title": "Qualification",
+          "body": "The Casimir effect tests QED predictions for interacting boundaries; it is not by itself a unique measurement of an absolute vacuum energy."
+        }
+      ]
+    },
+    {
+      "id": "cavity_qed_decoherence_experiments",
+      "label": "Cavity-QED decoherence experiments",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "quantum-mechanics",
+      "domains": [
+        "quantum-mechanics",
+        "experiments-observations"
+      ],
+      "level": 10,
+      "kind": "structure",
+      "conceptType": "Canonical experiment family",
+      "summary": "Controlled cavity experiments tracked the loss of coherence in superpositions coupled to an environment, directly testing quantitative decoherence models.",
+      "citations": [
+        "wp-physics-quantum_decoherence",
+        "nobel-decoherence"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "hong_ou_mandel_experiment",
+      "label": "Hong–Ou–Mandel experiment",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "quantum-mechanics",
+      "domains": [
+        "quantum-mechanics",
+        "experiments-observations"
+      ],
+      "level": 11,
+      "kind": "structure",
+      "conceptType": "Canonical experiment",
+      "summary": "Two indistinguishable photons entering a balanced beam splitter from different inputs bunch into the same output, producing the Hong–Ou–Mandel dip.",
+      "citations": [
+        "wp-physics-hong_ou_mandel_experiment",
+        "hom-original"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "fullerene_matter_wave_interference",
+      "label": "Fullerene matter-wave interference",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "quantum-mechanics",
+      "domains": [
+        "quantum-mechanics",
+        "experiments-observations"
+      ],
+      "level": 10,
+      "kind": "structure",
+      "conceptType": "Canonical experiment",
+      "summary": "Interference of $C_{60}$ molecules extended matter-wave superposition to large composite particles and enabled quantitative study of environmental decoherence.",
+      "citations": [
+        "wp-physics-fullerene_matter_wave_interference",
+        "fullerene-interference"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "proton_radius_puzzle",
+      "label": "Proton-radius puzzle",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "atomic-molecular-physics",
+      "domains": [
+        "atomic-molecular-physics",
+        "experiments-observations"
+      ],
+      "level": 26.5,
+      "kind": "structure",
+      "conceptType": "Precision anomaly / problem",
+      "summary": "Muonic-hydrogen spectroscopy initially inferred a proton charge radius significantly smaller than the value from ordinary hydrogen and electron scattering, motivating renewed recoil, finite-size, and radiative analyses.",
+      "citations": [
+        "wp-physics-proton_radius_puzzle",
+        "nist-codata-2022"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "continuous_beta_spectrum_problem",
+      "label": "Continuous beta-spectrum problem",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "nuclear-physics",
+      "domains": [
+        "nuclear-physics",
+        "experiments-observations"
+      ],
+      "level": 11.5,
+      "kind": "structure",
+      "conceptType": "Observation / conservation problem",
+      "summary": "Measured beta-decay electron spectra were continuous, creating an apparent energy-and-momentum conservation problem before the neutrino hypothesis and Fermi’s theory.",
+      "citations": [
+        "wp-physics-beta_decay",
+        "nobel-neutrino-advanced"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "positron_discovery_experiment",
+      "label": "Positron discovery in cloud-chamber tracks",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "particle-physics",
+      "domains": [
+        "particle-physics",
+        "experiments-observations"
+      ],
+      "level": 13.5,
+      "kind": "structure",
+      "conceptType": "Discovery experiment",
+      "summary": "Anderson identified positively curved electron-like cloud-chamber tracks in cosmic rays, establishing the positron predicted by relativistic electron theory.",
+      "citations": [
+        "wp-physics-positron",
+        "aps-positron"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "chadwick_neutron_experiment",
+      "label": "Chadwick neutron experiment",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "nuclear-physics",
+      "domains": [
+        "nuclear-physics",
+        "experiments-observations"
+      ],
+      "level": 20,
+      "kind": "structure",
+      "conceptType": "Discovery experiment",
+      "summary": "Chadwick showed that penetrating radiation from alpha-bombarded beryllium consisted of neutral particles with mass near the proton mass, establishing the neutron.",
+      "citations": [
+        "wp-physics-chadwick_neutron_experiment",
+        "aps-chadwick"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "muon_cosmic_ray_discovery",
+      "label": "Muon discovery in cosmic rays",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "particle-physics",
+      "domains": [
+        "particle-physics",
+        "experiments-observations"
+      ],
+      "level": 12.5,
+      "kind": "structure",
+      "conceptType": "Discovery experiment",
+      "summary": "Cloud-chamber cosmic-ray tracks revealed a charged particle heavier than the electron and lighter than the proton, later identified as the muon.",
+      "citations": [
+        "wp-physics-muon",
+        "pdg-rpp"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "pion_nuclear_emulsion_discovery",
+      "label": "Pion discovery in nuclear emulsions",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "nuclear-physics",
+      "domains": [
+        "nuclear-physics",
+        "experiments-observations"
+      ],
+      "level": 18.5,
+      "kind": "structure",
+      "conceptType": "Discovery experiment",
+      "summary": "Nuclear-emulsion observations identified the pion and its decay to the muon, establishing the light meson associated with the long-range nuclear interaction.",
+      "citations": [
+        "wp-physics-pion",
+        "nobel-pion",
+        "pdg-rpp"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "cowan_reines_neutrino_experiment",
+      "label": "Cowan–Reines reactor-neutrino experiment",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "particle-physics",
+      "domains": [
+        "particle-physics",
+        "experiments-observations"
+      ],
+      "level": 13.5,
+      "kind": "structure",
+      "conceptType": "Discovery experiment",
+      "summary": "Inverse-beta events near a nuclear reactor provided the first direct detection of the electron antineutrino.",
+      "citations": [
+        "wp-physics-cowan_reines_neutrino_experiment",
+        "nobel-reines"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "wu_parity_experiment",
+      "label": "Wu parity experiment",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "particle-physics",
+      "domains": [
+        "particle-physics",
+        "experiments-observations"
+      ],
+      "level": 11.5,
+      "kind": "structure",
+      "conceptType": "Canonical experimental test",
+      "summary": "Angular correlations in polarized cobalt-60 beta decay showed that the weak interaction violates spatial parity.",
+      "citations": [
+        "wp-physics-wu_parity_experiment",
+        "wu-original"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "goldhaber_neutrino_helicity_experiment",
+      "label": "Goldhaber neutrino-helicity experiment",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "particle-physics",
+      "domains": [
+        "particle-physics",
+        "experiments-observations"
+      ],
+      "level": 14,
+      "kind": "structure",
+      "conceptType": "Canonical experimental test",
+      "summary": "Goldhaber, Grodzins, and Sunyar inferred the neutrino’s negative helicity from recoil-free nuclear capture and gamma-ray polarization correlations.",
+      "citations": [
+        "wp-physics-goldhaber_neutrino_helicity_experiment",
+        "goldhaber-original"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "brookhaven_muon_neutrino_experiment",
+      "label": "Brookhaven muon-neutrino experiment",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "particle-physics",
+      "domains": [
+        "particle-physics",
+        "experiments-observations"
+      ],
+      "level": 13.5,
+      "kind": "structure",
+      "conceptType": "Discovery experiment",
+      "summary": "A high-energy neutrino beam produced muons but not electrons at the expected rate, establishing the muon neutrino as distinct from the electron neutrino.",
+      "citations": [
+        "wp-physics-muon_neutrino",
+        "nobel-muon-neutrino",
+        "bnl-accelerator-history"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "kaon_cp_violation_experiment",
+      "label": "Kaon CP-violation experiment",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "particle-physics",
+      "domains": [
+        "particle-physics",
+        "experiments-observations"
+      ],
+      "level": 9.5,
+      "kind": "structure",
+      "conceptType": "Discovery experiment",
+      "summary": "Cronin and Fitch’s group observed the nominally CP-forbidden decay of the long-lived neutral kaon into two pions, establishing CP violation.",
+      "citations": [
+        "wp-physics-kaon_cp_violation_experiment",
+        "nobel-cp-violation"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "solar_neutrino_problem",
+      "label": "Solar-neutrino deficit",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "particle-physics",
+      "domains": [
+        "particle-physics",
+        "experiments-observations"
+      ],
+      "level": 11.5,
+      "kind": "structure",
+      "conceptType": "Observation / anomaly",
+      "summary": "Radiochemical solar-neutrino experiments detected substantially fewer electron neutrinos than predicted by solar models, creating the solar-neutrino problem.",
+      "citations": [
+        "wp-physics-solar_neutrino_problem",
+        "nobel-neutrino-advanced"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "slac_deep_inelastic_scattering",
+      "label": "SLAC deep-inelastic scattering experiments",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "particle-physics",
+      "domains": [
+        "particle-physics",
+        "experiments-observations"
+      ],
+      "level": 10.5,
+      "kind": "structure",
+      "conceptType": "Canonical experiment program",
+      "summary": "High-energy electron scattering from nucleons revealed approximately pointlike charged constituents and scaling behavior, establishing partonic nucleon structure and driving quark acceptance.",
+      "citations": [
+        "wp-physics-slac_deep_inelastic_scattering",
+        "slac-dis",
+        "pdg-qcd"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "gargamelle_neutral_current_discovery",
+      "label": "Gargamelle neutral-current discovery",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "particle-physics",
+      "domains": [
+        "particle-physics",
+        "experiments-observations"
+      ],
+      "level": 11.5,
+      "kind": "structure",
+      "conceptType": "Discovery experiment",
+      "summary": "The Gargamelle bubble chamber observed weak neutrino interactions without charged leptons, establishing neutral-current weak interactions predicted by electroweak theory.",
+      "citations": [
+        "wp-physics-neutral_current_weak_interaction",
+        "cern-electroweak-discoveries"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "november_revolution_jpsi_discovery",
+      "label": "$J/\\psi$ discovery and the November Revolution",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "particle-physics",
+      "domains": [
+        "particle-physics",
+        "experiments-observations"
+      ],
+      "level": 12.5,
+      "kind": "structure",
+      "conceptType": "Discovery experiment",
+      "summary": "Independent discoveries of a narrow $J/\\psi$ resonance in 1974 established charmonium and transformed acceptance of the quark model and Standard Model.",
+      "citations": [
+        "wp-physics-november_revolution_jpsi_discovery",
+        "nobel-november-revolution",
+        "bnl-accelerator-history"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "tau_lepton_discovery",
+      "label": "Tau-lepton discovery",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "particle-physics",
+      "domains": [
+        "particle-physics",
+        "experiments-observations"
+      ],
+      "level": 12.5,
+      "kind": "structure",
+      "conceptType": "Discovery experiment",
+      "summary": "Electron–positron collision events with missing energy revealed the tau, establishing a third charged-lepton species.",
+      "citations": [
+        "wp-physics-tau",
+        "pdg-rpp"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "upsilon_bottom_quark_discovery",
+      "label": "Upsilon and bottom-quark discovery",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "particle-physics",
+      "domains": [
+        "particle-physics",
+        "experiments-observations"
+      ],
+      "level": 12.5,
+      "kind": "structure",
+      "conceptType": "Discovery experiment",
+      "summary": "A narrow dimuon resonance near $9.5\\,\\mathrm{GeV}$ revealed bottomonium and established the bottom-quark flavor.",
+      "citations": [
+        "wp-physics-bottom_quark",
+        "pdg-rpp"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "petra_three_jet_gluon_discovery",
+      "label": "PETRA three-jet gluon evidence",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "particle-physics",
+      "domains": [
+        "particle-physics",
+        "experiments-observations"
+      ],
+      "level": 13,
+      "kind": "structure",
+      "conceptType": "Discovery experiment",
+      "summary": "Three-jet electron–positron events at PETRA displayed hard gluon radiation and supplied direct evidence for the gluon and QCD’s vector gauge dynamics.",
+      "citations": [
+        "wp-physics-gluon",
+        "desy-gluon",
+        "pdg-qcd"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "ua1_ua2_w_z_discovery",
+      "label": "UA1 and UA2 discovery of the $W$ and $Z$ bosons",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "particle-physics",
+      "domains": [
+        "particle-physics",
+        "experiments-observations"
+      ],
+      "level": 13,
+      "kind": "structure",
+      "conceptType": "Discovery experiment program",
+      "summary": "Proton–antiproton collisions at CERN produced events with the masses and decay signatures predicted for the charged $W$ and neutral $Z$ weak bosons.",
+      "citations": [
+        "wp-physics-w_boson",
+        "cern-electroweak-discoveries",
+        "cern-wz"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "lep_precision_electroweak_measurements",
+      "label": "LEP precision electroweak measurements",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "particle-physics",
+      "domains": [
+        "particle-physics",
+        "experiments-observations"
+      ],
+      "level": 11,
+      "kind": "structure",
+      "conceptType": "Precision experiment program",
+      "summary": "LEP measurements of the $Z$ resonance, electroweak observables, and fermion production subjected the Standard Model to high-precision consistency tests.",
+      "citations": [
+        "wp-physics-lep_precision_electroweak_measurements",
+        "cern-lep",
+        "pdg-standard-model"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "top_quark_discovery",
+      "label": "Top-quark discovery at the Tevatron",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "particle-physics",
+      "domains": [
+        "particle-physics",
+        "experiments-observations"
+      ],
+      "level": 13,
+      "kind": "structure",
+      "conceptType": "Discovery experiment",
+      "summary": "The CDF and DØ collaborations observed top–antitop production in 1995, completing the third-generation quark doublet predicted by the Standard Model.",
+      "citations": [
+        "wp-physics-top_quark",
+        "fermilab-top",
+        "pdg-rpp"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "super_k_atmospheric_neutrino_oscillation",
+      "label": "Super-Kamiokande atmospheric-neutrino result",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "particle-physics",
+      "domains": [
+        "particle-physics",
+        "experiments-observations"
+      ],
+      "level": 13,
+      "kind": "structure",
+      "conceptType": "Discovery experiment",
+      "summary": "Super-Kamiokande observed a zenith-angle-dependent deficit of muon neutrinos, providing compelling evidence for atmospheric neutrino oscillations.",
+      "citations": [
+        "wp-physics-super_k_atmospheric_neutrino_oscillation",
+        "nobel-neutrino-advanced",
+        "nobel-neutrino"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "sno_solar_neutrino_flavor_change",
+      "label": "SNO solar-neutrino flavor-change measurement",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "particle-physics",
+      "domains": [
+        "particle-physics",
+        "experiments-observations"
+      ],
+      "level": 13.5,
+      "kind": "structure",
+      "conceptType": "Discovery experiment",
+      "summary": "SNO separately measured electron-neutrino and all-flavor solar-neutrino fluxes, showing that the missing electron neutrinos changed flavor rather than disappearing.",
+      "citations": [
+        "wp-physics-sno_solar_neutrino_flavor_change",
+        "nobel-neutrino-advanced",
+        "nobel-neutrino"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "atlas_cms_higgs_discovery",
+      "label": "ATLAS and CMS Higgs-boson discovery",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "particle-physics",
+      "domains": [
+        "particle-physics",
+        "experiments-observations"
+      ],
+      "level": 13,
+      "kind": "structure",
+      "conceptType": "Discovery experiment program",
+      "summary": "ATLAS and CMS observed a new approximately $125\\,\\mathrm{GeV}$ scalar resonance in 2012 whose measured properties support identification with the Standard Model Higgs boson.",
+      "citations": [
+        "wp-physics-higgs_boson",
+        "cern-higgs-discovery",
+        "cern-higgs-overview",
+        "pdg-2026-higgs"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "nuclear_magic_number_systematics",
+      "label": "Nuclear magic-number systematics",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "nuclear-physics",
+      "domains": [
+        "nuclear-physics",
+        "experiments-observations"
+      ],
+      "level": 24.5,
+      "kind": "structure",
+      "conceptType": "Observation / structural pattern",
+      "summary": "Enhanced stability and recurring spectroscopic patterns at particular proton and neutron numbers motivated the nuclear shell model and its spin–orbit structure.",
+      "citations": [
+        "wp-physics-nuclear_shell_model",
+        "nobel-shell-model",
+        "iaea-ensdf"
+      ],
+      "status": "Observed / performed"
+    },
+    {
+      "id": "rutherford_proton_transmutation",
+      "label": "Rutherford proton-transmutation experiment",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "nuclear-physics",
+      "domains": [
+        "nuclear-physics",
+        "experiments-observations"
+      ],
+      "level": 19.5,
+      "kind": "structure",
+      "conceptType": "Discovery experiment",
+      "summary": "Alpha bombardment of nitrogen produced hydrogen nuclei, establishing the proton as a nuclear constituent and demonstrating artificial transmutation.",
+      "citations": [
+        "wp-physics-rutherford_proton_transmutation",
+        "doe-protons",
+        "pdg-rpp"
+      ],
+      "status": "Observed / performed"
     }
   ],
   "edges": [
@@ -43917,6 +46150,1365 @@
         "wp-physics-antiquark",
         "pdg-qcd",
         "pdg-quark-model"
+      ]
+    },
+    {
+      "id": "hist_galileo_inclined_plane_experiments_to_newtonian_mechanics",
+      "source": "galileo_inclined_plane_experiments",
+      "target": "newtonian_mechanics",
+      "type": "historically-motivated",
+      "label": "quantitative accelerated motion",
+      "detail": "Galileo’s measured laws of falling and inertial motion formed part of the empirical and mathematical background from which Newtonian mechanics was constructed.",
+      "citations": [
+        "wp-physics-galileo_inclined_plane_experiments",
+        "museo-galileo-inclined-plane"
+      ]
+    },
+    {
+      "id": "hist_young_double_slit_experiment_to_electromagnetic_wave",
+      "source": "young_double_slit_experiment",
+      "target": "electromagnetic_wave",
+      "type": "historically-motivated",
+      "label": "optical interference",
+      "detail": "Young’s fringes helped establish wave optics, later incorporated into the electromagnetic-wave theory of light.",
+      "citations": [
+        "wp-physics-young_double_slit_experiment",
+        "young-original"
+      ]
+    },
+    {
+      "id": "hist_oersted_compass_experiment_to_classical_electromagnetism",
+      "source": "oersted_compass_experiment",
+      "target": "classical_electromagnetism",
+      "type": "historically-motivated",
+      "label": "electric current affects magnetism",
+      "detail": "Ørsted’s result showed that electricity and magnetism were dynamically connected and launched the experimental program culminating in classical electromagnetism.",
+      "citations": [
+        "wp-physics-oersted_compass_experiment",
+        "aps-oersted"
+      ]
+    },
+    {
+      "id": "hist_faraday_induction_experiments_to_electromagnetic_field",
+      "source": "faraday_induction_experiments",
+      "target": "electromagnetic_field",
+      "type": "historically-motivated",
+      "label": "field lines and induction",
+      "detail": "Faraday’s induction and field-line experiments supplied the physical concepts that Maxwell recast into field equations.",
+      "citations": [
+        "wp-physics-faraday_induction_experiments",
+        "royal-institution-faraday"
+      ]
+    },
+    {
+      "id": "hist_faraday_induction_experiments_to_maxwell_equations",
+      "source": "faraday_induction_experiments",
+      "target": "maxwell_equations",
+      "type": "historically-motivated",
+      "label": "induction law",
+      "detail": "Maxwell’s equations incorporated and generalized Faraday’s empirical induction law.",
+      "citations": [
+        "wp-physics-faraday_induction_experiments",
+        "royal-institution-faraday"
+      ]
+    },
+    {
+      "id": "hist_fizeau_moving_water_experiment_to_special_relativity",
+      "source": "fizeau_moving_water_experiment",
+      "target": "special_relativity",
+      "type": "historically-motivated",
+      "label": "moving-medium light speed",
+      "detail": "Fizeau’s result became an important constraint on ether theories and was naturally recovered by relativistic velocity addition; it was one historical input among several, not a unique origin of special relativity.",
+      "citations": [
+        "wp-physics-fizeau_moving_water_experiment",
+        "einstein-special-relativity",
+        "tong-relativity"
+      ]
+    },
+    {
+      "id": "hist_mercury_perihelion_anomaly_to_general_relativity",
+      "source": "mercury_perihelion_anomaly",
+      "target": "general_relativity",
+      "type": "historically-motivated",
+      "label": "unexplained perihelion advance",
+      "detail": "Einstein used the residual Mercury precession as a decisive target while developing general relativity and reproduced it in 1915.",
+      "citations": [
+        "wp-physics-mercury_perihelion_anomaly",
+        "einstein-online-classical-tests"
+      ]
+    },
+    {
+      "id": "hist_michelson_morley_experiment_to_special_relativity",
+      "source": "michelson_morley_experiment",
+      "target": "special_relativity",
+      "type": "historically-motivated",
+      "label": "ether-drift null result",
+      "detail": "The null result undermined simple stationary-ether models and became part of the experimental setting in which Lorentz invariance and special relativity were accepted; direct influence on Einstein’s 1905 reasoning remains historically uncertain.",
+      "citations": [
+        "wp-physics-michelson_morley_experiment",
+        "aps-michelson-morley"
+      ]
+    },
+    {
+      "id": "hist_balmer_hydrogen_spectrum_observations_to_rydberg_formula",
+      "source": "balmer_hydrogen_spectrum_observations",
+      "target": "rydberg_formula",
+      "type": "historically-motivated",
+      "label": "regular hydrogen line series",
+      "detail": "Balmer’s empirical pattern was generalized by Rydberg’s spectral formula.",
+      "citations": [
+        "wp-physics-balmer_hydrogen_spectrum_observations",
+        "nist-atomic-spectrum-history"
+      ]
+    },
+    {
+      "id": "hist_balmer_hydrogen_spectrum_observations_to_bohr_model",
+      "source": "balmer_hydrogen_spectrum_observations",
+      "target": "bohr_model",
+      "type": "historically-motivated",
+      "label": "discrete hydrogen spectrum",
+      "detail": "The need to explain Balmer and Rydberg lines was a central target of Bohr’s quantized atomic model.",
+      "citations": [
+        "wp-physics-balmer_hydrogen_spectrum_observations",
+        "nist-atomic-spectrum-history"
+      ]
+    },
+    {
+      "id": "hist_blackbody_ultraviolet_catastrophe_to_quantum_mechanics",
+      "source": "blackbody_ultraviolet_catastrophe",
+      "target": "quantum_mechanics",
+      "type": "historically-motivated",
+      "label": "failure of classical equipartition",
+      "detail": "Planck’s quantized energy elements solved the blackbody problem and initiated the quantum developments that culminated in quantum mechanics.",
+      "citations": [
+        "wp-physics-blackbody_ultraviolet_catastrophe",
+        "nist-blackbody"
+      ]
+    },
+    {
+      "id": "hist_photoelectric_effect_experiments_to_quantum_mechanics",
+      "source": "photoelectric_effect_experiments",
+      "target": "quantum_mechanics",
+      "type": "historically-motivated",
+      "label": "frequency-dependent photoemission",
+      "detail": "The photoelectric effect was a central anomaly motivating quantum descriptions of radiation and matter.",
+      "citations": [
+        "wp-physics-photoelectric_effect_experiments",
+        "nobel-photoelectric",
+        "nist-historical-constants"
+      ]
+    },
+    {
+      "id": "hist_photoelectric_effect_experiments_to_photon",
+      "source": "photoelectric_effect_experiments",
+      "target": "photon",
+      "type": "historically-motivated",
+      "label": "light quanta",
+      "detail": "Einstein’s light-quantum explanation accounted for the threshold and energy relation and helped establish the photon concept.",
+      "citations": [
+        "wp-physics-photoelectric_effect_experiments",
+        "nobel-photoelectric",
+        "nist-historical-constants"
+      ]
+    },
+    {
+      "id": "hist_geiger_marsden_gold_foil_experiment_to_atomic_nucleus",
+      "source": "geiger_marsden_gold_foil_experiment",
+      "target": "atomic_nucleus",
+      "type": "historically-motivated",
+      "label": "large-angle alpha scattering",
+      "detail": "The unexpected backscattering required a compact concentration of positive charge and led to the nuclear atom.",
+      "citations": [
+        "wp-physics-geiger_marsden_gold_foil_experiment",
+        "aps-rutherford"
+      ]
+    },
+    {
+      "id": "hist_geiger_marsden_gold_foil_experiment_to_rutherford_model",
+      "source": "geiger_marsden_gold_foil_experiment",
+      "target": "rutherford_model",
+      "type": "historically-motivated",
+      "label": "nuclear atom model",
+      "detail": "Rutherford’s atomic model was formulated specifically to explain the Geiger–Marsden angular distribution.",
+      "citations": [
+        "wp-physics-geiger_marsden_gold_foil_experiment",
+        "aps-rutherford"
+      ]
+    },
+    {
+      "id": "hist_stern_gerlach_experiment_to_spin",
+      "source": "stern_gerlach_experiment",
+      "target": "spin",
+      "type": "historically-motivated",
+      "label": "two-valued beam splitting",
+      "detail": "The later reinterpretation of the silver-atom splitting made the experiment a central empirical motivation and illustration for intrinsic spin.",
+      "citations": [
+        "wp-physics-stern_gerlach_experiment",
+        "aps-stern-gerlach"
+      ]
+    },
+    {
+      "id": "hist_anomalous_zeeman_observations_to_spin",
+      "source": "anomalous_zeeman_observations",
+      "target": "spin",
+      "type": "historically-motivated",
+      "label": "unexplained magnetic multiplets",
+      "detail": "The anomalous Zeeman patterns were a major empirical clue that orbital angular momentum alone was insufficient and helped motivate the introduction of electron spin.",
+      "citations": [
+        "wp-physics-zeeman_effect",
+        "nobel-zeeman",
+        "nist-atomic-spectrum-history"
+      ]
+    },
+    {
+      "id": "hist_epr_argument_to_quantum_entanglement",
+      "source": "epr_argument",
+      "target": "quantum_entanglement",
+      "type": "historically-motivated",
+      "label": "nonclassical separated correlations",
+      "detail": "The EPR argument isolated the conceptual stakes of entangled correlations and made them a central foundational problem.",
+      "citations": [
+        "wp-physics-epr_argument",
+        "epr-original"
+      ]
+    },
+    {
+      "id": "hist_epr_argument_to_bell_test_experiments",
+      "source": "epr_argument",
+      "target": "bell_test_experiments",
+      "type": "historically-motivated",
+      "label": "experimental discrimination of local hidden-variable models",
+      "detail": "EPR’s locality and completeness challenge motivated Bell’s theorem and the subsequent experimental test programs.",
+      "citations": [
+        "wp-physics-epr_argument",
+        "epr-original"
+      ]
+    },
+    {
+      "id": "hist_proton_radius_puzzle_to_atomic_qed_corrections",
+      "source": "proton_radius_puzzle",
+      "target": "atomic_qed_corrections",
+      "type": "historically-motivated",
+      "label": "precision bound-state discrepancy",
+      "detail": "The discrepancy forced renewed scrutiny of bound-state QED, recoil, spectroscopy, and systematic effects.",
+      "citations": [
+        "wp-physics-proton_radius_puzzle",
+        "nist-codata-2022"
+      ]
+    },
+    {
+      "id": "hist_proton_radius_puzzle_to_finite_nuclear_size_effect",
+      "source": "proton_radius_puzzle",
+      "target": "finite_nuclear_size_effect",
+      "type": "historically-motivated",
+      "label": "proton charge-radius sensitivity",
+      "detail": "The puzzle highlighted how nuclear charge distributions shift atomic levels, especially in muonic hydrogen.",
+      "citations": [
+        "wp-physics-proton_radius_puzzle",
+        "nist-codata-2022"
+      ]
+    },
+    {
+      "id": "hist_continuous_beta_spectrum_problem_to_neutrino",
+      "source": "continuous_beta_spectrum_problem",
+      "target": "neutrino",
+      "type": "historically-motivated",
+      "label": "missing energy and momentum",
+      "detail": "Pauli proposed the neutrino to preserve conservation laws in continuous beta decay.",
+      "citations": [
+        "wp-physics-beta_decay",
+        "nobel-neutrino-advanced"
+      ]
+    },
+    {
+      "id": "hist_continuous_beta_spectrum_problem_to_fermi_theory",
+      "source": "continuous_beta_spectrum_problem",
+      "target": "fermi_theory",
+      "type": "historically-motivated",
+      "label": "quantitative beta-decay dynamics",
+      "detail": "Fermi’s interaction theory incorporated the neutrino and supplied a dynamical account of beta spectra.",
+      "citations": [
+        "wp-physics-beta_decay",
+        "nobel-neutrino-advanced"
+      ]
+    },
+    {
+      "id": "hist_kaon_cp_violation_experiment_to_ckm_matrix",
+      "source": "kaon_cp_violation_experiment",
+      "target": "ckm_matrix",
+      "type": "historically-motivated",
+      "label": "CP violation in weak decays",
+      "detail": "The observed CP violation demanded a weak-interaction mechanism; the three-generation CKM framework supplied one within the Standard Model.",
+      "citations": [
+        "wp-physics-kaon_cp_violation_experiment",
+        "nobel-cp-violation"
+      ]
+    },
+    {
+      "id": "hist_kaon_cp_violation_experiment_to_quark_mixing",
+      "source": "kaon_cp_violation_experiment",
+      "target": "quark_mixing",
+      "type": "historically-motivated",
+      "label": "flavor-changing weak phases",
+      "detail": "Kaon CP violation motivated the search for a complex quark-mixing structure.",
+      "citations": [
+        "wp-physics-kaon_cp_violation_experiment",
+        "nobel-cp-violation"
+      ]
+    },
+    {
+      "id": "hist_solar_neutrino_problem_to_neutrino_oscillation",
+      "source": "solar_neutrino_problem",
+      "target": "neutrino_oscillation",
+      "type": "historically-motivated",
+      "label": "missing electron-neutrino flux",
+      "detail": "The persistent deficit motivated oscillation and flavor-conversion explanations later tested by Super-Kamiokande and SNO.",
+      "citations": [
+        "wp-physics-solar_neutrino_problem",
+        "nobel-neutrino-advanced"
+      ]
+    },
+    {
+      "id": "hist_slac_deep_inelastic_scattering_to_quark",
+      "source": "slac_deep_inelastic_scattering",
+      "target": "quark",
+      "type": "historically-motivated",
+      "label": "pointlike nucleon constituents",
+      "detail": "Scaling and hard scattering made quark-like partons empirically unavoidable and transformed quarks from a classification device into physical constituents.",
+      "citations": [
+        "wp-physics-slac_deep_inelastic_scattering",
+        "slac-dis",
+        "pdg-qcd"
+      ]
+    },
+    {
+      "id": "hist_nuclear_magic_number_systematics_to_nuclear_shell_model",
+      "source": "nuclear_magic_number_systematics",
+      "target": "nuclear_shell_model",
+      "type": "historically-motivated",
+      "label": "recurring enhanced stability",
+      "detail": "Magic-number patterns motivated an independent-particle shell structure with strong spin–orbit splitting.",
+      "citations": [
+        "wp-physics-nuclear_shell_model",
+        "nobel-shell-model",
+        "iaea-ensdf"
+      ]
+    },
+    {
+      "id": "exp_newtonian_gravitation_by_cavendish_torsion_balance_experiment",
+      "source": "newtonian_gravitation",
+      "target": "cavendish_torsion_balance_experiment",
+      "type": "experimentally-verified-by",
+      "label": "laboratory gravitation",
+      "detail": "The measured attraction between laboratory masses quantitatively supported universal Newtonian gravitation and permitted later extraction of $G$.",
+      "citations": [
+        "wp-physics-cavendish_torsion_balance_experiment",
+        "aps-cavendish"
+      ]
+    },
+    {
+      "id": "exp_maxwell_equations_by_hertz_electromagnetic_wave_experiments",
+      "source": "maxwell_equations",
+      "target": "hertz_electromagnetic_wave_experiments",
+      "type": "experimentally-verified-by",
+      "label": "generated and detected electromagnetic waves",
+      "detail": "Hertz observed reflection, interference, polarization, and finite-speed propagation consistent with Maxwellian electromagnetic waves.",
+      "citations": [
+        "wp-physics-hertz_electromagnetic_wave_experiments",
+        "aps-hertz",
+        "tong-em"
+      ]
+    },
+    {
+      "id": "exp_classical_electromagnetism_by_hertz_electromagnetic_wave_experiments",
+      "source": "classical_electromagnetism",
+      "target": "hertz_electromagnetic_wave_experiments",
+      "type": "experimentally-verified-by",
+      "label": "radio-wave realization",
+      "detail": "The experiments established electromagnetic radiation as a physical field phenomenon.",
+      "citations": [
+        "wp-physics-hertz_electromagnetic_wave_experiments",
+        "aps-hertz",
+        "tong-em"
+      ]
+    },
+    {
+      "id": "exp_equivalence_principle_by_eotvos_torsion_balance_experiments",
+      "source": "equivalence_principle",
+      "target": "eotvos_torsion_balance_experiments",
+      "type": "experimentally-verified-by",
+      "label": "composition-independent free fall",
+      "detail": "The torsion balances found no differential acceleration at their sensitivity, strongly supporting the weak equivalence principle.",
+      "citations": [
+        "wp-physics-eotvos_torsion_balance_experiments",
+        "einstein-general-relativity",
+        "tong-gr"
+      ]
+    },
+    {
+      "id": "exp_general_relativity_by_eddington_eclipse_observations",
+      "source": "general_relativity",
+      "target": "eddington_eclipse_observations",
+      "type": "experimentally-verified-by",
+      "label": "solar light deflection",
+      "detail": "The measured deflection was interpreted as supporting the relativistic prediction; later experiments provide much higher precision.",
+      "citations": [
+        "wp-physics-eddington_eclipse_observations",
+        "einstein-online-classical-tests"
+      ]
+    },
+    {
+      "id": "exp_special_relativity_by_kennedy_thorndike_experiment",
+      "source": "special_relativity",
+      "target": "kennedy_thorndike_experiment",
+      "type": "experimentally-verified-by",
+      "label": "boost invariance with unequal paths",
+      "detail": "The null result constrained velocity-dependent light propagation and supported Lorentz-Einstein transformations.",
+      "citations": [
+        "wp-physics-kennedy_thorndike_experiment",
+        "aps-kennedy-thorndike"
+      ]
+    },
+    {
+      "id": "exp_special_relativity_by_ives_stilwell_experiment",
+      "source": "special_relativity",
+      "target": "ives_stilwell_experiment",
+      "type": "experimentally-verified-by",
+      "label": "relativistic time dilation",
+      "detail": "The measured Doppler shift included the transverse second-order term predicted by special relativity.",
+      "citations": [
+        "wp-physics-ives_stilwell_experiment",
+        "aps-ives-stilwell"
+      ]
+    },
+    {
+      "id": "exp_general_relativity_by_pound_rebka_experiment",
+      "source": "general_relativity",
+      "target": "pound_rebka_experiment",
+      "type": "experimentally-verified-by",
+      "label": "gravitational frequency shift",
+      "detail": "The measured gamma-ray shift agreed with the weak-field gravitational-redshift prediction.",
+      "citations": [
+        "wp-physics-pound_rebka_experiment",
+        "aps-pound-rebka"
+      ]
+    },
+    {
+      "id": "exp_equivalence_principle_by_pound_rebka_experiment",
+      "source": "equivalence_principle",
+      "target": "pound_rebka_experiment",
+      "type": "experimentally-verified-by",
+      "label": "local gravitational redshift",
+      "detail": "The result is consistent with the equivalence-principle connection between acceleration and gravitational frequency shifts.",
+      "citations": [
+        "wp-physics-pound_rebka_experiment",
+        "aps-pound-rebka"
+      ]
+    },
+    {
+      "id": "exp_general_relativity_by_shapiro_time_delay_measurement",
+      "source": "general_relativity",
+      "target": "shapiro_time_delay_measurement",
+      "type": "experimentally-verified-by",
+      "label": "gravitational signal delay",
+      "detail": "Radar ranging measured the additional delay predicted for propagation through curved spacetime near the Sun.",
+      "citations": [
+        "wp-physics-shapiro_time_delay_measurement",
+        "aps-shapiro-delay",
+        "einstein-online-postnewton"
+      ]
+    },
+    {
+      "id": "exp_general_relativity_by_hulse_taylor_binary_pulsar",
+      "source": "general_relativity",
+      "target": "hulse_taylor_binary_pulsar",
+      "type": "experimentally-verified-by",
+      "label": "radiative orbital decay",
+      "detail": "The observed orbital-period decrease agrees with general-relativistic gravitational-wave energy loss.",
+      "citations": [
+        "wp-physics-hulse_taylor_binary_pulsar",
+        "nobel-hulse-taylor"
+      ]
+    },
+    {
+      "id": "exp_general_relativity_by_gw150914_detection",
+      "source": "general_relativity",
+      "target": "gw150914_detection",
+      "type": "experimentally-verified-by",
+      "label": "strong-field binary-merger waveform",
+      "detail": "The signal’s inspiral, merger, and ringdown were consistent with numerical general-relativistic predictions.",
+      "citations": [
+        "wp-physics-gw150914_detection",
+        "ligo-gw150914"
+      ]
+    },
+    {
+      "id": "exp_electron_by_thomson_cathode_ray_experiments",
+      "source": "electron",
+      "target": "thomson_cathode_ray_experiments",
+      "type": "experimentally-verified-by",
+      "label": "universal corpuscle with fixed charge-to-mass ratio",
+      "detail": "Deflection of cathode rays established a universal negatively charged subatomic particle.",
+      "citations": [
+        "wp-physics-thomson_cathode_ray_experiments",
+        "nobel-thomson"
+      ]
+    },
+    {
+      "id": "exp_electric_charge_by_millikan_oil_drop_experiment",
+      "source": "electric_charge",
+      "target": "millikan_oil_drop_experiment",
+      "type": "experimentally-verified-by",
+      "label": "charge quantization and elementary charge",
+      "detail": "Droplet charges clustered at integer multiples of a common unit.",
+      "citations": [
+        "wp-physics-millikan_oil_drop_experiment",
+        "nist-historical-constants"
+      ]
+    },
+    {
+      "id": "exp_electron_by_millikan_oil_drop_experiment",
+      "source": "electron",
+      "target": "millikan_oil_drop_experiment",
+      "type": "experimentally-verified-by",
+      "label": "electron charge magnitude",
+      "detail": "Combined with charge-to-mass measurements, the oil-drop result fixed the electron’s charge and mass scale.",
+      "citations": [
+        "wp-physics-millikan_oil_drop_experiment",
+        "nist-historical-constants"
+      ]
+    },
+    {
+      "id": "exp_proton_number_by_moseley_xray_spectroscopy",
+      "source": "proton_number",
+      "target": "moseley_xray_spectroscopy",
+      "type": "experimentally-verified-by",
+      "label": "X-ray frequency tracks nuclear charge",
+      "detail": "Moseley’s law established atomic number as nuclear charge rather than atomic-weight order.",
+      "citations": [
+        "wp-physics-moseley_xray_spectroscopy",
+        "nist-atomic-spectrum-history"
+      ]
+    },
+    {
+      "id": "exp_chemical_element_by_moseley_xray_spectroscopy",
+      "source": "chemical_element",
+      "target": "moseley_xray_spectroscopy",
+      "type": "experimentally-verified-by",
+      "label": "element identity by atomic number",
+      "detail": "Characteristic X-ray spectra tied chemical identity to integer atomic number.",
+      "citations": [
+        "wp-physics-moseley_xray_spectroscopy",
+        "nist-atomic-spectrum-history"
+      ]
+    },
+    {
+      "id": "exp_isotope_by_aston_mass_spectrograph_measurements",
+      "source": "isotope",
+      "target": "aston_mass_spectrograph_measurements",
+      "type": "experimentally-verified-by",
+      "label": "same element, distinct masses",
+      "detail": "Mass spectrograph peaks directly separated isotopes of the same chemical element.",
+      "citations": [
+        "wp-physics-aston_mass_spectrograph_measurements",
+        "nobel-aston"
+      ]
+    },
+    {
+      "id": "exp_nuclide_by_aston_mass_spectrograph_measurements",
+      "source": "nuclide",
+      "target": "aston_mass_spectrograph_measurements",
+      "type": "experimentally-verified-by",
+      "label": "mass-resolved nuclear species",
+      "detail": "The measurements supplied mass-to-charge identification of nuclear species.",
+      "citations": [
+        "wp-physics-aston_mass_spectrograph_measurements",
+        "nobel-aston"
+      ]
+    },
+    {
+      "id": "exp_mass_defect_by_aston_mass_spectrograph_measurements",
+      "source": "mass_defect",
+      "target": "aston_mass_spectrograph_measurements",
+      "type": "experimentally-verified-by",
+      "label": "noninteger masses and packing fraction",
+      "detail": "Precision isotope masses revealed systematic departures from integer mass multiples associated with nuclear binding.",
+      "citations": [
+        "wp-physics-aston_mass_spectrograph_measurements",
+        "nobel-aston"
+      ]
+    },
+    {
+      "id": "exp_atomic_energy_level_by_franck_hertz_experiment",
+      "source": "atomic_energy_level",
+      "target": "franck_hertz_experiment",
+      "type": "experimentally-verified-by",
+      "label": "discrete excitation thresholds",
+      "detail": "Repeated inelastic thresholds directly supported discrete atomic excitation energies.",
+      "citations": [
+        "wp-physics-franck_hertz_experiment",
+        "nobel-franck-hertz"
+      ]
+    },
+    {
+      "id": "exp_bohr_model_by_franck_hertz_experiment",
+      "source": "bohr_model",
+      "target": "franck_hertz_experiment",
+      "type": "experimentally-verified-by",
+      "label": "quantized atomic excitations",
+      "detail": "The threshold spacing agreed qualitatively with the quantized-level picture central to the Bohr model.",
+      "citations": [
+        "wp-physics-franck_hertz_experiment",
+        "nobel-franck-hertz"
+      ]
+    },
+    {
+      "id": "exp_quantum_mechanics_by_stern_gerlach_experiment",
+      "source": "quantum_mechanics",
+      "target": "stern_gerlach_experiment",
+      "type": "experimentally-verified-by",
+      "label": "discrete angular-momentum outcomes",
+      "detail": "Modern quantum mechanics accounts for the two-valued spin measurement of the silver valence electron.",
+      "citations": [
+        "wp-physics-stern_gerlach_experiment",
+        "aps-stern-gerlach"
+      ]
+    },
+    {
+      "id": "exp_photon_by_compton_scattering_experiment",
+      "source": "photon",
+      "target": "compton_scattering_experiment",
+      "type": "experimentally-verified-by",
+      "label": "photon momentum transfer",
+      "detail": "The wavelength shift follows energy–momentum conservation for photons scattering from electrons.",
+      "citations": [
+        "wp-physics-compton_scattering_experiment",
+        "nobel-compton"
+      ]
+    },
+    {
+      "id": "exp_quantum_mechanics_by_compton_scattering_experiment",
+      "source": "quantum_mechanics",
+      "target": "compton_scattering_experiment",
+      "type": "experimentally-verified-by",
+      "label": "quantized radiation–matter scattering",
+      "detail": "The result supported quantum kinematics beyond classical wave scattering.",
+      "citations": [
+        "wp-physics-compton_scattering_experiment",
+        "nobel-compton"
+      ]
+    },
+    {
+      "id": "exp_quantum_mechanics_by_davisson_germer_experiment",
+      "source": "quantum_mechanics",
+      "target": "davisson_germer_experiment",
+      "type": "experimentally-verified-by",
+      "label": "electron diffraction",
+      "detail": "The diffraction peaks agreed with de Broglie wavelengths and quantum wave mechanics.",
+      "citations": [
+        "wp-physics-davisson_germer_experiment",
+        "aps-davisson-germer"
+      ]
+    },
+    {
+      "id": "exp_wavefunction_by_davisson_germer_experiment",
+      "source": "wavefunction",
+      "target": "davisson_germer_experiment",
+      "type": "experimentally-verified-by",
+      "label": "matter-wave amplitude",
+      "detail": "Electron diffraction is described by coherent wave amplitudes associated with the electron state.",
+      "citations": [
+        "wp-physics-davisson_germer_experiment",
+        "aps-davisson-germer"
+      ]
+    },
+    {
+      "id": "exp_quantum_superposition_by_single_particle_double_slit_experiments",
+      "source": "quantum_superposition",
+      "target": "single_particle_double_slit_experiments",
+      "type": "experimentally-verified-by",
+      "label": "path-amplitude interference",
+      "detail": "Individual particles produce an interference distribution only when alternatives remain coherent.",
+      "citations": [
+        "wp-physics-single_particle_double_slit_experiments",
+        "tonomura-double-slit"
+      ]
+    },
+    {
+      "id": "exp_born_rule_by_single_particle_double_slit_experiments",
+      "source": "born_rule",
+      "target": "single_particle_double_slit_experiments",
+      "type": "experimentally-verified-by",
+      "label": "probabilistic detection distribution",
+      "detail": "Accumulated detection frequencies follow the squared-amplitude interference pattern.",
+      "citations": [
+        "wp-physics-single_particle_double_slit_experiments",
+        "tonomura-double-slit"
+      ]
+    },
+    {
+      "id": "exp_wavefunction_by_single_particle_double_slit_experiments",
+      "source": "wavefunction",
+      "target": "single_particle_double_slit_experiments",
+      "type": "experimentally-verified-by",
+      "label": "interference of quantum amplitudes",
+      "detail": "The experiments directly display the predictive role of a coherent state amplitude without implying a classical trajectory through both slits.",
+      "citations": [
+        "wp-physics-single_particle_double_slit_experiments",
+        "tonomura-double-slit"
+      ]
+    },
+    {
+      "id": "exp_quantum_entanglement_by_bell_test_experiments",
+      "source": "quantum_entanglement",
+      "target": "bell_test_experiments",
+      "type": "experimentally-verified-by",
+      "label": "Bell-inequality-violating correlations",
+      "detail": "Observed correlations agree with quantum entanglement and exclude tested local hidden-variable bounds.",
+      "citations": [
+        "wp-physics-bell_test_experiments",
+        "nobel-bell-tests",
+        "aps-loophole-free-bell"
+      ]
+    },
+    {
+      "id": "exp_quantum_mechanics_by_bell_test_experiments",
+      "source": "quantum_mechanics",
+      "target": "bell_test_experiments",
+      "type": "experimentally-verified-by",
+      "label": "nonclassical correlation predictions",
+      "detail": "Successive Bell tests, including loophole-reduced and loophole-free implementations, support quantum predictions.",
+      "citations": [
+        "wp-physics-bell_test_experiments",
+        "nobel-bell-tests",
+        "aps-loophole-free-bell"
+      ]
+    },
+    {
+      "id": "exp_quantum_mechanics_by_aharonov_bohm_interference_experiments",
+      "source": "quantum_mechanics",
+      "target": "aharonov_bohm_interference_experiments",
+      "type": "experimentally-verified-by",
+      "label": "flux-dependent quantum phase",
+      "detail": "The phase shift agrees with quantum minimal coupling and cannot be represented solely by the local magnetic field along the particle paths.",
+      "citations": [
+        "wp-physics-aharonov_bohm_interference_experiments",
+        "aharonov-bohm-experiment"
+      ]
+    },
+    {
+      "id": "exp_electromagnetic_four_potential_by_aharonov_bohm_interference_experiments",
+      "source": "electromagnetic_four_potential",
+      "target": "aharonov_bohm_interference_experiments",
+      "type": "experimentally-verified-by",
+      "label": "gauge-invariant loop phase",
+      "detail": "The measured phase depends on enclosed flux, represented by a Wilson-loop or line-integral phase of the potential.",
+      "citations": [
+        "wp-physics-aharonov_bohm_interference_experiments",
+        "aharonov-bohm-experiment"
+      ]
+    },
+    {
+      "id": "exp_lamb_shift_by_lamb_retherford_experiment",
+      "source": "lamb_shift",
+      "target": "lamb_retherford_experiment",
+      "type": "experimentally-verified-by",
+      "label": "$2S_{1/2}$–$2P_{1/2}$ splitting",
+      "detail": "The experiment directly established the level splitting now called the Lamb shift.",
+      "citations": [
+        "wp-physics-lamb_shift",
+        "nobel-lamb",
+        "nist-qed-tests"
+      ]
+    },
+    {
+      "id": "exp_quantum_electrodynamics_by_lamb_retherford_experiment",
+      "source": "quantum_electrodynamics",
+      "target": "lamb_retherford_experiment",
+      "type": "experimentally-verified-by",
+      "label": "radiative bound-state correction",
+      "detail": "Renormalized QED quantitatively accounts for the shift through self-energy, vacuum-polarization, recoil, and related corrections.",
+      "citations": [
+        "wp-physics-lamb_shift",
+        "nobel-lamb",
+        "nist-qed-tests"
+      ]
+    },
+    {
+      "id": "exp_atomic_qed_corrections_by_lamb_retherford_experiment",
+      "source": "atomic_qed_corrections",
+      "target": "lamb_retherford_experiment",
+      "type": "experimentally-verified-by",
+      "label": "precision hydrogen radiative shift",
+      "detail": "The observed splitting is a foundational benchmark for atomic QED corrections.",
+      "citations": [
+        "wp-physics-lamb_shift",
+        "nobel-lamb",
+        "nist-qed-tests"
+      ]
+    },
+    {
+      "id": "exp_quantum_electrodynamics_by_electron_g_minus_2_measurements",
+      "source": "quantum_electrodynamics",
+      "target": "electron_g_minus_2_measurements",
+      "type": "experimentally-verified-by",
+      "label": "electron magnetic anomaly",
+      "detail": "The measured anomaly agrees with perturbative QED at extraordinary precision when an independent fine-structure constant is used.",
+      "citations": [
+        "wp-physics-electron_g_minus_2_measurements",
+        "nist-codata-2022"
+      ]
+    },
+    {
+      "id": "exp_fine_structure_constant_by_electron_g_minus_2_measurements",
+      "source": "fine_structure_constant",
+      "target": "electron_g_minus_2_measurements",
+      "type": "experimentally-verified-by",
+      "label": "precision coupling determination",
+      "detail": "The anomaly measurement and QED series provide a leading determination and consistency test of $\\alpha$.",
+      "citations": [
+        "wp-physics-electron_g_minus_2_measurements",
+        "nist-codata-2022"
+      ]
+    },
+    {
+      "id": "exp_quantum_electrodynamics_by_casimir_force_measurements",
+      "source": "quantum_electrodynamics",
+      "target": "casimir_force_measurements",
+      "type": "experimentally-verified-by",
+      "label": "boundary-dependent electromagnetic force",
+      "detail": "Measured forces agree with QED calculations after geometry, conductivity, temperature, roughness, and electrostatic backgrounds are modeled.",
+      "citations": [
+        "wp-physics-casimir_force_measurements",
+        "casimir-lamoreaux"
+      ]
+    },
+    {
+      "id": "exp_quantum_decoherence_by_cavity_qed_decoherence_experiments",
+      "source": "quantum_decoherence",
+      "target": "cavity_qed_decoherence_experiments",
+      "type": "experimentally-verified-by",
+      "label": "measured coherence-loss rate",
+      "detail": "The observed decay of interference and cat-state coherence followed environment-coupling predictions.",
+      "citations": [
+        "wp-physics-quantum_decoherence",
+        "nobel-decoherence"
+      ]
+    },
+    {
+      "id": "exp_bose_einstein_statistics_by_hong_ou_mandel_experiment",
+      "source": "bose_einstein_statistics",
+      "target": "hong_ou_mandel_experiment",
+      "type": "experimentally-verified-by",
+      "label": "two-boson bunching",
+      "detail": "Indistinguishable photons exhibit the exchange interference expected for bosons.",
+      "citations": [
+        "wp-physics-hong_ou_mandel_experiment",
+        "hom-original"
+      ]
+    },
+    {
+      "id": "exp_identical_particles_by_hong_ou_mandel_experiment",
+      "source": "identical_particles",
+      "target": "hong_ou_mandel_experiment",
+      "type": "experimentally-verified-by",
+      "label": "indistinguishability interference",
+      "detail": "The coincidence dip depends on erasing distinguishing information between the two photons.",
+      "citations": [
+        "wp-physics-hong_ou_mandel_experiment",
+        "hom-original"
+      ]
+    },
+    {
+      "id": "exp_quantum_superposition_by_fullerene_matter_wave_interference",
+      "source": "quantum_superposition",
+      "target": "fullerene_matter_wave_interference",
+      "type": "experimentally-verified-by",
+      "label": "interference of composite molecules",
+      "detail": "The molecular beam formed fringes requiring coherent center-of-mass amplitudes.",
+      "citations": [
+        "wp-physics-fullerene_matter_wave_interference",
+        "fullerene-interference"
+      ]
+    },
+    {
+      "id": "exp_quantum_decoherence_by_fullerene_matter_wave_interference",
+      "source": "quantum_decoherence",
+      "target": "fullerene_matter_wave_interference",
+      "type": "experimentally-verified-by",
+      "label": "environment-dependent visibility",
+      "detail": "Controlled thermal and collisional coupling quantitatively suppresses molecular interference.",
+      "citations": [
+        "wp-physics-fullerene_matter_wave_interference",
+        "fullerene-interference"
+      ]
+    },
+    {
+      "id": "exp_dirac_equation_by_positron_discovery_experiment",
+      "source": "dirac_equation",
+      "target": "positron_discovery_experiment",
+      "type": "experimentally-verified-by",
+      "label": "positive-energy antiparticle realization",
+      "detail": "The positron supplied empirical support for the antiparticle sector implied by relativistic electron theory.",
+      "citations": [
+        "wp-physics-positron",
+        "aps-positron"
+      ]
+    },
+    {
+      "id": "exp_positron_by_positron_discovery_experiment",
+      "source": "positron",
+      "target": "positron_discovery_experiment",
+      "type": "experimentally-verified-by",
+      "label": "positive electron track",
+      "detail": "Curvature and ionization identified a particle with electron mass and opposite charge.",
+      "citations": [
+        "wp-physics-positron",
+        "aps-positron"
+      ]
+    },
+    {
+      "id": "exp_antiparticle_by_positron_discovery_experiment",
+      "source": "antiparticle",
+      "target": "positron_discovery_experiment",
+      "type": "experimentally-verified-by",
+      "label": "first identified antiparticle",
+      "detail": "The positron established that particle species can have conjugate antiparticles.",
+      "citations": [
+        "wp-physics-positron",
+        "aps-positron"
+      ]
+    },
+    {
+      "id": "exp_neutron_by_chadwick_neutron_experiment",
+      "source": "neutron",
+      "target": "chadwick_neutron_experiment",
+      "type": "experimentally-verified-by",
+      "label": "neutral nucleon",
+      "detail": "Recoil kinematics required a neutral particle with mass close to the proton mass.",
+      "citations": [
+        "wp-physics-chadwick_neutron_experiment",
+        "aps-chadwick"
+      ]
+    },
+    {
+      "id": "exp_muon_by_muon_cosmic_ray_discovery",
+      "source": "muon",
+      "target": "muon_cosmic_ray_discovery",
+      "type": "experimentally-verified-by",
+      "label": "new penetrating charged particle",
+      "detail": "Cloud-chamber curvature and range established a new lepton species.",
+      "citations": [
+        "wp-physics-muon",
+        "pdg-rpp"
+      ]
+    },
+    {
+      "id": "exp_pion_by_pion_nuclear_emulsion_discovery",
+      "source": "pion",
+      "target": "pion_nuclear_emulsion_discovery",
+      "type": "experimentally-verified-by",
+      "label": "pion track and decay chain",
+      "detail": "Emulsion tracks distinguished the pion and its decay to a muon.",
+      "citations": [
+        "wp-physics-pion",
+        "nobel-pion",
+        "pdg-rpp"
+      ]
+    },
+    {
+      "id": "exp_neutrino_by_cowan_reines_neutrino_experiment",
+      "source": "neutrino",
+      "target": "cowan_reines_neutrino_experiment",
+      "type": "experimentally-verified-by",
+      "label": "inverse-beta detection",
+      "detail": "Delayed coincidence signatures provided direct evidence for reactor antineutrinos.",
+      "citations": [
+        "wp-physics-cowan_reines_neutrino_experiment",
+        "nobel-reines"
+      ]
+    },
+    {
+      "id": "exp_electron_antineutrino_by_cowan_reines_neutrino_experiment",
+      "source": "electron_antineutrino",
+      "target": "cowan_reines_neutrino_experiment",
+      "type": "experimentally-verified-by",
+      "label": "reactor antineutrino detection",
+      "detail": "The detected inverse-beta process identified the electron-antineutrino flavor associated with beta decay.",
+      "citations": [
+        "wp-physics-cowan_reines_neutrino_experiment",
+        "nobel-reines"
+      ]
+    },
+    {
+      "id": "exp_weak_interaction_by_wu_parity_experiment",
+      "source": "weak_interaction",
+      "target": "wu_parity_experiment",
+      "type": "experimentally-verified-by",
+      "label": "parity violation in beta decay",
+      "detail": "The asymmetric electron distribution showed that weak interactions are not invariant under spatial inversion.",
+      "citations": [
+        "wp-physics-wu_parity_experiment",
+        "wu-original"
+      ]
+    },
+    {
+      "id": "exp_left_handed_fermion_by_goldhaber_neutrino_helicity_experiment",
+      "source": "left_handed_fermion",
+      "target": "goldhaber_neutrino_helicity_experiment",
+      "type": "experimentally-verified-by",
+      "label": "negative neutrino helicity",
+      "detail": "The polarization correlation supported left-handed neutrinos in the ultrarelativistic weak interaction.",
+      "citations": [
+        "wp-physics-goldhaber_neutrino_helicity_experiment",
+        "goldhaber-original"
+      ]
+    },
+    {
+      "id": "exp_helicity_by_goldhaber_neutrino_helicity_experiment",
+      "source": "helicity",
+      "target": "goldhaber_neutrino_helicity_experiment",
+      "type": "experimentally-verified-by",
+      "label": "neutrino helicity sign",
+      "detail": "The experiment determined the emitted neutrino’s helicity to be negative within its assumptions.",
+      "citations": [
+        "wp-physics-goldhaber_neutrino_helicity_experiment",
+        "goldhaber-original"
+      ]
+    },
+    {
+      "id": "exp_muon_neutrino_by_brookhaven_muon_neutrino_experiment",
+      "source": "muon_neutrino",
+      "target": "brookhaven_muon_neutrino_experiment",
+      "type": "experimentally-verified-by",
+      "label": "distinct neutrino flavor",
+      "detail": "Muon production without corresponding electron production established a neutrino flavor associated with muons.",
+      "citations": [
+        "wp-physics-muon_neutrino",
+        "nobel-muon-neutrino",
+        "bnl-accelerator-history"
+      ]
+    },
+    {
+      "id": "exp_neutral_current_weak_interaction_by_gargamelle_neutral_current_discovery",
+      "source": "neutral_current_weak_interaction",
+      "target": "gargamelle_neutral_current_discovery",
+      "type": "experimentally-verified-by",
+      "label": "neutrino neutral-current events",
+      "detail": "Events without outgoing charged leptons established neutral-current weak scattering.",
+      "citations": [
+        "wp-physics-neutral_current_weak_interaction",
+        "cern-electroweak-discoveries"
+      ]
+    },
+    {
+      "id": "exp_electroweak_theory_by_gargamelle_neutral_current_discovery",
+      "source": "electroweak_theory",
+      "target": "gargamelle_neutral_current_discovery",
+      "type": "experimentally-verified-by",
+      "label": "predicted neutral weak current",
+      "detail": "The discovery was a major early confirmation of electroweak gauge theory.",
+      "citations": [
+        "wp-physics-neutral_current_weak_interaction",
+        "cern-electroweak-discoveries"
+      ]
+    },
+    {
+      "id": "exp_quantum_chromodynamics_by_slac_deep_inelastic_scattering",
+      "source": "quantum_chromodynamics",
+      "target": "slac_deep_inelastic_scattering",
+      "type": "experimentally-verified-by",
+      "label": "partonic scaling and later scaling violations",
+      "detail": "Deep-inelastic data underpin the QCD description of nucleon structure; exact scaling is modified by QCD evolution.",
+      "citations": [
+        "wp-physics-slac_deep_inelastic_scattering",
+        "slac-dis",
+        "pdg-qcd"
+      ]
+    },
+    {
+      "id": "exp_charm_quark_by_november_revolution_jpsi_discovery",
+      "source": "charm_quark",
+      "target": "november_revolution_jpsi_discovery",
+      "type": "experimentally-verified-by",
+      "label": "charmonium resonance",
+      "detail": "The $J/\\psi$ spectrum established a charm–anticharm bound state and the charm flavor.",
+      "citations": [
+        "wp-physics-november_revolution_jpsi_discovery",
+        "nobel-november-revolution",
+        "bnl-accelerator-history"
+      ]
+    },
+    {
+      "id": "exp_tau_by_tau_lepton_discovery",
+      "source": "tau",
+      "target": "tau_lepton_discovery",
+      "type": "experimentally-verified-by",
+      "label": "third charged lepton",
+      "detail": "Event topologies and missing energy established the tau as a new charged lepton.",
+      "citations": [
+        "wp-physics-tau",
+        "pdg-rpp"
+      ]
+    },
+    {
+      "id": "exp_third_generation_by_tau_lepton_discovery",
+      "source": "third_generation",
+      "target": "tau_lepton_discovery",
+      "type": "experimentally-verified-by",
+      "label": "third lepton family member",
+      "detail": "The tau supplied the charged-lepton component of a third fermion generation.",
+      "citations": [
+        "wp-physics-tau",
+        "pdg-rpp"
+      ]
+    },
+    {
+      "id": "exp_bottom_quark_by_upsilon_bottom_quark_discovery",
+      "source": "bottom_quark",
+      "target": "upsilon_bottom_quark_discovery",
+      "type": "experimentally-verified-by",
+      "label": "bottomonium resonance",
+      "detail": "The upsilon family established a new heavy quark flavor.",
+      "citations": [
+        "wp-physics-bottom_quark",
+        "pdg-rpp"
+      ]
+    },
+    {
+      "id": "exp_gluon_by_petra_three_jet_gluon_discovery",
+      "source": "gluon",
+      "target": "petra_three_jet_gluon_discovery",
+      "type": "experimentally-verified-by",
+      "label": "hard gluon radiation",
+      "detail": "Three-jet angular and energy distributions supported a spin-one gluon radiated from quarks.",
+      "citations": [
+        "wp-physics-gluon",
+        "desy-gluon",
+        "pdg-qcd"
+      ]
+    },
+    {
+      "id": "exp_quantum_chromodynamics_by_petra_three_jet_gluon_discovery",
+      "source": "quantum_chromodynamics",
+      "target": "petra_three_jet_gluon_discovery",
+      "type": "experimentally-verified-by",
+      "label": "QCD jet topology",
+      "detail": "The observed three-jet events matched QCD predictions for quark–antiquark–gluon final states.",
+      "citations": [
+        "wp-physics-gluon",
+        "desy-gluon",
+        "pdg-qcd"
+      ]
+    },
+    {
+      "id": "exp_electroweak_theory_by_ua1_ua2_w_z_discovery",
+      "source": "electroweak_theory",
+      "target": "ua1_ua2_w_z_discovery",
+      "type": "experimentally-verified-by",
+      "label": "predicted weak gauge bosons",
+      "detail": "The measured masses and decay signatures confirmed the massive electroweak gauge-boson sector.",
+      "citations": [
+        "wp-physics-w_boson",
+        "cern-electroweak-discoveries",
+        "cern-wz"
+      ]
+    },
+    {
+      "id": "exp_w_boson_by_ua1_ua2_w_z_discovery",
+      "source": "w_boson",
+      "target": "ua1_ua2_w_z_discovery",
+      "type": "experimentally-verified-by",
+      "label": "charged weak boson discovery",
+      "detail": "Leptonic missing-energy events established charged $W$ production.",
+      "citations": [
+        "wp-physics-w_boson",
+        "cern-electroweak-discoveries",
+        "cern-wz"
+      ]
+    },
+    {
+      "id": "exp_z_boson_by_ua1_ua2_w_z_discovery",
+      "source": "z_boson",
+      "target": "ua1_ua2_w_z_discovery",
+      "type": "experimentally-verified-by",
+      "label": "neutral weak boson discovery",
+      "detail": "Dilepton resonances established the neutral $Z$ boson.",
+      "citations": [
+        "wp-physics-w_boson",
+        "cern-electroweak-discoveries",
+        "cern-wz"
+      ]
+    },
+    {
+      "id": "exp_standard_model_by_lep_precision_electroweak_measurements",
+      "source": "standard_model",
+      "target": "lep_precision_electroweak_measurements",
+      "type": "experimentally-verified-by",
+      "label": "precision radiative-consistency tests",
+      "detail": "LEP observables agreed with loop-corrected Standard Model predictions and constrained the number of light active neutrinos.",
+      "citations": [
+        "wp-physics-lep_precision_electroweak_measurements",
+        "cern-lep",
+        "pdg-standard-model"
+      ]
+    },
+    {
+      "id": "exp_electroweak_theory_by_lep_precision_electroweak_measurements",
+      "source": "electroweak_theory",
+      "target": "lep_precision_electroweak_measurements",
+      "type": "experimentally-verified-by",
+      "label": "$Z$-pole and electroweak observables",
+      "detail": "Precision measurements confirmed the detailed electroweak coupling structure.",
+      "citations": [
+        "wp-physics-lep_precision_electroweak_measurements",
+        "cern-lep",
+        "pdg-standard-model"
+      ]
+    },
+    {
+      "id": "exp_top_quark_by_top_quark_discovery",
+      "source": "top_quark",
+      "target": "top_quark_discovery",
+      "type": "experimentally-verified-by",
+      "label": "third-generation up-type quark",
+      "detail": "Reconstructed events established a quark with the charge and decay modes expected for the top.",
+      "citations": [
+        "wp-physics-top_quark",
+        "fermilab-top",
+        "pdg-rpp"
+      ]
+    },
+    {
+      "id": "exp_standard_model_by_top_quark_discovery",
+      "source": "standard_model",
+      "target": "top_quark_discovery",
+      "type": "experimentally-verified-by",
+      "label": "predicted third-generation partner",
+      "detail": "Discovery completed the quark content required by the established third-generation electroweak doublet.",
+      "citations": [
+        "wp-physics-top_quark",
+        "fermilab-top",
+        "pdg-rpp"
+      ]
+    },
+    {
+      "id": "exp_neutrino_oscillation_by_super_k_atmospheric_neutrino_oscillation",
+      "source": "neutrino_oscillation",
+      "target": "super_k_atmospheric_neutrino_oscillation",
+      "type": "experimentally-verified-by",
+      "label": "atmospheric flavor disappearance",
+      "detail": "The zenith and energy dependence agreed with oscillation of muon neutrinos.",
+      "citations": [
+        "wp-physics-super_k_atmospheric_neutrino_oscillation",
+        "nobel-neutrino-advanced",
+        "nobel-neutrino"
+      ]
+    },
+    {
+      "id": "exp_pmns_matrix_by_super_k_atmospheric_neutrino_oscillation",
+      "source": "pmns_matrix",
+      "target": "super_k_atmospheric_neutrino_oscillation",
+      "type": "experimentally-verified-by",
+      "label": "lepton mixing parameters",
+      "detail": "The data constrain mixing and mass-squared differences represented in the PMNS framework.",
+      "citations": [
+        "wp-physics-super_k_atmospheric_neutrino_oscillation",
+        "nobel-neutrino-advanced",
+        "nobel-neutrino"
+      ]
+    },
+    {
+      "id": "exp_neutrino_oscillation_by_sno_solar_neutrino_flavor_change",
+      "source": "neutrino_oscillation",
+      "target": "sno_solar_neutrino_flavor_change",
+      "type": "experimentally-verified-by",
+      "label": "solar flavor conversion",
+      "detail": "The total active-neutrino flux agreed with solar predictions while the electron-neutrino component was depleted.",
+      "citations": [
+        "wp-physics-sno_solar_neutrino_flavor_change",
+        "nobel-neutrino-advanced",
+        "nobel-neutrino"
+      ]
+    },
+    {
+      "id": "exp_pmns_matrix_by_sno_solar_neutrino_flavor_change",
+      "source": "pmns_matrix",
+      "target": "sno_solar_neutrino_flavor_change",
+      "type": "experimentally-verified-by",
+      "label": "solar mixing",
+      "detail": "The flavor-resolved result supports lepton mixing described by the PMNS matrix.",
+      "citations": [
+        "wp-physics-sno_solar_neutrino_flavor_change",
+        "nobel-neutrino-advanced",
+        "nobel-neutrino"
+      ]
+    },
+    {
+      "id": "exp_higgs_boson_by_atlas_cms_higgs_discovery",
+      "source": "higgs_boson",
+      "target": "atlas_cms_higgs_discovery",
+      "type": "experimentally-verified-by",
+      "label": "new spin-zero boson near $125\\,\\mathrm{GeV}$",
+      "detail": "Observed production and decay channels established a Higgs-like scalar boson.",
+      "citations": [
+        "wp-physics-higgs_boson",
+        "cern-higgs-discovery",
+        "cern-higgs-overview",
+        "pdg-2026-higgs"
+      ]
+    },
+    {
+      "id": "exp_higgs_mechanism_by_atlas_cms_higgs_discovery",
+      "source": "higgs_mechanism",
+      "target": "atlas_cms_higgs_discovery",
+      "type": "experimentally-verified-by",
+      "label": "Higgs-field excitation",
+      "detail": "The boson and its measured couplings strongly support the Brout–Englert–Higgs mechanism, while ongoing measurements test its exact Standard Model form.",
+      "citations": [
+        "wp-physics-higgs_boson",
+        "cern-higgs-discovery",
+        "cern-higgs-overview",
+        "pdg-2026-higgs"
+      ]
+    },
+    {
+      "id": "exp_standard_model_by_atlas_cms_higgs_discovery",
+      "source": "standard_model",
+      "target": "atlas_cms_higgs_discovery",
+      "type": "experimentally-verified-by",
+      "label": "completion of predicted elementary field content",
+      "detail": "The discovery supplied the previously missing scalar excitation of the minimal Standard Model.",
+      "citations": [
+        "wp-physics-higgs_boson",
+        "cern-higgs-discovery",
+        "cern-higgs-overview",
+        "pdg-2026-higgs"
+      ]
+    },
+    {
+      "id": "exp_atom_by_perrin_brownian_motion_experiments",
+      "source": "atom",
+      "target": "perrin_brownian_motion_experiments",
+      "type": "experimentally-verified-by",
+      "label": "quantitative atomic theory",
+      "detail": "Agreement among Brownian-motion measurements of molecular scales and Avogadro’s number provided strong evidence that atoms and molecules are physical constituents rather than merely calculational devices.",
+      "citations": [
+        "wp-physics-perrin_brownian_motion_experiments",
+        "nobel-perrin"
+      ]
+    },
+    {
+      "id": "exp_proton_by_rutherford_proton_transmutation",
+      "source": "proton",
+      "target": "rutherford_proton_transmutation",
+      "type": "experimentally-verified-by",
+      "label": "hydrogen nucleus emitted from nitrogen",
+      "detail": "The transmutation experiment established the hydrogen nucleus as a recurring nuclear constituent identified with the proton.",
+      "citations": [
+        "wp-physics-rutherford_proton_transmutation",
+        "doe-protons",
+        "pdg-rpp"
       ]
     }
   ],
