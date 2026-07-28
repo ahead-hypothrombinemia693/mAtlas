@@ -113,24 +113,27 @@ export class SvgExporter {
       const nodeHeight = 58;
       const x = position.x - nodeWidth / 2;
       const y = position.y - nodeHeight / 2;
-      const opacity = element.hasClass('neighborhood-dim') ? 0.46 : element.hasClass('dependency-faded') ? 0.5 : 1;
+      const isDependencyFaded = element.hasClass('dependency-faded');
+      const opacity = element.hasClass('neighborhood-dim') ? 0.46 : 1;
       const selected = element.selected();
       const emphasized = element.hasClass('neighborhood-emphasis');
       const searchMatch = element.hasClass('search-match');
       const borderColor = selected ? '#0f172a' : searchMatch ? '#facc15' : emphasized ? '#f59e0b' : isJunction ? '#b45309' : '#ffffff';
       const borderWidth = selected || searchMatch ? 5 : emphasized ? 4 : isJunction ? 3 : 2;
       if (isJunction) {
-        parts.push(`<rect x="${x}" y="${y}" width="${nodeWidth}" height="${nodeHeight}" rx="8" fill="#fff7ed" stroke="${borderColor}" stroke-width="${borderWidth}" stroke-dasharray="8 5" opacity="${opacity}"/>`);
+        const backgroundOpacity = isDependencyFaded ? 0.46 : 1;
+        parts.push(`<rect x="${x}" y="${y}" width="${nodeWidth}" height="${nodeHeight}" rx="8" fill="#fff7ed" stroke="${borderColor}" stroke-width="${borderWidth}" stroke-dasharray="8 5" fill-opacity="${backgroundOpacity}" opacity="${opacity}"/>`);
       } else {
         const fill = data.domains[record.primaryDomain]?.color ?? '#64748b';
-        parts.push(`<rect x="${x}" y="${y}" width="${nodeWidth}" height="${nodeHeight}" rx="8" fill="${escapeHtml(fill)}" fill-opacity="0.92" stroke="${borderColor}" stroke-width="${borderWidth}" opacity="${opacity}"/>`);
+        const backgroundOpacity = isDependencyFaded ? 0.46 : 0.92;
+        parts.push(`<rect x="${x}" y="${y}" width="${nodeWidth}" height="${nodeHeight}" rx="8" fill="${escapeHtml(fill)}" fill-opacity="${backgroundOpacity}" stroke="${borderColor}" stroke-width="${borderWidth}" opacity="${opacity}"/>`);
         const domains = this.model.nodeDomainIds(record);
         if (domains.length > 1) {
           const segmentWidth = nodeWidth / domains.length;
           domains.forEach((domainId, index) => {
             const segmentX = x + index * segmentWidth;
             const actualWidth = index === domains.length - 1 ? x + nodeWidth - segmentX : segmentWidth + 0.4;
-            parts.push(`<rect x="${segmentX.toFixed(2)}" y="${(y + nodeHeight - 7).toFixed(2)}" width="${actualWidth.toFixed(2)}" height="7" fill="${escapeHtml(data.domains[domainId]?.color ?? '#64748b')}" opacity="${opacity}"/>`);
+            parts.push(`<rect x="${segmentX.toFixed(2)}" y="${(y + nodeHeight - 7).toFixed(2)}" width="${actualWidth.toFixed(2)}" height="7" fill="${escapeHtml(data.domains[domainId]?.color ?? '#64748b')}" fill-opacity="${backgroundOpacity}"/>`);
           });
         }
       }

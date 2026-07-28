@@ -148,7 +148,7 @@ export const graphStyles: cytoscape.StylesheetJson = [
   { selector: 'node.neighborhood-emphasis', style: { 'border-width': 4, 'border-color': '#f59e0b' } },
   { selector: '.search-match', style: { 'border-width': 5, 'border-color': '#facc15', 'background-opacity': 1 } },
   { selector: '.hover-emphasis', style: { opacity: 1 } },
-  { selector: 'node.dependency-faded', style: { opacity: 0.5 } },
+  { selector: 'node.dependency-faded', style: { 'background-opacity': 0.46 } },
   { selector: 'edge.dependency-context', style: { opacity: 0.46 } },
   { selector: 'node.dependency-faded.hover-emphasis, edge.dependency-context.hover-emphasis', style: { opacity: 0.68 } },
   { selector: 'node:selected', style: { 'border-width': 5, 'border-color': '#0f172a', 'background-opacity': 1 } },
