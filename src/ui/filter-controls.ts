@@ -1,6 +1,6 @@
 import { byId, escapeHtml, queryAll } from '../core/dom.js';
 import { isCrossFieldVisibility, isLayoutName } from '../state/ui-state.js';
-import { selectExclusiveDomain, selectExclusiveField } from '../state/taxonomy-selection.js';
+import { selectExclusiveDomain, selectExclusiveEdgeType, selectExclusiveField } from '../state/taxonomy-selection.js';
 import type { GraphModel } from '../model/graph-model.js';
 import type { AppState, LayoutName } from '../types.js';
 
@@ -20,6 +20,7 @@ export class FilterControls {
     this.build();
     this.syncPreferences();
     this.updateFieldAllButtonLabel();
+    this.updateEdgeAllButtonLabel();
     this.updateFieldNavActiveState();
     this.buildDatalist();
     this.bindEvents();
@@ -80,7 +81,7 @@ export class FilterControls {
         return `<label class="filter-item" title="${escapeHtml(type.description)}">
           <input type="checkbox" data-edge-type="${escapeHtml(id)}" ${state.selectedEdgeTypes.has(id) ? 'checked' : ''}>
           <span class="line-swatch ${escapeHtml(type.lineStyle ?? 'solid')}" style="border-color:${escapeHtml(type.color)}"></span>
-          <span><span>${escapeHtml(type.label)}</span><div class="filter-description">${escapeHtml(type.short)}</div></span>
+          <span><a href="#" class="filter-link filter-edge-link" data-edge-link="${escapeHtml(id)}">${escapeHtml(type.label)}</a></span>
         </label>`;
       }).join('');
   }
@@ -112,6 +113,7 @@ export class FilterControls {
     byId('fieldFilters').addEventListener('change', (event) => this.handleFieldOrDomainChange(event));
     byId('fieldFilters').addEventListener('click', (event) => this.handleTaxonomyLink(event));
     byId('edgeFilters').addEventListener('change', (event) => this.handleEdgeTypeChange(event));
+    byId('edgeFilters').addEventListener('click', (event) => this.handleEdgeTypeLink(event));
     byId('fieldsAll').addEventListener('click', () => this.toggleAllFields());
     byId('edgesAll').addEventListener('click', () => this.toggleAllEdges());
 
@@ -185,6 +187,23 @@ export class FilterControls {
     this.commit(false);
   }
 
+  private handleEdgeTypeLink(event: Event): void {
+    if (!(event.target instanceof HTMLAnchorElement)) return;
+    const edgeTypeId = event.target.dataset.edgeLink;
+    if (!edgeTypeId) return;
+    event.preventDefault();
+    event.stopPropagation();
+    this.selectOnlyEdgeType(edgeTypeId);
+  }
+
+  private selectOnlyEdgeType(edgeTypeId: string): void {
+    const { model, state } = this.options;
+    const activeEdgeTypes = model.edgeTypeOrder.filter((id) => model.data.edgeTypes[id]?.activeInDataset !== false);
+    state.selectedEdgeTypes = selectExclusiveEdgeType(state.selectedEdgeTypes, edgeTypeId, activeEdgeTypes);
+    this.syncEdgeCheckboxes();
+    this.commit(false);
+  }
+
   private selectOnlyField(fieldId: string): void {
     const { model, state } = this.options;
     const selection = selectExclusiveField(state.selectedFields, state.selectedDomains, fieldId, {
@@ -221,6 +240,20 @@ export class FilterControls {
     this.commit(true);
   }
 
+  private updateEdgeAllButtonLabel(): void {
+    const { model, state } = this.options;
+    const active = model.edgeTypeOrder.filter((id) => model.data.edgeTypes[id]?.activeInDataset !== false);
+    const allSelected = state.selectedEdgeTypes.size === active.length;
+    byId<HTMLButtonElement>('edgesAll').textContent = allSelected ? 'none' : 'all';
+  }
+
+  private syncEdgeCheckboxes(): void {
+    const { state } = this.options;
+    queryAll<HTMLInputElement>('[data-edge-type]').forEach((input) => {
+      input.checked = state.selectedEdgeTypes.has(input.dataset.edgeType ?? '');
+    });
+  }
+
   private toggleAllEdges(): void {
     const { model, state } = this.options;
     const active = model.edgeTypeOrder.filter((id) => model.data.edgeTypes[id]?.activeInDataset !== false);
@@ -229,6 +262,7 @@ export class FilterControls {
     queryAll<HTMLInputElement>('[data-edge-type]').forEach((input) => {
       input.checked = state.selectedEdgeTypes.has(input.dataset.edgeType ?? '');
     });
+    this.updateEdgeAllButtonLabel();
     this.commit(false);
   }
 
@@ -245,6 +279,7 @@ export class FilterControls {
   private commit(relayout: boolean): void {
     this.options.persist();
     this.updateFieldAllButtonLabel();
+    this.updateEdgeAllButtonLabel();
     this.updateFieldNavActiveState();
     this.options.applyFilters({ relayout });
   }

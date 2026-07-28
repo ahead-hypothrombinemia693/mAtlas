@@ -130,7 +130,6 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
 .line-swatch { width: 22px; height: 0; border-top: 3px solid; flex: 0 0 auto; margin-top: 7px; }
 .line-swatch.dashed { border-top-style: dashed; }
 .line-swatch.dotted { border-top-style: dotted; }
-.filter-description { color: var(--muted); font-size: 11px; margin-top: 2px; }
 .small-link { display: inline-block; margin: 2px 10px 2px 0; font-size: 11px; }
 
 .graph-shell { position: relative; min-width: 0; min-height: 0; overflow: hidden; background: #fbfcfe; }

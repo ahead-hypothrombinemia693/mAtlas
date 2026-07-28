@@ -40,3 +40,14 @@ export function selectExclusiveDomain(
     domains: new Set(domains)
   };
 }
+
+export function selectExclusiveEdgeType(
+  currentEdgeTypes: ReadonlySet<string>,
+  edgeTypeId: string,
+  activeEdgeTypes: readonly string[]
+): Set<string> {
+  const isSingleEdgeType = currentEdgeTypes.size === 1 && currentEdgeTypes.has(edgeTypeId);
+  return new Set(isSingleEdgeType
+    ? activeEdgeTypes.filter((id) => id !== edgeTypeId)
+    : [edgeTypeId]);
+}
