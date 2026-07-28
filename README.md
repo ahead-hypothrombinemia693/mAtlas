@@ -135,7 +135,10 @@ See the [NOTICE](NOTICE) and [LICENSE](LICENSE) files for licensing information.
 ```
 mAtlas - Copyright (c) 2026 Advay Mengle - https://atlas.madvay.com/
 
-The files in `src/data/` (and as published, the `data/` directory) are licensed under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0/); attribution should be given per the first line in this file.
+The files in `src/data/` (and as published, the `data/` directory) are
+licensed under the Creative Commons Attribution-ShareAlike 4.0 International
+License (CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0/);
+attribution should be given per the first line in this file.
 
 The remainder of mAtlas is licensed under the Apache License 2.0:
 
@@ -150,4 +153,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+
+See also THIRD_PARTY_NOTICES.txt for third-party notices and licenses
+for certain software that may be included in or distributed with mAtlas.
 ```
