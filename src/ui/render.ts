@@ -9,9 +9,22 @@ const renderedHtml = new WeakMap<Element, string>();
  */
 export function renderHtml(target: Element, html: string): void {
   if (renderedHtml.get(target) === html) return;
-  const range = target.ownerDocument.createRange();
-  range.selectNodeContents(target);
-  target.replaceChildren(range.createContextualFragment(html));
+  const ownerDocument = (target as any).ownerDocument ?? globalThis.document;
+  const range = ownerDocument.createRange?.();
+  if (range?.createContextualFragment) {
+    range.selectNodeContents(target);
+    target.replaceChildren(range.createContextualFragment(html));
+  } else if ('innerHTML' in target) {
+    (target as HTMLElement).innerHTML = html;
+  } else {
+    const fragment = ownerDocument.createDocumentFragment();
+    const wrapper = ownerDocument.createElement('div');
+    wrapper.innerHTML = html;
+    fragment.append(...Array.from(wrapper.childNodes));
+    const nodeTarget = target as Node;
+    while (nodeTarget.firstChild) nodeTarget.removeChild(nodeTarget.firstChild);
+    nodeTarget.appendChild(fragment);
+  }
   renderedHtml.set(target, html);
 }
 
