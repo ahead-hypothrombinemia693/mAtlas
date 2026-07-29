@@ -1,0 +1,181 @@
+{
+  "version": 1,
+  "views": [
+    {
+      "id": "experimental-discovery",
+      "title": "Experimental discovery",
+      "summary": "Follow the experiments, observations, and anomalies that forced physics to change—and the later tests that decided whether the new theories survived.",
+      "narrative": "Read downward as a historical argument. Experimental results and unresolved problems motivate theories; later measurements test or support them. Isolated concepts are hidden so the graph emphasizes chains of evidence rather than a complete physics catalog.",
+      "tags": ["Physics", "History", "Experiments"],
+      "featured": true,
+      "focusNode": "blackbody_ultraviolet_catastrophe",
+      "settings": {
+        "fields": ["physics"],
+        "domains": ["physical-foundations", "classical-mechanics", "relativity", "electromagnetism", "quantum-mechanics", "quantum-field-theory", "particle-physics", "nuclear-physics", "atomic-molecular-physics", "experiments-observations"],
+        "edgeTypes": ["historically-motivated", "experimentally-verified-by"],
+        "crossFieldVisibility": "hidden",
+        "edgeLabels": true,
+        "junctions": false,
+        "edgeZoomActivation": false,
+        "hideIsolatedNodes": true,
+        "layout": "atlas"
+      }
+    },
+    {
+      "id": "from-sets-to-spaces",
+      "title": "From sets to spaces",
+      "summary": "Trace how bare collections acquire relations, distance, topology, measure, and analytic structure.",
+      "narrative": "This view follows one of mathematics’ central construction patterns: begin with a set, add structure or axioms, and study what becomes possible. It highlights canonical constructions and the induced structures that can be forgotten again.",
+      "tags": ["Mathematics", "Foundations", "Analysis"],
+      "featured": true,
+      "focusNode": "set",
+      "settings": {
+        "fields": ["mathematics"],
+        "domains": ["set-theory", "order", "topology", "differential-geometry", "analysis", "measure", "probability"],
+        "edgeTypes": ["add-data", "impose-axiom", "induced-forgotten", "canonical-construction", "combine-compatible"],
+        "crossFieldVisibility": "hidden",
+        "edgeLabels": true,
+        "junctions": true,
+        "edgeZoomActivation": true,
+        "hideIsolatedNodes": true,
+        "layout": "atlas"
+      }
+    },
+    {
+      "id": "algebraic-structures",
+      "title": "Algebraic structures",
+      "summary": "Explore how operations and laws organize groups, rings, modules, algebras, representations, and their categorical relationships.",
+      "narrative": "The emphasis here is structural inheritance: which data are added, which axioms are imposed, and which constructions produce new algebraic objects. Construction diamonds remain visible where several compatible inputs are jointly required.",
+      "tags": ["Algebra", "Categories", "Representations"],
+      "featured": true,
+      "focusNode": "group",
+      "settings": {
+        "fields": ["mathematics"],
+        "domains": ["category-theory", "universal-algebra", "algebra", "representation-theory", "number-theory", "homological-algebra"],
+        "edgeTypes": ["add-data", "impose-axiom", "induced-forgotten", "canonical-construction", "combine-compatible"],
+        "crossFieldVisibility": "hidden",
+        "edgeLabels": true,
+        "junctions": true,
+        "edgeZoomActivation": true,
+        "hideIsolatedNodes": true,
+        "layout": "atlas"
+      }
+    },
+    {
+      "id": "foundations-and-logic",
+      "title": "Foundations and logic",
+      "summary": "Survey the concepts used to formalize mathematical objects, proof, models, and foundational systems.",
+      "narrative": "This view concentrates on the infrastructure beneath ordinary mathematics: sets, logical languages, models, formal systems, and categorical foundations. It is a compact map of the choices that determine what counts as an object and a valid inference.",
+      "tags": ["Logic", "Set theory", "Foundations"],
+      "focusNode": "set",
+      "settings": {
+        "fields": ["mathematics"],
+        "domains": ["set-theory", "logic", "category-theory", "foundation"],
+        "edgeTypes": ["add-data", "impose-axiom", "induced-forgotten", "canonical-construction", "combine-compatible"],
+        "crossFieldVisibility": "hidden",
+        "edgeLabels": true,
+        "junctions": true,
+        "edgeZoomActivation": true,
+        "hideIsolatedNodes": false,
+        "layout": "atlas"
+      }
+    },
+    {
+      "id": "geometry-of-gravity",
+      "title": "The geometry of gravity",
+      "summary": "Connect differential geometry to spacetime, gravitation, Einstein’s equations, and their classical limits and tests.",
+      "narrative": "General relativity did not merely borrow mathematical notation; it identified gravity with spacetime geometry. This view exposes the mathematical formulations, physical specializations, limiting relations, and experimental evidence surrounding that identification.",
+      "tags": ["Geometry", "Relativity", "Cross-field"],
+      "featured": true,
+      "focusNode": "general_relativity",
+      "settings": {
+        "fields": ["mathematics", "physics"],
+        "domains": ["topology", "differential-geometry", "analysis", "physical-foundations", "classical-mechanics", "relativity", "experiments-observations"],
+        "edgeTypes": ["mathematical-formulation", "framework-specialization", "describes-governs", "mathematical-limit", "historically-motivated", "experimentally-verified-by", "canonical-construction", "induced-forgotten"],
+        "crossFieldVisibility": "all",
+        "edgeLabels": true,
+        "junctions": false,
+        "edgeZoomActivation": false,
+        "hideIsolatedNodes": true,
+        "layout": "atlas"
+      }
+    },
+    {
+      "id": "quantum-revolution",
+      "title": "The quantum revolution",
+      "summary": "Move from the empirical crises of classical physics through quantum mechanics, quantum fields, and precision tests.",
+      "narrative": "The quantum framework emerged through a sequence of problems rather than a single deduction. This view combines the motivating experiments with the structural relations among quantum mechanics, field theory, atomic physics, and particle physics.",
+      "tags": ["Quantum", "Experiments", "Field theory"],
+      "featured": true,
+      "focusNode": "quantum_mechanics",
+      "settings": {
+        "fields": ["physics"],
+        "domains": ["physical-foundations", "quantum-mechanics", "quantum-field-theory", "particle-physics", "nuclear-physics", "atomic-molecular-physics", "experiments-observations"],
+        "edgeTypes": ["framework-specialization", "quantization", "theory-component", "model-realization", "state-description", "historically-motivated", "experimentally-verified-by"],
+        "crossFieldVisibility": "hidden",
+        "edgeLabels": true,
+        "junctions": false,
+        "edgeZoomActivation": false,
+        "hideIsolatedNodes": true,
+        "layout": "atlas"
+      }
+    },
+    {
+      "id": "standard-model-anatomy",
+      "title": "Anatomy of the Standard Model",
+      "summary": "Inspect the fields, particles, symmetries, interactions, and measurements assembled into the Standard Model.",
+      "narrative": "Treat the Standard Model as a structured system rather than a list of particles. Follow its gauge framework, matter and force components, interaction terms, classifications, effective descriptions, and decisive collider evidence.",
+      "tags": ["Particle physics", "Gauge theory", "Collider evidence"],
+      "focusNode": "standard_model",
+      "settings": {
+        "fields": ["physics"],
+        "domains": ["physical-foundations", "quantum-field-theory", "particle-physics", "experiments-observations"],
+        "edgeTypes": ["framework-specialization", "theory-component", "composition", "classification", "couples-interacts", "effective-theory", "experimentally-verified-by"],
+        "crossFieldVisibility": "hidden",
+        "edgeLabels": true,
+        "junctions": false,
+        "edgeZoomActivation": false,
+        "hideIsolatedNodes": true,
+        "layout": "atlas"
+      }
+    },
+    {
+      "id": "classical-to-relativistic",
+      "title": "From classical to relativistic physics",
+      "summary": "See how mechanics and electromagnetism are reorganized by spacetime symmetry and recovered as controlled limits.",
+      "narrative": "Relativity preserved much of classical physics while changing its organizing principles. This view emphasizes specialization, approximation, mathematical formulation, and the experiments that exposed the limits of pre-relativistic models.",
+      "tags": ["Mechanics", "Electromagnetism", "Relativity"],
+      "focusNode": "special_relativity",
+      "settings": {
+        "fields": ["physics"],
+        "domains": ["physical-foundations", "classical-mechanics", "relativity", "electromagnetism", "experiments-observations"],
+        "edgeTypes": ["framework-specialization", "describes-governs", "mathematical-limit", "effective-theory", "mathematical-formulation", "historically-motivated", "experimentally-verified-by"],
+        "crossFieldVisibility": "hidden",
+        "edgeLabels": true,
+        "junctions": false,
+        "edgeZoomActivation": false,
+        "hideIsolatedNodes": true,
+        "layout": "atlas"
+      }
+    },
+    {
+      "id": "probability-measure-analysis",
+      "title": "Probability, measure, and analysis",
+      "summary": "Connect measurable spaces, integration, probability distributions, function spaces, and stochastic structure.",
+      "narrative": "Modern probability is built on measure theory and analysis. This view shows the shared carriers and constructions that connect measurable sets, integrals, distributions, random variables, and analytic spaces.",
+      "tags": ["Probability", "Measure", "Analysis"],
+      "focusNode": "probability_space",
+      "settings": {
+        "fields": ["mathematics"],
+        "domains": ["set-theory", "analysis", "measure", "probability"],
+        "edgeTypes": ["add-data", "impose-axiom", "induced-forgotten", "canonical-construction", "combine-compatible"],
+        "crossFieldVisibility": "hidden",
+        "edgeLabels": true,
+        "junctions": true,
+        "edgeZoomActivation": true,
+        "hideIsolatedNodes": true,
+        "layout": "atlas"
+      }
+    }
+  ]
+}

@@ -15,6 +15,7 @@
     "src/core/text.ts",
     "src/model/graph-model.ts",
     "src/state/ui-state.ts",
+    "src/state/view-state.ts",
     "src/graph/organic-layout-core.ts",
     "src/app/location-controller.ts",
     "src/graph/visibility-policy.ts",

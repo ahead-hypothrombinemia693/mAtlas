@@ -2,6 +2,7 @@ import type cytoscape from 'cytoscape';
 import { byId, escapeHtml, query as $, queryAll as $$ } from '../core/dom.js';
 import { GraphModel } from '../model/graph-model.js';
 import { createInitialState, parseStoredUiState, parseUrlUiState, serializeUiState, sameIdSet, UI_STATE_STORAGE_KEY } from '../state/ui-state.js';
+import { stateMatchesView, viewSettingsAsUrlState } from '../state/view-state.js';
 import { LabelSizer } from '../graph/label-sizer.js';
 import { createGraph } from '../graph/create-graph.js';
 import { LayoutManager } from '../graph/layout-manager.js';
@@ -13,16 +14,24 @@ import { FieldBandController } from '../ui/field-band-controller.js';
 import { PanelController } from '../ui/panel-controller.js';
 import { TooltipController } from '../ui/tooltip-controller.js';
 import { FilterControls } from '../ui/filter-controls.js';
+import { ViewsController } from '../ui/views-controller.js';
 import { LocationController } from './location-controller.js';
-import type { AppState, GraphData, GraphNode, HistoryMode, LayoutName, SelectionTarget } from '../types.js';
+import type { AppState, AtlasViewsData, GraphData, GraphNode, HistoryMode, LayoutName, SelectionTarget } from '../types.js';
 
 export async function startAtlasApp(): Promise<void> {
   'use strict';
 
   const graphDataUrl = new URL(__GRAPH_DATA_URL__, document.baseURI).toString();
-  const graphResponse = await fetch(graphDataUrl, { cache: 'force-cache' });
+  const viewsDataUrl = new URL(__VIEWS_DATA_URL__, document.baseURI).toString();
+  const [graphResponse, viewsResponse] = await Promise.all([
+    fetch(graphDataUrl, { cache: 'force-cache' }),
+    fetch(viewsDataUrl, { cache: 'force-cache' })
+  ]);
   if (!graphResponse.ok) throw new Error(`Unable to load graph data (${graphResponse.status}).`);
+  if (!viewsResponse.ok) throw new Error(`Unable to load views data (${viewsResponse.status}).`);
   const graphData = await graphResponse.json() as GraphData;
+  const viewsData = await viewsResponse.json() as AtlasViewsData;
+  const viewsById = new Map(viewsData.views.map((view) => [view.id, view]));
   const graphEl = document.getElementById('graph');
   if (!(graphEl instanceof HTMLElement)) throw new Error('Missing #graph element.');
 
@@ -41,12 +50,14 @@ export async function startAtlasApp(): Promise<void> {
   const locationController = new LocationController({
     model,
     getState: () => state,
+    views: viewsById,
     fieldOrder,
     domainOrder,
     edgeTypeOrder
   });
   const scopedDefaultFieldIds = locationController.scopedDefaultFieldIds();
   const scopedDefaultDomainIds = locationController.scopedDefaultDomainIds();
+  const initialView = locationController.resolveViewFromLocation({ includeTemplate: true });
 
   function readStoredUiState() {
     try {
@@ -79,17 +90,32 @@ export async function startAtlasApp(): Promise<void> {
   const storedUiState = readStoredUiState();
   const urlUiState = readUrlUiState();
   const conceptPageDefaults = locationController.conceptPageDefaultTaxonomy();
+  const viewDefaults = initialView?.settings;
 
   state = createInitialState(urlUiState, storedUiState, {
-    fields: conceptPageDefaults?.fields ?? scopedDefaultFieldIds,
-    domains: conceptPageDefaults?.domains ?? scopedDefaultDomainIds,
-    edgeTypes: defaultEdgeTypeIds
+    fields: viewDefaults?.fields ?? conceptPageDefaults?.fields ?? scopedDefaultFieldIds,
+    domains: viewDefaults?.domains ?? conceptPageDefaults?.domains ?? scopedDefaultDomainIds,
+    edgeTypes: viewDefaults?.edgeTypes ?? defaultEdgeTypeIds,
+    crossFieldVisibility: viewDefaults?.crossFieldVisibility,
+    edgeLabels: viewDefaults?.edgeLabels,
+    junctions: viewDefaults?.junctions,
+    edgeZoomActivation: viewDefaults?.edgeZoomActivation,
+    hideIsolatedNodes: viewDefaults?.hideIsolatedNodes,
+    layout: viewDefaults?.layout
   });
+  if (initialView && stateMatchesView(state, initialView)) locationController.setActiveView(initialView.id);
 
+  let viewsController: ViewsController | null = null;
+  let currentSelectionTarget = (): SelectionTarget | null => locationController.parseSelection();
 
   function persistUiState(): void {
+    const activeView = locationController.activeView();
+    if (activeView && !stateMatchesView(state, activeView)) locationController.deactivateView();
     writeStoredUiState();
-    locationController.write(locationController.parseSelection(), 'replace');
+    const selection = currentSelectionTarget();
+    locationController.write(selection, 'replace');
+    locationController.syncDocumentMetadata(selection);
+    viewsController?.syncActiveView();
   }
 
   const labelSizer = new LabelSizer();
@@ -98,6 +124,11 @@ export async function startAtlasApp(): Promise<void> {
 
   const cy = createGraph(graphEl, model, labelSizer);
   window.cy = cy;
+  currentSelectionTarget = () => {
+    const selected = cy.$(':selected').first();
+    if (selected && !selected.empty()) return { kind: selected.isNode() ? 'node' : 'edge', id: selected.id() };
+    return locationController.parseSelection();
+  };
 
 
   const panelController = new PanelController({ cy, state, domainCount: domainOrder.length });
@@ -322,7 +353,10 @@ export async function startAtlasApp(): Promise<void> {
   }
 
   function applyUiStateFromLocation(): void {
-    const next = readUrlUiState();
+    const routeView = locationController.resolveViewFromLocation();
+    const urlState = readUrlUiState();
+    const next = routeView ? { ...viewSettingsAsUrlState(routeView.settings), ...urlState } : urlState;
+    locationController.setActiveView(routeView?.id ?? null);
     const nextFields = next.fields ?? [...state.selectedFields];
     const nextDomains = next.domains ?? [...state.selectedDomains];
     const nextEdgeTypes = next.edgeTypes ?? [...state.selectedEdgeTypes];
@@ -330,6 +364,7 @@ export async function startAtlasApp(): Promise<void> {
     const nextEdgeLabels = next.edgeLabels ?? state.showEdgeLabels;
     const nextJunctions = next.junctions ?? state.showJunctions;
     const nextEdgeZoomActivation = next.edgeZoomActivation ?? state.edgeZoomActivation;
+    const nextHideIsolatedNodes = next.hideIsolatedNodes ?? state.hideIsolatedNodes;
     const nextLayout = next.layout ?? state.layout;
 
     const fieldsChanged = !sameIdSet(state.selectedFields, nextFields);
@@ -339,10 +374,15 @@ export async function startAtlasApp(): Promise<void> {
     const edgeLabelsChanged = state.showEdgeLabels !== nextEdgeLabels;
     const junctionsChanged = state.showJunctions !== nextJunctions;
     const edgeZoomChanged = state.edgeZoomActivation !== nextEdgeZoomActivation;
+    const hideIsolatedChanged = state.hideIsolatedNodes !== nextHideIsolatedNodes;
     const layoutChanged = state.layout !== nextLayout;
 
     if (!fieldsChanged && !domainsChanged && !edgeTypesChanged && !crossFieldChanged
-      && !edgeLabelsChanged && !junctionsChanged && !layoutChanged) return;
+      && !edgeLabelsChanged && !junctionsChanged && !edgeZoomChanged && !hideIsolatedChanged && !layoutChanged) {
+      if (routeView && !stateMatchesView(state, routeView)) locationController.deactivateView();
+      viewsController?.syncActiveView();
+      return;
+    }
 
     state.selectedFields = new Set(nextFields);
     state.selectedDomains = new Set(nextDomains);
@@ -351,13 +391,16 @@ export async function startAtlasApp(): Promise<void> {
     state.showEdgeLabels = nextEdgeLabels;
     state.showJunctions = nextJunctions;
     state.edgeZoomActivation = nextEdgeZoomActivation;
+    state.hideIsolatedNodes = nextHideIsolatedNodes;
     state.layout = nextLayout;
 
     buildFilters();
     syncPreferenceControls();
     updateFieldNavActiveState();
     writeStoredUiState();
-    applyFilters({ relayout: fieldsChanged || domainsChanged || junctionsChanged || edgeZoomChanged || layoutChanged });
+    if (routeView && !stateMatchesView(state, routeView)) locationController.deactivateView();
+    applyFilters({ relayout: fieldsChanged || domainsChanged || junctionsChanged || edgeZoomChanged || hideIsolatedChanged || layoutChanged });
+    viewsController?.syncActiveView();
   }
 
   function applyLocationState({ initial = false } = {}): void {
@@ -365,6 +408,8 @@ export async function startAtlasApp(): Promise<void> {
     const target = parseSelectionLocation({ includeTemplateSelection: initial });
     writeLocationState(target, 'replace');
     applySelectionFromLocation({ initial });
+    syncDocumentMetadata(target);
+    viewsController?.syncActiveView();
   }
 
   function clearSearch(clearInput = false): void {
@@ -450,6 +495,12 @@ export async function startAtlasApp(): Promise<void> {
 
   // Controls
   filterControls.initialize();
+  viewsController = new ViewsController({
+    views: viewsData.views,
+    activeView: () => locationController.activeView(),
+    viewPageUrl: (viewId) => locationController.viewPageUrl(viewId)
+  });
+  viewsController.initialize();
   buildHelp();
 
   byId('fitButton').addEventListener('click', fitVisibleGraph);

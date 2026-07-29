@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { build } from 'esbuild-wasm';
 import { generateSeoAssets } from './generate-seo-assets.mjs';
 import { generateConceptPages } from './generate-concept-pages.mjs';
+import { generateViewPages } from './generate-view-pages.mjs';
 
 const root = new URL('../', import.meta.url);
 const dist = new URL('../dist/', import.meta.url);
@@ -27,12 +28,16 @@ await Promise.all([
 const digest = (contents) => createHash('sha256').update(contents).digest('hex').slice(0, 16);
 const graphBytes = await readFile(new URL('src/data/structures.json', root));
 const schemaBytes = await readFile(new URL('src/data/schema.json', root));
+const viewsBytes = await readFile(new URL('src/data/views.json', root));
 const graphData = JSON.parse(graphBytes.toString('utf8'));
+const viewsData = JSON.parse(viewsBytes.toString('utf8'));
 const graphFile = `atlas.${digest(graphBytes)}.json`;
 const schemaFile = `schema.${digest(schemaBytes)}.json`;
+const viewsFile = `views.${digest(viewsBytes)}.json`;
 await Promise.all([
   writeFile(new URL(`data/${graphFile}`, dist), graphBytes),
-  writeFile(new URL(`data/${schemaFile}`, dist), schemaBytes)
+  writeFile(new URL(`data/${schemaFile}`, dist), schemaBytes),
+  writeFile(new URL(`data/${viewsFile}`, dist), viewsBytes)
 ]);
 
 const bundle = await build({
@@ -52,7 +57,10 @@ const bundle = await build({
   sourcesContent: true,
   metafile: true,
   legalComments: 'external',
-  define: { __GRAPH_DATA_URL__: JSON.stringify(`./data/${graphFile}`) },
+  define: {
+    __GRAPH_DATA_URL__: JSON.stringify(`./data/${graphFile}`),
+    __VIEWS_DATA_URL__: JSON.stringify(`./data/${viewsFile}`)
+  },
   logLevel: 'info'
 });
 
@@ -71,7 +79,8 @@ const sourceTemplate = await readFile(new URL('src/index.html', root), 'utf8');
 const builtTemplate = sourceTemplate
   .replace('<!-- atlas:assets -->', assetTags)
   .replaceAll('__ATLAS_DATA_URL__', `./data/${graphFile}`)
-  .replaceAll('__ATLAS_SCHEMA_URL__', `./data/${schemaFile}`);
+  .replaceAll('__ATLAS_SCHEMA_URL__', `./data/${schemaFile}`)
+  .replaceAll('__ATLAS_VIEWS_URL__', `./data/${viewsFile}`);
 await writeFile(new URL('index.html', dist), builtTemplate);
 
 await Promise.all([
@@ -88,8 +97,9 @@ await Promise.all([
   cp(new URL('THIRD_PARTY_NOTICES.txt', root), new URL('THIRD_PARTY_NOTICES.txt', dist))
 ]);
 
-await generateSeoAssets({ graphData, distUrl: dist, graphDataPath: `data/${graphFile}`, schemaPath: `data/${schemaFile}` });
+await generateSeoAssets({ graphData, viewsData, distUrl: dist, graphDataPath: `data/${graphFile}`, schemaPath: `data/${schemaFile}`, viewsPath: `data/${viewsFile}` });
 await generateConceptPages({ graphData, templateHtml: builtTemplate, distUrl: dist });
+await generateViewPages({ graphData, viewsData, templateHtml: builtTemplate, distUrl: dist });
 
 const manifest = {
   version: 1,
@@ -97,8 +107,9 @@ const manifest = {
     app: publicPath(jsOutput).slice(2),
     css: cssOutput ? publicPath(cssOutput).slice(2) : null,
     graph: `data/${graphFile}`,
-    schema: `data/${schemaFile}`
+    schema: `data/${schemaFile}`,
+    views: `data/${viewsFile}`
   }
 };
 await writeFile(new URL('asset-manifest.json', dist), `${JSON.stringify(manifest, null, 2)}\n`);
-console.log(`Built ${graphData.nodes.length} concepts and ${graphData.edges.length} edges into dist/.`);
+console.log(`Built ${graphData.nodes.length} concepts, ${graphData.edges.length} edges, and ${viewsData.views.length} views into dist/.`);

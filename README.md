@@ -11,8 +11,11 @@ The atlas is one graph rather than a collection of isolated applications. Fields
 - `/physics/` — physics scope
 - `/concepts/<id>/` — canonical concept pages
 - `/concepts/` — static concept directory
+- `/views/` — static directory of curated guided views
+- `/views/<id>/` — a static, crawlable guided-view route that opens the interactive atlas with the preset applied
 - `/data/atlas.<hash>.json` — immutable canonical graph export (the exact URL is linked from each generated page)
-- `/data/schema.json` — published JSON Schema
+- `/data/schema.<hash>.json` — published graph JSON Schema
+- `/data/views.<hash>.json` — immutable guided-view definitions
 
 The generated site does not create or preserve `/m/`; configure an external redirect if one is required.
 
@@ -38,7 +41,7 @@ npm test
 
 `npm run build` writes the publishable static site to `dist/`. `npm run build:pages` copies that output unchanged to `.pages/` for GitHub Pages.
 
-The validator checks field/domain membership, node and edge references, citations and source URLs, construction-junction consistency, structural direction and cycles, duplicate relations, source usage, generic detail sections, and explicit inline-math markup.
+The validator checks field/domain membership, node and edge references, citations and source URLs, construction-junction consistency, structural direction and cycles, duplicate relations, source usage, generic detail sections, explicit inline-math markup, and every guided view's identifiers and settings.
 
 ## Additional scripts
 
@@ -56,16 +59,18 @@ src/
   types.ts                   graph and application types
   data/
     structures.json          canonical editable graph dataset
-    schema.json              published schema
+    views.json               curated guided-view definitions
+    schema.json              published graph schema
 scripts/
   build.mjs                  validates, compiles, generates pages, and assembles dist/
   generate-concept-pages.mjs canonical concept, directory, and field-scope pages
+  generate-view-pages.mjs    view directory and crawlable view routes
   generate-seo-assets.mjs    sitemap, robots.txt, and llms.txt
   validate-data.mjs          semantic and reference validation
   prepare-pages.mjs          root-level GitHub Pages artifact
 ```
 
-`src/data/structures.json` remains the single editable dataset for this revision. The model is now field-aware and can later be split into authoring modules without changing its compiled public form.
+`src/data/structures.json` is the canonical graph dataset. `src/data/views.json` is a separate navigation layer: it references graph identifiers but does not duplicate or alter graph content. The field-aware graph model can later be split into authoring modules without changing its compiled public form.
 
 ### Taxonomy
 
@@ -114,6 +119,16 @@ Fields, domains, edge types, cross-field visibility, display options, and layout
 The scoped routes initialize their corresponding field while using the same graph and codebase. Canonical concept URLs are field-independent so a multi-field concept has one durable identity.
 
 
+### Guided views
+
+A view is a named preset in `src/data/views.json`. It contains editorial copy (`title`, `summary`, `narrative`, and `tags`), an optional image and focus concept, and a complete settings object for fields, domains, edge types, cross-field visibility, display controls, and layout.
+
+The build emits a static directory page and one crawlable application page per view. View routes are included in `sitemap.xml` and represented as `CollectionPage` JSON-LD. In the application, the **Views** toolbar control opens the same data-driven catalog, while a dismissible first-visit prompt makes the feature discoverable without permanently occupying graph space.
+
+A `/views/<id>/` URL remains active while the effective settings exactly match its preset. Selecting concepts, highlighting neighborhoods, searching, and opening details do not leave the route. Changing any filter, display setting, or layout exits the named view and writes the resulting configuration through the ordinary atlas/concept URL scheme. Returning through browser history restores the preset.
+
+`hideIsolatedNodes` is exposed as **Hide isolated concepts** and serialized as the `connected=1|0` URL parameter. Curated views use it where a narrow relation set should display actual connected paths rather than unrelated concepts in the selected domains.
+
 ## Inline mathematics
 
 Math-capable strings use explicit `$...$` LaTeX delimiters, escaped for JSON:
@@ -126,7 +141,7 @@ The browser escapes prose and sends only delimited formulas to KaTeX. `npm run m
 
 ## GitHub Pages
 
-`.github/workflows/pages.yml` installs locked dependencies, runs `npm run build:pages`, and deploys `.pages/`. The artifact now places the complete atlas at its root, including `/math/`, `/physics/`, and `/concepts/`.
+`.github/workflows/pages.yml` installs locked dependencies, runs the complete `npm test` pipeline, prepares `.pages/`, and deploys it. The artifact now places the complete atlas at its root, including `/math/`, `/physics/`, `/concepts/`, and `/views/`.
 
 ## License
 

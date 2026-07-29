@@ -29,6 +29,12 @@ export interface InitialStateDefaults {
   fields: string[];
   domains: string[];
   edgeTypes: string[];
+  crossFieldVisibility?: CrossFieldVisibility | undefined;
+  edgeLabels?: boolean | undefined;
+  junctions?: boolean | undefined;
+  edgeZoomActivation?: boolean | undefined;
+  hideIsolatedNodes?: boolean | undefined;
+  layout?: LayoutName | undefined;
 }
 
 export function isPlainObject(value: unknown): value is Record<string, unknown> {
@@ -54,6 +60,7 @@ export function parseStoredUiState(raw: string | null, known: UiStateKnowledge):
       || typeof display.edgeLabels !== 'boolean'
       || typeof display.junctions !== 'boolean'
       || (display.edgeZoomActivation !== undefined && typeof display.edgeZoomActivation !== 'boolean')
+      || (display.hideIsolatedNodes !== undefined && typeof display.hideIsolatedNodes !== 'boolean')
       || (display.crossFieldVisibility !== undefined && !isCrossFieldVisibility(display.crossFieldVisibility))
       || !isLayoutName(candidate.layout)) {
       return null;
@@ -70,6 +77,7 @@ export function parseStoredUiState(raw: string | null, known: UiStateKnowledge):
     };
     if (candidate.fields !== undefined) parsed.fields = candidate.fields;
     if (display.edgeZoomActivation !== undefined) parsed.display.edgeZoomActivation = display.edgeZoomActivation;
+    if (display.hideIsolatedNodes !== undefined) parsed.display.hideIsolatedNodes = display.hideIsolatedNodes;
     if (display.crossFieldVisibility !== undefined) parsed.display.crossFieldVisibility = display.crossFieldVisibility;
     return parsed;
   } catch {
@@ -101,6 +109,7 @@ export function parseUrlUiState(params: URLSearchParams, known: UiStateKnowledge
   const edgeLabels = readUrlBoolean(params, 'edgeLabels');
   const junctions = readUrlBoolean(params, 'junctions');
   const edgeZoomActivation = readUrlBoolean(params, 'edgeZoomActivation');
+  const hideIsolatedNodes = readUrlBoolean(params, 'connected');
   const layoutValue = params.get('layout');
   const normalizedLayout = layoutValue === 'cose' ? 'cose-bilkent' : layoutValue;
 
@@ -111,6 +120,7 @@ export function parseUrlUiState(params: URLSearchParams, known: UiStateKnowledge
   if (edgeLabels !== undefined) result.edgeLabels = edgeLabels;
   if (junctions !== undefined) result.junctions = junctions;
   if (edgeZoomActivation !== undefined) result.edgeZoomActivation = edgeZoomActivation;
+  if (hideIsolatedNodes !== undefined) result.hideIsolatedNodes = hideIsolatedNodes;
   if (isLayoutName(normalizedLayout)) result.layout = normalizedLayout;
   return result;
 }
@@ -124,13 +134,14 @@ export function createInitialState(
     selectedFields: new Set(url.fields ?? stored?.fields ?? defaults.fields),
     selectedDomains: new Set(url.domains ?? stored?.domains ?? defaults.domains),
     selectedEdgeTypes: new Set(url.edgeTypes ?? stored?.edgeTypes ?? defaults.edgeTypes),
-    crossFieldVisibility: url.crossFieldVisibility ?? stored?.display.crossFieldVisibility ?? 'all',
-    showEdgeLabels: url.edgeLabels ?? stored?.display.edgeLabels ?? true,
-    showJunctions: url.junctions ?? stored?.display.junctions ?? true,
-    edgeZoomActivation: url.edgeZoomActivation ?? stored?.display.edgeZoomActivation ?? true,
+    crossFieldVisibility: url.crossFieldVisibility ?? stored?.display.crossFieldVisibility ?? defaults.crossFieldVisibility ?? 'all',
+    showEdgeLabels: url.edgeLabels ?? stored?.display.edgeLabels ?? defaults.edgeLabels ?? true,
+    showJunctions: url.junctions ?? stored?.display.junctions ?? defaults.junctions ?? true,
+    edgeZoomActivation: url.edgeZoomActivation ?? stored?.display.edgeZoomActivation ?? defaults.edgeZoomActivation ?? true,
+    hideIsolatedNodes: url.hideIsolatedNodes ?? stored?.display.hideIsolatedNodes ?? defaults.hideIsolatedNodes ?? false,
     neighborhoodActive: false,
     neighborhoodElementId: null,
-    layout: url.layout ?? stored?.layout ?? 'atlas',
+    layout: url.layout ?? stored?.layout ?? defaults.layout ?? 'atlas',
     searchQuery: '',
     filtersOpen: false,
     detailsOpen: false
@@ -152,6 +163,7 @@ export function serializeUiState(
       edgeLabels: state.showEdgeLabels,
       junctions: state.showJunctions,
       edgeZoomActivation: state.edgeZoomActivation,
+      hideIsolatedNodes: state.hideIsolatedNodes,
       crossFieldVisibility: state.crossFieldVisibility
     },
     layout: state.layout
@@ -175,6 +187,7 @@ export function addUiStateToParams(
   params.set('edgeLabels', state.showEdgeLabels ? '1' : '0');
   params.set('junctions', state.showJunctions ? '1' : '0');
   params.set('edgeZoomActivation', state.edgeZoomActivation ? '1' : '0');
+  params.set('connected', state.hideIsolatedNodes ? '1' : '0');
   params.set('layout', state.layout);
 }
 

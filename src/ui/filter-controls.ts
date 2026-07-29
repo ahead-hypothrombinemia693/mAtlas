@@ -91,6 +91,7 @@ export class FilterControls {
     byId<HTMLInputElement>('edgeLabelsToggle').checked = state.showEdgeLabels;
     byId<HTMLInputElement>('junctionsToggle').checked = state.showJunctions;
     byId<HTMLInputElement>('edgeZoomToggle').checked = state.edgeZoomActivation;
+    byId<HTMLInputElement>('hideIsolatedToggle').checked = state.hideIsolatedNodes;
     byId<HTMLSelectElement>('crossFieldSelect').value = state.crossFieldVisibility;
     byId<HTMLSelectElement>('layoutSelect').value = state.layout;
   }
@@ -134,6 +135,10 @@ export class FilterControls {
     });
     byId<HTMLInputElement>('junctionsToggle').addEventListener('change', (event) => {
       this.options.state.showJunctions = (event.currentTarget as HTMLInputElement).checked;
+      this.commit(true);
+    });
+    byId<HTMLInputElement>('hideIsolatedToggle').addEventListener('change', (event) => {
+      this.options.state.hideIsolatedNodes = (event.currentTarget as HTMLInputElement).checked;
       this.commit(true);
     });
     byId<HTMLSelectElement>('layoutSelect').addEventListener('change', (event) => {

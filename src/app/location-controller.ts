@@ -1,11 +1,13 @@
 import { addUiStateToParams } from '../state/ui-state.js';
+import { stateMatchesView, viewIdFromPath, viewIdFromTemplate, viewPagePath } from '../state/view-state.js';
 import { stripInlineMathText, summarizePlainText } from '../core/text.js';
 import type { GraphModel } from '../model/graph-model.js';
-import type { AppState, HistoryMode, SelectionTarget } from '../types.js';
+import type { AppState, AtlasView, HistoryMode, SelectionTarget } from '../types.js';
 
 export interface LocationControllerOptions {
   model: GraphModel;
   getState: () => AppState;
+  views: ReadonlyMap<string, AtlasView>;
   fieldOrder: readonly string[];
   domainOrder: readonly string[];
   edgeTypeOrder: readonly string[];
@@ -54,6 +56,7 @@ export class LocationController {
   readonly canonicalRootUrl: string;
   private readonly defaultPageTitle: string;
   private readonly defaultPageDescription: string;
+  private activeViewId: string | null = null;
 
   constructor(private readonly options: LocationControllerOptions) {
     const { model } = options;
@@ -90,6 +93,39 @@ export class LocationController {
     return { fields: [this.options.model.fieldForDomain(domainId)], domains: [domainId] };
   }
 
+  resolveViewFromLocation({ includeTemplate = false }: { includeTemplate?: boolean } = {}): AtlasView | null {
+    const ids = new Set(this.options.views.keys());
+    const pathId = viewIdFromPath(window.location.pathname, ids);
+    if (pathId) return this.options.views.get(pathId) ?? null;
+    if (!includeTemplate) return null;
+    const templateId = viewIdFromTemplate(
+      document.querySelector<HTMLMetaElement>('meta[name="atlas:view"]')?.content,
+      ids
+    );
+    return this.options.views.get(templateId ?? '') ?? null;
+  }
+
+  setActiveView(viewId: string | null): void {
+    this.activeViewId = viewId && this.options.views.has(viewId) ? viewId : null;
+  }
+
+  deactivateView(): void {
+    this.activeViewId = null;
+  }
+
+  activeView(): AtlasView | null {
+    return this.activeViewId ? this.options.views.get(this.activeViewId) ?? null : null;
+  }
+
+  viewPageUrl(viewId: string): string {
+    return new URL(viewPagePath(viewId), this.runtimeGlobalRootUrl).toString();
+  }
+
+  scopedDefaultViewSelection(): SelectionTarget | null {
+    const view = this.activeView();
+    return view?.focusNode ? { kind: 'node', id: view.focusNode } : null;
+  }
+
   parseSelectionPath(): SelectionTarget | null {
     return selectionFromPath(window.location.pathname, this.options.model.knownNodeIds);
   }
@@ -108,6 +144,8 @@ export class LocationController {
   }
 
   parseSelection({ includeTemplateSelection = false }: { includeTemplateSelection?: boolean } = {}): SelectionTarget | null {
+    const params = new URL(window.location.href).searchParams;
+    if (params.get('selection') === 'none') return null;
     const pathTarget = this.parseSelectionPath();
     if (pathTarget) return pathTarget;
     const queryTarget = this.parseSelectionQuery();
@@ -115,6 +153,8 @@ export class LocationController {
     if (includeTemplateSelection) {
       const templateTarget = this.parseTemplateSelection();
       if (templateTarget) return templateTarget;
+      const viewTarget = this.scopedDefaultViewSelection();
+      if (viewTarget && this.options.model.knownNodeIds.has(viewTarget.id)) return viewTarget;
     }
     return selectionFromParams(
       new URLSearchParams(window.location.hash.slice(1)),
@@ -143,6 +183,11 @@ export class LocationController {
   }
 
   itemUrl(itemId: string, itemKind: SelectionTarget['kind']): string {
+    const view = this.activeView();
+    if (view && stateMatchesView(this.options.getState(), view)) {
+      return this.urlForActiveViewSelection({ kind: itemKind, id: itemId }).toString();
+    }
+
     const { model } = this.options;
     if (itemKind === 'node' && model.nodeRecord.get(itemId)?.kind === 'structure') {
       const url = new URL(this.conceptPageUrl(itemId));
@@ -159,20 +204,28 @@ export class LocationController {
   }
 
   write(target: SelectionTarget | null, mode: Exclude<HistoryMode, null> = 'replace'): void {
-    const { model } = this.options;
-    const url = target?.kind === 'node' && model.nodeRecord.get(target.id)?.kind === 'structure'
-      ? new URL(this.conceptPageUrl(target.id))
-      : new URL(this.currentScopeUrl);
-    this.addUiState(url);
-    url.searchParams.delete('node');
-    url.searchParams.delete('edge');
-    if (target?.kind === 'node' && model.nodeRecord.get(target.id)?.kind !== 'structure') url.searchParams.set('node', target.id);
-    if (target?.kind === 'edge') url.searchParams.set('edge', target.id);
-    url.hash = '';
+    const activeView = this.activeView();
+    let url: URL;
+    if (activeView && stateMatchesView(this.options.getState(), activeView)) {
+      url = this.urlForActiveViewSelection(target);
+    } else {
+      if (activeView) this.deactivateView();
+      const { model } = this.options;
+      url = target?.kind === 'node' && model.nodeRecord.get(target.id)?.kind === 'structure'
+        ? new URL(this.conceptPageUrl(target.id))
+        : new URL(this.currentScopeUrl);
+      this.addUiState(url);
+      url.searchParams.delete('node');
+      url.searchParams.delete('edge');
+      url.searchParams.delete('selection');
+      if (target?.kind === 'node' && model.nodeRecord.get(target.id)?.kind !== 'structure') url.searchParams.set('node', target.id);
+      if (target?.kind === 'edge') url.searchParams.set('edge', target.id);
+      url.hash = '';
+    }
     if (url.href === window.location.href) return;
 
     try {
-      const historyState = { selection: target, uiStateVersion: 1 };
+      const historyState = { selection: target, uiStateVersion: 1, viewId: this.activeViewId };
       if (mode === 'replace') window.history.replaceState(historyState, '', url.href);
       else window.history.pushState(historyState, '', url.href);
     } catch {
@@ -183,32 +236,41 @@ export class LocationController {
 
   syncDocumentMetadata(target: SelectionTarget | null): void {
     const { model } = this.options;
-    let title = this.defaultPageTitle;
-    let description = this.defaultPageDescription;
+    const activeView = this.activeView();
+    let title = activeView ? `${activeView.title} — ${model.data.meta.title}` : this.defaultPageTitle;
+    let description = activeView ? activeView.summary : this.defaultPageDescription;
 
     if (target?.kind === 'node') {
       const node = model.nodeRecord.get(target.id);
       if (node) {
-        title = `${stripInlineMathText(node.label)} - ${model.data.meta.title}`;
-        description = summarizePlainText(node.summary || model.data.meta.description);
-        const canonicalUrl = this.selectionCanonicalUrl(target);
-        this.setDynamicEntityJsonLd({
-          '@context': 'https://schema.org',
-          '@type': 'DefinedTerm',
-          '@id': canonicalUrl,
-          name: stripInlineMathText(node.label),
-          description,
-          url: canonicalUrl,
-          identifier: node.id,
-          termCode: node.id,
-          inDefinedTermSet: `${this.canonicalRootUrl}concepts/`
-        });
+        title = activeView
+          ? `${stripInlineMathText(node.label)} — ${activeView.title} — ${model.data.meta.title}`
+          : `${stripInlineMathText(node.label)} - ${model.data.meta.title}`;
+        description = summarizePlainText(node.summary || description);
+        if (!activeView) {
+          const canonicalUrl = this.selectionCanonicalUrl(target);
+          this.setDynamicEntityJsonLd({
+            '@context': 'https://schema.org',
+            '@type': 'DefinedTerm',
+            '@id': canonicalUrl,
+            name: stripInlineMathText(node.label),
+            description,
+            url: canonicalUrl,
+            identifier: node.id,
+            termCode: node.id,
+            inDefinedTermSet: `${this.canonicalRootUrl}concepts/`
+          });
+        } else {
+          this.setDynamicEntityJsonLd(null);
+        }
       }
     } else if (target?.kind === 'edge') {
       const edge = model.edgeRecord.get(target.id);
       if (edge) {
-        title = `${stripInlineMathText(edge.label)} - ${model.data.meta.title}`;
-        description = summarizePlainText(edge.detail || model.data.meta.description);
+        title = activeView
+          ? `${stripInlineMathText(edge.label)} — ${activeView.title} — ${model.data.meta.title}`
+          : `${stripInlineMathText(edge.label)} - ${model.data.meta.title}`;
+        description = summarizePlainText(edge.detail || description);
       }
       this.setDynamicEntityJsonLd(null);
     } else {
@@ -216,6 +278,7 @@ export class LocationController {
     }
 
     const canonicalUrl = this.selectionCanonicalUrl(target);
+    this.setViewPageJsonLd(activeView);
     document.title = title;
     this.setCanonicalHref(canonicalUrl);
     this.setHeadMeta('meta[name="description"]', 'name', 'description', description);
@@ -224,6 +287,18 @@ export class LocationController {
     this.setHeadMeta('meta[property="og:url"]', 'property', 'og:url', canonicalUrl);
     this.setHeadMeta('meta[name="twitter:title"]', 'name', 'twitter:title', title);
     this.setHeadMeta('meta[name="twitter:description"]', 'name', 'twitter:description', description);
+  }
+
+  private urlForActiveViewSelection(target: SelectionTarget | null): URL {
+    const view = this.activeView();
+    if (!view) return new URL(this.currentScopeUrl);
+    const url = new URL(this.viewPageUrl(view.id));
+    if (!target) {
+      url.searchParams.set('selection', 'none');
+    } else if (!(target.kind === 'node' && target.id === view.focusNode)) {
+      url.searchParams.set(target.kind, target.id);
+    }
+    return url;
   }
 
   private resolveScopedField(): string | null {
@@ -239,6 +314,8 @@ export class LocationController {
   }
 
   private selectionCanonicalUrl(target: SelectionTarget | null): string {
+    const activeView = this.activeView();
+    if (activeView) return new URL(viewPagePath(activeView.id), this.canonicalRootUrl).toString();
     const { model } = this.options;
     if (!target) {
       return this.scopedFieldId
@@ -277,6 +354,34 @@ export class LocationController {
       document.head.appendChild(canonical);
     }
     canonical.href = href;
+  }
+
+  private setViewPageJsonLd(view: AtlasView | null): void {
+    const scriptId = 'view-page-jsonld';
+    const existing = document.head.querySelector<HTMLScriptElement>(`script#${scriptId}`);
+    if (!view) {
+      existing?.remove();
+      return;
+    }
+    const canonicalUrl = new URL(viewPagePath(view.id), this.canonicalRootUrl).toString();
+    const payload = {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      '@id': canonicalUrl,
+      name: view.title,
+      description: view.summary,
+      url: canonicalUrl,
+      isPartOf: { '@type': 'WebSite', name: this.options.model.data.meta.title, url: this.canonicalRootUrl },
+      about: view.tags,
+      ...(view.focusNode
+        ? { mainEntity: { '@type': 'DefinedTerm', '@id': new URL(`concepts/${encodeURIComponent(view.focusNode)}/`, this.canonicalRootUrl).toString() } }
+        : {})
+    };
+    const script = existing ?? document.createElement('script');
+    script.id = scriptId;
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(payload);
+    if (!existing) document.head.appendChild(script);
   }
 
   private setDynamicEntityJsonLd(payload: object | null): void {

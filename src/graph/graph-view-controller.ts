@@ -93,6 +93,19 @@ export class GraphViewController {
         }
         element.toggleClass('edge-labels-off', !state.showEdgeLabels);
       });
+
+      if (state.hideIsolatedNodes) {
+        cy.nodes().forEach((element) => {
+          if (element.hasClass('filter-hidden')) return;
+          const record = model.nodeRecord.get(element.id());
+          if (!record || element.connectedEdges().not('.filter-hidden').empty()) element.addClass('filter-hidden');
+        });
+        cy.edges().not('.filter-hidden').forEach((element) => {
+          if (element.source().hasClass('filter-hidden') || element.target().hasClass('filter-hidden')) {
+            element.addClass('filter-hidden');
+          }
+        });
+      }
     });
 
     if (state.neighborhoodActive) this.applyNeighborhoodHighlight(false);

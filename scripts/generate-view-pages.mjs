@@ -1,0 +1,86 @@
+import { mkdir, writeFile } from 'node:fs/promises';
+
+const SITE_ORIGIN = 'https://atlas.madvay.com';
+const appUrl = (pathname = '') => new URL(pathname, `${SITE_ORIGIN}/`).toString();
+const viewPath = (viewId) => `views/${encodeURIComponent(viewId)}/`;
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;');
+}
+
+function replaceFirst(html, pattern, replacement) {
+  return pattern.test(html) ? html.replace(pattern, replacement) : html;
+}
+
+function renderTags(tags) {
+  return `<div class="view-tags">${tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join('')}</div>`;
+}
+
+function renderStaticBanner(view) {
+  return `<section id="viewBanner" class="view-banner" aria-live="polite"><div class="view-banner-copy">
+      <div class="kicker">Guided view</div>
+      <h2>${escapeHtml(view.title)}</h2>
+      <p>${escapeHtml(view.narrative)}</p>
+      <div class="view-banner-actions"><button type="button" class="text-button" data-open-views>Browse views</button><a href="${appUrl(viewPath(view.id))}">Permalink</a></div>
+    </div>
+    <button type="button" class="icon-button view-banner-close" data-view-banner-close aria-label="Hide view introduction" title="Hide introduction">×</button></section>`;
+}
+
+function renderViewPage(templateHtml, graphData, view) {
+  const canonicalUrl = appUrl(viewPath(view.id));
+  const pageTitle = `${view.title} — ${graphData.meta.title}`;
+  let html = templateHtml;
+  html = replaceFirst(html, /<title>[^<]*<\/title>/, `<title>${escapeHtml(pageTitle)}</title>`);
+  html = replaceFirst(html, /<meta name="description" content="[^"]*">/, `<meta name="description" content="${escapeHtml(view.summary)}">`);
+  html = replaceFirst(html, /<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="${escapeHtml(pageTitle)}">`);
+  html = replaceFirst(html, /<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${escapeHtml(view.summary)}">`);
+  html = replaceFirst(html, /<meta property="og:url" content="[^"]*">/, `<meta property="og:url" content="${escapeHtml(canonicalUrl)}">`);
+  html = replaceFirst(html, /<link rel="canonical" href="[^"]*">/, `<link rel="canonical" href="${escapeHtml(canonicalUrl)}">`);
+  html = html.replace(
+    '<meta name="viewport" content="width=device-width, initial-scale=1">',
+    `<meta name="viewport" content="width=device-width, initial-scale=1">\n  <base href="../../">\n  <meta name="atlas:view" content="${escapeHtml(view.id)}">${view.focusNode ? `\n  <meta name="atlas:selection" content="node:${escapeHtml(view.focusNode)}">` : ''}`
+  );
+  html = html.replace('<section id="viewBanner" class="view-banner" aria-live="polite" hidden></section>', renderStaticBanner(view));
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': canonicalUrl,
+    name: view.title,
+    description: view.summary,
+    url: canonicalUrl,
+    isPartOf: { '@type': 'WebSite', name: graphData.meta.title, url: appUrl() },
+    about: view.tags,
+    mainEntity: view.focusNode ? { '@type': 'DefinedTerm', '@id': appUrl(`concepts/${encodeURIComponent(view.focusNode)}/`) } : undefined
+  };
+  return html.replace('</head>', `  <script id="view-page-jsonld" type="application/ld+json">\n${JSON.stringify(jsonLd, null, 2)}\n  </script>\n</head>`);
+}
+
+function renderViewCard(view) {
+  const imageSrc = view.image ? new URL(view.image.src, appUrl()).toString() : '';
+  const image = view.image ? `<img src="${escapeHtml(imageSrc)}" alt="${escapeHtml(view.image.alt)}" loading="lazy">` : '';
+  return `<article>${image}<div><h2><a href="./${encodeURIComponent(view.id)}/">${escapeHtml(view.title)}</a></h2><p>${escapeHtml(view.summary)}</p>${renderTags(view.tags)}<a class="open" href="./${encodeURIComponent(view.id)}/">Open view</a></div></article>`;
+}
+
+function renderViewIndex(graphData, viewsData) {
+  const canonicalUrl = appUrl('views/');
+  const featured = viewsData.views.filter((view) => view.featured);
+  const other = viewsData.views.filter((view) => !view.featured);
+  const section = (title, views) => `<section><h2>${escapeHtml(title)}</h2><div class="grid">${views.map(renderViewCard).join('')}</div></section>`;
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Curated guided views through the Atlas of Fundamental Concepts."><link rel="canonical" href="${canonicalUrl}"><title>Views — ${escapeHtml(graphData.meta.title)}</title><style>
+  :root{font-family:Inter,system-ui,sans-serif;color:#172033;background:#f6f7f9}body{margin:0}main{max-width:1180px;margin:auto;padding:2rem 1rem 4rem}header{margin-bottom:2rem}h1{margin:.25rem 0;font-size:2rem}header p{max-width:760px;color:#475569;line-height:1.55}.home{color:#1d4ed8;text-decoration:none;font-weight:650}section{margin-top:2.2rem}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}article{background:white;border:1px solid #d8dee8;border-radius:14px;box-shadow:0 8px 24px rgba(15,23,42,.06);overflow:hidden}article>div{padding:1rem}article img{width:100%;aspect-ratio:16/8;object-fit:cover}article h2{font-size:1.05rem;margin:0 0 .5rem}article h2 a{color:#172033;text-decoration:none}article p{color:#475569;font-size:.9rem;line-height:1.5;min-height:4.1em}.view-tags{display:flex;gap:.35rem;flex-wrap:wrap;margin:.8rem 0}.view-tags span{font-size:.72rem;padding:.2rem .5rem;border-radius:999px;background:#eff6ff;color:#1e3a8a}.open{display:inline-block;margin-top:.25rem;color:white;background:#1e40af;border-radius:8px;padding:.55rem .8rem;text-decoration:none;font-weight:700;font-size:.85rem}
+  </style></head><body><main><header><a class="home" href="/">← Atlas home</a><h1>Guided views</h1><p>Curated starting points for exploring the atlas. Each view applies a coherent set of fields, domains, relation types, and display settings, then focuses the graph on a useful entry concept. Change any filter to leave the preset and continue independently.</p></header>${section('Featured paths', featured)}${other.length ? section('More views', other) : ''}</main></body></html>`;
+}
+
+export async function generateViewPages({ graphData, viewsData, templateHtml, distUrl }) {
+  await mkdir(new URL('views/', distUrl), { recursive: true });
+  await writeFile(new URL('views/index.html', distUrl), renderViewIndex(graphData, viewsData));
+  await Promise.all(viewsData.views.map(async (view) => {
+    const pageDir = new URL(viewPath(view.id), distUrl);
+    await mkdir(pageDir, { recursive: true });
+    await writeFile(new URL('index.html', pageDir), renderViewPage(templateHtml, graphData, view));
+  }));
+}

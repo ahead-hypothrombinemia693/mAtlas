@@ -1,0 +1,161 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { LocationController } from '../.test-build/app/location-controller.js';
+
+const view = {
+  id: 'experimental-discovery',
+  title: 'Experimental discovery',
+  summary: 'Follow evidence through physics.',
+  narrative: 'A guided history of experiments and theories.',
+  tags: ['Physics'],
+  focusNode: 'blackbody',
+  settings: {
+    fields: ['physics'],
+    domains: ['experiments'],
+    edgeTypes: ['motivated', 'verified'],
+    crossFieldVisibility: 'hidden',
+    edgeLabels: true,
+    junctions: false,
+    edgeZoomActivation: false,
+    hideIsolatedNodes: true,
+    layout: 'atlas'
+  }
+};
+
+function matchingState() {
+  return {
+    selectedFields: new Set(['physics']),
+    selectedDomains: new Set(['experiments']),
+    selectedEdgeTypes: new Set(['motivated', 'verified']),
+    crossFieldVisibility: 'hidden',
+    showEdgeLabels: true,
+    showJunctions: false,
+    edgeZoomActivation: false,
+    hideIsolatedNodes: true,
+    neighborhoodActive: true,
+    neighborhoodElementId: 'blackbody',
+    layout: 'atlas',
+    searchQuery: '',
+    filtersOpen: false,
+    detailsOpen: true
+  };
+}
+
+function installBrowser(url, templateViewId = null) {
+  const previousWindow = globalThis.window;
+  const previousDocument = globalThis.document;
+  let writtenUrl = null;
+  globalThis.window = {
+    location: {
+      href: url,
+      pathname: new URL(url).pathname,
+      hash: '',
+      replace(next) { writtenUrl = String(next); },
+      assign(next) { writtenUrl = String(next); }
+    },
+    history: {
+      replaceState(_state, _title, next) { writtenUrl = String(next); },
+      pushState(_state, _title, next) { writtenUrl = String(next); }
+    }
+  };
+  globalThis.document = {
+    baseURI: 'https://atlas.madvay.com/',
+    querySelector(selector) {
+      if (selector === 'meta[name="atlas:view"]' && templateViewId) return { content: templateViewId };
+      return null;
+    }
+  };
+  return {
+    writtenUrl: () => writtenUrl,
+    restore() {
+      globalThis.window = previousWindow;
+      globalThis.document = previousDocument;
+    }
+  };
+}
+
+function controllerFor(state) {
+  const model = {
+    data: {
+      meta: { title: 'Atlas', description: 'Description' },
+      fields: { physics: { path: 'physics', label: 'Physics', description: 'Physics' } }
+    },
+    knownFieldIds: new Set(['physics']),
+    knownNodeIds: new Set(['blackbody', 'quantum']),
+    knownEdgeIds: new Set(['e1']),
+    nodeRecord: new Map([
+      ['blackbody', { id: 'blackbody', kind: 'structure', label: 'Blackbody' }],
+      ['quantum', { id: 'quantum', kind: 'structure', label: 'Quantum' }]
+    ]),
+    edgeRecord: new Map(),
+    fieldForDomain() { return 'physics'; }
+  };
+  return new LocationController({
+    model,
+    getState: () => state,
+    views: new Map([[view.id, view]]),
+    fieldOrder: ['physics'],
+    domainOrder: ['experiments'],
+    edgeTypeOrder: ['motivated', 'verified']
+  });
+}
+
+
+test('static view metadata is used only during initial route resolution', () => {
+  const browser = installBrowser('https://atlas.madvay.com/concepts/quantum/', view.id);
+  try {
+    const controller = controllerFor(matchingState());
+    assert.equal(controller.resolveViewFromLocation(), null);
+    assert.equal(controller.resolveViewFromLocation({ includeTemplate: true })?.id, view.id);
+  } finally {
+    browser.restore();
+  }
+});
+
+test('an exact view configuration keeps the static view route during exploration', () => {
+  const browser = installBrowser('https://atlas.madvay.com/views/experimental-discovery/');
+  try {
+    const state = matchingState();
+    const controller = controllerFor(state);
+    controller.setActiveView(view.id);
+
+    controller.write({ kind: 'node', id: 'quantum' }, 'replace');
+    assert.equal(browser.writtenUrl(), 'https://atlas.madvay.com/views/experimental-discovery/?node=quantum');
+    assert.equal(controller.activeView()?.id, view.id);
+  } finally {
+    browser.restore();
+  }
+});
+
+test('changing a filter exits the view route and writes ordinary atlas state', () => {
+  const browser = installBrowser('https://atlas.madvay.com/views/experimental-discovery/?node=quantum');
+  try {
+    const state = matchingState();
+    state.selectedEdgeTypes.delete('verified');
+    const controller = controllerFor(state);
+    controller.setActiveView(view.id);
+
+    controller.write({ kind: 'node', id: 'quantum' }, 'replace');
+    const written = new URL(browser.writtenUrl());
+    assert.equal(written.pathname, '/concepts/quantum/');
+    assert.equal(written.searchParams.get('fields'), 'physics');
+    assert.equal(written.searchParams.get('domains'), 'experiments');
+    assert.equal(written.searchParams.get('edges'), 'motivated');
+    assert.equal(written.searchParams.get('connected'), '1');
+    assert.equal(controller.activeView(), null);
+  } finally {
+    browser.restore();
+  }
+});
+
+test('clearing selection preserves the view route with an explicit empty selection', () => {
+  const browser = installBrowser('https://atlas.madvay.com/views/experimental-discovery/?node=quantum');
+  try {
+    const controller = controllerFor(matchingState());
+    controller.setActiveView(view.id);
+    controller.write(null, 'replace');
+    assert.equal(browser.writtenUrl(), 'https://atlas.madvay.com/views/experimental-discovery/?selection=none');
+  } finally {
+    browser.restore();
+  }
+});

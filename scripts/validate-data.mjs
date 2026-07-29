@@ -2,7 +2,9 @@ import { readFile } from 'node:fs/promises';
 import { explicitMathErrors, findUnmarkedMath } from './math-markup.mjs';
 
 const dataUrl = new URL('../src/data/structures.json', import.meta.url);
+const viewsUrl = new URL('../src/data/views.json', import.meta.url);
 const graph = JSON.parse(await readFile(dataUrl, 'utf8'));
+const viewsData = JSON.parse(await readFile(viewsUrl, 'utf8'));
 const errors = [];
 
 const validateNoAsciiControls = (value, path = 'graph') => {
@@ -21,6 +23,7 @@ const validateNoAsciiControls = (value, path = 'graph') => {
   }
 };
 validateNoAsciiControls(graph);
+validateNoAsciiControls(viewsData, 'views');
 
 const requireObject = (value, path) => {
   if (!value || typeof value !== 'object' || Array.isArray(value)) errors.push(`${path} must be an object.`);
@@ -310,6 +313,74 @@ for (const edge of graph.edges ?? []) {
   }
 }
 
+
+// Guided views are a separate, data-driven navigation layer over valid graph settings.
+requireObject(viewsData, 'views');
+if (viewsData.version !== 1) errors.push('views.version must be 1.');
+if (!Array.isArray(viewsData.views) || viewsData.views.length === 0) errors.push('views.views must be a non-empty array.');
+const viewIds = new Set();
+const viewTitles = new Set();
+let featuredViewCount = 0;
+const allowedLayouts = new Set(['atlas', 'breadthfirst', 'cose-bilkent']);
+const allowedCrossField = new Set(['contextual', 'all', 'hidden']);
+for (const [index, view] of (viewsData.views ?? []).entries()) {
+  const path = `views.views[${index}]`;
+  requireObject(view, path);
+  for (const field of ['id', 'title', 'summary', 'narrative']) requireString(view?.[field], `${path}.${field}`);
+  if (typeof view?.id === 'string' && !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(view.id)) errors.push(`${path}.id must be a lowercase URL slug.`);
+  if (viewIds.has(view?.id)) errors.push(`Duplicate view id: ${view.id}`);
+  viewIds.add(view?.id);
+  if (viewTitles.has(view?.title)) errors.push(`Duplicate view title: ${view.title}`);
+  viewTitles.add(view?.title);
+  requireStringArray(view?.tags, `${path}.tags`, { nonEmpty: true, unique: true });
+  if (view?.featured !== undefined && typeof view.featured !== 'boolean') errors.push(`${path}.featured must be a boolean.`);
+  if (view?.featured === true) featuredViewCount += 1;
+  if (view?.focusNode !== undefined && !nodeIds.has(view.focusNode)) errors.push(`${path}.focusNode references unknown node: ${view.focusNode}`);
+  if (view?.image !== undefined) {
+    requireObject(view.image, `${path}.image`);
+    requireString(view.image?.src, `${path}.image.src`);
+    requireString(view.image?.alt, `${path}.image.alt`);
+    try {
+      const imageUrl = new URL(view.image?.src, 'https://atlas.madvay.com/');
+      if (!['http:', 'https:'].includes(imageUrl.protocol)) errors.push(`${path}.image.src must resolve to an HTTP(S) URL.`);
+    } catch {
+      errors.push(`${path}.image.src is not a valid URL or root-relative path.`);
+    }
+  }
+  requireObject(view?.settings, `${path}.settings`);
+  const settings = view?.settings ?? {};
+  requireStringArray(settings.fields, `${path}.settings.fields`, { nonEmpty: true, unique: true });
+  requireStringArray(settings.domains, `${path}.settings.domains`, { nonEmpty: true, unique: true });
+  requireStringArray(settings.edgeTypes, `${path}.settings.edgeTypes`, { nonEmpty: true, unique: true });
+  for (const fieldId of settings.fields ?? []) if (!fieldIds.has(fieldId)) errors.push(`${path}.settings.fields references unknown field: ${fieldId}`);
+  for (const domainId of settings.domains ?? []) {
+    if (!domainIds.has(domainId)) errors.push(`${path}.settings.domains references unknown domain: ${domainId}`);
+    const fieldId = graph.domains?.[domainId]?.field;
+    if (fieldId && !(settings.fields ?? []).includes(fieldId)) errors.push(`${path}.settings.fields must include ${fieldId}, required by domain ${domainId}.`);
+  }
+  for (const edgeTypeId of settings.edgeTypes ?? []) {
+    if (!activeEdgeTypeIds.has(edgeTypeId)) errors.push(`${path}.settings.edgeTypes references inactive or unknown edge type: ${edgeTypeId}`);
+  }
+  if (!allowedCrossField.has(settings.crossFieldVisibility)) errors.push(`${path}.settings.crossFieldVisibility is invalid.`);
+  if (!allowedLayouts.has(settings.layout)) errors.push(`${path}.settings.layout is invalid.`);
+  for (const key of ['edgeLabels', 'junctions', 'edgeZoomActivation', 'hideIsolatedNodes']) {
+    if (typeof settings[key] !== 'boolean') errors.push(`${path}.settings.${key} must be a boolean.`);
+  }
+  if (view?.focusNode && nodeById.has(view.focusNode)) {
+    const focus = nodeById.get(view.focusNode);
+    if (focus.kind !== 'structure') errors.push(`${path}.focusNode must reference a structure node.`);
+    const focusDomains = focus.domains?.length ? focus.domains : [focus.primaryDomain];
+    const focusFields = focus.fields?.length
+      ? focus.fields
+      : [...new Set(focusDomains.map((domainId) => graph.domains?.[domainId]?.field).filter(Boolean))];
+    if (!focusFields.some((fieldId) => (settings.fields ?? []).includes(fieldId))
+      || !focusDomains.some((domainId) => (settings.domains ?? []).includes(domainId))) {
+      errors.push(`${path}.focusNode ${view.focusNode} is outside the view's selected taxonomy.`);
+    }
+  }
+}
+if (featuredViewCount === 0) errors.push('At least one guided view must be featured.');
+
 // The definitional/enrichment subgraph should remain acyclic. Theorem and representation
 // edges are excluded because they may deliberately point toward weaker structures.
 const structuralTypes = new Set(['add-data', 'impose-axiom', 'combine-compatible']);
@@ -343,5 +414,5 @@ if (errors.length) {
   process.exitCode = 1;
 } else {
   const multiDomainCount = graph.nodes.filter((node) => node.kind === 'structure' && node.domains.length > 1).length;
-  console.log(`Validated ${Object.keys(graph.fields).length} fields, ${graph.nodes.length} nodes, ${graph.edges.length} edges, ${Object.keys(graph.sources).length} sources, and ${multiDomainCount} multi-domain concepts.`);
+  console.log(`Validated ${Object.keys(graph.fields).length} fields, ${graph.nodes.length} nodes, ${graph.edges.length} edges, ${Object.keys(graph.sources).length} sources, ${viewsData.views.length} views, and ${multiDomainCount} multi-domain concepts.`);
 }

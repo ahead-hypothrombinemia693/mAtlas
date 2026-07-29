@@ -123,6 +123,7 @@ export interface AppState {
   showEdgeLabels: boolean;
   showJunctions: boolean;
   edgeZoomActivation: boolean;
+  hideIsolatedNodes: boolean;
   neighborhoodActive: boolean;
   neighborhoodElementId: string | null;
   layout: LayoutName;
@@ -140,6 +141,7 @@ export interface PersistedUiStateV1 {
     edgeLabels: boolean;
     junctions: boolean;
     edgeZoomActivation?: boolean;
+    hideIsolatedNodes?: boolean;
     crossFieldVisibility?: CrossFieldVisibility;
   };
   layout: LayoutName;
@@ -153,7 +155,42 @@ export interface UrlUiState {
   edgeLabels?: boolean;
   junctions?: boolean;
   edgeZoomActivation?: boolean;
+  hideIsolatedNodes?: boolean;
   layout?: LayoutName;
+}
+
+export interface AtlasViewImage {
+  src: string;
+  alt: string;
+}
+
+export interface AtlasViewSettings {
+  fields: string[];
+  domains: string[];
+  edgeTypes: string[];
+  crossFieldVisibility: CrossFieldVisibility;
+  edgeLabels: boolean;
+  junctions: boolean;
+  edgeZoomActivation: boolean;
+  hideIsolatedNodes: boolean;
+  layout: LayoutName;
+}
+
+export interface AtlasView {
+  id: string;
+  title: string;
+  summary: string;
+  narrative: string;
+  tags: string[];
+  featured?: boolean;
+  focusNode?: string;
+  image?: AtlasViewImage;
+  settings: AtlasViewSettings;
+}
+
+export interface AtlasViewsData {
+  version: 1;
+  views: AtlasView[];
 }
 
 export interface LabelMetrics {
