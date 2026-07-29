@@ -1507,6 +1507,10 @@ input:focus-visible {
   backdrop-filter: blur(8px);
 }
 
+.view-banner-desktop {
+  width: 100%;
+}
+
 .view-banner[hidden] {
   display: none;
 }

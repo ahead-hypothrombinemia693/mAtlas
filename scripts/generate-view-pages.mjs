@@ -32,13 +32,19 @@ function renderStaticSequence(view, graphData) {
 
 function renderStaticBanner(view, graphData) {
   return `<section id="viewBanner" class="view-banner" aria-live="polite"><div class="view-banner-copy">
-      <div class="kicker">Guided view</div>
-      <h2>${escapeHtml(view.title)}</h2>
-      <p>${escapeHtml(view.narrative)}</p>
-      ${renderStaticSequence(view, graphData)}
-      <div class="view-banner-actions"><button type="button" class="text-button" data-open-views>Browse views</button><a href="${appUrl(viewPath(view.id))}">Permalink</a></div>
-    </div>
-    <button type="button" class="icon-button view-banner-close" data-view-banner-close aria-label="Hide view introduction" title="Hide introduction">×</button></section>`;
+      <details class="view-context-details" open>
+        <summary>
+          <span class="material-icons view-context-icon" aria-hidden="true">explore</span>
+          <span class="view-context-heading"><span class="kicker">Guided view</span><strong>${escapeHtml(view.title)}</strong></span>
+          <span class="material-icons view-context-chevron" aria-hidden="true">expand_more</span>
+        </summary>
+        <div class="view-context-body">
+          <p>${escapeHtml(view.narrative)}</p>
+          ${renderStaticSequence(view, graphData)}
+          <div class="view-banner-actions"><button type="button" class="text-button" data-open-views>Browse views</button><a href="${appUrl(viewPath(view.id))}">Permalink</a></div>
+        </div>
+      </details>
+    </div></section>`;
 }
 
 function renderViewPage(templateHtml, graphData, view) {
