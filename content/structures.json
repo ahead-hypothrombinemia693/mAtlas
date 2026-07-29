@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Atlas of Fundamental Concepts",
-    "version": "1.5.0",
+    "version": "1.5.1",
     "description": "A source-backed visual atlas connecting the mathematics of physical theories to foundational laws, spacetime, quantum mechanics, QFT, Standard Model fields and interactions, controlled reductions and effective theories, composite hadrons and nuclei, and precision atomic structure.",
     "direction": "Fields are stacked vertically. Within a field, smaller level values are more structurally primitive or less composite; larger values generally indicate specialization, composition, effective description, collective organization, or emergence. The order is ontological and structural, not pedagogical difficulty.",
     "scope": "Mathematics and a deeply sourced physics atlas from classical and relativistic foundations through quantum mechanics, QFT consistency and symmetry structure, complete Standard Model field and particle content, electroweak and low-energy EFT matching, QCD chiral and nuclear effective layers, and atomic composition, states, spectra, interactions, and precision corrections through atoms and ions.",
@@ -867,10 +867,16 @@
       "kind": "peer-reviewed review"
     },
     "mathlib-cstar-classes": {
-      "label": "Mathlib — Classes of C*-algebras",
+      "label": "Mathlib — Classes of $C^*$-algebras",
       "title": "Classes of C*-algebras",
       "url": "https://leanprover-community.github.io/mathlib4_docs/Mathlib/Analysis/CStarAlgebra/Classes.html",
       "kind": "formal reference"
+    },
+    "mathlib-haar-measure": {
+      "label": "Mathlib — Haar measure",
+      "title": "Haar measure",
+      "url": "https://leanprover-community.github.io/mathlib4_docs/Mathlib/MeasureTheory/Measure/Haar/Basic.html",
+      "kind": "formally verified reference"
     },
     "mathlib-hypergraph": {
       "label": "Mathlib — Undirected hypergraphs",
@@ -1179,7 +1185,7 @@
       "kind": "reference"
     },
     "nlab-cstar-algebra": {
-      "label": "nLab — C*-algebra",
+      "label": "nLab — $C^*$-algebra",
       "title": "C*-algebra",
       "url": "https://ncatlab.org/nlab/show/C-star+algebra",
       "kind": "reference"
@@ -1353,7 +1359,7 @@
       "kind": "mathematical reference"
     },
     "nlab-g-set": {
-      "label": "nLab — G-set",
+      "label": "nLab — $G$-set",
       "title": "G-set",
       "url": "https://ncatlab.org/nlab/show/G-set",
       "kind": "reference"
@@ -1419,7 +1425,7 @@
       "kind": "reference"
     },
     "nlab-h-space": {
-      "label": "nLab — H-space",
+      "label": "nLab — $H$-space",
       "title": "H-space",
       "url": "https://ncatlab.org/nlab/show/H-space",
       "kind": "reference"
@@ -1647,7 +1653,7 @@
       "kind": "reference"
     },
     "nlab-p-adic-field": {
-      "label": "nLab — p-adic field",
+      "label": "nLab — $p$-adic field",
       "title": "p-adic field",
       "url": "https://ncatlab.org/nlab/show/p-adic+field",
       "kind": "reference"
@@ -2673,7 +2679,7 @@
       "kind": "mathematical physics reference"
     },
     "nlab-physics-s_matrix": {
-      "label": "nLab — S-matrix",
+      "label": "nLab — $S$-matrix",
       "title": "S-matrix",
       "url": "https://ncatlab.org/nlab/show/S-matrix",
       "kind": "mathematical physics reference"
@@ -3542,6 +3548,12 @@
       "url": "https://stacks.math.columbia.edu/tag/01W7",
       "kind": "reference"
     },
+    "stacks-regular-local-definition": {
+      "label": "Stacks Project — Definition of regular local rings",
+      "title": "Regular local rings in dimension theory",
+      "url": "https://stacks.math.columbia.edu/tag/00KD#definition-10.60.10",
+      "kind": "specialist mathematical reference"
+    },
     "stacks-regular-scheme": {
       "label": "Stacks Project — Regular schemes",
       "title": "Regular schemes",
@@ -4017,7 +4029,7 @@
       "kind": "expository"
     },
     "wp-cstar-algebra": {
-      "label": "Wikipedia — C*-algebra",
+      "label": "Wikipedia — $C^*$-algebra",
       "title": "C*-algebra",
       "url": "https://en.wikipedia.org/wiki/C*-algebra",
       "kind": "expository"
@@ -4257,7 +4269,7 @@
       "kind": "encyclopedic reference"
     },
     "wp-g-set": {
-      "label": "Wikipedia — G-set",
+      "label": "Wikipedia — $G$-set",
       "title": "G-set",
       "url": "https://en.wikipedia.org/wiki/Group_action#G-sets",
       "kind": "expository"
@@ -4347,7 +4359,7 @@
       "kind": "expository"
     },
     "wp-h-space": {
-      "label": "Wikipedia — H-space",
+      "label": "Wikipedia — $H$-space",
       "title": "H-space",
       "url": "https://en.wikipedia.org/wiki/H-space",
       "kind": "expository"
@@ -4689,7 +4701,7 @@
       "kind": "expository"
     },
     "wp-p-adic-field": {
-      "label": "Wikipedia — p-adic number field",
+      "label": "Wikipedia — $p$-adic number field",
       "title": "p-adic number field",
       "url": "https://en.wikipedia.org/wiki/P-adic_number",
       "kind": "expository"
@@ -6399,7 +6411,7 @@
       "kind": "encyclopedic reference"
     },
     "wp-physics-s_matrix": {
-      "label": "Wikipedia — S-matrix",
+      "label": "Wikipedia — $S$-matrix",
       "title": "S-matrix",
       "url": "https://en.wikipedia.org/wiki/S-matrix",
       "kind": "encyclopedic reference"
@@ -8626,7 +8638,7 @@
       "kind": "structure",
       "summary": "An initial ordinal used to represent the size of a set.",
       "carriers": [
-        "ordinal κ"
+        "ordinal $\\kappa$"
       ],
       "data": [],
       "axioms": [
@@ -9152,16 +9164,16 @@
       ],
       "level": 8,
       "conceptType": "Cardinal class",
-      "summary": "An infinite cardinal that is not the successor of any cardinal.",
+      "summary": "An infinite cardinal that is not the successor cardinal of any smaller cardinal.",
       "carriers": [
         "cardinal $\\lambda$"
       ],
       "data": [],
       "axioms": [
-        "$\\lambda\\ne\\aleph_0$ and $\\kappa^+<\\lambda$ for every $\\kappa<\\lambda$"
+        "$\\lambda$ is infinite, and $\\kappa^+<\\lambda$ for every cardinal $\\kappa<\\lambda$"
       ],
       "induces": [],
-      "notes": "",
+      "notes": "This convention includes $\\aleph_0$ as the least limit cardinal. Some authors instead use “limit cardinal” only for uncountable alephs whose indices are limit ordinals.",
       "citations": [
         "wp-aleph-number",
         "openlogic-set-theory"
@@ -9661,7 +9673,7 @@
       "kind": "structure",
       "summary": "A poset with a least element and a greatest element.",
       "carriers": [
-        "set P"
+        "set $P$"
       ],
       "data": [
         "partial order",
@@ -9669,7 +9681,7 @@
         "top $\\top$"
       ],
       "axioms": [
-        "$\\bot \\le x \\le \\top$ for every x"
+        "$\\bot\\le x\\le\\top$ for every $x$"
       ],
       "induces": [],
       "notes": "Least and greatest elements, when they exist, are unique; boundedness is an existence property.",
@@ -9695,14 +9707,14 @@
       "kind": "structure",
       "summary": "A nonempty preorder in which every pair has a common upper bound.",
       "carriers": [
-        "set D"
+        "set $D$"
       ],
       "data": [
         "preorder"
       ],
       "axioms": [
         "nonempty carrier",
-        "for any x,y there is z with $x\\le z$ and $y\\le z$"
+        "for any $x,y$ there is $z$ with $x\\le z$ and $y\\le z$"
       ],
       "induces": [],
       "notes": "",
@@ -9727,7 +9739,7 @@
       "kind": "structure",
       "summary": "A poset in which every pair has a least upper bound.",
       "carriers": [
-        "set L"
+        "set $L$"
       ],
       "data": [
         "partial order; equivalently, a binary join operation"
@@ -9758,7 +9770,7 @@
       "kind": "structure",
       "summary": "A poset in which every pair has a greatest lower bound.",
       "carriers": [
-        "set L"
+        "set $L$"
       ],
       "data": [
         "partial order; equivalently, a binary meet operation"
@@ -9784,7 +9796,7 @@
       "kind": "structure",
       "summary": "A partial order in which every pair is comparable.",
       "carriers": [
-        "set X"
+        "set $X$"
       ],
       "data": [
         "binary relation $\\le$"
@@ -9887,7 +9899,7 @@
       "kind": "structure",
       "summary": "A total order in which every nonempty subset has a least element.",
       "carriers": [
-        "set W"
+        "set $W$"
       ],
       "data": [
         "total order"
@@ -9918,7 +9930,7 @@
       "kind": "structure",
       "summary": "A poset in which every directed subset has a supremum.",
       "carriers": [
-        "poset P"
+        "poset $P$"
       ],
       "data": [],
       "axioms": [
@@ -9948,7 +9960,7 @@
       "kind": "structure",
       "summary": "A poset in which every pair has both a meet and a join.",
       "carriers": [
-        "set L"
+        "set $L$"
       ],
       "data": [
         "partial order; binary meet and join"
@@ -9979,14 +9991,14 @@
       "kind": "structure",
       "summary": "A group equipped with a translation-invariant total order.",
       "carriers": [
-        "set G"
+        "set $G$"
       ],
       "data": [
         "group structure",
         "total order"
       ],
       "axioms": [
-        "$a\\le b$ implies $xay\\le xby$ for all x,y (equivalently, left and right translations preserve order)"
+        "$a\\le b$ implies $xay\\le xby$ for all $x,y$ (equivalently, left and right translations preserve order)"
       ],
       "induces": [],
       "notes": "“Ordered group” can mean a partially ordered group in some literature. This node specifically means a totally ordered group.",
@@ -10011,7 +10023,7 @@
       "kind": "structure",
       "summary": "A lattice with a least and a greatest element.",
       "carriers": [
-        "set L"
+        "set $L$"
       ],
       "data": [
         "lattice structure",
@@ -10044,7 +10056,7 @@
       "kind": "structure",
       "summary": "A lattice whose meet and join distribute over one another.",
       "carriers": [
-        "set L"
+        "set $L$"
       ],
       "data": [
         "lattice structure"
@@ -10142,13 +10154,13 @@
       "kind": "structure",
       "summary": "A directed-complete partial order with a least element.",
       "carriers": [
-        "dcpo P"
+        "dcpo $P$"
       ],
       "data": [
         "least element $\\bot$"
       ],
       "axioms": [
-        "$\\bot \\le x$ for every x"
+        "$\\bot\\le x$ for every $x$"
       ],
       "induces": [],
       "notes": "Terminology varies: some authors use CPO for a dcpo without requiring a least element; this atlas uses “pointed CPO”. The least element is unique if it exists.",
@@ -10208,7 +10220,7 @@
       "kind": "structure",
       "summary": "A poset in which every subset has both a supremum and an infimum.",
       "carriers": [
-        "set L"
+        "set $L$"
       ],
       "data": [
         "partial order"
@@ -10239,7 +10251,7 @@
       "kind": "structure",
       "summary": "A group with a lattice order invariant under translations.",
       "carriers": [
-        "group G",
+        "group $G$",
         "lattice order $\\le$"
       ],
       "data": [],
@@ -10270,7 +10282,7 @@
       "kind": "structure",
       "summary": "A lattice-ordered monoid whose multiplication has residuals.",
       "carriers": [
-        "lattice L",
+        "lattice $L$",
         "monoid structure"
       ],
       "data": [
@@ -10337,7 +10349,7 @@
       "kind": "structure",
       "summary": "A distributive lattice equipped with bottom and top.",
       "carriers": [
-        "set L"
+        "set $L$"
       ],
       "data": [
         "meet",
@@ -10374,7 +10386,7 @@
       "kind": "structure",
       "summary": "A complete lattice in which finite meets distribute over arbitrary joins.",
       "carriers": [
-        "complete lattice L"
+        "complete lattice $L$"
       ],
       "data": [],
       "axioms": [
@@ -10407,7 +10419,7 @@
       "kind": "structure",
       "summary": "A ring whose total order is compatible with addition and multiplication.",
       "carriers": [
-        "set R"
+        "set $R$"
       ],
       "data": [
         "ring structure",
@@ -10441,7 +10453,7 @@
       "kind": "structure",
       "summary": "A bounded distributive lattice in which every element has a complement.",
       "carriers": [
-        "set B"
+        "set $B$"
       ],
       "data": [
         "meet",
@@ -10478,7 +10490,7 @@
       "kind": "structure",
       "summary": "A bounded lattice with an implication operation right-adjoint to meet.",
       "carriers": [
-        "set H"
+        "set $H$"
       ],
       "data": [
         "meet",
@@ -10514,7 +10526,7 @@
       "kind": "structure",
       "summary": "A Boolean algebra that is complete as a lattice.",
       "carriers": [
-        "set B"
+        "set $B$"
       ],
       "data": [
         "Boolean-algebra operations"
@@ -10581,7 +10593,7 @@
       "kind": "structure",
       "summary": "A field equipped with an order making it an ordered ring.",
       "carriers": [
-        "set F"
+        "set $F$"
       ],
       "data": [
         "field structure",
@@ -10643,14 +10655,14 @@
       "kind": "structure",
       "summary": "A set of first-order sentences in a fixed signature.",
       "carriers": [
-        "first-order signature L"
+        "first-order signature $L$"
       ],
       "data": [
-        "set T of L-sentences"
+        "set $T$ of $L$-sentences"
       ],
       "axioms": [],
       "induces": [
-        "class of models Mod(T)"
+        "class of models $\\operatorname{Mod}(T)$"
       ],
       "notes": "A theory need not be deductively closed unless that convention is stated explicitly.",
       "citations": [
@@ -10815,7 +10827,7 @@
           "first_order_theory",
           "first_order_structure"
         ],
-        "compatibility": "The theory and structure use the same signature L, and the structure satisfies every sentence in T.",
+        "compatibility": "The theory and structure use the same signature $L$, and the structure satisfies every sentence in $T$.",
         "output": "model_of_theory"
       },
       "primaryField": "mathematics",
@@ -10834,12 +10846,12 @@
       "kind": "structure",
       "summary": "A first-order structure satisfying every sentence of a specified theory.",
       "carriers": [
-        "first-order theory T in signature L",
-        "L-structure M"
+        "first-order theory $T$ in signature $L$",
+        "$L$-structure $M$"
       ],
       "data": [],
       "axioms": [
-        "M satisfies every sentence of T"
+        "$M$ satisfies every sentence of $T$"
       ],
       "induces": [],
       "notes": "The theory and structure are independent inputs that must use the same signature.",
@@ -10865,7 +10877,7 @@
       "kind": "structure",
       "summary": "A Boolean algebra with a normal modal necessity operator.",
       "carriers": [
-        "Boolean algebra B"
+        "Boolean algebra $B$"
       ],
       "data": [
         "unary modal operator $\\square$"
@@ -10936,7 +10948,7 @@
       "kind": "structure",
       "summary": "A category with chosen finite products.",
       "carriers": [
-        "category C"
+        "category $C$"
       ],
       "data": [
         "terminal object",
@@ -10968,7 +10980,7 @@
       "kind": "structure",
       "summary": "A category admitting all finite limits.",
       "carriers": [
-        "category C"
+        "category $C$"
       ],
       "data": [
         "finite limiting cones"
@@ -10999,7 +11011,7 @@
       "kind": "structure",
       "summary": "A category in which every morphism is invertible.",
       "carriers": [
-        "category C"
+        "category $C$"
       ],
       "data": [
         "category structure"
@@ -11030,7 +11042,7 @@
       "kind": "structure",
       "summary": "A category with a tensor product, unit object, and coherent associativity and unit isomorphisms.",
       "carriers": [
-        "category C"
+        "category $C$"
       ],
       "data": [
         "tensor bifunctor",
@@ -11064,7 +11076,7 @@
       "kind": "structure",
       "summary": "A category whose hom-sets are abelian groups and whose composition is bilinear.",
       "carriers": [
-        "category C"
+        "category $C$"
       ],
       "data": [
         "abelian-group structure on each hom-set"
@@ -11095,7 +11107,7 @@
       "kind": "structure",
       "summary": "A category whose objects and morphisms form sets.",
       "carriers": [
-        "category C"
+        "category $C$"
       ],
       "data": [],
       "axioms": [
@@ -11126,7 +11138,7 @@
       "kind": "structure",
       "summary": "A category with at most one morphism between any ordered pair of objects.",
       "carriers": [
-        "category C"
+        "category $C$"
       ],
       "data": [
         "category structure"
@@ -11160,7 +11172,7 @@
       "kind": "structure",
       "summary": "A preadditive category with finite biproducts.",
       "carriers": [
-        "preadditive category C"
+        "preadditive category $C$"
       ],
       "data": [
         "zero object",
@@ -11192,7 +11204,7 @@
       "kind": "structure",
       "summary": "A monoidal category with a coherent braiding exchanging tensor factors.",
       "carriers": [
-        "monoidal category C"
+        "monoidal category $C$"
       ],
       "data": [
         "braiding natural isomorphism"
@@ -11223,7 +11235,7 @@
       "kind": "structure",
       "summary": "A cartesian category in which product with each object has a right adjoint.",
       "carriers": [
-        "cartesian category C"
+        "cartesian category $C$"
       ],
       "data": [
         "exponential objects"
@@ -11269,7 +11281,7 @@
           "category",
           "indexed_family"
         ],
-        "compatibility": "Every $X^{n}$ is an object of the same category C; add coface and codegeneracy morphisms in C satisfying the cosimplicial identities.",
+        "compatibility": "Every $X^{n}$ is an object of the same category $C$; add coface and codegeneracy morphisms in $C$ satisfying the cosimplicial identities.",
         "output": "cosimplicial_object"
       },
       "primaryField": "mathematics",
@@ -11304,7 +11316,7 @@
           "category",
           "indexed_family"
         ],
-        "compatibility": "Every $X_{n}$ is an object of the same category C; add face and degeneracy morphisms in C satisfying the simplicial identities.",
+        "compatibility": "Every $X_{n}$ is an object of the same category $C$; add face and degeneracy morphisms in $C$ satisfying the simplicial identities.",
         "output": "simplicial_object"
       },
       "primaryField": "mathematics",
@@ -11324,7 +11336,7 @@
       "kind": "structure",
       "summary": "A category with an identity-on-objects involutive contravariant endofunctor.",
       "carriers": [
-        "category C"
+        "category $C$"
       ],
       "data": [
         "dagger $f\\mapsto f^\\dagger$"
@@ -11391,14 +11403,14 @@
       "kind": "structure",
       "summary": "A Set-valued contravariant functor on a small category.",
       "carriers": [
-        "small category C"
+        "small category $C$"
       ],
       "data": [
         "functor $F\\colon C^{\\mathrm{op}}\\to\\mathbf{Set}$"
       ],
       "axioms": [],
       "induces": [],
-      "notes": "This atlas uses the standard Set-valued meaning so that the sheaf and sheaf-of-algebraic-objects branches are type-correct. Functors $C^{\\mathrm{op}}\\to D$ for general D are D-valued presheaves.",
+      "notes": "This atlas uses the standard $\\mathbf{Set}$-valued meaning so that the sheaf and sheaf-of-algebraic-objects branches are type-correct. Functors $C^{\\mathrm{op}}\\to D$ for a general category $D$ are $D$-valued presheaves.",
       "citations": [
         "stacks-presheaf",
         "wp-presheaf",
@@ -11423,7 +11435,7 @@
       "kind": "structure",
       "summary": "A category equipped with a Grothendieck topology or a pretopology of covering families.",
       "carriers": [
-        "small category C"
+        "small category $C$"
       ],
       "data": [
         "covering sieves or covering families"
@@ -11462,7 +11474,7 @@
       "kind": "structure",
       "summary": "An additive category with kernels and cokernels in which monomorphisms and epimorphisms are normal.",
       "carriers": [
-        "additive category C"
+        "additive category $C$"
       ],
       "data": [
         "kernels",
@@ -11496,7 +11508,7 @@
       "kind": "structure",
       "summary": "A monoidal category in which tensoring has internal-hom right adjoints.",
       "carriers": [
-        "monoidal category C"
+        "monoidal category $C$"
       ],
       "data": [
         "internal $\\operatorname{hom}$ objects"
@@ -11526,10 +11538,10 @@
       ],
       "level": 6,
       "kind": "structure",
-      "summary": "A covariant functor from the simplex category Δ to a category.",
+      "summary": "A covariant functor from the simplex category $\\Delta$ to a category.",
       "carriers": [
-        "category C",
-        "objects $X^{n}$ of C for $n\\ge 0$"
+        "category $C$",
+        "objects $X^{n}$ of $C$ for $n\\ge 0$"
       ],
       "data": [
         "coface and codegeneracy morphisms"
@@ -11562,10 +11574,10 @@
       "summary": "A collection of objects whose homs are objects of a monoidal category, with enriched composition and units.",
       "carriers": [
         "object collection",
-        "monoidal base V"
+        "monoidal base $V$"
       ],
       "data": [
-        "hom-objects in V",
+        "hom-objects in $V$",
         "enriched composition",
         "enriched units"
       ],
@@ -11628,10 +11640,10 @@
       ],
       "level": 6,
       "kind": "structure",
-      "summary": "A contravariant functor from the simplex category Δ to a category.",
+      "summary": "A contravariant functor from the simplex category $\\Delta$ to a category.",
       "carriers": [
-        "category C",
-        "objects $X_{n}$ of C for $n\\ge 0$"
+        "category $C$",
+        "objects $X_{n}$ of $C$ for $n\\ge 0$"
       ],
       "data": [
         "face and degeneracy morphisms"
@@ -11663,7 +11675,7 @@
       "kind": "structure",
       "summary": "A braided monoidal category whose braiding is its own inverse.",
       "carriers": [
-        "braided monoidal category C"
+        "braided monoidal category $C$"
       ],
       "data": [
         "braiding"
@@ -11694,7 +11706,7 @@
       "kind": "structure",
       "summary": "A finitely complete cartesian closed category with a subobject classifier.",
       "carriers": [
-        "category E"
+        "category $E$"
       ],
       "data": [
         "finite limits",
@@ -11730,7 +11742,7 @@
       "kind": "structure",
       "summary": "A symmetric monoidal category in which every object is equipped with a dual and evaluation/coevaluation satisfying the snake identities.",
       "carriers": [
-        "symmetric monoidal category C"
+        "symmetric monoidal category $C$"
       ],
       "data": [
         "duals, evaluation, coevaluation"
@@ -11763,11 +11775,11 @@
       "kind": "structure",
       "summary": "A category equivalent to the category of sheaves on a site.",
       "carriers": [
-        "category E"
+        "category $E$"
       ],
       "data": [],
       "axioms": [
-        "E is equivalent to Sh(C,J) for some small site (C,J)"
+        "$E$ is equivalent to $\\operatorname{Sh}(C,J)$ for some small site $(C,J)$"
       ],
       "induces": [],
       "notes": "A site presents a Grothendieck topos, but is not itself the carrier of the topos; different sites can present equivalent topoi.",
@@ -11829,7 +11841,7 @@
         "edge set $E$"
       ],
       "data": [
-        "endpoint map assigning to each edge a one- or two-element multiset of vertices"
+        "endpoint map assigning to each edge an unordered pair of vertices, equivalently a two-element multiset in which the two entries may coincide"
       ],
       "axioms": [],
       "induces": [],
@@ -11890,7 +11902,7 @@
         "vertex set $V$"
       ],
       "data": [
-        "family $E\\subseteq P(V)$"
+        "family $E\\subseteq\\mathcal P(V)$"
       ],
       "axioms": [],
       "induces": [],
@@ -11949,10 +11961,10 @@
       "kind": "structure",
       "summary": "A family of finite vertex subsets closed under taking subsets.",
       "carriers": [
-        "vertex set V"
+        "vertex set $V$"
       ],
       "data": [
-        "family K of finite subsets"
+        "family $K$ of finite subsets"
       ],
       "axioms": [
         "downward closed under inclusion"
@@ -11982,11 +11994,11 @@
       "kind": "structure",
       "summary": "An undirected graph whose vertex set admits a partition into two parts such that every edge joins different parts.",
       "carriers": [
-        "graph G"
+        "graph $G$"
       ],
       "data": [],
       "axioms": [
-        "there exists a bipartition $V=A\\sqcup B$ with every edge crossing between A and B"
+        "there exists a bipartition $V=A\\sqcup B$ with every edge crossing between $A$ and $B$"
       ],
       "induces": [],
       "notes": "The bipartition is treated as an existence property, not as chosen coloring data.",
@@ -12010,7 +12022,7 @@
       "kind": "structure",
       "summary": "An undirected graph with no cycles.",
       "carriers": [
-        "undirected graph G"
+        "undirected graph $G$"
       ],
       "data": [],
       "axioms": [
@@ -12039,7 +12051,7 @@
       "kind": "structure",
       "summary": "A ground set with a family of independent subsets satisfying the matroid independence axioms.",
       "carriers": [
-        "ground set E"
+        "ground set $E$"
       ],
       "data": [
         "family of independent subsets"
@@ -12076,7 +12088,7 @@
       "kind": "structure",
       "summary": "A graph admitting an embedding in the plane without edge crossings.",
       "carriers": [
-        "graph G"
+        "graph $G$"
       ],
       "data": [],
       "axioms": [
@@ -12105,7 +12117,7 @@
       "kind": "structure",
       "summary": "An orientation of a complete simple graph.",
       "carriers": [
-        "vertex set V"
+        "vertex set $V$"
       ],
       "data": [
         "for each distinct pair, exactly one directed edge"
@@ -12134,7 +12146,7 @@
       "kind": "structure",
       "summary": "A graph equipped with numerical or algebraic weights on edges or vertices.",
       "carriers": [
-        "graph G"
+        "graph $G$"
       ],
       "data": [
         "weight function"
@@ -12162,7 +12174,7 @@
       "kind": "structure",
       "summary": "A matroid enriched with orientation data abstracting signs of vector configurations.",
       "carriers": [
-        "matroid M"
+        "matroid $M$"
       ],
       "data": [
         "signed circuits or chirotope"
@@ -12192,7 +12204,7 @@
       "kind": "structure",
       "summary": "A connected acyclic undirected graph.",
       "carriers": [
-        "forest G"
+        "forest $G$"
       ],
       "data": [],
       "axioms": [
@@ -12300,7 +12312,7 @@
           "algebraic_signature",
           "set"
         ],
-        "compatibility": "Use a nonempty carrier A and, for each n-ary operation symbol, choose an operation $A^{n}\\to A$.",
+        "compatibility": "Use a nonempty carrier $A$ and, for each $n$-ary operation symbol, choose an operation $A^{n}\\to A$.",
         "output": "universal_algebra"
       },
       "primaryField": "mathematics",
@@ -12310,7 +12322,7 @@
     },
     {
       "id": "universal_algebra",
-      "label": "Algebra for a finitary signature (Ω-algebra)",
+      "label": "Algebra for a finitary signature ($\\Omega$-algebra)",
       "primaryDomain": "universal-algebra",
       "domains": [
         "universal-algebra",
@@ -12321,11 +12333,11 @@
       "kind": "structure",
       "summary": "A nonempty set interpreting each operation symbol of a fixed finitary algebraic signature.",
       "carriers": [
-        "nonempty set A",
+        "nonempty set $A$",
         "finitary algebraic signature $\\Omega$"
       ],
       "data": [
-        "an operation $A^{n}\\to A$ for each n-ary symbol"
+        "an operation $A^{n}\\to A$ for each $n$-ary symbol"
       ],
       "axioms": [],
       "induces": [],
@@ -12352,7 +12364,7 @@
       "kind": "structure",
       "summary": "A quasigroup with a two-sided identity element.",
       "carriers": [
-        "quasigroup Q"
+        "quasigroup $Q$"
       ],
       "data": [
         "identity element"
@@ -12384,7 +12396,7 @@
       "kind": "structure",
       "summary": "A set with a self-distributive operation whose right translations are bijective.",
       "carriers": [
-        "set X"
+        "set $X$"
       ],
       "data": [
         "binary operation $\\triangleright$"
@@ -12418,7 +12430,7 @@
       "kind": "structure",
       "summary": "An idempotent rack, important in knot invariants.",
       "carriers": [
-        "rack X"
+        "rack $X$"
       ],
       "data": [],
       "axioms": [
@@ -12472,7 +12484,7 @@
       "kind": "structure",
       "summary": "An associative magma.",
       "carriers": [
-        "set S"
+        "set $S$"
       ],
       "data": [
         "binary operation"
@@ -12538,7 +12550,7 @@
       "kind": "structure",
       "summary": "A monoid whose operation is commutative.",
       "carriers": [
-        "set M"
+        "set $M$"
       ],
       "data": [
         "binary operation",
@@ -12570,7 +12582,7 @@
       "kind": "structure",
       "summary": "A monoid in which every element has an inverse.",
       "carriers": [
-        "set G"
+        "set $G$"
       ],
       "data": [
         "binary operation",
@@ -12607,7 +12619,7 @@
       "kind": "structure",
       "summary": "A group with commutative multiplication, usually written additively.",
       "carriers": [
-        "set A"
+        "set $A$"
       ],
       "data": [
         "group operation"
@@ -12671,7 +12683,7 @@
       "kind": "structure",
       "summary": "A ring-like structure without requiring additive inverses.",
       "carriers": [
-        "set R"
+        "set $R$"
       ],
       "data": [
         "addition +",
@@ -12680,7 +12692,7 @@
         "1"
       ],
       "axioms": [
-        "(R,+,0) commutative monoid",
+        "$(R,+,0)$ is a commutative monoid",
         "$(R,\\cdot,1)$ monoid",
         "distributivity",
         "0 absorbing"
@@ -12708,7 +12720,7 @@
       "kind": "structure",
       "summary": "A unital semiring whose additive commutative monoid is an abelian group.",
       "carriers": [
-        "set R"
+        "set $R$"
       ],
       "data": [
         "addition",
@@ -12743,7 +12755,7 @@
       "kind": "structure",
       "summary": "A ring with commutative multiplication.",
       "carriers": [
-        "set R"
+        "set $R$"
       ],
       "data": [
         "ring operations"
@@ -12776,7 +12788,7 @@
       "kind": "structure",
       "summary": "A nonzero ring in which every nonzero element is multiplicatively invertible.",
       "carriers": [
-        "set D"
+        "set $D$"
       ],
       "data": [
         "ring operations"
@@ -12840,11 +12852,11 @@
       "kind": "structure",
       "summary": "An abelian group acted on linearly by a ring.",
       "carriers": [
-        "scalar ring R",
-        "carrier set M"
+        "scalar ring $R$",
+        "carrier set $M$"
       ],
       "data": [
-        "abelian-group addition on M",
+        "abelian-group addition on $M$",
         "scalar multiplication $R \\times M \\to M$"
       ],
       "axioms": [
@@ -12876,7 +12888,7 @@
       "kind": "structure",
       "summary": "A commutative ring in which every nonzero element has a multiplicative inverse.",
       "carriers": [
-        "set F"
+        "set $F$"
       ],
       "data": [
         "addition",
@@ -12955,7 +12967,7 @@
       "kind": "structure",
       "summary": "A field in which every nonconstant polynomial has a root.",
       "carriers": [
-        "field K"
+        "field $K$"
       ],
       "data": [],
       "axioms": [
@@ -13019,7 +13031,7 @@
       "kind": "structure",
       "summary": "A field whose algebraic extensions are separable.",
       "carriers": [
-        "field K"
+        "field $K$"
       ],
       "data": [],
       "axioms": [
@@ -13043,8 +13055,8 @@
       "kind": "structure",
       "summary": "An abelian group with scalar multiplication by a field.",
       "carriers": [
-        "scalar field F",
-        "carrier set V"
+        "scalar field $F$",
+        "carrier set $V$"
       ],
       "data": [
         "vector addition",
@@ -13160,7 +13172,7 @@
         "bilinear bracket $[-,-]$"
       ],
       "axioms": [
-        "alternating bracket: $[x,x]=0$ for every x",
+        "alternating bracket: $[x,x]=0$ for every $x$",
         "Jacobi identity"
       ],
       "induces": [],
@@ -13215,8 +13227,8 @@
       "kind": "structure",
       "summary": "A vector space equipped with a bilinear multiplication, not necessarily associative or unital.",
       "carriers": [
-        "field F",
-        "carrier A"
+        "field $F$",
+        "carrier $A$"
       ],
       "data": [
         "vector-space operations",
@@ -13252,7 +13264,7 @@
       "kind": "structure",
       "summary": "An algebra over a commutative base ring or field whose multiplication is associative.",
       "carriers": [
-        "module or vector space A"
+        "module or vector space $A$"
       ],
       "data": [
         "bilinear multiplication"
@@ -13318,14 +13330,14 @@
       ],
       "level": 15,
       "kind": "structure",
-      "summary": "Over a fixed commutative base ring k, a k-module with coassociative comultiplication and counit.",
+      "summary": "Over a fixed commutative base ring $k$, a $k$-module with coassociative comultiplication and counit.",
       "carriers": [
-        "commutative base ring k",
-        "k-module C"
+        "commutative base ring $k$",
+        "$k$-module $C$"
       ],
       "data": [
-        "k-linear comultiplication $C\\to C\\otimes _{k}C$",
-        "k-linear counit $C\\to k$"
+        "$k$-linear comultiplication $C\\to C\\otimes _{k}C$",
+        "$k$-linear counit $C\\to k$"
       ],
       "axioms": [
         "coassociativity",
@@ -13392,7 +13404,7 @@
       "kind": "structure",
       "summary": "An associative algebra with a multiplicative identity compatible with the base scalar action.",
       "carriers": [
-        "associative algebra A"
+        "associative algebra $A$"
       ],
       "data": [
         "unit 1"
@@ -13424,7 +13436,7 @@
       "kind": "structure",
       "summary": "A complex associative algebra equipped with a conjugate-linear involutive anti-automorphism.",
       "carriers": [
-        "complex associative algebra A"
+        "complex associative algebra $A$"
       ],
       "data": [
         "map $a\\mapsto a^*$"
@@ -13531,7 +13543,7 @@
       "kind": "structure",
       "summary": "A unital associative algebra over a fixed field whose multiplication is commutative.",
       "carriers": [
-        "unital associative algebra A"
+        "unital associative algebra $A$"
       ],
       "data": [],
       "axioms": [
@@ -13596,8 +13608,8 @@
       "kind": "structure",
       "summary": "Over a fixed commutative base ring, a compatible unital associative algebra and counital coassociative coalgebra.",
       "carriers": [
-        "commutative base ring k",
-        "k-module B"
+        "commutative base ring $k$",
+        "$k$-module $B$"
       ],
       "data": [
         "algebra structure",
@@ -13667,7 +13679,7 @@
       "kind": "structure",
       "summary": "A bialgebra equipped with an antipode.",
       "carriers": [
-        "bialgebra H"
+        "bialgebra $H$"
       ],
       "data": [
         "antipode $S:H\\to H$"
@@ -13770,8 +13782,8 @@
       "kind": "structure",
       "summary": "An action of a group on an object, here initially a set, respecting multiplication and identity.",
       "carriers": [
-        "group G",
-        "set X"
+        "group $G$",
+        "set $X$"
       ],
       "data": [
         "map $G\\times X\\to X$"
@@ -13794,7 +13806,7 @@
     },
     {
       "id": "g_set",
-      "label": "G-set",
+      "label": "$G$-set",
       "primaryDomain": "representation-theory",
       "domains": [
         "representation-theory",
@@ -13803,13 +13815,13 @@
       ],
       "level": 7,
       "kind": "structure",
-      "summary": "A set equipped with an action of a specified group G.",
+      "summary": "A set equipped with an action of a specified group $G$.",
       "carriers": [
-        "set X",
-        "group G"
+        "set $X$",
+        "group $G$"
       ],
       "data": [
-        "G-action"
+        "$G$-action"
       ],
       "axioms": [],
       "induces": [],
@@ -14060,7 +14072,7 @@
           "lie_algebra",
           "vector_space"
         ],
-        "compatibility": "The Lie algebra $\\mathfrak{g}$ and vector space V are over the same field k, and the k-linear action sends [x,y] to the commutator of the corresponding endomorphisms.",
+        "compatibility": "The Lie algebra $\\mathfrak g$ and vector space $V$ are over the same field $k$, and the $k$-linear action sends $[x,y]$ to the commutator of the corresponding endomorphisms.",
         "output": "lie_algebra_representation"
       },
       "primaryField": "mathematics",
@@ -14080,8 +14092,8 @@
       "kind": "structure",
       "summary": "A group action on a vector space by invertible linear maps.",
       "carriers": [
-        "group G",
-        "vector space V"
+        "group $G$",
+        "vector space $V$"
       ],
       "data": [
         "homomorphism $G\\to \\operatorname{GL}(V)$"
@@ -14147,11 +14159,11 @@
       "kind": "structure",
       "summary": "A Lie algebra homomorphism into the endomorphism Lie algebra of a vector space.",
       "carriers": [
-        "Lie algebra $\\mathfrak{g}$ over a field k",
-        "k-vector space V"
+        "Lie algebra $\\mathfrak{g}$ over a field $k$",
+        "$k$-vector space $V$"
       ],
       "data": [
-        "k-linear Lie homomorphism $\\mathfrak{g}\\to\\mathfrak{gl}_k(V)$"
+        "$k$-linear Lie homomorphism $\\mathfrak{g}\\to\\mathfrak{gl}_k(V)$"
       ],
       "axioms": [],
       "induces": [],
@@ -14348,7 +14360,7 @@
         "subset $f \\subseteq X\\times Y$"
       ],
       "axioms": [
-        "for every $x\\in X$ there exists exactly one $y\\in Y$ with $x \\mathrel{f} y$"
+        "for every $x\\in X$ there exists exactly one $y\\in Y$ with $(x,y)\\in f$"
       ],
       "induces": [],
       "notes": "",
@@ -14858,7 +14870,7 @@
       "kind": "structure",
       "summary": "A nonzero commutative ring with no zero divisors.",
       "carriers": [
-        "set R"
+        "set $R$"
       ],
       "data": [
         "commutative ring structure"
@@ -14890,7 +14902,7 @@
       "kind": "structure",
       "summary": "A Noetherian, integrally closed integral domain of Krull dimension one.",
       "carriers": [
-        "integral domain R"
+        "integral domain $R$"
       ],
       "data": [
         "ideal structure"
@@ -14924,7 +14936,7 @@
       "kind": "structure",
       "summary": "An integral domain in which any two nonzero elements have a greatest common divisor.",
       "carriers": [
-        "integral domain R"
+        "integral domain $R$"
       ],
       "data": [
         "divisibility relation"
@@ -14956,11 +14968,11 @@
       "kind": "structure",
       "summary": "An integral domain whose ideals are totally ordered by inclusion, equivalently a valuation subring of its fraction field.",
       "carriers": [
-        "integral domain V"
+        "integral domain $V$"
       ],
       "data": [],
       "axioms": [
-        "for every fraction x, x or $x^{-1}$ lies in V"
+        "for every fraction $x$, either $x$ or $x^{-1}$ lies in $V$"
       ],
       "induces": [
         "local ring"
@@ -14989,7 +15001,7 @@
       "kind": "structure",
       "summary": "A field with finitely many elements.",
       "carriers": [
-        "finite set F"
+        "finite set $F$"
       ],
       "data": [
         "field operations"
@@ -15020,13 +15032,13 @@
       "kind": "structure",
       "summary": "A finite field extension of the rational numbers.",
       "carriers": [
-        "field K"
+        "field $K$"
       ],
       "data": [
-        "embedding of $\\mathbb{Q}$ into K"
+        "embedding of $\\mathbb Q$ into $K$"
       ],
       "axioms": [
-        "K is finite-dimensional as a vector space over $\\mathbb{Q}$"
+        "$K$ is finite-dimensional as a vector space over $\\mathbb Q$"
       ],
       "induces": [],
       "notes": "",
@@ -15051,7 +15063,7 @@
       "kind": "structure",
       "summary": "An integral domain in which nonzero nonunits factor uniquely into irreducibles up to units and order.",
       "carriers": [
-        "integral domain R"
+        "integral domain $R$"
       ],
       "data": [
         "multiplication and divisibility"
@@ -15083,7 +15095,7 @@
       "kind": "structure",
       "summary": "A field equipped with a Krull valuation or an absolute value.",
       "carriers": [
-        "field K"
+        "field $K$"
       ],
       "data": [
         "valuation into an ordered value group or absolute value"
@@ -15116,7 +15128,7 @@
       "kind": "structure",
       "summary": "A finite extension of $\\mathbb Q$, or a finite extension of the one-variable rational function field $\\mathbb F_q(t)$.",
       "carriers": [
-        "field K"
+        "field $K$"
       ],
       "data": [],
       "axioms": [
@@ -15146,10 +15158,10 @@
       "kind": "structure",
       "summary": "An integral domain in which every ideal is generated by one element.",
       "carriers": [
-        "integral domain R"
+        "integral domain $R$"
       ],
       "data": [
-        "ideal structure inherited from R"
+        "ideal structure inherited from $R$"
       ],
       "axioms": [
         "every ideal is principal"
@@ -15179,7 +15191,7 @@
       "kind": "structure",
       "summary": "An ordered field with no proper algebraic ordered extension, equivalently whose algebraic closure is obtained by adjoining $\\sqrt{-1}$.",
       "carriers": [
-        "ordered field R"
+        "ordered field $R$"
       ],
       "data": [],
       "axioms": [
@@ -15210,7 +15222,7 @@
       "kind": "structure",
       "summary": "The integral closure of $\\mathbb{Z}$ inside a number field.",
       "carriers": [
-        "subset $O_K$ of a number field K"
+        "subset $\\mathcal O_K$ of a number field $K$"
       ],
       "data": [
         "inherited addition and multiplication"
@@ -15221,7 +15233,7 @@
       "induces": [
         "Dedekind-domain structure"
       ],
-      "notes": "For a number field K, $O_K$ is the integral closure of $\\mathbb{Z}$ in K and is a Dedekind domain.",
+      "notes": "For a number field $K$, $\\mathcal O_K$ is the integral closure of $\\mathbb Z$ in $K$ and is a Dedekind domain.",
       "citations": [
         "wp-ring-integers",
         "nlab-dedekind-domain",
@@ -15245,7 +15257,7 @@
       "kind": "structure",
       "summary": "A field complete for the uniformity induced by its valuation; in the absolute-value/rank-one case, complete for the associated metric.",
       "carriers": [
-        "valued field K"
+        "valued field $K$"
       ],
       "data": [],
       "axioms": [
@@ -15275,7 +15287,7 @@
       "kind": "structure",
       "summary": "A nonfield local principal ideal domain, equivalently a Noetherian local domain of Krull dimension one whose maximal ideal is principal.",
       "carriers": [
-        "integral domain R"
+        "integral domain $R$"
       ],
       "data": [],
       "axioms": [
@@ -15309,7 +15321,7 @@
       "kind": "structure",
       "summary": "An integral domain that admits a Euclidean function supporting division with strictly smaller remainder.",
       "carriers": [
-        "integral domain R"
+        "integral domain $R$"
       ],
       "data": [],
       "axioms": [
@@ -15340,7 +15352,7 @@
       "kind": "structure",
       "summary": "A nondiscrete locally compact Hausdorff topological field.",
       "carriers": [
-        "field K"
+        "field $K$"
       ],
       "data": [
         "field operations",
@@ -15365,7 +15377,7 @@
     },
     {
       "id": "p_adic_field",
-      "label": "p-adic field",
+      "label": "$p$-adic field",
       "primaryDomain": "number-theory",
       "domains": [
         "number-theory",
@@ -15374,13 +15386,13 @@
       ],
       "level": 14,
       "kind": "structure",
-      "summary": "A finite extension of the p-adic numbers $Q_{p}$.",
+      "summary": "A finite extension of the $p$-adic numbers $\\mathbb Q_p$.",
       "carriers": [
-        "complete valued field K"
+        "complete valued field $K$"
       ],
       "data": [],
       "axioms": [
-        "finite extension of $Q_{p}$"
+        "finite extension of $\\mathbb Q_p$"
       ],
       "induces": [],
       "notes": "",
@@ -15444,7 +15456,7 @@
       "kind": "structure",
       "summary": "A presheaf on a site satisfying the local identity and unique gluing condition for every cover.",
       "carriers": [
-        "site (C,J)",
+        "site $(C,J)$",
         "presheaf $F\\colon C^{\\mathrm{op}}\\to\\mathbf{Set}$"
       ],
       "data": [],
@@ -15474,7 +15486,7 @@
       "kind": "structure",
       "summary": "A sheaf whose sections form groups and whose restriction maps are homomorphisms.",
       "carriers": [
-        "sheaf F"
+        "sheaf $F$"
       ],
       "data": [
         "group structure on every $F(U)$"
@@ -15507,7 +15519,7 @@
       "kind": "structure",
       "summary": "A sheaf whose sections form rings and whose restrictions are ring homomorphisms.",
       "carriers": [
-        "sheaf O"
+        "sheaf $O$"
       ],
       "data": [
         "ring structure on every $O(U)$"
@@ -15540,7 +15552,7 @@
       "kind": "structure",
       "summary": "A topological space equipped with a sheaf of rings.",
       "carriers": [
-        "topological space X"
+        "topological space $X$"
       ],
       "data": [
         "sheaf of rings $O_X$"
@@ -15605,7 +15617,7 @@
       "kind": "structure",
       "summary": "A commutative ring with exactly one maximal ideal.",
       "carriers": [
-        "commutative ring R"
+        "commutative ring $R$"
       ],
       "data": [],
       "axioms": [
@@ -15668,7 +15680,7 @@
       "kind": "structure",
       "summary": "A commutative ring satisfying the ascending chain condition on ideals.",
       "carriers": [
-        "commutative ring R"
+        "commutative ring $R$"
       ],
       "data": [],
       "axioms": [
@@ -15699,7 +15711,7 @@
       "kind": "structure",
       "summary": "A commutative ring satisfying the descending chain condition on ideals.",
       "carriers": [
-        "commutative ring R"
+        "commutative ring $R$"
       ],
       "data": [],
       "axioms": [
@@ -15766,7 +15778,7 @@
       "kind": "structure",
       "summary": "A locally ringed space locally isomorphic to affine schemes.",
       "carriers": [
-        "locally ringed space X"
+        "locally ringed space $X$"
       ],
       "data": [],
       "axioms": [
@@ -15796,13 +15808,13 @@
       ],
       "level": 11,
       "kind": "structure",
-      "summary": "A locally ringed space isomorphic to $\\operatorname{Spec} R$ for a commutative ring R.",
+      "summary": "A locally ringed space isomorphic to $\\operatorname{Spec}(R)$ for a commutative ring $R$.",
       "carriers": [
-        "locally ringed space X"
+        "locally ringed space $X$"
       ],
       "data": [],
       "axioms": [
-        "$X\\cong \\operatorname{Spec} R$ for some commutative ring R"
+        "$X\\cong \\operatorname{Spec} R$ for some commutative ring $R$"
       ],
       "induces": [],
       "notes": "",
@@ -15827,17 +15839,18 @@
       ],
       "level": 11,
       "kind": "structure",
-      "summary": "A Noetherian local ring whose maximal ideal has the minimal number of generators allowed by its Krull dimension.",
+      "summary": "A Noetherian local ring $(R,\\mathfrak m)$ whose Krull dimension equals the dimension of its Zariski cotangent space $\\mathfrak m/\\mathfrak m^2$ over the residue field $R/\\mathfrak m$.",
       "carriers": [
-        "Noetherian local ring (R,m)"
+        "Noetherian local ring $(R,\\mathfrak m)$"
       ],
       "data": [],
       "axioms": [
-        "$\\dim R=\\dim_{\\kappa}(\\mathfrak{m}/\\mathfrak{m}^2)$"
+        "$\\dim R=\\dim_{R/\\mathfrak m}(\\mathfrak m/\\mathfrak m^2)$"
       ],
       "induces": [],
       "notes": "",
       "citations": [
+        "stacks-regular-local-definition",
         "stacks-dvr-regular",
         "wp-regular-local-ring",
         "stacks-schemes-text"
@@ -15857,16 +15870,16 @@
       ],
       "level": 12,
       "kind": "structure",
-      "summary": "A sheaf of sets on the big fppf site over S with representable diagonal and an étale surjective cover by a scheme.",
+      "summary": "A sheaf of sets on the big fppf site over $S$ with representable diagonal and an étale surjective cover by a scheme.",
       "carriers": [
-        "base scheme S",
+        "base scheme $S$",
         "presheaf $F\\colon(\\mathrm{Sch}/S)_{\\mathrm{fppf}}^{\\mathrm{op}}\\to\\mathbf{Set}$"
       ],
       "data": [],
       "axioms": [
-        "F is a sheaf for the fppf topology",
+        "$F$ is a sheaf for the fppf topology",
         "the diagonal $F\\to F\\times F$ is representable by schemes",
-        "there exists a scheme U and a surjective étale morphism $h_U\\to F$"
+        "there exists a scheme $U$ and a surjective étale morphism $h_U\\to F$"
       ],
       "induces": [],
       "notes": "The existence of an étale cover is a property; no atlas is selected as part of the algebraic-space structure. Equivalent étale-site formulations are standard.",
@@ -15891,11 +15904,11 @@
       "kind": "structure",
       "summary": "A local ring complete and separated for its maximal-ideal-adic topology.",
       "carriers": [
-        "local ring (R,m)"
+        "local ring $(R,\\mathfrak m)$"
       ],
       "data": [],
       "axioms": [
-        "$R\\cong \\varprojlim R/m^{n}$"
+        "$R\\cong \\varprojlim_n R/\\mathfrak m^n$"
       ],
       "induces": [],
       "notes": "",
@@ -15921,7 +15934,7 @@
       "kind": "structure",
       "summary": "A quasi-compact locally Noetherian scheme.",
       "carriers": [
-        "scheme X"
+        "scheme $X$"
       ],
       "data": [],
       "axioms": [
@@ -15952,7 +15965,7 @@
       "kind": "structure",
       "summary": "A scheme whose local rings contain no nonzero nilpotents.",
       "carriers": [
-        "scheme X"
+        "scheme $X$"
       ],
       "data": [],
       "axioms": [
@@ -15997,7 +16010,7 @@
           "scheme",
           "field"
         ],
-        "compatibility": "Equip X with a finite-type structure morphism $X\\to \\operatorname{Spec}(k)$ and require X to be integral and the morphism separated.",
+        "compatibility": "Equip $X$ with a finite-type structure morphism $X\\to\\operatorname{Spec}(k)$ and require $X$ to be integral and the morphism separated.",
         "output": "algebraic_variety"
       },
       "primaryField": "mathematics",
@@ -16017,14 +16030,14 @@
       "kind": "structure",
       "summary": "A scheme whose structure morphism $X\\to \\operatorname{Spec}(\\mathbb{Z})$ is separated.",
       "carriers": [
-        "scheme X"
+        "scheme $X$"
       ],
       "data": [],
       "axioms": [
         "relative diagonal $\\Delta_{X/\\operatorname{Spec}(\\mathbb{Z})}\\colon X\\to X\\times_{\\operatorname{Spec}(\\mathbb{Z})}X$ is a closed immersion"
       ],
       "induces": [],
-      "notes": "For an S-scheme $X\\to S$, relative separatedness uses $\\Delta_{X/S}\\colon X\\to X\\times_S X$.",
+      "notes": "For an $S$-scheme $X\\to S$, relative separatedness uses $\\Delta_{X/S}\\colon X\\to X\\times_S X$.",
       "citations": [
         "stacks-separated-scheme"
       ],
@@ -16044,14 +16057,14 @@
       "kind": "structure",
       "summary": "Under the adopted Stacks Project convention, an integral separated scheme of finite type over a field.",
       "carriers": [
-        "field k",
-        "scheme X with structure morphism $X\\to \\operatorname{Spec}(k)$"
+        "field $k$",
+        "scheme $X$ with structure morphism $X\\to \\operatorname{Spec}(k)$"
       ],
       "data": [
-        "k-scheme structure"
+        "$k$-scheme structure"
       ],
       "axioms": [
-        "X is integral",
+        "$X$ is integral",
         "$X\\to \\operatorname{Spec}(k)$ is separated",
         "$X\\to \\operatorname{Spec}(k)$ is of finite type"
       ],
@@ -16080,7 +16093,7 @@
       "kind": "structure",
       "summary": "A nonempty scheme that is reduced and irreducible.",
       "carriers": [
-        "scheme X"
+        "scheme $X$"
       ],
       "data": [],
       "axioms": [
@@ -16111,7 +16124,7 @@
       "kind": "structure",
       "summary": "A locally Noetherian scheme whose local rings are regular local rings.",
       "carriers": [
-        "scheme X"
+        "scheme $X$"
       ],
       "data": [],
       "axioms": [
@@ -16140,17 +16153,17 @@
       ],
       "level": 13,
       "kind": "structure",
-      "summary": "A scheme X equipped with a specified morphism to a base scheme S.",
+      "summary": "A scheme $X$ equipped with a specified morphism to a base scheme $S$.",
       "carriers": [
-        "scheme X",
-        "base scheme S"
+        "scheme $X$",
+        "base scheme $S$"
       ],
       "data": [
         "structure morphism $X\\to S$"
       ],
       "axioms": [],
       "induces": [],
-      "notes": "This is the object-level notion of an S-scheme.",
+      "notes": "This is the object-level notion of an $S$-scheme.",
       "citations": [
         "stacks-scheme",
         "stacks-projective-morphisms",
@@ -16170,16 +16183,16 @@
       ],
       "level": 14,
       "kind": "structure",
-      "summary": "A scheme X over a base S whose structure morphism $X\\to S$ is projective.",
+      "summary": "A scheme $X$ over a base $S$ whose structure morphism $X\\to S$ is projective.",
       "carriers": [
-        "scheme X",
-        "base scheme S"
+        "scheme $X$",
+        "base scheme $S$"
       ],
       "data": [
         "structure morphism $X\\to S$"
       ],
       "axioms": [
-        "X admits an S-closed immersion into some projective space $P^{n}_S$"
+        "$X$ admits an $S$-closed immersion into some projective space $\\mathbf P^n_S$"
       ],
       "induces": [],
       "notes": "The closed immersion is an existence witness, not chosen data of the projective scheme.",
@@ -16204,7 +16217,7 @@
         "set $X$"
       ],
       "data": [
-        "topology $\\tau \\subseteq P(X)$"
+        "topology $\\tau\\subseteq\\mathcal P(X)$"
       ],
       "axioms": [
         "$\\varnothing$ and $X$ open",
@@ -16269,7 +16282,7 @@
       ],
       "data": [],
       "axioms": [
-        "each point has a neighborhood homeomorphic to an open subset of $R^{n}$"
+        "each point has a neighborhood homeomorphic to an open subset of $\\mathbb R^n$"
       ],
       "induces": [],
       "notes": "No atlas is chosen at this node; local Euclidean charts are witnesses to a property of the topology. Dimension is normally fixed on each connected component.",
@@ -16296,7 +16309,7 @@
         "set $X$"
       ],
       "data": [
-        "d: $X \\times X \\to [0,\\infty)$"
+        "$d\\colon X\\times X\\to[0,\\infty)$"
       ],
       "axioms": [
         "symmetry",
@@ -16353,7 +16366,7 @@
     },
     {
       "id": "t0_space",
-      "label": "T₀ space",
+      "label": "$T_0$ space",
       "level": 2,
       "kind": "structure",
       "summary": "A topological space whose distinct points are topologically distinguishable.",
@@ -16539,7 +16552,7 @@
     },
     {
       "id": "t1_space",
-      "label": "T₁ space",
+      "label": "$T_1$ space",
       "level": 3,
       "kind": "structure",
       "summary": "A topological space in which singletons are closed.",
@@ -16574,7 +16587,7 @@
       "kind": "structure",
       "summary": "A metric space in which every Cauchy sequence converges.",
       "carriers": [
-        "metric space X"
+        "metric space $X$"
       ],
       "data": [
         "existing metric"
@@ -16604,7 +16617,7 @@
       "kind": "structure",
       "summary": "A topological space whose distinct points have disjoint neighborhoods.",
       "carriers": [
-        "topological space X"
+        "topological space $X$"
       ],
       "data": [
         "existing topology"
@@ -16638,7 +16651,7 @@
       "kind": "structure",
       "summary": "A space with a basis of connected open sets.",
       "carriers": [
-        "topological space X"
+        "topological space $X$"
       ],
       "data": [],
       "axioms": [
@@ -16696,7 +16709,7 @@
       "kind": "structure",
       "summary": "A metric space with a countable dense subset.",
       "carriers": [
-        "metric space X"
+        "metric space $X$"
       ],
       "data": [
         "existing metric"
@@ -16730,7 +16743,7 @@
       "kind": "structure",
       "summary": "A space whose connected components are singletons.",
       "carriers": [
-        "topological space X"
+        "topological space $X$"
       ],
       "data": [],
       "axioms": [
@@ -16949,16 +16962,16 @@
     },
     {
       "id": "regular_space",
-      "label": "Regular T₁ space",
+      "label": "Regular $T_1$ space",
       "primaryDomain": "topology",
       "domains": [
         "topology"
       ],
       "level": 5,
       "kind": "structure",
-      "summary": "$A T_{1}$ space in which points and closed sets can be separated by neighborhoods.",
+      "summary": "A $T_1$ space in which points and closed sets can be separated by neighborhoods.",
       "carriers": [
-        "$T_{1}$ space X"
+        "$T_{1}$ space $X$"
       ],
       "data": [],
       "axioms": [
@@ -16987,8 +17000,8 @@
       "kind": "structure",
       "summary": "A semigroup whose multiplication is continuous.",
       "carriers": [
-        "semigroup S",
-        "topological space S"
+        "semigroup $S$",
+        "topological space $S$"
       ],
       "data": [],
       "axioms": [
@@ -17021,7 +17034,7 @@
       "data": [],
       "axioms": [],
       "induces": [],
-      "notes": "The topological-space input is instantiated for both E and B.",
+      "notes": "The topological-space input is instantiated for both $E$ and $B$.",
       "citations": [
         "wp-covering-space",
         "nlab-covering-space",
@@ -17032,7 +17045,7 @@
           "topological_space",
           "function"
         ],
-        "compatibility": "Give E and B topologies, take $p:E\\to B,$ require continuity and that every $b\\in B$ has an evenly covered neighborhood.",
+        "compatibility": "Give $E$ and $B$ topologies and a continuous surjection $p\\colon E\\to B$; require every $b\\in B$ to have an open neighborhood $U$ such that $p^{-1}(U)$ is a disjoint union of open sets mapped homeomorphically onto $U$ by $p$.",
         "output": "covering_space"
       },
       "primaryField": "mathematics",
@@ -17052,7 +17065,7 @@
       "kind": "structure",
       "summary": "A topological space with a basis of clopen sets.",
       "carriers": [
-        "topological space X"
+        "topological space $X$"
       ],
       "data": [],
       "axioms": [
@@ -17076,7 +17089,7 @@
       "kind": "structure",
       "summary": "A topological space that is both compact and Hausdorff.",
       "carriers": [
-        "topological space X"
+        "topological space $X$"
       ],
       "data": [
         "one topology"
@@ -17108,10 +17121,10 @@
       "kind": "structure",
       "summary": "A metric space that is compact in its metric topology.",
       "carriers": [
-        "set X"
+        "set $X$"
       ],
       "data": [
-        "metric d"
+        "metric $d$"
       ],
       "axioms": [
         "metric axioms",
@@ -17139,7 +17152,7 @@
       "kind": "structure",
       "summary": "A Hausdorff space in which every point has a compact neighborhood.",
       "carriers": [
-        "topological space X"
+        "topological space $X$"
       ],
       "data": [
         "one topology"
@@ -17165,16 +17178,16 @@
     },
     {
       "id": "normal_space",
-      "label": "Normal T₁ space",
+      "label": "Normal $T_1$ space",
       "primaryDomain": "topology",
       "domains": [
         "topology"
       ],
       "level": 6,
       "kind": "structure",
-      "summary": "$A T_{1}$ space in which disjoint closed sets have disjoint neighborhoods.",
+      "summary": "A $T_1$ space in which disjoint closed sets have disjoint neighborhoods.",
       "carriers": [
-        "$T_{1}$ space X"
+        "$T_{1}$ space $X$"
       ],
       "data": [],
       "axioms": [
@@ -17198,7 +17211,7 @@
       "kind": "structure",
       "summary": "A separable topological space admitting a compatible complete metric.",
       "carriers": [
-        "topological space X"
+        "topological space $X$"
       ],
       "data": [],
       "axioms": [
@@ -17227,7 +17240,7 @@
       "kind": "structure",
       "summary": "A group whose operations are continuous.",
       "carriers": [
-        "set G"
+        "set $G$"
       ],
       "data": [
         "group structure",
@@ -17262,7 +17275,7 @@
       "kind": "structure",
       "summary": "A Hausdorff, second-countable, locally Euclidean space.",
       "carriers": [
-        "topological space M"
+        "topological space $M$"
       ],
       "data": [
         "topology"
@@ -17301,8 +17314,8 @@
       "kind": "structure",
       "summary": "A monoid whose multiplication is continuous.",
       "carriers": [
-        "monoid M",
-        "topological space M"
+        "monoid $M$",
+        "topological space $M$"
       ],
       "data": [],
       "axioms": [
@@ -17335,7 +17348,7 @@
       "data": [],
       "axioms": [],
       "induces": [],
-      "notes": "The topological-space input is instantiated for total space, base, and typical fiber as needed.",
+      "notes": "The topological-space input is instantiated for total space $E$, base $B$, and typical fiber $F$.",
       "citations": [
         "wp-fiber-bundle",
         "nlab-fiber-bundle",
@@ -17346,7 +17359,7 @@
           "topological_space",
           "function"
         ],
-        "compatibility": "Give E and B topologies, take $p\\colon E\\to B$, require continuity and that every $b\\in B$ has an evenly covered neighborhood.",
+        "compatibility": "Give $E$, $B$, and $F$ topologies and a continuous projection $p\\colon E\\to B$; require an open cover of $B$ with homeomorphisms $\\phi_U\\colon p^{-1}(U)\\to U\\times F$ satisfying $\\operatorname{pr}_1\\circ\\phi_U=p$.",
         "output": "fiber_bundle"
       },
       "primaryField": "mathematics",
@@ -17366,7 +17379,7 @@
       "kind": "structure",
       "summary": "A completely regular Hausdorff space.",
       "carriers": [
-        "Hausdorff space X"
+        "Hausdorff space $X$"
       ],
       "data": [],
       "axioms": [
@@ -17393,11 +17406,11 @@
       ],
       "level": 7,
       "kind": "structure",
-      "summary": "A locally trivial projection $E\\to B$ with typical fiber F.",
+      "summary": "A locally trivial projection $p\\colon E\\to B$ with typical fiber $F$.",
       "carriers": [
-        "total space E",
-        "base B",
-        "fiber F"
+        "total space $E$",
+        "base $B$",
+        "fiber $F$"
       ],
       "data": [
         "projection $p:E\\to B$",
@@ -17438,7 +17451,7 @@
           "ring",
           "topological_space"
         ],
-        "compatibility": "Addition and multiplication are continuous; additive inversion is then also required/automatic from the topological-group structure.",
+        "compatibility": "Require addition, additive inversion, and multiplication to be continuous on the same carrier and topology.",
         "output": "topological_ring"
       },
       "primaryDomain": "topology",
@@ -17458,7 +17471,7 @@
       "kind": "structure",
       "summary": "A ring with a topology for which addition, multiplication, and additive inversion are continuous.",
       "carriers": [
-        "set R"
+        "set $R$"
       ],
       "data": [
         "ring structure",
@@ -17557,7 +17570,7 @@
       "kind": "structure",
       "summary": "A field with a topology making its additive group, multiplication, and nonzero inversion continuous.",
       "carriers": [
-        "set F"
+        "set $F$"
       ],
       "data": [
         "field structure",
@@ -17659,7 +17672,7 @@
       ],
       "level": 3,
       "kind": "structure",
-      "summary": "A topological space X with a specified subspace $A\\subseteq X$.",
+      "summary": "A topological space $X$ with a specified subspace $A\\subseteq X$.",
       "carriers": [
         "topological space $X$"
       ],
@@ -17690,7 +17703,7 @@
       "kind": "structure",
       "summary": "A space in which every two points can be joined by a continuous path.",
       "carriers": [
-        "topological space X"
+        "topological space $X$"
       ],
       "data": [],
       "axioms": [
@@ -17723,14 +17736,14 @@
       "kind": "structure",
       "summary": "A space whose topology is detected by maps from compact Hausdorff spaces.",
       "carriers": [
-        "topological space X"
+        "topological space $X$"
       ],
       "data": [],
       "axioms": [
-        "k-space final-topology condition"
+        "$k$-space final-topology condition"
       ],
       "induces": [],
-      "notes": "Convention-sensitive: some authors mean k-space; others reserve “compactly generated” for compactly generated weak Hausdorff spaces. This node uses the k-space condition only.",
+      "notes": "Convention-sensitive: some authors mean $k$-space; others reserve “compactly generated” for compactly generated weak Hausdorff spaces. This node uses the $k$-space condition only.",
       "citations": [
         "wp-compactly-generated",
         "nlab-compactly-generated",
@@ -17753,7 +17766,7 @@
       "kind": "structure",
       "summary": "A space homotopy equivalent to a point.",
       "carriers": [
-        "topological space X"
+        "topological space $X$"
       ],
       "data": [],
       "axioms": [
@@ -17776,7 +17789,7 @@
     },
     {
       "id": "h_space",
-      "label": "H-space",
+      "label": "$H$-space",
       "primaryDomain": "algebraic-topology",
       "domains": [
         "algebraic-topology",
@@ -17787,7 +17800,7 @@
       "kind": "structure",
       "summary": "A pointed space with multiplication and unit laws holding up to homotopy.",
       "carriers": [
-        "pointed topological space X"
+        "pointed topological space $X$"
       ],
       "data": [
         "continuous multiplication $X\\times X\\to X$"
@@ -17819,7 +17832,7 @@
       "kind": "structure",
       "summary": "A path-connected space with trivial fundamental group.",
       "carriers": [
-        "path-connected space X"
+        "path-connected space $X$"
       ],
       "data": [],
       "axioms": [
@@ -17847,18 +17860,18 @@
       ],
       "level": 6,
       "kind": "structure",
-      "summary": "A space E over a base B locally isomorphic to a disjoint union of copies of B.",
+      "summary": "A map $p\\colon E\\to B$ such that every point of $B$ has an open neighborhood $U$ for which $p^{-1}(U)$ is a disjoint union of open sheets, each mapped homeomorphically onto $U$ by $p$.",
       "carriers": [
-        "spaces E and B"
+        "spaces $E$ and $B$"
       ],
       "data": [
-        "continuous surjection $p:E\\to B$"
+        "continuous surjection $p\\colon E\\to B$"
       ],
       "axioms": [
         "evenly covered neighborhoods"
       ],
       "induces": [],
-      "notes": "A covering is a map $p:E\\to B$ together with topologies on both E and B satisfying the evenly-covered-neighborhood condition; it is not structure on one topological space alone.",
+      "notes": "A covering is a map $p\\colon E\\to B$ together with topologies on both $E$ and $B$ satisfying the evenly-covered-neighborhood condition; it is not structure on one topological space alone.",
       "citations": [
         "wp-covering-space",
         "nlab-covering-space",
@@ -17882,7 +17895,7 @@
       "kind": "structure",
       "summary": "A space constructed inductively by attaching cells along their boundaries.",
       "carriers": [
-        "topological space X"
+        "topological space $X$"
       ],
       "data": [
         "cell decomposition and attaching maps"
@@ -17913,7 +17926,7 @@
       ],
       "level": 7,
       "kind": "structure",
-      "summary": "A contravariant functor from the simplex category Δ to sets.",
+      "summary": "A contravariant functor from the simplex category $\\Delta$ to sets.",
       "carriers": [
         "sets $X_{n}$ for $n\\ge 0$"
       ],
@@ -17984,7 +17997,7 @@
       "kind": "structure",
       "summary": "A topological manifold equipped with a compatible smooth atlas.",
       "carriers": [
-        "topological manifold M"
+        "topological manifold $M$"
       ],
       "data": [
         "maximal smooth atlas"
@@ -18032,7 +18045,7 @@
           "fiber_bundle",
           "topological_group"
         ],
-        "compatibility": "Add a continuous right G-action on the total space that is free and transitive on each fiber and locally equivariantly trivial.",
+        "compatibility": "Add a continuous right $G$-action on the total space that is free and transitive on each fiber and locally equivariantly trivial.",
         "output": "principal_bundle"
       },
       "primaryField": "mathematics",
@@ -18053,7 +18066,7 @@
       "kind": "structure",
       "summary": "A manifold locally modeled on complex Euclidean space with holomorphic transition maps.",
       "carriers": [
-        "topological manifold M"
+        "topological manifold $M$"
       ],
       "data": [
         "complex atlas"
@@ -18154,7 +18167,7 @@
       "kind": "structure",
       "summary": "A smooth manifold equipped with a covariant derivative on vector fields.",
       "carriers": [
-        "smooth manifold M"
+        "smooth manifold $M$"
       ],
       "data": [
         "affine connection $\\nabla$"
@@ -18188,7 +18201,7 @@
       "kind": "structure",
       "summary": "A smooth manifold whose smooth functions carry a compatible Poisson bracket.",
       "carriers": [
-        "smooth manifold M"
+        "smooth manifold $M$"
       ],
       "data": [
         "Poisson bivector or bracket on smooth functions"
@@ -18222,10 +18235,10 @@
       "kind": "structure",
       "summary": "A smooth manifold with a smoothly varying nondegenerate symmetric bilinear form of fixed signature.",
       "carriers": [
-        "smooth manifold M"
+        "smooth manifold $M$"
       ],
       "data": [
-        "pseudo-Riemannian metric g"
+        "pseudo-Riemannian metric $g$"
       ],
       "axioms": [
         "smoothness",
@@ -18257,7 +18270,7 @@
       "kind": "structure",
       "summary": "A manifold whose chart transitions are real-analytic.",
       "carriers": [
-        "topological manifold M"
+        "topological manifold $M$"
       ],
       "data": [
         "compatible real-analytic atlas"
@@ -18291,10 +18304,10 @@
       "kind": "structure",
       "summary": "A smooth manifold with a smoothly varying positive-definite inner product on tangent spaces.",
       "carriers": [
-        "smooth manifold M"
+        "smooth manifold $M$"
       ],
       "data": [
-        "Riemannian metric g"
+        "Riemannian metric $g$"
       ],
       "axioms": [
         "smoothness and positive definiteness"
@@ -18325,7 +18338,7 @@
       "kind": "structure",
       "summary": "A Hausdorff, second-countable space locally modeled on the closed half-space, equipped with a compatible smooth atlas.",
       "carriers": [
-        "topological space M"
+        "topological space $M$"
       ],
       "data": [
         "smooth half-space atlas"
@@ -18360,7 +18373,7 @@
       "kind": "structure",
       "summary": "A smooth manifold with a closed nondegenerate differential 2-form.",
       "carriers": [
-        "smooth manifold M"
+        "smooth manifold $M$"
       ],
       "data": [
         "2-form $\\omega$"
@@ -18531,7 +18544,7 @@
       "kind": "structure",
       "summary": "An odd-dimensional manifold with a maximally nonintegrable hyperplane distribution.",
       "carriers": [
-        "smooth manifold M"
+        "smooth manifold $M$"
       ],
       "data": [
         "smooth hyperplane distribution $\\xi\\subset TM$"
@@ -18597,7 +18610,7 @@
       "kind": "structure",
       "summary": "A manifold partitioned locally into parallel submanifolds called leaves.",
       "carriers": [
-        "smooth manifold M"
+        "smooth manifold $M$"
       ],
       "data": [
         "integrable subbundle of TM or foliation atlas"
@@ -18630,7 +18643,7 @@
       "kind": "structure",
       "summary": "A smooth manifold whose group operations are smooth.",
       "carriers": [
-        "set G"
+        "set $G$"
       ],
       "data": [
         "group structure",
@@ -18665,7 +18678,7 @@
       "kind": "structure",
       "summary": "A pseudo-Riemannian manifold with Lorentzian signature.",
       "carriers": [
-        "smooth manifold M"
+        "smooth manifold $M$"
       ],
       "data": [
         "Lorentzian metric"
@@ -18698,7 +18711,7 @@
       "kind": "structure",
       "summary": "A smooth manifold with a consistent choice of orientation.",
       "carriers": [
-        "smooth manifold M"
+        "smooth manifold $M$"
       ],
       "data": [
         "orientation of tangent spaces or oriented atlas"
@@ -18731,18 +18744,18 @@
       "kind": "structure",
       "summary": "A fiber bundle with a free and transitive right action of a structure group on each fiber.",
       "carriers": [
-        "topological group G",
-        "total space P",
-        "base space B"
+        "topological group $G$",
+        "total space $P$",
+        "base space $B$"
       ],
       "data": [
         "projection $\\pi:P\\to B$",
-        "continuous right G-action",
+        "continuous right $G$-action",
         "local equivariant trivializations"
       ],
       "axioms": [
-        "the G-action is free and transitive on each fiber",
-        "local G-equivariant triviality"
+        "the $G$-action is free and transitive on each fiber",
+        "local $G$-equivariant triviality"
       ],
       "induces": [],
       "notes": "This node denotes a topological principal bundle. Smooth principal bundles require a Lie group and smooth total/base spaces.",
@@ -18943,10 +18956,10 @@
       "kind": "structure",
       "summary": "A complex manifold with a smoothly varying Hermitian inner product on tangent spaces.",
       "carriers": [
-        "complex manifold M"
+        "complex manifold $M$"
       ],
       "data": [
-        "Hermitian metric h"
+        "Hermitian metric $h$"
       ],
       "axioms": [
         "smooth positive-definite sesquilinear form"
@@ -19014,7 +19027,7 @@
       "summary": "A vector bundle over a smooth manifold with smooth total space and smooth linear transition functions.",
       "carriers": [
         "vector bundle $E\\to M$",
-        "smooth manifold M"
+        "smooth manifold $M$"
       ],
       "data": [],
       "axioms": [
@@ -19113,7 +19126,7 @@
       "kind": "structure",
       "summary": "A Hermitian manifold whose fundamental 2-form is closed.",
       "carriers": [
-        "Hermitian manifold M"
+        "Hermitian manifold $M$"
       ],
       "data": [],
       "axioms": [
@@ -19129,6 +19142,40 @@
         "nlab-kahler-manifold",
         "lee-smooth-manifolds"
       ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "j_hodge_star",
+      "label": "metric + orientation",
+      "primaryDomain": "differential-geometry",
+      "domains": [
+        "differential-geometry"
+      ],
+      "level": 11,
+      "kind": "junction",
+      "summary": "Combine a pseudo-Riemannian metric and an orientation on the same smooth manifold to define the Hodge star.",
+      "carriers": [],
+      "data": [],
+      "axioms": [],
+      "induces": [],
+      "notes": "Construction junction: both inputs are jointly required; a pseudo-Riemannian metric alone does not choose an orientation.",
+      "citations": [
+        "wp-hodge_star_operator",
+        "nlab-hodge_star_operator",
+        "tong-em",
+        "tong-gr"
+      ],
+      "combination": {
+        "inputs": [
+          "pseudo_riemannian_manifold",
+          "oriented_manifold"
+        ],
+        "compatibility": "The metric and orientation are carried by the same smooth $n$-manifold $M$.",
+        "output": "hodge_star_operator"
+      },
       "primaryField": "mathematics",
       "fields": [
         "mathematics"
@@ -19159,7 +19206,7 @@
         "oriented pseudo-Riemannian manifold $(M,g)$"
       ],
       "data": [
-        "linear maps $*: \\Omega^k(M)\\to\\Omega^{n-k}(M)$"
+        "linear maps $*\\colon\\Omega^k(M)\\to\\Omega^{n-k}(M)$"
       ],
       "axioms": [
         "defined by $\\alpha\\wedge *\\beta=\\langle\\alpha,\\beta\\rangle_g\\,\\mathrm{vol}_g$"
@@ -19289,7 +19336,7 @@
       "level": 13,
       "kind": "structure",
       "conceptType": "Geometric lift",
-      "summary": "A lift of an oriented orthonormal frame bundle to a spin-group principal bundle, enabling globally defined spinor fields.",
+      "summary": "A lift of an oriented orthonormal frame bundle to the appropriate spin-group principal bundle, enabling globally defined spinor fields on an oriented Riemannian manifold (or on a suitably oriented pseudo-Riemannian manifold for the chosen signature).",
       "citations": [
         "wp-spin_structure",
         "nlab-spin_structure",
@@ -19432,7 +19479,7 @@
         "objects $A_{p,q}$ in a category"
       ],
       "data": [
-        "bidegree index (p,q)"
+        "bidegree index $(p,q)$"
       ],
       "axioms": [],
       "induces": [
@@ -19559,7 +19606,7 @@
       "kind": "structure",
       "summary": "An additive category with a chosen class of kernel–cokernel pairs behaving like short exact sequences.",
       "carriers": [
-        "additive category C"
+        "additive category $C$"
       ],
       "data": [
         "distinguished conflations"
@@ -19624,7 +19671,7 @@
       "kind": "structure",
       "summary": "An abelian category with all small colimits, exact filtered colimits (AB5), and a generator.",
       "carriers": [
-        "abelian category A"
+        "abelian category $A$"
       ],
       "data": [],
       "axioms": [
@@ -19657,7 +19704,7 @@
       "kind": "structure",
       "summary": "A category with weak equivalences, fibrations, and cofibrations satisfying Quillen axioms.",
       "carriers": [
-        "category C"
+        "category $C$"
       ],
       "data": [
         "three classes of morphisms"
@@ -19694,7 +19741,7 @@
       "kind": "structure",
       "summary": "An additive category with a shift autoequivalence and distinguished triangles satisfying triangulation axioms.",
       "carriers": [
-        "additive category D"
+        "additive category $D$"
       ],
       "data": [
         "shift [1]",
@@ -19727,9 +19774,9 @@
       ],
       "level": 9,
       "kind": "structure",
-      "summary": "For an abelian category A, the localization of its homotopy category $K(A)$ of complexes at quasi-isomorphisms.",
+      "summary": "For an abelian category $A$, the localization of its homotopy category $K(A)$ of complexes at quasi-isomorphisms.",
       "carriers": [
-        "abelian category A",
+        "abelian category $A$",
         "homotopy category $K(A)$ of complexes"
       ],
       "data": [
@@ -19797,11 +19844,11 @@
       "kind": "structure",
       "summary": "A graded associative algebra with a square-zero differential satisfying the graded Leibniz rule.",
       "carriers": [
-        "graded object A in a symmetric monoidal additive setting"
+        "graded object $A$ in a symmetric monoidal additive setting"
       ],
       "data": [
         "graded associative multiplication",
-        "degree +1 differential d"
+        "degree-$+1$ differential $d$"
       ],
       "axioms": [
         "associativity of graded multiplication",
@@ -19981,7 +20028,7 @@
       ],
       "level": 16,
       "conceptType": "Quotient realization",
-      "summary": "The quotient field $\\mathbb R[x]/(x^2+1)$.",
+      "summary": "The quotient ring $\\mathbb R[x]/(x^2+1)$, which is a field isomorphic to $\\mathbb C$.",
       "carriers": [
         "quotient of $\\mathbb R[x]$"
       ],
@@ -20116,10 +20163,10 @@
       "kind": "structure",
       "summary": "A vector space equipped with a seminorm.",
       "carriers": [
-        "vector space V over a field K with a specified real-valued absolute value $|\\cdot |$"
+        "vector space $V$ over a field $K$ with a specified real-valued absolute value $|\\cdot |$"
       ],
       "data": [
-        "seminorm $p:V\\to \\mathbb{R}\\ge 0$"
+        "seminorm $p\\colon V\\to[0,\\infty)$"
       ],
       "axioms": [
         "$p(x+y)\\le p(x)+p(y)$",
@@ -20152,12 +20199,12 @@
       "kind": "structure",
       "summary": "A vector space with a compatible topology.",
       "carriers": [
-        "topological field F",
-        "set V"
+        "topological field $F$",
+        "set $V$"
       ],
       "data": [
         "vector-space structure",
-        "topology on V"
+        "topology on $V$"
       ],
       "axioms": [
         "Hausdorff topology",
@@ -20189,7 +20236,7 @@
       "kind": "structure",
       "summary": "A seminormed vector space whose seminorm separates points.",
       "carriers": [
-        "seminormed vector space V over a field with a specified real-valued absolute value"
+        "seminormed vector space $V$ over a field with a specified real-valued absolute value"
       ],
       "data": [
         "norm $\\lVert \\cdot \\rVert$"
@@ -20225,7 +20272,7 @@
       "kind": "structure",
       "summary": "A vector space with a positive-definite inner product.",
       "carriers": [
-        "real or complex vector space V"
+        "real or complex vector space $V$"
       ],
       "data": [
         "inner product $\\langle \\cdot,\\cdot \\rangle$"
@@ -20262,7 +20309,7 @@
       "kind": "structure",
       "summary": "A real or complex topological vector space whose origin has a base of convex neighborhoods.",
       "carriers": [
-        "topological vector space V over $\\mathbb{R}$ or $\\mathbb{C}$"
+        "topological vector space $V$ over $\\mathbb{R}$ or $\\mathbb{C}$"
       ],
       "data": [
         "existing vector topology; equivalently often a family of seminorms"
@@ -20398,7 +20445,7 @@
       "kind": "structure",
       "summary": "A complete metrizable locally convex topological vector space.",
       "carriers": [
-        "real or complex locally convex space V"
+        "real or complex locally convex space $V$"
       ],
       "data": [
         "locally convex vector topology"
@@ -20431,7 +20478,7 @@
       "kind": "structure",
       "summary": "A complete normed vector space.",
       "carriers": [
-        "normed vector space V"
+        "normed vector space $V$"
       ],
       "data": [
         "existing norm"
@@ -20652,7 +20699,7 @@
           "associative_algebra",
           "banach_space"
         ],
-        "compatibility": "Both structures use the same normed field K, carrier, addition, and scalar action, and the norm satisfies $\\lVert ab \\rVert \\le \\lVert a \\rVert \\lVert b \\rVert$.",
+        "compatibility": "Both structures use the same normed field $K$, carrier, addition, and scalar action, and the norm satisfies $\\lVert ab \\rVert \\le \\lVert a \\rVert \\lVert b \\rVert$.",
         "output": "banach_algebra"
       },
       "primaryDomain": "analysis",
@@ -20743,8 +20790,8 @@
       "kind": "structure",
       "summary": "An associative algebra over a normed field that is complete under a submultiplicative norm.",
       "carriers": [
-        "associative algebra A over a normed field K",
-        "Banach-space structure on the same K-vector space"
+        "associative algebra $A$ over a normed field $K$",
+        "Banach-space structure on the same $K$-vector space"
       ],
       "data": [
         "norm $\\lVert \\cdot \\rVert$"
@@ -20780,7 +20827,7 @@
       ],
       "level": 20,
       "kind": "junction",
-      "summary": "Compatibility construction producing C*-algebra.",
+      "summary": "Compatibility construction producing a $C^*$-algebra.",
       "carriers": [],
       "data": [],
       "axioms": [],
@@ -20842,7 +20889,7 @@
       "kind": "structure",
       "summary": "A complete inner-product space.",
       "carriers": [
-        "real or complex vector space H"
+        "real or complex vector space $H$"
       ],
       "data": [
         "inner product"
@@ -21066,7 +21113,7 @@
         "nlab-unitary_operator"
       ],
       "carriers": [
-        "Hilbert space $H$"
+        "complex Hilbert space $H$"
       ],
       "data": [
         "linear operator $U:H\\to H$"
@@ -21082,7 +21129,7 @@
     },
     {
       "id": "c_star_algebra",
-      "label": "C*-algebra",
+      "label": "$C^*$-algebra",
       "primaryDomain": "analysis",
       "domains": [
         "analysis",
@@ -21090,16 +21137,16 @@
       ],
       "level": 21,
       "kind": "structure",
-      "summary": "A complex associative Banach *-algebra satisfying the C*-identity.",
+      "summary": "A complex associative Banach $*$-algebra satisfying the $C^*$-identity $\\lVert a^*a\\rVert=\\lVert a\\rVert^2$.",
       "carriers": [
-        "Banach *-algebra A"
+        "Banach *-algebra $A$"
       ],
       "data": [],
       "axioms": [
         "$\\lVert a^*a\\rVert=\\lVert a\\rVert^2$"
       ],
       "induces": [],
-      "notes": "Some authors build the unit into “C*-algebra”; others allow nonunital C*-algebras. This atlas does not require a unit at this node.",
+      "notes": "Some authors build the unit into “$C^*$-algebra”; others allow nonunital $C^*$-algebras. This atlas does not require a unit at this node.",
       "citations": [
         "wp-cstar-algebra",
         "nlab-cstar-algebra",
@@ -21193,13 +21240,13 @@
       "level": 21,
       "kind": "structure",
       "conceptType": "Quotient geometry",
-      "summary": "The space of one-dimensional rays in a Hilbert space, identifying nonzero vectors that differ by a nonzero scalar.",
+      "summary": "The space of one-dimensional rays in a complex Hilbert space, identifying nonzero vectors that differ by a nonzero complex scalar.",
       "citations": [
         "wp-projective_hilbert_space",
         "nlab-projective_hilbert_space"
       ],
       "carriers": [
-        "Hilbert space $H$"
+        "complex Hilbert space $H$"
       ],
       "data": [
         "set of one-dimensional complex subspaces or rays"
@@ -21309,7 +21356,7 @@
         "Hilbert space $H$"
       ],
       "data": [
-        "map $E:\\Sigma\\to$ orthogonal projections on $H$"
+        "$E\\colon\\Sigma\\to\\{\\text{orthogonal projections on }H\\}$"
       ],
       "axioms": [
         "weak/strong countable additivity",
@@ -21517,7 +21564,7 @@
         "tong-quantum"
       ],
       "carriers": [
-        "normal or self-adjoint operator in a specified Hilbert-space setting"
+        "self-adjoint operator $A$ on a complex Hilbert space $H$"
       ],
       "data": [
         "projection-valued spectral measure or multiplication-operator representation"
@@ -21577,12 +21624,12 @@
       ],
       "level": 4,
       "kind": "junction",
-      "summary": "Combine an ordered indexed family with one ambient measurable space to form nested sub-σ-algebras.",
+      "summary": "Combine an ordered indexed family with one ambient measurable space to form nested sub-$\\sigma$-algebras.",
       "carriers": [],
       "data": [],
       "axioms": [],
       "induces": [],
-      "notes": "The index order and common ambient σ-algebra are essential parts of the definition.",
+      "notes": "The index order and common ambient $\\sigma$-algebra are essential parts of the definition.",
       "citations": [
         "wp-filtration-probability",
         "durrett-probability"
@@ -21592,7 +21639,7 @@
           "indexed_family",
           "measurable_space"
         ],
-        "compatibility": "Index by a preorder (usually time), make every family member a sub-σ-algebra of the same ambient σ-algebra, and require $F_s\\subseteq F_t$ whenever $s\\le t$.",
+        "compatibility": "Index by a preorder (usually time), make every family member a sub-$\\sigma$-algebra of the same ambient $\\sigma$-algebra, and require $\\mathcal F_s\\subseteq\\mathcal F_t$ whenever $s\\le t$.",
         "output": "filtration"
       },
       "primaryField": "mathematics",
@@ -21644,19 +21691,19 @@
       ],
       "level": 4,
       "kind": "structure",
-      "summary": "An increasing indexed family of σ-algebras representing information over time.",
+      "summary": "An increasing indexed family of $\\sigma$-algebras representing information over time.",
       "carriers": [
-        "measurable space $(\\Omega,F)$",
-        "ordered index set T"
+        "measurable space $(\\Omega,\\mathcal F)$",
+        "ordered index set $T$"
       ],
       "data": [
-        "σ-algebras $F_{t}\\subseteq F$"
+        "$\\sigma$-algebras $\\mathcal F_t\\subseteq\\mathcal F$"
       ],
       "axioms": [
-        "$s\\le t$ implies $F_{s}\\subseteq F_{t}$"
+        "$s\\le t$ implies $\\mathcal F_s\\subseteq\\mathcal F_t$"
       ],
       "induces": [],
-      "notes": "A filtration is a monotone family of sub-σ-algebras of one ambient measurable space, indexed by an ordered set.",
+      "notes": "A filtration is a monotone family of sub-$\\sigma$-algebras of one ambient measurable space, indexed by an ordered set.",
       "citations": [
         "wp-filtration-probability",
         "durrett-probability"
@@ -21679,15 +21726,15 @@
       "kind": "structure",
       "summary": "A measurable function from a probability space to a measurable value space.",
       "carriers": [
-        "probability space $\\Omega$",
-        "measurable space S"
+        "probability space $(\\Omega,\\mathcal F,\\mathbb P)$",
+        "measurable space $(S,\\Sigma)$"
       ],
       "data": [
-        "measurable map $X:\\Omega \\to S$"
+        "measurable map $X\\colon(\\Omega,\\mathcal F)\\to(S,\\Sigma)$"
       ],
       "axioms": [],
       "induces": [],
-      "notes": "The probability space and value-space σ-algebra are part of the data. Traditionally the codomain is $\\mathbb{R}$ or $\\mathbb{R}^{n}$; for a general measurable codomain, “random element” is also common.",
+      "notes": "The probability space and value-space $\\sigma$-algebra are part of the data. Traditionally the codomain is $\\mathbb R$ or $\\mathbb R^n$; for a general measurable codomain, “random element” is also common.",
       "citations": [
         "wp-random-variable",
         "durrett-probability"
@@ -21707,15 +21754,15 @@
       ],
       "level": 5,
       "kind": "structure",
-      "summary": "A probability space equipped with a filtration of sub-σ-algebras.",
+      "summary": "A probability space equipped with a filtration of sub-$\\sigma$-algebras.",
       "carriers": [
-        "probability space $(\\Omega,F,P)$"
+        "probability space $(\\Omega,\\mathcal F,\\mathbb P)$"
       ],
       "data": [
-        "filtration $(F_{t})$"
+        "filtration $(\\mathcal F_t)_{t\\in T}$"
       ],
       "axioms": [
-        "$F_{t}\\subseteq F$"
+        "$\\mathcal F_t\\subseteq\\mathcal F$ for every $t\\in T$"
       ],
       "induces": [],
       "notes": "",
@@ -21753,7 +21800,7 @@
           "probability_space",
           "filtration"
         ],
-        "compatibility": "Use a filtration of sub-σ-algebras of the probability space.",
+        "compatibility": "Use a filtration of sub-$\\sigma$-algebras of the probability space.",
         "output": "filtered_probability_space"
       },
       "primaryField": "mathematics",
@@ -21837,12 +21884,12 @@
       "kind": "structure",
       "summary": "An indexed family of random variables defined on a common probability space.",
       "carriers": [
-        "probability space $\\Omega$",
-        "index set T",
-        "state space S"
+        "probability space $(\\Omega,\\mathcal F,\\mathbb P)$",
+        "index set $T$",
+        "state space $S$"
       ],
       "data": [
-        "family $(X_{t})_{t}\\in T$ of random variables"
+        "family $(X_t)_{t\\in T}$ of random variables"
       ],
       "axioms": [],
       "induces": [],
@@ -21891,12 +21938,12 @@
       "label": "Measurable space",
       "level": 1,
       "kind": "structure",
-      "summary": "A set equipped with a σ-algebra of measurable subsets.",
+      "summary": "A set equipped with a $\\sigma$-algebra of measurable subsets.",
       "carriers": [
         "set $X$"
       ],
       "data": [
-        "σ-algebra $\\Sigma \\subseteq P(X)$"
+        "$\\sigma$-algebra $\\Sigma\\subseteq\\mathcal P(X)$"
       ],
       "axioms": [
         "contains $X$",
@@ -21927,10 +21974,10 @@
       "summary": "A measurable space equipped with a countably additive measure.",
       "carriers": [
         "set $X$",
-        "σ-algebra $\\Sigma$"
+        "$\\sigma$-algebra $\\Sigma$"
       ],
       "data": [
-        "measure $\\mu: \\Sigma \\to [0,\\infty]$"
+        "measure $\\mu\\colon\\Sigma\\to[0,\\infty]$"
       ],
       "axioms": [
         "$\\mu (\\varnothing)=0$",
@@ -21977,7 +22024,7 @@
           "function",
           "measurable_space"
         ],
-        "compatibility": "The function domain and codomain carry the supplied σ-algebras, and inverse images of codomain-measurable sets are domain-measurable.",
+        "compatibility": "The function domain and codomain carry the supplied $\\sigma$-algebras, and inverse images of codomain-measurable sets are domain-measurable.",
         "output": "measurable_function"
       },
       "primaryField": "mathematics",
@@ -21990,18 +22037,18 @@
       "label": "Borel measurable space",
       "level": 3,
       "kind": "structure",
-      "summary": "A topological space equipped with the σ-algebra generated by its open sets.",
+      "summary": "A topological space equipped with the $\\sigma$-algebra generated by its open sets.",
       "carriers": [
-        "topological space X"
+        "topological space $X$"
       ],
       "data": [
-        "Borel σ-algebra $B(X)$"
+        "Borel $\\sigma$-algebra $\\mathcal B(X)$"
       ],
       "axioms": [
-        "$B(X)$ is generated by open sets"
+        "$\\mathcal B(X)$ is generated by the open subsets of $X$"
       ],
       "induces": [],
-      "notes": "The Borel σ-algebra is canonically determined by the topology.",
+      "notes": "The Borel $\\sigma$-algebra is canonically determined by the topology.",
       "citations": [
         "wp-borel",
         "tao-measure-theory"
@@ -22028,13 +22075,13 @@
       "kind": "structure",
       "summary": "A function whose inverse images of measurable sets are measurable.",
       "carriers": [
-        "measurable spaces $(X,\\Sigma),(Y,T)$"
+        "measurable spaces $(X,\\Sigma)$ and $(Y,\\mathcal T)$"
       ],
       "data": [
-        "function $f:X\\to Y$"
+        "function $f\\colon X\\to Y$"
       ],
       "axioms": [
-        "$f^{-1}(B)\\in \\Sigma$ for every $B\\in T$"
+        "$f^{-1}(B)\\in\\Sigma$ for every $B\\in\\mathcal T$"
       ],
       "induces": [],
       "notes": "Both domain and codomain measurable structures are part of the specification; measurability is not a property of a bare function alone.",
@@ -22052,17 +22099,17 @@
       "label": "Probability space",
       "level": 3,
       "kind": "structure",
-      "summary": "A measure space of total mass one.",
+      "summary": "A measure space $(\\Omega,\\mathcal F,\\mathbb P)$ with total mass one.",
       "carriers": [
         "set $\\Omega$",
-        "σ-algebra F"
+        "$\\sigma$-algebra $\\mathcal F$"
       ],
       "data": [
-        "probability measure P"
+        "probability measure $\\mathbb P$ on $(\\Omega,\\mathcal F)$"
       ],
       "axioms": [
         "measure axioms",
-        "$P(\\Omega)=1$"
+        "$\\mathbb P(\\Omega)=1$"
       ],
       "induces": [],
       "notes": "",
@@ -22082,7 +22129,7 @@
     },
     {
       "id": "sigma_finite_measure_space",
-      "label": "σ-finite measure space",
+      "label": "$\\sigma$-finite measure space",
       "level": 3,
       "kind": "structure",
       "summary": "A measure space covered by countably many sets of finite measure.",
@@ -22093,7 +22140,7 @@
         "existing measure"
       ],
       "axioms": [
-        "σ-finiteness"
+        "$\\sigma$-finiteness"
       ],
       "induces": [],
       "notes": "",
@@ -22130,7 +22177,7 @@
           "locally_compact_hausdorff_space",
           "measure_space"
         ],
-        "compatibility": "Use the Borel σ-algebra (or a specified completion containing it) on the locally compact Hausdorff space and require local finiteness plus inner/outer regularity under the stated convention.",
+        "compatibility": "Use the Borel $\\sigma$-algebra (or a specified completion containing it) on the locally compact Hausdorff space and require local finiteness plus inner/outer regularity under the stated convention.",
         "output": "radon_measure_space"
       },
       "primaryDomain": "measure",
@@ -22151,7 +22198,7 @@
       "kind": "structure",
       "summary": "A topological measure space with a regular, locally finite Borel measure under standard conventions.",
       "carriers": [
-        "locally compact Hausdorff space X"
+        "locally compact Hausdorff space $X$"
       ],
       "data": [
         "Borel measure $\\mu$"
@@ -22178,6 +22225,41 @@
       ]
     },
     {
+      "id": "j_haar_measure",
+      "label": "topological group + local compactness",
+      "primaryDomain": "measure",
+      "domains": [
+        "measure",
+        "topology",
+        "analysis"
+      ],
+      "level": 9,
+      "kind": "junction",
+      "summary": "Combine a topological-group structure with local compactness and Hausdorff separation on the same underlying topology; the Haar existence theorem then supplies invariant measure.",
+      "carriers": [],
+      "data": [],
+      "axioms": [],
+      "induces": [],
+      "notes": "The local compactness and Hausdorff hypotheses are essential here: an arbitrary topological group need not carry a Haar measure.",
+      "citations": [
+        "wp-haar_measure",
+        "nlab-haar_measure",
+        "mathlib-haar-measure"
+      ],
+      "combination": {
+        "inputs": [
+          "topological_group",
+          "locally_compact_hausdorff_space"
+        ],
+        "compatibility": "Both inputs use the same carrier $G$ and the same topology.",
+        "output": "haar_measure"
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
       "id": "haar_measure",
       "label": "Haar measure",
       "primaryField": "mathematics",
@@ -22195,7 +22277,8 @@
       "summary": "A nonzero left-invariant regular Borel measure on a locally compact Hausdorff group, unique up to positive scale; right Haar measure is analogous, and a left Haar measure is also right-invariant precisely for unimodular groups.",
       "citations": [
         "wp-haar_measure",
-        "nlab-haar_measure"
+        "nlab-haar_measure",
+        "mathlib-haar-measure"
       ],
       "carriers": [
         "locally compact Hausdorff group $G$",
@@ -22239,7 +22322,7 @@
         "Hilbert space $H$"
       ],
       "data": [
-        "map $E:\\Sigma\\to$ positive operators on $H$"
+        "map $E\\colon\\Sigma\\to\\{\\text{positive operators on }H\\}$"
       ],
       "axioms": [
         "weak countable additivity",
@@ -23656,7 +23739,7 @@
       "level": 16,
       "kind": "structure",
       "conceptType": "Interaction potential",
-      "summary": "The electrostatic potential $V(r)=q_1q_2/(4\\pi\\varepsilon_0 r)$ used in nonrelativistic charged-particle Hamiltonians.",
+      "summary": "The electrostatic interaction potential energy $V(r)=q_1q_2/(4\\pi\\varepsilon_0 r)$ used in nonrelativistic charged-particle Hamiltonians.",
       "citations": [
         "wp-physics-coulomb_potential",
         "tong-em",
@@ -26219,7 +26302,7 @@
     },
     {
       "id": "s_matrix",
-      "label": "S-matrix",
+      "label": "$S$-matrix",
       "primaryField": "physics",
       "fields": [
         "physics"
@@ -27586,7 +27669,7 @@
     },
     {
       "id": "w_boson",
-      "label": "W boson",
+      "label": "$W$ boson",
       "primaryField": "physics",
       "fields": [
         "physics"
@@ -27608,7 +27691,7 @@
     },
     {
       "id": "z_boson",
-      "label": "Z boson",
+      "label": "$Z$ boson",
       "primaryField": "physics",
       "fields": [
         "physics"
@@ -29166,7 +29249,7 @@
       "level": 28,
       "kind": "structure",
       "conceptType": "Atomic system class",
-      "summary": "An atom or ion with a single bound electron, permitting an exact two-body Coulomb solution in the nonrelativistic point-nucleus model before recoil, finite-size, relativistic, and QED corrections.",
+      "summary": "An atom or ion with a single bound electron. In the nonrelativistic point-nucleus Coulomb model, center-of-mass separation reduces the exact two-body problem to a one-body equation with the electron–nucleus reduced mass; finite-size, relativistic, and QED effects are corrections.",
       "citations": [
         "wp-physics-one_electron_atom",
         "nist-hydrogen",
@@ -29291,7 +29374,7 @@
       "level": 29,
       "kind": "structure",
       "conceptType": "Ion class",
-      "summary": "An ion with one bound electron and nuclear charge $Z$, such as $He^+$.",
+      "summary": "An ion with one bound electron and nuclear charge $Z$, such as $\\mathrm{He}^+$.",
       "citations": [
         "wp-physics-one_electron_atom",
         "nist-atomic-spectroscopy",
@@ -30206,7 +30289,7 @@
       "level": 34,
       "kind": "structure",
       "conceptType": "Driven radiative process",
-      "summary": "Emission induced by an incident electromagnetic field into an already occupied mode or matching frequency.",
+      "summary": "Emission driven by an incident electromagnetic field, producing radiation coherent with the stimulating field in frequency, phase, polarization, and propagation mode.",
       "citations": [
         "wp-physics-stimulated_emission",
         "nist-atomic-spectroscopy"
@@ -30951,6 +31034,35 @@
         "nlab-physics-nambu_goldstone_mode",
         "tong-standard-model",
         "tong-gauge"
+      ]
+    },
+    {
+      "id": "would_be_goldstone_mode",
+      "label": "Would-be Goldstone mode",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "quantum-field-theory",
+      "domains": [
+        "quantum-field-theory",
+        "particle-physics"
+      ],
+      "level": 9,
+      "kind": "structure",
+      "conceptType": "Gauge-dependent scalar degree of freedom",
+      "summary": "A scalar fluctuation along a broken gauge direction in a gauge-fixed description of a Higgs phase. It is not an independent physical gapless particle: its degree of freedom is reorganized with a gauge field into the longitudinal polarization of a massive vector boson.",
+      "citations": [
+        "wp-physics-higgs_mechanism",
+        "nlab-physics-higgs_mechanism",
+        "pdg-2026-higgs",
+        "tong-standard-model"
+      ],
+      "sections": [
+        {
+          "title": "Distinction from a physical Nambu–Goldstone mode",
+          "body": "Breaking a continuous global symmetry can produce a physical gapless Nambu–Goldstone excitation. In a gauge theory, by contrast, the would-be Goldstone field is gauge-dependent; in unitary gauge it is absent from the scalar spectrum, while the corresponding massive gauge boson has a longitudinal polarization."
+        }
       ]
     },
     {
@@ -34150,7 +34262,7 @@
       ],
       "level": 4,
       "kind": "structure",
-      "summary": "A syntactically specified collection of formulas, axioms, and inference rules defining formal derivability.",
+      "summary": "A finitary, syntactically specified collection of formulas, axioms, and inference rules defining formal derivability.",
       "carriers": [
         "formal language"
       ],
@@ -35653,8 +35765,8 @@
       "source": "abelian_category",
       "target": "derived_category",
       "type": "canonical-construction",
-      "label": "form D(A)",
-      "detail": "Form complexes in A, pass to the homotopy category K(A), and localize at quasi-isomorphisms. The result is a new category, not an equivalent presentation of A.",
+      "label": "form $D(A)$",
+      "detail": "Form complexes in $A$, pass to the homotopy category $K(A)$, and localize at quasi-isomorphisms. The result is a new category, not an equivalent presentation of $A$.",
       "citations": [
         "stacks-derived-category",
         "stacks-derived-modules",
@@ -35709,7 +35821,7 @@
       "source": "abelian_group",
       "target": "j_module",
       "type": "combine-compatible",
-      "label": "additive carrier M",
+      "label": "additive carrier $M$",
       "detail": "Supply the additive abelian group.",
       "citations": [
         "wp-module",
@@ -35721,7 +35833,7 @@
       "source": "abelian_group",
       "target": "j_vector",
       "type": "combine-compatible",
-      "label": "additive carrier V",
+      "label": "additive carrier $V$",
       "detail": "Supply the additive abelian group.",
       "citations": [
         "wp-vector",
@@ -35827,9 +35939,9 @@
       "id": "math_algebra_over_field_to_clifford_algebra",
       "source": "vector_space",
       "target": "clifford_algebra",
-      "type": "add-data",
-      "label": "add a quadratic form",
-      "detail": "A vector space with quadratic form $Q$ determines the Clifford algebra characterized by the universal relation $v^2=Q(v)1$.",
+      "type": "canonical-construction",
+      "label": "form the Clifford algebra",
+      "detail": "A vector space together with a quadratic form $Q$ canonically determines a new algebra, the quotient of its tensor algebra by the relations $v\\otimes v=Q(v)1$. This changes the carrier rather than merely adding data to the vector space.",
       "citations": [
         "wp-clifford_algebra",
         "nlab-clifford_algebra"
@@ -35952,7 +36064,7 @@
       "target": "j_banach_algebra",
       "type": "combine-compatible",
       "label": "associative multiplication",
-      "detail": "Supply an associative algebra over the same normed field K, on the same carrier, addition, and scalar action as the Banach space.",
+      "detail": "Supply an associative algebra over the same normed field $K$, on the same carrier, addition, and scalar action as the Banach space.",
       "citations": [
         "mathlib-normed-algebra",
         "mathlib-normed-ring"
@@ -36164,7 +36276,7 @@
       "target": "nonrelativistic_coulomb_hamiltonian",
       "type": "mathematical-limit",
       "label": "leading nonrelativistic Coulomb model",
-      "detail": "The Coulomb Hamiltonian follows when transverse-photon, relativistic, radiative, recoil, and finite-size effects are smaller than the required accuracy.",
+      "detail": "The Coulomb Hamiltonian is the leading nonrelativistic, instantaneous-interaction model when transverse-photon, relativistic, radiative, and finite-size effects are below the required accuracy. It may retain finite nuclear masses and recoil through the nuclear kinetic terms and reduced-mass separation.",
       "citations": [
         "wp-physics-atomic_hamiltonian",
         "nist-atomic-spectroscopy"
@@ -36337,8 +36449,8 @@
     },
     {
       "id": "atomicqed_to_selfenergy",
-      "source": "atomic_qed_corrections",
-      "target": "electron_self_energy",
+      "source": "electron_self_energy",
+      "target": "atomic_qed_corrections",
       "type": "theory-component",
       "label": "self-energy correction",
       "detail": "Bound-electron self-energy is a principal atomic QED correction.",
@@ -36364,8 +36476,8 @@
     },
     {
       "id": "atomicqed_to_vacpol",
-      "source": "atomic_qed_corrections",
-      "target": "vacuum_polarization",
+      "source": "vacuum_polarization",
+      "target": "atomic_qed_corrections",
       "type": "theory-component",
       "label": "vacuum-polarization correction",
       "detail": "Vacuum polarization modifies the nuclear Coulomb potential.",
@@ -36486,7 +36598,7 @@
       "target": "j_banach_algebra",
       "type": "combine-compatible",
       "label": "complete norm",
-      "detail": "Supply a Banach-space norm over the same normed field K and on the same carrier, addition, and scalar action as the algebra.",
+      "detail": "Supply a Banach-space norm over the same normed field $K$ and on the same carrier, addition, and scalar action as the algebra.",
       "citations": [
         "mathlib-normed-algebra",
         "mathlib-normed-ring"
@@ -36683,7 +36795,7 @@
       "target": "double_complex",
       "type": "add-data",
       "label": "add horizontal and vertical differentials",
-      "detail": "Add differentials of bidegrees (1,0) and (0,1) (or the homological sign variant), require each square to vanish, and require anticommutation.",
+      "detail": "Add differentials of bidegrees $(1,0)$ and $(0,1)$ (or the homological sign variant), require each square to vanish, and require anticommutation.",
       "citations": [
         "wp-double-complex",
         "stacks-derived-text"
@@ -36707,7 +36819,7 @@
       "target": "function",
       "type": "impose-axiom",
       "label": "+ total and single-valued",
-      "detail": "Specialize to a relation $R\\subseteq X\\times Y$ that is total and single-valued in X; this is exactly a function $X\\to Y$.",
+      "detail": "Specialize to a relation $R\\subseteq X\\times Y$ that is total and single-valued in $X$; this is exactly a function $X\\to Y$.",
       "citations": [
         "wp-function",
         "nlab-function",
@@ -36781,7 +36893,7 @@
       "target": "measurable_space",
       "type": "induced-forgotten",
       "label": "forget the topology",
-      "detail": "Retain only the Borel σ-algebra as a measurable-space structure.",
+      "detail": "Retain only the Borel $\\sigma$-algebra as a measurable-space structure.",
       "citations": [
         "wp-borel",
         "wp-measurable",
@@ -36897,11 +37009,11 @@
     },
     {
       "id": "math_bounded_linear_operator_to_projection_operator",
-      "source": "bounded_linear_operator",
+      "source": "linear_operator",
       "target": "projection_operator",
       "type": "impose-axiom",
       "label": "idempotence",
-      "detail": "A projection satisfies $P^2=P$; orthogonal projections also satisfy $P=P^*$.",
+      "detail": "An algebraic projection is an everywhere-defined linear operator satisfying $P^2=P$; on a Hilbert space, an orthogonal projection additionally satisfies $P=P^*$ and is bounded.",
       "citations": [
         "wp-projection_operator",
         "nlab-projection_operator"
@@ -36967,7 +37079,7 @@
       "target": "quantum_observable",
       "type": "mathematical-formulation",
       "label": "observable algebra",
-      "detail": "Operator-algebraic quantum theory organizes bounded observables in C*-algebras.",
+      "detail": "Operator-algebraic quantum theory organizes bounded observables in $C^*$-algebras.",
       "citations": [
         "wp-physics-observable",
         "nlab-physics-quantum_observable",
@@ -37564,9 +37676,9 @@
       "id": "gamma_from_clifford",
       "source": "clifford_algebra",
       "target": "gamma_matrices",
-      "type": "add-data",
-      "label": "matrix representation",
-      "detail": "Gamma matrices give a representation of the Clifford algebra.",
+      "type": "model-realization",
+      "label": "choose a matrix representation",
+      "detail": "A chosen representation of the relevant Clifford algebra sends its generators to gamma matrices. The abstract Clifford algebra does not canonically select a particular matrix realization.",
       "citations": [
         "wp-clifford_algebra",
         "nlab-clifford_algebra",
@@ -37640,8 +37752,8 @@
     },
     {
       "id": "color_singlet_to_hadron",
-      "source": "color_singlet",
-      "target": "hadron",
+      "source": "hadron",
+      "target": "color_singlet",
       "type": "state-description",
       "label": "color-neutral QCD state",
       "detail": "Observable hadrons are color singlets.",
@@ -37932,9 +38044,9 @@
       "id": "configuration_to_phase",
       "source": "configuration_space",
       "target": "phase_space",
-      "type": "add-data",
-      "label": "conjugate momenta",
-      "detail": "A cotangent-bundle phase space is obtained by adding conjugate momenta to configurations in standard particle mechanics.",
+      "type": "canonical-construction",
+      "label": "form the cotangent phase space",
+      "detail": "For a smooth configuration manifold $Q$, the standard phase space is the new manifold $T^*Q$ with its canonical symplectic form; it is not the same carrier with extra data.",
       "citations": [
         "wp-physics-phase_space",
         "nlab-physics-phase_space",
@@ -37944,8 +38056,8 @@
     },
     {
       "id": "csf_to_atomicstate",
-      "source": "configuration_state_function",
-      "target": "atomic_state",
+      "source": "atomic_state",
+      "target": "configuration_state_function",
       "type": "state-description",
       "label": "many-electron basis expansion",
       "detail": "Atomic states are expanded in configuration-state functions in multiconfiguration methods.",
@@ -38061,21 +38173,6 @@
       ]
     },
     {
-      "id": "curvature_to_fieldstrength",
-      "source": "curvature_form",
-      "target": "gauge_field",
-      "type": "mathematical-formulation",
-      "label": "field strength curvature",
-      "detail": "Gauge field strengths are curvature forms of gauge connections.",
-      "citations": [
-        "wp-physics-gauge_field_theory",
-        "nlab-physics-gauge_field",
-        "wp-curvature_form",
-        "nlab-curvature_form"
-      ],
-      "overview": true
-    },
-    {
       "id": "e_dcpo_cpo",
       "source": "dcpo",
       "target": "cpo",
@@ -38161,11 +38258,11 @@
     },
     {
       "id": "hodge_from_forms",
-      "source": "pseudo_riemannian_manifold",
+      "source": "j_hodge_star",
       "target": "hodge_star_operator",
-      "type": "add-data",
-      "label": "metric and orientation",
-      "detail": "On an oriented pseudo-Riemannian manifold, the metric and orientation define the Hodge star on differential forms.",
+      "type": "combine-compatible",
+      "label": "outputs the Hodge star",
+      "detail": "A pseudo-Riemannian metric and an orientation on the same smooth manifold jointly define the Hodge star on differential forms.",
       "citations": [
         "wp-differential_form",
         "nlab-differential_form",
@@ -38173,6 +38270,32 @@
         "nlab-hodge_star_operator",
         "tong-em",
         "tong-gr"
+      ]
+    },
+    {
+      "id": "pseudo_riemannian_to_j_hodge_star",
+      "source": "pseudo_riemannian_manifold",
+      "target": "j_hodge_star",
+      "type": "combine-compatible",
+      "label": "metric input",
+      "detail": "Supply the pseudo-Riemannian metric on the common smooth manifold.",
+      "citations": [
+        "wp-hodge_star_operator",
+        "nlab-hodge_star_operator",
+        "tong-gr"
+      ]
+    },
+    {
+      "id": "oriented_manifold_to_j_hodge_star",
+      "source": "oriented_manifold",
+      "target": "j_hodge_star",
+      "type": "combine-compatible",
+      "label": "orientation input",
+      "detail": "Supply an orientation on the same smooth manifold; reversing it reverses the sign of the Hodge star.",
+      "citations": [
+        "wp-hodge_star_operator",
+        "nlab-hodge_star_operator",
+        "tong-em"
       ]
     },
     {
@@ -38249,7 +38372,7 @@
       "target": "partial_order",
       "type": "induced-forgotten",
       "label": "take reflexive reachability",
-      "detail": "On a DAG, $x\\le y$ when y is reachable from x defines a partial order after adding reflexivity.",
+      "detail": "On a DAG, define $x\\le y$ when $y$ is reachable from $x$; adding reflexivity yields a partial order.",
       "citations": [
         "wp-dag",
         "wp-poset",
@@ -38584,11 +38707,11 @@
     },
     {
       "id": "configuration_to_state",
-      "source": "electron_configuration",
-      "target": "atomic_state",
+      "source": "atomic_state",
+      "target": "electron_configuration",
       "type": "state-description",
       "label": "configuration basis components",
-      "detail": "Atomic states are commonly expanded in configuration-state functions; configuration mixing means one configuration need not be exact.",
+      "detail": "An atomic state can be described by its electron-configuration content, but an exact many-electron eigenstate may superpose multiple configurations, so a single configuration is generally only a label or approximation.",
       "citations": [
         "wp-physics-atomic_state",
         "nist-asd-levels",
@@ -38989,8 +39112,8 @@
     },
     {
       "id": "fermion_to_generation",
-      "source": "standard_model",
-      "target": "fermion_generation",
+      "source": "fermion_generation",
+      "target": "standard_model",
       "type": "theory-component",
       "label": "three fermion generations",
       "detail": "The Standard Model contains three repeated generations of chiral quark and lepton fields.",
@@ -39215,7 +39338,7 @@
       "target": "global_field",
       "type": "impose-axiom",
       "label": "+ global arithmetic form",
-      "detail": "Require a finite extension of Q or $F_q(t)$.",
+      "detail": "Require a finite extension of $Q$ or $F_q(t)$.",
       "citations": [
         "wp-global-field",
         "nlab-global-field",
@@ -39264,7 +39387,7 @@
       "source": "field",
       "target": "j_vector",
       "type": "combine-compatible",
-      "label": "scalar field F",
+      "label": "scalar field $F$",
       "detail": "Supply the scalar field.",
       "citations": [
         "wp-vector",
@@ -39436,7 +39559,7 @@
       "target": "first_order_theory",
       "type": "add-data",
       "label": "choose a set of sentences",
-      "detail": "Choose a set T of sentences formed in the fixed signature L.",
+      "detail": "Choose a set $T$ of sentences formed in the fixed signature $L$.",
       "citations": [
         "wp-model-theory",
         "openlogic-model-theory"
@@ -39460,7 +39583,7 @@
       "target": "j_model_of_theory",
       "type": "combine-compatible",
       "label": "candidate structure",
-      "detail": "Supply a structure M in the same signature.",
+      "detail": "Supply a structure $M$ in the same signature.",
       "citations": [
         "wp-model-theory",
         "openlogic-model-theory"
@@ -39485,7 +39608,7 @@
       "target": "j_model_of_theory",
       "type": "combine-compatible",
       "label": "theory",
-      "detail": "Supply the set of sentences T.",
+      "detail": "Supply the set of sentences $T$.",
       "citations": [
         "wp-model-theory",
         "openlogic-model-theory"
@@ -39991,7 +40114,7 @@
       "id": "fixing_to_brst",
       "source": "gauge_fixing",
       "target": "brst_symmetry",
-      "type": "theory-component",
+      "type": "canonical-construction",
       "label": "BRST structure",
       "detail": "BRST symmetry encodes residual gauge consistency of the gauge-fixed theory.",
       "citations": [
@@ -40005,7 +40128,7 @@
       "id": "fixing_to_ghost",
       "source": "gauge_fixing",
       "target": "faddeev_popov_ghost",
-      "type": "theory-component",
+      "type": "canonical-construction",
       "label": "functional determinant",
       "detail": "Faddeev–Popov ghosts represent the gauge-fixing determinant in covariant non-Abelian perturbation theory.",
       "citations": [
@@ -40282,7 +40405,7 @@
       "source": "graded_object",
       "target": "chain_complex",
       "type": "add-data",
-      "label": "+ differential d of degree −1",
+      "label": "+ differential $d$ of degree $-1$",
       "detail": "Add boundary maps with $d^{2}=0$.",
       "citations": [
         "stacks-complexes",
@@ -40296,7 +40419,7 @@
       "source": "graded_object",
       "target": "cochain_complex",
       "type": "add-data",
-      "label": "+ differential d of degree +1",
+      "label": "+ differential $d$ of degree $+1$",
       "detail": "Add coboundary maps with $d^{2}=0$.",
       "citations": [
         "stacks-complexes",
@@ -40454,8 +40577,8 @@
       "source": "group_action",
       "target": "g_set",
       "type": "representation-equivalence",
-      "label": "fix the acting group G",
-      "detail": "Treat an action of a fixed group as a G-set.",
+      "label": "fix the acting group $G$",
+      "detail": "Treat an action of a fixed group as a $G$-set.",
       "citations": [
         "wp-g-set",
         "nlab-g-set",
@@ -40552,7 +40675,7 @@
       "target": "baryon",
       "type": "classification",
       "label": "baryon",
-      "detail": "Baryons are hadrons with nonzero baryon number; ordinary baryons have three valence quarks.",
+      "detail": "Baryons are hadrons with baryon number $B=+1$ and ordinary baryons have three valence quarks; the corresponding antibaryons have $B=-1$.",
       "citations": [
         "pdg-quark-model",
         "wp-physics-baryon",
@@ -41092,7 +41215,7 @@
       "source": "inner_product_space",
       "target": "normed_vector_space",
       "type": "induced-forgotten",
-      "label": "induce ‖x‖=√⟨x,x⟩",
+      "label": "induce $\\lVert x\\rVert=\\sqrt{\\langle x,x\\rangle}$",
       "detail": "Retain the canonical norm induced by the inner product.",
       "citations": [
         "wp-inner-product",
@@ -41144,7 +41267,7 @@
       "target": "valuation_ring",
       "type": "impose-axiom",
       "label": "+ total divisibility of fractions",
-      "detail": "Require x or $x^{-1}$ to lie in the ring for every nonzero fraction x.",
+      "detail": "Require either $x$ or $x^{-1}$ to lie in the ring for every nonzero fraction $x$.",
       "citations": [
         "stacks-valuation-ring",
         "wp-valuation-ring",
@@ -41273,7 +41396,7 @@
       "target": "cosimplicial_object",
       "type": "combine-compatible",
       "label": "impose cosimplicial identities",
-      "detail": "Every $X^{n}$ is an object of the same category C; add coface and codegeneracy morphisms in C satisfying the cosimplicial identities.",
+      "detail": "Every $X^{n}$ is an object of the same category $C$; add coface and codegeneracy morphisms in $C$ satisfying the cosimplicial identities.",
       "citations": [
         "stacks-simplicial-objects",
         "nlab-simplicial-object",
@@ -41287,7 +41410,7 @@
       "target": "covering_space",
       "type": "combine-compatible",
       "label": "impose local triviality",
-      "detail": "Give E and B topologies, take $p:E\\to B,$ require continuity and that every $b\\in B$ has an evenly covered neighborhood.",
+      "detail": "Give $E$ and $B$ topologies and a continuous surjection $p\\colon E\\to B$; require every point of $B$ to have an evenly covered open neighborhood.",
       "citations": [
         "wp-covering-space",
         "nlab-covering-space",
@@ -41300,7 +41423,7 @@
       "target": "c_star_algebra",
       "type": "combine-compatible",
       "label": "impose compatibility",
-      "detail": "Impose the C*-identity $\\lVert a^*a\\rVert=\\lVert a\\rVert^2$ on the compatible Banach *-algebra.",
+      "detail": "Impose the $C^*$-identity $\\lVert a^*a\\rVert=\\lVert a\\rVert^2$ on the compatible Banach $*$-algebra.",
       "citations": [
         "mathlib-cstar-classes"
       ]
@@ -41336,7 +41459,7 @@
       "target": "fiber_bundle",
       "type": "combine-compatible",
       "label": "impose local triviality",
-      "detail": "Give E and B topologies, take $p\\colon E\\to B$, require continuity and that every $b\\in B$ has an evenly covered neighborhood.",
+      "detail": "Give $E$, $B$, and $F$ topologies and a continuous projection $p\\colon E\\to B$; require local trivializations $p^{-1}(U)\\cong U\\times F$ that commute with projection to $U$.",
       "citations": [
         "wp-fiber-bundle",
         "nlab-fiber-bundle",
@@ -41349,7 +41472,7 @@
       "target": "filtered_probability_space",
       "type": "combine-compatible",
       "label": "impose compatibility",
-      "detail": "Use a filtration of sub-σ-algebras of the probability space.",
+      "detail": "Use a filtration of sub-$\\sigma$-algebras of the probability space.",
       "citations": [
         "wp-filtered-probability",
         "durrett-probability"
@@ -41360,8 +41483,8 @@
       "source": "j_filtration",
       "target": "filtration",
       "type": "combine-compatible",
-      "label": "require nested sub-σ-algebras",
-      "detail": "Require monotonicity $F_s\\subseteq F_t$ for $s\\le t$ within one ambient σ-algebra.",
+      "label": "require nested sub-$\\sigma$-algebras",
+      "detail": "Require monotonicity $\\mathcal F_s\\subseteq\\mathcal F_t$ for $s\\le t$ within one ambient $\\sigma$-algebra.",
       "citations": [
         "wp-filtration-probability",
         "durrett-probability"
@@ -41486,7 +41609,7 @@
       "target": "lie_algebra_representation",
       "type": "combine-compatible",
       "label": "impose compatibility",
-      "detail": "Choose a k-linear action $\\mathfrak{g}\\to\\operatorname{End}_k(V)$ and require $[x,y]$ to act as the commutator of the endomorphisms for x and y.",
+      "detail": "Choose a $k$-linear action $\\mathfrak g\\to\\operatorname{End}_k(V)$ and require $[x,y]$ to act as the commutator of the endomorphisms assigned to $x$ and $y$.",
       "citations": [
         "mathlib-lie-module"
       ]
@@ -41521,7 +41644,7 @@
       "target": "model_of_theory",
       "type": "combine-compatible",
       "label": "impose satisfaction",
-      "detail": "Require M⊨φ for every $\\varphi \\in T$.",
+      "detail": "Require $M\\models\\varphi$ for every $\\varphi\\in T$.",
       "citations": [
         "wp-model-theory",
         "openlogic-model-theory"
@@ -41698,7 +41821,7 @@
       "target": "simplicial_object",
       "type": "combine-compatible",
       "label": "impose simplicial identities",
-      "detail": "Every $X_{n}$ is an object of the same category C; add face and degeneracy morphisms in C satisfying the simplicial identities.",
+      "detail": "Every $X_{n}$ is an object of the same category $C$; add face and degeneracy morphisms in $C$ satisfying the simplicial identities.",
       "citations": [
         "stacks-simplicial-objects",
         "nlab-simplicial-object",
@@ -41825,7 +41948,7 @@
       "target": "algebraic_variety",
       "type": "combine-compatible",
       "label": "impose compatibility",
-      "detail": "Require X to be integral and require $X\\to \\operatorname{Spec}(k)$ to be separated and of finite type.",
+      "detail": "Require $X$ to be integral and require $X\\to\\operatorname{Spec}(k)$ to be separated and of finite type.",
       "citations": [
         "wp-variety",
         "nlab-variety",
@@ -42162,21 +42285,6 @@
       ]
     },
     {
-      "id": "levicivita_to_spacetime_metric",
-      "source": "levi_civita_connection",
-      "target": "spacetime_metric",
-      "type": "mathematical-formulation",
-      "label": "metric connection",
-      "detail": "A spacetime metric determines its Levi–Civita connection.",
-      "citations": [
-        "wp-levi_civita_connection",
-        "nlab-levi_civita_connection",
-        "tong-gr",
-        "wp-physics-spacetime_metric",
-        "einstein-general-relativity"
-      ]
-    },
-    {
       "id": "math_lie_algebra_to_gauge",
       "source": "lie_algebra",
       "target": "gauge_field_theory",
@@ -42197,7 +42305,7 @@
       "target": "j_lie_rep",
       "type": "combine-compatible",
       "label": "acting Lie algebra",
-      "detail": "Supply a Lie algebra $\\mathfrak{g}$ over the same field k as the vector-space input.",
+      "detail": "Supply a Lie algebra $\\mathfrak{g}$ over the same field $k$ as the vector-space input.",
       "citations": [
         "mathlib-lie-module"
       ]
@@ -42351,7 +42459,7 @@
       "source": "local_field",
       "target": "p_adic_field",
       "type": "impose-axiom",
-      "label": "+ characteristic zero, residue characteristic p",
+      "label": "+ characteristic $0$, residue characteristic $p$",
       "detail": "Restrict to finite extensions of $Q_{p}$.",
       "citations": [
         "wp-p-adic-field",
@@ -42364,7 +42472,7 @@
       "source": "local_ring",
       "target": "complete_local_ring",
       "type": "impose-axiom",
-      "label": "+ m-adic completeness",
+      "label": "+ $m$-adic completeness",
       "detail": "Require the canonical map $R\\to \\varprojlim R/m^{n}$ to be an isomorphism.",
       "citations": [
         "wp-complete-ring",
@@ -42493,9 +42601,9 @@
       "id": "math_lorentz_group_to_poincare_group",
       "source": "lorentz_group",
       "target": "poincare_group",
-      "type": "add-data",
-      "label": "translations semidirect product",
-      "detail": "The Poincaré group adjoins spacetime translations to Lorentz transformations.",
+      "type": "canonical-construction",
+      "label": "form translations semidirect Lorentz transformations",
+      "detail": "For a fixed Minkowski vector space, the Poincaré group is the semidirect product of spacetime translations with the Lorentz group.",
       "citations": [
         "wp-poincare_group",
         "nlab-poincare_group"
@@ -42505,9 +42613,9 @@
       "id": "lorentz_to_poincare_phys",
       "source": "lorentz_symmetry",
       "target": "poincare_symmetry",
-      "type": "add-data",
+      "type": "canonical-construction",
       "label": "spacetime translations",
-      "detail": "Poincaré symmetry adds translations to Lorentz symmetry.",
+      "detail": "For a fixed Minkowski spacetime, Poincaré symmetry is the semidirect product of spacetime translations with Lorentz symmetry.",
       "citations": [
         "wp-poincare_group",
         "nlab-physics-poincare_symmetry",
@@ -42688,7 +42796,7 @@
       "id": "manyatom_to_dft",
       "source": "many_electron_atom",
       "target": "density_functional_theory",
-      "type": "framework-specialization",
+      "type": "model-realization",
       "label": "ground-state density formulation",
       "detail": "Hohenberg–Kohn theory gives an exact ground-state density formulation in principle; practical Kohn–Sham calculations depend on approximate exchange–correlation functionals.",
       "citations": [
@@ -42785,8 +42893,8 @@
       "source": "measurable_space",
       "target": "j_filtration",
       "type": "combine-compatible",
-      "label": "ambient σ-algebra",
-      "detail": "Supply the measurable space whose sub-σ-algebras form the filtration.",
+      "label": "ambient $\\sigma$-algebra",
+      "detail": "Supply the measurable space whose sub-$\\sigma$-algebras form the filtration.",
       "citations": [
         "wp-filtration-probability",
         "durrett-probability"
@@ -42797,7 +42905,7 @@
       "source": "measurable_space",
       "target": "j_measurable_function",
       "type": "combine-compatible",
-      "label": "domain and codomain σ-algebras",
+      "label": "domain and codomain $\\sigma$-algebras",
       "detail": "Instantiate measurable-space structure on both domain and codomain.",
       "citations": [
         "wp-measurable-function",
@@ -42809,7 +42917,7 @@
       "source": "measurable_space",
       "target": "measure_space",
       "type": "add-data",
-      "label": "+ measure μ",
+      "label": "+ measure $\\mu$",
       "detail": "Choose a countably additive measure.",
       "citations": [
         "wp-measure-space",
@@ -42845,7 +42953,7 @@
       "source": "measure_space",
       "target": "sigma_finite_measure_space",
       "type": "impose-axiom",
-      "label": "+ σ-finiteness",
+      "label": "+ $\\sigma$-finiteness",
       "detail": "Require a countable cover by finite-measure sets.",
       "citations": [
         "wp-sigma-finite",
@@ -42896,7 +43004,7 @@
       "target": "first_countable_space",
       "type": "theorem-implication",
       "label": "is first-countable",
-      "detail": "Metric balls of radii 1/n give a countable local base at each point.",
+      "detail": "Metric balls of radii $1/n$ give a countable local base at each point.",
       "citations": [
         "wp-metric",
         "wp-first-countable",
@@ -42961,7 +43069,7 @@
       "target": "uniform_space",
       "type": "induced-forgotten",
       "label": "induce metric uniformity",
-      "detail": "The entourages d(x,y)<ε define the canonical uniformity of a metric space.",
+      "detail": "The entourages $d(x,y)<\\varepsilon$ define the canonical uniformity of a metric space.",
       "citations": [
         "wp-metric",
         "nlab-metric",
@@ -43955,10 +44063,10 @@
     {
       "id": "partialtrace_to_mixed",
       "source": "partial_trace",
-      "target": "mixed_quantum_state",
+      "target": "density_operator",
       "type": "mathematical-formulation",
       "label": "reduced state",
-      "detail": "Tracing out a subsystem generally converts a pure composite state into a mixed reduced state.",
+      "detail": "The partial trace of a composite-system density operator is a positive trace-one reduced density operator. A reduced state of a pure bipartite state is mixed exactly when that state is entangled across the bipartition.",
       "citations": [
         "wp-partial_trace",
         "nlab-partial_trace",
@@ -44086,7 +44194,7 @@
       "id": "phase_to_poisson",
       "source": "phase_space",
       "target": "poisson_bracket",
-      "type": "theory-component",
+      "type": "canonical-construction",
       "label": "Poisson algebra of observables",
       "detail": "A symplectic or Poisson phase space supplies a Poisson bracket on observables.",
       "citations": [
@@ -44709,7 +44817,7 @@
       "target": "spin_structure",
       "type": "add-data",
       "label": "spin lift",
-      "detail": "A spin structure lifts the oriented orthonormal frame bundle to a spin bundle.",
+      "detail": "When this principal bundle is the oriented orthonormal frame bundle and the obstruction vanishes, choose a principal $\\operatorname{Spin}(p,q)$ lift together with its twofold bundle map to the frame bundle.",
       "citations": [
         "wp-principal-bundle",
         "nlab-principal-bundle",
@@ -45060,7 +45168,7 @@
       "id": "qcd_to_lattice",
       "source": "quantum_chromodynamics",
       "target": "lattice_qcd",
-      "type": "mathematical-formulation",
+      "type": "model-realization",
       "label": "regulated nonperturbative formulation",
       "detail": "Lattice QCD is a gauge-invariant regulator and nonperturbative computational formulation. Finite lattice spacing, finite volume, and unphysical parameter choices introduce controlled errors that are extrapolated away.",
       "citations": [
@@ -45378,7 +45486,7 @@
       "target": "matter_field",
       "type": "classification",
       "label": "matter field",
-      "detail": "Matter fields carry nontrivial internal representations.",
+      "detail": "Matter fields are quantum fields representing material degrees of freedom rather than gauge connections. They often carry nontrivial gauge representations, but gauge-singlet matter fields are possible.",
       "citations": [
         "wp-physics-matter_field",
         "nlab-physics-matter_field",
@@ -45612,7 +45720,7 @@
       "id": "qft_to_regularization",
       "source": "quantum_field_theory",
       "target": "regularization",
-      "type": "theory-component",
+      "type": "model-realization",
       "label": "regulated expressions",
       "detail": "Perturbative and lattice formulations introduce regulators to define intermediate quantities.",
       "citations": [
@@ -45628,7 +45736,7 @@
       "target": "s_matrix",
       "type": "state-description",
       "label": "asymptotic scattering operator",
-      "detail": "QFT defines an S-matrix when asymptotic particle states and suitable long-time limits exist.",
+      "detail": "QFT defines an $S$-matrix when asymptotic particle states and suitable long-time limits exist.",
       "citations": [
         "wp-physics-s_matrix",
         "nlab-physics-s_matrix",
@@ -46475,7 +46583,7 @@
       "source": "ring",
       "target": "commutative_ring",
       "type": "impose-axiom",
-      "label": "+ ab=ba",
+      "label": "+ $ab=ba$",
       "detail": "Require multiplication to commute.",
       "citations": [
         "wp-comm-ring",
@@ -46499,7 +46607,7 @@
       "source": "ring",
       "target": "j_module",
       "type": "combine-compatible",
-      "label": "scalar ring R",
+      "label": "scalar ring $R$",
       "detail": "Supply the scalar ring.",
       "citations": [
         "wp-module",
@@ -46577,7 +46685,7 @@
       "target": "scattering_amplitude",
       "type": "state-description",
       "label": "matrix elements",
-      "detail": "Scattering amplitudes are matrix elements of the S-matrix after removing normalization and conservation factors.",
+      "detail": "Scattering amplitudes are matrix elements of the $S$-matrix after removing normalization and conservation factors.",
       "citations": [
         "wp-physics-scattering_amplitude",
         "nlab-physics-scattering_amplitude",
@@ -46601,7 +46709,7 @@
     {
       "id": "scalarself_to_higgs",
       "source": "scalar_self_interaction",
-      "target": "higgs_doublet",
+      "target": "standard_model_lagrangian",
       "type": "theory-component",
       "label": "Higgs potential",
       "detail": "The Higgs potential includes a quartic self-interaction.",
@@ -46618,7 +46726,7 @@
       "target": "affine_scheme",
       "type": "impose-axiom",
       "label": "+ globally affine",
-      "detail": "Require the scheme to be isomorphic to $\\operatorname{Spec}(R)$ for some commutative ring R.",
+      "detail": "Require the scheme to be isomorphic to $\\operatorname{Spec}(R)$ for some commutative ring $R$.",
       "citations": [
         "stacks-affine-scheme",
         "wp-affine-scheme",
@@ -46671,7 +46779,7 @@
       "target": "regular_scheme",
       "type": "impose-axiom",
       "label": "require local Noetherian regularity",
-      "detail": "Require X to be locally Noetherian and every local ring $O_{X,x}$ to be a regular local ring; quasi-compactness is not required.",
+      "detail": "Require $X$ to be locally Noetherian and every local ring $\\mathcal O_{X,x}$ to be a regular local ring; quasi-compactness is not required.",
       "citations": [
         "stacks-regular-scheme",
         "wp-regular-scheme",
@@ -46684,7 +46792,7 @@
       "target": "scheme_over_base",
       "type": "add-data",
       "label": "+ base and structure morphism",
-      "detail": "Choose a base scheme S and a morphism $X\\to S$.",
+      "detail": "Choose a base scheme $S$ and a morphism $X\\to S$.",
       "citations": [
         "stacks-scheme",
         "stacks-projective-morphisms",
@@ -46697,7 +46805,7 @@
       "target": "separated_scheme",
       "type": "impose-axiom",
       "label": "+ closed diagonal",
-      "detail": "For the absolute node, require $\\Delta_{X/\\operatorname{Spec}(\\mathbb{Z})}\\colon X\\to X\\times_{\\operatorname{Spec}(\\mathbb{Z})}X$ to be a closed immersion; over a base S use $\\Delta_{X/S}$.",
+      "detail": "For the absolute node, require $\\Delta_{X/\\operatorname{Spec}(\\mathbb{Z})}\\colon X\\to X\\times_{\\operatorname{Spec}(\\mathbb{Z})}X$ to be a closed immersion; over a base $S$ use $\\Delta_{X/S}$.",
       "citations": [
         "stacks-separated-scheme"
       ]
@@ -46708,7 +46816,7 @@
       "target": "projective_scheme",
       "type": "impose-axiom",
       "label": "+ projectivity",
-      "detail": "Require $X\\to S$ to factor as a closed immersion into $P^{n}_S$ followed by the projection to S, for some n.",
+      "detail": "Require $X\\to S$ to factor as a closed immersion into $\\mathbf P^n_S$ followed by the projection to $S$, for some $n$.",
       "citations": [
         "stacks-projective-morphisms",
         "wp-projective-scheme",
@@ -46722,7 +46830,7 @@
       "target": "unitary_time_evolution",
       "type": "representation-equivalence",
       "label": "differential evolution equation",
-      "detail": "The Schrödinger equation is the differential form of Hamiltonian unitary evolution.",
+      "detail": "For a self-adjoint time-independent Hamiltonian, the Schrödinger equation is the differential form of the strongly continuous unitary evolution $U(t)=e^{-itH/\\hbar}$. Time-dependent Hamiltonians require additional domain and well-posedness hypotheses.",
       "citations": [
         "wp-physics-schrodinger_equation",
         "nlab-physics-schrodinger_equation",
@@ -46909,7 +47017,7 @@
       "source": "selection_rule",
       "target": "electric_dipole_transition",
       "type": "describes-governs",
-      "label": "E1 selection rules",
+      "label": "$E1$ selection rules",
       "detail": "Angular momentum and parity constrain electric-dipole matrix elements.",
       "citations": [
         "wp-physics-electric_dipole_transition",
@@ -47030,8 +47138,8 @@
       "source": "set",
       "target": "binary_relation",
       "type": "add-data",
-      "label": "+ target set Y and R⊆X×Y",
-      "detail": "Choose a target set Y and a subset $R\\subseteq X\\times Y$. Endorelations are the specialization $Y=X$.",
+      "label": "+ target set $Y$ and $R\\subseteq X\\times Y$",
+      "detail": "Choose a target set $Y$ and a subset $R\\subseteq X\\times Y$. Endorelations are the specialization $Y=X$.",
       "citations": [
         "mathlib-relations"
       ]
@@ -47178,7 +47286,7 @@
       "source": "set",
       "target": "measurable_space",
       "type": "add-data",
-      "label": "+ σ-algebra",
+      "label": "+ $\\sigma$-algebra",
       "detail": "Choose measurable subsets.",
       "citations": [
         "wp-measurable",
@@ -47190,7 +47298,7 @@
       "source": "set",
       "target": "pointed_set",
       "type": "add-data",
-      "label": "+ choose x₀",
+      "label": "+ choose $x_0$",
       "detail": "Choose one distinguished element of the set.",
       "citations": [
         "wp-pointed",
@@ -47202,7 +47310,7 @@
       "source": "set",
       "target": "pseudometric_space",
       "type": "add-data",
-      "label": "+ pseudometric d",
+      "label": "+ pseudometric $d$",
       "detail": "Choose a distance-like function.",
       "citations": [
         "wp-pseudometric",
@@ -47226,7 +47334,7 @@
       "source": "set",
       "target": "topological_space",
       "type": "add-data",
-      "label": "+ topology τ",
+      "label": "+ topology $\\tau$",
       "detail": "Choose open subsets satisfying the topology axioms.",
       "citations": [
         "wp-top-space",
@@ -47240,7 +47348,7 @@
       "target": "transitive_set",
       "type": "impose-axiom",
       "label": "+ transitivity",
-      "detail": "Require every element of an element of X to lie in X.",
+      "detail": "Require every element of an element of $X$ to lie in $X$.",
       "citations": [
         "wp-transitive-set",
         "openlogic-set-theory"
@@ -47278,7 +47386,7 @@
       "target": "algebraic_space",
       "type": "impose-axiom",
       "label": "+ representable diagonal and existence of étale cover",
-      "detail": "Specialize to an fppf sheaf F on Sch/S, require representable diagonal, and require that some scheme U admit a surjective étale morphism $h_U\\to F$.",
+      "detail": "Specialize to an fppf sheaf $F$ on $(\\mathrm{Sch}/S)_{\\mathrm{fppf}}$, require a representable diagonal, and require that some scheme $U$ admit a surjective étale morphism $h_U\\to F$.",
       "citations": [
         "stacks-algebraic-space"
       ]
@@ -47342,7 +47450,7 @@
       "target": "grothendieck_topos",
       "type": "canonical-construction",
       "label": "form the sheaf topos",
-      "detail": "Form Sh(C,J), the category of sheaves of sets on the site. This is a canonical construction from a site, not an equivalence between the site and the resulting topos.",
+      "detail": "Form $\\operatorname{Sh}(C,J)$, the category of sheaves of sets on the site. This is a canonical construction from a site, not an equivalence between the site and the resulting topos.",
       "citations": [
         "stacks-topos",
         "wp-groth-topos",
@@ -47417,7 +47525,7 @@
       "target": "presheaf",
       "type": "add-data",
       "label": "choose a Set-valued contravariant functor",
-      "detail": "Choose a functor $C^{\\mathrm{op}}\\to\\mathbf{Set}$ on the small category C.",
+      "detail": "Choose a functor $C^{\\mathrm{op}}\\to\\mathbf{Set}$ on the small category $C$.",
       "citations": [
         "stacks-presheaf",
         "wp-presheaf",
@@ -47898,9 +48006,9 @@
       "id": "math_spin_group_to_spinor_representation",
       "source": "spin_group",
       "target": "spinor_representation",
-      "type": "add-data",
-      "label": "spin representation",
-      "detail": "A spinor representation is a linear action of the spin group.",
+      "type": "model-realization",
+      "label": "choose a spin representation",
+      "detail": "A spinor representation realizes the spin group linearly, usually through a module over the associated Clifford algebra; a particular representation is additional chosen data.",
       "citations": [
         "wp-spinor_representation",
         "nlab-spinor_representation"
@@ -48307,7 +48415,7 @@
       "source": "t0_space",
       "target": "t1_space",
       "type": "impose-axiom",
-      "label": "+ T₁",
+      "label": "+ $T_1$",
       "detail": "Require singletons to be closed.",
       "citations": [
         "wp-separation",
@@ -48451,7 +48559,7 @@
       "target": "partial_trace",
       "type": "canonical-construction",
       "label": "trace one subsystem",
-      "detail": "The partial trace maps operators on a tensor product to reduced operators.",
+      "detail": "The partial trace maps trace-class operators on $H_A\\otimes H_B$ to trace-class reduced operators on one factor, characterized by the trace pairing with bounded operators on that factor.",
       "citations": [
         "wp-tensor_product_hilbert_space",
         "nlab-tensor_product_hilbert_space",
@@ -48587,15 +48695,42 @@
       ]
     },
     {
-      "id": "math_topological_group_to_haar_measure",
+      "id": "topological_group_to_j_haar_measure",
       "source": "topological_group",
+      "target": "j_haar_measure",
+      "type": "combine-compatible",
+      "label": "topological-group input",
+      "detail": "Supply the continuous group operations on $G$.",
+      "citations": [
+        "wp-haar_measure",
+        "nlab-haar_measure",
+        "mathlib-haar-measure"
+      ]
+    },
+    {
+      "id": "locally_compact_hausdorff_to_j_haar_measure",
+      "source": "locally_compact_hausdorff_space",
+      "target": "j_haar_measure",
+      "type": "combine-compatible",
+      "label": "local-compactness input",
+      "detail": "Require the topology on the same carrier $G$ to be locally compact and Hausdorff.",
+      "citations": [
+        "wp-haar_measure",
+        "nlab-haar_measure",
+        "mathlib-haar-measure"
+      ]
+    },
+    {
+      "id": "math_topological_group_to_haar_measure",
+      "source": "j_haar_measure",
       "target": "haar_measure",
-      "type": "theorem-implication",
-      "label": "Haar existence theorem",
+      "type": "combine-compatible",
+      "label": "outputs Haar measure",
       "detail": "Every locally compact Hausdorff topological group admits a nonzero left Haar measure, unique up to multiplication by a positive scalar.",
       "citations": [
         "wp-haar_measure",
-        "nlab-haar_measure"
+        "nlab-haar_measure",
+        "mathlib-haar-measure"
       ]
     },
     {
@@ -48643,7 +48778,7 @@
       "target": "h_space",
       "type": "induced-forgotten",
       "label": "forget strict associativity/unit",
-      "detail": "A topological monoid determines an H-space after retaining only the multiplication and basepoint.",
+      "detail": "A topological monoid determines an $H$-space after retaining only the multiplication and basepoint.",
       "citations": [
         "wp-topological-semigroup",
         "nlab-topological-monoid",
@@ -48670,8 +48805,8 @@
       "source": "topological_space",
       "target": "borel_measurable_space",
       "type": "induced-forgotten",
-      "label": "generate the Borel σ-algebra",
-      "detail": "Take the smallest σ-algebra containing every open set. This measurable structure is canonical for the topology.",
+      "label": "generate the Borel $\\sigma$-algebra",
+      "detail": "Take the smallest $\\sigma$-algebra containing every open set. This measurable structure is canonical for the topology.",
       "citations": [
         "wp-borel",
         "wp-top-space",
@@ -48772,8 +48907,8 @@
       "source": "topological_space",
       "target": "j_fiber_bundle",
       "type": "combine-compatible",
-      "label": "total and base topologies",
-      "detail": "Instantiate topological-space structure on the spaces occurring in the map.",
+      "label": "total, base, and fiber topologies",
+      "detail": "Instantiate compatible topological-space structures on total space $E$, base $B$, and typical fiber $F$.",
       "citations": [
         "wp-fiber-bundle",
         "nlab-fiber-bundle",
@@ -48874,7 +49009,7 @@
       "source": "topological_space",
       "target": "j_tvs",
       "type": "combine-compatible",
-      "label": "topology on V",
+      "label": "topology on $V$",
       "detail": "Supply the topology on the vector carrier.",
       "citations": [
         "wp-top-vector",
@@ -48972,7 +49107,7 @@
       "source": "topological_space",
       "target": "t0_space",
       "type": "impose-axiom",
-      "label": "+ T₀",
+      "label": "+ $T_0$",
       "detail": "Distinct points must be topologically distinguishable.",
       "citations": [
         "wp-separation",
@@ -49453,7 +49588,7 @@
       "target": "j_lie_rep",
       "type": "combine-compatible",
       "label": "linear carrier",
-      "detail": "Supply a k-vector space V over the same field k as the Lie-algebra input.",
+      "detail": "Supply a $k$-vector space $V$ over the same field $k$ as the Lie-algebra input.",
       "citations": [
         "mathlib-lie-module"
       ]
@@ -49500,7 +49635,7 @@
       "target": "seminormed_vector_space",
       "type": "add-data",
       "label": "+ real-valued absolute value and seminorm",
-      "detail": "Equip the scalar field with a real-valued absolute value $|\\cdot |$ and choose $p:V\\to \\mathbb{R}\\ge 0$ with $p(x+y)\\le p(x)+p(y)$ and $p(\\lambda x)=|\\lambda |p(x)$.",
+      "detail": "Equip the scalar field with a real-valued absolute value $|\\cdot|$ and choose $p\\colon V\\to[0,\\infty)$ with $p(x+y)\\le p(x)+p(y)$ and $p(\\lambda x)=|\\lambda|p(x)$.",
       "citations": [
         "mathlib-seminorm",
         "mathlib-normed-module"
@@ -49743,23 +49878,6 @@
       ]
     },
     {
-      "id": "anomaly_to_cancellation",
-      "source": "quantum_anomaly",
-      "target": "gauge_anomaly_cancellation",
-      "type": "impose-axiom",
-      "label": "cancel gauge anomalies",
-      "detail": "A chiral gauge theory must cancel gauge anomalies to preserve gauge consistency and unitarity.",
-      "citations": [
-        "wp-physics-quantum_anomaly",
-        "nlab-physics-quantum_anomaly",
-        "bilal-anomalies",
-        "tong-gauge",
-        "nlab-physics-gauge_anomaly_cancellation",
-        "pdg-standard-model",
-        "tong-standard-model"
-      ]
-    },
-    {
       "id": "anomalycancellation_to_sm",
       "source": "gauge_anomaly_cancellation",
       "target": "standard_model",
@@ -49795,14 +49913,17 @@
     },
     {
       "id": "chiral_to_anomalycancellation",
-      "source": "standard_model_chiral_multiplet",
+      "source": "standard_model",
       "target": "gauge_anomaly_cancellation",
       "type": "theorem-implication",
-      "label": "representations cancel anomalies",
-      "detail": "The hypercharges and color/weak representations of a complete Standard Model generation make the local gauge and mixed anomalies cancel.",
+      "label": "complete chiral content cancels anomalies",
+      "detail": "For the complete chiral fermion content of each Standard Model generation, the hypercharges and color/weak representations cancel the perturbative gauge, mixed gauge–gravitational, and cubic hypercharge anomalies. An isolated chiral multiplet generally does not.",
       "citations": [
         "wp-physics-quantum_anomaly",
-        "nlab-physics-gauge_anomaly_cancellation"
+        "nlab-physics-gauge_anomaly_cancellation",
+        "bilal-anomalies",
+        "pdg-standard-model",
+        "tong-standard-model"
       ]
     },
     {
@@ -49848,23 +49969,6 @@
         "wp-physics-running_coupling",
         "nlab-physics-running_coupling",
         "pdg-qcd"
-      ]
-    },
-    {
-      "id": "decoherence_to_classical",
-      "source": "quantum_decoherence",
-      "target": "classical_mechanics",
-      "type": "emergence",
-      "label": "classical-like robust states",
-      "detail": "Decoherence helps explain stable classical-like records and suppressed interference, but does not alone derive all classical dynamics or solve the measurement problem.",
-      "citations": [
-        "wp-physics-quantum_decoherence",
-        "nlab-physics-quantum_decoherence",
-        "schlosshauer-decoherence-2019",
-        "tong-quantum",
-        "wp-physics-classical_mechanics",
-        "nlab-physics-classical_mechanics",
-        "cambridge-classical-dynamics"
       ]
     },
     {
@@ -50200,7 +50304,7 @@
       "id": "momentum_to_force",
       "source": "linear_momentum",
       "target": "force",
-      "type": "state-description",
+      "type": "canonical-construction",
       "label": "momentum-change rate",
       "detail": "In Newtonian mechanics force is $d\\mathbf p/dt$; this definition does not make force fundamental in every formulation.",
       "citations": [
@@ -50245,8 +50349,8 @@
     },
     {
       "id": "newtonian_to_newtonlaws",
-      "source": "newtonian_mechanics",
-      "target": "newton_laws",
+      "source": "newton_laws",
+      "target": "newtonian_mechanics",
       "type": "theory-component",
       "label": "Newtonian equations of motion",
       "detail": "Newton’s laws supply the standard particle-law formulation of Newtonian mechanics.",
@@ -50926,26 +51030,28 @@
     },
     {
       "id": "goldstonemode_to_higgs",
-      "source": "nambu_goldstone_mode",
+      "source": "would_be_goldstone_mode",
       "target": "higgs_mechanism",
       "type": "theory-component",
       "label": "would-be Goldstone degrees",
       "detail": "In a gauge-fixed Higgs phase, would-be Goldstone degrees of freedom combine with gauge fields rather than appearing as physical massless particles.",
       "citations": [
         "tong-standard-model",
-        "cern-higgs-origins"
+        "cern-higgs-origins",
+        "pdg-2026-higgs"
       ]
     },
     {
       "id": "goldstone_to_longitudinal",
-      "source": "nambu_goldstone_mode",
+      "source": "would_be_goldstone_mode",
       "target": "longitudinal_gauge_boson_mode",
       "type": "representation-equivalence",
       "label": "reorganized polarization degree",
       "detail": "The degrees of freedom represented as would-be Goldstone modes are reorganized into longitudinal polarizations of massive gauge bosons; this is not literal particle consumption.",
       "citations": [
         "tong-standard-model",
-        "wp-physics-polarization"
+        "wp-physics-polarization",
+        "pdg-2026-higgs"
       ]
     },
     {
@@ -50998,8 +51104,8 @@
     },
     {
       "id": "condensate_to_chiralbreaking",
-      "source": "quark_condensate",
-      "target": "qcd_chiral_symmetry_breaking",
+      "source": "qcd_chiral_symmetry_breaking",
+      "target": "quark_condensate",
       "type": "state-description",
       "label": "vacuum order parameter",
       "detail": "The quark condensate is a conventional order parameter for chiral-symmetry breaking in idealized light-quark limits.",
@@ -51563,7 +51669,7 @@
       "target": "quantum_expectation_value",
       "type": "mathematical-formulation",
       "label": "pure-state quadratic form",
-      "detail": "Pure-state expectations use the Hilbert-space inner product $\\langle\\psi,A\\psi\\rangle$.",
+      "detail": "For a normalized state vector $\\psi$ in the domain of $A$, the pure-state expectation is $\\langle\\psi,A\\psi\\rangle$; for an unnormalized nonzero vector, divide by $\\langle\\psi,\\psi\\rangle$.",
       "citations": [
         "wp-inner-product",
         "nlab-inner-product-space",
@@ -53760,7 +53866,7 @@
       "id": "ordinal_to_ordinal_arithmetic",
       "source": "ordinal",
       "target": "ordinal_arithmetic",
-      "type": "add-data",
+      "type": "canonical-construction",
       "label": "define transfinite operations",
       "detail": "Define addition, multiplication, and exponentiation recursively on ordinal arguments.",
       "citations": [
@@ -54542,7 +54648,7 @@
       "target": "residue_field",
       "type": "quotient-construction",
       "label": "quotient by the maximal ideal",
-      "detail": "The unique maximal ideal of a local ring yields its residue field.",
+      "detail": "For a local ring $(R,\\mathfrak m)$, take representatives $r\\in R$ and identify $r\\sim s$ exactly when $r-s\\in\\mathfrak m$; the quotient $R/\\mathfrak m$ is the residue field.",
       "citations": [
         "stacks-algebra-text"
       ]
@@ -54619,7 +54725,7 @@
       "target": "fundamental_group",
       "type": "quotient-construction",
       "label": "take path components",
-      "detail": "The path components of the based loop space form $\\pi_1$ under concatenation.",
+      "detail": "Take based loops as representatives and identify two loops exactly when they are homotopic through based loops. The quotient set of based-homotopy classes is $\\pi_1$, with multiplication induced by concatenation.",
       "citations": [
         "hatcher-algebraic-topology"
       ]
@@ -54674,7 +54780,7 @@
       "target": "homology_group",
       "type": "quotient-construction",
       "label": "cycles modulo boundaries",
-      "detail": "Taking kernel modulo image in each degree gives singular homology.",
+      "detail": "In degree $n$, representatives are cycles $z\\in Z_n=\\ker\\partial_n$; identify $z\\sim z'$ exactly when $z-z'\\in B_n=\\operatorname{im}\\partial_{n+1}$. The quotient is $H_n=Z_n/B_n$.",
       "citations": [
         "hatcher-algebraic-topology"
       ]
@@ -54707,7 +54813,7 @@
       "target": "cohomology_group",
       "type": "quotient-construction",
       "label": "cocycles modulo coboundaries",
-      "detail": "Taking cochain cohomology yields $H^n(X;A)$.",
+      "detail": "In degree $n$, representatives are cocycles $\\alpha\\in Z^n=\\ker\\delta^n$; identify $\\alpha\\sim\\alpha'$ exactly when $\\alpha-\\alpha'\\in B^n=\\operatorname{im}\\delta^{n-1}$. The quotient is $H^n(X;A)=Z^n/B^n$.",
       "citations": [
         "hatcher-algebraic-topology"
       ]
@@ -55274,7 +55380,7 @@
       "target": "cosmic_microwave_background",
       "type": "experimentally-verified-by",
       "label": "is constrained by CMB anisotropies",
-      "detail": "The temperature and polarization spectra of the cosmic microwave background provide major quantitative tests and parameter constraints for ΛCDM.",
+      "detail": "The temperature and polarization spectra of the cosmic microwave background provide major quantitative tests and parameter constraints for $\\Lambda$CDM.",
       "citations": [
         "nasa-big-bang"
       ]
@@ -55496,8 +55602,8 @@
       "source": "higher_homotopy_group",
       "target": "abelian_group",
       "type": "induced-forgotten",
-      "label": "is abelian for n at least 2",
-      "detail": "For $n\\ge 2$, the $n$th homotopy group is abelian.",
+      "label": "is abelian for $n\\ge2$",
+      "detail": "The homotopy group $\\pi_n$ is abelian for every $n\\ge2$.",
       "citations": [
         "hatcher-algebraic-topology",
         "wp-abelian",
@@ -56021,18 +56127,6 @@
       ]
     },
     {
-      "id": "story_everywhere_locally_soluble_variety_to_rational_point_theorem_implication",
-      "source": "everywhere_locally_soluble_variety",
-      "target": "rational_point",
-      "type": "theorem-implication",
-      "label": "has a global point when the Hasse principle holds",
-      "detail": "For a class of varieties for which a valid local–global principle has been proved, everywhere local solubility implies a rational point. This implication is not valid for arbitrary varieties.",
-      "citations": [
-        "poonen-rational-points-varieties",
-        "milne-algebraic-number-theory"
-      ]
-    },
-    {
       "id": "story_action_functional_to_path_integral_quantization_quantization",
       "source": "action_functional",
       "target": "path_integral_quantization",
@@ -56060,7 +56154,7 @@
       "id": "story_canonical_quantization_to_canonical_commutation_relations_theory_component",
       "source": "canonical_quantization",
       "target": "canonical_commutation_relations",
-      "type": "theory-component",
+      "type": "canonical-construction",
       "label": "imposes canonical operator brackets",
       "detail": "For canonical coordinates and momenta, the quantization prescription yields the canonical commutation relations in representations where the operators and their domains are defined.",
       "citations": [
@@ -56070,11 +56164,11 @@
     },
     {
       "id": "story_quantum_mechanics_to_schrodinger_equation_theory_component",
-      "source": "quantum_mechanics",
-      "target": "schrodinger_equation",
+      "source": "schrodinger_equation",
+      "target": "quantum_mechanics",
       "type": "theory-component",
       "label": "Schrödinger-picture evolution law",
-      "detail": "In nonrelativistic quantum mechanics, the Schrödinger equation gives state evolution generated by the Hamiltonian in the Schrödinger picture.",
+      "detail": "The Schrödinger equation supplies the state-evolution law for the Schrödinger-picture formulation of nonrelativistic quantum mechanics; it is not the universal evolution equation of all quantum theories.",
       "citations": [
         "wp-physics-schrodinger_equation",
         "nlab-physics-schrodinger_equation",
