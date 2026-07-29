@@ -15,13 +15,13 @@ export class SvgExporter {
     private readonly state: AppState
   ) {}
 
-  exportVisible(): void {
+  serializeVisible(): { svg: string; nodeCount: number; edgeCount: number } | null {
     const visibleNodes = this.cy.nodes().not('.filter-hidden');
     const visibleEdges = this.cy.edges().not('.filter-hidden').filter((element) => {
       const edge = element as cytoscape.EdgeSingular;
       return !edge.source().hasClass('filter-hidden') && !edge.target().hasClass('filter-hidden');
     });
-    if (!visibleNodes.length) return;
+    if (!visibleNodes.length) return null;
 
     const box = visibleNodes.boundingBox({ includeLabels: false, includeOverlays: false });
     const margin = 90;
@@ -165,7 +165,17 @@ export class SvgExporter {
 
     parts.push('</g>');
     parts.push('</svg>');
-    const blob = new Blob([parts.join('')], { type: 'image/svg+xml;charset=utf-8' });
+    return {
+      svg: parts.join(''),
+      nodeCount: visibleNodes.length,
+      edgeCount: visibleEdges.length
+    };
+  }
+
+  exportVisible(): void {
+    const result = this.serializeVisible();
+    if (!result) return;
+    const blob = new Blob([result.svg], { type: 'image/svg+xml;charset=utf-8' });
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     const stamp = new Date().toISOString().slice(0, 19).replaceAll(':', '-');
@@ -175,7 +185,7 @@ export class SvgExporter {
     link.click();
     link.remove();
     window.setTimeout(() => URL.revokeObjectURL(url), 1200);
-    byId('status').textContent = `Exported ${visibleNodes.length} nodes and ${visibleEdges.length} edges as SVG.`;
+    byId('status').textContent = `Exported ${result.nodeCount} nodes and ${result.edgeCount} edges as SVG.`;
   }
 
   private lineDash(lineStyle: LineStyle | undefined): string {

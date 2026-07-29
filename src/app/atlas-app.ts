@@ -16,7 +16,17 @@ import { TooltipController } from '../ui/tooltip-controller.js';
 import { FilterControls } from '../ui/filter-controls.js';
 import { ViewsController } from '../ui/views-controller.js';
 import { LocationController } from './location-controller.js';
-import type { AppState, AtlasViewsData, GraphData, GraphNode, HistoryMode, LayoutName, SelectionTarget } from '../types.js';
+import type { AppState, AtlasViewsData, GraphData, GraphNode, HistoryMode, LayoutName, SelectionTarget, UrlUiState } from '../types.js';
+
+function encodeUtf8Base64(value: string): string {
+  const bytes = new TextEncoder().encode(value);
+  const chunks: string[] = [];
+  const chunkSize = 0x8000;
+  for (let offset = 0; offset < bytes.length; offset += chunkSize) {
+    chunks.push(String.fromCharCode(...bytes.subarray(offset, offset + chunkSize)));
+  }
+  return window.btoa(chunks.join(''));
+}
 
 export async function startAtlasApp(): Promise<void> {
   'use strict';
@@ -37,6 +47,8 @@ export async function startAtlasApp(): Promise<void> {
 
   const model = new GraphModel(graphData);
   const { fieldOrder, domainOrder, edgeTypeOrder, defaultEdgeTypeIds } = model;
+  const staticAtlasSvgMode = new URL(window.location.href).searchParams.get('__staticAtlasSvg') === '1'
+    || document.querySelector('meta[name="atlas:static-svg-build"][content="1"]') !== null;
   const nodeRecord = model.nodeRecord;
   const nodeFieldIds = (node: GraphNode): string[] => model.nodeFieldIds(node);
   const nodeDomainLabels = (node: GraphNode): string[] => model.nodeDomainLabels(node);
@@ -88,7 +100,18 @@ export async function startAtlasApp(): Promise<void> {
 
 
   const storedUiState = readStoredUiState();
-  const urlUiState = readUrlUiState();
+  const urlUiState: UrlUiState = staticAtlasSvgMode
+    ? {
+        fields: fieldOrder,
+        domains: domainOrder,
+        edgeTypes: defaultEdgeTypeIds,
+        crossFieldVisibility: 'all',
+        edgeLabels: true,
+        junctions: true,
+        edgeZoomActivation: false,
+        layout: 'atlas'
+      }
+    : readUrlUiState();
   const conceptPageDefaults = locationController.conceptPageDefaultTaxonomy();
   const viewDefaults = initialView?.settings;
 
@@ -496,6 +519,17 @@ export async function startAtlasApp(): Promise<void> {
 
   const svgExporter = new SvgExporter(cy, model, state);
   const exportVisibleSvg = (): void => svgExporter.exportVisible();
+  const publishStaticAtlasSvg = (): void => {
+    const result = svgExporter.serializeVisible();
+    if (!result) throw new Error('The all-in graph has no visible nodes to export.');
+    const output = document.createElement('pre');
+    output.id = 'atlas-static-svg-output';
+    output.dataset.nodes = String(result.nodeCount);
+    output.dataset.edges = String(result.edgeCount);
+    output.textContent = encodeUtf8Base64(result.svg);
+    document.body.replaceChildren(output);
+    document.documentElement.dataset.atlasStaticSvg = 'ready';
+  };
 
   // Controls
   filterControls.initialize();
@@ -629,6 +663,10 @@ export async function startAtlasApp(): Promise<void> {
     const visible = visibleGraphElements();
     if (!visible.empty()) cy.fit(visible, 58);
     updateSemanticLabelSizes(true);
+    if (staticAtlasSvgMode) {
+      window.requestAnimationFrame(publishStaticAtlasSvg);
+      return;
+    }
     applyLocationState({ initial: true });
     syncNeighborhoodButton();
     scheduleFieldBands();

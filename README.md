@@ -16,6 +16,7 @@ The atlas is one graph rather than a collection of isolated applications. Fields
 - `/data/atlas.<hash>.json` — immutable canonical graph export (the exact URL is linked from each generated page)
 - `/data/schema.<hash>.json` — published graph JSON Schema
 - `/data/views.<hash>.json` — immutable guided-view definitions
+- `/static/atlas.svg` — stable, all-in SVG export containing every field, domain, concept, junction, and relation
 
 The generated site does not create or preserve `/m/`; configure an external redirect if one is required.
 
@@ -23,6 +24,7 @@ The generated site does not create or preserve `/m/`; configure an external redi
 
 - Node.js 20 or newer
 - npm
+- Google Chrome or Chromium available on `PATH` for the build-time all-in SVG export (or set `CHROME_BIN`)
 
 ```bash
 npm install
@@ -39,7 +41,7 @@ npm run typecheck
 npm test
 ```
 
-`npm run build` writes the publishable static site to `dist/`. `npm run build:pages` copies that output unchanged to `.pages/` for GitHub Pages.
+`npm run build` writes the publishable static site to `dist/`, including the stable `/static/atlas.svg` all-in export. The build opens the compiled application in headless Chrome/Chromium with every filter enabled and invokes the same `SvgExporter.serializeVisible()` implementation used by the runtime download button; there is no separate SVG renderer. `npm run build:pages` copies that output unchanged to `.pages/` for GitHub Pages.
 
 The validator checks field/domain membership, node and edge references, citations and source URLs, construction-junction consistency, structural direction and cycles, duplicate relations, source usage, generic detail sections, explicit inline-math markup, and every guided view's identifiers and settings.
 
@@ -65,6 +67,8 @@ scripts/
   build.mjs                  validates, compiles, generates pages, and assembles dist/
   generate-concept-pages.mjs canonical concept, directory, and field-scope pages
   generate-view-pages.mjs    view directory and crawlable view routes
+  generate-static-atlas-svg.mjs
+                              invokes the compiled runtime SVG exporter for /static/atlas.svg
   generate-seo-assets.mjs    sitemap, robots.txt, and llms.txt
   validate-data.mjs          semantic and reference validation
   prepare-pages.mjs          root-level GitHub Pages artifact
@@ -141,7 +145,7 @@ The browser escapes prose and sends only delimited formulas to KaTeX. `npm run m
 
 ## GitHub Pages
 
-`.github/workflows/pages.yml` installs locked dependencies, runs the complete `npm test` pipeline, prepares `.pages/`, and deploys it. The artifact now places the complete atlas at its root, including `/math/`, `/physics/`, `/concepts/`, and `/views/`.
+`.github/workflows/pages.yml` installs locked dependencies, runs the complete `npm test` pipeline, prepares `.pages/`, and deploys it. The artifact now places the complete atlas at its root, including `/math/`, `/physics/`, `/concepts/`, `/views/`, and `/static/atlas.svg`.
 
 ## License
 

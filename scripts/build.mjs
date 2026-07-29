@@ -7,6 +7,7 @@ import { build } from 'esbuild-wasm';
 import { generateSeoAssets } from './generate-seo-assets.mjs';
 import { generateConceptPages } from './generate-concept-pages.mjs';
 import { generateViewPages } from './generate-view-pages.mjs';
+import { generateStaticAtlasSvg } from './generate-static-atlas-svg.mjs';
 
 const root = new URL('../', import.meta.url);
 const dist = new URL('../dist/', import.meta.url);
@@ -22,6 +23,7 @@ await rm(buildDir, { recursive: true, force: true });
 await Promise.all([
   mkdir(new URL('assets/', dist), { recursive: true }),
   mkdir(new URL('data/', dist), { recursive: true }),
+  mkdir(new URL('static/', dist), { recursive: true }),
   mkdir(buildDir, { recursive: true })
 ]);
 
@@ -97,9 +99,18 @@ await Promise.all([
   cp(new URL('THIRD_PARTY_NOTICES.txt', root), new URL('THIRD_PARTY_NOTICES.txt', dist))
 ]);
 
-await generateSeoAssets({ graphData, viewsData, distUrl: dist, graphDataPath: `data/${graphFile}`, schemaPath: `data/${schemaFile}`, viewsPath: `data/${viewsFile}` });
 await generateConceptPages({ graphData, templateHtml: builtTemplate, distUrl: dist });
 await generateViewPages({ graphData, viewsData, templateHtml: builtTemplate, distUrl: dist });
+await generateStaticAtlasSvg({ distUrl: dist });
+await generateSeoAssets({
+  graphData,
+  viewsData,
+  distUrl: dist,
+  graphDataPath: `data/${graphFile}`,
+  schemaPath: `data/${schemaFile}`,
+  viewsPath: `data/${viewsFile}`,
+  atlasSvgPath: 'static/atlas.svg'
+});
 
 const manifest = {
   version: 1,
@@ -108,8 +119,9 @@ const manifest = {
     css: cssOutput ? publicPath(cssOutput).slice(1) : null,
     graph: `data/${graphFile}`,
     schema: `data/${schemaFile}`,
-    views: `data/${viewsFile}`
+    views: `data/${viewsFile}`,
+    atlasSvg: 'static/atlas.svg'
   }
 };
 await writeFile(new URL('asset-manifest.json', dist), `${JSON.stringify(manifest, null, 2)}\n`);
-console.log(`Built ${graphData.nodes.length} concepts, ${graphData.edges.length} edges, and ${viewsData.views.length} views into dist/.`);
+console.log(`Built ${graphData.nodes.length} concepts, ${graphData.edges.length} edges, ${viewsData.views.length} views, and static/atlas.svg into dist/.`);
