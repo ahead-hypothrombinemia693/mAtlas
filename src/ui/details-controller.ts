@@ -139,7 +139,7 @@ export class DetailsController {
     return `<section class="detail-section"><h3>Views</h3><div class="detail-view-list">${matches.map(({ view, sequenceIndex }) => `
       <a class="detail-view-link" href="${escapeHtml(this.options.viewNodeUrl(view.id, nodeId))}">
         <span class="material-icons" aria-hidden="true">explore</span>
-        <span class="detail-view-copy"><strong>${escapeHtml(view.title)}</strong><span>Start at step ${sequenceIndex + 1} of ${view.nodeSequence.length}</span></span>
+        <span class="detail-view-copy"><strong>${this.options.math.renderText(view.title)}</strong><span>Start at step ${sequenceIndex + 1} of ${view.nodeSequence.length}</span></span>
       </a>`).join('')}</div></section>`;
   }
 
@@ -177,7 +177,7 @@ export class DetailsController {
       const source = model.data.sources[id];
       if (!source) return '';
       const label = shortenSourceLabel(source.label, recordLabel, model.data.citationLegend);
-      return `<a class="citation-badge" href="${escapeHtml(source.url)}" target="_blank" rel="noopener" title="${escapeHtml(source.title)}">${escapeHtml(label)}</a>`;
+      return `<a class="citation-badge" href="${escapeHtml(source.url)}" target="_blank" rel="noopener" title="${escapeHtml(source.title)}">${this.options.math.renderText(label)}</a>`;
     }).join('')}</div>`;
   }
 

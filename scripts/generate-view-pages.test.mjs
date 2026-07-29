@@ -19,6 +19,9 @@ test('view page generator emits a directory and crawlable static routes', async 
 
     const index = await readFile(new URL('views/index.html', distUrl), 'utf8');
     assert.match(index, /Guided views/);
+    assert.match(index, /Local arithmetic and the 𝑝-adic world/);
+    assert.match(index, /dark components, and 𝛬CDM\./);
+    assert.doesNotMatch(index, />Local arithmetic and the \$p\$-adic world<|dark components, and \$\\Lambda\$CDM\./);
     for (const view of viewsData.views) {
       const html = await readFile(new URL(`views/${encodeURIComponent(view.id)}/index.html`, distUrl), 'utf8');
       assert.match(html, new RegExp(`atlas:view\" content=\"${view.id}`));
@@ -32,6 +35,36 @@ test('view page generator emits a directory and crawlable static routes', async 
       assert.match(html, /data-view-next/);
       assert.ok(html.includes(`Step 1 of ${view.nodeSequence.length}`));
     }
+  } finally {
+    await rm(directory, { recursive: true, force: true });
+  }
+});
+
+test('view page generator renders KaTeX in the view context heading title', async () => {
+  const directory = await mkdtemp(join(tmpdir(), 'atlas-views-'));
+  try {
+    const graphData = {
+      meta: { title: 'Atlas of Math' },
+      nodes: [{ id: 'a', label: 'A' }]
+    };
+    const view = {
+      id: 'math-title-view',
+      title: 'The $p$-adic world',
+      summary: 'A short guided path.',
+      narrative: 'Explore completions of number fields.',
+      featured: false,
+      tags: [],
+      nodeSequence: ['a']
+    };
+    const viewsData = { views: [view] };
+    const templateHtml = '<html><head><title></title><meta name="description" content=""><meta property="og:title" content=""><meta property="og:description" content=""><meta property="og:url" content=""><link rel="canonical" href=""><meta name="viewport" content="width=device-width, initial-scale=1"></head><body><section id="viewBanner" class="view-banner" aria-live="polite" hidden></section></body></html>';
+    const distUrl = pathToFileURL(`${directory}/`);
+
+    await generateViewPages({ graphData, viewsData, templateHtml, distUrl });
+
+    const html = await readFile(new URL(`views/${encodeURIComponent(view.id)}/index.html`, distUrl), 'utf8');
+    assert.match(html, /<span class="view-context-heading"><span class="kicker">Guided view<\/span><strong>The <span class="katex">/);
+    assert.ok(html.includes('<strong>The <span class="katex">p</span>-adic world</strong>') || html.includes('<strong>The <span class="katex">'));
   } finally {
     await rm(directory, { recursive: true, force: true });
   }

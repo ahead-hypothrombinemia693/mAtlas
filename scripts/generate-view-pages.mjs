@@ -1,5 +1,6 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 import { escapeHtml, renderInlineMath } from './inline-math.mjs';
+import { replaceInlineLatexWithUnicode } from './lightweight-math.mjs';
 
 const SITE_ORIGIN = 'https://atlas.madvay.com';
 const appUrl = (pathname = '') => new URL(pathname, `${SITE_ORIGIN}/`).toString();
@@ -28,7 +29,7 @@ function renderStaticBanner(view, graphData) {
       <details class="view-context-details" open>
         <summary>
           <span class="material-icons view-context-icon" aria-hidden="true">explore</span>
-          <span class="view-context-heading"><span class="kicker">Guided view</span><strong>${escapeHtml(view.title)}</strong></span>
+          <span class="view-context-heading"><span class="kicker">Guided view</span><strong>${renderInlineMath(view.title)}</strong></span>
           <span class="material-icons view-context-chevron" aria-hidden="true">expand_more</span>
         </summary>
         <div class="view-context-body">
@@ -77,9 +78,11 @@ function renderViewPage(templateHtml, graphData, view) {
 }
 
 function renderViewCard(view) {
+  const title = escapeHtml(replaceInlineLatexWithUnicode(view.title));
+  const summary = escapeHtml(replaceInlineLatexWithUnicode(view.summary));
   const imageSrc = view.image ? new URL(view.image.src, appUrl()).toString() : '';
   const image = view.image ? `<img src="${escapeHtml(imageSrc)}" alt="${escapeHtml(view.image.alt)}" loading="lazy">` : '';
-  return `<article>${image}<div><h2><a href="./${encodeURIComponent(view.id)}/">${escapeHtml(view.title)}</a></h2><p>${escapeHtml(view.summary)}</p>${renderTags(view.tags)}<p><strong>${view.nodeSequence.length} guided steps</strong></p><a class="open" href="./${encodeURIComponent(view.id)}/">Open view</a></div></article>`;
+  return `<article>${image}<div><h2><a href="./${encodeURIComponent(view.id)}/">${title}</a></h2><p>${summary}</p>${renderTags(view.tags)}<p><strong>${view.nodeSequence.length} guided steps</strong></p><a class="open" href="./${encodeURIComponent(view.id)}/">Open view</a></div></article>`;
 }
 
 function renderViewIndex(graphData, viewsData) {

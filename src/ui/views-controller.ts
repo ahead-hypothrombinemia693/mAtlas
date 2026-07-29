@@ -166,8 +166,8 @@ export class ViewsController {
     return `<article class="view-card${active ? ' active' : ''}">
       ${image}
       <div class="view-card-body">
-        <div class="view-card-heading"><h4>${escapeHtml(view.title)}</h4>${active ? '<span class="current-view-badge">Current</span>' : ''}</div>
-        <p>${escapeHtml(view.summary)}</p>
+        <div class="view-card-heading"><h4 class="math-rich">${this.options.math.renderText(view.title)}</h4>${active ? '<span class="current-view-badge">Current</span>' : ''}</div>
+        <p class="math-rich">${this.options.math.renderText(view.summary)}</p>
         <div class="view-tags">${view.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join('')}</div>
         <div class="view-card-meta">${view.nodeSequence.length} steps</div>
         <a class="button view-open-button${active ? ' secondary' : ' primary'}" href="${escapeHtml(this.options.viewPageUrl(view.id))}">${active ? 'Restart view' : 'Open view'}</a>
@@ -181,7 +181,7 @@ export class ViewsController {
       <details class="view-context-details"${this.bannerDetailsOpen ? ' open' : ''}>
         <summary>
           <span class="material-icons view-context-icon" aria-hidden="true">explore</span>
-          <span class="view-context-heading"><span class="kicker">Guided view</span><strong>${escapeHtml(view.title)}</strong></span>
+          <span class="view-context-heading"><span class="kicker">Guided view</span><strong>${this.options.math.renderText(view.title)}</strong></span>
           <span class="material-icons view-context-chevron" aria-hidden="true">expand_more</span>
         </summary>
         <div class="view-context-body">
@@ -203,7 +203,7 @@ export class ViewsController {
       <details class="view-context-details">
         <summary>
           <span class="material-icons view-context-icon" aria-hidden="true">explore</span>
-          <span class="view-context-heading"><span class="kicker">Guided view</span><strong>${escapeHtml(view.title)}</strong></span>
+          <span class="view-context-heading"><span class="kicker">Guided view</span><strong>${this.options.math.renderText(view.title)}</strong></span>
           <span class="material-icons view-context-chevron" aria-hidden="true">expand_more</span>
         </summary>
         <div class="view-context-body">

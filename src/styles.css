@@ -1377,6 +1377,13 @@ body:not(.atlas-loading) .graph-loader {
     border-color 180ms ease;
 }
 
+@media (min-width: 901px) {
+  .filters-panel {
+    width: var(--sidebar-left);
+    min-width: var(--sidebar-left);
+  }
+}
+
 .workspace.filters-collapsed {
   grid-template-columns: 0 minmax(0, 1fr) var(--sidebar-right);
 }
@@ -1391,7 +1398,7 @@ body:not(.atlas-loading) .graph-loader {
 
 .workspace.filters-collapsed .filters-panel {
   opacity: 0;
-  transform: translateX(-22px);
+  transform: translateX(-100%);
   pointer-events: none;
   border-right-color: transparent;
 }

@@ -82,3 +82,13 @@ test('the canvas renderer parks its perpetual frame loop while idle', async () =
   assert.match(controller, /this\.renderer\.startRenderLoop\(\)/);
   assert.match(controller, /this\.cy\.animated\(\) \|\| this\.renderer\.requestedFrame/);
 });
+
+test('view cards render inline math and the desktop filter panel slides at a fixed width', async () => {
+  const viewsController = await readFile(new URL('../src/ui/views-controller.ts', import.meta.url), 'utf8');
+  const styles = await readFile(new URL('../src/styles.css', import.meta.url), 'utf8');
+
+  assert.match(viewsController, /<h4 class="math-rich">\$\{this\.options\.math\.renderText\(view\.title\)\}<\/h4>/);
+  assert.match(viewsController, /<p class="math-rich">\$\{this\.options\.math\.renderText\(view\.summary\)\}<\/p>/);
+  assert.match(styles, /@media \(min-width: 901px\) \{\s*\.filters-panel \{\s*width: var\(--sidebar-left\);\s*min-width: var\(--sidebar-left\);/s);
+  assert.match(styles, /\.workspace\.filters-collapsed \.filters-panel \{[^}]*transform: translateX\(-100%\);/s);
+});
