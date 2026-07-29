@@ -9,6 +9,7 @@ export interface PanelControllerOptions {
   state: AppState;
   domainCount: number;
   mobileMediaQuery?: string;
+  onPanelStateChange?: () => void;
 }
 
 export class PanelController {
@@ -63,6 +64,7 @@ export class PanelController {
     leftRail.setAttribute('aria-expanded', String(state.filtersOpen));
     rightRail.setAttribute('aria-expanded', String(state.detailsOpen));
     this.scheduleGraphResize();
+    this.options.onPanelStateChange?.();
   }
 
   setOpen(panel: PanelName, open: boolean): void {

@@ -19,6 +19,7 @@
     "src/graph/organic-layout-core.ts",
     "src/app/location-controller.ts",
     "src/graph/visibility-policy.ts",
-    "src/state/taxonomy-selection.ts"
+    "src/state/taxonomy-selection.ts",
+    "src/ui/view-surface.ts"
   ]
 }

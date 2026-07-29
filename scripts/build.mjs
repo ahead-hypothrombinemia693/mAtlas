@@ -104,8 +104,8 @@ await generateViewPages({ graphData, viewsData, templateHtml: builtTemplate, dis
 const manifest = {
   version: 1,
   assets: {
-    app: publicPath(jsOutput).slice(2),
-    css: cssOutput ? publicPath(cssOutput).slice(2) : null,
+    app: publicPath(jsOutput).slice(1),
+    css: cssOutput ? publicPath(cssOutput).slice(1) : null,
     graph: `data/${graphFile}`,
     schema: `data/${schemaFile}`,
     views: `data/${viewsFile}`

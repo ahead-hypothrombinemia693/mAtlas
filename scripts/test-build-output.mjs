@@ -6,9 +6,14 @@ const viewsData = JSON.parse(await readFile(new URL('src/data/views.json', root)
 const manifest = JSON.parse(await readFile(new URL('asset-manifest.json', dist), 'utf8'));
 const sitemap = await readFile(new URL('sitemap.xml', dist), 'utf8');
 const viewIndex = await readFile(new URL('views/index.html', dist), 'utf8');
+const appIndex = await readFile(new URL('index.html', dist), 'utf8');
 
 if (!manifest.assets?.views) throw new Error('asset-manifest.json does not include the hashed views data asset.');
+if (!manifest.assets?.css) throw new Error('asset-manifest.json does not include the application stylesheet.');
 await access(new URL(manifest.assets.views, dist));
+const appCss = await readFile(new URL(manifest.assets.css, dist), 'utf8');
+if (!appIndex.includes('id="mobileViewContext"')) throw new Error('The application template lacks the mobile guided-view context host.');
+if (!appCss.includes('.mobile-view-context') || !appCss.includes('.view-banner-mobile')) throw new Error('The application stylesheet lacks the thin-screen guided-view surfaces.');
 if (!viewIndex.includes('Guided views')) throw new Error('The static view directory was not generated.');
 if (!sitemap.includes('<loc>https://atlas.madvay.com/views/</loc>')) throw new Error('The sitemap omits the view directory.');
 

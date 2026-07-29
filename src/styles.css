@@ -1679,3 +1679,147 @@ input:focus-visible {
     max-height: 68vh;
   }
 }
+/* Thin-screen view context: use one explanatory surface at a time. */
+.view-banner-mobile,
+.mobile-view-context {
+  display: none;
+}
+
+.view-context-details {
+  min-width: 0;
+}
+
+.view-context-details summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+.view-context-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.view-context-details summary:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, .24);
+  outline-offset: 3px;
+  border-radius: 5px;
+}
+
+.view-context-icon {
+  flex: 0 0 auto;
+  color: #1e40af;
+  font-size: 19px;
+}
+
+.view-context-heading {
+  display: grid;
+  flex: 1;
+  min-width: 0;
+  gap: 1px;
+}
+
+.view-context-heading strong {
+  overflow: hidden;
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.view-context-chevron {
+  flex: 0 0 auto;
+  color: #64748b;
+  font-size: 19px;
+  transition: transform 140ms ease;
+}
+
+.view-context-details[open] .view-context-chevron {
+  transform: rotate(180deg);
+}
+
+.view-context-body {
+  padding: 9px 0 1px 27px;
+}
+
+.view-context-body p {
+  margin: 0;
+  color: #475569;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.mobile-view-context[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  .view-banner-desktop {
+    display: none;
+  }
+
+  .view-banner-mobile {
+    display: block;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .view-banner {
+    top: 48px;
+    left: 10px;
+    width: calc(100% - 20px);
+    max-height: min(210px, calc(100% - 64px));
+    gap: 8px;
+    padding: 9px 9px 9px 11px;
+    overflow: auto;
+  }
+
+  .view-banner-close {
+    width: 28px;
+    height: 28px;
+  }
+
+  .view-banner-mobile .view-context-body {
+    padding-left: 27px;
+  }
+
+  .mobile-view-context:not([hidden]) {
+    display: block;
+    flex: 0 0 auto;
+    margin: -4px -4px 12px;
+    padding: 8px 10px 9px;
+    border: 1px solid #bfdbfe;
+    border-radius: 10px;
+    background: #eff6ff;
+  }
+
+  .mobile-view-context .view-context-body {
+    max-height: 120px;
+    padding: 9px 0 1px 27px;
+    overflow: auto;
+    overscroll-behavior: contain;
+  }
+
+  .mobile-view-context .view-banner-actions {
+    margin-top: 7px;
+  }
+}
+
+@media (max-width: 620px) {
+  .view-banner {
+    top: 46px;
+  }
+
+  .view-context-heading strong {
+    font-size: 12px;
+  }
+
+  .mobile-view-context:not([hidden]) {
+    margin: -6px -6px 10px;
+    padding: 7px 9px 8px;
+  }
+}

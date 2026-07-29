@@ -9,6 +9,7 @@ const testFiles = [
   'test/graph-model.test.mjs',
   'test/ui-state.test.mjs',
   'test/view-state.test.mjs',
+  'test/view-surface.test.mjs',
   'test/view-location.test.mjs',
   'test/view-data.test.mjs',
   'test/view-pages.test.mjs',

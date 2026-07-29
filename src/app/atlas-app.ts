@@ -131,7 +131,12 @@ export async function startAtlasApp(): Promise<void> {
   };
 
 
-  const panelController = new PanelController({ cy, state, domainCount: domainOrder.length });
+  const panelController = new PanelController({
+    cy,
+    state,
+    domainCount: domainOrder.length,
+    onPanelStateChange: () => viewsController?.syncPresentation()
+  });
   const fieldBandController = new FieldBandController({
     cy,
     model,
@@ -498,7 +503,9 @@ export async function startAtlasApp(): Promise<void> {
   viewsController = new ViewsController({
     views: viewsData.views,
     activeView: () => locationController.activeView(),
-    viewPageUrl: (viewId) => locationController.viewPageUrl(viewId)
+    viewPageUrl: (viewId) => locationController.viewPageUrl(viewId),
+    isMobileLayout: () => panelController.isMobileLayout(),
+    detailsOpen: () => state.detailsOpen
   });
   viewsController.initialize();
   buildHelp();
