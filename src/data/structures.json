@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Atlas of Fundamental Concepts",
-    "version": "1.3.0",
+    "version": "1.4.0",
     "description": "A source-backed visual atlas connecting the mathematics of physical theories to foundational laws, spacetime, quantum mechanics, QFT, Standard Model fields and interactions, controlled reductions and effective theories, composite hadrons and nuclei, and precision atomic structure.",
     "direction": "Fields are stacked vertically. Within a field, smaller level values are more structurally primitive or less composite; larger values generally indicate specialization, composition, effective description, collective organization, or emergence. The order is ontological and structural, not pedagogical difficulty.",
     "scope": "Mathematics and a deeply sourced physics atlas from classical and relativistic foundations through quantum mechanics, QFT consistency and symmetry structure, complete Standard Model field and particle content, electroweak and low-energy EFT matching, QCD chiral and nuclear effective layers, and atomic composition, states, spectra, interactions, and precision corrections through atoms and ions.",
@@ -13,6 +13,8 @@
       "impose-axiom",
       "induced-forgotten",
       "canonical-construction",
+      "quotient-construction",
+      "canonical-embedding",
       "combine-compatible",
       "representation-equivalence",
       "theorem-implication",
@@ -297,6 +299,32 @@
         "target": "Canonically constructed from"
       },
       "lineStyle": "dashed",
+      "activeInDataset": true,
+      "defaultVisible": true
+    },
+    "quotient-construction": {
+      "label": "Quotient construction",
+      "short": "quotient",
+      "description": "Identify elements by a stated equivalence relation and equip the quotient with the induced structure. The edge detail must state the representatives and equivalence relation.",
+      "color": "#0e7490",
+      "endpointLabels": {
+        "source": "Quotients to",
+        "target": "Obtained as quotient of"
+      },
+      "lineStyle": "dashed",
+      "activeInDataset": true,
+      "defaultVisible": true
+    },
+    "canonical-embedding": {
+      "label": "Canonical embedding",
+      "short": "embeds",
+      "description": "Map one structure injectively into another by the standard structure-preserving inclusion or representation. This records a canonical copy, not necessarily literal set containment.",
+      "color": "#1d4ed8",
+      "endpointLabels": {
+        "source": "Embeds canonically into",
+        "target": "Contains a canonical copy of"
+      },
+      "lineStyle": "solid",
       "activeInDataset": true,
       "defaultVisible": true
     },
@@ -8023,6 +8051,192 @@
       "title": "Rutherford proton-transmutation experiment",
       "url": "https://en.wikipedia.org/wiki/Discovery_of_the_proton",
       "kind": "encyclopedic reference"
+    },
+    "nlab-natural-number": {
+      "label": "nLab — natural number",
+      "title": "natural number",
+      "url": "https://ncatlab.org/nlab/show/natural%2Bnumber",
+      "kind": "mathematical reference"
+    },
+    "nlab-integer": {
+      "label": "nLab — integer",
+      "title": "integer",
+      "url": "https://ncatlab.org/nlab/show/integer",
+      "kind": "mathematical reference"
+    },
+    "nlab-rational-number": {
+      "label": "nLab — rational number",
+      "title": "rational number",
+      "url": "https://ncatlab.org/nlab/show/rational%2Bnumber",
+      "kind": "mathematical reference"
+    },
+    "nlab-real-number": {
+      "label": "nLab — real number",
+      "title": "real number",
+      "url": "https://ncatlab.org/nlab/show/real%2Bnumber",
+      "kind": "mathematical reference"
+    },
+    "nlab-complex-number": {
+      "label": "nLab — complex number",
+      "title": "complex number",
+      "url": "https://ncatlab.org/nlab/show/complex%2Bnumber",
+      "kind": "mathematical reference"
+    },
+    "sep-set-theory": {
+      "label": "Stanford Encyclopedia of Philosophy — Set Theory",
+      "title": "Set Theory",
+      "url": "https://plato.stanford.edu/entries/set-theory/",
+      "kind": "scholarly reference"
+    },
+    "sep-axiom-choice": {
+      "label": "Stanford Encyclopedia of Philosophy — The Axiom of Choice",
+      "title": "The Axiom of Choice",
+      "url": "https://plato.stanford.edu/entries/axiom-choice/",
+      "kind": "scholarly reference"
+    },
+    "sep-large-cardinals": {
+      "label": "Stanford Encyclopedia of Philosophy — Large Cardinals and Determinacy",
+      "title": "Large Cardinals and Determinacy",
+      "url": "https://plato.stanford.edu/entries/large-cardinals-determinacy/",
+      "kind": "scholarly reference"
+    },
+    "wp-empty-set": {
+      "label": "Wikipedia — Empty set",
+      "title": "Empty set",
+      "url": "https://en.wikipedia.org/wiki/Empty_set",
+      "kind": "encyclopedic reference"
+    },
+    "wp-von-neumann-ordinal": {
+      "label": "Wikipedia — Von Neumann ordinal",
+      "title": "Von Neumann ordinal",
+      "url": "https://en.wikipedia.org/wiki/Von_Neumann_ordinal",
+      "kind": "encyclopedic reference"
+    },
+    "wp-natural-number": {
+      "label": "Wikipedia — Natural number",
+      "title": "Natural number",
+      "url": "https://en.wikipedia.org/wiki/Natural_number",
+      "kind": "encyclopedic reference"
+    },
+    "wp-construction-integers": {
+      "label": "Wikipedia — Integer: Construction",
+      "title": "Integer",
+      "url": "https://en.wikipedia.org/wiki/Integer#Construction",
+      "kind": "encyclopedic reference"
+    },
+    "wp-rational-number": {
+      "label": "Wikipedia — Rational number",
+      "title": "Rational number",
+      "url": "https://en.wikipedia.org/wiki/Rational_number",
+      "kind": "encyclopedic reference"
+    },
+    "wp-construction-reals": {
+      "label": "Wikipedia — Construction of the real numbers",
+      "title": "Construction of the real numbers",
+      "url": "https://en.wikipedia.org/wiki/Construction_of_the_real_numbers",
+      "kind": "encyclopedic reference"
+    },
+    "wp-complex-number": {
+      "label": "Wikipedia — Complex number",
+      "title": "Complex number",
+      "url": "https://en.wikipedia.org/wiki/Complex_number",
+      "kind": "encyclopedic reference"
+    },
+    "wp-zf": {
+      "label": "Wikipedia — Zermelo–Fraenkel set theory",
+      "title": "Zermelo–Fraenkel set theory",
+      "url": "https://en.wikipedia.org/wiki/Zermelo%E2%80%93Fraenkel_set_theory",
+      "kind": "encyclopedic reference"
+    },
+    "wp-axiom-choice": {
+      "label": "Wikipedia — Axiom of choice",
+      "title": "Axiom of choice",
+      "url": "https://en.wikipedia.org/wiki/Axiom_of_choice",
+      "kind": "encyclopedic reference"
+    },
+    "wp-power-set": {
+      "label": "Wikipedia — Power set",
+      "title": "Power set",
+      "url": "https://en.wikipedia.org/wiki/Power_set",
+      "kind": "encyclopedic reference"
+    },
+    "wp-cantor-theorem": {
+      "label": "Wikipedia — Cantor’s theorem",
+      "title": "Cantor’s theorem",
+      "url": "https://en.wikipedia.org/wiki/Cantor%27s_theorem",
+      "kind": "encyclopedic reference"
+    },
+    "wp-ordinal-arithmetic": {
+      "label": "Wikipedia — Ordinal arithmetic",
+      "title": "Ordinal arithmetic",
+      "url": "https://en.wikipedia.org/wiki/Ordinal_arithmetic",
+      "kind": "encyclopedic reference"
+    },
+    "wp-transfinite-induction": {
+      "label": "Wikipedia — Transfinite induction",
+      "title": "Transfinite induction",
+      "url": "https://en.wikipedia.org/wiki/Transfinite_induction",
+      "kind": "encyclopedic reference"
+    },
+    "wp-first-uncountable-ordinal": {
+      "label": "Wikipedia — First uncountable ordinal",
+      "title": "First uncountable ordinal",
+      "url": "https://en.wikipedia.org/wiki/First_uncountable_ordinal",
+      "kind": "encyclopedic reference"
+    },
+    "wp-epsilon-number": {
+      "label": "Wikipedia — Epsilon number",
+      "title": "Epsilon number",
+      "url": "https://en.wikipedia.org/wiki/Epsilon_number",
+      "kind": "encyclopedic reference"
+    },
+    "wp-aleph-number": {
+      "label": "Wikipedia — Aleph number",
+      "title": "Aleph number",
+      "url": "https://en.wikipedia.org/wiki/Aleph_number",
+      "kind": "encyclopedic reference"
+    },
+    "wp-beth-number": {
+      "label": "Wikipedia — Beth number",
+      "title": "Beth number",
+      "url": "https://en.wikipedia.org/wiki/Beth_number",
+      "kind": "encyclopedic reference"
+    },
+    "wp-cardinality-continuum": {
+      "label": "Wikipedia — Cardinality of the continuum",
+      "title": "Cardinality of the continuum",
+      "url": "https://en.wikipedia.org/wiki/Cardinality_of_the_continuum",
+      "kind": "encyclopedic reference"
+    },
+    "wp-continuum-hypothesis": {
+      "label": "Wikipedia — Continuum hypothesis",
+      "title": "Continuum hypothesis",
+      "url": "https://en.wikipedia.org/wiki/Continuum_hypothesis",
+      "kind": "encyclopedic reference"
+    },
+    "wp-large-cardinal": {
+      "label": "Wikipedia — Large cardinal",
+      "title": "Large cardinal",
+      "url": "https://en.wikipedia.org/wiki/Large_cardinal",
+      "kind": "encyclopedic reference"
+    },
+    "wp-inaccessible-cardinal": {
+      "label": "Wikipedia — Inaccessible cardinal",
+      "title": "Inaccessible cardinal",
+      "url": "https://en.wikipedia.org/wiki/Inaccessible_cardinal",
+      "kind": "encyclopedic reference"
+    },
+    "wp-measurable-cardinal": {
+      "label": "Wikipedia — Measurable cardinal",
+      "title": "Measurable cardinal",
+      "url": "https://en.wikipedia.org/wiki/Measurable_cardinal",
+      "kind": "encyclopedic reference"
+    },
+    "wp-supercompact-cardinal": {
+      "label": "Wikipedia — Supercompact cardinal",
+      "title": "Supercompact cardinal",
+      "url": "https://en.wikipedia.org/wiki/Supercompact_cardinal",
+      "kind": "encyclopedic reference"
     }
   },
   "nodes": [
@@ -8142,7 +8356,8 @@
       "primaryField": "mathematics",
       "fields": [
         "mathematics"
-      ]
+      ],
+      "conceptType": "Set-theoretic property"
     },
     {
       "id": "well_founded_relation",
@@ -8208,7 +8423,8 @@
       "primaryField": "mathematics",
       "fields": [
         "mathematics"
-      ]
+      ],
+      "conceptType": "Set-theoretic order type"
     },
     {
       "id": "cardinal",
@@ -8238,6 +8454,882 @@
       "primaryField": "mathematics",
       "fields": [
         "mathematics"
+      ],
+      "conceptType": "Set-theoretic size representative"
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "empty_set",
+      "label": "Empty set",
+      "primaryDomain": "set-theory",
+      "domains": [
+        "set-theory",
+        "foundation"
+      ],
+      "level": 1,
+      "conceptType": "Canonical set",
+      "summary": "The unique set $\\varnothing$ having no elements.",
+      "carriers": [
+        "set $\\varnothing$"
+      ],
+      "data": [],
+      "axioms": [
+        "for every set $x$, $x\\notin\\varnothing$"
+      ],
+      "induces": [],
+      "notes": "The empty set is used as the von Neumann realization of zero, but that identification is a chosen encoding rather than an intrinsic meaning of zero.",
+      "citations": [
+        "wp-empty-set",
+        "openlogic-set-theory"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "power_set",
+      "label": "Power set",
+      "primaryDomain": "set-theory",
+      "domains": [
+        "set-theory",
+        "foundation"
+      ],
+      "level": 2,
+      "conceptType": "Canonical construction",
+      "summary": "For a set $X$, the set $\\mathcal P(X)$ of all subsets of $X$.",
+      "carriers": [
+        "set $X$"
+      ],
+      "data": [
+        "$\\mathcal P(X)=\\{A:A\\subseteq X\\}$"
+      ],
+      "axioms": [],
+      "induces": [
+        "strictly larger cardinality by Cantor’s theorem"
+      ],
+      "notes": "In ZF, the power-set axiom guarantees that $\\mathcal P(X)$ is a set.",
+      "citations": [
+        "wp-power-set",
+        "openlogic-set-theory"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "cantors_theorem",
+      "label": "Cantor’s theorem",
+      "primaryDomain": "set-theory",
+      "domains": [
+        "set-theory",
+        "logic",
+        "foundation"
+      ],
+      "level": 4,
+      "conceptType": "Theorem",
+      "summary": "For every set $X$, no function $X\\to\\mathcal P(X)$ is surjective; hence $|X|<|\\mathcal P(X)|$.",
+      "carriers": [
+        "set $X$"
+      ],
+      "data": [
+        "diagonal subset $D=\\{x\\in X:x\\notin f(x)\\}$"
+      ],
+      "axioms": [
+        "ordinary classical or intuitionistic set theory suffices"
+      ],
+      "induces": [
+        "an unending hierarchy of larger cardinalities"
+      ],
+      "notes": "The theorem rules out a greatest cardinal and does not depend on the continuum hypothesis.",
+      "citations": [
+        "wp-cantor-theorem",
+        "openlogic-set-theory"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "finite_ordinal",
+      "label": "Finite ordinal",
+      "primaryDomain": "set-theory",
+      "domains": [
+        "set-theory",
+        "number-theory",
+        "foundation"
+      ],
+      "level": 5,
+      "conceptType": "Ordinal class",
+      "summary": "A von Neumann ordinal $n$ obtained from $0=\\varnothing$ by finitely many successor steps, so $n=\\{0,1,\\ldots,n-1\\}$.  For example, $0=\\varnothing$, $1=\\{0\\}$, $2=\\{0,1\\}$, $3=\\{0,1,2\\}$, and so on, or in terms of empty sets: $0=\\varnothing$, $1=\\{\\varnothing\\}$, $2=\\{\\varnothing,\\{\\varnothing\\}\\}$, $3=\\{\\varnothing,\\{\\varnothing\\},\\{\\varnothing,\\{\\varnothing\\}\\}\\}$, and so on.",
+      "carriers": [
+        "transitive finite set $n$"
+      ],
+      "data": [],
+      "axioms": [
+        "membership well-orders $n$"
+      ],
+      "induces": [
+        "finite cardinal and natural-number numeral"
+      ],
+      "notes": "Finite ordinals are canonical representatives of finite order types and finite cardinalities.",
+      "citations": [
+        "wp-von-neumann-ordinal",
+        "openlogic-set-theory"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "successor_ordinal",
+      "label": "Successor ordinal",
+      "primaryDomain": "set-theory",
+      "domains": [
+        "set-theory",
+        "order",
+        "foundation"
+      ],
+      "level": 5,
+      "conceptType": "Ordinal class",
+      "summary": "An ordinal of the form $\\alpha+1=\\alpha\\cup\\{\\alpha\\}$.",
+      "carriers": [
+        "ordinal $\\alpha$"
+      ],
+      "data": [
+        "successor operation $S(\\alpha)=\\alpha\\cup\\{\\alpha\\}$"
+      ],
+      "axioms": [],
+      "induces": [
+        "least ordinal strictly greater than $\\alpha$"
+      ],
+      "notes": "",
+      "citations": [
+        "wp-ordinal",
+        "openlogic-set-theory"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "limit_ordinal",
+      "label": "Limit ordinal",
+      "primaryDomain": "set-theory",
+      "domains": [
+        "set-theory",
+        "order",
+        "logic"
+      ],
+      "level": 5,
+      "conceptType": "Ordinal class",
+      "summary": "A nonzero ordinal that is not a successor ordinal; equivalently, an ordinal equal to the union of all smaller ordinals.",
+      "carriers": [
+        "ordinal $\\lambda$"
+      ],
+      "data": [],
+      "axioms": [
+        "$\\lambda\\ne0$ and $\\alpha+1<\\lambda$ for every $\\alpha<\\lambda$"
+      ],
+      "induces": [
+        "limit stages of transfinite definitions"
+      ],
+      "notes": "$\\omega$ is the first limit ordinal.",
+      "citations": [
+        "wp-ordinal",
+        "openlogic-set-theory"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "omega",
+      "label": "First infinite ordinal $\\omega$",
+      "primaryDomain": "set-theory",
+      "domains": [
+        "set-theory",
+        "number-theory",
+        "order",
+        "foundation"
+      ],
+      "level": 6,
+      "conceptType": "Distinguished ordinal",
+      "summary": "The least infinite ordinal and the set of all finite von Neumann ordinals.",
+      "carriers": [
+        "set $\\omega=\\{0,1,2,\\ldots\\}$"
+      ],
+      "data": [
+        "membership order"
+      ],
+      "axioms": [
+        "least inductive set"
+      ],
+      "induces": [
+        "standard carrier of the natural numbers",
+        "first infinite cardinal when viewed by cardinality"
+      ],
+      "notes": "$\\omega$ is an ordinal; $\\aleph_0$ denotes its role as the least infinite cardinal. In the von Neumann convention they have the same underlying set but different structural roles.",
+      "citations": [
+        "wp-von-neumann-ordinal",
+        "nlab-natural-number",
+        "openlogic-set-theory"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "finite_cardinal",
+      "label": "Finite cardinal",
+      "primaryDomain": "set-theory",
+      "domains": [
+        "set-theory",
+        "number-theory"
+      ],
+      "level": 6,
+      "conceptType": "Cardinal class",
+      "summary": "A cardinal represented by a finite ordinal $n$.",
+      "carriers": [
+        "finite initial ordinal $n$"
+      ],
+      "data": [],
+      "axioms": [],
+      "induces": [
+        "cardinality of every finite set"
+      ],
+      "notes": "",
+      "citations": [
+        "wp-cardinal",
+        "openlogic-set-theory"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "infinite_cardinal",
+      "label": "Infinite cardinal",
+      "primaryDomain": "set-theory",
+      "domains": [
+        "set-theory",
+        "order",
+        "logic"
+      ],
+      "level": 6,
+      "conceptType": "Cardinal class",
+      "summary": "A cardinal that is not finite.",
+      "carriers": [
+        "initial ordinal $\\kappa$"
+      ],
+      "data": [],
+      "axioms": [
+        "$\\kappa\\ge\\aleph_0$"
+      ],
+      "induces": [],
+      "notes": "There is no greatest infinite cardinal, by Cantor’s theorem.",
+      "citations": [
+        "wp-cardinal",
+        "openlogic-set-theory"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "countable_ordinal",
+      "label": "Countable ordinal",
+      "primaryDomain": "set-theory",
+      "domains": [
+        "set-theory",
+        "order",
+        "logic"
+      ],
+      "level": 7,
+      "conceptType": "Ordinal class",
+      "summary": "An ordinal whose underlying set is finite or countably infinite.",
+      "carriers": [
+        "ordinal $\\alpha$"
+      ],
+      "data": [],
+      "axioms": [
+        "there is an injection $\\alpha\\to\\omega$"
+      ],
+      "induces": [],
+      "notes": "The collection of all countable ordinals is itself uncountable and forms $\\omega_1$.",
+      "citations": [
+        "wp-first-uncountable-ordinal",
+        "openlogic-set-theory"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "aleph_zero",
+      "label": "Countable infinity $\\aleph_0$",
+      "primaryDomain": "set-theory",
+      "domains": [
+        "set-theory",
+        "number-theory",
+        "order"
+      ],
+      "level": 7,
+      "conceptType": "Distinguished cardinal",
+      "summary": "The least infinite cardinal, represented by the initial ordinal $\\omega$.",
+      "carriers": [
+        "cardinal $\\aleph_0$"
+      ],
+      "data": [],
+      "axioms": [],
+      "induces": [
+        "cardinality of $\\mathbb N$, $\\mathbb Z$, and $\\mathbb Q$"
+      ],
+      "notes": "",
+      "citations": [
+        "wp-aleph-number",
+        "openlogic-set-theory"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "ordinal_arithmetic",
+      "label": "Ordinal arithmetic",
+      "primaryDomain": "set-theory",
+      "domains": [
+        "set-theory",
+        "order",
+        "logic"
+      ],
+      "level": 7,
+      "conceptType": "Transfinite construction",
+      "summary": "Addition, multiplication, and exponentiation of ordinals, defined recursively in the right argument.",
+      "carriers": [
+        "ordinals"
+      ],
+      "data": [
+        "$\\alpha+\\beta$",
+        "$\\alpha\\cdot\\beta$",
+        "$\\alpha^\\beta$"
+      ],
+      "axioms": [
+        "successor and limit clauses"
+      ],
+      "induces": [],
+      "notes": "Ordinal addition and multiplication are associative but generally not commutative.",
+      "citations": [
+        "wp-ordinal-arithmetic",
+        "openlogic-set-theory"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "transfinite_recursion",
+      "label": "Transfinite recursion",
+      "primaryDomain": "set-theory",
+      "domains": [
+        "set-theory",
+        "logic",
+        "foundation"
+      ],
+      "level": 8,
+      "conceptType": "Theorem schema",
+      "summary": "A method for defining a function on all ordinals by specifying its value from the values at earlier ordinals.",
+      "carriers": [
+        "ordinal domain"
+      ],
+      "data": [
+        "initial, successor, and limit clauses"
+      ],
+      "axioms": [
+        "well-foundedness of the ordinal order"
+      ],
+      "induces": [
+        "hierarchies indexed by ordinals"
+      ],
+      "notes": "",
+      "citations": [
+        "wp-transfinite-induction",
+        "openlogic-set-theory"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "first_uncountable_ordinal",
+      "label": "First uncountable ordinal $\\omega_1$",
+      "primaryDomain": "set-theory",
+      "domains": [
+        "set-theory",
+        "order",
+        "logic"
+      ],
+      "level": 8,
+      "conceptType": "Distinguished ordinal",
+      "summary": "The least uncountable ordinal, equivalently the set of all countable ordinals.",
+      "carriers": [
+        "ordinal $\\omega_1$"
+      ],
+      "data": [],
+      "axioms": [
+        "every $\\alpha<\\omega_1$ is countable"
+      ],
+      "induces": [
+        "initial ordinal $\\aleph_1$"
+      ],
+      "notes": "Its underlying cardinal is $\\aleph_1$; the continuum hypothesis asks whether $|\\mathbb R|=\\aleph_1$.",
+      "citations": [
+        "wp-first-uncountable-ordinal",
+        "openlogic-set-theory"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "successor_cardinal",
+      "label": "Successor cardinal",
+      "primaryDomain": "set-theory",
+      "domains": [
+        "set-theory",
+        "order"
+      ],
+      "level": 8,
+      "conceptType": "Cardinal class",
+      "summary": "For a cardinal $\\kappa$, the least cardinal $\\kappa^+$ strictly greater than $\\kappa$.",
+      "carriers": [
+        "cardinal $\\kappa^+$"
+      ],
+      "data": [],
+      "axioms": [
+        "$\\kappa<\\kappa^+$ and no cardinal lies strictly between them"
+      ],
+      "induces": [],
+      "notes": "Cantor’s theorem gives $\\kappa^+\\le 2^\\kappa$, but equality is not provable in ZFC in general.",
+      "citations": [
+        "wp-cardinal",
+        "wp-continuum-hypothesis",
+        "openlogic-set-theory"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "limit_cardinal",
+      "label": "Limit cardinal",
+      "primaryDomain": "set-theory",
+      "domains": [
+        "set-theory",
+        "order",
+        "logic"
+      ],
+      "level": 8,
+      "conceptType": "Cardinal class",
+      "summary": "An infinite cardinal that is not the successor of any cardinal.",
+      "carriers": [
+        "cardinal $\\lambda$"
+      ],
+      "data": [],
+      "axioms": [
+        "$\\lambda\\ne\\aleph_0$ and $\\kappa^+<\\lambda$ for every $\\kappa<\\lambda$"
+      ],
+      "induces": [],
+      "notes": "",
+      "citations": [
+        "wp-aleph-number",
+        "openlogic-set-theory"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "epsilon_zero",
+      "label": "Epsilon-zero ordinal $\\varepsilon_0$",
+      "primaryDomain": "set-theory",
+      "domains": [
+        "set-theory",
+        "logic",
+        "order"
+      ],
+      "level": 9,
+      "conceptType": "Distinguished ordinal",
+      "summary": "The least nonzero fixed point of ordinal exponentiation $\\alpha\\mapsto\\omega^\\alpha$.",
+      "carriers": [
+        "ordinal $\\varepsilon_0$"
+      ],
+      "data": [],
+      "axioms": [
+        "$\\omega^{\\varepsilon_0}=\\varepsilon_0$"
+      ],
+      "induces": [
+        "proof-theoretic ordinal of Peano arithmetic"
+      ],
+      "notes": "$\\varepsilon_0$ is countable despite lying far beyond every finite tower formed from $\\omega$ by ordinal exponentiation.",
+      "citations": [
+        "wp-epsilon-number",
+        "wp-ordinal-arithmetic"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "aleph_hierarchy",
+      "label": "Aleph hierarchy",
+      "primaryDomain": "set-theory",
+      "domains": [
+        "set-theory",
+        "order",
+        "logic"
+      ],
+      "level": 9,
+      "conceptType": "Cardinal hierarchy",
+      "summary": "The transfinite enumeration $\\aleph_\\alpha$ of the infinite initial ordinals.",
+      "carriers": [
+        "class-indexed family of cardinals"
+      ],
+      "data": [
+        "$\\aleph_0$",
+        "$\\aleph_{\\alpha+1}=\\aleph_\\alpha^+$",
+        "$\\aleph_\\lambda=\\sup_{\\alpha<\\lambda}\\aleph_\\alpha$ for limit $\\lambda$"
+      ],
+      "axioms": [],
+      "induces": [],
+      "notes": "In ZF, alephs enumerate the well-orderable infinite cardinalities; Choice says every set is well-orderable and hence has an aleph cardinality.",
+      "citations": [
+        "wp-aleph-number",
+        "openlogic-set-theory"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "beth_hierarchy",
+      "label": "Beth hierarchy",
+      "primaryDomain": "set-theory",
+      "domains": [
+        "set-theory",
+        "logic",
+        "foundation"
+      ],
+      "level": 9,
+      "conceptType": "Cardinal hierarchy",
+      "summary": "In ZFC, the cardinal hierarchy generated from $\\beth_0=\\aleph_0$ by repeated power sets and suprema at limit stages.",
+      "carriers": [
+        "class-indexed family of cardinals"
+      ],
+      "data": [
+        "$\\beth_{\\alpha+1}=2^{\\beth_\\alpha}$",
+        "$\\beth_\\lambda=\\sup_{\\alpha<\\lambda}\\beth_\\alpha$"
+      ],
+      "axioms": [],
+      "induces": [],
+      "notes": "Without Choice, a power set of a well-orderable set need not be well-orderable; the displayed initial-ordinal beth hierarchy therefore uses the ZFC setting selected later in the story.",
+      "citations": [
+        "wp-beth-number",
+        "wp-cantor-theorem"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "class_of_all_ordinals",
+      "label": "Class of all ordinals $\\mathrm{Ord}$",
+      "primaryDomain": "set-theory",
+      "domains": [
+        "set-theory",
+        "logic",
+        "foundation"
+      ],
+      "level": 10,
+      "conceptType": "Proper class",
+      "summary": "The collection of every ordinal, ordered by membership.",
+      "carriers": [
+        "proper class $\\mathrm{Ord}$"
+      ],
+      "data": [],
+      "axioms": [
+        "not a set"
+      ],
+      "induces": [
+        "indexing class for transfinite hierarchies"
+      ],
+      "notes": "If $\\mathrm{Ord}$ were a set, it would itself determine an ordinal larger than every ordinal, giving the Burali–Forti contradiction.",
+      "citations": [
+        "wp-ordinal",
+        "sep-set-theory"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "continuum_cardinal",
+      "label": "Cardinality of the continuum $\\mathfrak c$",
+      "primaryDomain": "set-theory",
+      "domains": [
+        "set-theory",
+        "analysis",
+        "number-theory"
+      ],
+      "level": 10,
+      "conceptType": "Distinguished cardinal",
+      "summary": "The size of the real line, denoted $\\mathfrak c$; in ZFC it is the cardinal $|\\mathbb R|=2^{\\aleph_0}$.",
+      "carriers": [
+        "equipotence type of $\\mathbb R$; an initial ordinal under Choice"
+      ],
+      "data": [],
+      "axioms": [],
+      "induces": [
+        "size of $\\mathcal P(\\mathbb N)$ and of the real line"
+      ],
+      "notes": "In bare ZF, $\\mathbb R$ need not be well-orderable, so its size need not have an initial-ordinal representative. The equality with $|\\mathcal P(\\mathbb N)|$ is equipotence, not literal identity.",
+      "citations": [
+        "wp-cardinality-continuum",
+        "wp-cantor-theorem"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "continuum_hypothesis",
+      "label": "Continuum hypothesis",
+      "primaryDomain": "set-theory",
+      "domains": [
+        "set-theory",
+        "logic",
+        "foundation"
+      ],
+      "level": 11,
+      "conceptType": "Independent statement",
+      "summary": "The assertion $2^{\\aleph_0}=\\aleph_1$, equivalently that no cardinal lies strictly between $\\aleph_0$ and $\\mathfrak c$.",
+      "carriers": [
+        "set-theoretic statement"
+      ],
+      "data": [],
+      "axioms": [],
+      "induces": [],
+      "notes": "Gödel and Cohen showed that CH can neither be disproved nor proved from ZFC, assuming ZFC is consistent.",
+      "citations": [
+        "wp-continuum-hypothesis",
+        "sep-set-theory"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "generalized_continuum_hypothesis",
+      "label": "Generalized continuum hypothesis",
+      "primaryDomain": "set-theory",
+      "domains": [
+        "set-theory",
+        "logic",
+        "foundation"
+      ],
+      "level": 12,
+      "conceptType": "Independent statement",
+      "summary": "The assertion $2^\\kappa=\\kappa^+$ for every infinite cardinal $\\kappa$.",
+      "carriers": [
+        "set-theoretic statement"
+      ],
+      "data": [],
+      "axioms": [],
+      "induces": [],
+      "notes": "GCH implies CH and is independent of ZFC, relative to the consistency of ZFC.",
+      "citations": [
+        "wp-continuum-hypothesis",
+        "sep-set-theory"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "large_cardinal",
+      "label": "Large cardinal",
+      "primaryDomain": "set-theory",
+      "domains": [
+        "set-theory",
+        "logic",
+        "foundation"
+      ],
+      "level": 13,
+      "conceptType": "Cardinal hierarchy class",
+      "summary": "A cardinal satisfying one of several strong closure, compactness, measure, or elementary-embedding properties used to calibrate set-theoretic strength.",
+      "carriers": [
+        "cardinal $\\kappa$"
+      ],
+      "data": [],
+      "axioms": [
+        "a specified large-cardinal property"
+      ],
+      "induces": [
+        "strong consistency and reflection principles"
+      ],
+      "notes": "ZFC does not prove that inaccessible, measurable, or supercompact cardinals exist, assuming the usual consistency hypotheses; their existence is adopted through additional axioms.",
+      "citations": [
+        "wp-large-cardinal",
+        "sep-large-cardinals"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "inaccessible_cardinal",
+      "label": "Strongly inaccessible cardinal",
+      "primaryDomain": "set-theory",
+      "domains": [
+        "set-theory",
+        "logic",
+        "foundation"
+      ],
+      "level": 14,
+      "conceptType": "Large-cardinal notion",
+      "summary": "An uncountable regular strong-limit cardinal.",
+      "carriers": [
+        "cardinal $\\kappa$"
+      ],
+      "data": [],
+      "axioms": [
+        "$\\operatorname{cf}(\\kappa)=\\kappa$",
+        "$2^\\lambda<\\kappa$ for every $\\lambda<\\kappa$"
+      ],
+      "induces": [
+        "a transitive set $V_\\kappa$ modeling a substantial fragment of ZFC"
+      ],
+      "notes": "The existence of an inaccessible cardinal is not provable in ZFC if ZFC is consistent.",
+      "citations": [
+        "wp-inaccessible-cardinal",
+        "sep-large-cardinals"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "measurable_cardinal",
+      "label": "Measurable cardinal",
+      "primaryDomain": "set-theory",
+      "domains": [
+        "set-theory",
+        "logic",
+        "measure"
+      ],
+      "level": 15,
+      "conceptType": "Large-cardinal notion",
+      "summary": "An uncountable cardinal $\\kappa$ carrying a nonprincipal $\\kappa$-complete ultrafilter.",
+      "carriers": [
+        "cardinal $\\kappa$"
+      ],
+      "data": [
+        "nonprincipal $\\kappa$-complete ultrafilter on $\\kappa$"
+      ],
+      "axioms": [],
+      "induces": [
+        "elementary embedding of the universe into an inner model"
+      ],
+      "notes": "Every measurable cardinal is strongly inaccessible in ZFC.",
+      "citations": [
+        "wp-measurable-cardinal",
+        "sep-large-cardinals"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "supercompact_cardinal",
+      "label": "Supercompact cardinal",
+      "primaryDomain": "set-theory",
+      "domains": [
+        "set-theory",
+        "logic",
+        "foundation"
+      ],
+      "level": 16,
+      "conceptType": "Large-cardinal notion",
+      "summary": "A cardinal $\\kappa$ whose elementary-embedding or fine-measure properties witness compactness at every scale $\\lambda\\ge\\kappa$.",
+      "carriers": [
+        "cardinal $\\kappa$"
+      ],
+      "data": [
+        "fine normal $\\kappa$-complete measures on $\\mathcal P_\\kappa(\\lambda)$ for all $\\lambda\\ge\\kappa$"
+      ],
+      "axioms": [],
+      "induces": [
+        "very strong compactness and reflection principles"
+      ],
+      "notes": "Every supercompact cardinal is measurable. Measurability alone does not imply supercompactness.",
+      "citations": [
+        "wp-supercompact-cardinal",
+        "sep-large-cardinals"
       ]
     },
     {
@@ -13016,7 +14108,8 @@
       "primaryField": "mathematics",
       "fields": [
         "mathematics"
-      ]
+      ],
+      "conceptType": "Foundational structure"
     },
     {
       "id": "pointed_set",
@@ -13110,6 +14203,240 @@
       "primaryField": "mathematics",
       "fields": [
         "mathematics"
+      ],
+      "conceptType": "Foundational structure"
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "zermelo_fraenkel_set_theory",
+      "label": "Zermelo–Fraenkel set theory (ZF)",
+      "primaryDomain": "foundation",
+      "domains": [
+        "foundation",
+        "set-theory",
+        "logic"
+      ],
+      "level": 2,
+      "conceptType": "Axiomatic theory",
+      "summary": "The standard first-order set theory with extensionality, foundation, pairing, union, power set, infinity, and the separation and replacement schemas, but without the axiom of choice.",
+      "carriers": [
+        "first-order language with binary relation $\\in$"
+      ],
+      "data": [
+        "axioms and axiom schemas of ZF"
+      ],
+      "axioms": [],
+      "induces": [
+        "formal universe in which the set-theoretic constructions are carried out"
+      ],
+      "notes": "Equivalent presentations may trade some axioms for theorems; the defining editorial distinction here is that ZF omits Choice.",
+      "citations": [
+        "wp-zf",
+        "openlogic-set-theory",
+        "sep-set-theory"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "axiom_of_choice",
+      "label": "Axiom of choice (AC)",
+      "primaryDomain": "foundation",
+      "domains": [
+        "foundation",
+        "set-theory",
+        "logic"
+      ],
+      "level": 3,
+      "conceptType": "Axiom",
+      "summary": "The assertion that every set-indexed family of nonempty sets has a choice function.",
+      "carriers": [
+        "set-theoretic statement"
+      ],
+      "data": [
+        "choice function selecting one element from each member of a family"
+      ],
+      "axioms": [],
+      "induces": [
+        "well-ordering theorem and Zorn’s lemma over ZF"
+      ],
+      "notes": "AC is independent of ZF, assuming ZF is consistent. Its standard equivalents are equivalent over ZF, not in arbitrary weak background theories.",
+      "citations": [
+        "wp-axiom-choice",
+        "sep-axiom-choice",
+        "openlogic-set-theory"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "well_ordering_theorem",
+      "label": "Well-ordering theorem",
+      "primaryDomain": "foundation",
+      "domains": [
+        "foundation",
+        "set-theory",
+        "order",
+        "logic"
+      ],
+      "level": 4,
+      "conceptType": "Theorem",
+      "summary": "Every set can be well-ordered.",
+      "carriers": [
+        "set-theoretic statement"
+      ],
+      "data": [],
+      "axioms": [],
+      "induces": [
+        "a cardinal representative for every set"
+      ],
+      "notes": "Over ZF, the well-ordering theorem is equivalent to the axiom of choice.",
+      "citations": [
+        "sep-axiom-choice",
+        "openlogic-set-theory"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "zfc_set_theory",
+      "label": "Zermelo–Fraenkel set theory with Choice (ZFC)",
+      "primaryDomain": "foundation",
+      "domains": [
+        "foundation",
+        "set-theory",
+        "logic"
+      ],
+      "level": 4,
+      "conceptType": "Axiomatic theory",
+      "summary": "ZF augmented by the axiom of choice.",
+      "carriers": [
+        "first-order language with binary relation $\\in$"
+      ],
+      "data": [
+        "all axioms and schemas of ZF",
+        "axiom of choice"
+      ],
+      "axioms": [],
+      "induces": [
+        "the conventional classical foundational setting for much of mathematics"
+      ],
+      "notes": "CH, GCH, and the existence of inaccessible, measurable, or supercompact cardinals are not theorems of ZFC, under the corresponding consistency assumptions.",
+      "citations": [
+        "wp-zf",
+        "wp-axiom-choice",
+        "sep-set-theory",
+        "sep-large-cardinals"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "von_neumann_zero",
+      "label": "Von Neumann zero $0$",
+      "primaryDomain": "foundation",
+      "domains": [
+        "foundation",
+        "set-theory",
+        "number-theory"
+      ],
+      "level": 2,
+      "conceptType": "Set-theoretic numeral",
+      "summary": "The chosen realization $0:=\\varnothing$.",
+      "carriers": [
+        "set $\\varnothing$"
+      ],
+      "data": [],
+      "axioms": [],
+      "induces": [
+        "first finite ordinal and finite cardinal"
+      ],
+      "notes": "This is the standard von Neumann encoding; abstract zero is not intrinsically identical with the empty set.",
+      "citations": [
+        "wp-von-neumann-ordinal",
+        "nlab-natural-number",
+        "openlogic-set-theory"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "von_neumann_successor",
+      "label": "Von Neumann successor",
+      "primaryDomain": "foundation",
+      "domains": [
+        "foundation",
+        "set-theory",
+        "number-theory"
+      ],
+      "level": 3,
+      "conceptType": "Canonical construction",
+      "summary": "The operation $S(x)=x\\cup\\{x\\}$; on ordinals it produces the least larger ordinal.",
+      "carriers": [
+        "set or ordinal $x$"
+      ],
+      "data": [
+        "$S(x)=x\\cup\\{x\\}$"
+      ],
+      "axioms": [],
+      "induces": [
+        "finite ordinals by iteration from $0$",
+        "successor ordinals"
+      ],
+      "notes": "",
+      "citations": [
+        "wp-von-neumann-ordinal",
+        "openlogic-set-theory"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "von_neumann_one",
+      "label": "Von Neumann one $1$",
+      "primaryDomain": "foundation",
+      "domains": [
+        "foundation",
+        "set-theory",
+        "number-theory"
+      ],
+      "level": 4,
+      "conceptType": "Set-theoretic numeral",
+      "summary": "The set $1:=S(0)=\\{0\\}=\\{\\varnothing\\}$.",
+      "carriers": [
+        "singleton $\\{\\varnothing\\}$"
+      ],
+      "data": [],
+      "axioms": [],
+      "induces": [
+        "second finite ordinal and cardinal"
+      ],
+      "notes": "",
+      "citations": [
+        "wp-von-neumann-ordinal",
+        "nlab-natural-number"
       ]
     },
     {
@@ -13145,6 +14472,189 @@
       "primaryField": "mathematics",
       "fields": [
         "mathematics"
+      ],
+      "conceptType": "Axiomatic number system"
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "natural_numbers",
+      "label": "Natural numbers $\\mathbb N$",
+      "primaryDomain": "number-theory",
+      "domains": [
+        "number-theory",
+        "algebra",
+        "order",
+        "foundation",
+        "set-theory"
+      ],
+      "level": 7,
+      "conceptType": "Number system",
+      "summary": "The standard Peano system, realized here on the carrier $\\omega$ with zero, successor, addition, multiplication, and order.",
+      "carriers": [
+        "set $\\omega$"
+      ],
+      "data": [
+        "$0$",
+        "$S(n)=n\\cup\\{n\\}$",
+        "addition and multiplication by recursion",
+        "usual well-order"
+      ],
+      "axioms": [
+        "Peano axioms"
+      ],
+      "induces": [
+        "commutative semiring structure"
+      ],
+      "notes": "The atlas distinguishes the abstract Peano structure from its selected von Neumann carrier $\\omega$.",
+      "citations": [
+        "nlab-natural-number",
+        "wp-natural-number",
+        "wp-peano"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "integer_difference_pairs",
+      "label": "Difference pairs of natural numbers",
+      "primaryDomain": "number-theory",
+      "domains": [
+        "number-theory",
+        "set-theory",
+        "algebra"
+      ],
+      "level": 8,
+      "conceptType": "Quotient presentation",
+      "summary": "Pairs $(a,b)\\in\\mathbb N^2$ representing formal differences $a-b$.",
+      "carriers": [
+        "set $\\mathbb N\\times\\mathbb N$"
+      ],
+      "data": [
+        "equivalence relation $(a,b)\\sim(c,d)$ iff $a+d=b+c$"
+      ],
+      "axioms": [],
+      "induces": [
+        "quotient abelian group"
+      ],
+      "notes": "This is the Grothendieck group completion of the additive commutative monoid $\\mathbb N$.",
+      "citations": [
+        "wp-construction-integers",
+        "nlab-integer"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "integers",
+      "label": "Integers $\\mathbb Z$",
+      "primaryDomain": "number-theory",
+      "domains": [
+        "number-theory",
+        "algebra",
+        "order",
+        "set-theory"
+      ],
+      "level": 10,
+      "conceptType": "Number system",
+      "summary": "The ordered commutative ring obtained from formal differences of natural numbers.",
+      "carriers": [
+        "quotient $(\\mathbb N\\times\\mathbb N)/\\sim$"
+      ],
+      "data": [
+        "addition",
+        "multiplication",
+        "total order"
+      ],
+      "axioms": [
+        "integral-domain laws"
+      ],
+      "induces": [
+        "Euclidean-domain structure"
+      ],
+      "notes": "The map $n\\mapsto[(n,0)]$ canonically embeds $\\mathbb N$ into $\\mathbb Z$; it need not be literal subset inclusion in the quotient realization.",
+      "citations": [
+        "wp-construction-integers",
+        "nlab-integer"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "rational_fraction_pairs",
+      "label": "Integer fraction pairs",
+      "primaryDomain": "number-theory",
+      "domains": [
+        "number-theory",
+        "set-theory",
+        "algebra"
+      ],
+      "level": 11,
+      "conceptType": "Quotient presentation",
+      "summary": "Pairs $(a,b)\\in\\mathbb Z\\times(\\mathbb Z\\setminus\\{0\\})$ representing fractions $a/b$.",
+      "carriers": [
+        "set $\\mathbb Z\\times(\\mathbb Z\\setminus\\{0\\})$"
+      ],
+      "data": [
+        "equivalence relation $(a,b)\\sim(c,d)$ iff $ad=bc$"
+      ],
+      "axioms": [],
+      "induces": [
+        "field-of-fractions quotient"
+      ],
+      "notes": "",
+      "citations": [
+        "wp-rational-number",
+        "nlab-rational-number"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "rational_numbers",
+      "label": "Rational numbers $\\mathbb Q$",
+      "primaryDomain": "number-theory",
+      "domains": [
+        "number-theory",
+        "algebra",
+        "order",
+        "set-theory"
+      ],
+      "level": 13,
+      "conceptType": "Number system",
+      "summary": "The ordered field of fractions of $\\mathbb Z$.",
+      "carriers": [
+        "quotient of integer fraction pairs"
+      ],
+      "data": [
+        "field operations",
+        "usual total order"
+      ],
+      "axioms": [
+        "ordered-field laws"
+      ],
+      "induces": [
+        "countable dense linear order without endpoints"
+      ],
+      "notes": "The map $z\\mapsto[(z,1)]$ canonically embeds $\\mathbb Z$ into $\\mathbb Q$.",
+      "citations": [
+        "wp-rational-number",
+        "nlab-rational-number"
       ]
     },
     {
@@ -18118,6 +19628,224 @@
       "primaryField": "mathematics",
       "fields": [
         "mathematics"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "dedekind_cut_reals",
+      "label": "Dedekind-cut real line",
+      "primaryDomain": "analysis",
+      "domains": [
+        "analysis",
+        "order",
+        "set-theory",
+        "number-theory"
+      ],
+      "level": 14,
+      "conceptType": "Set-theoretic realization",
+      "summary": "The ordered field whose elements are proper downward-closed subsets of $\\mathbb Q$ with no greatest element.",
+      "carriers": [
+        "set of Dedekind cuts in $\\mathbb Q$"
+      ],
+      "data": [
+        "order by inclusion",
+        "cut addition and multiplication"
+      ],
+      "axioms": [
+        "cut conditions"
+      ],
+      "induces": [
+        "Dedekind-complete ordered field"
+      ],
+      "notes": "This realization emphasizes order completeness and is canonically isomorphic to the Cauchy-sequence realization.",
+      "citations": [
+        "wp-construction-reals",
+        "nlab-real-number"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "rational_cauchy_sequences",
+      "label": "Cauchy sequences of rationals",
+      "primaryDomain": "analysis",
+      "domains": [
+        "analysis",
+        "topology",
+        "set-theory",
+        "number-theory"
+      ],
+      "level": 14,
+      "conceptType": "Quotient presentation",
+      "summary": "Rational Cauchy sequences, with two sequences identified when their difference converges to zero.",
+      "carriers": [
+        "set of Cauchy sequences in $\\mathbb Q$"
+      ],
+      "data": [
+        "equivalence relation $(a_n)\\sim(b_n)$ iff $a_n-b_n\\to0$"
+      ],
+      "axioms": [],
+      "induces": [
+        "metric completion of $\\mathbb Q$"
+      ],
+      "notes": "The definition of convergence here uses the rational absolute-value metric, not a prior construction of the real numbers.",
+      "citations": [
+        "wp-construction-reals",
+        "nlab-real-number"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "real_numbers",
+      "label": "Real numbers $\\mathbb R$",
+      "primaryDomain": "analysis",
+      "domains": [
+        "analysis",
+        "order",
+        "algebra",
+        "topology",
+        "number-theory"
+      ],
+      "level": 15,
+      "conceptType": "Number system",
+      "summary": "The complete Archimedean ordered field, unique up to unique order-preserving field isomorphism.",
+      "carriers": [
+        "set $\\mathbb R$"
+      ],
+      "data": [
+        "field operations",
+        "total order",
+        "order topology and metric"
+      ],
+      "axioms": [
+        "ordered-field laws",
+        "least-upper-bound property"
+      ],
+      "induces": [
+        "real line and continuum"
+      ],
+      "notes": "Dedekind cuts and Cauchy sequences give different set-theoretic realizations of the same abstract ordered field.",
+      "citations": [
+        "wp-construction-reals",
+        "nlab-real-number"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "complex_pair_realization",
+      "label": "Ordered-pair complex field",
+      "primaryDomain": "analysis",
+      "domains": [
+        "analysis",
+        "algebra",
+        "set-theory",
+        "number-theory"
+      ],
+      "level": 16,
+      "conceptType": "Set-theoretic realization",
+      "summary": "The field on $\\mathbb R^2$ with $(a,b)(c,d)=(ac-bd,ad+bc)$.",
+      "carriers": [
+        "set $\\mathbb R^2$"
+      ],
+      "data": [
+        "componentwise addition",
+        "complex multiplication"
+      ],
+      "axioms": [],
+      "induces": [
+        "element $i=(0,1)$ with $i^2=-1$"
+      ],
+      "notes": "",
+      "citations": [
+        "wp-complex-number",
+        "nlab-complex-number"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "complex_polynomial_quotient",
+      "label": "Polynomial-quotient complex field",
+      "primaryDomain": "analysis",
+      "domains": [
+        "analysis",
+        "algebra",
+        "set-theory",
+        "number-theory"
+      ],
+      "level": 16,
+      "conceptType": "Quotient realization",
+      "summary": "The quotient field $\\mathbb R[x]/(x^2+1)$.",
+      "carriers": [
+        "quotient of $\\mathbb R[x]$"
+      ],
+      "data": [
+        "residue class $i=[x]$"
+      ],
+      "axioms": [
+        "$i^2=-1$"
+      ],
+      "induces": [],
+      "notes": "Because $x^2+1$ is irreducible over $\\mathbb R$, the quotient is a field.",
+      "citations": [
+        "wp-complex-number",
+        "nlab-complex-number"
+      ]
+    },
+    {
+      "kind": "structure",
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ],
+      "id": "complex_numbers",
+      "label": "Complex numbers $\\mathbb C$",
+      "primaryDomain": "analysis",
+      "domains": [
+        "analysis",
+        "algebra",
+        "topology",
+        "number-theory"
+      ],
+      "level": 17,
+      "conceptType": "Number system",
+      "summary": "The algebraically closed topological field obtained from $\\mathbb R$ by adjoining a square root $i$ of $-1$.",
+      "carriers": [
+        "set $\\mathbb C$"
+      ],
+      "data": [
+        "field operations",
+        "Euclidean topology",
+        "complex conjugation"
+      ],
+      "axioms": [
+        "$i^2=-1$"
+      ],
+      "induces": [
+        "two-dimensional real vector-space structure"
+      ],
+      "notes": "$\\mathbb C$ cannot be ordered as an ordered field. The pair and polynomial-quotient constructions are equivalent presentations, not simultaneous literal definitions.",
+      "citations": [
+        "wp-complex-number",
+        "nlab-complex-number"
       ]
     },
     {
@@ -48721,6 +50449,1128 @@
         "wp-physics-rutherford_proton_transmutation",
         "doe-protons",
         "pdg-rpp"
+      ]
+    },
+    {
+      "id": "set_to_empty_set",
+      "source": "set",
+      "target": "empty_set",
+      "type": "impose-axiom",
+      "label": "require no elements",
+      "detail": "Select the unique set having no elements.",
+      "citations": [
+        "wp-empty-set",
+        "openlogic-set-theory"
+      ],
+      "overview": true
+    },
+    {
+      "id": "set_to_power_set",
+      "source": "set",
+      "target": "power_set",
+      "type": "canonical-construction",
+      "label": "form all subsets",
+      "detail": "Send $X$ to $\\mathcal P(X)$, the set of all subsets of $X$.",
+      "citations": [
+        "wp-power-set",
+        "openlogic-set-theory"
+      ],
+      "overview": true
+    },
+    {
+      "id": "power_set_to_cantors_theorem",
+      "source": "power_set",
+      "target": "cantors_theorem",
+      "type": "theorem-implication",
+      "label": "strictly larger than its base",
+      "detail": "Cantor’s diagonal argument proves that $|X|<|\\mathcal P(X)|$ for every set $X$.",
+      "citations": [
+        "wp-cantor-theorem",
+        "openlogic-set-theory"
+      ],
+      "overview": true
+    },
+    {
+      "id": "empty_set_to_von_neumann_zero",
+      "source": "empty_set",
+      "target": "von_neumann_zero",
+      "type": "representation-equivalence",
+      "label": "chosen as zero",
+      "detail": "The von Neumann convention uses the empty set as the set-theoretic representative of the abstract numeral $0$.",
+      "citations": [
+        "wp-von-neumann-ordinal",
+        "nlab-natural-number"
+      ],
+      "overview": true
+    },
+    {
+      "id": "von_neumann_zero_to_one",
+      "source": "von_neumann_zero",
+      "target": "von_neumann_one",
+      "type": "canonical-construction",
+      "label": "apply successor",
+      "detail": "Applying $S(x)=x\\cup\\{x\\}$ to $0$ gives $1=\\{0\\}$.",
+      "citations": [
+        "wp-von-neumann-ordinal",
+        "openlogic-set-theory"
+      ],
+      "overview": true
+    },
+    {
+      "id": "von_neumann_successor_to_one",
+      "source": "von_neumann_successor",
+      "target": "von_neumann_one",
+      "type": "canonical-construction",
+      "label": "$S(0)=1$",
+      "detail": "The successor operation sends $0=\\varnothing$ to $1=\\{\\varnothing\\}$.",
+      "citations": [
+        "wp-von-neumann-ordinal"
+      ]
+    },
+    {
+      "id": "von_neumann_successor_to_finite_ordinal",
+      "source": "von_neumann_successor",
+      "target": "finite_ordinal",
+      "type": "canonical-construction",
+      "label": "iterate from zero",
+      "detail": "Finite iteration of von Neumann successor from $0$ produces exactly the finite ordinals.",
+      "citations": [
+        "wp-von-neumann-ordinal",
+        "openlogic-set-theory"
+      ],
+      "overview": true
+    },
+    {
+      "id": "finite_set_to_finite_ordinal",
+      "source": "finite_set",
+      "target": "finite_ordinal",
+      "type": "impose-axiom",
+      "label": "require ordinal form",
+      "detail": "Select the finite sets that are transitive and well-ordered by membership; these are the finite von Neumann ordinals.",
+      "citations": [
+        "wp-von-neumann-ordinal",
+        "openlogic-set-theory"
+      ]
+    },
+    {
+      "id": "ordinal_to_finite_ordinal",
+      "source": "ordinal",
+      "target": "finite_ordinal",
+      "type": "classification",
+      "label": "finite ordinals",
+      "detail": "Finite ordinals are the finite members of the ordinal hierarchy.",
+      "citations": [
+        "wp-ordinal",
+        "wp-von-neumann-ordinal"
+      ]
+    },
+    {
+      "id": "ordinal_to_successor_ordinal",
+      "source": "ordinal",
+      "target": "successor_ordinal",
+      "type": "classification",
+      "label": "successor ordinals",
+      "detail": "Successor ordinals are ordinals of the form $\\alpha+1$.",
+      "citations": [
+        "wp-ordinal",
+        "openlogic-set-theory"
+      ]
+    },
+    {
+      "id": "ordinal_to_limit_ordinal",
+      "source": "ordinal",
+      "target": "limit_ordinal",
+      "type": "classification",
+      "label": "limit ordinals",
+      "detail": "Limit ordinals are the nonzero ordinals with no immediate predecessor.",
+      "citations": [
+        "wp-ordinal",
+        "openlogic-set-theory"
+      ]
+    },
+    {
+      "id": "finite_ordinal_to_omega",
+      "source": "finite_ordinal",
+      "target": "omega",
+      "type": "canonical-construction",
+      "label": "collect all finite ordinals",
+      "detail": "$\\omega$ is the set of all finite ordinals.",
+      "citations": [
+        "wp-von-neumann-ordinal",
+        "openlogic-set-theory"
+      ],
+      "overview": true
+    },
+    {
+      "id": "limit_ordinal_to_omega",
+      "source": "limit_ordinal",
+      "target": "omega",
+      "type": "classification",
+      "label": "first limit ordinal",
+      "detail": "$\\omega$ is the least nonzero limit ordinal.",
+      "citations": [
+        "wp-ordinal",
+        "openlogic-set-theory"
+      ]
+    },
+    {
+      "id": "ordinal_to_omega",
+      "source": "ordinal",
+      "target": "omega",
+      "type": "classification",
+      "label": "first infinite ordinal",
+      "detail": "$\\omega$ is the first infinite member of the ordinal hierarchy.",
+      "citations": [
+        "wp-ordinal",
+        "openlogic-set-theory"
+      ]
+    },
+    {
+      "id": "omega_to_natural_numbers",
+      "source": "omega",
+      "target": "natural_numbers",
+      "type": "representation-equivalence",
+      "label": "standard carrier of $\\mathbb N$",
+      "detail": "Equip $\\omega$ with zero, successor, recursively defined arithmetic, and its membership order to obtain the standard natural-number system.",
+      "citations": [
+        "nlab-natural-number",
+        "wp-natural-number"
+      ],
+      "overview": true
+    },
+    {
+      "id": "peano_system_to_natural_numbers",
+      "source": "peano_system",
+      "target": "natural_numbers",
+      "type": "classification",
+      "label": "standard Peano system",
+      "detail": "$\\mathbb N$ on carrier $\\omega$ is the standard second-order Peano system.",
+      "citations": [
+        "wp-peano",
+        "nlab-natural-number"
+      ]
+    },
+    {
+      "id": "semiring_to_natural_numbers",
+      "source": "semiring",
+      "target": "natural_numbers",
+      "type": "classification",
+      "label": "initial arithmetic semiring",
+      "detail": "With its usual operations, $\\mathbb N$ is a commutative semiring and is initial among semirings in the standard unital convention.",
+      "citations": [
+        "nlab-natural-number"
+      ]
+    },
+    {
+      "id": "natural_numbers_to_integer_pairs",
+      "source": "natural_numbers",
+      "target": "integer_difference_pairs",
+      "type": "canonical-construction",
+      "label": "form formal differences",
+      "detail": "Use $\\mathbb N\\times\\mathbb N$ to represent differences before quotienting.",
+      "citations": [
+        "wp-construction-integers",
+        "nlab-integer"
+      ],
+      "overview": true
+    },
+    {
+      "id": "integer_pairs_to_integers",
+      "source": "integer_difference_pairs",
+      "target": "integers",
+      "type": "quotient-construction",
+      "label": "identify equal differences",
+      "detail": "Quotient by $(a,b)\\sim(c,d)$ exactly when $a+d=b+c$; induced operations produce $\\mathbb Z$.",
+      "citations": [
+        "wp-construction-integers",
+        "nlab-integer"
+      ],
+      "overview": true
+    },
+    {
+      "id": "natural_numbers_into_integers",
+      "source": "natural_numbers",
+      "target": "integers",
+      "type": "canonical-embedding",
+      "label": "$n\\mapsto[(n,0)]$",
+      "detail": "The map $n\\mapsto[(n,0)]$ is an injective semiring homomorphism into the nonnegative integers.",
+      "citations": [
+        "wp-construction-integers",
+        "nlab-integer"
+      ],
+      "overview": true
+    },
+    {
+      "id": "integers_to_ordered_ring",
+      "source": "integers",
+      "target": "ordered_ring",
+      "type": "induced-forgotten",
+      "label": "forget the distinguished integer realization",
+      "detail": "Forgetting the canonical origin of its elements leaves the usual ordered-ring structure.",
+      "citations": [
+        "wp-construction-integers",
+        "nlab-integer"
+      ]
+    },
+    {
+      "id": "integers_to_integral_domain",
+      "source": "integers",
+      "target": "integral_domain",
+      "type": "induced-forgotten",
+      "label": "forget order",
+      "detail": "Forgetting the order leaves an integral domain.",
+      "citations": [
+        "nlab-integer"
+      ]
+    },
+    {
+      "id": "integers_to_rational_pairs",
+      "source": "integers",
+      "target": "rational_fraction_pairs",
+      "type": "canonical-construction",
+      "label": "form nonzero-denominator fractions",
+      "detail": "Use integer numerator–denominator pairs with nonzero denominator before quotienting.",
+      "citations": [
+        "wp-rational-number",
+        "nlab-rational-number"
+      ],
+      "overview": true
+    },
+    {
+      "id": "rational_pairs_to_rationals",
+      "source": "rational_fraction_pairs",
+      "target": "rational_numbers",
+      "type": "quotient-construction",
+      "label": "identify equal fractions",
+      "detail": "Quotient by $(a,b)\\sim(c,d)$ exactly when $ad=bc$; induced operations produce the fraction field $\\mathbb Q$.",
+      "citations": [
+        "wp-rational-number",
+        "nlab-rational-number"
+      ],
+      "overview": true
+    },
+    {
+      "id": "integers_into_rationals",
+      "source": "integers",
+      "target": "rational_numbers",
+      "type": "canonical-embedding",
+      "label": "$z\\mapsto z/1$",
+      "detail": "The map $z\\mapsto[(z,1)]$ embeds $\\mathbb Z$ canonically into its field of fractions.",
+      "citations": [
+        "wp-rational-number",
+        "nlab-rational-number"
+      ],
+      "overview": true
+    },
+    {
+      "id": "rational_numbers_to_ordered_field",
+      "source": "rational_numbers",
+      "target": "ordered_field",
+      "type": "induced-forgotten",
+      "label": "forget the distinguished rational realization",
+      "detail": "Forgetting how elements were constructed leaves the usual ordered-field structure.",
+      "citations": [
+        "wp-rational-number",
+        "nlab-rational-number"
+      ]
+    },
+    {
+      "id": "field_to_rational_numbers",
+      "source": "field",
+      "target": "rational_numbers",
+      "type": "classification",
+      "label": "prime ordered field",
+      "detail": "The rational numbers form the characteristic-zero prime field, equipped here with their canonical order.",
+      "citations": [
+        "wp-rational-number",
+        "nlab-rational-number"
+      ]
+    },
+    {
+      "id": "rationals_to_dedekind_cuts",
+      "source": "rational_numbers",
+      "target": "dedekind_cut_reals",
+      "type": "canonical-construction",
+      "label": "form Dedekind cuts",
+      "detail": "Construct an order-complete field from proper lower cuts of $\\mathbb Q$.",
+      "citations": [
+        "wp-construction-reals",
+        "nlab-real-number"
+      ],
+      "overview": true
+    },
+    {
+      "id": "rationals_to_cauchy_sequences",
+      "source": "rational_numbers",
+      "target": "rational_cauchy_sequences",
+      "type": "canonical-construction",
+      "label": "form Cauchy sequences",
+      "detail": "Take rational Cauchy sequences in the absolute-value metric.",
+      "citations": [
+        "wp-construction-reals",
+        "nlab-real-number"
+      ],
+      "overview": true
+    },
+    {
+      "id": "cauchy_sequences_to_reals",
+      "source": "rational_cauchy_sequences",
+      "target": "real_numbers",
+      "type": "quotient-construction",
+      "label": "identify null differences",
+      "detail": "Quotient Cauchy sequences by equality of limiting difference zero to obtain a complete ordered field representing $\\mathbb R$.",
+      "citations": [
+        "wp-construction-reals",
+        "nlab-real-number"
+      ],
+      "overview": true
+    },
+    {
+      "id": "dedekind_cuts_to_reals",
+      "source": "dedekind_cut_reals",
+      "target": "real_numbers",
+      "type": "representation-equivalence",
+      "label": "Dedekind realization",
+      "detail": "The Dedekind-cut field is canonically order-isomorphic to the abstract complete Archimedean ordered field $\\mathbb R$.",
+      "citations": [
+        "wp-construction-reals",
+        "nlab-real-number"
+      ],
+      "overview": true
+    },
+    {
+      "id": "rational_numbers_into_reals",
+      "source": "rational_numbers",
+      "target": "real_numbers",
+      "type": "canonical-embedding",
+      "label": "constant cut / constant sequence",
+      "detail": "Each rational has a canonical image in either completion, giving the standard embedding $\\mathbb Q\\hookrightarrow\\mathbb R$.",
+      "citations": [
+        "wp-construction-reals",
+        "nlab-real-number"
+      ],
+      "overview": true
+    },
+    {
+      "id": "real_numbers_to_ordered_field",
+      "source": "real_numbers",
+      "target": "ordered_field",
+      "type": "induced-forgotten",
+      "label": "forget completeness",
+      "detail": "Forgetting completeness and the distinguished real realization leaves an ordered field.",
+      "citations": [
+        "nlab-real-number"
+      ]
+    },
+    {
+      "id": "real_numbers_to_real_closed_field",
+      "source": "real_numbers",
+      "target": "real_closed_field",
+      "type": "induced-forgotten",
+      "label": "forget completeness and topology",
+      "detail": "The real numbers are real closed; forgetting their completeness and topology retains that algebraic ordered-field property.",
+      "citations": [
+        "nlab-real-number"
+      ]
+    },
+    {
+      "id": "real_numbers_to_topological_field",
+      "source": "real_numbers",
+      "target": "topological_field",
+      "type": "induced-forgotten",
+      "label": "forget order completeness",
+      "detail": "The usual topology and field operations make $\\mathbb R$ a topological field.",
+      "citations": [
+        "nlab-real-number"
+      ]
+    },
+    {
+      "id": "real_numbers_to_complex_pairs",
+      "source": "real_numbers",
+      "target": "complex_pair_realization",
+      "type": "canonical-construction",
+      "label": "form $\\mathbb R^2$ with complex multiplication",
+      "detail": "Equip ordered pairs of reals with the standard complex field operations.",
+      "citations": [
+        "wp-complex-number",
+        "nlab-complex-number"
+      ],
+      "overview": true
+    },
+    {
+      "id": "real_numbers_to_complex_quotient",
+      "source": "real_numbers",
+      "target": "complex_polynomial_quotient",
+      "type": "canonical-construction",
+      "label": "adjoin a root of $x^2+1$",
+      "detail": "Form $\\mathbb R[x]/(x^2+1)$, in which the class of $x$ squares to $-1$.",
+      "citations": [
+        "wp-complex-number",
+        "nlab-complex-number"
+      ]
+    },
+    {
+      "id": "complex_pairs_to_complex_numbers",
+      "source": "complex_pair_realization",
+      "target": "complex_numbers",
+      "type": "representation-equivalence",
+      "label": "ordered-pair realization",
+      "detail": "Identify $(a,b)$ with $a+bi$ to obtain the standard complex field.",
+      "citations": [
+        "wp-complex-number",
+        "nlab-complex-number"
+      ],
+      "overview": true
+    },
+    {
+      "id": "complex_quotient_to_complex_numbers",
+      "source": "complex_polynomial_quotient",
+      "target": "complex_numbers",
+      "type": "representation-equivalence",
+      "label": "polynomial-quotient realization",
+      "detail": "Identify the residue class of $x$ with $i$; the quotient is isomorphic to the ordered-pair complex field.",
+      "citations": [
+        "wp-complex-number",
+        "nlab-complex-number"
+      ]
+    },
+    {
+      "id": "real_numbers_into_complex_numbers",
+      "source": "real_numbers",
+      "target": "complex_numbers",
+      "type": "canonical-embedding",
+      "label": "$a\\mapsto a+0i$",
+      "detail": "The map $a\\mapsto(a,0)$ embeds $\\mathbb R$ canonically as the real axis in $\\mathbb C$.",
+      "citations": [
+        "wp-complex-number",
+        "nlab-complex-number"
+      ],
+      "overview": true
+    },
+    {
+      "id": "complex_numbers_to_alg_closed_field",
+      "source": "complex_numbers",
+      "target": "algebraically_closed_field",
+      "type": "induced-forgotten",
+      "label": "forget topology and distinguished real subfield",
+      "detail": "The fundamental theorem of algebra says the complex field is algebraically closed.",
+      "citations": [
+        "wp-complex-number",
+        "nlab-complex-number"
+      ]
+    },
+    {
+      "id": "complex_numbers_to_topological_field",
+      "source": "complex_numbers",
+      "target": "topological_field",
+      "type": "induced-forgotten",
+      "label": "forget algebraic closure",
+      "detail": "The Euclidean topology and field operations make $\\mathbb C$ a topological field.",
+      "citations": [
+        "wp-complex-number",
+        "nlab-complex-number"
+      ]
+    },
+    {
+      "id": "ordinal_to_ordinal_arithmetic",
+      "source": "ordinal",
+      "target": "ordinal_arithmetic",
+      "type": "add-data",
+      "label": "define transfinite operations",
+      "detail": "Define addition, multiplication, and exponentiation recursively on ordinal arguments.",
+      "citations": [
+        "wp-ordinal-arithmetic",
+        "openlogic-set-theory"
+      ],
+      "overview": true
+    },
+    {
+      "id": "ordinal_to_transfinite_recursion",
+      "source": "ordinal",
+      "target": "transfinite_recursion",
+      "type": "theorem-implication",
+      "label": "well-founded recursion",
+      "detail": "The well-ordering of every ordinal supports unique definitions from earlier stages.",
+      "citations": [
+        "wp-transfinite-induction",
+        "openlogic-set-theory"
+      ]
+    },
+    {
+      "id": "ordinal_to_countable_ordinal",
+      "source": "ordinal",
+      "target": "countable_ordinal",
+      "type": "classification",
+      "label": "countable ordinals",
+      "detail": "Countable ordinals are the ordinals admitting an injection into $\\omega$.",
+      "citations": [
+        "wp-first-uncountable-ordinal"
+      ]
+    },
+    {
+      "id": "countable_ordinal_to_omega1",
+      "source": "countable_ordinal",
+      "target": "first_uncountable_ordinal",
+      "type": "canonical-construction",
+      "label": "collect all countable ordinals",
+      "detail": "$\\omega_1$ is the set of all countable ordinals.",
+      "citations": [
+        "wp-first-uncountable-ordinal",
+        "openlogic-set-theory"
+      ],
+      "overview": true
+    },
+    {
+      "id": "ordinal_to_omega1",
+      "source": "ordinal",
+      "target": "first_uncountable_ordinal",
+      "type": "classification",
+      "label": "first uncountable ordinal",
+      "detail": "$\\omega_1$ is the least uncountable member of the ordinal hierarchy.",
+      "citations": [
+        "wp-first-uncountable-ordinal"
+      ]
+    },
+    {
+      "id": "ordinal_arithmetic_to_epsilon_zero",
+      "source": "ordinal_arithmetic",
+      "target": "epsilon_zero",
+      "type": "canonical-construction",
+      "label": "least fixed point of $\\omega^\\alpha$",
+      "detail": "Iterating $\\alpha\\mapsto\\omega^\\alpha$ from finite stages and taking the supremum yields $\\varepsilon_0$.",
+      "citations": [
+        "wp-epsilon-number",
+        "wp-ordinal-arithmetic"
+      ],
+      "overview": true
+    },
+    {
+      "id": "countable_ordinal_to_epsilon_zero",
+      "source": "countable_ordinal",
+      "target": "epsilon_zero",
+      "type": "classification",
+      "label": "distinguished countable ordinal",
+      "detail": "$\\varepsilon_0$ is a countable ordinal.",
+      "citations": [
+        "wp-epsilon-number"
+      ]
+    },
+    {
+      "id": "ordinal_to_all_ordinals",
+      "source": "ordinal",
+      "target": "class_of_all_ordinals",
+      "type": "canonical-construction",
+      "label": "collect as a proper class",
+      "detail": "The ordinals form a proper class rather than a set.",
+      "citations": [
+        "wp-ordinal",
+        "sep-set-theory"
+      ]
+    },
+    {
+      "id": "cardinal_to_finite_cardinal",
+      "source": "cardinal",
+      "target": "finite_cardinal",
+      "type": "classification",
+      "label": "finite cardinals",
+      "detail": "Finite cardinals are the finite initial ordinals.",
+      "citations": [
+        "wp-cardinal",
+        "openlogic-set-theory"
+      ]
+    },
+    {
+      "id": "cardinal_to_infinite_cardinal",
+      "source": "cardinal",
+      "target": "infinite_cardinal",
+      "type": "classification",
+      "label": "infinite cardinals",
+      "detail": "Infinite cardinals are the nonfinite initial ordinals.",
+      "citations": [
+        "wp-cardinal",
+        "openlogic-set-theory"
+      ]
+    },
+    {
+      "id": "omega_to_aleph_zero",
+      "source": "omega",
+      "target": "aleph_zero",
+      "type": "representation-equivalence",
+      "label": "view by cardinality",
+      "detail": "The same initial ordinal $\\omega$ is denoted $\\aleph_0$ when regarded as the least infinite cardinal.",
+      "citations": [
+        "wp-aleph-number",
+        "nlab-natural-number"
+      ],
+      "overview": true
+    },
+    {
+      "id": "cardinal_to_aleph_zero",
+      "source": "cardinal",
+      "target": "aleph_zero",
+      "type": "classification",
+      "label": "least infinite cardinal",
+      "detail": "$\\aleph_0$ is the first infinite cardinal.",
+      "citations": [
+        "wp-aleph-number",
+        "openlogic-set-theory"
+      ]
+    },
+    {
+      "id": "infinite_cardinal_to_aleph_zero",
+      "source": "infinite_cardinal",
+      "target": "aleph_zero",
+      "type": "classification",
+      "label": "least member",
+      "detail": "$\\aleph_0$ is the least infinite cardinal.",
+      "citations": [
+        "wp-aleph-number"
+      ]
+    },
+    {
+      "id": "natural_numbers_to_aleph_zero",
+      "source": "natural_numbers",
+      "target": "aleph_zero",
+      "type": "theorem-implication",
+      "label": "cardinality $\\aleph_0$",
+      "detail": "The carrier of $\\mathbb N$ is countably infinite and has cardinality $\\aleph_0$.",
+      "citations": [
+        "wp-aleph-number",
+        "nlab-natural-number"
+      ]
+    },
+    {
+      "id": "integers_to_aleph_zero",
+      "source": "integers",
+      "target": "aleph_zero",
+      "type": "theorem-implication",
+      "label": "countably infinite",
+      "detail": "$\\mathbb Z$ is countably infinite.",
+      "citations": [
+        "nlab-integer",
+        "wp-aleph-number"
+      ]
+    },
+    {
+      "id": "rational_numbers_to_aleph_zero",
+      "source": "rational_numbers",
+      "target": "aleph_zero",
+      "type": "theorem-implication",
+      "label": "countably infinite",
+      "detail": "$\\mathbb Q$ is countably infinite.",
+      "citations": [
+        "nlab-rational-number",
+        "wp-aleph-number"
+      ]
+    },
+    {
+      "id": "cardinal_to_successor_cardinal",
+      "source": "cardinal",
+      "target": "successor_cardinal",
+      "type": "canonical-construction",
+      "label": "take least larger cardinal",
+      "detail": "For each cardinal $\\kappa$, well-order the cardinals above it and take the least one, denoted $\\kappa^+$.",
+      "citations": [
+        "wp-cardinal",
+        "openlogic-set-theory"
+      ]
+    },
+    {
+      "id": "cardinal_to_limit_cardinal",
+      "source": "cardinal",
+      "target": "limit_cardinal",
+      "type": "classification",
+      "label": "limit cardinals",
+      "detail": "Limit cardinals are infinite cardinals that are not successors.",
+      "citations": [
+        "wp-aleph-number",
+        "openlogic-set-theory"
+      ]
+    },
+    {
+      "id": "aleph_zero_to_aleph_hierarchy",
+      "source": "aleph_zero",
+      "target": "aleph_hierarchy",
+      "type": "canonical-construction",
+      "label": "transfinite successor enumeration",
+      "detail": "Starting from $\\aleph_0$, take successor cardinals and suprema at limit stages.",
+      "citations": [
+        "wp-aleph-number",
+        "openlogic-set-theory"
+      ],
+      "overview": true
+    },
+    {
+      "id": "successor_cardinal_to_aleph_hierarchy",
+      "source": "successor_cardinal",
+      "target": "aleph_hierarchy",
+      "type": "canonical-construction",
+      "label": "successor stages",
+      "detail": "$\\aleph_{\\alpha+1}$ is the successor cardinal of $\\aleph_\\alpha$.",
+      "citations": [
+        "wp-aleph-number"
+      ]
+    },
+    {
+      "id": "limit_cardinal_to_aleph_hierarchy",
+      "source": "limit_cardinal",
+      "target": "aleph_hierarchy",
+      "type": "canonical-construction",
+      "label": "limit stages",
+      "detail": "At limit indices, the aleph hierarchy takes the supremum of earlier alephs.",
+      "citations": [
+        "wp-aleph-number"
+      ]
+    },
+    {
+      "id": "aleph_zero_to_beth_hierarchy",
+      "source": "aleph_zero",
+      "target": "beth_hierarchy",
+      "type": "canonical-construction",
+      "label": "start at $\\beth_0$",
+      "detail": "Set $\\beth_0=\\aleph_0$ and iterate cardinal exponentiation by $2$.",
+      "citations": [
+        "wp-beth-number"
+      ],
+      "overview": true
+    },
+    {
+      "id": "power_set_to_beth_hierarchy",
+      "source": "power_set",
+      "target": "beth_hierarchy",
+      "type": "canonical-construction",
+      "label": "power-set successor stages",
+      "detail": "In ZFC, the step $\\beth_{\\alpha+1}=2^{\\beth_\\alpha}$ records the initial-ordinal cardinality of a power set.",
+      "citations": [
+        "wp-beth-number",
+        "wp-power-set"
+      ],
+      "overview": true
+    },
+    {
+      "id": "cantors_theorem_to_beth_hierarchy",
+      "source": "cantors_theorem",
+      "target": "beth_hierarchy",
+      "type": "theorem-implication",
+      "label": "strict growth at successors",
+      "detail": "Cantor’s theorem ensures $\\beth_\\alpha<\\beth_{\\alpha+1}$.",
+      "citations": [
+        "wp-cantor-theorem",
+        "wp-beth-number"
+      ]
+    },
+    {
+      "id": "beth_hierarchy_to_continuum",
+      "source": "beth_hierarchy",
+      "target": "continuum_cardinal",
+      "type": "classification",
+      "label": "first power-set step",
+      "detail": "$\\mathfrak c=\\beth_1=2^{\\aleph_0}$.",
+      "citations": [
+        "wp-beth-number",
+        "wp-cardinality-continuum"
+      ],
+      "overview": true
+    },
+    {
+      "id": "real_numbers_to_continuum",
+      "source": "real_numbers",
+      "target": "continuum_cardinal",
+      "type": "theorem-implication",
+      "label": "cardinality $\\mathfrak c$",
+      "detail": "The real line has cardinality $2^{\\aleph_0}$, denoted $\\mathfrak c$.",
+      "citations": [
+        "wp-cardinality-continuum",
+        "wp-construction-reals"
+      ],
+      "overview": true
+    },
+    {
+      "id": "power_set_to_continuum",
+      "source": "power_set",
+      "target": "continuum_cardinal",
+      "type": "theorem-implication",
+      "label": "$|\\mathcal P(\\mathbb N)|=\\mathfrak c$",
+      "detail": "Binary sequences, subsets of $\\mathbb N$, and real numbers have the same cardinality.",
+      "citations": [
+        "wp-cardinality-continuum",
+        "wp-power-set"
+      ]
+    },
+    {
+      "id": "continuum_hypothesis_to_continuum",
+      "source": "continuum_hypothesis",
+      "target": "continuum_cardinal",
+      "type": "theorem-implication",
+      "label": "$\\mathfrak c=\\aleph_1$",
+      "detail": "CH identifies the continuum cardinal with the first uncountable cardinal.",
+      "citations": [
+        "wp-continuum-hypothesis",
+        "wp-cardinality-continuum"
+      ],
+      "overview": true
+    },
+    {
+      "id": "gch_to_ch",
+      "source": "generalized_continuum_hypothesis",
+      "target": "continuum_hypothesis",
+      "type": "theorem-implication",
+      "label": "specialize to $\\aleph_0$",
+      "detail": "Taking $\\kappa=\\aleph_0$ in GCH yields CH.",
+      "citations": [
+        "wp-continuum-hypothesis"
+      ]
+    },
+    {
+      "id": "gch_to_aleph_beth",
+      "source": "generalized_continuum_hypothesis",
+      "target": "beth_hierarchy",
+      "type": "theorem-implication",
+      "label": "$\\beth_\\alpha=\\aleph_\\alpha$",
+      "detail": "GCH identifies the beth and aleph hierarchies at every ordinal index.",
+      "citations": [
+        "wp-beth-number",
+        "wp-continuum-hypothesis"
+      ]
+    },
+    {
+      "id": "first_order_theory_to_zf",
+      "source": "first_order_theory",
+      "target": "zermelo_fraenkel_set_theory",
+      "type": "classification",
+      "label": "ZF theory",
+      "detail": "ZF is a first-order theory in the language with membership as its only nonlogical relation.",
+      "citations": [
+        "wp-zf",
+        "openlogic-set-theory"
+      ]
+    },
+    {
+      "id": "zf_to_zfc",
+      "source": "zermelo_fraenkel_set_theory",
+      "target": "zfc_set_theory",
+      "type": "impose-axiom",
+      "label": "+ axiom of choice",
+      "detail": "Adjoin AC to ZF; the resulting theory is ZFC.",
+      "citations": [
+        "wp-zf",
+        "wp-axiom-choice",
+        "sep-axiom-choice"
+      ],
+      "overview": true
+    },
+    {
+      "id": "zfc_implies_choice",
+      "source": "zfc_set_theory",
+      "target": "axiom_of_choice",
+      "type": "theorem-implication",
+      "label": "contains AC",
+      "detail": "The axiom of choice is one of the axioms of ZFC.",
+      "citations": [
+        "wp-zf",
+        "wp-axiom-choice"
+      ]
+    },
+    {
+      "id": "choice_to_well_ordering",
+      "source": "axiom_of_choice",
+      "target": "well_ordering_theorem",
+      "type": "theorem-implication",
+      "label": "equivalent over ZF",
+      "detail": "Over ZF, AC implies that every set can be well-ordered; conversely, the well-ordering theorem implies AC.",
+      "citations": [
+        "sep-axiom-choice",
+        "openlogic-set-theory"
+      ],
+      "overview": true
+    },
+    {
+      "id": "well_ordering_to_cardinal",
+      "source": "well_ordering_theorem",
+      "target": "cardinal",
+      "type": "theorem-implication",
+      "label": "cardinal representative for every set",
+      "detail": "A well-order on a set has a unique ordinal order type; its least equipotent ordinal is the set’s cardinal.",
+      "citations": [
+        "wp-cardinal",
+        "openlogic-set-theory"
+      ],
+      "overview": true
+    },
+    {
+      "id": "zfc_to_aleph_hierarchy",
+      "source": "zfc_set_theory",
+      "target": "aleph_hierarchy",
+      "type": "theorem-implication",
+      "label": "all set cardinalities are alephs",
+      "detail": "Choice ensures every set is well-orderable, so every infinite set has cardinality $\\aleph_\\alpha$ for some ordinal $\\alpha$.",
+      "citations": [
+        "wp-aleph-number",
+        "sep-axiom-choice"
+      ]
+    },
+    {
+      "id": "cardinal_to_large_cardinal",
+      "source": "cardinal",
+      "target": "large_cardinal",
+      "type": "impose-axiom",
+      "label": "+ strong cardinal property",
+      "detail": "Select cardinals satisfying additional closure, compactness, measure, or elementary-embedding properties.",
+      "citations": [
+        "wp-large-cardinal",
+        "sep-large-cardinals"
+      ],
+      "overview": true
+    },
+    {
+      "id": "large_cardinal_to_inaccessible",
+      "source": "large_cardinal",
+      "target": "inaccessible_cardinal",
+      "type": "classification",
+      "label": "inaccessible cardinals",
+      "detail": "Strongly inaccessible cardinals form an early benchmark in the large-cardinal hierarchy.",
+      "citations": [
+        "wp-inaccessible-cardinal",
+        "sep-large-cardinals"
+      ],
+      "overview": true
+    },
+    {
+      "id": "large_cardinal_to_measurable",
+      "source": "large_cardinal",
+      "target": "measurable_cardinal",
+      "type": "classification",
+      "label": "measurable cardinals",
+      "detail": "Measurable cardinals are a stronger large-cardinal notion defined by a highly complete nonprincipal measure.",
+      "citations": [
+        "wp-measurable-cardinal",
+        "sep-large-cardinals"
+      ],
+      "overview": true
+    },
+    {
+      "id": "large_cardinal_to_supercompact",
+      "source": "large_cardinal",
+      "target": "supercompact_cardinal",
+      "type": "classification",
+      "label": "supercompact cardinals",
+      "detail": "Supercompact cardinals satisfy compactness properties at every greater scale.",
+      "citations": [
+        "wp-supercompact-cardinal",
+        "sep-large-cardinals"
+      ],
+      "overview": true
+    },
+    {
+      "id": "measurable_implies_inaccessible",
+      "source": "measurable_cardinal",
+      "target": "inaccessible_cardinal",
+      "type": "theorem-implication",
+      "label": "measurable implies inaccessible",
+      "detail": "In ZFC, every measurable cardinal is strongly inaccessible.",
+      "citations": [
+        "wp-measurable-cardinal",
+        "wp-inaccessible-cardinal"
+      ]
+    },
+    {
+      "id": "supercompact_implies_measurable",
+      "source": "supercompact_cardinal",
+      "target": "measurable_cardinal",
+      "type": "theorem-implication",
+      "label": "supercompact implies measurable",
+      "detail": "Every supercompact cardinal is measurable.",
+      "citations": [
+        "wp-supercompact-cardinal",
+        "wp-measurable-cardinal"
+      ]
+    },
+    {
+      "id": "successor_ordinal_no_greatest_ordinal",
+      "source": "successor_ordinal",
+      "target": "class_of_all_ordinals",
+      "type": "theorem-implication",
+      "label": "no greatest ordinal",
+      "detail": "For every ordinal $\\alpha$, its successor $\\alpha+1$ is a strictly larger ordinal; therefore the ordinal hierarchy has no greatest member.",
+      "citations": [
+        "wp-ordinal",
+        "openlogic-set-theory"
+      ]
+    },
+    {
+      "id": "well_ordering_implies_choice",
+      "source": "well_ordering_theorem",
+      "target": "axiom_of_choice",
+      "type": "theorem-implication",
+      "label": "equivalent over ZF",
+      "detail": "Over ZF, well-order every member of a family and choose its least element; thus the well-ordering theorem implies AC.",
+      "citations": [
+        "sep-axiom-choice",
+        "openlogic-set-theory"
+      ]
+    },
+    {
+      "id": "zf_proves_empty_set",
+      "source": "zermelo_fraenkel_set_theory",
+      "target": "empty_set",
+      "type": "theorem-implication",
+      "label": "proves existence and uniqueness",
+      "detail": "ZF proves that a set with no elements exists and extensionality proves that it is unique.",
+      "citations": [
+        "wp-zf",
+        "wp-empty-set",
+        "openlogic-set-theory"
+      ]
+    },
+    {
+      "id": "zf_provides_power_sets",
+      "source": "zermelo_fraenkel_set_theory",
+      "target": "power_set",
+      "type": "theorem-implication",
+      "label": "power-set axiom",
+      "detail": "The power-set axiom of ZF asserts that for every set $X$, the collection $\\mathcal P(X)$ is a set.",
+      "citations": [
+        "wp-zf",
+        "wp-power-set",
+        "openlogic-set-theory"
+      ]
+    },
+    {
+      "id": "first_order_theory_to_zfc",
+      "source": "first_order_theory",
+      "target": "zfc_set_theory",
+      "type": "classification",
+      "label": "ZFC theory",
+      "detail": "ZFC is a first-order theory in the language of membership, presented by finitely many axioms together with axiom schemas.",
+      "citations": [
+        "wp-zf",
+        "sep-set-theory"
+      ]
+    },
+    {
+      "id": "zfc_well_orders_continuum",
+      "source": "zfc_set_theory",
+      "target": "continuum_cardinal",
+      "type": "theorem-implication",
+      "label": "well-orderable continuum",
+      "detail": "Choice well-orders $\\mathbb R$, so its equipotence type has a unique initial-ordinal representative $\\mathfrak c$.",
+      "citations": [
+        "wp-axiom-choice",
+        "wp-cardinality-continuum",
+        "sep-axiom-choice"
+      ]
+    },
+    {
+      "id": "zfc_supports_beth_hierarchy",
+      "source": "zfc_set_theory",
+      "target": "beth_hierarchy",
+      "type": "theorem-implication",
+      "label": "well-order power-set sizes",
+      "detail": "Choice ensures that every power set appearing in the beth recursion has an initial-ordinal cardinal representative.",
+      "citations": [
+        "wp-axiom-choice",
+        "wp-beth-number",
+        "sep-axiom-choice"
       ]
     }
   ],
