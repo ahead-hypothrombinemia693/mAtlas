@@ -31,12 +31,17 @@ test('SEO assets publish and associate the directory page and standalone SVG', a
     assert.match(sitemap, /xmlns:image="http:\/\/www\.google\.com\/schemas\/sitemap-image\/1\.1"/);
     assert.ok(sitemap.includes('<loc>https://atlas.madvay.com/directory/</loc><lastmod>2026-07-28</lastmod><image:image><image:loc>https://atlas.madvay.com/static/atlas.svg</image:loc></image:image>'));
     assert.ok(sitemap.includes('<loc>https://atlas.madvay.com/static/atlas.svg</loc><lastmod>2026-07-28</lastmod>'));
+    const firstDomainId = graphData.meta.domainOrder[0];
+    const firstDomain = graphData.domains[firstDomainId];
+    const firstDomainUrl = `https://atlas.madvay.com/${graphData.fields[firstDomain.field].path}/${encodeURIComponent(firstDomainId)}/`;
+    assert.ok(sitemap.includes(`<loc>${firstDomainUrl}</loc><lastmod>2026-07-28</lastmod>`));
     assert.ok(!sitemap.includes('<loc>https://atlas.madvay.com/concepts/</loc>'));
     assert.ok(!sitemap.includes('<loc>https://atlas.madvay.com/static/atlas/</loc>'));
     assert.ok(!sitemap.includes('/m/'));
     assert.ok(robots.includes('User-agent: *\nAllow: /'));
     assert.ok(llms.includes('[Atlas Directory](https://atlas.madvay.com/directory/)'));
     assert.ok(llms.includes('[All-in atlas SVG](https://atlas.madvay.com/static/atlas.svg)'));
+    assert.ok(llms.includes(`](${firstDomainUrl})`));
     assert.ok(!llms.includes('https://atlas.madvay.com/static/atlas/'));
     assert.ok(!llms.includes('[Concept Directory](https://atlas.madvay.com/concepts/)'));
   } finally {

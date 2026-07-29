@@ -10,6 +10,8 @@ interface DetailsControllerOptions {
   cy: cytoscape.Core;
   math: MathRenderer;
   conceptPageUrl: (nodeId: string) => string;
+  fieldPageUrl: (fieldId: string) => string;
+  domainPageUrl: (domainId: string) => string;
   itemUrl: (itemId: string, itemKind: 'node' | 'edge') => string;
   permalinkUrl: (itemId: string, itemKind: 'node' | 'edge') => string;
   githubEditUrl: (itemId: string) => string;
@@ -132,14 +134,14 @@ export class DetailsController {
       const field = model.data.fields[fieldId];
       if (!field) return '';
       const primaryClass = fieldId === model.nodePrimaryField(node) ? ' primary' : '';
-      return `<span class="domain-badge field-badge${primaryClass}" style="--domain-color:${escapeHtml(field.color)}"><span class="domain-dot"></span>${escapeHtml(field.label)}</span>`;
+      return `<a class="domain-badge field-badge${primaryClass}" href="${escapeHtml(this.options.fieldPageUrl(fieldId))}" style="--domain-color:${escapeHtml(field.color)}"><span class="domain-dot"></span>${escapeHtml(field.label)}</a>`;
     }).join('');
     const domainBadges = model.nodeDomainIds(node).map((domainId) => {
       const domain = model.data.domains[domainId];
       if (!domain) return '';
       const primaryClass = domainId === node.primaryDomain ? ' primary' : '';
       const title = domainId === node.primaryDomain ? `${domain.label} — primary layout domain` : domain.label;
-      return `<span class="domain-badge${primaryClass}" style="--domain-color:${escapeHtml(domain.color)}" title="${escapeHtml(title)}"><span class="domain-dot"></span>${escapeHtml(domain.label)}</span>`;
+      return `<a class="domain-badge${primaryClass}" href="${escapeHtml(this.options.domainPageUrl(domainId))}" style="--domain-color:${escapeHtml(domain.color)}" title="${escapeHtml(title)}"><span class="domain-dot"></span>${escapeHtml(domain.label)}</a>`;
     }).join('');
     return `<div class="domain-badges" aria-label="Fields and domains">${fieldBadges}${domainBadges}</div>`;
   }

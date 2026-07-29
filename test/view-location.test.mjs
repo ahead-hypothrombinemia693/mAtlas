@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { LocationController } from '../.test-build/app/location-controller.js';
+import { LocationController, taxonomyScopeFromPath } from '../.test-build/app/location-controller.js';
 
 const view = {
   id: 'experimental-discovery',
@@ -39,7 +39,7 @@ function matchingState() {
   };
 }
 
-function installBrowser(url, templateViewId = null) {
+function installBrowser(url, templateViewId = null, templateScope = {}) {
   const previousWindow = globalThis.window;
   const previousDocument = globalThis.document;
   let writtenUrl = null;
@@ -60,6 +60,8 @@ function installBrowser(url, templateViewId = null) {
     baseURI: 'https://atlas.madvay.com/',
     querySelector(selector) {
       if (selector === 'meta[name="atlas:view"]' && templateViewId) return { content: templateViewId };
+      if (selector === 'meta[name="atlas:scope"]' && templateScope.fieldId) return { content: templateScope.fieldId };
+      if (selector === 'meta[name="atlas:domain"]' && templateScope.domainId) return { content: templateScope.domainId };
       return null;
     }
   };
@@ -72,13 +74,15 @@ function installBrowser(url, templateViewId = null) {
   };
 }
 
-function controllerFor(state) {
-  const model = {
+function modelFixture() {
+  return {
     data: {
       meta: { title: 'Atlas', description: 'Description' },
-      fields: { physics: { path: 'physics', label: 'Physics', description: 'Physics' } }
+      fields: { physics: { path: 'physics', label: 'Physics', description: 'Physics' } },
+      domains: { experiments: { field: 'physics', label: 'Experiments' } }
     },
     knownFieldIds: new Set(['physics']),
+    knownDomainIds: new Set(['experiments']),
     knownNodeIds: new Set(['blackbody', 'quantum']),
     knownEdgeIds: new Set(['e1']),
     nodeRecord: new Map([
@@ -88,6 +92,10 @@ function controllerFor(state) {
     edgeRecord: new Map(),
     fieldForDomain() { return 'physics'; }
   };
+}
+
+function controllerFor(state) {
+  const model = modelFixture();
   return new LocationController({
     model,
     getState: () => state,
@@ -107,6 +115,13 @@ test('static view metadata is used only during initial route resolution', () => 
   } finally {
     browser.restore();
   }
+});
+
+test('field and domain paths resolve to taxonomy scopes', () => {
+  const model = modelFixture();
+  assert.deepEqual(taxonomyScopeFromPath('/physics/', model, ['physics']), { fieldId: 'physics', domainId: null });
+  assert.deepEqual(taxonomyScopeFromPath('/physics/experiments/', model, ['physics']), { fieldId: 'physics', domainId: 'experiments' });
+  assert.deepEqual(taxonomyScopeFromPath('/physics/not-a-domain/', model, ['physics']), { fieldId: null, domainId: null });
 });
 
 test('the first sequence node is the default selection and bare view URL', () => {
@@ -137,7 +152,7 @@ test('an exact view configuration keeps the static view route during exploration
   }
 });
 
-test('changing a filter exits the view route and writes ordinary atlas state', () => {
+test('changing a filter exits the view route but keeps the selected concept route', () => {
   const browser = installBrowser('https://atlas.madvay.com/views/experimental-discovery/?node=quantum');
   try {
     const state = matchingState();
@@ -148,10 +163,54 @@ test('changing a filter exits the view route and writes ordinary atlas state', (
     controller.write({ kind: 'node', id: 'quantum' }, 'replace');
     const written = new URL(browser.writtenUrl());
     assert.equal(written.pathname, '/concepts/quantum/');
+    assert.equal(written.searchParams.has('node'), false);
     assert.equal(written.searchParams.get('fields'), 'physics');
     assert.equal(written.searchParams.get('domains'), 'experiments');
     assert.equal(written.searchParams.get('edges'), 'motivated');
     assert.equal(controller.activeView(), null);
+  } finally {
+    browser.restore();
+  }
+});
+
+
+test('an exclusive domain pathname appears only with no selected item or view', () => {
+  const browser = installBrowser('https://atlas.madvay.com/concepts/quantum/');
+  try {
+    const state = matchingState();
+    const controller = controllerFor(state);
+
+    controller.write({ kind: 'edge', id: 'e1' }, 'replace');
+    const edgeUrl = new URL(browser.writtenUrl());
+    assert.equal(edgeUrl.pathname, '/');
+    assert.equal(edgeUrl.searchParams.get('edge'), 'e1');
+    assert.equal(edgeUrl.searchParams.get('fields'), 'physics');
+    assert.equal(edgeUrl.searchParams.get('domains'), 'experiments');
+
+    controller.write(null, 'replace');
+    const domainUrl = new URL(browser.writtenUrl());
+    assert.equal(domainUrl.pathname, '/physics/experiments/');
+    assert.equal(domainUrl.searchParams.has('node'), false);
+    assert.equal(domainUrl.searchParams.has('edge'), false);
+    assert.equal(domainUrl.searchParams.has('fields'), false);
+    assert.equal(domainUrl.searchParams.has('domains'), false);
+  } finally {
+    browser.restore();
+  }
+});
+
+test('a domain page supplies fresh-load taxonomy defaults', () => {
+  const browser = installBrowser('https://atlas.madvay.com/physics/experiments/');
+  try {
+    const controller = controllerFor(matchingState());
+    assert.equal(controller.scopedFieldId, 'physics');
+    assert.equal(controller.scopedDomainId, 'experiments');
+    assert.deepEqual(controller.scopedDefaultFieldIds(), ['physics']);
+    assert.deepEqual(controller.scopedDefaultDomainIds(), ['experiments']);
+    assert.deepEqual(controller.taxonomyDefaultsFromLocation(), {
+      fields: ['physics'],
+      domains: ['experiments']
+    });
   } finally {
     browser.restore();
   }

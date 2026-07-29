@@ -10,6 +10,15 @@ function conceptPath(nodeId) {
   return `concepts/${encodeURIComponent(nodeId)}/`;
 }
 
+function fieldPath(graphData, fieldId) {
+  return `${graphData.fields[fieldId]?.path ?? fieldId}/`;
+}
+
+function domainPath(graphData, domainId) {
+  const fieldId = graphData.domains[domainId]?.field;
+  return `${fieldPath(graphData, fieldId)}${encodeURIComponent(domainId)}/`;
+}
+
 function stripInlineMath(text) {
   return String(text ?? '').replace(/\$([^$\n]+?)\$/g, '$1');
 }
@@ -137,21 +146,110 @@ export function renderConceptIndexRedirect() {
 </html>`;
 }
 
-function renderScopePage(templateHtml, graphData, fieldId) {
+function orderedIds(order, values) {
+  const result = [];
+  const seen = new Set();
+  for (const id of order ?? []) {
+    if (Object.prototype.hasOwnProperty.call(values, id) && !seen.has(id)) {
+      result.push(id);
+      seen.add(id);
+    }
+  }
+  for (const id of Object.keys(values)) {
+    if (!seen.has(id)) result.push(id);
+  }
+  return result;
+}
+
+function nodeDomainIds(node) {
+  return node.domains?.length ? node.domains : [node.primaryDomain];
+}
+
+function renderScopeFallback(graphData, fieldId, domainId = null) {
   const field = graphData.fields[fieldId];
-  const canonicalUrl = appUrl(`${field.path}/`);
-  const pageTitle = `${field.label} — ${graphData.meta.title}`;
+  const domainIds = orderedIds(graphData.meta.domainOrder, graphData.domains)
+    .filter((id) => graphData.domains[id]?.field === fieldId);
+  const navigationDomainIds = domainId ? domainIds.filter((id) => id !== domainId) : domainIds;
+  const domainLinks = navigationDomainIds.map((id) => {
+    const domain = graphData.domains[id];
+    return `<li><a href="/${domainPath(graphData, id)}">${escapeHtml(domain.label)}</a></li>`;
+  }).join('');
+  const concepts = domainId
+    ? graphData.nodes
+      .filter((node) => node.kind === 'structure' && nodeDomainIds(node).includes(domainId))
+      .sort((left, right) => stripInlineMath(left.label).localeCompare(stripInlineMath(right.label)))
+    : [];
+  const conceptLinks = concepts.map((node) => `<li><a href="/${conceptPath(node.id)}">${escapeHtml(stripInlineMath(node.label))}</a></li>`).join('');
+  const currentDomain = domainId ? graphData.domains[domainId] : null;
+  return `<noscript>
+  <section class="noscript-scope-directory">
+    <p>The interactive graph requires JavaScript. <a href="/directory/">Open the atlas directory</a>.</p>
+    <h2>${escapeHtml(currentDomain?.label ?? field.label)}</h2>
+    ${currentDomain ? `<p><a href="/${fieldPath(graphData, fieldId)}">Browse all ${escapeHtml(field.label)} domains</a>.</p>` : ''}
+    ${domainLinks ? `<h3>${currentDomain ? `Other ${escapeHtml(field.label)} domains` : `${escapeHtml(field.label)} domains`}</h3><ul>${domainLinks}</ul>` : ''}
+    ${currentDomain ? `<h3>${escapeHtml(currentDomain.label)} concepts</h3><ul>${conceptLinks}</ul>` : ''}
+  </section>
+</noscript>`;
+}
+
+function scopePageJsonLd(graphData, fieldId, domainId = null) {
+  const field = graphData.fields[fieldId];
+  const domain = domainId ? graphData.domains[domainId] : null;
+  const canonicalUrl = appUrl(domainId ? domainPath(graphData, domainId) : fieldPath(graphData, fieldId));
+  const items = domain
+    ? graphData.nodes
+      .filter((node) => node.kind === 'structure' && nodeDomainIds(node).includes(domainId))
+      .map((node, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: stripInlineMath(node.label),
+        url: appUrl(conceptPath(node.id))
+      }))
+    : orderedIds(graphData.meta.domainOrder, graphData.domains)
+      .filter((id) => graphData.domains[id]?.field === fieldId)
+      .map((id, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: graphData.domains[id].label,
+        url: appUrl(domainPath(graphData, id))
+      }));
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': canonicalUrl,
+    name: domain ? `${domain.label} — ${graphData.meta.title}` : `${field.label} — ${graphData.meta.title}`,
+    description: domain
+      ? `Explore ${domain.label} concepts and relations in ${field.label}.`
+      : field.description,
+    url: canonicalUrl,
+    isPartOf: { '@type': 'WebSite', name: graphData.meta.title, url: appUrl() },
+    about: domain ? [field.label, domain.label] : [field.label],
+    mainEntity: { '@type': 'ItemList', itemListElement: items }
+  };
+}
+
+export function renderScopePage(templateHtml, graphData, fieldId, domainId = null) {
+  const field = graphData.fields[fieldId];
+  const domain = domainId ? graphData.domains[domainId] : null;
+  const canonicalUrl = appUrl(domainId ? domainPath(graphData, domainId) : fieldPath(graphData, fieldId));
+  const pageTitle = `${domain?.label ?? field.label} — ${graphData.meta.title}`;
+  const description = domain
+    ? `Explore ${domain.label} concepts and relations in ${field.label}.`
+    : field.description;
   let html = templateHtml;
   html = replaceFirst(html, /<title>[^<]*<\/title>/, `<title>${escapeHtml(pageTitle)}</title>`);
-  html = replaceFirst(html, /<meta name="description" content="[^"]*">/, `<meta name="description" content="${escapeHtml(field.description)}">`);
+  html = replaceFirst(html, /<meta name="description" content="[^"]*">/, `<meta name="description" content="${escapeHtml(description)}">`);
   html = replaceFirst(html, /<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="${escapeHtml(pageTitle)}">`);
-  html = replaceFirst(html, /<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${escapeHtml(field.description)}">`);
+  html = replaceFirst(html, /<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${escapeHtml(description)}">`);
   html = replaceFirst(html, /<meta property="og:url" content="[^"]*">/, `<meta property="og:url" content="${escapeHtml(canonicalUrl)}">`);
   html = replaceFirst(html, /<link rel="canonical" href="[^"]*">/, `<link rel="canonical" href="${escapeHtml(canonicalUrl)}">`);
-  return html.replace(
+  html = html.replace(
     '<meta name="viewport" content="width=device-width, initial-scale=1">',
-    `<meta name="viewport" content="width=device-width, initial-scale=1">\n  <base href="../">\n  <meta name="atlas:scope" content="${escapeHtml(fieldId)}">`
+    `<meta name="viewport" content="width=device-width, initial-scale=1">\n  <base href="${domainId ? '../../' : '../'}">\n  <meta name="atlas:scope" content="${escapeHtml(fieldId)}">${domainId ? `\n  <meta name="atlas:domain" content="${escapeHtml(domainId)}">\n  <link rel="up" href="/${fieldPath(graphData, fieldId)}">` : ''}`
   );
+  const jsonLd = JSON.stringify(scopePageJsonLd(graphData, fieldId, domainId), null, 2);
+  html = html.replace('</head>', `  <script id="taxonomy-page-jsonld" type="application/ld+json">\n${jsonLd}\n  </script>\n</head>`);
+  return html.replace(/<noscript>[\s\S]*?<\/noscript>/, renderScopeFallback(graphData, fieldId, domainId));
 }
 
 export async function generateConceptPages({ graphData, templateHtml, distUrl }) {
@@ -168,5 +266,11 @@ export async function generateConceptPages({ graphData, templateHtml, distUrl })
     const pageDir = new URL(`${field.path}/`, distUrl);
     await mkdir(pageDir, { recursive: true });
     await writeFile(new URL('index.html', pageDir), renderScopePage(templateHtml, graphData, fieldId));
+  }));
+  await Promise.all((graphData.meta.domainOrder ?? Object.keys(graphData.domains)).map(async (domainId) => {
+    const fieldId = graphData.domains[domainId].field;
+    const pageDir = new URL(domainPath(graphData, domainId), distUrl);
+    await mkdir(pageDir, { recursive: true });
+    await writeFile(new URL('index.html', pageDir), renderScopePage(templateHtml, graphData, fieldId, domainId));
   }));
 }

@@ -208,6 +208,8 @@ export async function startAtlasApp(): Promise<void> {
   const filterControls = new FilterControls({
     model,
     state,
+    fieldPageUrl: (fieldId) => locationController.fieldPageUrl(fieldId),
+    domainPageUrl: (domainId) => locationController.domainPageUrl(domainId),
     persist: persistUiState,
     applyFilters,
     runLayout,
@@ -228,6 +230,8 @@ export async function startAtlasApp(): Promise<void> {
     cy,
     math: mathRenderer,
     conceptPageUrl: (nodeId) => locationController.conceptPageUrl(nodeId),
+    fieldPageUrl: (fieldId) => locationController.fieldPageUrl(fieldId),
+    domainPageUrl: (domainId) => locationController.domainPageUrl(domainId),
     itemUrl: (itemId, itemKind) => locationController.itemUrl(itemId, itemKind),
     permalinkUrl: (itemId, itemKind) => locationController.itemUrl(itemId, itemKind),
     githubEditUrl: (itemId) => locationController.githubEditUrl(itemId),
@@ -384,8 +388,11 @@ export async function startAtlasApp(): Promise<void> {
 
   function applyUiStateFromLocation(): void {
     const routeView = locationController.resolveViewFromLocation();
+    const routeTaxonomy = locationController.taxonomyDefaultsFromLocation();
     const urlState = readUrlUiState();
-    const next = routeView ? { ...viewSettingsAsUrlState(routeView.settings), ...urlState } : urlState;
+    const next = routeView
+      ? { ...viewSettingsAsUrlState(routeView.settings), ...urlState }
+      : { ...routeTaxonomy, ...urlState };
     locationController.setActiveView(routeView?.id ?? null);
     const nextFields = next.fields ?? [...state.selectedFields];
     const nextDomains = next.domains ?? [...state.selectedDomains];

@@ -159,4 +159,4 @@ const manifest = {
   }
 };
 await writeFile(new URL('asset-manifest.json', dist), `${JSON.stringify(manifest, null, 2)}\n`);
-console.log(`Built ${graphData.nodes.length} nodes, ${graphData.edges.length} edges, ${viewsData.views.length} views, static/atlas.svg, and directory/ into dist/.`);
+console.log(`Built ${graphData.nodes.length} nodes, ${graphData.edges.length} edges, ${Object.keys(graphData.domains).length} domain pages, ${viewsData.views.length} views, static/atlas.svg, and directory/ into dist/.`);

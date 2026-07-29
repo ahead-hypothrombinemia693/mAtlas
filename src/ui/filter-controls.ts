@@ -7,6 +7,8 @@ import type { AppState, LayoutName } from '../types.js';
 export interface FilterControlsOptions {
   model: GraphModel;
   state: AppState;
+  fieldPageUrl: (fieldId: string) => string;
+  domainPageUrl: (domainId: string) => string;
   persist: () => void;
   applyFilters: (options?: { relayout?: boolean }) => void;
   runLayout: (name: LayoutName, fitAfter: boolean) => void;
@@ -47,7 +49,7 @@ export class FilterControls {
       fieldLabel.innerHTML = `
         <input type="checkbox" data-field="${escapeHtml(fieldId)}" ${state.selectedFields.has(fieldId) ? 'checked' : ''}>
         <span class="swatch" style="background:${escapeHtml(field.color)}"></span>
-        <span><a href="#" class="filter-link filter-field-link" data-field-link="${escapeHtml(fieldId)}">${escapeHtml(field.label)}</a> <span class="filter-count">${memberCount}</span></span>`;
+        <span><a href="${escapeHtml(this.options.fieldPageUrl(fieldId))}" class="filter-link filter-field-link" data-field-link="${escapeHtml(fieldId)}">${escapeHtml(field.label)}</a> <span class="filter-count">${memberCount}</span></span>`;
       group.appendChild(fieldLabel);
 
       const domainList = document.createElement('div');
@@ -65,7 +67,7 @@ export class FilterControls {
         label.innerHTML = `
           <input type="checkbox" data-domain="${escapeHtml(domainId)}" ${state.selectedDomains.has(domainId) ? 'checked' : ''}>
           <span class="swatch" style="background:${escapeHtml(domain.color)}"></span>
-          <span><a href="#" class="filter-link filter-domain-link" data-domain-link="${escapeHtml(domainId)}">${escapeHtml(domain.label)}</a> <span class="filter-count">${domainMemberCount}</span></span>`;
+          <span><a href="${escapeHtml(this.options.domainPageUrl(domainId))}" class="filter-link filter-domain-link" data-domain-link="${escapeHtml(domainId)}">${escapeHtml(domain.label)}</a> <span class="filter-count">${domainMemberCount}</span></span>`;
         domainList.appendChild(label);
       }
       group.appendChild(domainList);
@@ -106,6 +108,21 @@ export class FilterControls {
     const activeScope = this.activeScopeLinkId();
     queryAll<HTMLAnchorElement>('[data-scope-link]').forEach((link) => {
       link.classList.toggle('active', link.dataset.scopeLink === activeScope);
+      if (link.dataset.scopeLink === activeScope) link.setAttribute('aria-current', 'page');
+      else link.removeAttribute('aria-current');
+    });
+    const exclusiveDomainId = this.exclusiveDomainId();
+    queryAll<HTMLAnchorElement>('[data-domain-link]').forEach((link) => {
+      const active = link.dataset.domainLink === exclusiveDomainId;
+      link.classList.toggle('active', active);
+      if (active) link.setAttribute('aria-current', 'page');
+      else link.removeAttribute('aria-current');
+    });
+    queryAll<HTMLAnchorElement>('[data-field-link]').forEach((link) => {
+      const active = link.dataset.fieldLink === activeScope && exclusiveDomainId === null;
+      link.classList.toggle('active', active);
+      if (active) link.setAttribute('aria-current', 'page');
+      else link.removeAttribute('aria-current');
     });
   }
 
@@ -185,9 +202,13 @@ export class FilterControls {
   }
 
   private handleTaxonomyLink(event: Event): void {
-    if (!(event.target instanceof HTMLAnchorElement)) return;
-    const fieldId = event.target.dataset.fieldLink;
-    const domainId = event.target.dataset.domainLink;
+    const target = event.target;
+    if (!(target instanceof Element)) return;
+    const link = target.closest<HTMLAnchorElement>('a[data-field-link], a[data-domain-link]');
+    if (!link) return;
+    if (event instanceof MouseEvent && (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey)) return;
+    const fieldId = link.dataset.fieldLink;
+    const domainId = link.dataset.domainLink;
     if (!fieldId && !domainId) return;
     event.preventDefault();
     event.stopPropagation();
@@ -303,12 +324,21 @@ export class FilterControls {
   private activeScopeLinkId(): string | null {
     const { model, state } = this.options;
     if (state.selectedDomains.size === model.domainOrder.length) return 'global';
+    const exclusiveDomainId = this.exclusiveDomainId();
+    if (exclusiveDomainId) return model.fieldForDomain(exclusiveDomainId);
     for (const fieldId of model.fieldOrder) {
       const fieldDomains = model.domainOrder.filter((domainId) => model.fieldForDomain(domainId) === fieldId);
       if (fieldDomains.length === state.selectedDomains.size
         && fieldDomains.every((domainId) => state.selectedDomains.has(domainId))) return fieldId;
     }
     return null;
+  }
+
+  private exclusiveDomainId(): string | null {
+    const { model, state } = this.options;
+    if (state.selectedDomains.size !== 1) return null;
+    const domainId = state.selectedDomains.values().next().value as string | undefined;
+    return domainId && model.knownDomainIds.has(domainId) ? domainId : null;
   }
 
   private buildDatalist(): void {

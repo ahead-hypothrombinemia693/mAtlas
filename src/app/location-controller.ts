@@ -2,7 +2,7 @@ import { addUiStateToParams } from '../state/ui-state.js';
 import { stateMatchesView, viewIdFromPath, viewIdFromTemplate, viewPagePath } from '../state/view-state.js';
 import { stripInlineMathText, summarizePlainText } from '../core/text.js';
 import type { GraphModel } from '../model/graph-model.js';
-import type { AppState, AtlasView, HistoryMode, SelectionTarget } from '../types.js';
+import type { AppState, AtlasView, HistoryMode, SelectionTarget, UrlUiState } from '../types.js';
 
 export interface LocationControllerOptions {
   model: GraphModel;
@@ -11,6 +11,39 @@ export interface LocationControllerOptions {
   fieldOrder: readonly string[];
   domainOrder: readonly string[];
   edgeTypeOrder: readonly string[];
+}
+
+export interface TaxonomyScope {
+  fieldId: string | null;
+  domainId: string | null;
+}
+
+function normalizedPath(pathname: string): string {
+  return pathname
+    .replace(/\/index\.html$/i, '/')
+    .replace(/^\/+|\/+$/g, '');
+}
+
+export function taxonomyScopeFromPath(pathname: string, model: GraphModel, fieldOrder: readonly string[]): TaxonomyScope {
+  const path = normalizedPath(pathname);
+  for (const fieldId of fieldOrder) {
+    const fieldPath = model.data.fields[fieldId]?.path?.replace(/^\/+|\/+$/g, '');
+    if (!fieldPath) continue;
+    if (path === fieldPath) return { fieldId, domainId: null };
+    if (!path.startsWith(`${fieldPath}/`)) continue;
+    const encodedDomainId = path.slice(fieldPath.length + 1);
+    if (!encodedDomainId || encodedDomainId.includes('/')) continue;
+    let domainId: string;
+    try {
+      domainId = decodeURIComponent(encodedDomainId);
+    } catch {
+      continue;
+    }
+    if (model.knownDomainIds.has(domainId) && model.fieldForDomain(domainId) === fieldId) {
+      return { fieldId, domainId };
+    }
+  }
+  return { fieldId: null, domainId: null };
 }
 
 export function selectionFromPath(pathname: string, nodeIds: ReadonlySet<string>): SelectionTarget | null {
@@ -51,28 +84,18 @@ export function selectionFromTemplate(
 
 export class LocationController {
   readonly scopedFieldId: string | null;
+  readonly scopedDomainId: string | null;
   readonly runtimeGlobalRootUrl: string;
-  readonly currentScopeUrl: string;
   readonly canonicalRootUrl: string;
-  private readonly defaultPageTitle: string;
-  private readonly defaultPageDescription: string;
   private activeViewId: string | null = null;
 
   constructor(private readonly options: LocationControllerOptions) {
-    const { model } = options;
     this.runtimeGlobalRootUrl = new URL('./', document.baseURI).toString();
-    this.scopedFieldId = this.resolveScopedField();
-    this.currentScopeUrl = this.scopedFieldId
-      ? new URL(`${model.data.fields[this.scopedFieldId]?.path ?? this.scopedFieldId}/`, this.runtimeGlobalRootUrl).toString()
-      : this.runtimeGlobalRootUrl;
+    const scope = this.resolveTaxonomyScope({ includeTemplate: true });
+    this.scopedFieldId = scope.fieldId;
+    this.scopedDomainId = scope.domainId;
     this.canonicalRootUrl = document.querySelector<HTMLMetaElement>('meta[name="atlas:root"]')?.content?.trim()
       || 'https://atlas.madvay.com/';
-    this.defaultPageTitle = this.scopedFieldId
-      ? `${model.data.fields[this.scopedFieldId]?.label ?? this.scopedFieldId} — ${model.data.meta.title}`
-      : model.data.meta.title;
-    this.defaultPageDescription = this.scopedFieldId
-      ? model.data.fields[this.scopedFieldId]?.description ?? model.data.meta.description
-      : model.data.meta.description;
   }
 
   scopedDefaultFieldIds(): string[] {
@@ -80,8 +103,24 @@ export class LocationController {
   }
 
   scopedDefaultDomainIds(): string[] {
+    if (this.scopedDomainId) return [this.scopedDomainId];
     const fields = new Set(this.scopedDefaultFieldIds());
     return this.options.domainOrder.filter((domainId) => fields.has(this.options.model.fieldForDomain(domainId)));
+  }
+
+  taxonomyDefaultsFromLocation(): Pick<UrlUiState, 'fields' | 'domains'> {
+    const scope = this.resolveTaxonomyScope();
+    if (scope.domainId && scope.fieldId) return { fields: [scope.fieldId], domains: [scope.domainId] };
+    if (scope.fieldId) {
+      return {
+        fields: [scope.fieldId],
+        domains: this.options.domainOrder.filter((domainId) => this.options.model.fieldForDomain(domainId) === scope.fieldId)
+      };
+    }
+    if (normalizedPath(window.location.pathname) === '') {
+      return { fields: [...this.options.fieldOrder], domains: [...this.options.domainOrder] };
+    }
+    return {};
   }
 
   conceptPageDefaultTaxonomy(): { fields: string[]; domains: string[] } | null {
@@ -164,7 +203,7 @@ export class LocationController {
     );
   }
 
-  addUiState(url: URL): void {
+  addUiState(url: URL, { taxonomyEncoded = false }: { taxonomyEncoded?: boolean } = {}): void {
     addUiStateToParams(
       url.searchParams,
       this.options.getState(),
@@ -172,6 +211,10 @@ export class LocationController {
       this.options.domainOrder,
       this.options.edgeTypeOrder
     );
+    if (taxonomyEncoded) {
+      url.searchParams.delete('fields');
+      url.searchParams.delete('domains');
+    }
   }
 
   githubEditUrl(itemId: string): string {
@@ -181,6 +224,17 @@ export class LocationController {
 
   conceptPageUrl(nodeId: string): string {
     return new URL(`concepts/${encodeURIComponent(nodeId)}/`, this.runtimeGlobalRootUrl).toString();
+  }
+
+  fieldPageUrl(fieldId: string): string {
+    const fieldPath = this.options.model.data.fields[fieldId]?.path ?? fieldId;
+    return new URL(`${fieldPath}/`, this.runtimeGlobalRootUrl).toString();
+  }
+
+  domainPageUrl(domainId: string): string {
+    const fieldId = this.options.model.fieldForDomain(domainId);
+    const fieldPath = this.options.model.data.fields[fieldId]?.path ?? fieldId;
+    return new URL(`${fieldPath}/${encodeURIComponent(domainId)}/`, this.runtimeGlobalRootUrl).toString();
   }
 
   itemUrl(itemId: string, itemKind: SelectionTarget['kind']): string {
@@ -196,8 +250,9 @@ export class LocationController {
       return url.toString();
     }
 
-    const url = new URL(this.currentScopeUrl);
-    this.addUiState(url);
+    const scope = this.scopeForSelection(this.namedScopeForState());
+    const url = this.scopeUrl(scope, this.runtimeGlobalRootUrl);
+    this.addUiState(url, { taxonomyEncoded: scope.named });
     url.searchParams.set(itemKind, itemId);
     url.searchParams.delete(itemKind === 'node' ? 'edge' : 'node');
     url.hash = '';
@@ -212,16 +267,22 @@ export class LocationController {
     } else {
       if (activeView) this.deactivateView();
       const { model } = this.options;
-      url = target?.kind === 'node' && model.nodeRecord.get(target.id)?.kind === 'structure'
-        ? new URL(this.conceptPageUrl(target.id))
-        : new URL(this.currentScopeUrl);
-      this.addUiState(url);
-      url.searchParams.delete('node');
-      url.searchParams.delete('edge');
-      url.searchParams.delete('selection');
-      if (target?.kind === 'node' && model.nodeRecord.get(target.id)?.kind !== 'structure') url.searchParams.set('node', target.id);
-      if (target?.kind === 'edge') url.searchParams.set('edge', target.id);
-      url.hash = '';
+      const namedScope = this.namedScopeForState();
+      const conceptSelected = target?.kind === 'node' && model.nodeRecord.get(target.id)?.kind === 'structure';
+      if (conceptSelected) {
+        url = new URL(this.conceptPageUrl(target.id));
+        this.addUiState(url);
+      } else {
+        const scope = target ? this.scopeForSelection(namedScope) : namedScope;
+        url = this.scopeUrl(scope, this.runtimeGlobalRootUrl);
+        this.addUiState(url, { taxonomyEncoded: scope.named });
+        url.searchParams.delete('node');
+        url.searchParams.delete('edge');
+        url.searchParams.delete('selection');
+        if (target?.kind === 'node') url.searchParams.set('node', target.id);
+        if (target?.kind === 'edge') url.searchParams.set('edge', target.id);
+        url.hash = '';
+      }
     }
     if (url.href === window.location.href) return;
 
@@ -238,8 +299,9 @@ export class LocationController {
   syncDocumentMetadata(target: SelectionTarget | null): void {
     const { model } = this.options;
     const activeView = this.activeView();
-    let title = activeView ? `${activeView.title} — ${model.data.meta.title}` : this.defaultPageTitle;
-    let description = activeView ? activeView.summary : this.defaultPageDescription;
+    const defaultMetadata = this.scopeMetadata(this.namedScopeForState());
+    let title = activeView ? `${activeView.title} — ${model.data.meta.title}` : defaultMetadata.title;
+    let description = activeView ? activeView.summary : defaultMetadata.description;
 
     if (target?.kind === 'node') {
       const node = model.nodeRecord.get(target.id);
@@ -292,7 +354,7 @@ export class LocationController {
 
   private urlForActiveViewSelection(target: SelectionTarget | null): URL {
     const view = this.activeView();
-    if (!view) return new URL(this.currentScopeUrl);
+    if (!view) return this.scopeUrl(this.namedScopeForState(), this.runtimeGlobalRootUrl);
     const url = new URL(this.viewPageUrl(view.id));
     if (!target) {
       url.searchParams.set('selection', 'none');
@@ -302,16 +364,18 @@ export class LocationController {
     return url;
   }
 
-  private resolveScopedField(): string | null {
+  private resolveTaxonomyScope({ includeTemplate = false }: { includeTemplate?: boolean } = {}): TaxonomyScope {
     const { model, fieldOrder } = this.options;
-    const explicit = document.querySelector<HTMLMetaElement>('meta[name="atlas:scope"]')?.content?.trim();
-    if (explicit && model.knownFieldIds.has(explicit)) return explicit;
-    const path = window.location.pathname.replace(/^\/+|\/+$/g, '');
-    for (const fieldId of fieldOrder) {
-      const fieldPath = model.data.fields[fieldId]?.path;
-      if (path === fieldPath || (fieldPath && path.startsWith(`${fieldPath}/`))) return fieldId;
+    const fromPath = taxonomyScopeFromPath(window.location.pathname, model, fieldOrder);
+    if (fromPath.fieldId) return fromPath;
+    if (!includeTemplate) return fromPath;
+    const explicitDomain = document.querySelector<HTMLMetaElement>('meta[name="atlas:domain"]')?.content?.trim();
+    if (explicitDomain && model.knownDomainIds.has(explicitDomain)) {
+      return { fieldId: model.fieldForDomain(explicitDomain), domainId: explicitDomain };
     }
-    return null;
+    const explicitField = document.querySelector<HTMLMetaElement>('meta[name="atlas:scope"]')?.content?.trim();
+    if (explicitField && model.knownFieldIds.has(explicitField)) return { fieldId: explicitField, domainId: null };
+    return fromPath;
   }
 
   private selectionCanonicalUrl(target: SelectionTarget | null): string {
@@ -319,9 +383,7 @@ export class LocationController {
     if (activeView) return new URL(viewPagePath(activeView.id), this.canonicalRootUrl).toString();
     const { model } = this.options;
     if (!target) {
-      return this.scopedFieldId
-        ? new URL(`${model.data.fields[this.scopedFieldId]?.path ?? this.scopedFieldId}/`, this.canonicalRootUrl).toString()
-        : this.canonicalRootUrl;
+      return this.scopeUrl(this.namedScopeForState(), this.canonicalRootUrl).toString();
     }
     if (target.kind === 'node') {
       if (model.nodeRecord.get(target.id)?.kind === 'structure') {
@@ -330,6 +392,66 @@ export class LocationController {
       return `${this.canonicalRootUrl}?node=${encodeURIComponent(target.id)}`;
     }
     return `${this.canonicalRootUrl}?edge=${encodeURIComponent(target.id)}`;
+  }
+
+  private namedScopeForState(): TaxonomyScope & { named: boolean } {
+    const { model } = this.options;
+    const selectedDomains = this.options.getState().selectedDomains;
+    if (selectedDomains.size === 1) {
+      const domainId = selectedDomains.values().next().value as string | undefined;
+      if (domainId && model.knownDomainIds.has(domainId)) {
+        return { fieldId: model.fieldForDomain(domainId), domainId, named: true };
+      }
+    }
+    if (selectedDomains.size === this.options.domainOrder.length) {
+      return { fieldId: null, domainId: null, named: true };
+    }
+    for (const fieldId of this.options.fieldOrder) {
+      const fieldDomains = this.options.domainOrder.filter((domainId) => model.fieldForDomain(domainId) === fieldId);
+      if (fieldDomains.length === selectedDomains.size && fieldDomains.every((domainId) => selectedDomains.has(domainId))) {
+        return { fieldId, domainId: null, named: true };
+      }
+    }
+    return { fieldId: null, domainId: null, named: false };
+  }
+
+  private scopeForSelection(scope: TaxonomyScope & { named: boolean }): TaxonomyScope & { named: boolean } {
+    return scope.domainId
+      ? { fieldId: null, domainId: null, named: false }
+      : scope;
+  }
+
+  private scopeUrl(scope: TaxonomyScope, rootUrl: string): URL {
+    if (scope.domainId) {
+      const fieldId = scope.fieldId ?? this.options.model.fieldForDomain(scope.domainId);
+      const fieldPath = this.options.model.data.fields[fieldId]?.path ?? fieldId;
+      return new URL(`${fieldPath}/${encodeURIComponent(scope.domainId)}/`, rootUrl);
+    }
+    if (scope.fieldId) {
+      const fieldPath = this.options.model.data.fields[scope.fieldId]?.path ?? scope.fieldId;
+      return new URL(`${fieldPath}/`, rootUrl);
+    }
+    return new URL(rootUrl);
+  }
+
+  private scopeMetadata(scope: TaxonomyScope): { title: string; description: string } {
+    const { model } = this.options;
+    if (scope.domainId) {
+      const domain = model.data.domains[scope.domainId];
+      const field = scope.fieldId ? model.data.fields[scope.fieldId] : undefined;
+      return {
+        title: `${domain?.label ?? scope.domainId} — ${model.data.meta.title}`,
+        description: `Explore ${domain?.label ?? scope.domainId} concepts and relations in ${field?.label ?? 'the atlas'}.`
+      };
+    }
+    if (scope.fieldId) {
+      const field = model.data.fields[scope.fieldId];
+      return {
+        title: `${field?.label ?? scope.fieldId} — ${model.data.meta.title}`,
+        description: field?.description ?? model.data.meta.description
+      };
+    }
+    return { title: model.data.meta.title, description: model.data.meta.description };
   }
 
   private setHeadMeta(

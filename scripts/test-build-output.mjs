@@ -83,4 +83,19 @@ for (const view of viewsData.views) {
   if (!sitemap.includes(`<loc>https://atlas.madvay.com/views/${encodedId}/</loc>`)) throw new Error(`The sitemap omits ${view.id}.`);
 }
 
-console.log(`Verified ${viewsData.views.length} static view pages, the atlas directory, the concepts redirect, the standalone SVG export, data assets, and sitemap entries.`);
+for (const domainId of graphData.meta.domainOrder ?? Object.keys(graphData.domains)) {
+  const domain = graphData.domains[domainId];
+  const field = graphData.fields[domain.field];
+  const encodedId = encodeURIComponent(domainId);
+  const path = `${field.path}/${encodedId}/`;
+  const html = await readFile(new URL(`${path}index.html`, dist), 'utf8');
+  if (!html.includes(`<meta name="atlas:scope" content="${domain.field}">`)) throw new Error(`Static domain page for ${domainId} lacks its field metadata.`);
+  if (!html.includes(`<meta name="atlas:domain" content="${domainId}">`)) throw new Error(`Static domain page for ${domainId} lacks its domain metadata.`);
+  if (!html.includes('<base href="../../">')) throw new Error(`Static domain page for ${domainId} has the wrong base path.`);
+  if (!html.includes(`<link rel="canonical" href="https://atlas.madvay.com/${path}">`)) throw new Error(`Static domain page for ${domainId} has the wrong canonical URL.`);
+  if (!html.includes('<script id="taxonomy-page-jsonld" type="application/ld+json">')) throw new Error(`Static domain page for ${domainId} lacks taxonomy JSON-LD.`);
+  if (!sitemap.includes(`<loc>https://atlas.madvay.com/${path}</loc>`)) throw new Error(`The sitemap omits domain ${domainId}.`);
+  if (!directoryPage.includes(`href="/${path}"`)) throw new Error(`The directory page does not link to domain ${domainId}.`);
+}
+
+console.log(`Verified ${viewsData.views.length} static view pages, ${Object.keys(graphData.domains).length} static domain pages, the atlas directory, the concepts redirect, the standalone SVG export, data assets, and sitemap entries.`);

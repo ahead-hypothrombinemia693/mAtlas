@@ -5,7 +5,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { generateDirectoryPage, inlineSvgFragment, renderDirectoryPage } from '../scripts/generate-directory-page.mjs';
-import { renderConceptIndexRedirect } from '../scripts/generate-concept-pages.mjs';
+import { renderConceptIndexRedirect, renderScopePage } from '../scripts/generate-concept-pages.mjs';
 
 const root = new URL('../', import.meta.url);
 const exportedSvg = '<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" role="img"><title id="atlas-title">Atlas</title><a href="https://atlas.madvay.com/concepts/finite_set/"><text>Finite set</text></a></svg>';
@@ -37,6 +37,11 @@ test('directory page is semantic, crawlable, root-relative, and exactly transclu
   assert.ok(html.includes('Browse all'));
   assert.ok(html.includes('Relation legend:'));
   assert.ok(html.includes('href="/concepts/finite_set/"'));
+  const firstDomainId = graphData.meta.domainOrder[0];
+  const firstDomain = graphData.domains[firstDomainId];
+  const firstDomainPath = `/${graphData.fields[firstDomain.field].path}/${encodeURIComponent(firstDomainId)}/`;
+  assert.ok(html.includes(`href="${firstDomainPath}"`));
+  assert.ok(html.includes('"hasPart"'));
   assert.ok(html.indexOf('href="/concepts/finite_set/"') < html.indexOf('<svg '));
   assert.ok(!html.includes('/m/'));
 
@@ -72,4 +77,30 @@ test('concepts index redirects in HTML and JavaScript to the directory', () => {
   assert.ok(html.includes('const target = "/directory/" + window.location.search + window.location.hash;'));
   assert.ok(html.includes('window.location.replace(target);'));
   assert.ok(html.includes('<a href="/directory/">Continue to the Atlas Directory</a>'));
+});
+
+test('field and domain scope pages expose canonical routes and crawlable navigation', async () => {
+  const graphData = JSON.parse(await readFile(new URL('src/data/structures.json', root), 'utf8'));
+  const templateHtml = await readFile(new URL('src/index.html', root), 'utf8');
+  const domainId = graphData.meta.domainOrder.find((id) => graphData.domains[id]?.field === 'mathematics');
+  assert.ok(domainId);
+  const field = graphData.fields.mathematics;
+  const domain = graphData.domains[domainId];
+
+  const fieldHtml = renderScopePage(templateHtml, graphData, 'mathematics');
+  assert.ok(fieldHtml.includes(`<link rel="canonical" href="https://atlas.madvay.com/${field.path}/">`));
+  assert.ok(fieldHtml.includes('<base href="../">'));
+  assert.ok(fieldHtml.includes('<meta name="atlas:scope" content="mathematics">'));
+  assert.ok(fieldHtml.includes(`href="/${field.path}/${encodeURIComponent(domainId)}/"`));
+
+  const domainHtml = renderScopePage(templateHtml, graphData, 'mathematics', domainId);
+  assert.ok(domainHtml.includes(`<link rel="canonical" href="https://atlas.madvay.com/${field.path}/${encodeURIComponent(domainId)}/">`));
+  assert.ok(domainHtml.includes('<base href="../../">'));
+  assert.ok(domainHtml.includes('<meta name="atlas:scope" content="mathematics">'));
+  assert.ok(domainHtml.includes(`<meta name="atlas:domain" content="${domainId}">`));
+  assert.ok(domainHtml.includes(`<link rel="up" href="/${field.path}/">`));
+  assert.ok(domainHtml.includes('<script id="taxonomy-page-jsonld" type="application/ld+json">'));
+  assert.ok(domainHtml.includes(domain.label));
+  const member = graphData.nodes.find((node) => node.kind === 'structure' && (node.domains ?? [node.primaryDomain]).includes(domainId));
+  assert.ok(member && domainHtml.includes(`href="/concepts/${encodeURIComponent(member.id)}/"`));
 });

@@ -3,6 +3,8 @@ import { writeFile } from 'node:fs/promises';
 const SITE_ORIGIN = 'https://atlas.madvay.com';
 const appUrl = (pathname = '') => new URL(pathname, `${SITE_ORIGIN}/`).toString();
 const conceptPath = (nodeId) => `concepts/${encodeURIComponent(nodeId)}/`;
+const fieldPath = (graphData, fieldId) => `${graphData.fields[fieldId]?.path ?? fieldId}/`;
+const domainPath = (graphData, domainId) => `${fieldPath(graphData, graphData.domains[domainId]?.field)}${encodeURIComponent(domainId)}/`;
 
 function buildRobotsTxt() {
   return ['User-agent: *', 'Allow: /', `Sitemap: ${appUrl('sitemap.xml')}`, ''].join('\n');
@@ -22,13 +24,16 @@ function sitemapEntry(url, { lastModified, imageUrl } = {}) {
 function buildSitemapXml(graphData, viewsData, atlasSvgPath, directoryPath, lastModified) {
   const concepts = graphData.nodes.filter((node) => node.kind === 'structure');
   const fieldUrls = (graphData.meta.fieldOrder ?? Object.keys(graphData.fields))
-    .map((fieldId) => appUrl(`${graphData.fields[fieldId].path}/`));
+    .map((fieldId) => appUrl(fieldPath(graphData, fieldId)));
+  const domainUrls = (graphData.meta.domainOrder ?? Object.keys(graphData.domains))
+    .map((domainId) => appUrl(domainPath(graphData, domainId)));
   const viewUrls = viewsData.views.map((view) => appUrl(`views/${encodeURIComponent(view.id)}/`));
   const atlasSvgUrl = appUrl(atlasSvgPath);
   const directoryUrl = appUrl(directoryPath);
   const urls = [
     appUrl(),
     ...fieldUrls,
+    ...domainUrls,
     directoryUrl,
     appUrl('views/'),
     ...viewUrls,
@@ -49,6 +54,11 @@ function buildSitemapXml(graphData, viewsData, atlasSvgPath, directoryPath, last
 
 function buildLlmsTxt(graphData, viewsData, graphDataPath, schemaPath, viewsPath, atlasSvgPath, directoryPath) {
   const fields = (graphData.meta.fieldOrder ?? Object.keys(graphData.fields)).map((id) => graphData.fields[id].label).join(', ');
+  const domainLinks = (graphData.meta.domainOrder ?? Object.keys(graphData.domains)).map((domainId) => {
+    const domain = graphData.domains[domainId];
+    const field = graphData.fields[domain.field];
+    return `- [${domain.label}](${appUrl(domainPath(graphData, domainId))}) — ${field?.label ?? domain.field}`;
+  });
   return [
     '# Atlas of Fundamental Concepts', '', `Canonical: ${appUrl()}`, `Version: ${graphData.meta.version}`, `Description: ${graphData.meta.description}`, '',
     '## Scope', graphData.meta.scope, '',
@@ -66,6 +76,9 @@ function buildLlmsTxt(graphData, viewsData, graphDataPath, schemaPath, viewsPath
     `- Relations: ${graphData.edges.length}`,
     `- Domains: ${Object.keys(graphData.domains).length}`,
     `- Guided views: ${viewsData.views.length}`, '',
+    '## Domain pages',
+    ...domainLinks,
+    '',
     '## Editorial guidance',
     '- Use canonical /concepts/<id>/ URLs when citing atlas concepts.',
     '- Use /directory/ for the complete crawlable visual overview and concept directory, and /static/atlas.svg for the standalone vector document.',
