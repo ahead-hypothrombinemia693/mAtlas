@@ -1,5 +1,5 @@
 {
-  "name": "human-knowledge-atlas",
+  "name": "mAtlas",
   "version": "1.0.0",
   "private": true,
   "description": "Interactive, source-backed atlas connecting mathematics and physics across fields and scales.",
@@ -26,9 +26,9 @@
     "katex": "^0.18.1"
   },
   "devDependencies": {
-    "typescript": "^5.8.3",
     "esbuild-wasm": "0.28.1",
-    "puppeteer": "24.31.0"
+    "puppeteer": "^25.4.0",
+    "typescript": "^5.8.3"
   },
   "allowScripts": {
     "puppeteer": true
