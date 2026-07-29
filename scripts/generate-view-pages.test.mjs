@@ -11,8 +11,8 @@ const root = new URL('../', import.meta.url);
 test('view page generator emits a directory and crawlable static routes', async () => {
   const directory = await mkdtemp(join(tmpdir(), 'atlas-views-'));
   try {
-    const graphData = JSON.parse(await readFile(new URL('src/data/structures.json', root), 'utf8'));
-    const viewsData = JSON.parse(await readFile(new URL('src/data/views.json', root), 'utf8'));
+    const graphData = JSON.parse(await readFile(new URL('.build/content/atlas.json', root), 'utf8'));
+    const viewsData = JSON.parse(await readFile(new URL('.build/content/views.json', root), 'utf8'));
     const templateHtml = await readFile(new URL('src/index.html', root), 'utf8');
     const distUrl = pathToFileURL(`${directory}/`);
     await generateViewPages({ graphData, viewsData, templateHtml, distUrl });

@@ -1,0 +1,10 @@
+{
+  "formatVersion": 1,
+  "schemaVersion": "1.0.0",
+  "contentVersion": "1.5.0",
+  "files": {
+    "graph": "structures.json",
+    "schema": "schema.json",
+    "views": "views.json"
+  }
+}

@@ -13,11 +13,15 @@ The atlas is one graph rather than a collection of isolated applications. Fields
 - `/concepts/` — HTML/JavaScript compatibility redirect to `/directory/`
 - `/views/` — static directory of curated guided views
 - `/views/<id>/` — a static, crawlable guided-view route that opens the interactive atlas with the preset applied
-- `/data/atlas.<hash>.json` — immutable canonical graph export (the exact URL is linked from each generated page)
-- `/data/schema.<hash>.json` — published graph JSON Schema
-- `/data/views.<hash>.json` — immutable guided-view definitions
+- `/content/atlas.<hash>.json` — immutable canonical graph export (the exact URL is linked from each generated page)
+- `/content/schema.<hash>.json` — published graph JSON Schema
+- `/content/views.<hash>.json` — immutable guided-view definitions
+- `/content/provenance.<hash>.json` — content/schema versions, source paths, SHA-256 hashes, license, and attribution
+- `/CONTENT_LICENSE` — content-specific CC BY-SA 4.0 notice
 - `/directory/` — static semantic atlas directory with the exact all-in SVG transcluded, crawlable concept links, relation definitions, structured data, and atlas context
 - `/static/atlas.svg` — stable standalone all-in SVG export containing every field, domain, concept, junction, and relation
+
+All runtime-readable JSON is published under `/content/`; the build does not emit a `/data/` directory.
 
 The generated site does not create or preserve `/m/`; configure an external redirect if one is required.
 
@@ -32,40 +36,51 @@ npm install
 npm run dev
 ```
 
-`npm run dev` rebuilds when files under `src/` change and serves the result at `http://localhost:4173` by default.
+`npm run dev` rebuilds when files under `src/` or `content/` change and serves the result at `http://localhost:4173` by default.
 
 ## Build and checks
 
 ```bash
-npm run validate:data
+npm run validate:content
+npm run content:build
+npm run test:content
 npm run typecheck
 npm test
 ```
 
-`npm run build` writes the publishable static site to `dist/`, including the stable `/static/atlas.svg` all-in export and `/directory/` semantic atlas directory. The build opens the compiled application in headless Chrome/Chromium with every filter enabled and invokes the same `SvgExporter.serializeVisible()` implementation used by the runtime download button; there is no separate SVG renderer. The generated HTML page removes only the standalone XML declaration and transcludes the resulting SVG element byte-for-byte, while adding ordinary HTML concept links, field/domain context, a relation legend, `WebPage`/`ImageObject` structured data, and links to the interactive and machine-readable forms. `npm run build:pages` copies that output unchanged to `.pages/` for GitHub Pages.
+`npm run content:build` validates editable source under `content/` and atomically writes the normalized renderer/publisher contract to `.build/content/`. The compiled contract contains `atlas.json`, `schema.json`, `views.json`, and `provenance.json`. Application code, page generators, and tests consume only this compiled boundary.
 
-The validator checks field/domain membership, node and edge references, citations and source URLs, construction-junction consistency, structural direction and cycles, duplicate relations, source usage, generic detail sections, explicit inline-math markup, and every guided view's identifiers and settings.
+`npm run build` first rebuilds that content contract, then writes the publishable static site to `dist/`, including the stable `/static/atlas.svg` all-in export and `/directory/` semantic atlas directory. The build opens the compiled application in headless Chrome/Chromium with every filter enabled and invokes the same `SvgExporter.serializeVisible()` implementation used by the runtime download button; there is no separate SVG renderer. The generated HTML page removes only the standalone XML declaration and transcludes the resulting SVG element byte-for-byte, while adding ordinary HTML concept links, field/domain context, a relation legend, `WebPage`/`ImageObject` structured data, and links to the interactive and machine-readable forms. `npm run build:pages` copies that output unchanged to `.pages/` for GitHub Pages.
+
+Validation is split into schema/shape, reference, semantic, editorial, and renderer-compatibility layers. The complete validator checks contract versions, field/domain membership, node and edge references, citations and source URLs, construction-junction consistency, structural direction and cycles, duplicate relations, source usage, generic detail sections, explicit inline-math markup, and every guided view's identifiers and settings.
 
 ## Additional scripts
 
-- `npm run clean` removes generated build artifacts such as `dist/` and `.pages/`.
+- `npm run clean` removes generated build artifacts such as `.build/`, `dist/`, and `.pages/`.
+- `npm run validate:content:<layer>` runs one validation layer (`schema`, `references`, `semantic`, `editorial`, or `renderer`).
+- `npm run test:content` compiles the content contract and verifies normalized output, versions, hashes, and license provenance.
 - `npm run preview` serves the contents of `dist/` locally for review after building.
 - `npm run math:mark` helps migrate legacy unmarked math to explicit `$...$` delimiters; its changes require editorial review.
 
 ## Architecture
 
 ```text
+content/
+  structures.json            canonical editable graph dataset
+  views.json                 curated guided-view definitions
+  schema.json                published graph schema
+  manifest.json              content and schema contract versions
+  LICENSE                    content-specific CC BY-SA notice
 src/
   index.html                 shared application shell
   styles.css                 application, graph, and field-band styling
   main.ts                    graph renderer, routing, state, details, and SVG export
   types.ts                   graph and application types
-  data/
-    structures.json          canonical editable graph dataset
-    views.json               curated guided-view definitions
-    schema.json              published graph schema
 scripts/
-  build.mjs                  validates, compiles, generates pages, and assembles dist/
+  build-content.mjs          validates and compiles content into .build/content/
+  validate-content.mjs       layered content validation entry point
+  content/                   contract, loader, and validation modules
+  build.mjs                  bundles software, publishes compiled content, and assembles dist/
   generate-concept-pages.mjs canonical concept pages, the /concepts/ redirect, and field-scope pages
   generate-view-pages.mjs    view directory and crawlable view routes
   generate-static-atlas-svg.mjs
@@ -73,11 +88,11 @@ scripts/
   generate-directory-page.mjs
                               transcludes that exact SVG into the semantic /directory/ page
   generate-seo-assets.mjs    sitemap, robots.txt, and llms.txt
-  validate-data.mjs          semantic and reference validation
   prepare-pages.mjs          root-level GitHub Pages artifact
+.build/content/              generated, normalized build contract; never edited directly
 ```
 
-`src/data/structures.json` is the canonical graph dataset. `src/data/views.json` is a separate navigation layer: it references graph identifiers but does not duplicate or alter graph content. The field-aware graph model can later be split into authoring modules without changing its compiled public form.
+`content/structures.json` is the canonical graph dataset. `content/views.json` is a separate editorial/navigation layer: it references graph identifiers but does not duplicate or alter graph content. `content/manifest.json` declares `schemaVersion` and `contentVersion`; `scripts/content/contract.mjs` declares the schema versions supported by the software. The renderer and publishers read only `.build/content/`, so a later extraction of `content/` into a separately versioned repository does not require an application rewrite.
 
 ### Taxonomy
 
@@ -131,7 +146,7 @@ The scoped routes initialize their corresponding field while using the same grap
 
 ### Guided views
 
-A view is a named preset in `src/data/views.json`. It contains editorial copy (`title`, `summary`, `narrative`, and `tags`), an optional image, an ordered `nodeSequence`, and a complete settings object for fields, domains, edge types, cross-field visibility, display controls, and layout.
+A view is a named preset in `content/views.json`. It contains editorial copy (`title`, `summary`, `narrative`, and `tags`), an optional image, an ordered `nodeSequence`, and a complete settings object for fields, domains, edge types, cross-field visibility, display controls, and layout.
 
 The first sequence node is the view’s initial selection. Previous and Next controls advance through the ordered concepts on desktop and mobile; selecting anything else leaves the sequence position unchanged. The build emits a static directory page and one crawlable application page per view. View routes are included in `sitemap.xml` and represented as `CollectionPage` JSON-LD. In the application, the **Views** toolbar control opens the same data-driven catalog, while a dismissible first-visit prompt makes the feature discoverable without permanently occupying graph space.
 
@@ -151,20 +166,21 @@ The browser escapes prose and sends only delimited formulas to KaTeX. `npm run m
 
 ## GitHub Pages
 
-`.github/workflows/pages.yml` installs locked dependencies, runs the complete `npm test` pipeline, prepares `.pages/`, and deploys it. The artifact now places the complete atlas at its root, including `/math/`, `/physics/`, `/directory/`, `/concepts/`, `/views/`, and `/static/atlas.svg`.
+`.github/workflows/pages.yml` installs locked dependencies with `npm ci`, runs the complete `npm test` pipeline, prepares `.pages/`, and deploys it. The artifact now places the complete atlas at its root, including `/math/`, `/physics/`, `/directory/`, `/concepts/`, `/views/`, and `/static/atlas.svg`.
 
 ## License
 
-See the [NOTICE](NOTICE) and [LICENSE](LICENSE) files for licensing information.
+See [NOTICE](NOTICE), [LICENSE](LICENSE), and the content-specific [content/LICENSE](content/LICENSE) for licensing information. The build publishes the latter as `/CONTENT_LICENSE` and records the content license and attribution in the hashed provenance artifact.
 
 ```
 mAtlas - Copyright (c) 2026 Advay Mengle - https://atlas.madvay.com/
 
-The files in `src/data/` (and as published, the resulting graphs,
-website content, and the `data/` directory) are licensed under
-the Creative Commons Attribution-ShareAlike 4.0 International
-License (CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0/);
-attribution should be given per the first line in this file.
+The editable knowledge and editorial source files in `content/`, together
+with compiled or published content derived from them (including graph, schema,
+guided-view, page, directory, search-index, and SVG content), are licensed
+under the Creative Commons Attribution-ShareAlike 4.0 International License
+(CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0/). Attribution
+should be given per the first line in this file. See also `content/LICENSE`.
 
 The remainder of mAtlas is licensed under the Apache License 2.0:
 

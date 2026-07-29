@@ -94,10 +94,10 @@ async function selfContainedBuildPage(distUrl) {
     }
   );
 
-  const dataFiles = (await readdir(new URL('data/', distUrl))).filter((file) => file.endsWith('.json'));
-  const embeddedData = Object.fromEntries(await Promise.all(dataFiles.map(async (file) => [
-    `/data/${file}`,
-    await readFile(new URL(`data/${file}`, distUrl), 'utf8')
+  const contentFiles = (await readdir(new URL('content/', distUrl))).filter((file) => file.endsWith('.json'));
+  const embeddedData = Object.fromEntries(await Promise.all(contentFiles.map(async (file) => [
+    `/content/${file}`,
+    await readFile(new URL(`content/${file}`, distUrl), 'utf8')
   ])));
   const serializedData = JSON.stringify(embeddedData).replaceAll('<', '\\u003c');
   const fetchShim = `<script>(()=>{const files=${serializedData};const nativeFetch=globalThis.fetch.bind(globalThis);globalThis.fetch=(input,init)=>{const url=new URL(input instanceof Request?input.url:String(input),document.baseURI);if(Object.prototype.hasOwnProperty.call(files,url.pathname)){return Promise.resolve(new Response(files[url.pathname],{status:200,headers:{"content-type":"application/json; charset=utf-8"}}));}return nativeFetch(input,init);};})();</script>`;

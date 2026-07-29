@@ -1,7 +1,7 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { markExplicitMath } from './math-markup.mjs';
 
-const dataUrl = new URL('../src/data/structures.json', import.meta.url);
+const dataUrl = new URL('../content/structures.json', import.meta.url);
 const graph = JSON.parse(await readFile(dataUrl, 'utf8'));
 const changes = [];
 
@@ -41,7 +41,7 @@ for (const change of changes) {
 
 if (process.argv.includes('--write')) {
   await writeFile(dataUrl, `${JSON.stringify(graph, null, 2)}\n`);
-  console.log(`Marked ${changes.length} field${changes.length === 1 ? '' : 's'} in src/data/structures.json.`);
+  console.log(`Marked ${changes.length} field${changes.length === 1 ? '' : 's'} in content/structures.json.`);
 } else {
   console.error(`Found ${changes.length} field${changes.length === 1 ? '' : 's'} with unmarked math. Re-run with --write to update the dataset.`);
   process.exitCode = 1;

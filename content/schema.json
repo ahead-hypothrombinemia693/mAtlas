@@ -1,6 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://atlas.madvay.com/data/schema.json",
+  "$id": "https://atlas.madvay.com/content/schema.json",
+  "x-matlas-schema-version": "1.0.0",
   "title": "Atlas of Fundamental Concepts data",
   "type": "object",
   "additionalProperties": false,

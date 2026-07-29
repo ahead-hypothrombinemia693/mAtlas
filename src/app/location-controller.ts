@@ -225,7 +225,7 @@ export class LocationController {
 
   githubEditUrl(itemId: string): string {
     const textFragment = encodeURIComponent(`"id": "${itemId}"`);
-    return `https://github.com/madvay/mAtlas/blob/main/src/data/structures.json#:~:text=${textFragment}`;
+    return `https://github.com/madvay/mAtlas/blob/main/content/structures.json#:~:text=${textFragment}`;
   }
 
   conceptPageUrl(nodeId: string): string {

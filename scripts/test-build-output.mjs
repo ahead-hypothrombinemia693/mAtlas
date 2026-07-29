@@ -2,18 +2,29 @@ import { access, readFile } from 'node:fs/promises';
 
 const root = new URL('../', import.meta.url);
 const dist = new URL('../dist/', import.meta.url);
-const graphData = JSON.parse(await readFile(new URL('src/data/structures.json', root), 'utf8'));
-const viewsData = JSON.parse(await readFile(new URL('src/data/views.json', root), 'utf8'));
+const graphData = JSON.parse(await readFile(new URL('.build/content/atlas.json', root), 'utf8'));
+const viewsData = JSON.parse(await readFile(new URL('.build/content/views.json', root), 'utf8'));
+const compiledProvenance = JSON.parse(await readFile(new URL('.build/content/provenance.json', root), 'utf8'));
 const manifest = JSON.parse(await readFile(new URL('asset-manifest.json', dist), 'utf8'));
 const sitemap = await readFile(new URL('sitemap.xml', dist), 'utf8');
 const llms = await readFile(new URL('llms.txt', dist), 'utf8');
 const openSearch = await readFile(new URL('opensearch.xml', dist), 'utf8');
-const searchIndex = JSON.parse(await readFile(new URL('data/search-index.json', dist), 'utf8'));
+const searchIndex = JSON.parse(await readFile(new URL('content/search-index.json', dist), 'utf8'));
 const atlasSvg = await readFile(new URL('static/atlas.svg', dist), 'utf8');
 const directoryPage = await readFile(new URL('directory/index.html', dist), 'utf8');
 const conceptsIndex = await readFile(new URL('concepts/index.html', dist), 'utf8');
 const viewIndex = await readFile(new URL('views/index.html', dist), 'utf8');
 const appIndex = await readFile(new URL('index.html', dist), 'utf8');
+
+async function assertMissing(url, message) {
+  try {
+    await access(url);
+  } catch (error) {
+    if (error?.code === 'ENOENT') return;
+    throw error;
+  }
+  throw new Error(message);
+}
 
 const recoveryParameter = '__atlas_refresh';
 function assertCacheRecovery(html, pageLabel) {
@@ -35,19 +46,36 @@ if (!appIndex.includes('class="skip-link"')) throw new Error('The application la
 if (!openSearch.includes('<OpenSearchDescription') || !openSearch.includes('?q={searchTerms}')) throw new Error('opensearch.xml is incomplete.');
 if (searchIndex.concepts?.length !== graphData.nodes.filter((node) => node.kind === 'structure').length) throw new Error('The public search index does not contain every concept.');
 if (searchIndex.concepts.some((concept) => !concept.id || !concept.label || !concept.url || !concept.summary)) throw new Error('The public search index contains incomplete concept records.');
+if (manifest.version !== 3) throw new Error('asset-manifest.json does not use the content-path-aware format.');
+for (const key of ['graph', 'schema', 'views', 'provenance', 'searchIndex']) {
+  if (!manifest.assets?.[key]?.startsWith('content/')) throw new Error(`asset-manifest.json does not publish ${key} under content/.`);
+}
+await assertMissing(new URL('data/', dist), 'The build still emits the retired /data/ directory.');
+if (manifest.content?.schemaVersion !== compiledProvenance.schemaVersion || manifest.content?.contentVersion !== compiledProvenance.contentVersion) throw new Error('asset-manifest.json does not expose the compiled content contract versions.');
 if (!manifest.assets?.views) throw new Error('asset-manifest.json does not include the hashed views data asset.');
+if (!manifest.assets?.provenance) throw new Error('asset-manifest.json does not include the hashed content provenance asset.');
+if (manifest.assets?.contentLicense !== 'CONTENT_LICENSE') throw new Error('asset-manifest.json does not expose the content license notice.');
 if (!manifest.assets?.css) throw new Error('asset-manifest.json does not include the application stylesheet.');
 if (manifest.assets?.atlasSvg !== 'static/atlas.svg') throw new Error('asset-manifest.json does not expose the stable static/atlas.svg path.');
 if (manifest.assets?.directory !== 'directory/') throw new Error('asset-manifest.json does not expose the stable directory/ page.');
 if ('atlasPage' in (manifest.assets ?? {})) throw new Error('asset-manifest.json still exposes the retired atlasPage entry.');
 await access(new URL(manifest.assets.views, dist));
+const publishedSchema = JSON.parse(await readFile(new URL(manifest.assets.schema, dist), 'utf8'));
+if (publishedSchema.$id !== 'https://atlas.madvay.com/content/schema.json') throw new Error('Published schema has the wrong canonical identifier.');
+const publishedProvenance = JSON.parse(await readFile(new URL(manifest.assets.provenance, dist), 'utf8'));
+if (JSON.stringify(publishedProvenance) !== JSON.stringify(compiledProvenance)) throw new Error('Published content provenance differs from the compiled provenance.');
+const contentLicense = await readFile(new URL(manifest.assets.contentLicense, dist), 'utf8');
+if (!contentLicense.includes('CC BY-SA 4.0') || !contentLicense.includes('Advay Mengle')) throw new Error('Published content license notice is incomplete.');
 await access(new URL(manifest.assets.atlasSvg, dist));
 await access(new URL(`${manifest.assets.directory}index.html`, dist));
 const appCss = await readFile(new URL(manifest.assets.css, dist), 'utf8');
+const appJs = await readFile(new URL(manifest.assets.app, dist), 'utf8');
+if (!appJs.includes('./content/') || appJs.includes('./data/')) throw new Error('The application bundle does not read runtime JSON exclusively from ./content/.');
 if (!appIndex.includes('id="mobileViewContext"')) throw new Error('The application template lacks the mobile guided-view context host.');
 if (!appIndex.includes('href="/directory/"')) throw new Error('The application omits the atlas directory link.');
 if (appIndex.includes('href="/static/atlas/"')) throw new Error('The application still links to the retired static atlas page.');
 if (!appIndex.includes('href="/static/atlas.svg"')) throw new Error('The application data panel omits the stable all-in SVG link.');
+if (!appIndex.includes(`href="./${manifest.assets.provenance}"`) || !appIndex.includes('href="/CONTENT_LICENSE"')) throw new Error('The application data panel omits content provenance or licensing links.');
 if (!appIndex.includes('<noscript>') || !appIndex.includes('Open the atlas directory')) throw new Error('The application lacks its no-JavaScript directory fallback.');
 if ((appIndex.match(/data-filter-section-toggle/g) ?? []).length !== 5) throw new Error('The application template lacks the five collapsible filter subsections.');
 const displaySectionStart = appIndex.indexOf('id="displayFilterSection"');
@@ -68,6 +96,9 @@ if (!sitemap.includes('<lastmod>')) throw new Error('The sitemap lacks last-modi
 if (!llms.includes('[Atlas Directory](https://atlas.madvay.com/directory/)')) throw new Error('llms.txt omits directory/.');
 if (llms.includes('https://atlas.madvay.com/static/atlas/')) throw new Error('llms.txt still references the retired static atlas page.');
 if (!llms.includes('[All-in atlas SVG](https://atlas.madvay.com/static/atlas.svg)')) throw new Error('llms.txt omits static/atlas.svg.');
+if (!llms.includes('https://atlas.madvay.com/content/atlas.') || !llms.includes('https://atlas.madvay.com/content/schema.') || !llms.includes('https://atlas.madvay.com/content/views.')) throw new Error('llms.txt does not expose all published JSON under /content/.');
+if (llms.includes('https://atlas.madvay.com/data/')) throw new Error('llms.txt still references the retired /data/ namespace.');
+if (!directoryPage.includes(`href="/${manifest.assets.graph}"`) || directoryPage.includes('href="/data/')) throw new Error('The directory page does not link to graph JSON under /content/.');
 if (!atlasSvg.startsWith('<?xml version="1.0" encoding="UTF-8"?>')) throw new Error('static/atlas.svg is not the runtime SVG export format.');
 if (!atlasSvg.includes('<title id="atlas-title">') || !atlasSvg.endsWith('</svg>')) throw new Error('static/atlas.svg is incomplete.');
 const structureCount = graphData.nodes.filter((node) => node.kind === 'structure').length;

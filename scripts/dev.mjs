@@ -9,12 +9,17 @@ const runBuild = () => new Promise((resolve) => {
 if (!(await runBuild())) process.exit(1);
 const server = spawn(process.execPath, ['scripts/serve.mjs', 'dist'], { stdio: 'inherit' });
 let timer;
-watch('src', { recursive: true }, () => {
+const scheduleBuild = () => {
   clearTimeout(timer);
   timer = setTimeout(runBuild, 120);
-});
+};
+const watchers = [
+  watch('src', { recursive: true }, scheduleBuild),
+  watch('content', { recursive: true }, scheduleBuild)
+];
 
 process.on('SIGINT', () => {
+  for (const watcher of watchers) watcher.close();
   server.kill('SIGINT');
   process.exit(0);
 });

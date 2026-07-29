@@ -123,19 +123,19 @@ export async function generateSeoAssets({
   graphData,
   viewsData,
   distUrl,
-  graphDataPath = 'data/atlas.json',
-  schemaPath = 'data/schema.json',
-  viewsPath = 'data/views.json',
+  graphDataPath = 'content/atlas.json',
+  schemaPath = 'content/schema.json',
+  viewsPath = 'content/views.json',
   atlasSvgPath = 'static/atlas.svg',
   directoryPath = 'directory/',
   lastModified
 }) {
-  await mkdir(new URL('data/', distUrl), { recursive: true });
+  await mkdir(new URL('content/', distUrl), { recursive: true });
   await Promise.all([
     writeFile(new URL('robots.txt', distUrl), buildRobotsTxt()),
     writeFile(new URL('sitemap.xml', distUrl), buildSitemapXml(graphData, viewsData, atlasSvgPath, directoryPath, lastModified)),
     writeFile(new URL('llms.txt', distUrl), buildLlmsTxt(graphData, viewsData, graphDataPath, schemaPath, viewsPath, atlasSvgPath, directoryPath)),
     writeFile(new URL('opensearch.xml', distUrl), buildOpenSearchXml()),
-    writeFile(new URL('data/search-index.json', distUrl), buildSearchIndex(graphData))
+    writeFile(new URL('content/search-index.json', distUrl), buildSearchIndex(graphData))
   ]);
 }

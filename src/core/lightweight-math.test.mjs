@@ -14,7 +14,7 @@ test('converts common symbols, styled alphabets, operators, scripts, roots, and 
 });
 
 test('converts every inline formula used by graph node and edge titles to overlay-free text', async () => {
-  const data = JSON.parse(await readFile(new URL('../data/structures.json', import.meta.url), 'utf8'));
+  const data = JSON.parse(await readFile(new URL('../../.build/content/atlas.json', import.meta.url), 'utf8'));
   const titles = [...data.nodes.map((node) => node.label), ...data.edges.map((edge) => edge.label)];
   const mathematicalTitles = titles.filter((title) => /\$[^$\n]+\$/.test(title));
   assert.ok(mathematicalTitles.length > 0);

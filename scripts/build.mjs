@@ -1,6 +1,6 @@
 import { cp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
-import { dirname, relative } from 'node:path';
+import { relative } from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { build } from 'esbuild-wasm';
@@ -12,7 +12,7 @@ import { generateDirectoryPage } from './generate-directory-page.mjs';
 
 const root = new URL('../', import.meta.url);
 const dist = new URL('../dist/', import.meta.url);
-const buildDir = new URL('../.build/', import.meta.url);
+const compiledContent = new URL('../.build/content/', import.meta.url);
 const rootPath = fileURLToPath(root);
 const distPath = fileURLToPath(dist);
 
@@ -23,8 +23,10 @@ function buildLastModifiedDate() {
   }
   const git = spawnSync('git', [
     'log', '-1', '--format=%cI', '--',
-    'src/data/structures.json',
-    'src/data/views.json',
+    'content/structures.json',
+    'content/views.json',
+    'content/schema.json',
+    'content/manifest.json',
     'src/ui/svg-exporter.ts',
     'scripts/generate-static-atlas-svg.mjs',
     'scripts/generate-directory-page.mjs'
@@ -38,31 +40,33 @@ function buildLastModifiedDate() {
 
 const lastModified = buildLastModifiedDate();
 
-const validation = spawnSync(process.execPath, ['scripts/validate-data.mjs'], { cwd: rootPath, stdio: 'inherit' });
-if (validation.status !== 0) process.exit(validation.status ?? 1);
+const contentBuild = spawnSync(process.execPath, ['scripts/build-content.mjs'], { cwd: rootPath, stdio: 'inherit' });
+if (contentBuild.status !== 0) process.exit(contentBuild.status ?? 1);
 
 await rm(dist, { recursive: true, force: true });
-await rm(buildDir, { recursive: true, force: true });
 await Promise.all([
   mkdir(new URL('assets/', dist), { recursive: true }),
-  mkdir(new URL('data/', dist), { recursive: true }),
-  mkdir(new URL('static/', dist), { recursive: true }),
-  mkdir(buildDir, { recursive: true })
+  mkdir(new URL('content/', dist), { recursive: true }),
+  mkdir(new URL('static/', dist), { recursive: true })
 ]);
 
 const digest = (contents) => createHash('sha256').update(contents).digest('hex').slice(0, 16);
-const graphBytes = await readFile(new URL('src/data/structures.json', root));
-const schemaBytes = await readFile(new URL('src/data/schema.json', root));
-const viewsBytes = await readFile(new URL('src/data/views.json', root));
+const graphBytes = await readFile(new URL('atlas.json', compiledContent));
+const schemaBytes = await readFile(new URL('schema.json', compiledContent));
+const viewsBytes = await readFile(new URL('views.json', compiledContent));
+const provenanceBytes = await readFile(new URL('provenance.json', compiledContent));
 const graphData = JSON.parse(graphBytes.toString('utf8'));
 const viewsData = JSON.parse(viewsBytes.toString('utf8'));
+const provenance = JSON.parse(provenanceBytes.toString('utf8'));
 const graphFile = `atlas.${digest(graphBytes)}.json`;
 const schemaFile = `schema.${digest(schemaBytes)}.json`;
 const viewsFile = `views.${digest(viewsBytes)}.json`;
+const provenanceFile = `provenance.${digest(provenanceBytes)}.json`;
 await Promise.all([
-  writeFile(new URL(`data/${graphFile}`, dist), graphBytes),
-  writeFile(new URL(`data/${schemaFile}`, dist), schemaBytes),
-  writeFile(new URL(`data/${viewsFile}`, dist), viewsBytes)
+  writeFile(new URL(`content/${graphFile}`, dist), graphBytes),
+  writeFile(new URL(`content/${schemaFile}`, dist), schemaBytes),
+  writeFile(new URL(`content/${viewsFile}`, dist), viewsBytes),
+  writeFile(new URL(`content/${provenanceFile}`, dist), provenanceBytes)
 ]);
 
 const bundle = await build({
@@ -83,8 +87,8 @@ const bundle = await build({
   metafile: true,
   legalComments: 'external',
   define: {
-    __GRAPH_DATA_URL__: JSON.stringify(`./data/${graphFile}`),
-    __VIEWS_DATA_URL__: JSON.stringify(`./data/${viewsFile}`)
+    __GRAPH_DATA_URL__: JSON.stringify(`./content/${graphFile}`),
+    __VIEWS_DATA_URL__: JSON.stringify(`./content/${viewsFile}`)
   },
   logLevel: 'info'
 });
@@ -103,9 +107,10 @@ const assetTags = [
 const sourceTemplate = await readFile(new URL('src/index.html', root), 'utf8');
 const builtTemplate = sourceTemplate
   .replace('<!-- atlas:assets -->', assetTags)
-  .replaceAll('__ATLAS_DATA_URL__', `./data/${graphFile}`)
-  .replaceAll('__ATLAS_SCHEMA_URL__', `./data/${schemaFile}`)
-  .replaceAll('__ATLAS_VIEWS_URL__', `./data/${viewsFile}`);
+  .replaceAll('__ATLAS_DATA_URL__', `./content/${graphFile}`)
+  .replaceAll('__ATLAS_SCHEMA_URL__', `./content/${schemaFile}`)
+  .replaceAll('__ATLAS_VIEWS_URL__', `./content/${viewsFile}`)
+  .replaceAll('__ATLAS_PROVENANCE_URL__', `./content/${provenanceFile}`);
 await writeFile(new URL('index.html', dist), builtTemplate);
 
 await Promise.all([
@@ -119,7 +124,8 @@ await Promise.all([
   cp(new URL('src/404.html', root), new URL('404.html', dist)),
   cp(new URL('LICENSE', root), new URL('LICENSE', dist)),
   cp(new URL('NOTICE', root), new URL('NOTICE', dist)),
-  cp(new URL('THIRD_PARTY_NOTICES.txt', root), new URL('THIRD_PARTY_NOTICES.txt', dist))
+  cp(new URL('THIRD_PARTY_NOTICES.txt', root), new URL('THIRD_PARTY_NOTICES.txt', dist)),
+  cp(new URL('content/LICENSE', root), new URL('CONTENT_LICENSE', dist))
 ]);
 
 await generateConceptPages({ graphData, templateHtml: builtTemplate, distUrl: dist });
@@ -129,7 +135,7 @@ await generateDirectoryPage({
   graphData,
   svg: atlasSvg,
   distUrl: dist,
-  graphDataPath: `data/${graphFile}`,
+  graphDataPath: `content/${graphFile}`,
   atlasSvgPath: 'static/atlas.svg',
   directoryPath: 'directory/',
   lastModified
@@ -138,25 +144,31 @@ await generateSeoAssets({
   graphData,
   viewsData,
   distUrl: dist,
-  graphDataPath: `data/${graphFile}`,
-  schemaPath: `data/${schemaFile}`,
-  viewsPath: `data/${viewsFile}`,
+  graphDataPath: `content/${graphFile}`,
+  schemaPath: `content/${schemaFile}`,
+  viewsPath: `content/${viewsFile}`,
   atlasSvgPath: 'static/atlas.svg',
   directoryPath: 'directory/',
   lastModified
 });
 
 const manifest = {
-  version: 1,
+  version: 3,
+  content: {
+    schemaVersion: provenance.schemaVersion,
+    contentVersion: provenance.contentVersion
+  },
   assets: {
     app: publicPath(jsOutput).slice(1),
     css: cssOutput ? publicPath(cssOutput).slice(1) : null,
-    graph: `data/${graphFile}`,
-    schema: `data/${schemaFile}`,
-    views: `data/${viewsFile}`,
+    graph: `content/${graphFile}`,
+    schema: `content/${schemaFile}`,
+    views: `content/${viewsFile}`,
+    provenance: `content/${provenanceFile}`,
+    contentLicense: 'CONTENT_LICENSE',
     atlasSvg: 'static/atlas.svg',
     directory: 'directory/',
-    searchIndex: 'data/search-index.json',
+    searchIndex: 'content/search-index.json',
     openSearch: 'opensearch.xml'
   }
 };

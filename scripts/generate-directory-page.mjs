@@ -171,7 +171,7 @@ export function renderDirectoryPage({
   svg,
   atlasSvgPath = 'static/atlas.svg',
   directoryPath = 'directory/',
-  graphDataPath = 'data/atlas.json',
+  graphDataPath = 'content/atlas.json',
   lastModified
 }) {
   const svgFragment = inlineSvgFragment(svg);

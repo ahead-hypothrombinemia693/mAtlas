@@ -1,0 +1,46 @@
+# mAtlas content source
+
+This directory is the editable source product for the mAtlas knowledge graph and
+its editorial navigation. Application and publishing code must not read these
+files directly. Run `npm run content:build` to validate and compile them into the
+stable `.build/content/` contract consumed by the renderer, page generators, and
+tests.
+
+## Source files
+
+- `structures.json` — canonical graph, taxonomy, relations, citations, and source metadata.
+- `views.json` — curated guided views and their editorial narratives.
+- `schema.json` — machine-readable graph schema published with the content.
+- `manifest.json` — content and schema contract versions plus source file mapping.
+
+## Versioning
+
+`manifest.json` declares two independent versions:
+
+- `schemaVersion` changes according to semantic versioning when the data contract changes.
+- `contentVersion` identifies a release of the knowledge and editorial content.
+
+The software-side compatibility declaration lives in
+`scripts/content/contract.mjs`. A build fails when this content requests an
+unsupported schema version.
+
+## Validation and compilation
+
+```bash
+npm run validate:content
+npm run content:build
+npm run test:content
+```
+
+Validation is split into schema/shape, reference, semantic, editorial, and
+renderer-compatibility layers. Compilation writes normalized files and a
+hash-based `provenance.json` to `.build/content/`. Published hashed JSON files
+are produced only from that compiled directory and are served under the public
+`/content/` namespace; `/data/` is not emitted.
+
+## License
+
+The files in this directory and their compiled or published content derivatives
+are licensed under CC BY-SA 4.0. See [LICENSE](LICENSE), the repository
+[LICENSE](../LICENSE), and [NOTICE](../NOTICE). Software outside this directory
+is licensed under Apache License 2.0 unless otherwise noted.

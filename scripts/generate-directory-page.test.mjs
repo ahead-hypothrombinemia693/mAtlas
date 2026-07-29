@@ -19,11 +19,11 @@ test('inlineSvgFragment removes only standalone document wrappers', () => {
 });
 
 test('directory page is semantic, crawlable, root-relative, and exactly transcludes the exporter output', async () => {
-  const graphData = JSON.parse(await readFile(new URL('src/data/structures.json', root), 'utf8'));
+  const graphData = JSON.parse(await readFile(new URL('.build/content/atlas.json', root), 'utf8'));
   const html = renderDirectoryPage({
     graphData,
     svg: exportedSvg,
-    graphDataPath: 'data/atlas.test.json',
+    graphDataPath: 'content/atlas.test.json',
     atlasSvgPath: 'static/atlas.svg',
     directoryPath: 'directory/',
     lastModified: '2026-07-28'
@@ -37,6 +37,8 @@ test('directory page is semantic, crawlable, root-relative, and exactly transclu
   assert.ok(html.includes('Browse all'));
   assert.ok(html.includes('Relation legend:'));
   assert.ok(html.includes('href="/concepts/finite_set/"'));
+  assert.ok(html.includes('href="/content/atlas.test.json"'));
+  assert.ok(!html.includes('href="/data/'));
   const firstDomainId = graphData.meta.domainOrder[0];
   const firstDomain = graphData.domains[firstDomainId];
   const firstDomainPath = `/${graphData.fields[firstDomain.field].path}/${encodeURIComponent(firstDomainId)}/`;
@@ -52,7 +54,7 @@ test('directory page is semantic, crawlable, root-relative, and exactly transclu
       graphData,
       svg: exportedSvg,
       distUrl,
-      graphDataPath: 'data/atlas.test.json',
+      graphDataPath: 'content/atlas.test.json',
       lastModified: '2026-07-28'
     });
     const written = await readFile(new URL('directory/index.html', distUrl), 'utf8');
@@ -60,7 +62,7 @@ test('directory page is semantic, crawlable, root-relative, and exactly transclu
       graphData,
       svg: exportedSvg,
       distUrl,
-      graphDataPath: 'data/atlas.test.json',
+      graphDataPath: 'content/atlas.test.json',
       lastModified: '2026-07-28'
     }));
   } finally {
@@ -80,7 +82,7 @@ test('concepts index redirects in HTML and JavaScript to the directory', () => {
 });
 
 test('field and domain scope pages expose canonical routes and crawlable navigation', async () => {
-  const graphData = JSON.parse(await readFile(new URL('src/data/structures.json', root), 'utf8'));
+  const graphData = JSON.parse(await readFile(new URL('.build/content/atlas.json', root), 'utf8'));
   const templateHtml = await readFile(new URL('src/index.html', root), 'utf8');
   const domainId = graphData.meta.domainOrder.find((id) => graphData.domains[id]?.field === 'mathematics');
   assert.ok(domainId);
