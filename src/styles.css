@@ -1617,6 +1617,9 @@ input:focus-visible {
   padding: 6px 10px;
   font-size: 11px;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .view-open-button.secondary {
