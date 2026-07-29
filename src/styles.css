@@ -1516,7 +1516,6 @@ input:focus-visible {
 }
 
 .views-intro {
-  max-width: 760px;
   margin-top: 0;
   color: #475569;
 }

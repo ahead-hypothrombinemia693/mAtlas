@@ -346,7 +346,7 @@ export async function startAtlasApp(): Promise<void> {
     if (alreadySelected) return;
 
     if (target.kind === 'node') {
-      activateNode(target.id, { center: true, zoomIn: !initial, historyMode: null });
+      activateNode(target.id, { center: true, zoomIn: true, historyMode: null });
     } else {
       activateEdge(target.id, { center: true, historyMode: null });
     }
