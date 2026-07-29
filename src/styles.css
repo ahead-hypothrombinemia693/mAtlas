@@ -497,7 +497,45 @@ input:focus-visible {
   overflow: hidden;
   pointer-events: none;
   contain: layout style paint;
-  transition: opacity 120ms linear;
+}
+
+.atlas-loading #graph,
+.atlas-loading .graph-math-label-layer,
+.atlas-loading .field-bands,
+.atlas-loading .graph-meta {
+  visibility: hidden;
+}
+
+.graph-loader {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 12px;
+  color: #475569;
+  background: #fbfcfe;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.graph-loader::before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  border: 3px solid #dbeafe;
+  border-top-color: #1e40af;
+  border-radius: 50%;
+  animation: loader-spin .75s linear infinite;
+}
+
+body:not(.atlas-loading) .graph-loader {
+  display: none;
+}
+
+@keyframes loader-spin {
+  to { transform: rotate(1turn); }
 }
 
 .graph-math-label[hidden] {
@@ -506,6 +544,29 @@ input:focus-visible {
 
 .graph-math-label .katex {
   font-size: 1em;
+}
+
+.graph-domain-markers {
+  position: absolute;
+  display: flex;
+  gap: 3px;
+  padding: 3px;
+  border-radius: 8px 0 6px 0;
+  background: rgba(255, 255, 255, .9);
+  box-shadow: 0 0 0 1px rgba(15, 23, 42, .16);
+  pointer-events: none;
+  contain: layout style paint;
+}
+
+.graph-domain-markers[hidden] {
+  display: none;
+}
+
+.graph-domain-markers > span {
+  width: 7px;
+  height: 7px;
+  border: 1px solid rgba(15, 23, 42, .3);
+  border-radius: 50%;
 }
 
 .graph-math-node-label {

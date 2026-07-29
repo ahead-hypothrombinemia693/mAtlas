@@ -482,7 +482,6 @@ export async function startAtlasApp(): Promise<void> {
   const positionTooltip = (event: cytoscape.EventObject | MouseEvent): void => tooltipController.position(event);
 
   function clearHover(): void {
-    cy.elements().removeClass('hover-dim hover-emphasis');
     tooltipController.hide();
   }
 
@@ -499,7 +498,7 @@ export async function startAtlasApp(): Promise<void> {
         }).join('')}
       </div>
       <h3>Domain filtering</h3>
-      <p>A structure may belong to several domains without being duplicated. Its full fill color and horizontal lane use its primary domain; a thin segmented color rail marks every domain membership. A node remains fully visible when any of its domains is enabled. Turning off all of its domains hides it unless it is transitively required by another visible structure, in which case it remains as 50% faded context.</p>
+      <p>A structure may belong to several domains without being duplicated. Its full fill color and horizontal lane use its primary domain; colored dots at the bottom right mark its additional domains, with the complete list in its tooltip and details. A node remains fully visible when any of its domains is enabled. Turning off all of its domains hides it unless it is transitively required by another visible structure, in which case it remains as 50% faded context.</p>
       <h3>Construction diamonds</h3>
       <p>A diamond means the result is not obtained by merely adding one axiom to one existing object. Several structures must coexist and satisfy compatibility laws. When diamonds are hidden, each construction is contracted into dashed direct edges from its inputs to its output. Labels beginning with <strong>jointly</strong> mean all of those incoming edges are required together—an AND, not a choice.</p>
       <h3>Search, fit, and neighborhood highlighting</h3>
@@ -507,7 +506,7 @@ export async function startAtlasApp(): Promise<void> {
       <h3>Panels and maximized graph</h3>
       <p>The atlas starts with both sidebars hidden. Use the filter icon and details icon, or the slim tabs at the graph edges, to animate either sidebar in or out. Selecting a node or edge reopens Details. The fullscreen icon hides both sidebars and remembers their prior state.</p>
       <h3>SVG export</h3>
-      <p><strong>SVG</strong> downloads the current filtered graph as a standalone vector document, including curved edges, annotations, domain rails, neighborhood emphasis, and the current selection. It can be opened in a browser or vector editor and printed without rasterizing the graph.</p>
+      <p><strong>SVG</strong> downloads the current filtered graph as a standalone vector document, including curved edges, annotations, multi-domain markers, neighborhood emphasis, and the current selection. It can be opened in a browser or vector editor and printed without rasterizing the graph.</p>
       <h3>Citations</h3>
       <p>Source abbreviations on nodes are off initially to reduce clutter. Enable them under Display, or click any node or edge for citation links and source titles.</p>
       <h3>Keyboard</h3>
@@ -672,5 +671,6 @@ export async function startAtlasApp(): Promise<void> {
     if (initialSearchQuery) performSearch();
     syncNeighborhoodButton();
     scheduleFieldBands();
+    document.body.classList.remove('atlas-loading');
   });
 }

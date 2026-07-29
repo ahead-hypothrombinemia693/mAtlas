@@ -1,36 +1,8 @@
 import cytoscape from 'cytoscape';
-import type { GraphNode } from '../types.js';
 import type { GraphModel } from '../model/graph-model.js';
 import { stableStringHash } from '../core/hash.js';
 import { hasInlineMathText, stripInlineMathText } from '../core/text.js';
 import type { LabelSizer } from './label-sizer.js';
-
-const domainRailCache = new Map<string, string>();
-
-function domainRailImage(model: GraphModel, node: GraphNode): string {
-  if (node.kind !== 'structure') return 'none';
-  const domainIds = model.nodeDomainIds(node);
-  if (domainIds.length < 2) return 'none';
-  const cacheKey = domainIds.join('|');
-  const cached = domainRailCache.get(cacheKey);
-  if (cached) return cached;
-
-  const width = 164;
-  const height = 58;
-  const railHeight = 7;
-  const y = height - railHeight;
-  const segmentWidth = width / domainIds.length;
-  const segments = domainIds.map((domainId, index) => {
-    const color = model.data.domains[domainId]?.color ?? '#64748b';
-    const x = index * segmentWidth;
-    const actualWidth = index === domainIds.length - 1 ? width - x : segmentWidth + 0.5;
-    return `<rect x="${x}" y="${y}" width="${actualWidth}" height="${railHeight}" fill="${color}"/>`;
-  }).join('');
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">${segments}</svg>`;
-  const uri = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
-  domainRailCache.set(cacheKey, uri);
-  return uri;
-}
 
 function edgeCurveDistance(edgeId: string): number {
   const hash = stableStringHash(edgeId);
@@ -62,8 +34,8 @@ export function createGraphElements(model: GraphModel, labels: LabelSizer): cyto
         domainIds: domainIds.join(' '),
         domainLabels: model.nodeDomainLabels(node).join(', '),
         domainColor: primaryDomain.color,
-        domainRailImage: domainRailImage(model, node),
-        multiDomain: domainIds.length > 1 ? 1 : 0,
+        domainColors: domainIds.map((id) => model.data.domains[id]?.color ?? '#64748b'),
+        multiDomain: node.kind === 'structure' && domainIds.length > 1 ? 1 : 0,
         level: node.level,
         summary: node.summary,
         conceptType: node.conceptType ?? ''
@@ -107,21 +79,17 @@ export const graphStyles: cytoscape.StylesheetJson = [
     style: {
       shape: 'round-rectangle', width: 164, height: 58, padding: '4px',
       'background-color': 'data(domainColor)', 'background-opacity': 0.92,
-      'background-image': 'data(domainRailImage)', 'background-fit': 'cover',
-      'background-repeat': 'no-repeat', 'background-clip': 'node', 'background-image-opacity': 1,
       'border-width': 2, 'border-color': '#ffffff', label: 'data(canvasLabel)', color: '#ffffff',
       'font-size': 'data(labelFontSize)', 'font-weight': 600, 'text-wrap': 'wrap',
       'text-overflow-wrap': 'whitespace', 'text-max-width': '144px', 'text-halign': 'center',
-      'text-valign': 'center', 'text-outline-width': 0, 'overlay-opacity': 0,
-      'transition-property': 'opacity, border-width, border-color, background-opacity',
-      'transition-duration': 120
+      'text-valign': 'center', 'text-outline-width': 0, 'overlay-opacity': 0
     }
   },
   {
     selector: 'node[kind = "junction"]',
     style: {
       width: 116, 'background-color': '#fff7ed', 'background-opacity': 1,
-      'background-image': 'none', 'border-width': 3, 'border-color': '#b45309',
+      'border-width': 3, 'border-color': '#b45309',
       'border-style': 'dashed', color: '#7c2d12', 'text-max-width': '92px'
     }
   },
@@ -136,8 +104,7 @@ export const graphStyles: cytoscape.StylesheetJson = [
       'text-max-width': '120px', 'text-background-color': '#ffffff', 'text-background-opacity': 0.88,
       'text-background-padding': '3px', 'text-border-width': 1, 'text-border-color': '#e2e8f0',
       'text-border-opacity': 0.85, 'text-rotation': 'autorotate', 'source-distance-from-node': 4,
-      'target-distance-from-node': 5, 'overlay-opacity': 0,
-      'transition-property': 'opacity, width', 'transition-duration': 120
+      'target-distance-from-node': 5, 'overlay-opacity': 0
     }
   },
   {
@@ -171,6 +138,12 @@ export function createGraph(container: HTMLElement, model: GraphModel, labels: L
     minZoom: 0.08,
     maxZoom: 3,
     wheelSensitivity: 0.18,
+    // High-density mobile displays otherwise render several times as many canvas
+    // pixels. Edges are the most expensive part of a viewport gesture, so omit
+    // them only while the viewport is actively moving.
+    pixelRatio: Math.min(window.devicePixelRatio || 1, 1.5),
+    hideEdgesOnViewport: true,
+    motionBlur: false,
     boxSelectionEnabled: false,
     autoungrabify: false,
     style: graphStyles

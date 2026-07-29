@@ -25,7 +25,7 @@ The generated site does not create or preserve `/m/`; configure an external redi
 
 - Node.js 20 or newer
 - npm
-- Google Chrome or Chromium available on `PATH` for the build-time all-in SVG export (or set `CHROME_BIN`)
+- No system browser is required: the pinned Puppeteer development dependency installs the Chromium build used for the all-in SVG export.
 
 ```bash
 npm install

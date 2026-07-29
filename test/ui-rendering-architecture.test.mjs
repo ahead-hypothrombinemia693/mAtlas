@@ -32,3 +32,29 @@ test('the retained renderer avoids framework runtime dependencies', async () => 
   const dependencies = Object.keys(packageJson.dependencies ?? {});
   assert.deepEqual(dependencies.sort(), ['cytoscape', 'cytoscape-cose-bilkent', 'katex']);
 });
+
+test('graph nodes avoid per-node encoded images and startup hides the unfit viewport', async () => {
+  const graphSource = await readFile(new URL('../src/graph/create-graph.ts', import.meta.url), 'utf8');
+  const html = await readFile(new URL('../src/index.html', import.meta.url), 'utf8');
+  const appSource = await readFile(new URL('../src/app/atlas-app.ts', import.meta.url), 'utf8');
+
+  assert.doesNotMatch(graphSource, /data:image\/svg\+xml|domainRailImage/);
+  assert.match(graphSource, /hideEdgesOnViewport:\s*true/);
+  assert.match(html, /<body class="atlas-loading">/);
+  assert.match(html, /id="graphLoader"/);
+  assert.match(appSource, /classList\.remove\('atlas-loading'\)/);
+});
+
+test('static export uses the npm-managed browser and domain markers stay consistent', async () => {
+  const generator = await readFile(new URL('../scripts/generate-static-atlas-svg.mjs', import.meta.url), 'utf8');
+  const labelLayer = await readFile(new URL('../src/graph/graph-math-label-layer.ts', import.meta.url), 'utf8');
+  const exporter = await readFile(new URL('../src/ui/svg-exporter.ts', import.meta.url), 'utf8');
+  const fieldBands = await readFile(new URL('../src/ui/field-band-controller.ts', import.meta.url), 'utf8');
+
+  assert.match(generator, /import puppeteer from 'puppeteer'/);
+  assert.doesNotMatch(generator, /CHROME_BIN|spawnSync|browserCandidates/);
+  assert.match(labelLayer, /graph-domain-markers/);
+  assert.match(exporter, /<circle cx=/);
+  assert.match(fieldBands, /container\.hidden = true/);
+  assert.match(fieldBands, /container\.hidden = false/);
+});

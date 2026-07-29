@@ -13,7 +13,7 @@ export interface FieldBandControllerOptions {
 }
 
 export class FieldBandController {
-  private frame = 0;
+  private timer = 0;
   private readonly containerId: string;
 
   constructor(private readonly options: FieldBandControllerOptions) {
@@ -22,7 +22,10 @@ export class FieldBandController {
 
   clear(): void {
     const container = document.getElementById(this.containerId);
-    if (container instanceof HTMLElement) container.replaceChildren();
+    if (container instanceof HTMLElement) {
+      container.replaceChildren();
+      container.hidden = true;
+    }
   }
 
   update(): void {
@@ -56,14 +59,20 @@ export class FieldBandController {
       renderHtml(band, `<span>${escapeHtml(field.label)}</span>`);
       container.appendChild(band);
     }
+    container.hidden = false;
   }
 
   schedule(): void {
-    if (this.frame) return;
-    this.frame = window.requestAnimationFrame(() => {
-      this.frame = 0;
+    // renderedBoundingBox() forces Cytoscape geometry reads and rebuilding the
+    // bands forces DOM layout. Coalesce a whole pan/zoom gesture instead of doing
+    // both jobs on every animation frame.
+    const container = document.getElementById(this.containerId);
+    if (container instanceof HTMLElement) container.hidden = true;
+    if (this.timer) window.clearTimeout(this.timer);
+    this.timer = window.setTimeout(() => {
+      this.timer = 0;
       if (this.options.isMobileLayout()) this.clear();
       else this.update();
-    });
+    }, 100);
   }
 }

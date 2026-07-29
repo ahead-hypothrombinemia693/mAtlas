@@ -159,13 +159,15 @@ export class SvgExporter {
         const fill = data.domains[record.primaryDomain]?.color ?? '#64748b';
         const backgroundOpacity = isDependencyFaded ? 0.46 : 0.92;
         parts.push(`<rect x="${x}" y="${y}" width="${nodeWidth}" height="${nodeHeight}" rx="8" fill="${escapeHtml(fill)}" fill-opacity="${backgroundOpacity}" stroke="${borderColor}" stroke-width="${borderWidth}" opacity="${opacity}"/>`);
-        const domains = this.model.nodeDomainIds(record);
-        if (domains.length > 1) {
-          const segmentWidth = nodeWidth / domains.length;
-          domains.forEach((domainId, index) => {
-            const segmentX = x + index * segmentWidth;
-            const actualWidth = index === domains.length - 1 ? x + nodeWidth - segmentX : segmentWidth + 0.4;
-            parts.push(`<rect x="${segmentX.toFixed(2)}" y="${(y + nodeHeight - 7).toFixed(2)}" width="${actualWidth.toFixed(2)}" height="7" fill="${escapeHtml(data.domains[domainId]?.color ?? '#64748b')}" fill-opacity="${backgroundOpacity}"/>`);
+        const additionalDomains = this.model.nodeDomainIds(record).slice(1);
+        if (additionalDomains.length) {
+          const markerWidth = additionalDomains.length * 10 + 6;
+          const markerX = x + nodeWidth - markerWidth;
+          const markerY = y + nodeHeight - 13;
+          parts.push(`<rect x="${markerX}" y="${markerY}" width="${markerWidth}" height="13" rx="6" fill="#ffffff" fill-opacity="0.9" stroke="#0f172a" stroke-opacity="0.16" stroke-width="1" opacity="${opacity}"/>`);
+          additionalDomains.forEach((domainId, index) => {
+            const color = data.domains[domainId]?.color ?? '#64748b';
+            parts.push(`<circle cx="${markerX + 8 + index * 10}" cy="${markerY + 6.5}" r="3.5" fill="${escapeHtml(color)}" stroke="#0f172a" stroke-opacity="0.3" stroke-width="1" opacity="${opacity}"/>`);
           });
         }
       }

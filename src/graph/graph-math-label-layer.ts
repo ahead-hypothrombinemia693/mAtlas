@@ -9,6 +9,11 @@ interface MathLabelEntry {
   label: HTMLDivElement;
 }
 
+interface DomainMarkerEntry {
+  element: cytoscape.NodeSingular;
+  marker: HTMLDivElement;
+}
+
 const VIEWPORT_DIRTY = 1;
 const GEOMETRY_DIRTY = 2;
 const STATE_DIRTY = 4;
@@ -23,6 +28,7 @@ export class GraphMathLabelLayer {
   private readonly layer = document.createElement('div');
   private readonly viewport = document.createElement('div');
   private readonly entries: MathLabelEntry[] = [];
+  private readonly domainMarkers: DomainMarkerEntry[] = [];
   private frame = 0;
   private dirty = 0;
 
@@ -37,6 +43,7 @@ export class GraphMathLabelLayer {
     this.layer.appendChild(this.viewport);
     graphContainer.insertAdjacentElement('afterend', this.layer);
     this.buildEntries();
+    this.buildDomainMarkers();
 
     // Pan and zoom are the hot path: one compositor transform updates every label.
     this.cy.on('pan zoom resize', () => this.schedule(VIEWPORT_DIRTY));
@@ -91,6 +98,24 @@ export class GraphMathLabelLayer {
     this.cy.nodes().forEach((element: cytoscape.NodeSingular) => add(element));
   }
 
+  private buildDomainMarkers(): void {
+    this.cy.nodes().forEach((node: cytoscape.NodeSingular) => {
+      if (Number(node.data('multiDomain')) !== 1) return;
+      const colors = node.data('domainColors');
+      if (!Array.isArray(colors) || colors.length < 2) return;
+      const marker = document.createElement('div');
+      marker.className = 'graph-domain-markers';
+      marker.style.transform = 'translate(-100%, -100%)';
+      for (const color of colors.slice(1)) {
+        const dot = document.createElement('span');
+        dot.style.backgroundColor = String(color);
+        marker.appendChild(dot);
+      }
+      this.viewport.appendChild(marker);
+      this.domainMarkers.push({ element: node, marker });
+    });
+  }
+
   private syncViewport(): void {
     const pan = this.cy.pan();
     const zoom = this.cy.zoom();
@@ -106,6 +131,12 @@ export class GraphMathLabelLayer {
         || (element.isEdge() && element.hasClass('edge-labels-off'))) continue;
       if (element.isNode()) this.syncNodeGeometry(element as cytoscape.NodeSingular, label);
       else this.syncEdgeGeometry(element as cytoscape.EdgeSingular, label, pan, zoom);
+    }
+    for (const { element, marker } of this.domainMarkers) {
+      if (element.hasClass('filter-hidden') || element.style('display') === 'none') continue;
+      const position = element.position();
+      marker.style.left = `${position.x + 76}px`;
+      marker.style.top = `${position.y + 25}px`;
     }
   }
 
@@ -128,6 +159,11 @@ export class GraphMathLabelLayer {
       label.hidden = false;
       label.style.opacity = String(opacity);
       label.style.zIndex = element.selected() ? '4' : element.isNode() ? '2' : '1';
+    }
+    for (const { element, marker } of this.domainMarkers) {
+      const hidden = element.hasClass('filter-hidden') || element.style('display') === 'none';
+      marker.hidden = hidden;
+      if (!hidden) marker.style.opacity = String(numericOpacity(element, 1));
     }
   }
 

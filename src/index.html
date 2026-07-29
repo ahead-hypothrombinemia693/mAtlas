@@ -152,7 +152,7 @@
     }
   </script>
 </head>
-<body>
+<body class="atlas-loading">
   <a class="skip-link" href="#graph">Skip to the graph</a>
   <div id="app">
     <header class="topbar">
@@ -276,6 +276,7 @@
           <p>Explore a curated path through the graph, then change any filter to continue on your own.</p>
           <button type="button" class="button primary" data-welcome-explore>Explore views</button>
         </aside>
+        <div id="graphLoader" class="graph-loader" role="status" aria-live="polite">Preparing the atlas…</div>
         <div id="graph" role="application" aria-label="Interactive graph of connected concepts across mathematics and physics"></div>
         <div id="tooltip" class="tooltip" role="tooltip" hidden></div>
         <div class="graph-meta">

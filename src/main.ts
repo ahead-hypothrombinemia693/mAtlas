@@ -8,6 +8,7 @@ coseBilkent(cytoscape);
 
 function showStartupFailure(error: unknown): void {
   console.error(error);
+  document.body.classList.remove('atlas-loading');
   const message = error instanceof Error ? error.message : 'Unknown startup error.';
   const graph = document.getElementById('graph');
   if (!(graph instanceof HTMLElement)) return;
