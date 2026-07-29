@@ -353,6 +353,8 @@ for (const [index, view] of (viewsData.views ?? []).entries()) {
   requireStringArray(settings.fields, `${path}.settings.fields`, { nonEmpty: true, unique: true });
   requireStringArray(settings.domains, `${path}.settings.domains`, { nonEmpty: true, unique: true });
   requireStringArray(settings.edgeTypes, `${path}.settings.edgeTypes`, { nonEmpty: true, unique: true });
+  if (settings.excludedFields !== undefined) requireStringArray(settings.excludedFields, `${path}.settings.excludedFields`, { unique: true });
+  if (settings.excludedDomains !== undefined) requireStringArray(settings.excludedDomains, `${path}.settings.excludedDomains`, { unique: true });
   for (const fieldId of settings.fields ?? []) if (!fieldIds.has(fieldId)) errors.push(`${path}.settings.fields references unknown field: ${fieldId}`);
   for (const domainId of settings.domains ?? []) {
     if (!domainIds.has(domainId)) errors.push(`${path}.settings.domains references unknown domain: ${domainId}`);
@@ -362,11 +364,14 @@ for (const [index, view] of (viewsData.views ?? []).entries()) {
   for (const edgeTypeId of settings.edgeTypes ?? []) {
     if (!activeEdgeTypeIds.has(edgeTypeId)) errors.push(`${path}.settings.edgeTypes references inactive or unknown edge type: ${edgeTypeId}`);
   }
+  for (const fieldId of settings.excludedFields ?? []) if (!fieldIds.has(fieldId)) errors.push(`${path}.settings.excludedFields references unknown field: ${fieldId}`);
+  for (const domainId of settings.excludedDomains ?? []) if (!domainIds.has(domainId)) errors.push(`${path}.settings.excludedDomains references unknown domain: ${domainId}`);
   if (!allowedCrossField.has(settings.crossFieldVisibility)) errors.push(`${path}.settings.crossFieldVisibility is invalid.`);
   if (!allowedLayouts.has(settings.layout)) errors.push(`${path}.settings.layout is invalid.`);
   for (const key of ['edgeLabels', 'junctions', 'edgeZoomActivation']) {
     if (typeof settings[key] !== 'boolean') errors.push(`${path}.settings.${key} must be a boolean.`);
   }
+  if (settings.hidePrerequisites !== undefined && typeof settings.hidePrerequisites !== 'boolean') errors.push(`${path}.settings.hidePrerequisites must be a boolean.`);
   for (const nodeId of view?.nodeSequence ?? []) {
     const node = nodeById.get(nodeId);
     if (!node) continue;

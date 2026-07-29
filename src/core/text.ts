@@ -1,3 +1,5 @@
+import { replaceInlineLatexWithUnicode } from './lightweight-math.js';
+
 export function normalizeCitationPart(value: unknown): string {
   return String(value ?? '').trim()
     .replace(/(?:\s*\([^)]*\))+$/g, '')
@@ -26,7 +28,7 @@ export function shortenSourceLabel(
 }
 
 export function stripInlineMathText(text: string): string {
-  return text.replace(/\$([^$\n]+?)\$/g, '$1');
+  return replaceInlineLatexWithUnicode(text);
 }
 
 export function hasInlineMathText(text: unknown): boolean {

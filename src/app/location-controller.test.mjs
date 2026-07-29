@@ -1,6 +1,18 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { LocationController, taxonomyScopeFromPath } from '../.test-build/app/location-controller.js';
+import { LocationController, taxonomyScopeFromPath } from '../../.test-build/app/location-controller.js';
+import { selectionFromParams, selectionFromPath, selectionFromTemplate } from '../../.test-build/app/location-controller.js';
+
+test('selection location codecs accept only known graph identifiers', () => {
+  const nodes = new Set(['set', 'group with space']);
+  const edges = new Set(['e1']);
+  assert.deepEqual(selectionFromPath('/concepts/set/', nodes), { kind: 'node', id: 'set' });
+  assert.deepEqual(selectionFromPath('/concepts/group%20with%20space/index.html', nodes), { kind: 'node', id: 'group with space' });
+  assert.equal(selectionFromPath('/concepts/missing/', nodes), null);
+  assert.deepEqual(selectionFromParams(new URLSearchParams('node=set&edge=e1'), nodes, edges), { kind: 'node', id: 'set' });
+  assert.deepEqual(selectionFromParams(new URLSearchParams('edge=e1'), nodes, edges), { kind: 'edge', id: 'e1' });
+  assert.equal(selectionFromTemplate('node:missing', nodes, edges), null);
+});
 
 const view = {
   id: 'experimental-discovery',

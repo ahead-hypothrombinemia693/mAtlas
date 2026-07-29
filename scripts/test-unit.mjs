@@ -1,30 +1,24 @@
-import { rm } from 'node:fs/promises';
+import { readdir, rm } from 'node:fs/promises';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
+import { join, relative } from 'node:path';
 
 const buildDirectory = new URL('../.test-build/', import.meta.url);
 const typeScriptCli = fileURLToPath(new URL('../node_modules/typescript/bin/tsc', import.meta.url));
+const root = fileURLToPath(new URL('../', import.meta.url));
+async function adjacentTests(directory) {
+  const files = [];
+  for (const entry of await readdir(directory, { withFileTypes: true })) {
+    const path = join(directory, entry.name);
+    if (entry.isDirectory()) files.push(...await adjacentTests(path));
+    else if (entry.name.endsWith('.test.mjs')) files.push(relative(root, path));
+  }
+  return files;
+}
 const testFiles = [
-  'test/core.test.mjs',
-  'test/cache-recovery-bootstrap.test.mjs',
-  'test/data-loader.test.mjs',
-  'test/search.test.mjs',
-  'test/graph-model.test.mjs',
-  'test/graph-math-label-layer.test.mjs',
-  'test/ui-state.test.mjs',
-  'test/view-state.test.mjs',
-  'test/view-sequence.test.mjs',
-  'test/view-surface.test.mjs',
-  'test/view-location.test.mjs',
-  'test/view-data.test.mjs',
-  'test/view-pages.test.mjs',
-  'test/directory-page.test.mjs',
-  'test/seo-assets.test.mjs',
-  'test/filter-panel.test.mjs',
-  'test/ui-rendering-architecture.test.mjs',
-  'test/taxonomy-selection.test.mjs',
-  'test/visibility-policy.test.mjs'
-];
+  ...await adjacentTests(join(root, 'src')),
+  ...await adjacentTests(join(root, 'scripts'))
+].sort();
 
 await rm(buildDirectory, { recursive: true, force: true });
 let status = 1;

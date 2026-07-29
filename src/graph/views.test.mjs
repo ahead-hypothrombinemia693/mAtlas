@@ -1,10 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { GraphModel } from '../.test-build/model/graph-model.js';
-import { classifyNodeVisibility, isCrossFieldEdgeAllowed, isWrongJunctionMode } from '../.test-build/graph/visibility-policy.js';
+import { GraphModel } from '../../.test-build/model/graph-model.js';
+import { classifyNodeVisibility, isCrossFieldEdgeAllowed, isWrongJunctionMode } from '../../.test-build/graph/visibility-policy.js';
 
-const root = new URL('../', import.meta.url);
+const root = new URL('../../', import.meta.url);
 const graphData = JSON.parse(await readFile(new URL('src/data/structures.json', root), 'utf8'));
 const viewsData = JSON.parse(await readFile(new URL('src/data/views.json', root), 'utf8'));
 const model = new GraphModel(graphData);

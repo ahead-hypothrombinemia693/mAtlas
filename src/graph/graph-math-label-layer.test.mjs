@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { GraphMathLabelLayer } from '../.test-build/graph/graph-math-label-layer.js';
+import { GraphMathLabelLayer } from '../../.test-build/graph/graph-math-label-layer.js';
 
 class FakeElement {
   constructor() {

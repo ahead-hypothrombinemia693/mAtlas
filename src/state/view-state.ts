@@ -22,10 +22,13 @@ export function viewSettingsAsUrlState(settings: AtlasViewSettings): UrlUiState 
     fields: [...settings.fields],
     domains: [...settings.domains],
     edgeTypes: [...settings.edgeTypes],
+    excludedFields: [...(settings.excludedFields ?? [])],
+    excludedDomains: [...(settings.excludedDomains ?? [])],
     crossFieldVisibility: settings.crossFieldVisibility,
     edgeLabels: settings.edgeLabels,
     junctions: settings.junctions,
     edgeZoomActivation: settings.edgeZoomActivation,
+    hidePrerequisites: settings.hidePrerequisites ?? false,
     layout: settings.layout
   };
 }
@@ -39,10 +42,13 @@ export function stateMatchesView(state: AppState, view: AtlasView): boolean {
   return sameIds(state.selectedFields, settings.fields)
     && sameIds(state.selectedDomains, settings.domains)
     && sameIds(state.selectedEdgeTypes, settings.edgeTypes)
+    && sameIds(state.excludedFields ?? new Set(), settings.excludedFields ?? [])
+    && sameIds(state.excludedDomains ?? new Set(), settings.excludedDomains ?? [])
     && state.crossFieldVisibility === settings.crossFieldVisibility
     && state.showEdgeLabels === settings.edgeLabels
     && state.showJunctions === settings.junctions
     && state.edgeZoomActivation === settings.edgeZoomActivation
+    && (state.hidePrerequisites ?? false) === (settings.hidePrerequisites ?? false)
     && state.layout === settings.layout;
 }
 

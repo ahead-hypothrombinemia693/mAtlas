@@ -1,7 +1,7 @@
 import type cytoscape from 'cytoscape';
 import { byId } from '../core/dom.js';
 import type { GraphModel } from '../model/graph-model.js';
-import type { AppState, GraphEdge, LayoutName } from '../types.js';
+import type { AppState, GraphEdge, LayoutName, Preferences } from '../types.js';
 import type { LabelSizer } from './label-sizer.js';
 import { classifyNodeVisibility, isCrossFieldEdgeAllowed, isWrongJunctionMode } from './visibility-policy.js';
 import { renderHtml } from '../ui/render.js';
@@ -14,6 +14,7 @@ export interface GraphViewControllerOptions {
   runLayout: (name: LayoutName, fitAfter: boolean) => void;
   scheduleFieldBands: () => void;
   updateFiltersToggleCount: () => void;
+  preferences: () => Preferences;
 }
 
 export class GraphViewController {
@@ -47,10 +48,12 @@ export class GraphViewController {
 
   applyFilters({ relayout = false }: { relayout?: boolean } = {}): void {
     const { cy, model, state } = this.options;
-    const required = model.requiredNodeIds(state, (edge) => !model.isCrossFieldEdge(edge) || this.crossFieldEdgeAllowed(edge));
+    const required = state.hidePrerequisites
+      ? new Set<string>()
+      : model.requiredNodeIds(state, (edge) => !model.isCrossFieldEdge(edge) || this.crossFieldEdgeAllowed(edge));
 
     cy.batch(() => {
-      cy.elements().removeClass('filter-hidden dependency-faded dependency-context cross-field-edge');
+      cy.elements().removeClass('filter-hidden dependency-faded dependency-context prerequisite-undimmed cross-field-edge');
 
       cy.nodes().forEach((element) => {
         const record = model.nodeRecord.get(element.id());
@@ -60,7 +63,7 @@ export class GraphViewController {
         }
         const visibility = classifyNodeVisibility(
           record.kind,
-          model.nodeMatchesSelectedTaxonomy(record, state),
+          model.nodeMatchesSelectedTaxonomy(record, state) && !model.nodeExcludedByTaxonomy(record, state),
           required.has(record.id),
           state.showJunctions
         );
@@ -92,8 +95,12 @@ export class GraphViewController {
         } else if (element.source().hasClass('dependency-faded') || element.target().hasClass('dependency-faded')) {
           element.addClass('dependency-context');
         }
-        element.toggleClass('edge-labels-off', !state.showEdgeLabels);
+        element.toggleClass('edge-labels-off', !state.showEdgeLabels || !this.options.preferences().showGraphEdgeLabels);
       });
+
+      if (!this.options.preferences().dimPrerequisites) {
+        cy.elements('.dependency-faded, .dependency-context').addClass('prerequisite-undimmed');
+      }
 
     });
 
@@ -228,7 +235,8 @@ export class GraphViewController {
         edge.style('events', 'no');
         return;
       }
-      const baseOpacity = edge.hasClass('dependency-context') ? 0.46 : edge.hasClass('neighborhood-dim') ? 0.14 : 1;
+      const baseOpacity = edge.hasClass('dependency-context') && this.options.preferences().dimPrerequisites
+        ? 0.46 : edge.hasClass('neighborhood-dim') ? 0.14 : 1;
       if (!state.edgeZoomActivation) {
         edge.style('opacity', baseOpacity);
         edge.style('events', 'yes');

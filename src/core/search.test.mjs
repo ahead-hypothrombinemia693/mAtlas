@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { rankNodeMatches } from '../.test-build/core/search.js';
+import { rankNodeMatches } from '../../.test-build/core/search.js';
 
 const nodes = [
   { id: 'hilbert-space', kind: 'structure', label: 'Hilbert Space', summary: 'A complete inner-product space.', primaryDomain: 'functional-analysis' },

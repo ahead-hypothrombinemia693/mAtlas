@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import vm from 'node:vm';
 import { readFile } from 'node:fs/promises';
 
-const template = await readFile(new URL('../src/index.html', import.meta.url), 'utf8');
+const template = await readFile(new URL('./index.html', import.meta.url), 'utf8');
 const bootstrapMatch = template.match(/<script>\s*([\s\S]*?window\.__atlasRecovery[\s\S]*?)<\/script>/);
 if (!bootstrapMatch) throw new Error('Unable to find the inline cache-recovery bootstrap.');
 const bootstrap = bootstrapMatch[1];

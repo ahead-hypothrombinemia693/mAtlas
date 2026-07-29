@@ -1,10 +1,11 @@
 import type cytoscape from 'cytoscape';
 import { byId, escapeHtml, query as $, queryAll as $$ } from '../core/dom.js';
 import { GraphModel } from '../model/graph-model.js';
-import { createInitialState, parseStoredUiState, parseUrlUiState, serializeUiState, sameIdSet, UI_STATE_STORAGE_KEY } from '../state/ui-state.js';
+import { createInitialState, parseUrlUiState, sameIdSet } from '../state/ui-state.js';
+import { DEFAULT_PREFERENCES, parsePreferences, PREFERENCES_STORAGE_KEY } from '../state/preferences.js';
 import { stateMatchesView, viewSettingsAsUrlState } from '../state/view-state.js';
 import { LabelSizer } from '../graph/label-sizer.js';
-import { createGraph } from '../graph/create-graph.js';
+import { applyRendererPreferences, createGraph } from '../graph/create-graph.js';
 import { LayoutManager } from '../graph/layout-manager.js';
 import { GraphViewController } from '../graph/graph-view-controller.js';
 import { GraphMathLabelLayer } from '../graph/graph-math-label-layer.js';
@@ -18,7 +19,7 @@ import { TooltipController } from '../ui/tooltip-controller.js';
 import { FilterControls } from '../ui/filter-controls.js';
 import { ViewsController } from '../ui/views-controller.js';
 import { LocationController } from './location-controller.js';
-import type { AppState, AtlasViewsData, GraphData, GraphNode, HistoryMode, LayoutName, SelectionTarget, UrlUiState } from '../types.js';
+import type { AppState, AtlasViewsData, GraphData, GraphNode, HistoryMode, LayoutName, Preferences, SelectionTarget, UrlUiState } from '../types.js';
 import { renderHtml } from '../ui/render.js';
 import { rankNodeMatches } from '../core/search.js';
 import { fetchAtlasJson } from './data-loader.js';
@@ -72,15 +73,11 @@ export async function startAtlasApp(): Promise<void> {
   const scopedDefaultDomainIds = locationController.scopedDefaultDomainIds();
   const initialView = locationController.resolveViewFromLocation({ includeTemplate: true });
 
-  function readStoredUiState() {
+  function readPreferences(): Preferences {
     try {
-      const raw = window.localStorage.getItem(UI_STATE_STORAGE_KEY);
-      const parsed = parseStoredUiState(raw, knownStateIds);
-      if (raw && !parsed) window.localStorage.removeItem(UI_STATE_STORAGE_KEY);
-      // Intentionally disabled for now: validate stored state, but do not restore it.
-      return null;
+      return parsePreferences(window.localStorage.getItem(PREFERENCES_STORAGE_KEY));
     } catch {
-      return null;
+      return { ...DEFAULT_PREFERENCES };
     }
   }
 
@@ -88,42 +85,45 @@ export async function startAtlasApp(): Promise<void> {
     return parseUrlUiState(new URL(window.location.href).searchParams, knownStateIds);
   }
 
-  function writeStoredUiState(): void {
+  function writePreferences(): void {
     try {
-      window.localStorage.setItem(
-        UI_STATE_STORAGE_KEY,
-        JSON.stringify(serializeUiState(state, fieldOrder, domainOrder, edgeTypeOrder))
-      );
+      window.localStorage.setItem(PREFERENCES_STORAGE_KEY, JSON.stringify(preferences));
     } catch {
       // Storage can be unavailable; preference changes should still work for this session.
     }
   }
 
 
-  const storedUiState = readStoredUiState();
+  let preferences = staticAtlasSvgMode ? { ...DEFAULT_PREFERENCES } : readPreferences();
   const urlUiState: UrlUiState = staticAtlasSvgMode
     ? {
         fields: fieldOrder,
         domains: domainOrder,
         edgeTypes: defaultEdgeTypeIds,
+        excludedFields: [],
+        excludedDomains: [],
         crossFieldVisibility: 'all',
         edgeLabels: true,
         junctions: true,
         edgeZoomActivation: false,
+        hidePrerequisites: false,
         layout: 'atlas'
       }
     : readUrlUiState();
   const conceptPageDefaults = locationController.conceptPageDefaultTaxonomy();
   const viewDefaults = initialView?.settings;
 
-  state = createInitialState(urlUiState, storedUiState, {
+  state = createInitialState(urlUiState, {
     fields: viewDefaults?.fields ?? conceptPageDefaults?.fields ?? scopedDefaultFieldIds,
     domains: viewDefaults?.domains ?? conceptPageDefaults?.domains ?? scopedDefaultDomainIds,
     edgeTypes: viewDefaults?.edgeTypes ?? defaultEdgeTypeIds,
+    excludedFields: viewDefaults?.excludedFields,
+    excludedDomains: viewDefaults?.excludedDomains,
     crossFieldVisibility: viewDefaults?.crossFieldVisibility,
     edgeLabels: viewDefaults?.edgeLabels,
     junctions: viewDefaults?.junctions,
     edgeZoomActivation: viewDefaults?.edgeZoomActivation,
+    hidePrerequisites: viewDefaults?.hidePrerequisites,
     layout: viewDefaults?.layout
   });
   if (initialView && stateMatchesView(state, initialView)) locationController.setActiveView(initialView.id);
@@ -134,7 +134,6 @@ export async function startAtlasApp(): Promise<void> {
   function persistUiState(): void {
     const activeView = locationController.activeView();
     if (activeView && !stateMatchesView(state, activeView)) locationController.deactivateView();
-    writeStoredUiState();
     const selection = currentSelectionTarget();
     locationController.write(selection, 'replace');
     locationController.syncDocumentMetadata(selection);
@@ -145,9 +144,9 @@ export async function startAtlasApp(): Promise<void> {
   const mathRenderer = new MathRenderer();
   const renderMathText = (value: unknown): string => mathRenderer.renderText(value);
 
-  const cy = createGraph(graphEl, model, labelSizer);
+  const cy = createGraph(graphEl, model, labelSizer, preferences);
   new IdleRenderController(cy, graphEl);
-  new GraphMathLabelLayer(cy, graphEl, mathRenderer);
+  const graphLabelLayer = new GraphMathLabelLayer(cy, graphEl, mathRenderer, preferences);
   window.cy = cy;
   currentSelectionTarget = () => {
     const selected = cy.$(':selected').first();
@@ -196,7 +195,8 @@ export async function startAtlasApp(): Promise<void> {
     labelSizer,
     runLayout,
     scheduleFieldBands,
-    updateFiltersToggleCount
+    updateFiltersToggleCount,
+    preferences: () => preferences
   });
   const updateSemanticLabelSizes = (force = false): void => graphView.updateSemanticLabelSizes(force);
   const scheduleEdgeZoomStyles = (): void => graphView.scheduleEdgeZoomStyles();
@@ -216,7 +216,15 @@ export async function startAtlasApp(): Promise<void> {
     persist: persistUiState,
     applyFilters,
     runLayout,
-    scheduleEdgeZoomStyles
+    scheduleEdgeZoomStyles,
+    preferences: () => preferences,
+    setPreferences: (next) => {
+      preferences = next;
+      writePreferences();
+      applyRendererPreferences(cy, preferences);
+      graphLabelLayer.setPreferences(preferences);
+      graphView.applyFilters({ relayout: false });
+    }
   });
   const buildFilters = (): void => filterControls.build();
   const syncPreferenceControls = (): void => filterControls.syncPreferences();
@@ -265,6 +273,10 @@ export async function startAtlasApp(): Promise<void> {
     if (!record) return;
     for (const fieldId of nodeFieldIds(record)) state.selectedFields.add(fieldId);
     state.selectedDomains.add(record.primaryDomain);
+    state.excludedFields.delete(model.nodePrimaryField(record));
+    state.excludedDomains.delete(record.primaryDomain);
+    $<HTMLButtonElement>(`[data-exclude-field="${CSS.escape(model.nodePrimaryField(record))}"]`)?.setAttribute('aria-pressed', 'false');
+    $<HTMLButtonElement>(`[data-exclude-domain="${CSS.escape(record.primaryDomain)}"]`)?.setAttribute('aria-pressed', 'false');
     $$<HTMLInputElement>('[data-field]').forEach((input) => { input.checked = state.selectedFields.has(input.dataset.field ?? ''); });
     const checkbox = $<HTMLInputElement>(`[data-domain="${CSS.escape(record.primaryDomain)}"]`);
     if (checkbox) checkbox.checked = true;
@@ -406,23 +418,30 @@ export async function startAtlasApp(): Promise<void> {
     const nextFields = next.fields ?? [...state.selectedFields];
     const nextDomains = next.domains ?? [...state.selectedDomains];
     const nextEdgeTypes = next.edgeTypes ?? [...state.selectedEdgeTypes];
+    const nextExcludedFields = next.excludedFields ?? [...state.excludedFields];
+    const nextExcludedDomains = next.excludedDomains ?? [...state.excludedDomains];
     const nextCrossFieldVisibility = next.crossFieldVisibility ?? state.crossFieldVisibility;
     const nextEdgeLabels = next.edgeLabels ?? state.showEdgeLabels;
     const nextJunctions = next.junctions ?? state.showJunctions;
     const nextEdgeZoomActivation = next.edgeZoomActivation ?? state.edgeZoomActivation;
+    const nextHidePrerequisites = next.hidePrerequisites ?? state.hidePrerequisites;
     const nextLayout = next.layout ?? state.layout;
 
     const fieldsChanged = !sameIdSet(state.selectedFields, nextFields);
     const domainsChanged = !sameIdSet(state.selectedDomains, nextDomains);
     const edgeTypesChanged = !sameIdSet(state.selectedEdgeTypes, nextEdgeTypes);
+    const excludedFieldsChanged = !sameIdSet(state.excludedFields, nextExcludedFields);
+    const excludedDomainsChanged = !sameIdSet(state.excludedDomains, nextExcludedDomains);
     const crossFieldChanged = state.crossFieldVisibility !== nextCrossFieldVisibility;
     const edgeLabelsChanged = state.showEdgeLabels !== nextEdgeLabels;
     const junctionsChanged = state.showJunctions !== nextJunctions;
     const edgeZoomChanged = state.edgeZoomActivation !== nextEdgeZoomActivation;
+    const hidePrerequisitesChanged = state.hidePrerequisites !== nextHidePrerequisites;
     const layoutChanged = state.layout !== nextLayout;
 
-    if (!fieldsChanged && !domainsChanged && !edgeTypesChanged && !crossFieldChanged
-      && !edgeLabelsChanged && !junctionsChanged && !edgeZoomChanged && !layoutChanged) {
+    if (!fieldsChanged && !domainsChanged && !edgeTypesChanged && !excludedFieldsChanged && !excludedDomainsChanged
+      && !crossFieldChanged && !edgeLabelsChanged && !junctionsChanged && !edgeZoomChanged
+      && !hidePrerequisitesChanged && !layoutChanged) {
       if (routeView && !stateMatchesView(state, routeView)) locationController.deactivateView();
       viewsController?.syncActiveView();
       return;
@@ -431,18 +450,21 @@ export async function startAtlasApp(): Promise<void> {
     state.selectedFields = new Set(nextFields);
     state.selectedDomains = new Set(nextDomains);
     state.selectedEdgeTypes = new Set(nextEdgeTypes);
+    state.excludedFields = new Set(nextExcludedFields);
+    state.excludedDomains = new Set(nextExcludedDomains);
     state.crossFieldVisibility = nextCrossFieldVisibility;
     state.showEdgeLabels = nextEdgeLabels;
     state.showJunctions = nextJunctions;
     state.edgeZoomActivation = nextEdgeZoomActivation;
+    state.hidePrerequisites = nextHidePrerequisites;
     state.layout = nextLayout;
 
     buildFilters();
     syncPreferenceControls();
     updateFieldNavActiveState();
-    writeStoredUiState();
     if (routeView && !stateMatchesView(state, routeView)) locationController.deactivateView();
-    applyFilters({ relayout: fieldsChanged || domainsChanged || junctionsChanged || edgeZoomChanged || layoutChanged });
+    applyFilters({ relayout: fieldsChanged || domainsChanged || excludedFieldsChanged || excludedDomainsChanged
+      || junctionsChanged || edgeZoomChanged || hidePrerequisitesChanged || layoutChanged });
     viewsController?.syncActiveView();
   }
 
@@ -519,7 +541,7 @@ export async function startAtlasApp(): Promise<void> {
       <p><strong>/</strong> focuses search, <strong>F</strong> fits the filtered graph, and <strong>Escape</strong> clears search or closes mobile panels.</p>`);
   }
 
-  const svgExporter = new SvgExporter(cy, model, state, mathRenderer);
+  const svgExporter = new SvgExporter(cy, model, state, () => preferences);
   const exportVisibleSvg = (): void => svgExporter.exportVisible();
   const publishStaticAtlasSvg = (): void => {
     const result = svgExporter.serializeVisible();

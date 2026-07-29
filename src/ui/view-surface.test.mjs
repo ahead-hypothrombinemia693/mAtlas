@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { resolveViewSurface } from '../.test-build/ui/view-surface.js';
+import { resolveViewSurface } from '../../.test-build/ui/view-surface.js';
 
 test('desktop keeps the guided-view introduction over the graph', () => {
   assert.deepEqual(resolveViewSurface({

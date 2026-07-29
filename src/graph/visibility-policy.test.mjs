@@ -4,7 +4,7 @@ import {
   classifyNodeVisibility,
   isCrossFieldEdgeAllowed,
   isWrongJunctionMode
-} from '../.test-build/graph/visibility-policy.js';
+} from '../../.test-build/graph/visibility-policy.js';
 
 test('node visibility preserves required prerequisites and junction mode', () => {
   assert.equal(classifyNodeVisibility('structure', true, false, true), 'visible');

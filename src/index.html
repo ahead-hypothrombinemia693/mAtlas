@@ -243,8 +243,29 @@
             <label class="toggle-row"><input id="edgeLabelsToggle" type="checkbox" checked> Edge annotations</label>
             <label class="toggle-row"><input id="edgeZoomToggle" type="checkbox" checked> Edge interaction only when zoomed in</label>
             <label class="toggle-row"><input id="junctionsToggle" type="checkbox" checked> Construction junctions</label>
+            <label class="toggle-row"><input id="hidePrerequisitesToggle" type="checkbox"> Hide prerequisites</label>
             <label class="select-row" for="crossFieldSelect"><span>Cross-field links</span><select id="crossFieldSelect" class="select"><option value="contextual">Contextual</option><option value="all">All</option><option value="hidden">Hidden</option></select></label>
             <label class="select-row" for="layoutSelect"><span>Layout</span><select id="layoutSelect" class="select"><option value="atlas">Layered by field and domain</option><option value="cose-bilkent">Organic</option><option value="breadthfirst">Compact hierarchy</option></select></label>
+          </div>
+        </section>
+
+        <section class="filter-section">
+          <div class="section-heading">
+            <button type="button" class="filter-section-toggle" aria-expanded="true" aria-controls="preferencesFilterSection" data-filter-section-toggle>
+              <span>Preferences</span><span class="material-icons" aria-hidden="true">expand_more</span>
+            </button>
+            <button id="preferencesReset" type="button" class="text-button">reset</button>
+          </div>
+          <div id="preferencesFilterSection" class="filter-section-body display-filter-controls">
+            <label class="toggle-row"><input id="highResolutionToggle" type="checkbox" checked> High resolution</label>
+            <label class="toggle-row"><input id="transitionsToggle" type="checkbox" checked> Transitions</label>
+            <label class="toggle-row"><input id="motionBlurToggle" type="checkbox"> Motion blur</label>
+            <label class="toggle-row"><input id="formulaeInGraphToggle" type="checkbox"> Formulae in graph</label>
+            <label class="toggle-row"><input id="indicateOtherDomainsToggle" type="checkbox" checked> Indicate other domains</label>
+            <label class="toggle-row"><input id="showGraphEdgeLabelsToggle" type="checkbox" checked> Show graph edge labels</label>
+            <label class="toggle-row"><input id="hideEdgesWhileMovingToggle" type="checkbox" checked> Hide edges while moving</label>
+            <label class="toggle-row"><input id="dimPrerequisitesToggle" type="checkbox" checked> Dim prerequisites</label>
+            <p class="filter-note">Saved only in this browser and never included in shared URLs.</p>
           </div>
         </section>
 

@@ -49,7 +49,7 @@ if (!appIndex.includes('href="/directory/"')) throw new Error('The application o
 if (appIndex.includes('href="/static/atlas/"')) throw new Error('The application still links to the retired static atlas page.');
 if (!appIndex.includes('href="/static/atlas.svg"')) throw new Error('The application data panel omits the stable all-in SVG link.');
 if (!appIndex.includes('<noscript>') || !appIndex.includes('Open the atlas directory')) throw new Error('The application lacks its no-JavaScript directory fallback.');
-if ((appIndex.match(/data-filter-section-toggle/g) ?? []).length !== 4) throw new Error('The application template lacks the four collapsible filter subsections.');
+if ((appIndex.match(/data-filter-section-toggle/g) ?? []).length !== 5) throw new Error('The application template lacks the five collapsible filter subsections.');
 const displaySectionStart = appIndex.indexOf('id="displayFilterSection"');
 const displaySectionEnd = appIndex.indexOf('</section>', displaySectionStart);
 if (displaySectionStart < 0 || !appIndex.slice(displaySectionStart, displaySectionEnd).includes('id="layoutSelect"')) throw new Error('The layout selector is not inside the Display filter subsection.');
@@ -78,11 +78,8 @@ const exportedJunctionLinks = atlasSvg.match(/<a href="https:\/\/atlas\.madvay\.
 if (exportedJunctionLinks !== junctionCount) throw new Error(`static/atlas.svg contains ${exportedJunctionLinks} junction links; expected ${junctionCount}.`);
 const exportedRelationPaths = atlasSvg.match(/<path d="M [^"]+" fill="none" stroke=/g)?.length ?? 0;
 if (exportedRelationPaths !== graphData.edges.length) throw new Error(`static/atlas.svg contains ${exportedRelationPaths} relations; expected ${graphData.edges.length}.`);
-const mathNodeCount = graphData.nodes.filter((node) => /\$([^$\n]+?)\$/.test(node.label)).length;
-const mathEdgeCount = graphData.edges.filter((edge) => /\$([^$\n]+?)\$/.test(edge.label)).length;
 const exportedMathLabels = atlasSvg.match(/<foreignObject /g)?.length ?? 0;
-if (exportedMathLabels !== mathNodeCount + mathEdgeCount) throw new Error(`static/atlas.svg contains ${exportedMathLabels} KaTeX label containers; expected ${mathNodeCount + mathEdgeCount}.`);
-if (exportedMathLabels && (!atlasSvg.includes('class="katex"') || !atlasSvg.includes('KaTeX_Main') || !/data:font\/(?:woff2|woff|ttf);base64,/.test(atlasSvg) || !atlasSvg.includes('svg-plain-label-fallback') || !atlasSvg.includes('requiredExtensions="http://www.w3.org/1999/xhtml"'))) throw new Error('static/atlas.svg lacks rendered KaTeX, self-contained KaTeX fonts, or its plain-text compatibility fallback.');
+if (exportedMathLabels !== 0 || /katex|foreignObject|requiredExtensions|data:font\//i.test(atlasSvg)) throw new Error('static/atlas.svg must use lightweight Unicode labels without KaTeX or HTML overlays.');
 
 const atlasSvgFragment = atlasSvg.replace(/^\uFEFF?\s*<\?xml\s+[^?]*\?>\s*/i, '').trim();
 if (!directoryPage.includes(atlasSvgFragment)) throw new Error('directory/index.html does not transclude the exact generated SVG document.');
@@ -90,7 +87,7 @@ if (!directoryPage.includes('<link rel="canonical" href="https://atlas.madvay.co
 if (!directoryPage.includes('"primaryImageOfPage"') || !directoryPage.includes('"ImageObject"')) throw new Error('The directory page lacks primary-image structured data.');
 if (!directoryPage.includes('Browse all') || !directoryPage.includes('Relation legend:')) throw new Error('The directory page lacks its semantic concept and relation directories.');
 const directoryBeforeSvg = directoryPage.slice(0, directoryPage.indexOf('<svg '));
-if (mathNodeCount && !directoryBeforeSvg.includes('<math')) throw new Error('The directory concept list does not render explicit inline mathematics.');
+if (!directoryBeforeSvg.includes('<math')) throw new Error('The directory concept list does not render explicit inline mathematics.');
 const firstConcept = graphData.nodes.find((node) => node.kind === 'structure');
 const firstConceptLink = firstConcept ? `href="/concepts/${encodeURIComponent(firstConcept.id)}/"` : '';
 if (!firstConceptLink || directoryPage.indexOf(firstConceptLink) < 0 || directoryPage.indexOf(firstConceptLink) > directoryPage.indexOf('<svg ')) throw new Error('Crawlable concept links must appear before the inline SVG.');

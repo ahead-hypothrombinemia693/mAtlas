@@ -115,13 +115,16 @@ Relations are not treated as one undifferentiated “built from” ordering. Thi
 
 ## User interface and URL state
 
-The left panel contains collapsible field/domain, edge, display, and data sections. The Display section contains the layout selector and a **Cross-field links** preference:
+The left panel contains collapsible field/domain, edge, display, preferences, and data sections. The Display section contains the layout selector and a **Cross-field links** option:
 
 - `contextual` — show designated overview bridges and reveal local bridges for the selected neighborhood
 - `all` — show all admitted cross-field relations
 - `hidden` — suppress cross-field relations and their external prerequisite context
 
-Fields, domains, edge types, cross-field visibility, display options, and layout are encoded in query parameters for bookmarkable views and browser history. Preferences continue to be written to local storage, but restoration is intentionally disabled in `readStoredUiState()` for now.
+Fields, domains, edge types, cross-field visibility, display options, and layout are encoded in query parameters for bookmarkable views and browser history. Performance and rendering preferences (resolution, transitions, motion blur, graph formulae, and secondary-domain indicators) are instead restored from local storage and can be reset from the Preferences section; they are never added to URLs.
+The defaults enable native-resolution rendering, transitions, and secondary-domain indicators while disabling motion blur and KaTeX graph overlays; lightweight Unicode math remains visible in graph labels and exported SVGs.
+
+Fields and domains can also be marked **excluded** without clearing the ordinary inclusion filters. Exclusions suppress concepts whose primary field/domain is excluded, including prerequisite-only context, while still allowing a multi-domain concept through when it has an explicitly included, non-excluded secondary domain. Excluded fields/domains and the Display section's **Hide prerequisites** option are view state and are therefore encoded in URLs (`excludeFields`, `excludeDomains`, and `hidePrereqs`) and supported by guided-view settings. Local preferences additionally control graph edge-label rendering, whether edges disappear during viewport gestures, and whether prerequisite context is dimmed; these preferences also apply to SVG exports where relevant.
 
 The scoped routes initialize their corresponding field while using the same graph and codebase. Canonical concept URLs are field-independent so a multi-field concept has one durable identity.
 

@@ -4,7 +4,7 @@ import { mkdtemp, readFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { generateViewPages } from '../scripts/generate-view-pages.mjs';
+import { generateViewPages } from './generate-view-pages.mjs';
 
 const root = new URL('../', import.meta.url);
 

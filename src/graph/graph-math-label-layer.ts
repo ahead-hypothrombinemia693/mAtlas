@@ -1,6 +1,8 @@
 import type cytoscape from 'cytoscape';
 import type { MathRenderer } from '../ui/math-renderer.js';
 import { renderHtml } from '../ui/render.js';
+import type { Preferences } from '../types.js';
+import { DEFAULT_PREFERENCES } from '../state/preferences.js';
 
 type GraphElement = cytoscape.NodeSingular | cytoscape.EdgeSingular;
 
@@ -31,12 +33,15 @@ export class GraphMathLabelLayer {
   private readonly domainMarkers: DomainMarkerEntry[] = [];
   private frame = 0;
   private dirty = 0;
+  private preferences: Preferences;
 
   constructor(
     private readonly cy: cytoscape.Core,
     graphContainer: HTMLElement,
-    private readonly math: MathRenderer
+    private readonly math: MathRenderer,
+    preferences: Preferences = { ...DEFAULT_PREFERENCES }
   ) {
+    this.preferences = preferences;
     this.layer.className = 'graph-math-label-layer';
     this.layer.setAttribute('aria-hidden', 'true');
     this.viewport.className = 'graph-math-label-viewport';
@@ -44,6 +49,9 @@ export class GraphMathLabelLayer {
     graphContainer.insertAdjacentElement('afterend', this.layer);
     this.buildEntries();
     this.buildDomainMarkers();
+    if (!preferences.formulaeInGraph) {
+      for (const { element } of this.entries) element.data('canvasLabel', element.data('displayLabel'));
+    }
 
     // Pan and zoom are the hot path: one compositor transform updates every label.
     this.cy.on('pan zoom resize', () => this.schedule(VIEWPORT_DIRTY));
@@ -51,6 +59,14 @@ export class GraphMathLabelLayer {
     this.cy.on('style data', () => this.schedule(GEOMETRY_DIRTY | STATE_DIRTY));
     this.cy.on('select unselect', () => this.schedule(STATE_DIRTY));
     this.schedule(ALL_DIRTY);
+  }
+
+  setPreferences(preferences: Preferences): void {
+    this.preferences = preferences;
+    for (const { element } of this.entries) {
+      element.data('canvasLabel', preferences.formulaeInGraph ? '' : element.data('displayLabel'));
+    }
+    this.schedule(GEOMETRY_DIRTY | STATE_DIRTY);
   }
 
   schedule(dirty = ALL_DIRTY): void {
@@ -142,9 +158,9 @@ export class GraphMathLabelLayer {
 
   private syncState(): void {
     for (const { element, label } of this.entries) {
-      const hidden = element.hasClass('filter-hidden')
+      const hidden = !this.preferences.formulaeInGraph || element.hasClass('filter-hidden')
         || element.style('display') === 'none'
-        || (element.isEdge() && element.hasClass('edge-labels-off'));
+        || (element.isEdge() && (element.hasClass('edge-labels-off') || !this.preferences.showGraphEdgeLabels));
       if (hidden) {
         label.hidden = true;
         continue;
@@ -161,7 +177,7 @@ export class GraphMathLabelLayer {
       label.style.zIndex = element.selected() ? '4' : element.isNode() ? '2' : '1';
     }
     for (const { element, marker } of this.domainMarkers) {
-      const hidden = element.hasClass('filter-hidden') || element.style('display') === 'none';
+      const hidden = !this.preferences.indicateOtherDomains || element.hasClass('filter-hidden') || element.style('display') === 'none';
       marker.hidden = hidden;
       if (!hidden) marker.style.opacity = String(numericOpacity(element, 1));
     }

@@ -2,7 +2,8 @@ import { byId, escapeHtml, queryAll } from '../core/dom.js';
 import { isCrossFieldVisibility, isLayoutName } from '../state/ui-state.js';
 import { selectExclusiveDomain, selectExclusiveEdgeType, selectExclusiveField } from '../state/taxonomy-selection.js';
 import type { GraphModel } from '../model/graph-model.js';
-import type { AppState, LayoutName } from '../types.js';
+import type { AppState, LayoutName, Preferences } from '../types.js';
+import { DEFAULT_PREFERENCES } from '../state/preferences.js';
 import { renderHtml } from './render.js';
 
 export interface FilterControlsOptions {
@@ -14,6 +15,8 @@ export interface FilterControlsOptions {
   applyFilters: (options?: { relayout?: boolean }) => void;
   runLayout: (name: LayoutName, fitAfter: boolean) => void;
   scheduleEdgeZoomStyles: () => void;
+  preferences: () => Preferences;
+  setPreferences: (preferences: Preferences) => void;
 }
 
 export class FilterControls {
@@ -49,6 +52,7 @@ export class FilterControls {
       fieldLabel.title = field.description;
       renderHtml(fieldLabel, `
         <input type="checkbox" data-field="${escapeHtml(fieldId)}" ${state.selectedFields.has(fieldId) ? 'checked' : ''}>
+        <button type="button" class="exclude-toggle" data-exclude-field="${escapeHtml(fieldId)}" aria-pressed="${state.excludedFields.has(fieldId)}" title="Exclude concepts whose primary field is ${escapeHtml(field.label)}">exclude</button>
         <span class="swatch" style="background:${escapeHtml(field.color)}"></span>
         <span><a href="${escapeHtml(this.options.fieldPageUrl(fieldId))}" class="filter-link filter-field-link" data-field-link="${escapeHtml(fieldId)}">${escapeHtml(field.label)}</a> <span class="filter-count">${memberCount}</span></span>`);
       group.appendChild(fieldLabel);
@@ -67,6 +71,7 @@ export class FilterControls {
         label.title = `${domainMemberCount} concepts belong to this domain; ${primaryCount} use it as their primary layout domain.`;
         renderHtml(label, `
           <input type="checkbox" data-domain="${escapeHtml(domainId)}" ${state.selectedDomains.has(domainId) ? 'checked' : ''}>
+          <button type="button" class="exclude-toggle" data-exclude-domain="${escapeHtml(domainId)}" aria-pressed="${state.excludedDomains.has(domainId)}" title="Exclude concepts whose primary domain is ${escapeHtml(domain.label)}">exclude</button>
           <span class="swatch" style="background:${escapeHtml(domain.color)}"></span>
           <span><a href="${escapeHtml(this.options.domainPageUrl(domainId))}" class="filter-link filter-domain-link" data-domain-link="${escapeHtml(domainId)}">${escapeHtml(domain.label)}</a> <span class="filter-count">${domainMemberCount}</span></span>`);
         domainList.appendChild(label);
@@ -93,9 +98,19 @@ export class FilterControls {
     const { state } = this.options;
     byId<HTMLInputElement>('edgeLabelsToggle').checked = state.showEdgeLabels;
     byId<HTMLInputElement>('junctionsToggle').checked = state.showJunctions;
+    byId<HTMLInputElement>('hidePrerequisitesToggle').checked = state.hidePrerequisites;
     byId<HTMLInputElement>('edgeZoomToggle').checked = state.edgeZoomActivation;
     byId<HTMLSelectElement>('crossFieldSelect').value = state.crossFieldVisibility;
     byId<HTMLSelectElement>('layoutSelect').value = state.layout;
+    const preferences = this.options.preferences();
+    byId<HTMLInputElement>('highResolutionToggle').checked = preferences.highResolution;
+    byId<HTMLInputElement>('transitionsToggle').checked = preferences.transitions;
+    byId<HTMLInputElement>('motionBlurToggle').checked = preferences.motionBlur;
+    byId<HTMLInputElement>('formulaeInGraphToggle').checked = preferences.formulaeInGraph;
+    byId<HTMLInputElement>('indicateOtherDomainsToggle').checked = preferences.indicateOtherDomains;
+    byId<HTMLInputElement>('showGraphEdgeLabelsToggle').checked = preferences.showGraphEdgeLabels;
+    byId<HTMLInputElement>('hideEdgesWhileMovingToggle').checked = preferences.hideEdgesWhileMoving;
+    byId<HTMLInputElement>('dimPrerequisitesToggle').checked = preferences.dimPrerequisites;
   }
 
   updateFieldAllButtonLabel(): void {
@@ -134,6 +149,15 @@ export class FilterControls {
     byId('edgeFilters').addEventListener('click', (event) => this.handleEdgeTypeLink(event));
     byId('fieldsAll').addEventListener('click', () => this.toggleAllFields());
     byId('edgesAll').addEventListener('click', () => this.toggleAllEdges());
+    byId('preferencesReset').addEventListener('click', () => {
+      this.options.setPreferences({ ...DEFAULT_PREFERENCES });
+      this.syncPreferences();
+    });
+    for (const id of ['highResolution', 'transitions', 'motionBlur', 'formulaeInGraph', 'indicateOtherDomains', 'showGraphEdgeLabels', 'hideEdgesWhileMoving', 'dimPrerequisites'] as const) {
+      byId<HTMLInputElement>(`${id}Toggle`).addEventListener('change', (event) => {
+        this.options.setPreferences({ ...this.options.preferences(), [id]: (event.currentTarget as HTMLInputElement).checked });
+      });
+    }
 
     byId('filtersPanel').addEventListener('click', (event) => this.handleSectionToggle(event));
 
@@ -154,6 +178,10 @@ export class FilterControls {
     });
     byId<HTMLInputElement>('junctionsToggle').addEventListener('change', (event) => {
       this.options.state.showJunctions = (event.currentTarget as HTMLInputElement).checked;
+      this.commit(true);
+    });
+    byId<HTMLInputElement>('hidePrerequisitesToggle').addEventListener('change', (event) => {
+      this.options.state.hidePrerequisites = (event.currentTarget as HTMLInputElement).checked;
       this.commit(true);
     });
     byId<HTMLSelectElement>('layoutSelect').addEventListener('change', (event) => {
@@ -205,6 +233,20 @@ export class FilterControls {
   private handleTaxonomyLink(event: Event): void {
     const target = event.target;
     if (!(target instanceof Element)) return;
+    const exclude = target.closest<HTMLButtonElement>('[data-exclude-field], [data-exclude-domain]');
+    if (exclude) {
+      event.preventDefault();
+      event.stopPropagation();
+      const fieldId = exclude.dataset.excludeField;
+      const domainId = exclude.dataset.excludeDomain;
+      const set = fieldId ? this.options.state.excludedFields : this.options.state.excludedDomains;
+      const id = fieldId ?? domainId;
+      if (!id) return;
+      this.setMembership(set, id, !set.has(id));
+      exclude.setAttribute('aria-pressed', String(set.has(id)));
+      this.commit(true);
+      return;
+    }
     const link = target.closest<HTMLAnchorElement>('a[data-field-link], a[data-domain-link]');
     if (!link) return;
     if (event instanceof MouseEvent && (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey)) return;

@@ -4,7 +4,7 @@ import {
   selectExclusiveDomain,
   selectExclusiveEdgeType,
   selectExclusiveField
-} from '../.test-build/state/taxonomy-selection.js';
+} from '../../.test-build/state/taxonomy-selection.js';
 
 const context = {
   fieldOrder: ['math', 'physics'],

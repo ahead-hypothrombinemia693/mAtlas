@@ -6,7 +6,7 @@ import {
   viewIdFromTemplate,
   viewPagePath,
   viewSettingsAsUrlState
-} from '../.test-build/state/view-state.js';
+} from '../../.test-build/state/view-state.js';
 
 const view = {
   id: 'experimental-discovery',
@@ -19,10 +19,13 @@ const view = {
     fields: ['physics'],
     domains: ['experiments'],
     edgeTypes: ['motivated', 'verified'],
+    excludedFields: ['mathematics'],
+    excludedDomains: ['algebra'],
     crossFieldVisibility: 'hidden',
     edgeLabels: true,
     junctions: false,
     edgeZoomActivation: false,
+    hidePrerequisites: true,
     layout: 'atlas'
   }
 };
@@ -32,10 +35,13 @@ function appState() {
     selectedFields: new Set(['physics']),
     selectedDomains: new Set(['experiments']),
     selectedEdgeTypes: new Set(['motivated', 'verified']),
+    excludedFields: new Set(['mathematics']),
+    excludedDomains: new Set(['algebra']),
     crossFieldVisibility: 'hidden',
     showEdgeLabels: true,
     showJunctions: false,
     edgeZoomActivation: false,
+    hidePrerequisites: true,
     neighborhoodActive: false,
     neighborhoodElementId: null,
     layout: 'atlas',
@@ -59,6 +65,8 @@ test('view routes parse canonical static paths and templates', () => {
 test('view settings become URL-state defaults without mutation', () => {
   const state = viewSettingsAsUrlState(view.settings);
   assert.deepEqual(state.fields, ['physics']);
+  assert.deepEqual(state.excludedFields, ['mathematics']);
+  assert.equal(state.hidePrerequisites, true);
   state.fields.push('mathematics');
   assert.deepEqual(view.settings.fields, ['physics']);
 });

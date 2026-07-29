@@ -15,7 +15,7 @@ async function filesUnder(directory) {
 }
 
 test('UI HTML writes go through the retained renderer', async () => {
-  const files = (await filesUnder(fileURLToPath(new URL('../src/', import.meta.url))))
+  const files = (await filesUnder(fileURLToPath(new URL('./', import.meta.url))))
     .filter((path) => path.endsWith('.ts') && !path.endsWith('/ui/render.ts'));
   const violations = [];
   for (const path of files) {
@@ -39,7 +39,8 @@ test('graph nodes avoid per-node encoded images and startup hides the unfit view
   const appSource = await readFile(new URL('../src/app/atlas-app.ts', import.meta.url), 'utf8');
 
   assert.doesNotMatch(graphSource, /data:image\/svg\+xml|domainRailImage/);
-  assert.match(graphSource, /hideEdgesOnViewport:\s*true/);
+  assert.match(graphSource, /hideEdgesOnViewport:\s*preferences\.hideEdgesWhileMoving/);
+  assert.match(graphSource, /applyRendererPreferences\(cy, preferences\);\s*return cy;/);
   assert.match(html, /<body class="atlas-loading">/);
   assert.match(html, /id="graphLoader"/);
   assert.match(appSource, /classList\.remove\('atlas-loading'\)/);
@@ -56,6 +57,9 @@ test('static export uses the npm-managed browser and domain markers stay consist
   assert.doesNotMatch(generator, /CHROME_BIN|spawnSync|browserCandidates/);
   assert.match(labelLayer, /graph-domain-markers/);
   assert.match(exporter, /<circle cx=/);
+  assert.doesNotMatch(exporter, /katex|foreignObject|renderText|svgCssText/i);
+  assert.match(exporter, /preferences\(\)\.showGraphEdgeLabels/);
+  assert.match(exporter, /preferences\(\)\.dimPrerequisites/);
   assert.doesNotMatch(exporter, /markerY[^\n]*<rect|stroke-opacity="0\.3"/);
   assert.doesNotMatch(styles, /\.graph-domain-markers\s*\{[^}]*?(?:background|box-shadow|contain):/s);
   assert.doesNotMatch(styles, /\.graph-domain-markers\s*>\s*span\s*\{[^}]*border:/s);

@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { fetchAtlasJson } from '../.test-build/app/data-loader.js';
+import { fetchAtlasJson } from '../../.test-build/app/data-loader.js';
 
 function installRecovery() {
   let reloads = 0;

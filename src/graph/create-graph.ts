@@ -3,6 +3,7 @@ import type { GraphModel } from '../model/graph-model.js';
 import { stableStringHash } from '../core/hash.js';
 import { hasInlineMathText, stripInlineMathText } from '../core/text.js';
 import type { LabelSizer } from './label-sizer.js';
+import type { Preferences } from '../types.js';
 
 function edgeCurveDistance(edgeId: string): number {
   const hash = stableStringHash(edgeId);
@@ -125,13 +126,15 @@ export const graphStyles: cytoscape.StylesheetJson = [
   { selector: '.hover-emphasis', style: { opacity: 1 } },
   { selector: 'node.dependency-faded', style: { 'background-opacity': 0.46 } },
   { selector: 'edge.dependency-context', style: { opacity: 0.46 } },
+  { selector: 'node.dependency-faded.prerequisite-undimmed', style: { 'background-opacity': 0.92 } },
+  { selector: 'edge.dependency-context.prerequisite-undimmed', style: { opacity: 1 } },
   { selector: 'node.dependency-faded.hover-emphasis, edge.dependency-context.hover-emphasis', style: { opacity: 0.68 } },
   { selector: 'node:selected', style: { 'border-width': 5, 'border-color': '#0f172a', 'background-opacity': 1 } },
   { selector: 'edge:selected', style: { width: 5, 'z-index': 999 } }
 ];
 
-export function createGraph(container: HTMLElement, model: GraphModel, labels: LabelSizer): cytoscape.Core {
-  return cytoscape({
+export function createGraph(container: HTMLElement, model: GraphModel, labels: LabelSizer, preferences: Preferences): cytoscape.Core {
+  const cy = cytoscape({
     container,
     elements: createGraphElements(model, labels),
     layout: { name: 'preset' },
@@ -141,11 +144,36 @@ export function createGraph(container: HTMLElement, model: GraphModel, labels: L
     // High-density mobile displays otherwise render several times as many canvas
     // pixels. Edges are the most expensive part of a viewport gesture, so omit
     // them only while the viewport is actively moving.
-    pixelRatio: Math.min(window.devicePixelRatio || 1, 1.5),
-    hideEdgesOnViewport: true,
-    motionBlur: false,
+    pixelRatio: preferences.highResolution ? 'auto' : Math.min(window.devicePixelRatio || 1, 1.5),
+    hideEdgesOnViewport: preferences.hideEdgesWhileMoving,
+    motionBlur: preferences.motionBlur,
     boxSelectionEnabled: false,
     autoungrabify: false,
     style: graphStyles
   });
+  applyRendererPreferences(cy, preferences);
+  return cy;
+}
+
+export function applyRendererPreferences(cy: cytoscape.Core, preferences: Preferences): void {
+  // These are the live fields used by Cytoscape's canvas renderer. Updating only
+  // its original options object would not change an already-created renderer.
+  const renderer = (cy as unknown as { renderer: () => {
+    forcedPixelRatio: number | null;
+    motionBlurEnabled: boolean;
+    motionBlur: boolean;
+    hideEdgesOnViewport: boolean;
+  } }).renderer();
+  renderer.forcedPixelRatio = preferences.highResolution ? null : Math.min(window.devicePixelRatio || 1, 1.5);
+  renderer.motionBlurEnabled = preferences.motionBlur;
+  renderer.motionBlur = preferences.motionBlur;
+  renderer.hideEdgesOnViewport = preferences.hideEdgesWhileMoving;
+  cy.style()
+    .selector('node').style('transition-property', preferences.transitions ? 'opacity, border-width, border-color, background-opacity' : 'none')
+    .style('transition-duration', preferences.transitions ? 120 : 0)
+    .selector('edge').style('transition-property', preferences.transitions ? 'opacity, width' : 'none')
+    .style('transition-duration', preferences.transitions ? 120 : 0)
+    .update();
+  cy.resize();
+  cy.forceRender();
 }

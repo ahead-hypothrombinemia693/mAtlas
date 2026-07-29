@@ -4,8 +4,8 @@ import { mkdtemp, readFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { generateDirectoryPage, inlineSvgFragment, renderDirectoryPage } from '../scripts/generate-directory-page.mjs';
-import { renderConceptIndexRedirect, renderScopePage } from '../scripts/generate-concept-pages.mjs';
+import { generateDirectoryPage, inlineSvgFragment, renderDirectoryPage } from './generate-directory-page.mjs';
+import { renderConceptIndexRedirect, renderScopePage } from './generate-concept-pages.mjs';
 
 const root = new URL('../', import.meta.url);
 const exportedSvg = '<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" role="img"><title id="atlas-title">Atlas</title><a href="https://atlas.madvay.com/concepts/finite_set/"><text>Finite set</text></a></svg>';

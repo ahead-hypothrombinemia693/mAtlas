@@ -4,7 +4,7 @@ import { mkdtemp, readFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { generateSeoAssets } from '../scripts/generate-seo-assets.mjs';
+import { generateSeoAssets } from './generate-seo-assets.mjs';
 
 const root = new URL('../', import.meta.url);
 

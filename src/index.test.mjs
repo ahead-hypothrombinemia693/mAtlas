@@ -20,7 +20,7 @@ test('layout selection lives inside the collapsible Display section', () => {
 
 test('every filter subsection starts expanded and can be collapsed', () => {
   const toggles = [...html.matchAll(/<button[^>]*data-filter-section-toggle[^>]*>/g)].map((match) => match[0]);
-  assert.equal(toggles.length, 4);
+  assert.equal(toggles.length, 5);
   for (const toggle of toggles) {
     assert.match(toggle, /aria-expanded="true"/);
     assert.match(toggle, /aria-controls="[^"]+"/);

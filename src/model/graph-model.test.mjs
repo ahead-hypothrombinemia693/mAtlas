@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { GraphModel } from '../.test-build/model/graph-model.js';
+import { GraphModel } from '../../.test-build/model/graph-model.js';
 
 function fixture() {
   return {
@@ -69,4 +69,20 @@ test('GraphModel identifies cross-field edges', () => {
   const model = new GraphModel(fixture());
   assert.equal(model.isCrossFieldEdge(model.edgeRecord.get('set-group')), false);
   assert.equal(model.isCrossFieldEdge(model.edgeRecord.get('junction-space')), true);
+});
+
+test('primary taxonomy exclusions allow explicitly included secondary domains', () => {
+  const data = fixture();
+  data.nodes[1].domains.push('mechanics');
+  const model = new GraphModel(data);
+  const state = {
+    selectedDomains: new Set(['algebra']),
+    excludedFields: new Set(),
+    excludedDomains: new Set(['algebra'])
+  };
+  assert.equal(model.nodeExcludedByTaxonomy(data.nodes[1], state), true);
+  state.selectedDomains.add('mechanics');
+  assert.equal(model.nodeExcludedByTaxonomy(data.nodes[1], state), false);
+  state.excludedFields.add('physics');
+  assert.equal(model.nodeExcludedByTaxonomy(data.nodes[1], state), true);
 });

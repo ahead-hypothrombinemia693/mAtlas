@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { moveSequenceIndex, sequenceIndexForNode, viewsContainingNode } from '../.test-build/state/view-sequence.js';
+import { moveSequenceIndex, sequenceIndexForNode, viewsContainingNode } from '../../.test-build/state/view-sequence.js';
 
 const sequence = ['a', 'b', 'c'];
 

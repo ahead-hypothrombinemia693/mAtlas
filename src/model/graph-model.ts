@@ -66,6 +66,22 @@ export class GraphModel {
       && this.nodeDomainIds(node).some((domainId) => state.selectedDomains.has(domainId));
   }
 
+  nodeExcludedByTaxonomy(
+    node: GraphNode,
+    state: Pick<AppState, 'selectedDomains' | 'excludedFields' | 'excludedDomains'>
+  ): boolean {
+    const primaryField = this.nodePrimaryField(node);
+    const excludedFields = state.excludedFields ?? new Set<string>();
+    const excludedDomains = state.excludedDomains ?? new Set<string>();
+    const primaryExcluded = excludedFields.has(primaryField) || excludedDomains.has(node.primaryDomain);
+    if (!primaryExcluded) return false;
+    return !this.nodeDomainIds(node).some((domainId) =>
+      domainId !== node.primaryDomain
+      && state.selectedDomains.has(domainId)
+      && !excludedDomains.has(domainId)
+      && !excludedFields.has(this.fieldForDomain(domainId)));
+  }
+
   transitivePrerequisiteNodeIds(
     rootNodeIds: readonly string[],
     edgeAllowed: (edge: GraphEdge) => boolean
@@ -95,11 +111,13 @@ export class GraphModel {
   }
 
   requiredNodeIds(
-    state: Pick<AppState, 'selectedFields' | 'selectedDomains' | 'selectedEdgeTypes'>,
+    state: Pick<AppState, 'selectedFields' | 'selectedDomains' | 'selectedEdgeTypes' | 'excludedFields' | 'excludedDomains'>,
     edgeAllowed: (edge: GraphEdge) => boolean
   ): Set<string> {
     const roots = this.data.nodes
-      .filter((node) => node.kind === 'structure' && this.nodeMatchesSelectedTaxonomy(node, state))
+      .filter((node) => node.kind === 'structure'
+        && this.nodeMatchesSelectedTaxonomy(node, state)
+        && !this.nodeExcludedByTaxonomy(node, state))
       .map((node) => node.id);
     const required = new Set(roots);
     const queue = [...roots];
@@ -108,7 +126,9 @@ export class GraphModel {
       const targetId = queue[index];
       if (!targetId) continue;
       for (const edge of this.incomingBaseEdges.get(targetId) ?? []) {
-        if (!state.selectedEdgeTypes.has(edge.type) || !edgeAllowed(edge) || required.has(edge.source)) continue;
+        const source = this.nodeRecord.get(edge.source);
+        if (!state.selectedEdgeTypes.has(edge.type) || !edgeAllowed(edge) || required.has(edge.source)
+          || (source && this.nodeExcludedByTaxonomy(source, state))) continue;
         required.add(edge.source);
         queue.push(edge.source);
       }

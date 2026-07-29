@@ -119,10 +119,13 @@ export interface AppState {
   selectedFields: Set<string>;
   selectedDomains: Set<string>;
   selectedEdgeTypes: Set<string>;
+  excludedFields: Set<string>;
+  excludedDomains: Set<string>;
   crossFieldVisibility: CrossFieldVisibility;
   showEdgeLabels: boolean;
   showJunctions: boolean;
   edgeZoomActivation: boolean;
+  hidePrerequisites: boolean;
   neighborhoodActive: boolean;
   neighborhoodElementId: string | null;
   layout: LayoutName;
@@ -131,28 +134,29 @@ export interface AppState {
   detailsOpen: boolean;
 }
 
-export interface PersistedUiStateV1 {
+export interface Preferences {
   version: 1;
-  fields?: string[];
-  domains: string[];
-  edgeTypes: string[];
-  display: {
-    edgeLabels: boolean;
-    junctions: boolean;
-    edgeZoomActivation?: boolean;
-    crossFieldVisibility?: CrossFieldVisibility;
-  };
-  layout: LayoutName;
+  highResolution: boolean;
+  transitions: boolean;
+  motionBlur: boolean;
+  formulaeInGraph: boolean;
+  indicateOtherDomains: boolean;
+  showGraphEdgeLabels: boolean;
+  hideEdgesWhileMoving: boolean;
+  dimPrerequisites: boolean;
 }
 
 export interface UrlUiState {
   fields?: string[];
   domains?: string[];
   edgeTypes?: string[];
+  excludedFields?: string[];
+  excludedDomains?: string[];
   crossFieldVisibility?: CrossFieldVisibility;
   edgeLabels?: boolean;
   junctions?: boolean;
   edgeZoomActivation?: boolean;
+  hidePrerequisites?: boolean;
   layout?: LayoutName;
 }
 
@@ -165,10 +169,13 @@ export interface AtlasViewSettings {
   fields: string[];
   domains: string[];
   edgeTypes: string[];
+  excludedFields?: string[];
+  excludedDomains?: string[];
   crossFieldVisibility: CrossFieldVisibility;
   edgeLabels: boolean;
   junctions: boolean;
   edgeZoomActivation: boolean;
+  hidePrerequisites?: boolean;
   layout: LayoutName;
 }
 

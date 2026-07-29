@@ -1,10 +1,8 @@
 import type cytoscape from 'cytoscape';
 import { byId, escapeHtml } from '../core/dom.js';
-import { hasInlineMathText, stripInlineMathText } from '../core/text.js';
-import type { AppState, GraphNode, LineStyle, Point } from '../types.js';
+import { stripInlineMathText } from '../core/text.js';
+import type { AppState, GraphNode, LineStyle, Point, Preferences } from '../types.js';
 import type { GraphModel } from '../model/graph-model.js';
-import type { MathRenderer } from './math-renderer.js';
-import { renderHtml } from './render.js';
 
 export class SvgExporter {
   private readonly context = document.createElement('canvas').getContext('2d');
@@ -15,7 +13,7 @@ export class SvgExporter {
     private readonly cy: cytoscape.Core,
     private readonly model: GraphModel,
     private readonly state: AppState,
-    private readonly math: MathRenderer
+    private readonly preferences: () => Preferences
   ) {}
 
   serializeVisible(): { svg: string; nodeCount: number; edgeCount: number } | null {
@@ -45,7 +43,7 @@ export class SvgExporter {
     parts.push(`<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${Math.ceil(width)}" height="${Math.ceil(height)}" viewBox="${minX} ${minY} ${width} ${height}" role="img" aria-labelledby="atlas-title atlas-desc">`);
     parts.push(`<title id="atlas-title">${escapeHtml(data.meta.title)}</title>`);
     parts.push(`<desc id="atlas-desc">${escapeHtml(data.meta.description)} Exported from the current visible graph.</desc>`);
-    parts.push(`<defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="0.7" fill="#cbd5e1" opacity="0.55"/></pattern><style type="text/css"><![CDATA[${this.svgMathCss()}]]></style></defs>`);
+    parts.push('<defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="0.7" fill="#cbd5e1" opacity="0.55"/></pattern></defs>');
     parts.push(`<rect x="${minX}" y="${minY}" width="${width}" height="${height}" fill="#fbfcfe"/>`);
     parts.push(`<rect x="${minX}" y="${minY}" width="${width}" height="${headerHeight}" fill="#ffffff" opacity="0.93"/>`);
     parts.push(`<g transform="translate(${minX + 24} ${minY + 20})"><image href="${SvgExporter.logoDataUri}" width="48" height="48"/></g>`);
@@ -85,7 +83,7 @@ export class SvgExporter {
       const strokeWidth = selected ? 4.5 : record.synthetic ? 2.6 : 2.1;
       const edgeOpacity = element.hasClass('neighborhood-dim')
         ? 0.14
-        : element.hasClass('dependency-context') ? 0.46 : 1;
+        : element.hasClass('dependency-context') && this.preferences().dimPrerequisites ? 0.46 : 1;
       parts.push(`<path d="M ${start.x.toFixed(2)} ${start.y.toFixed(2)} Q ${control.x.toFixed(2)} ${control.y.toFixed(2)} ${end.x.toFixed(2)} ${end.y.toFixed(2)}" fill="none" stroke="${escapeHtml(color)}" stroke-width="${strokeWidth}"${dash ? ` stroke-dasharray="${dash}"` : ''} opacity="${edgeOpacity}"/>`);
       const tangentX = end.x - control.x;
       const tangentY = end.y - control.y;
@@ -100,7 +98,7 @@ export class SvgExporter {
       const rightY = baseY - ux * 5;
       parts.push(`<path d="M ${end.x.toFixed(2)} ${end.y.toFixed(2)} L ${leftX.toFixed(2)} ${leftY.toFixed(2)} L ${rightX.toFixed(2)} ${rightY.toFixed(2)} Z" fill="${escapeHtml(color)}" opacity="${edgeOpacity}"/>`);
 
-      if (!this.state.showEdgeLabels) return;
+      if (!this.state.showEdgeLabels || !this.preferences().showGraphEdgeLabels) return;
       const labelX = 0.25 * start.x + 0.5 * control.x + 0.25 * end.x;
       const labelY = 0.25 * start.y + 0.5 * control.y + 0.25 * end.y;
       const angle = Math.atan2(end.y - start.y, end.x - start.x) * 180 / Math.PI;
@@ -111,24 +109,14 @@ export class SvgExporter {
       const fallbackWidth = Math.min(record.synthetic ? 148 : 130, Math.max(28,
         ...labelLines.map((line) => (this.context?.measureText(line).width ?? line.length * 5.4) + 10)));
       const fallbackHeight = labelLines.length * lineHeight + 6;
-      const mathSize = hasInlineMathText(record.label)
-        ? this.measureMathEdgeLabel(record.label, record.synthetic === true, fallbackWidth, fallbackHeight)
-        : null;
-      const labelWidth = mathSize?.width ?? fallbackWidth;
-      const labelHeight = mathSize?.height ?? fallbackHeight;
       parts.push(`<g transform="translate(${labelX.toFixed(2)} ${labelY.toFixed(2)}) rotate(${normalizedAngle.toFixed(2)})" opacity="${edgeOpacity}">`);
-      if (mathSize) {
-        parts.push('<switch>');
-        parts.push(`<foreignObject requiredExtensions="http://www.w3.org/1999/xhtml" x="${(-labelWidth / 2).toFixed(2)}" y="${(-labelHeight / 2).toFixed(2)}" width="${labelWidth.toFixed(2)}" height="${labelHeight.toFixed(2)}"><div xmlns="http://www.w3.org/1999/xhtml" class="svg-katex-label svg-katex-edge${record.synthetic ? ' synthetic' : ''}" style="font-size:9px">${this.math.renderText(record.label)}</div></foreignObject>`);
-      }
-      parts.push(`<g${mathSize ? ' class="svg-plain-label-fallback"' : ''}>`);
+      parts.push('<g>');
       parts.push(`<rect x="${(-fallbackWidth / 2).toFixed(2)}" y="${(-fallbackHeight / 2).toFixed(2)}" width="${fallbackWidth.toFixed(2)}" height="${fallbackHeight.toFixed(2)}" rx="3" fill="${record.synthetic ? '#fff7ed' : '#ffffff'}" fill-opacity="0.9" stroke="${record.synthetic ? '#fed7aa' : '#e2e8f0'}" stroke-width="1"/>`);
       labelLines.forEach((line, index) => {
         const y = (index - (labelLines.length - 1) / 2) * lineHeight + 3;
         parts.push(`<text x="0" y="${y.toFixed(2)}" text-anchor="middle" font-family="${escapeHtml(this.fontFamily)}" font-size="9" font-weight="600" fill="#334155">${escapeHtml(line)}</text>`);
       });
       parts.push('</g>');
-      if (mathSize) parts.push('</switch>');
       parts.push('</g>');
     });
 
@@ -153,11 +141,11 @@ export class SvgExporter {
         : `https://atlas.madvay.com/?node=${encodeURIComponent(record.id)}`;
       parts.push(`<a href="${linkHref}" xlink:href="${linkHref}" target="_blank" rel="noopener">`);
       if (isJunction) {
-        const backgroundOpacity = isDependencyFaded ? 0.46 : 1;
+        const backgroundOpacity = isDependencyFaded && this.preferences().dimPrerequisites ? 0.46 : 1;
         parts.push(`<rect x="${x}" y="${y}" width="${nodeWidth}" height="${nodeHeight}" rx="8" fill="#fff7ed" stroke="${borderColor}" stroke-width="${borderWidth}" stroke-dasharray="8 5" fill-opacity="${backgroundOpacity}" opacity="${opacity}"/>`);
       } else {
         const fill = data.domains[record.primaryDomain]?.color ?? '#64748b';
-        const backgroundOpacity = isDependencyFaded ? 0.46 : 0.92;
+        const backgroundOpacity = isDependencyFaded && this.preferences().dimPrerequisites ? 0.46 : 0.92;
         parts.push(`<rect x="${x}" y="${y}" width="${nodeWidth}" height="${nodeHeight}" rx="8" fill="${escapeHtml(fill)}" fill-opacity="${backgroundOpacity}" stroke="${borderColor}" stroke-width="${borderWidth}" opacity="${opacity}"/>`);
         const additionalDomains = this.model.nodeDomainIds(record).slice(1);
         if (additionalDomains.length) {
@@ -175,19 +163,10 @@ export class SvgExporter {
       const lines = this.wrappedLines(label, fontSize, isJunction ? 92 : 144);
       const lineHeight = fontSize * 1.16;
       const textColor = isJunction ? '#7c2d12' : '#ffffff';
-      const hasMath = hasInlineMathText(record.label);
-      if (hasMath) {
-        const labelWidth = isJunction ? 92 : 144;
-        const labelHeight = isJunction ? 54 : 52;
-        parts.push(`<switch opacity="${opacity}">`);
-        parts.push(`<foreignObject requiredExtensions="http://www.w3.org/1999/xhtml" x="${(position.x - labelWidth / 2).toFixed(2)}" y="${(position.y - labelHeight / 2).toFixed(2)}" width="${labelWidth}" height="${labelHeight}"><div xmlns="http://www.w3.org/1999/xhtml" class="svg-katex-label svg-katex-node${isJunction ? ' junction' : ''}" style="font-size:${fontSize.toFixed(2)}px;color:${textColor}">${this.math.renderText(record.label)}</div></foreignObject>`);
-        parts.push('<g class="svg-plain-label-fallback">');
-      }
       lines.forEach((line, index) => {
         const textY = position.y + (index - (lines.length - 1) / 2) * lineHeight + fontSize * 0.34;
-        parts.push(`<text x="${position.x}" y="${textY.toFixed(2)}" text-anchor="middle" font-family="${escapeHtml(this.fontFamily)}" font-size="${fontSize.toFixed(2)}" font-weight="600" fill="${textColor}" opacity="${hasMath ? 1 : opacity}">${escapeHtml(line)}</text>`);
+        parts.push(`<text x="${position.x}" y="${textY.toFixed(2)}" text-anchor="middle" font-family="${escapeHtml(this.fontFamily)}" font-size="${fontSize.toFixed(2)}" font-weight="600" fill="${textColor}" opacity="${opacity}">${escapeHtml(line)}</text>`);
       });
-      if (hasMath) parts.push('</g></switch>');
       parts.push('</a>');
     });
 
@@ -214,46 +193,6 @@ export class SvgExporter {
     link.remove();
     window.setTimeout(() => URL.revokeObjectURL(url), 1200);
     byId('status').textContent = `Exported ${result.nodeCount} nodes and ${result.edgeCount} edges as SVG.`;
-  }
-
-  private svgMathCss(): string {
-    const katexCss = this.math.svgCssText();
-    const localCss = `
-.svg-katex-label{box-sizing:border-box;display:flex;align-items:center;justify-content:center;width:100%;height:100%;font-family:${this.fontFamily};font-weight:600;line-height:1.16;text-align:center;overflow:hidden}
-.svg-katex-label .katex{font-size:1em}
-.svg-katex-node{padding:0 2px}
-.svg-katex-edge{padding:3px;color:#334155;background:rgba(255,255,255,.9);border:1px solid rgba(226,232,240,.9);border-radius:3px;line-height:1.2}
-.svg-katex-edge.synthetic{background:rgba(255,247,237,.92);border-color:#fed7aa}
-`;
-    return `${katexCss}
-${localCss}`.replaceAll(']]>', ']]]]><![CDATA[>');
-  }
-
-  private measureMathEdgeLabel(
-    labelText: string,
-    synthetic: boolean,
-    fallbackWidth: number,
-    fallbackHeight: number
-  ): { width: number; height: number } {
-    const label = document.createElement('div');
-    label.className = `graph-math-label graph-math-edge-label${synthetic ? ' synthetic' : ''}`;
-    label.style.position = 'fixed';
-    label.style.left = '-10000px';
-    label.style.top = '-10000px';
-    label.style.visibility = 'hidden';
-    label.style.width = 'max-content';
-    label.style.maxWidth = `${synthetic ? 138 : 120}px`;
-    label.style.fontSize = '9px';
-    label.style.padding = '3px';
-    label.style.borderWidth = '1px';
-    renderHtml(label, this.math.renderText(labelText));
-    document.body.appendChild(label);
-    const bounds = label.getBoundingClientRect();
-    label.remove();
-    return {
-      width: Math.min(synthetic ? 148 : 130, Math.max(fallbackWidth, Math.ceil(bounds.width))),
-      height: Math.max(fallbackHeight, Math.ceil(bounds.height))
-    };
   }
 
   private lineDash(lineStyle: LineStyle | undefined): string {
