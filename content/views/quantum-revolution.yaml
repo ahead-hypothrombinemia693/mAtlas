@@ -1,0 +1,65 @@
+id: quantum-revolution
+title: The quantum revolution
+summary: Move from the empirical crises of classical physics through quantum
+  mechanics, quantum fields, and precision tests.
+narrative: Follow quantum theory from the failures of classical radiation and
+  atomic models through wave–particle evidence, state-space structure,
+  measurement, spin, relativistic quantum mechanics, quantum fields,
+  entanglement, and modern experimental tests.
+tags:
+  - Quantum
+  - Experiments
+  - Field theory
+featured: true
+settings:
+  fields:
+    - physics
+  domains:
+    - physical-foundations
+    - quantum-mechanics
+    - quantum-field-theory
+    - particle-physics
+    - atomic-molecular-physics
+    - experiments-observations
+  edgeTypes:
+    - mathematical-formulation
+    - framework-specialization
+    - quantization
+    - theory-component
+    - describes-governs
+    - composition
+    - classification
+    - state-description
+    - transformation-process
+    - mathematical-limit
+    - effective-theory
+    - emergence
+    - couples-interacts
+    - model-realization
+    - historically-motivated
+    - experimentally-verified-by
+    - theorem-implication
+  crossFieldVisibility: hidden
+  edgeLabels: true
+  junctions: false
+  edgeZoomActivation: true
+  layout: atlas
+nodeSequence:
+  - blackbody_ultraviolet_catastrophe
+  - photoelectric_effect_experiments
+  - bohr_model
+  - quantum_mechanics
+  - wavefunction
+  - schrodinger_equation
+  - born_rule
+  - quantum_measurement
+  - stern_gerlach_experiment
+  - spin
+  - pauli_exclusion_principle
+  - dirac_equation
+  - quantum_field_theory
+  - quantum_electrodynamics
+  - quantum_entanglement
+  - bell_theorem
+  - bell_test_experiments
+  - quantum_decoherence

@@ -1,0 +1,57 @@
+id: experimental-discovery
+title: Experimental discovery
+summary: Follow the experiments, observations, and anomalies that forced physics
+  to change—and the later tests that decided whether the new theories survived.
+narrative: Follow a longer historical argument from anomalies and precision
+  measurements to the theories they forced, then to decisive tests and
+  discoveries. Motivation edges record historical pressure rather than deductive
+  implication; verification edges record tests or evidential support rather than
+  final proof.
+tags:
+  - Physics
+  - History
+  - Experiments
+featured: true
+settings:
+  fields:
+    - physics
+  domains:
+    - physical-foundations
+    - classical-mechanics
+    - relativity
+    - electromagnetism
+    - quantum-mechanics
+    - quantum-field-theory
+    - particle-physics
+    - nuclear-physics
+    - atomic-molecular-physics
+    - experiments-observations
+  edgeTypes:
+    - historically-motivated
+    - experimentally-verified-by
+  crossFieldVisibility: hidden
+  edgeLabels: true
+  junctions: false
+  edgeZoomActivation: true
+  layout: atlas
+nodeSequence:
+  - blackbody_ultraviolet_catastrophe
+  - photoelectric_effect_experiments
+  - balmer_hydrogen_spectrum_observations
+  - thomson_cathode_ray_experiments
+  - geiger_marsden_gold_foil_experiment
+  - franck_hertz_experiment
+  - stern_gerlach_experiment
+  - compton_scattering_experiment
+  - davisson_germer_experiment
+  - single_particle_double_slit_experiments
+  - lamb_retherford_experiment
+  - continuous_beta_spectrum_problem
+  - cowan_reines_neutrino_experiment
+  - solar_neutrino_problem
+  - super_k_atmospheric_neutrino_oscillation
+  - sno_solar_neutrino_flavor_change
+  - hulse_taylor_binary_pulsar
+  - gw150914_detection
+  - bell_test_experiments
+  - fullerene_matter_wave_interference

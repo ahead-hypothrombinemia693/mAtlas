@@ -66,8 +66,8 @@ Validation is split into schema/shape, reference, semantic, editorial, and rende
 
 ```text
 content/
-  structures.json            canonical editable graph dataset
-  views.json                 curated guided-view definitions
+  concepts/                 split editable graph dataset (YAML)
+  views/                    split guided-view definitions (YAML)
   schema.json                published graph schema
   manifest.json              content and schema contract versions
   LICENSE                    content-specific CC BY-SA notice
@@ -92,7 +92,7 @@ scripts/
 .build/content/              generated, normalized build contract; never edited directly
 ```
 
-`content/structures.json` is the canonical graph dataset. `content/views.json` is a separate editorial/navigation layer: it references graph identifiers but does not duplicate or alter graph content. `content/manifest.json` declares `schemaVersion` and `contentVersion`; `scripts/content/contract.mjs` declares the schema versions supported by the software. The renderer and publishers read only `.build/content/`, so a later extraction of `content/` into a separately versioned repository does not require an application rewrite.
+`content/concepts/index.yaml` (plus split parts under `content/concepts/`) is the canonical graph dataset. `content/views/index.yaml` (plus per-view files under `content/views/`) is a separate editorial/navigation layer: it references graph identifiers but does not duplicate or alter graph content. `content/manifest.json` declares `schemaVersion` and `contentVersion`; `scripts/content/contract.mjs` declares the schema versions supported by the software. The renderer and publishers read only `.build/content/`, so a later extraction of `content/` into a separately versioned repository does not require an application rewrite.
 
 ### Taxonomy
 
@@ -146,7 +146,7 @@ The scoped routes initialize their corresponding field while using the same grap
 
 ### Guided views
 
-A view is a named preset in `content/views.json`. It contains editorial copy (`title`, `summary`, `narrative`, and `tags`), an optional image, an ordered `nodeSequence`, and a complete settings object for fields, domains, edge types, cross-field visibility, display controls, and layout.
+A view is a named preset in `content/views/index.yaml`, with one YAML file per view under `content/views/`. It contains editorial copy (`title`, `summary`, `narrative`, and `tags`), an optional image, an ordered `nodeSequence`, and a complete settings object for fields, domains, edge types, cross-field visibility, display controls, and layout.
 
 The first sequence node is the view’s initial selection. Previous and Next controls advance through the ordered concepts on desktop and mobile; selecting anything else leaves the sequence position unchanged. The build emits a static directory page and one crawlable application page per view. View routes are included in `sitemap.xml` and represented as `CollectionPage` JSON-LD. In the application, the **Views** toolbar control opens the same data-driven catalog, while a dismissible first-visit prompt makes the feature discoverable without permanently occupying graph space.
 
@@ -156,7 +156,7 @@ All concepts admitted by the selected taxonomy are shown, including concepts wit
 
 ## Inline mathematics
 
-Math-capable strings use explicit `$...$` LaTeX delimiters, escaped for JSON:
+Math-capable strings use explicit `$...$` LaTeX delimiters in source content:
 
 ```json
 "body": "Its gauge group is $SU(3)_C \\times SU(2)_L \\times U(1)_Y$."

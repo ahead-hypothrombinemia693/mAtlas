@@ -1,0 +1,2316 @@
+nodes:
+- kind: structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  id: dedekind_cut_reals
+  label: Dedekind-cut real line
+  primaryDomain: analysis
+  domains:
+  - analysis
+  - order
+  - set-theory
+  - number-theory
+  level: 14
+  conceptType: Set-theoretic realization
+  summary: The ordered field whose elements are proper downward-closed subsets of $\mathbb Q$ with no greatest element.
+  carriers:
+  - set of Dedekind cuts in $\mathbb Q$
+  data:
+  - order by inclusion
+  - cut addition and multiplication
+  axioms:
+  - cut conditions
+  induces:
+  - Dedekind-complete ordered field
+  notes: This realization emphasizes order completeness and is canonically isomorphic to the Cauchy-sequence realization.
+  citations:
+  - wp-construction-reals
+  - nlab-real-number
+- kind: structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  id: rational_cauchy_sequences
+  label: Cauchy sequences of rationals
+  primaryDomain: analysis
+  domains:
+  - analysis
+  - topology
+  - set-theory
+  - number-theory
+  level: 14
+  conceptType: Quotient presentation
+  summary: Rational Cauchy sequences, with two sequences identified when their difference converges to zero.
+  carriers:
+  - set of Cauchy sequences in $\mathbb Q$
+  data:
+  - equivalence relation $(a_n)\sim(b_n)$ iff $a_n-b_n\to0$
+  axioms: []
+  induces:
+  - metric completion of $\mathbb Q$
+  notes: The definition of convergence here uses the rational absolute-value metric, not a prior construction of the real numbers.
+  citations:
+  - wp-construction-reals
+  - nlab-real-number
+- kind: structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  id: real_numbers
+  label: Real numbers $\mathbb R$
+  primaryDomain: analysis
+  domains:
+  - analysis
+  - order
+  - algebra
+  - topology
+  - number-theory
+  level: 15
+  conceptType: Number system
+  summary: The complete Archimedean ordered field, unique up to unique order-preserving field isomorphism.
+  carriers:
+  - set $\mathbb R$
+  data:
+  - field operations
+  - total order
+  - order topology and metric
+  axioms:
+  - ordered-field laws
+  - least-upper-bound property
+  induces:
+  - real line and continuum
+  notes: Dedekind cuts and Cauchy sequences give different set-theoretic realizations of the same abstract ordered field.
+  citations:
+  - wp-construction-reals
+  - nlab-real-number
+- kind: structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  id: complex_pair_realization
+  label: Ordered-pair complex field
+  primaryDomain: analysis
+  domains:
+  - analysis
+  - algebra
+  - set-theory
+  - number-theory
+  level: 16
+  conceptType: Set-theoretic realization
+  summary: The field on $\mathbb R^2$ with $(a,b)(c,d)=(ac-bd,ad+bc)$.
+  carriers:
+  - set $\mathbb R^2$
+  data:
+  - componentwise addition
+  - complex multiplication
+  axioms: []
+  induces:
+  - element $i=(0,1)$ with $i^2=-1$
+  notes: ''
+  citations:
+  - wp-complex-number
+  - nlab-complex-number
+- kind: structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  id: complex_polynomial_quotient
+  label: Polynomial-quotient complex field
+  primaryDomain: analysis
+  domains:
+  - analysis
+  - algebra
+  - set-theory
+  - number-theory
+  level: 16
+  conceptType: Quotient realization
+  summary: The quotient ring $\mathbb R[x]/(x^2+1)$, which is a field isomorphic to $\mathbb C$.
+  carriers:
+  - quotient of $\mathbb R[x]$
+  data:
+  - residue class $i=[x]$
+  axioms:
+  - $i^2=-1$
+  induces: []
+  notes: Because $x^2+1$ is irreducible over $\mathbb R$, the quotient is a field.
+  citations:
+  - wp-complex-number
+  - nlab-complex-number
+- kind: structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  id: complex_numbers
+  label: Complex numbers $\mathbb C$
+  primaryDomain: analysis
+  domains:
+  - analysis
+  - algebra
+  - topology
+  - number-theory
+  level: 17
+  conceptType: Number system
+  summary: The algebraically closed topological field obtained from $\mathbb R$ by adjoining a square root $i$ of $-1$.
+  carriers:
+  - set $\mathbb C$
+  data:
+  - field operations
+  - Euclidean topology
+  - complex conjugation
+  axioms:
+  - $i^2=-1$
+  induces:
+  - two-dimensional real vector-space structure
+  notes: $\mathbb C$ cannot be ordered as an ordered field. The pair and polynomial-quotient constructions are equivalent presentations, not simultaneous literal definitions.
+  citations:
+  - wp-complex-number
+  - nlab-complex-number
+- id: j_tvs
+  label: linear + topological compatibility
+  level: 13
+  kind: junction
+  summary: Combine vector-space, topological-space, and topological-field structures.
+  carriers: []
+  data: []
+  axioms: []
+  induces: []
+  notes: 'Construction junction: it is a visual device, not a separate standard mathematical structure.'
+  citations:
+  - wp-top-vector
+  - nlab-top-vector
+  - princeton-functional-analysis
+  combination:
+    inputs:
+    - vector_space
+    - topological_space
+    - topological_field
+    compatibility: Vector addition $V\times V\to V$ and scalar multiplication $F\times V\to V$ are continuous, using the same scalar field.
+    output: topological_vector_space
+  primaryDomain: analysis
+  domains:
+  - analysis
+  - algebra
+  - topology
+  - number-theory
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: linear_operator
+  label: Linear operator
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: analysis
+  domains:
+  - analysis
+  - algebra
+  level: 14
+  kind: structure
+  conceptType: Linear map
+  summary: A linear map from a vector space to itself, or more generally between vector spaces.
+  citations:
+  - wp-linear_operator
+  - nlab-linear_operator
+  carriers:
+  - vector space $V$ (or specified domain and codomain)
+  data:
+  - linear map $A$
+  axioms:
+  - $A(ax+by)=aA(x)+bA(y)$
+  induces:
+  - kernel
+  - image
+  - invariant subspaces
+  notes: In analysis, “operator” often carries additional domain, topology, or boundedness data.
+- id: seminormed_vector_space
+  label: Seminormed vector space
+  level: 14
+  kind: structure
+  summary: A vector space equipped with a seminorm.
+  carriers:
+  - vector space $V$ over a field $K$ with a specified real-valued absolute value $|\cdot |$
+  data:
+  - seminorm $p\colon V\to[0,\infty)$
+  axioms:
+  - $p(x+y)\le p(x)+p(y)$
+  - $p(\lambda x)=|\lambda |p(x)$
+  induces:
+  - Pseudometric $d(x,y)=p(x-y)$
+  - topology
+  notes: More general value-group-valued norms require a different codomain and axioms; this node records the real-valued analytic notion.
+  citations:
+  - mathlib-seminorm
+  - mathlib-normed-module
+  primaryDomain: analysis
+  domains:
+  - analysis
+  - topology
+  - algebra
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: topological_vector_space
+  label: Topological vector space
+  level: 14
+  kind: structure
+  summary: A vector space with a compatible topology.
+  carriers:
+  - topological field $F$
+  - set $V$
+  data:
+  - vector-space structure
+  - topology on $V$
+  axioms:
+  - Hausdorff topology
+  - continuous vector addition
+  - continuous scalar multiplication
+  induces: []
+  notes: This atlas adopts the common Hausdorff convention.
+  citations:
+  - wp-top-vector
+  - nlab-top-vector
+  - princeton-functional-analysis
+  primaryDomain: analysis
+  domains:
+  - analysis
+  - topology
+  - algebra
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: normed_vector_space
+  label: Normed vector space
+  level: 15
+  kind: structure
+  summary: A seminormed vector space whose seminorm separates points.
+  carriers:
+  - seminormed vector space $V$ over a field with a specified real-valued absolute value
+  data:
+  - norm $\lVert \cdot \rVert$
+  axioms:
+  - seminorm axioms
+  - $\lVert x \rVert =0 \Rightarrow x=0$
+  induces:
+  - Metric $d(x,y)=\lVert x-y \rVert$
+  - topological vector space
+  notes: Its norm canonically induces a metric, uniformity, topology, and topological-vector-space structure.
+  citations:
+  - mathlib-seminorm
+  - mathlib-normed-module
+  primaryDomain: analysis
+  domains:
+  - analysis
+  - topology
+  - algebra
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: inner_product_space
+  label: Inner-product space
+  level: 16
+  kind: structure
+  summary: A vector space with a positive-definite inner product.
+  carriers:
+  - real or complex vector space $V$
+  data:
+  - inner product $\langle \cdot,\cdot \rangle$
+  axioms:
+  - linearity/sesquilinearity
+  - conjugate symmetry
+  - positive definiteness
+  induces:
+  - norm $\lVert x\rVert=\sqrt{\langle x,x\rangle}$
+  - metric and topology
+  notes: The inner product canonically induces a norm. The complex convention is Hermitian sesquilinear.
+  citations:
+  - wp-inner-product
+  - nlab-inner-product-space
+  - princeton-functional-analysis
+  primaryDomain: analysis
+  domains:
+  - analysis
+  - algebra
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: locally_convex_space
+  label: Locally convex space
+  level: 16
+  kind: structure
+  summary: A real or complex topological vector space whose origin has a base of convex neighborhoods.
+  carriers:
+  - topological vector space $V$ over $\mathbb{R}$ or $\mathbb{C}$
+  data:
+  - existing vector topology; equivalently often a family of seminorms
+  axioms:
+  - local convexity
+  induces: []
+  notes: ''
+  citations:
+  - eom-locally-convex
+  primaryDomain: analysis
+  domains:
+  - analysis
+  - topology
+  - algebra
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: partial_differential_equation
+  label: Partial differential equation
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: analysis
+  domains:
+  - analysis
+  level: 18
+  kind: structure
+  conceptType: Equation class
+  summary: An equation involving a multivariable function and its partial derivatives.
+  citations:
+  - wp-partial_differential_equation
+  - nlab-partial_differential_equation
+  - tong-qft
+  - tong-gr
+  carriers:
+  - domain in a space with several independent variables
+  - unknown function or section
+  data:
+  - equation involving partial derivatives
+  axioms:
+  - specified order and solution notion
+  induces:
+  - solution spaces after boundary or initial conditions
+  notes: A PDE may be linear or nonlinear; regularity and boundary data are separate essential issues.
+- id: bounded_linear_operator
+  label: Bounded linear operator
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: analysis
+  domains:
+  - analysis
+  level: 17
+  kind: structure
+  conceptType: Continuous linear map
+  summary: A linear operator between normed spaces whose operator norm is finite.
+  citations:
+  - wp-bounded_linear_operator
+  - nlab-bounded_linear_operator
+  carriers:
+  - normed spaces $X,Y$
+  data:
+  - linear map $A:X\to Y$
+  axioms:
+  - finite operator norm
+  - equivalently continuity
+  induces:
+  - operator norm
+  - Banach algebra structure when $X=Y$ is Banach
+  notes: ''
+- id: differential_operator
+  label: Differential operator
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: analysis
+  domains:
+  - analysis
+  level: 17
+  kind: structure
+  conceptType: Operator class
+  summary: A linear or nonlinear operator built locally from derivatives and multiplication by coefficient functions.
+  citations:
+  - wp-differential_operator
+  - nlab-differential_operator
+  - tong-qft
+  carriers:
+  - spaces of functions or sections
+  data:
+  - local rule built from derivatives and coefficient functions
+  axioms:
+  - finite order in the ordinary differential-operator sense
+  induces:
+  - principal symbol for linear operators
+  notes: Differential operators may be linear or nonlinear.
+- id: frechet_space
+  label: Fréchet space
+  level: 17
+  kind: structure
+  summary: A complete metrizable locally convex topological vector space.
+  carriers:
+  - real or complex locally convex space $V$
+  data:
+  - locally convex vector topology
+  axioms:
+  - Hausdorff
+  - metrizable
+  - complete for the induced uniformity
+  induces: []
+  notes: A Fréchet space is defined by its locally convex topology; no particular compatible complete metric is selected. It need not be normable. Every real or complex Banach space is Fréchet via its norm topology.
+  citations:
+  - eom-frechet-space
+  primaryDomain: analysis
+  domains:
+  - analysis
+  - topology
+  - algebra
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: banach_space
+  label: Banach space
+  level: 18
+  kind: structure
+  summary: A complete normed vector space.
+  carriers:
+  - normed vector space $V$
+  data:
+  - existing norm
+  axioms:
+  - completeness for the induced metric
+  induces: []
+  notes: ''
+  citations:
+  - wp-banach
+  - nlab-banach
+  - princeton-functional-analysis
+  primaryDomain: analysis
+  domains:
+  - analysis
+  - topology
+  - algebra
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: calculus_of_variations
+  label: Calculus of variations
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: analysis
+  domains:
+  - analysis
+  level: 18
+  kind: structure
+  conceptType: Analytic theory
+  summary: The study of extrema and stationary points of functionals under variations of functions, curves, or fields.
+  citations:
+  - wp-calculus_of_variations
+  - nlab-calculus_of_variations
+  - cambridge-classical-dynamics
+  - tong-qft
+  carriers:
+  - space of admissible functions, curves, or fields
+  data:
+  - functional $S$
+  - allowed variations
+  axioms:
+  - regularity and boundary conditions sufficient for variations
+  induces:
+  - Euler–Lagrange equations
+  - first and higher variations
+  notes: Stationary points need not be minima.
+- id: densely_defined_operator
+  label: Densely defined operator
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: analysis
+  domains:
+  - analysis
+  level: 18
+  kind: structure
+  conceptType: Possibly unbounded operator
+  summary: A linear operator defined on a dense linear subspace of a topological vector space, commonly a Hilbert space.
+  citations:
+  - wp-densely_defined_operator
+  - nlab-densely_defined_operator
+  carriers:
+  - Hilbert or Banach space $H$
+  - dense linear domain $D(A)\subset H$
+  data:
+  - linear map $A:D(A)\to H$
+  axioms:
+  - linearity on its domain
+  induces:
+  - adjoint when the setting is Hilbertian
+  - closure if closable
+  notes: An unbounded operator cannot be defined and bounded on all of a Banach space; its domain is part of the operator.
+- id: fourier_transform
+  label: Fourier transform
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: analysis
+  domains:
+  - analysis
+  level: 18
+  kind: structure
+  conceptType: Integral transform
+  summary: A transformation between position or time variables and conjugate frequency or momentum variables.
+  citations:
+  - wp-fourier_transform
+  - nlab-fourier_transform
+  carriers:
+  - specified function or distribution space on an Abelian group or Euclidean space
+  data:
+  - integral or duality transform to frequency variables
+  axioms:
+  - normalization and domain conditions
+  induces:
+  - convolution–multiplication correspondence
+  - Plancherel extension where applicable
+  notes: Normalization conventions vary; not every arbitrary function has a classical Fourier integral.
+- id: laplace_operator
+  label: Laplace operator
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: analysis
+  domains:
+  - analysis
+  level: 18
+  kind: structure
+  conceptType: Differential operator
+  summary: The divergence of the gradient, or its geometric Laplace–Beltrami generalization.
+  citations:
+  - wp-laplace_operator
+  - nlab-laplace_operator
+  - tong-quantum
+  carriers:
+  - Riemannian manifold or Euclidean domain
+  data:
+  - second-order operator $\Delta$
+  axioms:
+  - defined from the metric/divergence-gradient convention
+  induces:
+  - harmonic functions
+  - spectral decomposition under suitable boundary conditions
+  notes: The overall sign convention varies.
+- id: adjoint_operator
+  label: Adjoint operator
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: analysis
+  domains:
+  - analysis
+  level: 19
+  kind: structure
+  conceptType: Operator construction
+  summary: For a densely defined operator between Hilbert spaces, the operator determined on its natural domain by $\langle Ax,y\rangle=\langle x,A^*y\rangle$.
+  citations:
+  - wp-adjoint_operator
+  - nlab-adjoint_operator
+  carriers:
+  - Hilbert spaces
+  - densely defined operator $A$
+  data:
+  - operator $A^*$ on its natural domain
+  axioms:
+  - $\langle Ax,y\rangle=\langle x,A^*y\rangle$
+  induces:
+  - symmetric and self-adjoint operator notions
+  notes: For unbounded operators, equality of domains is essential and the adjoint is always closed.
+- id: j_banach_algebra
+  label: complete normed algebra
+  level: 19
+  kind: junction
+  summary: Combine an associative algebra with a Banach-space norm on the same carrier.
+  carriers: []
+  data: []
+  axioms: []
+  induces: []
+  notes: 'Construction junction: it is a visual device, not a separate standard mathematical structure.'
+  citations:
+  - mathlib-normed-algebra
+  - mathlib-normed-ring
+  combination:
+    inputs:
+    - associative_algebra
+    - banach_space
+    compatibility: Both structures use the same normed field $K$, carrier, addition, and scalar action, and the norm satisfies $\lVert ab \rVert \le \lVert a \rVert \lVert b \rVert$.
+    output: banach_algebra
+  primaryDomain: analysis
+  domains:
+  - analysis
+  - algebra
+  - topology
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: functional_derivative
+  label: Functional derivative
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: analysis
+  domains:
+  - analysis
+  level: 19
+  kind: structure
+  conceptType: Differential construction
+  summary: A derivative of a functional with respect to a function or field, defined through its first variation.
+  citations:
+  - wp-functional_derivative
+  - nlab-functional_derivative
+  - tong-qft
+  carriers:
+  - space of functions or fields
+  - functional $F$
+  data:
+  - distribution or function representing the first variation when it exists
+  axioms:
+  - $\delta F=\int (\delta F/\delta\phi)\,\delta\phi$ in the chosen pairing
+  induces:
+  - Euler–Lagrange derivative
+  notes: Existence and representation depend on the function space, topology, measure, and boundary conditions.
+- id: schwartz_space
+  label: Schwartz space
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: analysis
+  domains:
+  - analysis
+  level: 19
+  kind: structure
+  conceptType: Test-function space
+  summary: The Fréchet space of smooth functions whose derivatives decay faster than every inverse polynomial.
+  citations:
+  - wp-schwartz_space
+  - nlab-schwartz_space
+  carriers:
+  - smooth functions on $\mathbb R^n$
+  data:
+  - seminorms $\sup_x|x^\alpha\partial^\beta f(x)|$
+  axioms:
+  - all such seminorms finite
+  induces:
+  - Fréchet topology
+  - Fourier-transform automorphism
+  - tempered-distribution dual
+  notes: ''
+- id: banach_algebra
+  label: Banach algebra
+  level: 20
+  kind: structure
+  summary: An associative algebra over a normed field that is complete under a submultiplicative norm.
+  carriers:
+  - associative algebra $A$ over a normed field $K$
+  - Banach-space structure on the same $K$-vector space
+  data:
+  - norm $\lVert \cdot \rVert$
+  axioms:
+  - $\lVert ab \rVert \le \lVert a \rVert \lVert b \rVert$
+  - complete in the norm metric
+  induces: []
+  notes: ''
+  citations:
+  - mathlib-normed-algebra
+  - mathlib-normed-ring
+  primaryDomain: analysis
+  domains:
+  - analysis
+  - topology
+  - algebra
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: j_cstar
+  label: Banach algebra + involution
+  primaryDomain: analysis
+  domains:
+  - analysis
+  - algebra
+  level: 20
+  kind: junction
+  summary: Compatibility construction producing a $C^*$-algebra.
+  carriers: []
+  data: []
+  axioms: []
+  induces: []
+  notes: All incoming branches are jointly required.
+  citations:
+  - mathlib-cstar-classes
+  combination:
+    inputs:
+    - banach_algebra
+    - star_algebra
+    compatibility: Use the same complex algebra structure and norm; star is conjugate-linear and antimultiplicative, and $\lVert a^*a\rVert=\lVert a\rVert^2$.
+    output: c_star_algebra
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: greens_function
+  label: Green function
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: analysis
+  domains:
+  - analysis
+  level: 20
+  kind: structure
+  conceptType: Operator kernel
+  summary: A kernel representing an inverse or fundamental solution of a linear differential operator under specified boundary conditions.
+  citations:
+  - wp-greens_function
+  - nlab-greens_function
+  carriers:
+  - differential operator with domain/boundary prescription
+  data:
+  - distributional kernel $G$ when it exists
+  axioms:
+  - $LG=\delta$ with the specified conditions
+  induces:
+  - integral solution operator
+  notes: Green functions are not guaranteed to exist and are not unique until boundary, causal, or other conditions are fixed.
+- id: hilbert_space
+  label: Hilbert space
+  level: 20
+  kind: structure
+  summary: A complete inner-product space.
+  carriers:
+  - real or complex vector space $H$
+  data:
+  - inner product
+  axioms:
+  - inner-product axioms
+  - completeness in the induced norm
+  induces: []
+  notes: A Hilbert space is an inner-product space complete in the induced norm. The Banach-space structure is then canonical and is not an independent input.
+  citations:
+  - wp-hilbert
+  - nlab-hilbert
+  - princeton-functional-analysis
+  primaryDomain: analysis
+  domains:
+  - analysis
+  - topology
+  - algebra
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: projection_operator
+  label: Projection operator
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: analysis
+  domains:
+  - analysis
+  level: 20
+  kind: structure
+  conceptType: Operator class
+  summary: An idempotent linear operator; an orthogonal projection is also self-adjoint.
+  citations:
+  - wp-projection_operator
+  - nlab-projection_operator
+  carriers:
+  - vector space or Hilbert space
+  data:
+  - linear operator $P$
+  axioms:
+  - $P^2=P$
+  induces:
+  - decomposition into image and kernel
+  notes: An orthogonal projection additionally satisfies $P=P^*$; a general projection need not.
+- id: self_adjoint_operator
+  label: Self-adjoint operator
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: analysis
+  domains:
+  - analysis
+  level: 20
+  kind: structure
+  conceptType: Operator class
+  summary: A densely defined operator equal to its adjoint, including equality of domains.
+  citations:
+  - wp-self_adjoint_operator
+  - nlab-self_adjoint_operator
+  carriers:
+  - Hilbert space $H$
+  - dense domain $D(A)$
+  data:
+  - operator $A:D(A)\to H$
+  axioms:
+  - $A=A^*$ including equality of domains
+  induces:
+  - real spectrum
+  - spectral measure
+  - unitary evolution via functional calculus
+  notes: Symmetric is weaker than self-adjoint for unbounded operators.
+- id: sobolev_space
+  label: Sobolev space
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: analysis
+  domains:
+  - analysis
+  level: 20
+  kind: structure
+  conceptType: Function space
+  summary: A Banach or Hilbert space controlling weak derivatives in $L^p$.
+  citations:
+  - wp-sobolev_space
+  - nlab-sobolev_space
+  carriers:
+  - domain $\Omega$
+  - functions or distributions with weak derivatives
+  data:
+  - norm controlling derivatives through order $k$ in $L^p$
+  axioms:
+  - weak derivatives belong to the specified $L^p$ spaces
+  induces:
+  - Banach structure; Hilbert structure when $p=2$
+  notes: Boundary conditions define important closed subspaces such as $W_0^{k,p}$.
+- id: distribution_space
+  label: Space of distributions
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: analysis
+  domains:
+  - analysis
+  - measure
+  level: 20
+  kind: structure
+  conceptType: Continuous dual space
+  summary: The continuous dual of a test-function space, generalizing ordinary functions and measures.
+  citations:
+  - wp-distribution_space
+  - nlab-distribution_space
+  carriers:
+  - test-function space $\mathcal D$ or $\mathcal S$
+  data:
+  - continuous linear functionals on the test space
+  axioms:
+  - linearity
+  - continuity in the test-function topology
+  induces:
+  - distributional derivatives
+  - Fourier transform for tempered distributions
+  notes: The term “distribution” depends on the test-function space; tempered distributions are dual to Schwartz space.
+- id: spherical_harmonic
+  label: Spherical harmonic
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: analysis
+  domains:
+  - analysis
+  level: 20
+  kind: structure
+  conceptType: Special-function basis
+  summary: A simultaneous eigenfunction of the spherical Laplace–Beltrami operator (equivalently $\mathbf L^2$) and a chosen component $L_z$; the $Y_{\ell m}$ form an orthonormal basis of $L^2(S^2)$.
+  citations:
+  - wp-spherical_harmonic
+  - nlab-spherical_harmonic
+  - pdg-2026-mathematical-tools
+  - nist-atomic-spectroscopy
+  carriers:
+  - unit sphere $S^2$
+  - complex-valued square-integrable functions
+  data:
+  - functions $Y_{\ell m}$
+  axioms:
+  - $-\Delta_{S^2}Y_{\ell m}=\ell(\ell+1)Y_{\ell m}$
+  - $L_zY_{\ell m}=m\hbar Y_{\ell m}$ under the physics normalization
+  induces:
+  - orthonormal decomposition of $L^2(S^2)$
+  notes: Normalization and phase conventions vary.
+- id: unitary_operator
+  label: Unitary operator
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: analysis
+  domains:
+  - analysis
+  - representation-theory
+  level: 20
+  kind: structure
+  conceptType: Operator class
+  summary: A surjective inner-product-preserving linear operator with $U^*U=UU^*=I$.
+  citations:
+  - wp-unitary_operator
+  - nlab-unitary_operator
+  carriers:
+  - complex Hilbert space $H$
+  data:
+  - linear operator $U:H\to H$
+  axioms:
+  - $U^*U=UU^*=I$
+  induces:
+  - norm and inner-product preservation
+  - inverse $U^{-1}=U^*$
+  notes: ''
+- id: c_star_algebra
+  label: $C^*$-algebra
+  primaryDomain: analysis
+  domains:
+  - analysis
+  - algebra
+  level: 21
+  kind: structure
+  summary: A complex associative Banach $*$-algebra satisfying the $C^*$-identity $\lVert a^*a\rVert=\lVert a\rVert^2$.
+  carriers:
+  - Banach *-algebra $A$
+  data: []
+  axioms:
+  - $\lVert a^*a\rVert=\lVert a\rVert^2$
+  induces: []
+  notes: Some authors build the unit into “$C^*$-algebra”; others allow nonunital $C^*$-algebras. This atlas does not require a unit at this node.
+  citations:
+  - wp-cstar-algebra
+  - nlab-cstar-algebra
+  - princeton-functional-analysis
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: operator_spectrum
+  label: Operator spectrum
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: analysis
+  domains:
+  - analysis
+  level: 21
+  kind: structure
+  conceptType: Spectral invariant
+  summary: For a bounded operator on a complex Banach space, or a closed densely defined operator, the scalars $\lambda$ for which $A-\lambda I$ has no everywhere-defined bounded inverse.
+  citations:
+  - wp-operator_spectrum
+  - nlab-operator_spectrum
+  carriers:
+  - complex Banach space and bounded operator, or closed densely defined operator
+  data:
+  - set $\sigma(A)$ of spectral parameters
+  axioms:
+  - $\lambda\in\sigma(A)$ iff $A-\lambda I$ lacks an everywhere-defined bounded inverse
+  induces:
+  - point, continuous, and residual spectral parts under appropriate definitions
+  notes: For unbounded operators the domain and closedness are essential.
+- id: positive_operator
+  label: Positive operator
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: analysis
+  domains:
+  - analysis
+  level: 21
+  kind: structure
+  conceptType: Operator class
+  summary: A self-adjoint operator $A$ satisfying $\langle\psi,A\psi\rangle\ge0$ on its domain.
+  citations:
+  - wp-positive_operator
+  - nlab-positive_operator
+  - tong-quantum
+  carriers:
+  - Hilbert space $H$
+  data:
+  - bounded or suitably defined self-adjoint operator $A$
+  axioms:
+  - $\langle x,Ax\rangle\ge0$ for all vectors in the domain
+  induces:
+  - positive square root
+  - order structure on self-adjoint operators
+  notes: For unbounded positive operators, domain and self-adjointness conditions must be stated.
+- id: projective_hilbert_space
+  label: Projective Hilbert space
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: analysis
+  domains:
+  - analysis
+  - differential-geometry
+  level: 21
+  kind: structure
+  conceptType: Quotient geometry
+  summary: The space of one-dimensional rays in a complex Hilbert space, identifying nonzero vectors that differ by a nonzero complex scalar.
+  citations:
+  - wp-projective_hilbert_space
+  - nlab-projective_hilbert_space
+  carriers:
+  - complex Hilbert space $H$
+  data:
+  - set of one-dimensional complex subspaces or rays
+  axioms:
+  - nonzero vectors identified under multiplication by nonzero complex scalars
+  induces:
+  - transition probabilities from ray inner products
+  - Fubini–Study geometry in finite dimensions
+  notes: Physical pure states are rays; normalized vectors retain an unobservable overall phase.
+- id: fock_space
+  label: Fock space
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: analysis
+  domains:
+  - analysis
+  - representation-theory
+  level: 22
+  kind: structure
+  conceptType: Graded Hilbert space
+  summary: The direct sum of zero-, one-, and many-particle tensor powers of a one-particle Hilbert space.
+  citations:
+  - wp-fock_space
+  - nlab-fock_space
+  carriers:
+  - one-particle Hilbert space $H$
+  data:
+  - Hilbert direct sum $\bigoplus_{n\ge0}H^{\otimes n}$ or its symmetric/antisymmetric version
+  axioms:
+  - Hilbert-space completion and chosen exchange symmetry
+  induces:
+  - vacuum sector
+  - number operator
+  - creation and annihilation operators
+  notes: Full tensor Fock space, bosonic Fock space, and fermionic Fock space are distinct constructions.
+- id: rigged_hilbert_space
+  label: Rigged Hilbert space
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: analysis
+  domains:
+  - analysis
+  level: 22
+  kind: structure
+  conceptType: Functional-analytic triple
+  summary: A dense test-function space $\Phi$ embedded in a Hilbert space $H$, embedded in the continuous dual $\Phi^*$.
+  citations:
+  - wp-rigged_hilbert_space
+  - nlab-rigged_hilbert_space
+  carriers:
+  - locally convex test space $\Phi$
+  - Hilbert space $H$
+  - continuous dual $\Phi^*$
+  data:
+  - continuous dense embeddings $\Phi\subset H\subset\Phi^*$
+  axioms:
+  - compatibility of embeddings and dual pairing
+  induces:
+  - generalized eigenvectors as elements of $\Phi^*$
+  notes: Often called a Gelfand triple; nuclearity is common but not part of every definition.
+- id: spectral_measure
+  label: Spectral measure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: analysis
+  domains:
+  - analysis
+  - measure
+  level: 22
+  kind: structure
+  conceptType: Projection-valued measure
+  summary: A normalized, countably additive projection-valued measure $E$ on a measurable space, with $E(\Omega)=I$ and mutually orthogonal projections on disjoint sets.
+  citations:
+  - wp-spectral_measure
+  - nlab-spectral_measure
+  carriers:
+  - measurable space $(\Omega,\Sigma)$
+  - Hilbert space $H$
+  data:
+  - $E\colon\Sigma\to\{\text{orthogonal projections on }H\}$
+  axioms:
+  - weak/strong countable additivity
+  - $E(\Omega)=I$
+  - multiplicativity on intersections
+  induces:
+  - operator integrals $\int f\,dE$
+  notes: A spectral measure is a projection-valued measure, hence a special POVM.
+- id: tensor_product_hilbert_space
+  label: Tensor-product Hilbert space
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: analysis
+  domains:
+  - analysis
+  level: 22
+  kind: structure
+  conceptType: Hilbert-space construction
+  summary: The completed tensor product representing composite quantum systems and independent degrees of freedom.
+  citations:
+  - wp-tensor_product_hilbert_space
+  - nlab-tensor_product_hilbert_space
+  - tong-quantum
+  carriers:
+  - Hilbert spaces $H,K$
+  data:
+  - completion of the algebraic tensor product under the canonical inner product
+  axioms:
+  - $\langle x_1\otimes y_1,x_2\otimes y_2\rangle=\langle x_1,x_2\rangle\langle y_1,y_2\rangle$
+  induces:
+  - product states
+  - entangled states
+  - partial traces on trace-class operators
+  notes: ''
+- id: trace_class_operator
+  label: Trace-class operator
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: analysis
+  domains:
+  - analysis
+  level: 22
+  kind: structure
+  conceptType: Operator ideal
+  summary: A compact operator whose singular values are summable, permitting a basis-independent finite trace.
+  citations:
+  - wp-trace_class_operator
+  - nlab-trace_class_operator
+  - tong-quantum
+  carriers:
+  - Hilbert space $H$
+  data:
+  - compact operator $T$
+  axioms:
+  - sum of singular values is finite
+  induces:
+  - well-defined trace
+  - ideal in bounded operators
+  notes: Trace class is stronger than Hilbert–Schmidt class.
+- id: symmetric_fock_space
+  label: Bosonic Fock space
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: analysis
+  domains:
+  - analysis
+  - representation-theory
+  level: 23
+  kind: structure
+  conceptType: Symmetric Fock space
+  summary: Fock space formed from symmetric tensor powers, appropriate to bosonic exchange symmetry.
+  citations:
+  - wp-fock_space
+  - nlab-symmetric_fock_space
+  carriers:
+  - one-particle Hilbert space $H$
+  data:
+  - Hilbert direct sum of symmetric tensor powers $\bigoplus_{n\ge0}\mathrm{Sym}^nH$
+  axioms:
+  - bosonic permutation symmetry
+  induces:
+  - bosonic occupation-number basis
+  notes: ''
+- id: antisymmetric_fock_space
+  label: Fermionic Fock space
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: analysis
+  domains:
+  - analysis
+  - representation-theory
+  level: 23
+  kind: structure
+  conceptType: Exterior Fock space
+  summary: Fock space formed from antisymmetric tensor powers, appropriate to fermionic exchange symmetry.
+  citations:
+  - wp-fock_space
+  - nlab-antisymmetric_fock_space
+  carriers:
+  - one-particle Hilbert space $H$
+  data:
+  - Hilbert direct sum of exterior powers $\bigoplus_{n\ge0}\Lambda^nH$
+  axioms:
+  - fermionic permutation antisymmetry
+  induces:
+  - fermionic occupation-number basis
+  - Pauli exclusion
+  notes: ''
+- id: partial_trace
+  label: Partial trace
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: analysis
+  domains:
+  - analysis
+  level: 23
+  kind: structure
+  conceptType: Operator construction
+  summary: For a trace-class operator on $H_A\otimes H_B$, the unique trace-class operator on $H_A$ satisfying $\operatorname{Tr}[(X\otimes I)T]=\operatorname{Tr}[X\,\operatorname{Tr}_B T]$ for bounded $X$.
+  citations:
+  - wp-partial_trace
+  - nlab-partial_trace
+  - tong-quantum
+  carriers:
+  - Hilbert spaces $H_A,H_B$
+  - trace-class operator $T$ on $H_A\otimes H_B$
+  data:
+  - linear map $\operatorname{Tr}_B T$
+  axioms:
+  - trace-pairing characterization with bounded operators on $H_A$
+  induces:
+  - reduced density operator
+  notes: The partial trace is not defined on every bounded operator in infinite dimensions.
+- id: spectral_theorem
+  label: Spectral theorem for self-adjoint operators
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: analysis
+  domains:
+  - analysis
+  level: 23
+  kind: structure
+  conceptType: Theorem
+  summary: A self-adjoint operator admits a projection-valued spectral resolution and functional calculus.
+  citations:
+  - wp-spectral_theorem
+  - nlab-spectral_theorem
+  - tong-quantum
+  carriers:
+  - self-adjoint operator $A$ on a complex Hilbert space $H$
+  data:
+  - projection-valued spectral measure or multiplication-operator representation
+  axioms:
+  - hypotheses depend on bounded versus unbounded case
+  induces:
+  - functional calculus
+  - spectral decomposition
+  notes: There are distinct finite-dimensional, bounded-normal, compact, and unbounded-self-adjoint versions.
+- id: stone_theorem
+  label: Stone theorem
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: analysis
+  domains:
+  - analysis
+  level: 24
+  kind: structure
+  conceptType: Theorem
+  summary: Strongly continuous one-parameter unitary groups correspond to self-adjoint generators.
+  citations:
+  - wp-stone_theorem
+  - nlab-stone_theorem
+  - tong-quantum
+  carriers:
+  - strongly continuous one-parameter unitary group $U(t)$ on a Hilbert space
+  data:
+  - self-adjoint generator $A$
+  axioms:
+  - $U(t)=e^{-itA}$
+  - strong continuity
+  induces:
+  - unique infinitesimal generator and converse unitary group
+  notes: An isolated unitary operator does not satisfy the hypotheses; the theorem concerns a continuous one-parameter group.
+- id: ordinary_differential_equation
+  label: Ordinary differential equation
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: analysis
+  domains:
+  - analysis
+  level: 18
+  kind: structure
+  conceptType: Differential equation
+  summary: An equation relating an unknown function of one independent variable to its derivatives.
+  citations:
+  - wp-ordinary_differential_equation
+  - nlab-ordinary_differential_equation
+  - cambridge-classical-dynamics
+  carriers:
+  - one-dimensional independent-variable domain
+  - unknown function or curve
+  data:
+  - equation involving ordinary derivatives
+  axioms:
+  - specified order and solution notion
+  induces:
+  - initial-value and boundary-value problems
+  notes: An ODE may be linear or nonlinear; existence and uniqueness require additional hypotheses.
+edges:
+- id: math_adjoint_operator_to_self_adjoint_operator
+  source: adjoint_operator
+  target: self_adjoint_operator
+  type: impose-axiom
+  label: self-adjointness
+  detail: Self-adjointness requires equality with the adjoint including the operator domain.
+  citations:
+  - wp-self_adjoint_operator
+  - nlab-self_adjoint_operator
+- id: antisymmetricfock_to_fermi
+  source: antisymmetric_fock_space
+  target: fermi_dirac_statistics
+  type: mathematical-formulation
+  label: antisymmetric many-particle space
+  detail: Fermionic states occupy antisymmetric Fock space.
+  citations:
+  - wp-physics-fermi_dirac_statistics
+  - nlab-physics-fermi_dirac_statistics
+  - wp-fock_space
+  - nlab-antisymmetric_fock_space
+  overview: true
+- id: j_cstar__banach_algebra
+  source: banach_algebra
+  target: j_cstar
+  type: combine-compatible
+  label: complete normed algebra
+  detail: Supply the complete normed complex algebra structure on the same carrier and multiplication used by the star-algebra input.
+  citations:
+  - mathlib-cstar-classes
+- id: e_banach_jba
+  source: banach_space
+  target: j_banach_algebra
+  type: combine-compatible
+  label: complete norm
+  detail: Supply a Banach-space norm over the same normed field $K$ and on the same carrier, addition, and scalar action as the algebra.
+  citations:
+  - mathlib-normed-algebra
+  - mathlib-normed-ring
+- id: math_banach_space_to_sobolev_space
+  source: banach_space
+  target: sobolev_space
+  type: framework-specialization
+  label: weak-derivative norm
+  detail: Sobolev spaces complete functions under norms including weak derivatives.
+  citations:
+  - wp-sobolev_space
+  - nlab-sobolev_space
+- id: math_bounded_linear_operator_to_projection_operator
+  source: linear_operator
+  target: projection_operator
+  type: impose-axiom
+  label: idempotence
+  detail: An algebraic projection is an everywhere-defined linear operator satisfying $P^2=P$; on a Hilbert space, an orthogonal projection additionally satisfies $P=P^*$ and is bounded.
+  citations:
+  - wp-projection_operator
+  - nlab-projection_operator
+- id: traceclass_from_operator
+  source: bounded_linear_operator
+  target: trace_class_operator
+  type: framework-specialization
+  label: summable singular values
+  detail: Trace-class operators form an operator ideal with a finite trace norm.
+  citations:
+  - wp-bounded_linear_operator
+  - nlab-bounded_linear_operator
+  - wp-trace_class_operator
+  - nlab-trace_class_operator
+  - tong-quantum
+- id: math_bounded_linear_operator_to_unitary_operator
+  source: bounded_linear_operator
+  target: unitary_operator
+  type: impose-axiom
+  label: unitarity
+  detail: A unitary operator preserves the inner product and is surjective.
+  citations:
+  - wp-unitary_operator
+  - nlab-unitary_operator
+- id: cstar_to_observable
+  source: c_star_algebra
+  target: quantum_observable
+  type: mathematical-formulation
+  label: observable algebra
+  detail: Operator-algebraic quantum theory organizes bounded observables in $C^*$-algebras.
+  citations:
+  - wp-physics-observable
+  - nlab-physics-quantum_observable
+  - wp-cstar-algebra
+  - nlab-cstar-algebra
+  overview: true
+- id: functional_derivative_from_variation
+  source: calculus_of_variations
+  target: functional_derivative
+  type: canonical-construction
+  label: first variation
+  detail: The functional derivative represents the first variation when such a representation exists.
+  citations:
+  - wp-calculus_of_variations
+  - nlab-calculus_of_variations
+  - cambridge-classical-dynamics
+  - tong-qft
+  - wp-functional_derivative
+  - nlab-functional_derivative
+- id: variations_to_stationary
+  source: calculus_of_variations
+  target: stationary_action_principle
+  type: mathematical-formulation
+  label: variational stationarity
+  detail: The stationary-action principle is formulated using the calculus of variations.
+  citations:
+  - wp-calculus_of_variations
+  - nlab-calculus_of_variations
+  - cambridge-classical-dynamics
+  - tong-qft
+  - wp-physics-stationary_action_principle
+  - nlab-physics-stationary_action_principle
+- id: math_densely_defined_operator_to_adjoint_operator
+  source: densely_defined_operator
+  target: adjoint_operator
+  type: canonical-construction
+  label: operator adjoint
+  detail: An inner product determines the adjoint and its domain.
+  citations:
+  - wp-adjoint_operator
+  - nlab-adjoint_operator
+- id: laplace_from_differential
+  source: differential_operator
+  target: laplace_operator
+  type: framework-specialization
+  label: second-order Laplacian
+  detail: The Laplace or Laplace–Beltrami operator is a second-order differential operator.
+  citations:
+  - wp-differential_operator
+  - nlab-differential_operator
+  - tong-qft
+  - wp-laplace_operator
+  - nlab-laplace_operator
+  - tong-quantum
+- id: distribution_to_fieldop
+  source: distribution_space
+  target: operator_valued_distribution
+  type: mathematical-formulation
+  label: distributional fields
+  detail: Quantum fields are generally operator-valued distributions smeared against test functions.
+  citations:
+  - wp-physics-operator_valued_distribution
+  - nlab-physics-operator_valued_distribution
+  - wp-distribution_space
+  - nlab-distribution_space
+  overview: true
+- id: math_fock_space_to_antisymmetric_fock_space
+  source: fock_space
+  target: antisymmetric_fock_space
+  type: impose-axiom
+  label: antisymmetric sectors
+  detail: Fermionic Fock space retains antisymmetric tensor powers.
+  citations:
+  - wp-fock_space
+  - nlab-antisymmetric_fock_space
+- id: fock_to_occupation
+  source: fock_space
+  target: occupation_number_state
+  type: mathematical-formulation
+  label: occupation basis
+  detail: Fock space has an occupation-number basis after choosing one-particle modes.
+  citations:
+  - wp-physics-occupation_number_state
+  - nlab-physics-occupation_number_state
+  - wp-fock_space
+  - nlab-fock_space
+  overview: true
+- id: fock_to_second
+  source: fock_space
+  target: second_quantization
+  type: mathematical-formulation
+  label: Fock representation
+  detail: Fock space supplies the occupation-number state space for second quantization.
+  citations:
+  - wp-physics-second_quantization
+  - nlab-physics-second_quantization
+  - wp-fock_space
+  - nlab-fock_space
+  overview: true
+- id: math_fock_space_to_symmetric_fock_space
+  source: fock_space
+  target: symmetric_fock_space
+  type: impose-axiom
+  label: symmetric sectors
+  detail: Bosonic Fock space retains symmetric tensor powers.
+  citations:
+  - wp-fock_space
+  - nlab-symmetric_fock_space
+- id: fourier_to_momentum
+  source: fourier_transform
+  target: wavefunction
+  type: mathematical-formulation
+  label: position–momentum representations
+  detail: Fourier transformation relates position-space and momentum-space wavefunctions.
+  citations:
+  - wp-physics-wavefunction
+  - nlab-physics-wavefunction
+  - wp-fourier_transform
+  - nlab-fourier_transform
+  overview: true
+- id: math_frechet_space_to_schwartz_space
+  source: frechet_space
+  target: schwartz_space
+  type: framework-specialization
+  label: rapid decay
+  detail: Schwartz functions form a Fréchet space with seminorms controlling all polynomially weighted derivatives.
+  citations:
+  - wp-schwartz_space
+  - nlab-schwartz_space
+- id: math_function_to_fourier_transform
+  source: schwartz_space
+  target: fourier_transform
+  type: canonical-construction
+  label: Fourier automorphism
+  detail: The Fourier transform is a canonical automorphism of Schwartz space and extends, with additional structure, to $L^2$ functions and tempered distributions.
+  citations:
+  - wp-fourier_transform
+  - nlab-fourier_transform
+- id: pde_from_functions
+  source: differential_operator
+  target: partial_differential_equation
+  type: add-data
+  label: partial-derivative equation
+  detail: A PDE is formed by imposing an equation involving a multivariable unknown and its partial derivatives, often expressed through one or more differential operators.
+  citations:
+  - wp-function
+  - nlab-function
+  - openlogic-set-theory
+  - wp-partial_differential_equation
+  - nlab-partial_differential_equation
+  - tong-qft
+  - tong-gr
+- id: functional_derivative_to_euler
+  source: functional_derivative
+  target: euler_lagrange_equation
+  type: mathematical-formulation
+  label: functional stationarity equation
+  detail: Euler–Lagrange field equations are obtained by setting the functional derivative of the action to zero.
+  citations:
+  - wp-functional_derivative
+  - nlab-functional_derivative
+  - tong-qft
+  - wp-physics-euler_lagrange_equation
+  - nlab-physics-euler_lagrange_equation
+  - cambridge-classical-dynamics
+- id: green_to_prop
+  source: greens_function
+  target: propagator
+  type: mathematical-formulation
+  label: Green-kernel formulation
+  detail: Free propagators are Green functions of kinetic operators with causal or boundary prescriptions.
+  citations:
+  - wp-physics-propagator
+  - nlab-physics-propagator
+  - wp-greens_function
+  - nlab-greens_function
+  overview: true
+- id: e_hilbert_banach
+  source: hilbert_space
+  target: banach_space
+  type: induced-forgotten
+  label: retain the induced complete norm
+  detail: The inner product induces a norm, and Hilbert completeness makes the resulting normed space a Banach space.
+  citations:
+  - wp-hilbert
+  - nlab-hilbert
+  - princeton-functional-analysis
+- id: math_hilbert_space_to_fock_space
+  source: hilbert_space
+  target: fock_space
+  type: canonical-construction
+  label: many-body completion
+  detail: Fock space is the graded direct sum of tensor powers of a one-particle Hilbert space.
+  citations:
+  - wp-fock_space
+  - nlab-fock_space
+- id: math_hilbert_space_to_projective_hilbert_space
+  source: hilbert_space
+  target: projective_hilbert_space
+  type: canonical-construction
+  label: ray space
+  detail: Quotienting nonzero vectors by nonzero complex scalar multiplication gives projective Hilbert space.
+  citations:
+  - wp-projective_hilbert_space
+  - nlab-projective_hilbert_space
+- id: math_hilbert_to_qm
+  source: hilbert_space
+  target: quantum_mechanics
+  type: mathematical-formulation
+  label: state-space formalism
+  detail: Standard quantum mechanics represents pure states by rays in a complex Hilbert space and observables by operators acting on it.
+  citations:
+  - nist-quantum-theory
+  - wp-physics-quantum_mechanics
+  - nlab-physics-quantum_mechanics
+  - wp-hilbert
+  - nlab-hilbert
+  overview: true
+- id: hilbert_to_qstate
+  source: hilbert_space
+  target: quantum_state
+  type: mathematical-formulation
+  label: state space
+  detail: Hilbert spaces supply state vectors, inner products, and completion for quantum theory.
+  citations:
+  - wp-physics-quantum_state
+  - nlab-physics-quantum_state
+  - wp-hilbert
+  - nlab-hilbert
+  overview: true
+- id: math_hilbert_space_to_rigged_hilbert_space
+  source: hilbert_space
+  target: rigged_hilbert_space
+  type: add-data
+  label: test-space embedding
+  detail: A rigged Hilbert space chooses a dense nuclear or locally convex test space and its dual.
+  citations:
+  - wp-rigged_hilbert_space
+  - nlab-rigged_hilbert_space
+- id: spherical_from_hilbert
+  source: laplace_operator
+  target: spherical_harmonic
+  type: framework-specialization
+  label: eigenfunctions on $S^2$
+  detail: Spherical harmonics are eigenfunctions of the Laplace–Beltrami operator on $S^2$ and form an orthonormal basis of $L^2(S^2)$.
+  citations:
+  - wp-hilbert
+  - nlab-hilbert
+  - princeton-functional-analysis
+  - wp-spherical_harmonic
+  - nlab-spherical_harmonic
+  - pdg-2026-mathematical-tools
+  - nist-atomic-spectroscopy
+- id: tensorhilbert_from_hilbert
+  source: hilbert_space
+  target: tensor_product_hilbert_space
+  type: canonical-construction
+  label: completed tensor product
+  detail: The algebraic tensor product is completed in its natural Hilbert norm.
+  citations:
+  - wp-hilbert
+  - nlab-hilbert
+  - princeton-functional-analysis
+  - wp-tensor_product_hilbert_space
+  - nlab-tensor_product_hilbert_space
+  - tong-quantum
+- id: e_inner_product_hilbert
+  source: inner_product_space
+  target: hilbert_space
+  type: impose-axiom
+  label: require completeness
+  detail: Require completeness for the norm induced by the inner product.
+  citations:
+  - wp-hilbert
+  - nlab-hilbert
+  - princeton-functional-analysis
+- id: inner_product_to_normed
+  source: inner_product_space
+  target: normed_vector_space
+  type: induced-forgotten
+  label: induce $\lVert x\rVert=\sqrt{\langle x,x\rangle}$
+  detail: Retain the canonical norm induced by the inner product.
+  citations:
+  - wp-inner-product
+  - nlab-inner-product-space
+  - wp-normed
+  - princeton-functional-analysis
+- id: e_jba_ba
+  source: j_banach_algebra
+  target: banach_algebra
+  type: combine-compatible
+  label: + submultiplicativity
+  detail: Require the shared norm and multiplication to satisfy $\lVert ab \rVert \le \lVert a \rVert \lVert b \rVert$.
+  citations:
+  - mathlib-normed-algebra
+  - mathlib-normed-ring
+- id: j_cstar__out
+  source: j_cstar
+  target: c_star_algebra
+  type: combine-compatible
+  label: impose compatibility
+  detail: Impose the $C^*$-identity $\lVert a^*a\rVert=\lVert a\rVert^2$ on the compatible Banach $*$-algebra.
+  citations:
+  - mathlib-cstar-classes
+- id: e_jtvs_tvs
+  source: j_tvs
+  target: topological_vector_space
+  type: combine-compatible
+  label: + continuity
+  detail: Require addition and scalar multiplication to be continuous.
+  citations:
+  - wp-top-vector
+  - nlab-top-vector
+  - princeton-functional-analysis
+- id: laplace_to_schrodinger
+  source: laplace_operator
+  target: schrodinger_equation
+  type: mathematical-formulation
+  label: kinetic operator
+  detail: The nonrelativistic kinetic term is proportional to the Laplacian in position representation.
+  citations:
+  - wp-laplace_operator
+  - nlab-laplace_operator
+  - tong-quantum
+  - wp-physics-schrodinger_equation
+  - nlab-physics-schrodinger_equation
+- id: math_linear_operator_to_bounded_linear_operator
+  source: linear_operator
+  target: bounded_linear_operator
+  type: impose-axiom
+  label: boundedness
+  detail: Boundedness is equivalent to continuity for linear maps between normed spaces.
+  citations:
+  - wp-bounded_linear_operator
+  - nlab-bounded_linear_operator
+- id: math_linear_operator_to_densely_defined_operator
+  source: linear_operator
+  target: densely_defined_operator
+  type: framework-specialization
+  label: dense domain
+  detail: A densely defined operator may be unbounded and is specified on a dense subspace.
+  citations:
+  - wp-densely_defined_operator
+  - nlab-densely_defined_operator
+- id: math_linear_operator_to_greens_function
+  source: linear_operator
+  target: greens_function
+  type: add-data
+  label: Green kernel when it exists
+  detail: For an operator and specified domain or boundary conditions, a Green function is a fundamental-solution or inverse kernel when such a distributional inverse exists.
+  citations:
+  - wp-greens_function
+  - nlab-greens_function
+- id: math_linear_operator_to_operator_spectrum
+  source: bounded_linear_operator
+  target: operator_spectrum
+  type: canonical-construction
+  label: spectrum
+  detail: A bounded operator on a complex Banach space determines its spectrum by failure of $A-\lambda I$ to have an everywhere-defined bounded inverse.
+  citations:
+  - wp-operator_spectrum
+  - nlab-operator_spectrum
+- id: e_lcs_frechet
+  source: locally_convex_space
+  target: frechet_space
+  type: impose-axiom
+  label: + metrizable, complete
+  detail: For a real or complex locally convex space, require its topology to be Hausdorff, metrizable, and complete for the induced uniformity.
+  citations:
+  - eom-frechet-space
+- id: e_norm_banach
+  source: normed_vector_space
+  target: banach_space
+  type: impose-axiom
+  label: + completeness
+  detail: Require completeness in the norm metric.
+  citations:
+  - wp-banach
+  - nlab-banach
+  - princeton-functional-analysis
+- id: normed_to_topological_vector_space
+  source: normed_vector_space
+  target: topological_vector_space
+  type: induced-forgotten
+  label: induce norm topology
+  detail: The norm metric makes vector addition and scalar multiplication continuous.
+  citations:
+  - wp-normed
+  - nlab-norm
+  - wp-top-vector
+  - nlab-top-vector
+  - princeton-functional-analysis
+- id: pde_to_fieldtheory
+  source: partial_differential_equation
+  target: classical_field_theory
+  type: mathematical-formulation
+  label: field equations
+  detail: Classical field dynamics is normally expressed through systems of PDEs.
+  citations:
+  - wp-partial_differential_equation
+  - nlab-partial_differential_equation
+  - tong-qft
+  - tong-gr
+  - wp-physics-classical_field_theory
+  - nlab-physics-classical_field_theory
+- id: pde_to_qm
+  source: partial_differential_equation
+  target: schrodinger_equation
+  type: mathematical-formulation
+  label: evolution PDE
+  detail: The Schrödinger equation is a linear PDE in common coordinate representations.
+  citations:
+  - wp-partial_differential_equation
+  - nlab-partial_differential_equation
+  - tong-qft
+  - tong-gr
+  - wp-physics-schrodinger_equation
+  - nlab-physics-schrodinger_equation
+  - tong-quantum
+- id: partialtrace_to_mixed
+  source: partial_trace
+  target: density_operator
+  type: mathematical-formulation
+  label: reduced state
+  detail: The partial trace of a composite-system density operator is a positive trace-one reduced density operator. A reduced state of a pure bipartite state is mixed exactly when that state is entangled across the bipartition.
+  citations:
+  - wp-partial_trace
+  - nlab-partial_trace
+  - tong-quantum
+  - wp-physics-quantum_state
+  - nlab-physics-mixed_quantum_state
+- id: positive_to_density
+  source: positive_operator
+  target: density_operator
+  type: mathematical-formulation
+  label: positive state operator
+  detail: Density operators are positive operators normalized by their trace.
+  citations:
+  - wp-positive_operator
+  - nlab-positive_operator
+  - tong-quantum
+  - wp-physics-density_operator
+  - nlab-physics-density_operator
+- id: pure_to_projective
+  source: projective_hilbert_space
+  target: pure_quantum_state
+  type: mathematical-formulation
+  label: state rays
+  detail: Pure states are represented by rays in a complex Hilbert space, equivalently points of projective Hilbert space.
+  citations:
+  - wp-physics-quantum_state
+  - nlab-physics-pure_quantum_state
+  - wp-projective_hilbert_space
+  - nlab-projective_hilbert_space
+  overview: true
+- id: rigged_to_scattering
+  source: rigged_hilbert_space
+  target: scattering_state
+  type: mathematical-formulation
+  label: generalized eigenstates
+  detail: Rigged Hilbert spaces accommodate distributional generalized eigenvectors used for continuum spectra.
+  citations:
+  - wp-physics-scattering_state
+  - wp-rigged_hilbert_space
+  - nlab-rigged_hilbert_space
+  overview: true
+- id: math_schwartz_space_to_distribution_space
+  source: schwartz_space
+  target: distribution_space
+  type: canonical-construction
+  label: continuous dual
+  detail: Tempered distributions are continuous linear functionals on Schwartz space.
+  citations:
+  - wp-distribution_space
+  - nlab-distribution_space
+- id: schwartz_to_qft
+  source: schwartz_space
+  target: operator_valued_distribution
+  type: mathematical-formulation
+  label: test functions
+  detail: Quantum fields are smeared against smooth test functions, often Schwartz functions in Minkowski-space treatments.
+  citations:
+  - wp-physics-operator_valued_distribution
+  - nlab-physics-operator_valued_distribution
+  - wp-schwartz_space
+  - nlab-schwartz_space
+  overview: true
+- id: positive_from_selfadjoint
+  source: self_adjoint_operator
+  target: positive_operator
+  type: impose-axiom
+  label: nonnegative quadratic form
+  detail: A positive operator is self-adjoint with nonnegative expectation values.
+  citations:
+  - wp-self_adjoint_operator
+  - nlab-self_adjoint_operator
+  - wp-positive_operator
+  - nlab-positive_operator
+  - tong-quantum
+- id: selfadjoint_to_qobservable
+  source: self_adjoint_operator
+  target: quantum_observable
+  type: mathematical-formulation
+  label: self-adjoint observable
+  detail: Sharp quantum observables are represented by self-adjoint operators or their spectral measures.
+  citations:
+  - wp-physics-observable
+  - nlab-physics-quantum_observable
+  - wp-self_adjoint_operator
+  - nlab-self_adjoint_operator
+  overview: true
+- id: math_self_adjoint_operator_to_spectral_measure
+  source: self_adjoint_operator
+  target: spectral_measure
+  type: canonical-construction
+  label: spectral resolution
+  detail: The spectral theorem associates a projection-valued measure to a self-adjoint operator.
+  citations:
+  - wp-spectral_measure
+  - nlab-spectral_measure
+- id: spectral_from_selfadjoint
+  source: self_adjoint_operator
+  target: spectral_theorem
+  type: theorem-implication
+  label: spectral resolution
+  detail: The spectral theorem gives a projection-valued measure and functional calculus.
+  citations:
+  - wp-self_adjoint_operator
+  - nlab-self_adjoint_operator
+  - wp-spectral_theorem
+  - nlab-spectral_theorem
+  - tong-quantum
+- id: e_seminorm_norm
+  source: seminormed_vector_space
+  target: normed_vector_space
+  type: impose-axiom
+  label: + definiteness
+  detail: Require $p(x)=0$ only for $x=0$.
+  citations:
+  - wp-normed
+  - nlab-norm
+  - princeton-functional-analysis
+- id: sobolev_to_classicalfield
+  source: sobolev_space
+  target: classical_field_theory
+  type: mathematical-formulation
+  label: weak-solution spaces
+  detail: Sobolev spaces formulate finite-energy fields and weak solutions of field equations.
+  citations:
+  - wp-physics-classical_field_theory
+  - nlab-physics-classical_field_theory
+  - wp-sobolev_space
+  - nlab-sobolev_space
+  overview: true
+- id: spectral_to_measurement
+  source: spectral_measure
+  target: quantum_measurement
+  type: mathematical-formulation
+  label: projective measurement
+  detail: Projection-valued measures represent ideal sharp measurements.
+  citations:
+  - wp-physics-quantum_measurement
+  - nlab-physics-quantum_measurement
+  - wp-spectral_measure
+  - nlab-spectral_measure
+  overview: true
+- id: spectraltheorem_to_observable
+  source: spectral_theorem
+  target: quantum_observable
+  type: mathematical-formulation
+  label: spectral measure of observable
+  detail: The spectral theorem supplies the projection-valued measure and functional calculus of a self-adjoint observable.
+  citations:
+  - wp-spectral_theorem
+  - nlab-spectral_theorem
+  - tong-quantum
+  - wp-physics-observable
+  - nlab-physics-quantum_observable
+  - nist-quantum-theory
+- id: spherical_to_orbital
+  source: spherical_harmonic
+  target: atomic_orbital
+  type: mathematical-formulation
+  label: angular orbital basis
+  detail: Hydrogenic and central-field orbitals separate into radial functions and spherical harmonics.
+  citations:
+  - wp-spherical_harmonic
+  - nlab-spherical_harmonic
+  - pdg-2026-mathematical-tools
+  - nist-atomic-spectroscopy
+  - wp-physics-atomic_orbital
+  - nlab-physics-atomic_orbital
+  - iupac-atomic-orbital
+  - nist-atomic-states
+- id: stone_to_evolution
+  source: stone_theorem
+  target: unitary_time_evolution
+  type: mathematical-formulation
+  label: self-adjoint generator
+  detail: Stone’s theorem relates continuous unitary time evolution to a self-adjoint Hamiltonian.
+  citations:
+  - wp-stone_theorem
+  - nlab-stone_theorem
+  - tong-quantum
+  - wp-physics-unitary_time_evolution
+  - nlab-physics-unitary_time_evolution
+- id: symmetricfock_to_bose
+  source: symmetric_fock_space
+  target: bose_einstein_statistics
+  type: mathematical-formulation
+  label: symmetric many-particle space
+  detail: Bosonic states occupy symmetric Fock space.
+  citations:
+  - wp-physics-bose_einstein_statistics
+  - nlab-physics-bose_einstein_statistics
+  - wp-fock_space
+  - nlab-symmetric_fock_space
+  overview: true
+- id: tensorhilbert_to_compositeqm
+  source: tensor_product_hilbert_space
+  target: many_body_quantum_mechanics
+  type: mathematical-formulation
+  label: composite-system state space
+  detail: Composite distinguishable quantum systems use tensor-product Hilbert spaces, with symmetry restrictions for identical particles.
+  citations:
+  - wp-tensor_product_hilbert_space
+  - nlab-tensor_product_hilbert_space
+  - tong-quantum
+  - wp-physics-many_body_quantum_mechanics
+  - nlab-physics-many_body_quantum_mechanics
+- id: partialtrace_from_tensor
+  source: tensor_product_hilbert_space
+  target: partial_trace
+  type: canonical-construction
+  label: trace one subsystem
+  detail: The partial trace maps trace-class operators on $H_A\otimes H_B$ to trace-class reduced operators on one factor, characterized by the trace pairing with bounded operators on that factor.
+  citations:
+  - wp-tensor_product_hilbert_space
+  - nlab-tensor_product_hilbert_space
+  - tong-quantum
+  - wp-partial_trace
+  - nlab-partial_trace
+- id: e_tvs_lcs
+  source: topological_vector_space
+  target: locally_convex_space
+  type: impose-axiom
+  label: + local convexity
+  detail: Restrict the scalar field to $\mathbb{R}$ or $\mathbb{C}$ and require a neighborhood base at 0 consisting of convex sets.
+  citations:
+  - eom-locally-convex
+- id: traceclass_to_density
+  source: trace_class_operator
+  target: density_operator
+  type: mathematical-formulation
+  label: trace-one state operator
+  detail: Normal density operators are positive trace-class operators of unit trace.
+  citations:
+  - wp-trace_class_operator
+  - nlab-trace_class_operator
+  - tong-quantum
+  - wp-physics-density_operator
+  - nlab-physics-density_operator
+- id: unitary_to_evolution
+  source: unitary_operator
+  target: unitary_time_evolution
+  type: mathematical-formulation
+  label: unitary dynamics
+  detail: Closed-system time evolution is represented by unitary operators.
+  citations:
+  - wp-physics-unitary_time_evolution
+  - nlab-physics-unitary_time_evolution
+  - wp-unitary_operator
+  - nlab-unitary_operator
+  overview: true
+- id: ode_from_differential_operator
+  source: differential_operator
+  target: ordinary_differential_equation
+  type: add-data
+  label: equation in one independent variable
+  detail: An ODE is formed by imposing an equation involving an unknown function of one independent variable and its ordinary derivatives.
+  citations:
+  - wp-ordinary_differential_equation
+  - nlab-ordinary_differential_equation
+  - cambridge-classical-dynamics
+- id: ode_to_newtonian
+  source: ordinary_differential_equation
+  target: newtonian_mechanics
+  type: mathematical-formulation
+  label: trajectory equations
+  detail: Newtonian initial-value problems are ordinarily formulated as systems of ordinary differential equations.
+  citations:
+  - wp-ordinary_differential_equation
+  - nlab-ordinary_differential_equation
+  - cambridge-classical-dynamics
+  - wp-physics-newtonian_mechanics
+  - tong-relativity
+- id: partialtrace_to_decoherence
+  source: partial_trace
+  target: quantum_decoherence
+  type: mathematical-formulation
+  label: reduced density operator
+  detail: Tracing over environmental degrees of freedom gives the reduced state in which decoherence is quantified.
+  citations:
+  - wp-partial_trace
+  - nlab-partial_trace
+  - tong-quantum
+  - wp-physics-quantum_decoherence
+  - nlab-physics-quantum_decoherence
+  - schlosshauer-decoherence-2019
+- id: tensorhilbert_to_entanglement
+  source: tensor_product_hilbert_space
+  target: quantum_entanglement
+  type: mathematical-formulation
+  label: nonseparable tensor-product states
+  detail: Entanglement is defined relative to a tensor-product or algebraic subsystem decomposition.
+  citations:
+  - wp-tensor_product_hilbert_space
+  - nlab-tensor_product_hilbert_space
+  - tong-quantum
+  - wp-physics-quantum_entanglement
+  - nlab-physics-quantum_entanglement
+  - horodecki-entanglement-review
+- id: spectral_to_atomic_levels
+  source: operator_spectrum
+  target: atomic_energy_level
+  type: mathematical-formulation
+  label: Hamiltonian spectral values
+  detail: Bound atomic energy levels are discrete spectral values of the atomic Hamiltonian, while ionization and scattering channels contribute continuous spectrum.
+  citations:
+  - wp-operator_spectrum
+  - nist-asd-levels
+- id: linearops_to_commutator
+  source: linear_operator
+  target: operator_commutator
+  type: canonical-construction
+  label: noncommutative product difference
+  detail: Whenever both products are defined on a suitable common domain, operator composition defines the commutator $AB-BA$.
+  citations:
+  - wp-operator-commutator
+  - nlab-operator-commutator
+- id: linearops_to_anticommutator
+  source: linear_operator
+  target: operator_anticommutator
+  type: canonical-construction
+  label: symmetrized product
+  detail: Whenever both products are defined, operator composition defines the anticommutator $AB+BA$.
+  citations:
+  - wp-operator-anticommutator
+  - nlab-operator-anticommutator
+- id: innerproduct_to_expectation
+  source: inner_product_space
+  target: quantum_expectation_value
+  type: mathematical-formulation
+  label: pure-state quadratic form
+  detail: For a normalized state vector $\psi$ in the domain of $A$, the pure-state expectation is $\langle\psi,A\psi\rangle$; for an unnormalized nonzero vector, divide by $\langle\psi,\psi\rangle$.
+  citations:
+  - wp-inner-product
+  - nlab-inner-product-space
+  - tong-quantum
+- id: self_adjoint_to_operator_spectrum
+  source: self_adjoint_operator
+  target: operator_spectrum
+  type: canonical-construction
+  label: spectrum of a self-adjoint operator
+  detail: A possibly unbounded self-adjoint operator is closed and densely defined, so its resolvent and spectrum are well-defined; its spectrum is real.
+  citations:
+  - wp-self_adjoint_operator
+  - nlab-self_adjoint_operator
+  - wp-operator_spectrum
+  - nlab-operator_spectrum
+- id: cauchy_sequences_to_reals
+  source: rational_cauchy_sequences
+  target: real_numbers
+  type: quotient-construction
+  label: identify null differences
+  detail: Quotient Cauchy sequences by equality of limiting difference zero to obtain a complete ordered field representing $\mathbb R$.
+  citations:
+  - wp-construction-reals
+  - nlab-real-number
+  overview: true
+- id: dedekind_cuts_to_reals
+  source: dedekind_cut_reals
+  target: real_numbers
+  type: representation-equivalence
+  label: Dedekind realization
+  detail: The Dedekind-cut field is canonically order-isomorphic to the abstract complete Archimedean ordered field $\mathbb R$.
+  citations:
+  - wp-construction-reals
+  - nlab-real-number
+  overview: true
+- id: real_numbers_to_ordered_field
+  source: real_numbers
+  target: ordered_field
+  type: induced-forgotten
+  label: forget completeness
+  detail: Forgetting completeness and the distinguished real realization leaves an ordered field.
+  citations:
+  - nlab-real-number
+- id: real_numbers_to_real_closed_field
+  source: real_numbers
+  target: real_closed_field
+  type: induced-forgotten
+  label: forget completeness and topology
+  detail: The real numbers are real closed; forgetting their completeness and topology retains that algebraic ordered-field property.
+  citations:
+  - nlab-real-number
+- id: real_numbers_to_topological_field
+  source: real_numbers
+  target: topological_field
+  type: induced-forgotten
+  label: forget order completeness
+  detail: The usual topology and field operations make $\mathbb R$ a topological field.
+  citations:
+  - nlab-real-number
+- id: real_numbers_to_complex_pairs
+  source: real_numbers
+  target: complex_pair_realization
+  type: canonical-construction
+  label: form $\mathbb R^2$ with complex multiplication
+  detail: Equip ordered pairs of reals with the standard complex field operations.
+  citations:
+  - wp-complex-number
+  - nlab-complex-number
+  overview: true
+- id: real_numbers_to_complex_quotient
+  source: real_numbers
+  target: complex_polynomial_quotient
+  type: canonical-construction
+  label: adjoin a root of $x^2+1$
+  detail: Form $\mathbb R[x]/(x^2+1)$, in which the class of $x$ squares to $-1$.
+  citations:
+  - wp-complex-number
+  - nlab-complex-number
+- id: complex_pairs_to_complex_numbers
+  source: complex_pair_realization
+  target: complex_numbers
+  type: representation-equivalence
+  label: ordered-pair realization
+  detail: Identify $(a,b)$ with $a+bi$ to obtain the standard complex field.
+  citations:
+  - wp-complex-number
+  - nlab-complex-number
+  overview: true
+- id: complex_quotient_to_complex_numbers
+  source: complex_polynomial_quotient
+  target: complex_numbers
+  type: representation-equivalence
+  label: polynomial-quotient realization
+  detail: Identify the residue class of $x$ with $i$; the quotient is isomorphic to the ordered-pair complex field.
+  citations:
+  - wp-complex-number
+  - nlab-complex-number
+- id: real_numbers_into_complex_numbers
+  source: real_numbers
+  target: complex_numbers
+  type: canonical-embedding
+  label: $a\mapsto a+0i$
+  detail: The map $a\mapsto(a,0)$ embeds $\mathbb R$ canonically as the real axis in $\mathbb C$.
+  citations:
+  - wp-complex-number
+  - nlab-complex-number
+  overview: true
+- id: complex_numbers_to_alg_closed_field
+  source: complex_numbers
+  target: algebraically_closed_field
+  type: induced-forgotten
+  label: forget topology and distinguished real subfield
+  detail: The fundamental theorem of algebra says the complex field is algebraically closed.
+  citations:
+  - wp-complex-number
+  - nlab-complex-number
+- id: complex_numbers_to_topological_field
+  source: complex_numbers
+  target: topological_field
+  type: induced-forgotten
+  label: forget algebraic closure
+  detail: The Euclidean topology and field operations make $\mathbb C$ a topological field.
+  citations:
+  - wp-complex-number
+  - nlab-complex-number
+- id: real_numbers_to_continuum
+  source: real_numbers
+  target: continuum_cardinal
+  type: theorem-implication
+  label: cardinality $\mathfrak c$
+  detail: The real line has cardinality $2^{\aleph_0}$, denoted $\mathfrak c$.
+  citations:
+  - wp-cardinality-continuum
+  - wp-construction-reals
+  overview: true

@@ -1,0 +1,71 @@
+id: nuclear-structure-and-decay
+title: The structure of the atomic nucleus
+summary: Trace nuclear discovery, forces, many-body models, binding, shell
+  structure, isotopes, and radioactive decay.
+narrative: Radioactivity and scattering revealed a compact nucleus whose
+  constituents were later identified as protons and neutrons. QCD underlies the
+  strong interaction, but nuclei are governed at low energy by residual nuclear
+  forces and effective theories. Binding energy and mass defect quantify
+  composite stability; liquid-drop, mean-field, and shell models capture
+  complementary collective and single-particle regimes. Nuclear states and
+  selection rules organize alpha, beta, and gamma decay.
+tags:
+  - Physics
+  - Nuclear physics
+  - Decay
+  - Many-body systems
+settings:
+  fields:
+    - physics
+  domains:
+    - quantum-field-theory
+    - particle-physics
+    - nuclear-physics
+    - atomic-molecular-physics
+    - experiments-observations
+  edgeTypes:
+    - mathematical-formulation
+    - framework-specialization
+    - quantization
+    - theory-component
+    - describes-governs
+    - composition
+    - classification
+    - state-description
+    - transformation-process
+    - mathematical-limit
+    - effective-theory
+    - emergence
+    - couples-interacts
+    - model-realization
+    - historically-motivated
+    - experimentally-verified-by
+    - theorem-implication
+  crossFieldVisibility: hidden
+  edgeLabels: true
+  junctions: false
+  edgeZoomActivation: true
+  layout: atlas
+nodeSequence:
+  - radioactive_decay
+  - geiger_marsden_gold_foil_experiment
+  - atomic_nucleus
+  - proton
+  - neutron
+  - nucleon
+  - strong_interaction
+  - nuclear_force
+  - nuclear_effective_field_theory
+  - nuclear_many_body_system
+  - nuclear_binding_energy
+  - mass_defect
+  - liquid_drop_model
+  - nuclear_mean_field
+  - nuclear_shell_model
+  - nuclear_magic_number_systematics
+  - nuclear_state
+  - nuclide
+  - isotope
+  - alpha_decay
+  - beta_decay
+  - gamma_decay

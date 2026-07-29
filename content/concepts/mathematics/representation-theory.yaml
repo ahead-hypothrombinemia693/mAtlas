@@ -1,0 +1,662 @@
+nodes:
+- id: j_group_action
+  label: group + carrier action
+  primaryDomain: representation-theory
+  domains:
+  - representation-theory
+  - algebra
+  level: 6
+  kind: junction
+  summary: Compatibility construction producing Group action.
+  carriers: []
+  data: []
+  axioms: []
+  induces: []
+  notes: All incoming branches are jointly required.
+  citations:
+  - wp-group-action
+  - nlab-group-action
+  - etingof-representation-theory
+  combination:
+    inputs:
+    - group
+    - set
+    compatibility: Use the group multiplication to act associatively on the set and let the group identity act trivially.
+    output: group_action
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: group_action
+  label: Group action
+  primaryDomain: representation-theory
+  domains:
+  - representation-theory
+  - algebra
+  - category-theory
+  level: 6
+  kind: structure
+  summary: An action of a group on an object, here initially a set, respecting multiplication and identity.
+  carriers:
+  - group $G$
+  - set $X$
+  data:
+  - map $G\times X\to X$
+  axioms:
+  - $e\cdot x=x$
+  - $(gh)\cdot x=g\cdot (h\cdot x)$
+  induces: []
+  notes: ''
+  citations:
+  - wp-group-action
+  - nlab-group-action
+  - etingof-representation-theory
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: g_set
+  label: $G$-set
+  primaryDomain: representation-theory
+  domains:
+  - representation-theory
+  - algebra
+  - category-theory
+  level: 7
+  kind: structure
+  summary: A set equipped with an action of a specified group $G$.
+  carriers:
+  - set $X$
+  - group $G$
+  data:
+  - $G$-action
+  axioms: []
+  induces: []
+  notes: ''
+  citations:
+  - wp-g-set
+  - nlab-g-set
+  - etingof-representation-theory
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: circle_group
+  label: Circle group $U(1)$
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: representation-theory
+  domains:
+  - representation-theory
+  - topology
+  level: 11
+  kind: structure
+  conceptType: Compact Lie group
+  summary: The one-dimensional compact Lie group of complex numbers of unit modulus.
+  citations:
+  - wp-circle_group
+  - nlab-circle_group
+  carriers:
+  - unit circle $U(1)\subset\mathbb C$
+  data:
+  - complex multiplication
+  axioms:
+  - group axioms
+  - $|z|=1$
+  induces:
+  - compact Abelian Lie-group structure
+  - characters indexed by integers
+  notes: Isomorphic to $\mathbb R/2\pi\mathbb Z$ and to $SO(2)$.
+- id: lorentz_group
+  label: Lorentz group
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: representation-theory
+  domains:
+  - representation-theory
+  - differential-geometry
+  level: 10
+  kind: structure
+  conceptType: Lie group
+  summary: The group preserving a nondegenerate quadratic form of Lorentzian signature.
+  citations:
+  - wp-lorentz_group
+  - nlab-lorentz_group
+  carriers:
+  - real vector space with Lorentzian quadratic form
+  data:
+  - linear isometries of the form
+  axioms:
+  - $\Lambda^T\eta\Lambda=\eta$
+  induces:
+  - proper, orthochronous, and other connected components
+  notes: “Lorentz group” may denote the full group $O(1,3)$ or a specified subgroup such as $SO^+(1,3)$.
+- id: poincare_group
+  label: Poincaré group
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: representation-theory
+  domains:
+  - representation-theory
+  - differential-geometry
+  level: 11
+  kind: structure
+  conceptType: Lie group
+  summary: The semidirect product of spacetime translations with the Lorentz group.
+  citations:
+  - wp-poincare_group
+  - nlab-poincare_group
+  carriers:
+  - Minkowski affine space
+  data:
+  - translations
+  - Lorentz transformations
+  - semidirect-product law
+  axioms:
+  - affine isometries of Minkowski spacetime
+  induces:
+  - energy–momentum and spin classification of stable particles via unitary irreducible representations
+  notes: The connected, universal-cover, and full disconnected versions must be distinguished in representation theory.
+- id: special_unitary_group
+  label: Special unitary group
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: representation-theory
+  domains:
+  - representation-theory
+  - algebra
+  level: 11
+  kind: structure
+  conceptType: Compact Lie group
+  summary: The compact Lie group $SU(n)$ of unitary matrices with determinant one.
+  citations:
+  - wp-special_unitary_group
+  - nlab-special_unitary_group
+  carriers:
+  - complex vector space $\mathbb C^n$
+  data:
+  - unitary matrices with determinant one
+  axioms:
+  - $U^*U=I$
+  - $\det U=1$
+  induces:
+  - compact connected Lie group
+  - Lie algebra $\mathfrak{su}(n)$
+  notes: ''
+- id: spin_group
+  label: Spin group
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: representation-theory
+  domains:
+  - representation-theory
+  - algebra
+  level: 12
+  kind: structure
+  conceptType: Lie group
+  summary: The group constructed in a Clifford algebra that double-covers $SO(n)$ in Euclidean signature; in indefinite signature it covers the appropriate identity component according to convention.
+  citations:
+  - wp-spin_group
+  - nlab-spin_group
+  carriers:
+  - quadratic vector space $(V,Q)$
+  - Clifford algebra $\mathrm{Cl}(V,Q)$
+  data:
+  - specified subgroup of invertible even Clifford elements
+  axioms:
+  - preserves $V$ under conjugation
+  - norm condition according to convention
+  induces:
+  - covering homomorphism to an orthogonal group or its identity component
+  notes: The precise target and notation depend on signature and convention; in Euclidean signature $\mathrm{Spin}(n)$ double-covers $SO(n)$.
+- id: j_group_rep
+  label: group + vector space action
+  primaryDomain: representation-theory
+  domains:
+  - representation-theory
+  - algebra
+  level: 13
+  kind: junction
+  summary: Compatibility construction producing Linear representation of a group.
+  carriers: []
+  data: []
+  axioms: []
+  induces: []
+  notes: All incoming branches are jointly required.
+  citations:
+  - wp-group-representation
+  - nlab-representation
+  - etingof-representation-theory
+  combination:
+    inputs:
+    - group
+    - vector_space
+    compatibility: Require the group action maps to be invertible linear transformations.
+    output: group_representation
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: j_lie_rep
+  label: Lie algebra + vector space action
+  primaryDomain: representation-theory
+  domains:
+  - representation-theory
+  - algebra
+  level: 14
+  kind: junction
+  summary: Compatibility construction producing Representation of a Lie algebra.
+  carriers: []
+  data: []
+  axioms: []
+  induces: []
+  notes: All incoming branches are jointly required.
+  citations:
+  - mathlib-lie-module
+  combination:
+    inputs:
+    - lie_algebra
+    - vector_space
+    compatibility: The Lie algebra $\mathfrak g$ and vector space $V$ are over the same field $k$, and the $k$-linear action sends $[x,y]$ to the commutator of the corresponding endomorphisms.
+    output: lie_algebra_representation
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: group_representation
+  label: Linear representation of a group
+  primaryDomain: representation-theory
+  domains:
+  - representation-theory
+  - algebra
+  level: 14
+  kind: structure
+  summary: A group action on a vector space by invertible linear maps.
+  carriers:
+  - group $G$
+  - vector space $V$
+  data:
+  - homomorphism $G\to \operatorname{GL}(V)$
+  axioms:
+  - action maps are linear
+  induces: []
+  notes: ''
+  citations:
+  - wp-group-representation
+  - nlab-representation
+  - etingof-representation-theory
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: irreducible_representation
+  label: Irreducible representation
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: representation-theory
+  domains:
+  - representation-theory
+  level: 15
+  kind: structure
+  conceptType: Representation class
+  summary: A nonzero representation with no proper nonzero invariant subspace.
+  citations:
+  - wp-irreducible_representation
+  - nlab-irreducible_representation
+  carriers:
+  - nonzero vector space $V$
+  - group or algebra acting on $V$
+  data:
+  - representation homomorphism
+  axioms:
+  - no invariant subspaces other than $0$ and $V$
+  induces:
+  - simple module structure
+  notes: Irreducibility depends on the base field and the category of representations being used.
+- id: lie_algebra_representation
+  label: Representation of a Lie algebra
+  primaryDomain: representation-theory
+  domains:
+  - representation-theory
+  - algebra
+  level: 15
+  kind: structure
+  summary: A Lie algebra homomorphism into the endomorphism Lie algebra of a vector space.
+  carriers:
+  - Lie algebra $\mathfrak{g}$ over a field $k$
+  - $k$-vector space $V$
+  data:
+  - $k$-linear Lie homomorphism $\mathfrak{g}\to\mathfrak{gl}_k(V)$
+  axioms: []
+  induces: []
+  notes: ''
+  citations:
+  - mathlib-lie-module
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: spinor_representation
+  label: Spinor representation
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: representation-theory
+  domains:
+  - representation-theory
+  level: 15
+  kind: structure
+  conceptType: Representation
+  summary: A representation of a spin group that does not generally descend to the corresponding orthogonal group.
+  citations:
+  - wp-spinor_representation
+  - nlab-spinor_representation
+  carriers:
+  - spinor space $S$
+  - spin group or Clifford algebra
+  data:
+  - linear representation on $S$
+  axioms:
+  - Clifford/spin relations appropriate to dimension and signature
+  induces:
+  - spinor fields after forming associated bundles
+  notes: Real, complex, Weyl, Majorana, and Dirac spinors exist under different dimensional and signature conditions.
+- id: unitary_representation
+  label: Unitary representation
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: representation-theory
+  domains:
+  - representation-theory
+  - analysis
+  level: 16
+  kind: structure
+  conceptType: Representation class
+  summary: A group representation by unitary operators on a Hilbert space.
+  citations:
+  - wp-unitary_representation
+  - nlab-unitary_representation
+  carriers:
+  - Hilbert space $H$
+  - group $G$
+  data:
+  - homomorphism $G\to U(H)$
+  axioms:
+  - group law
+  - unitarity
+  - usually an explicit continuity condition for topological groups
+  induces:
+  - self-adjoint generators for strongly continuous one-parameter subgroups
+  notes: For topological groups, continuity is part of the standard analytic notion.
+- id: clebsch_gordan_coefficient
+  label: Clebsch–Gordan coefficient
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: representation-theory
+  domains:
+  - representation-theory
+  level: 18
+  kind: structure
+  conceptType: Representation-theoretic coefficient
+  summary: A coefficient transforming between uncoupled and coupled bases in a tensor product of angular-momentum representations.
+  citations:
+  - wp-clebsch_gordan_coefficient
+  - nlab-clebsch_gordan_coefficient
+  - pdg-2026-mathematical-tools
+  - nist-atomic-spectroscopy
+  notes: The coefficients depend on basis and phase conventions; the decomposition multiplicities do not.
+  carriers:
+  - representation spaces $V,W$
+  - chosen bases
+  data:
+  - change-of-basis coefficients for $V\otimes W$
+  axioms:
+  - intertwines product and irreducible-coupled bases
+  induces:
+  - angular-momentum coupling amplitudes
+edges:
+- id: u1_to_smgroup
+  source: circle_group
+  target: standard_model_gauge_group
+  type: mathematical-formulation
+  label: $U(1)_Y$ factor
+  detail: The hypercharge factor is modeled by the circle group.
+  citations:
+  - wp-physics-standard_model_gauge_group
+  - nlab-physics-standard_model_gauge_group
+  - wp-circle_group
+  - nlab-circle_group
+  overview: true
+- id: cg_to_atomiccoupling
+  source: clebsch_gordan_coefficient
+  target: atomic_term_symbol
+  type: mathematical-formulation
+  label: angular-momentum coupling coefficients
+  detail: Clebsch–Gordan coefficients combine orbital and spin angular momenta into coupled atomic states.
+  citations:
+  - wp-clebsch_gordan_coefficient
+  - nlab-clebsch_gordan_coefficient
+  - pdg-2026-mathematical-tools
+  - nist-atomic-spectroscopy
+  - wp-physics-atomic_term_symbol
+  - nist-atomic-states
+  - nist-asd-levels
+- id: e_action_gset
+  source: group_action
+  target: g_set
+  type: representation-equivalence
+  label: fix the acting group $G$
+  detail: Treat an action of a fixed group as a $G$-set.
+  citations:
+  - wp-g-set
+  - nlab-g-set
+  - etingof-representation-theory
+- id: cg_from_representations
+  source: group_representation
+  target: clebsch_gordan_coefficient
+  type: canonical-construction
+  label: tensor-product decomposition
+  detail: Clebsch–Gordan coefficients implement the change of basis for decomposing tensor-product representations.
+  citations:
+  - wp-group-representation
+  - nlab-representation
+  - etingof-representation-theory
+  - wp-clebsch_gordan_coefficient
+  - nlab-clebsch_gordan_coefficient
+  - pdg-2026-mathematical-tools
+  - nist-atomic-spectroscopy
+- id: math_representation_to_particle
+  source: group_representation
+  target: elementary_particle
+  type: mathematical-formulation
+  label: symmetry representation
+  detail: Relativistic particle species and internal quantum numbers are organized by representations of spacetime and internal symmetry groups.
+  citations:
+  - cern-qft-intro
+  - pdg-standard-model
+  - wp-physics-elementary_particle
+  - pdg-rpp
+  - wp-group-representation
+- id: math_group_representation_to_irreducible_representation
+  source: group_representation
+  target: irreducible_representation
+  type: impose-axiom
+  label: irreducibility
+  detail: Irreducibility excludes proper nonzero invariant subspaces.
+  citations:
+  - wp-irreducible_representation
+  - nlab-irreducible_representation
+- id: math_group_representation_to_unitary_representation
+  source: group_representation
+  target: unitary_representation
+  type: impose-axiom
+  label: unitarity
+  detail: A unitary representation acts by unitary operators on a Hilbert space.
+  citations:
+  - wp-unitary_representation
+  - nlab-unitary_representation
+- id: poincare_rep_to_particle
+  source: irreducible_representation
+  target: elementary_particle
+  type: mathematical-formulation
+  label: one-particle symmetry representation
+  detail: Stable elementary particle species are classified by irreducible unitary representations of spacetime symmetry together with internal quantum numbers.
+  citations:
+  - wp-physics-elementary_particle
+  - pdg-rpp
+  - wp-irreducible_representation
+  - nlab-irreducible_representation
+  overview: true
+- id: j_group_action__out
+  source: j_group_action
+  target: group_action
+  type: combine-compatible
+  label: impose compatibility
+  detail: Use the group multiplication to act associatively on the set and let the group identity act trivially.
+  citations:
+  - wp-group-action
+  - nlab-group-action
+  - etingof-representation-theory
+- id: j_group_rep__out
+  source: j_group_rep
+  target: group_representation
+  type: combine-compatible
+  label: impose compatibility
+  detail: Require the group action maps to be invertible linear transformations.
+  citations:
+  - wp-group-representation
+  - nlab-representation
+  - etingof-representation-theory
+- id: j_lie_rep__out
+  source: j_lie_rep
+  target: lie_algebra_representation
+  type: combine-compatible
+  label: impose compatibility
+  detail: Choose a $k$-linear action $\mathfrak g\to\operatorname{End}_k(V)$ and require $[x,y]$ to act as the commutator of the endomorphisms assigned to $x$ and $y$.
+  citations:
+  - mathlib-lie-module
+- id: lie_rep_to_angular
+  source: lie_algebra_representation
+  target: angular_momentum
+  type: mathematical-formulation
+  label: $\mathfrak{su}(2)$ generators
+  detail: Quantum angular momentum is represented by Lie-algebra generators.
+  citations:
+  - wp-physics-angular_momentum
+  - nlab-physics-angular_momentum
+  - mathlib-lie-module
+  overview: true
+- id: lorentz_group_to_symmetry
+  source: lorentz_group
+  target: lorentz_symmetry
+  type: mathematical-formulation
+  label: Lorentz group action
+  detail: Lorentz symmetry is mathematically represented by the Lorentz group.
+  citations:
+  - wp-physics-lorentz_symmetry
+  - nlab-physics-lorentz_symmetry
+  - wp-lorentz_group
+  - nlab-lorentz_group
+  overview: true
+- id: math_lorentz_group_to_poincare_group
+  source: lorentz_group
+  target: poincare_group
+  type: canonical-construction
+  label: form translations semidirect Lorentz transformations
+  detail: For a fixed Minkowski vector space, the Poincaré group is the semidirect product of spacetime translations with the Lorentz group.
+  citations:
+  - wp-poincare_group
+  - nlab-poincare_group
+- id: poincare_group_to_symmetry
+  source: poincare_group
+  target: poincare_symmetry
+  type: mathematical-formulation
+  label: Poincaré group action
+  detail: Poincaré symmetry is mathematically represented by the Poincaré group.
+  citations:
+  - wp-poincare_group
+  - nlab-physics-poincare_symmetry
+  - nlab-poincare_group
+  overview: true
+- id: poincaregroup_to_qft
+  source: poincare_group
+  target: quantum_field_theory
+  type: mathematical-formulation
+  label: flat-spacetime symmetry
+  detail: Relativistic QFT in Minkowski spacetime carries a unitary Poincaré action.
+  citations:
+  - wp-physics-quantum_field_theory
+  - nlab-physics-quantum_field_theory
+  - wp-poincare_group
+  - nlab-poincare_group
+  overview: true
+- id: su_to_smgroup
+  source: special_unitary_group
+  target: standard_model_gauge_group
+  type: mathematical-formulation
+  label: $SU(2)_L$ and $SU(3)_C$ factors
+  detail: Special unitary groups supply the weak-isospin and color gauge factors.
+  citations:
+  - wp-physics-standard_model_gauge_group
+  - nlab-physics-standard_model_gauge_group
+  - wp-special_unitary_group
+  - nlab-special_unitary_group
+  overview: true
+- id: specialunitary_to_yangmills
+  source: special_unitary_group
+  target: yang_mills_theory
+  type: mathematical-formulation
+  label: non-Abelian gauge groups
+  detail: Important Yang–Mills theories use $SU(n)$ gauge groups.
+  citations:
+  - wp-physics-yang_mills_theory
+  - nlab-physics-yang_mills_theory
+  - wp-special_unitary_group
+  - nlab-special_unitary_group
+  overview: true
+- id: math_spin_group_to_spinor_representation
+  source: spin_group
+  target: spinor_representation
+  type: model-realization
+  label: choose a spin representation
+  detail: A spinor representation realizes the spin group linearly, usually through a module over the associated Clifford algebra; a particular representation is additional chosen data.
+  citations:
+  - wp-spinor_representation
+  - nlab-spinor_representation
+- id: spinor_to_spinhalf
+  source: spinor_representation
+  target: spin_half
+  type: mathematical-formulation
+  label: spinor representation
+  detail: Spin-$1/2$ states transform in spinor representations.
+  citations:
+  - wp-physics-spin_half
+  - nlab-physics-spin_half
+  - wp-spinor_representation
+  - nlab-spinor_representation
+  overview: true
+- id: spinorrep_to_spinorfield
+  source: spinor_representation
+  target: spinor_field
+  type: mathematical-formulation
+  label: Lorentz spinor transformation
+  detail: Spinor fields transform in spin representations of the Lorentz spin group.
+  citations:
+  - wp-physics-spinor_field
+  - nlab-physics-spinor_field
+  - wp-spinor_representation
+  - nlab-spinor_representation
+  overview: true
+- id: unitaryrep_to_particle
+  source: unitary_representation
+  target: one_particle_state
+  type: mathematical-formulation
+  label: symmetry representation
+  detail: One-particle state spaces carry unitary representations of spacetime and internal symmetry groups.
+  citations:
+  - wp-physics-one_particle_state
+  - nlab-physics-one_particle_state
+  - wp-unitary_representation
+  - nlab-unitary_representation
+  overview: true

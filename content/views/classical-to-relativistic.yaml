@@ -1,0 +1,65 @@
+id: classical-to-relativistic
+title: From classical to relativistic physics
+summary: See how mechanics and electromagnetism are reorganized by spacetime
+  symmetry and recovered as controlled limits.
+narrative: Compare Newtonian, Lagrangian, and Hamiltonian mechanics before
+  introducing Galilean and Lorentz symmetry, Minkowski spacetime, relativistic
+  momentum-energy, field covariance, and general-relativistic gravitation. Limit
+  edges show precisely where classical theories reappear.
+tags:
+  - Mechanics
+  - Electromagnetism
+  - Relativity
+settings:
+  fields:
+    - physics
+  domains:
+    - physical-foundations
+    - classical-mechanics
+    - relativity
+    - electromagnetism
+    - experiments-observations
+  edgeTypes:
+    - add-data
+    - mathematical-formulation
+    - framework-specialization
+    - quantization
+    - theory-component
+    - describes-governs
+    - composition
+    - classification
+    - state-description
+    - transformation-process
+    - mathematical-limit
+    - effective-theory
+    - emergence
+    - couples-interacts
+    - model-realization
+    - historically-motivated
+    - experimentally-verified-by
+    - theorem-implication
+  crossFieldVisibility: hidden
+  edgeLabels: true
+  junctions: false
+  edgeZoomActivation: true
+  layout: atlas
+nodeSequence:
+  - configuration_space
+  - newtonian_mechanics
+  - newton_laws
+  - lagrangian
+  - stationary_action_principle
+  - lagrangian_mechanics
+  - phase_space
+  - hamiltonian
+  - hamiltonian_mechanics
+  - special_relativity
+  - minkowski_spacetime
+  - lorentz_symmetry
+  - poincare_symmetry
+  - four_vector
+  - relativistic_particle_mechanics
+  - classical_electromagnetism
+  - general_relativity
+  - geodesic_motion
+  - newtonian_gravitation

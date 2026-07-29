@@ -1,0 +1,67 @@
+id: computability-and-incompleteness
+title: Computability and incompleteness
+summary: Follow the formalization of algorithms to universal machines,
+  undecidability, arithmetized syntax, and Gödel’s limits on effective formal
+  theories.
+narrative: Turing machines make mechanical procedure mathematically precise and
+  define computable functions, decidable problems, and computably enumerable
+  sets. Universality enables machines to process encoded machines;
+  diagonalization proves the halting problem undecidable. Formal proof systems
+  and Gödel numbering make syntax itself arithmetical. For consistent effective
+  theories strong enough for arithmetic, the first theorem forces incompleteness
+  and the second blocks an internal proof of consistency under the standard
+  derivability conditions.
+tags:
+  - Mathematics
+  - Computability
+  - Logic
+  - Incompleteness
+featured: true
+settings:
+  fields:
+    - mathematics
+  domains:
+    - computability-theory
+    - logic
+    - foundation
+    - number-theory
+  edgeTypes:
+    - add-data
+    - impose-axiom
+    - induced-forgotten
+    - canonical-construction
+    - quotient-construction
+    - canonical-embedding
+    - combine-compatible
+    - representation-equivalence
+    - theorem-implication
+    - classification
+    - mathematical-formulation
+    - framework-specialization
+    - describes-governs
+    - historically-motivated
+  crossFieldVisibility: hidden
+  edgeLabels: true
+  junctions: false
+  edgeZoomActivation: true
+  layout: atlas
+nodeSequence:
+  - algorithm
+  - decision_problem
+  - turing_machine
+  - computable_function
+  - recursively_enumerable_set
+  - universal_turing_machine
+  - decidable_problem
+  - undecidable_problem
+  - halting_problem
+  - church_turing_thesis
+  - first_order_theory
+  - formal_proof_system
+  - consistent_theory
+  - syntactically_complete_theory
+  - natural_numbers
+  - godel_numbering
+  - hilbert_program
+  - first_incompleteness_theorem
+  - second_incompleteness_theorem

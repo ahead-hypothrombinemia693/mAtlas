@@ -1,0 +1,75 @@
+id: quantum-states-measurement-entanglement
+title: Quantum states, measurement, and entanglement
+summary: Trace the operational structure of quantum theory from states and
+  observables through measurement, composite systems, Bell tests, and
+  decoherence.
+narrative: Pure states, mixed states, wavefunctions, and density operators are
+  related but not interchangeable descriptions. Observables and the Born rule
+  connect states to probabilities; unitary evolution and superposition govern
+  isolated dynamics. Tensor products introduce composite systems and
+  entanglement, EPR sharpens the locality problem, Bell turns it into a theorem,
+  experiments test the inequalities, and partial trace plus decoherence explain
+  the emergence of reduced mixed states without by itself selecting an
+  interpretation.
+tags:
+  - Physics
+  - Quantum mechanics
+  - Measurement
+  - Entanglement
+featured: true
+settings:
+  fields:
+    - mathematics
+    - physics
+  domains:
+    - analysis
+    - physical-foundations
+    - quantum-mechanics
+    - experiments-observations
+  edgeTypes:
+    - mathematical-formulation
+    - framework-specialization
+    - quantization
+    - theory-component
+    - describes-governs
+    - composition
+    - classification
+    - state-description
+    - transformation-process
+    - mathematical-limit
+    - effective-theory
+    - emergence
+    - couples-interacts
+    - model-realization
+    - historically-motivated
+    - experimentally-verified-by
+    - theorem-implication
+  crossFieldVisibility: contextual
+  edgeLabels: true
+  junctions: false
+  edgeZoomActivation: true
+  layout: atlas
+nodeSequence:
+  - quantum_system
+  - quantum_state
+  - pure_quantum_state
+  - mixed_quantum_state
+  - wavefunction
+  - density_operator
+  - quantum_observable
+  - born_rule
+  - quantum_measurement
+  - unitary_time_evolution
+  - quantum_superposition
+  - tensor_product_hilbert_space
+  - quantum_entanglement
+  - epr_argument
+  - bell_theorem
+  - bell_test_experiments
+  - partial_trace
+  - quantum_decoherence
+  - single_particle_double_slit_experiments
+  - fullerene_matter_wave_interference
+  - hong_ou_mandel_experiment
+  - cavity_qed_decoherence_experiments
+  - stern_gerlach_experiment

@@ -1,0 +1,609 @@
+nodes:
+- id: fine_structure_constant
+  label: Fine-structure constant
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: electromagnetism
+  domains:
+  - electromagnetism
+  level: 5
+  kind: structure
+  conceptType: Dimensionless coupling
+  summary: The dimensionless electromagnetic coupling $\alpha=e^2/(4\pi\varepsilon_0\hbar c)$ in SI conventions, whose renormalized value runs with energy.
+  citations:
+  - wp-physics-fine_structure_constant
+  - nist-codata
+  - pdg-rpp
+- id: classical_electromagnetism
+  label: Classical electromagnetism
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: electromagnetism
+  domains:
+  - electromagnetism
+  level: 11
+  kind: structure
+  conceptType: Classical field theory
+  summary: The classical theory of electric and magnetic fields, charges, currents, radiation, and their Maxwell–Lorentz dynamics.
+  citations:
+  - wp-physics-classical_electromagnetism
+  - nlab-physics-classical_electromagnetism
+  - tong-em
+- id: electric_four_current
+  label: Electric four-current
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: electromagnetism
+  domains:
+  - electromagnetism
+  level: 12
+  kind: structure
+  conceptType: Conserved current
+  summary: The four-vector $J^\mu=(c\rho,\mathbf J)$ combining charge density and electric current and sourcing Maxwell equations.
+  citations:
+  - wp-physics-electric_four_current
+  - tong-em
+- id: electromagnetic_field
+  label: Electromagnetic field
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: electromagnetism
+  domains:
+  - electromagnetism
+  level: 12
+  kind: structure
+  conceptType: Classical field
+  summary: The antisymmetric field-strength tensor $F_{\mu\nu}$, or equivalently electric and magnetic fields relative to an observer.
+  citations:
+  - wp-physics-electromagnetic_field
+  - nlab-physics-electromagnetic_field
+  - tong-em
+- id: electromagnetic_four_potential
+  label: Electromagnetic four-potential
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: electromagnetism
+  domains:
+  - electromagnetism
+  level: 12
+  kind: structure
+  conceptType: Gauge potential
+  summary: A spacetime one-form $A_\mu$ whose exterior derivative or curl is the electromagnetic field strength; gauge-related potentials represent the same local field strength.
+  citations:
+  - wp-physics-electromagnetic_four_potential
+  - nlab-physics-electromagnetic_four_potential
+  - tong-em
+  - tong-qft
+- id: electric_field
+  label: Electric field
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: electromagnetism
+  domains:
+  - electromagnetism
+  level: 13
+  kind: structure
+  conceptType: Classical field component
+  summary: The force-per-unit-charge field and time–space part of the electromagnetic field relative to an observer.
+  citations:
+  - wp-physics-electric_field
+  - tong-em
+- id: magnetic_field
+  label: Magnetic field
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: electromagnetism
+  domains:
+  - electromagnetism
+  level: 13
+  kind: structure
+  conceptType: Classical field component
+  summary: The spatial rotational part of the electromagnetic field relative to an observer, coupling to moving charges and magnetic moments.
+  citations:
+  - wp-physics-magnetic_field
+  - tong-em
+- id: maxwell_equations
+  label: Maxwell equations
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: electromagnetism
+  domains:
+  - electromagnetism
+  level: 13
+  kind: structure
+  conceptType: Physical laws
+  summary: The differential equations relating electric and magnetic fields to charge and current and governing electromagnetic induction and radiation.
+  citations:
+  - wp-physics-maxwell_equations
+  - nlab-physics-maxwell_equations
+  - tong-em
+- id: electrostatics
+  label: Electrostatics
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: electromagnetism
+  domains:
+  - electromagnetism
+  level: 14
+  kind: structure
+  conceptType: Controlled regime
+  summary: The approximately time-independent regime of classical electromagnetism for stationary charges.
+  citations:
+  - wp-physics-electrostatics
+  - tong-em
+- id: lorentz_force
+  label: Lorentz force law
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: electromagnetism
+  domains:
+  - electromagnetism
+  level: 14
+  kind: structure
+  conceptType: Physical law
+  summary: The classical force $q(\mathbf E+\mathbf v\times\mathbf B)$ on a point charge, or its covariant four-force form.
+  citations:
+  - wp-physics-lorentz_force
+  - tong-em
+- id: coulomb_law
+  label: Coulomb law
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: electromagnetism
+  domains:
+  - electromagnetism
+  level: 15
+  kind: structure
+  conceptType: Physical law
+  summary: The inverse-square electrostatic force or potential between ideal point charges in vacuum.
+  citations:
+  - wp-physics-coulomb_law
+  - nlab-physics-coulomb_law
+  - tong-em
+  - nist-codata
+- id: coulomb_potential
+  label: Coulomb potential
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: electromagnetism
+  domains:
+  - electromagnetism
+  level: 16
+  kind: structure
+  conceptType: Interaction potential
+  summary: The electrostatic interaction potential energy $V(r)=q_1q_2/(4\pi\varepsilon_0 r)$ used in nonrelativistic charged-particle Hamiltonians.
+  citations:
+  - wp-physics-coulomb_potential
+  - tong-em
+  - nist-codata
+- id: electromagnetic_wave
+  label: Electromagnetic wave
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: electromagnetism
+  domains:
+  - electromagnetism
+  level: 14
+  kind: structure
+  conceptType: Classical field solution
+  summary: A propagating solution of Maxwell’s equations in which electric and magnetic fields vary together and carry energy and momentum.
+  citations:
+  - wp-physics-electromagnetic_wave
+  - nlab-physics-electromagnetic_wave
+  - tong-em
+- id: electromagnetic_radiation
+  label: Electromagnetic radiation
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: electromagnetism
+  domains:
+  - electromagnetism
+  - quantum-field-theory
+  - atomic-molecular-physics
+  level: 15
+  kind: structure
+  conceptType: Field state / phenomenon
+  summary: Energy and momentum carried by propagating electromagnetic fields. Classical radiation is described by Maxwell fields; quantum radiation is described by photon-field states that need not have a definite photon number.
+  citations:
+  - wp-physics-electromagnetic_radiation
+  - nlab-physics-electromagnetic_radiation
+  - tong-em
+  - tong-qft
+- id: young_double_slit_experiment
+  label: Young’s double-slit experiment
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: electromagnetism
+  domains:
+  - electromagnetism
+  - experiments-observations
+  level: 11
+  kind: structure
+  conceptType: Canonical experiment
+  summary: Young’s early nineteenth-century interference experiment showed that light intensities form fringes when coherent paths overlap, providing strong evidence for a wave description of light.
+  citations:
+  - wp-physics-young_double_slit_experiment
+  - young-original
+  status: Observed / performed
+  sections:
+  - title: Scope
+    body: This historical optical experiment is distinct from later single-particle double-slit experiments in quantum mechanics.
+- id: oersted_compass_experiment
+  label: Ørsted’s compass experiment
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: electromagnetism
+  domains:
+  - electromagnetism
+  - experiments-observations
+  level: 11
+  kind: structure
+  conceptType: Canonical experiment
+  summary: Ørsted observed in 1820 that an electric current deflects a nearby compass needle, establishing an empirical link between electricity and magnetism.
+  citations:
+  - wp-physics-oersted_compass_experiment
+  - aps-oersted
+  status: Observed / performed
+- id: faraday_induction_experiments
+  label: Faraday’s induction experiments
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: electromagnetism
+  domains:
+  - electromagnetism
+  - experiments-observations
+  level: 12
+  kind: structure
+  conceptType: Canonical experiment
+  summary: Faraday’s 1831 experiments showed that changing magnetic flux induces an electromotive effect and introduced field-based patterns that Maxwell later mathematized.
+  citations:
+  - wp-physics-faraday_induction_experiments
+  - royal-institution-faraday
+  status: Observed / performed
+- id: hertz_electromagnetic_wave_experiments
+  label: Hertz electromagnetic-wave experiments
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: electromagnetism
+  domains:
+  - electromagnetism
+  - experiments-observations
+  level: 15
+  kind: structure
+  conceptType: Canonical experiment
+  summary: Hertz generated and detected radio-frequency electromagnetic waves in the late 1880s, confirming central wave predictions of Maxwellian electrodynamics.
+  citations:
+  - wp-physics-hertz_electromagnetic_wave_experiments
+  - aps-hertz
+  - tong-em
+  status: Observed / performed
+edges:
+- id: em_to_field
+  source: electromagnetic_field
+  target: classical_electromagnetism
+  type: theory-component
+  label: dynamical field
+  detail: The electromagnetic field is the dynamical field of classical electromagnetism.
+  citations:
+  - wp-physics-electromagnetic_field
+  - wp-physics-classical_electromagnetism
+- id: em_to_electrostatics
+  source: classical_electromagnetism
+  target: electrostatics
+  type: mathematical-limit
+  label: stationary-source regime
+  detail: Electrostatics neglects time dependence and induction/radiation effects for stationary or quasistatic configurations.
+  citations:
+  - wp-physics-electrostatics
+  - tong-em
+  - wp-physics-classical_electromagnetism
+  - nlab-physics-classical_electromagnetism
+- id: em_contains_lorentz_force
+  source: lorentz_force
+  target: classical_electromagnetism
+  type: theory-component
+  label: particle force law
+  detail: The Lorentz force law supplies the classical charged-particle equation within Maxwell–Lorentz electrodynamics.
+  citations:
+  - wp-physics-lorentz_force
+  - wp-physics-classical_electromagnetism
+- id: em_contains_maxwell
+  source: maxwell_equations
+  target: classical_electromagnetism
+  type: theory-component
+  label: field equations
+  detail: Maxwell equations supply the field equations of classical electromagnetism.
+  citations:
+  - wp-physics-maxwell_equations
+  - wp-physics-classical_electromagnetism
+- id: coulomb_law_to_potential
+  source: coulomb_law
+  target: coulomb_potential
+  type: representation-equivalence
+  label: potential representation
+  detail: The Coulomb force derives from the $1/r$ electrostatic potential.
+  citations:
+  - wp-physics-coulomb_potential
+  - tong-em
+  - wp-physics-coulomb_law
+  - nlab-physics-coulomb_law
+- id: coulomb_to_diraccoulomb
+  source: coulomb_potential
+  target: dirac_coulomb_hamiltonian
+  type: theory-component
+  label: instantaneous Coulomb terms
+  detail: The many-electron Dirac–Coulomb model retains pairwise Coulomb interaction.
+  citations:
+  - wp-physics-relativistic_atomic_structure
+  - nist-atomic-spectroscopy
+  - wp-physics-coulomb_potential
+  - tong-em
+- id: coulomb_to_ee
+  source: coulomb_potential
+  target: electron_electron_coulomb_interaction
+  type: framework-specialization
+  label: electron repulsion term
+  detail: The electron–electron term is pairwise Coulomb repulsion in the leading nonrelativistic Hamiltonian.
+  citations:
+  - wp-physics-coulomb_potential
+  - tong-em
+  - nist-codata
+  - wp-physics-electron_electron_coulomb_interaction
+  - nist-atomic-spectroscopy
+  - nist-atomic-wavefunctions
+- id: coulomb_to_enucleus
+  source: coulomb_potential
+  target: electron_nucleus_coulomb_interaction
+  type: framework-specialization
+  label: attractive electron–nucleus term
+  detail: The electron–nucleus term is a Coulomb interaction with the nuclear charge distribution.
+  citations:
+  - wp-physics-coulomb_potential
+  - tong-em
+  - nist-codata
+  - wp-physics-electron_nucleus_coulomb_interaction
+  - nist-atomic-spectroscopy
+  - tong-quantum
+- id: coulombpotential_to_coulomb_h
+  source: coulomb_potential
+  target: nonrelativistic_coulomb_hamiltonian
+  type: theory-component
+  label: pairwise Coulomb terms
+  detail: Electron–nucleus attraction and electron–electron repulsion enter as Coulomb potentials.
+  citations:
+  - wp-physics-atomic_hamiltonian
+  - nist-atomic-spectroscopy
+  - wp-physics-coulomb_potential
+  - tong-em
+- id: electric_to_stark
+  source: electric_field
+  target: stark_effect
+  type: couples-interacts
+  label: external electric perturbation
+  detail: An applied electric field polarizes the atom and shifts or splits levels.
+  citations:
+  - wp-physics-stark_effect
+  - nist-atomic-spectroscopy
+  - wp-physics-electric_field
+  - tong-em
+- id: current_to_maxwell
+  source: electric_four_current
+  target: maxwell_equations
+  type: theory-component
+  label: electromagnetic source current
+  detail: Charge and current form the conserved source in Maxwell equations.
+  citations:
+  - wp-physics-electric_four_current
+  - tong-em
+  - wp-physics-maxwell_equations
+  - nlab-physics-maxwell_equations
+- id: field_to_electric
+  source: electromagnetic_field
+  target: electric_field
+  type: state-description
+  label: observer-relative electric field
+  detail: An observer decomposes the electromagnetic field into electric and magnetic components.
+  citations:
+  - wp-physics-electric_field
+  - tong-em
+  - wp-physics-electromagnetic_field
+  - nlab-physics-electromagnetic_field
+- id: field_to_magnetic
+  source: electromagnetic_field
+  target: magnetic_field
+  type: state-description
+  label: observer-relative magnetic field
+  detail: An observer decomposes the electromagnetic field into electric and magnetic components.
+  citations:
+  - wp-physics-magnetic_field
+  - tong-em
+  - wp-physics-electromagnetic_field
+  - nlab-physics-electromagnetic_field
+- id: emfield_to_potential
+  source: electromagnetic_four_potential
+  target: electromagnetic_field
+  type: canonical-construction
+  label: field strength $F=dA$
+  detail: Locally, the electromagnetic field strength is the exterior derivative of the four-potential; global topology may require multiple gauge patches.
+  citations:
+  - wp-physics-electromagnetic_four_potential
+  - nlab-physics-electromagnetic_four_potential
+  - tong-em
+  - tong-qft
+  - wp-physics-electromagnetic_field
+  - nlab-physics-electromagnetic_field
+- id: electrostatics_to_coulomb
+  source: electrostatics
+  target: coulomb_law
+  type: framework-specialization
+  label: point-charge law
+  detail: Coulomb’s law is the vacuum point-charge solution of electrostatics.
+  citations:
+  - wp-physics-coulomb_law
+  - nlab-physics-coulomb_law
+  - wp-physics-electrostatics
+  - tong-em
+- id: finealpha_to_qed
+  source: fine_structure_constant
+  target: quantum_electrodynamics
+  type: theory-component
+  label: electromagnetic coupling
+  detail: The fine-structure constant is the low-energy dimensionless coupling controlling QED perturbation theory.
+  citations:
+  - wp-physics-fine_structure_constant
+  - nist-codata
+  - pdg-rpp
+  - wp-physics-quantum_electrodynamics
+  - nlab-physics-quantum_electrodynamics
+  - tong-qft
+  - nobel-qed
+- id: magnetic_to_zeeman
+  source: magnetic_field
+  target: zeeman_effect
+  type: couples-interacts
+  label: external magnetic perturbation
+  detail: An applied magnetic field couples to atomic magnetic moments and splits levels.
+  citations:
+  - wp-physics-zeeman_effect
+  - nist-atomic-spectroscopy
+  - wp-physics-magnetic_field
+  - tong-em
+- id: maxwell_governs_field
+  source: maxwell_equations
+  target: electromagnetic_field
+  type: describes-governs
+  label: Maxwell dynamics
+  detail: Maxwell equations govern the electromagnetic field with specified sources.
+  citations:
+  - wp-physics-maxwell_equations
+  - nlab-physics-maxwell_equations
+  - wp-physics-electromagnetic_field
+  - nlab-physics-electromagnetic_field
+- id: electriccurrent_to_continuity
+  source: electric_four_current
+  target: continuity_equation
+  type: theorem-implication
+  label: charge conservation
+  detail: Electric charge conservation requires $\partial_\mu j^\mu=0$, consistently with Maxwell’s equations.
+  citations:
+  - tong-em
+  - wp-physics-electric_four_current
+- id: maxwell_to_emwave
+  source: maxwell_equations
+  target: electromagnetic_wave
+  type: theorem-implication
+  label: wave solutions
+  detail: In source-free regions, Maxwell’s equations imply wave equations for the propagating transverse electromagnetic degrees of freedom.
+  citations:
+  - wp-physics-electromagnetic_wave
+  - nlab-physics-electromagnetic_wave
+- id: emfield_to_emwave
+  source: electromagnetic_field
+  target: electromagnetic_wave
+  type: state-description
+  label: propagating field configuration
+  detail: An electromagnetic wave is a propagating field configuration, not a distinct material constituent.
+  citations:
+  - wp-physics-electromagnetic_wave
+  - nlab-physics-electromagnetic_wave
+- id: emwave_to_radiation
+  source: electromagnetic_wave
+  target: electromagnetic_radiation
+  type: framework-specialization
+  label: classical radiation field
+  detail: Classical electromagnetic radiation is represented by outgoing or propagating Maxwell-wave solutions.
+  citations:
+  - wp-physics-electromagnetic_radiation
+  - nlab-physics-electromagnetic_radiation
+- id: hist_young_double_slit_experiment_to_electromagnetic_wave
+  source: young_double_slit_experiment
+  target: electromagnetic_wave
+  type: historically-motivated
+  label: optical interference
+  detail: Young’s fringes helped establish wave optics, later incorporated into the electromagnetic-wave theory of light.
+  citations:
+  - wp-physics-young_double_slit_experiment
+  - young-original
+- id: hist_oersted_compass_experiment_to_classical_electromagnetism
+  source: oersted_compass_experiment
+  target: classical_electromagnetism
+  type: historically-motivated
+  label: electric current affects magnetism
+  detail: Ørsted’s result showed that electricity and magnetism were dynamically connected and launched the experimental program culminating in classical electromagnetism.
+  citations:
+  - wp-physics-oersted_compass_experiment
+  - aps-oersted
+- id: hist_faraday_induction_experiments_to_electromagnetic_field
+  source: faraday_induction_experiments
+  target: electromagnetic_field
+  type: historically-motivated
+  label: field lines and induction
+  detail: Faraday’s induction and field-line experiments supplied the physical concepts that Maxwell recast into field equations.
+  citations:
+  - wp-physics-faraday_induction_experiments
+  - royal-institution-faraday
+- id: hist_faraday_induction_experiments_to_maxwell_equations
+  source: faraday_induction_experiments
+  target: maxwell_equations
+  type: historically-motivated
+  label: induction law
+  detail: Maxwell’s equations incorporated and generalized Faraday’s empirical induction law.
+  citations:
+  - wp-physics-faraday_induction_experiments
+  - royal-institution-faraday
+- id: exp_maxwell_equations_by_hertz_electromagnetic_wave_experiments
+  source: maxwell_equations
+  target: hertz_electromagnetic_wave_experiments
+  type: experimentally-verified-by
+  label: generated and detected electromagnetic waves
+  detail: Hertz observed reflection, interference, polarization, and finite-speed propagation consistent with Maxwellian electromagnetic waves.
+  citations:
+  - wp-physics-hertz_electromagnetic_wave_experiments
+  - aps-hertz
+  - tong-em
+- id: exp_classical_electromagnetism_by_hertz_electromagnetic_wave_experiments
+  source: classical_electromagnetism
+  target: hertz_electromagnetic_wave_experiments
+  type: experimentally-verified-by
+  label: radio-wave realization
+  detail: The experiments established electromagnetic radiation as a physical field phenomenon.
+  citations:
+  - wp-physics-hertz_electromagnetic_wave_experiments
+  - aps-hertz
+  - tong-em
+- id: exp_electromagnetic_four_potential_by_aharonov_bohm_interference_experiments
+  source: electromagnetic_four_potential
+  target: aharonov_bohm_interference_experiments
+  type: experimentally-verified-by
+  label: gauge-invariant loop phase
+  detail: The measured phase depends on enclosed flux, represented by a Wilson-loop or line-integral phase of the potential.
+  citations:
+  - wp-physics-aharonov_bohm_interference_experiments
+  - aharonov-bohm-experiment
+- id: exp_fine_structure_constant_by_electron_g_minus_2_measurements
+  source: fine_structure_constant
+  target: electron_g_minus_2_measurements
+  type: experimentally-verified-by
+  label: precision coupling determination
+  detail: The anomaly measurement and QED series provide a leading determination and consistency test of $\alpha$.
+  citations:
+  - wp-physics-electron_g_minus_2_measurements
+  - nist-codata-2022

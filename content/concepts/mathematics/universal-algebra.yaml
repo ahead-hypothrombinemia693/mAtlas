@@ -1,0 +1,217 @@
+nodes:
+- id: algebraic_signature
+  label: Algebraic signature
+  primaryDomain: universal-algebra
+  domains:
+  - universal-algebra
+  - logic
+  - foundation
+  level: 2
+  kind: structure
+  summary: A signature containing operation symbols with specified arities and no relation symbols.
+  carriers:
+  - set of operation symbols
+  data:
+  - arity for each symbol
+  axioms: []
+  induces: []
+  notes: ''
+  citations:
+  - wp-signature-logic
+  - nlab-algebraic-theory
+  - burris-universal-algebra
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: quasigroup
+  label: Quasigroup
+  primaryDomain: universal-algebra
+  domains:
+  - universal-algebra
+  - algebra
+  level: 3
+  kind: structure
+  summary: A magma in which left and right division equations have unique solutions.
+  carriers:
+  - set $Q$
+  data:
+  - binary operation
+  axioms:
+  - left and right translations are bijections
+  induces: []
+  notes: ''
+  citations:
+  - wp-quasigroup
+  - nlab-quasigroup
+  - burris-universal-algebra
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: j_universal_algebra
+  label: signature + carrier operations
+  primaryDomain: universal-algebra
+  domains:
+  - universal-algebra
+  - logic
+  - foundation
+  level: 3
+  kind: junction
+  summary: Interpret an algebraic signature by operations on one carrier set.
+  carriers: []
+  data: []
+  axioms: []
+  induces: []
+  notes: 'Construction junction: the signature and carrier are jointly required.'
+  citations:
+  - wp-universal-algebra
+  - nlab-universal-algebra
+  - nlab-algebraic-theory
+  - burris-universal-algebra
+  combination:
+    inputs:
+    - algebraic_signature
+    - set
+    compatibility: Use a nonempty carrier $A$ and, for each $n$-ary operation symbol, choose an operation $A^{n}\to A$.
+    output: universal_algebra
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: universal_algebra
+  label: Algebra for a finitary signature ($\Omega$-algebra)
+  primaryDomain: universal-algebra
+  domains:
+  - universal-algebra
+  - algebra
+  - logic
+  level: 4
+  kind: structure
+  summary: A nonempty set interpreting each operation symbol of a fixed finitary algebraic signature.
+  carriers:
+  - nonempty set $A$
+  - finitary algebraic signature $\Omega$
+  data:
+  - an operation $A^{n}\to A$ for each $n$-ary symbol
+  axioms: []
+  induces: []
+  notes: “Universal algebra” is the subject; an individual object is an algebra for a signature, often called an $\Omega$-algebra. This atlas adopts the common nonempty-carrier convention.
+  citations:
+  - wp-universal-algebra
+  - nlab-universal-algebra
+  - burris-universal-algebra
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: loop
+  label: Loop
+  primaryDomain: universal-algebra
+  domains:
+  - universal-algebra
+  - algebra
+  level: 4
+  kind: structure
+  summary: A quasigroup with a two-sided identity element.
+  carriers:
+  - quasigroup $Q$
+  data:
+  - identity element
+  axioms:
+  - two-sided identity
+  induces: []
+  notes: A two-sided identity in a quasigroup, if it exists, is unique.
+  citations:
+  - wp-loop
+  - burris-universal-algebra
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: rack
+  label: Rack
+  primaryDomain: universal-algebra
+  domains:
+  - universal-algebra
+  - algebra
+  - algebraic-topology
+  level: 4
+  kind: structure
+  summary: A set with a self-distributive operation whose right translations are bijective.
+  carriers:
+  - set $X$
+  data:
+  - binary operation $\triangleright$
+  axioms:
+  - right self-distributivity
+  - bijective right translations
+  induces: []
+  notes: ''
+  citations:
+  - wp-rack
+  - nlab-rack
+  - burris-universal-algebra
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: quandle
+  label: Quandle
+  primaryDomain: universal-algebra
+  domains:
+  - universal-algebra
+  - algebra
+  - algebraic-topology
+  level: 5
+  kind: structure
+  summary: An idempotent rack, important in knot invariants.
+  carriers:
+  - rack $X$
+  data: []
+  axioms:
+  - $x\triangleright x=x$
+  induces: []
+  notes: ''
+  citations:
+  - wp-quandle
+  - nlab-quandle
+  - burris-universal-algebra
+  primaryField: mathematics
+  fields:
+  - mathematics
+edges:
+- id: algebraic_signature_to_j_universal
+  source: algebraic_signature
+  target: j_universal_algebra
+  type: combine-compatible
+  label: operation signature
+  detail: Supply the operation symbols and their arities.
+  citations:
+  - nlab-algebraic-theory
+  - wp-universal-algebra
+  - nlab-universal-algebra
+  - burris-universal-algebra
+- id: j_universal_to_algebra
+  source: j_universal_algebra
+  target: universal_algebra
+  type: combine-compatible
+  label: interpret every operation symbol
+  detail: Choose operations of the required arities on the carrier.
+  citations:
+  - wp-universal-algebra
+  - nlab-universal-algebra
+  - burris-universal-algebra
+- id: e_quasigroup_loop
+  source: quasigroup
+  target: loop
+  type: impose-axiom
+  label: require an identity
+  detail: Select quasigroups with a two-sided identity; it is then unique.
+  citations:
+  - wp-loop
+  - burris-universal-algebra
+- id: e_rack_quandle
+  source: rack
+  target: quandle
+  type: impose-axiom
+  label: + idempotence
+  detail: Require $x\triangleright x=x$.
+  citations:
+  - wp-quandle
+  - nlab-quandle
+  - burris-universal-algebra

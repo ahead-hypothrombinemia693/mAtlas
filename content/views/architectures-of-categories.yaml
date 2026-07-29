@@ -1,0 +1,70 @@
+id: architectures-of-categories
+title: Architectures of category theory
+summary: Explore the basic language of functors, natural transformations,
+  universal constructions, and the major structural families of categories.
+narrative: Categories organize objects and transformations; functors transport
+  structure and natural transformations compare transports. Limits, colimits,
+  and adjunctions express universal constructions. From this common language
+  branch cartesian and closed categories, monoidal and dagger categories,
+  additive and abelian categories, exact and derived settings, and sheaf/topos
+  architectures. The Story emphasizes that these are distinct enrichments and
+  axiomatizations rather than a single linear hierarchy.
+tags:
+  - Mathematics
+  - Category theory
+  - Universal properties
+  - Structures
+settings:
+  fields:
+    - mathematics
+  domains:
+    - category-theory
+    - homological-algebra
+    - algebraic-geometry
+    - algebra
+  edgeTypes:
+    - add-data
+    - impose-axiom
+    - induced-forgotten
+    - canonical-construction
+    - quotient-construction
+    - canonical-embedding
+    - combine-compatible
+    - representation-equivalence
+    - theorem-implication
+    - classification
+    - mathematical-formulation
+    - framework-specialization
+  crossFieldVisibility: hidden
+  edgeLabels: true
+  junctions: false
+  edgeZoomActivation: true
+  layout: atlas
+nodeSequence:
+  - category
+  - functor
+  - natural_transformation
+  - categorical_limit
+  - categorical_colimit
+  - adjunction
+  - cartesian_category
+  - finitely_complete_category
+  - cartesian_closed_category
+  - monoidal_category
+  - braided_monoidal_category
+  - symmetric_monoidal_category
+  - closed_monoidal_category
+  - compact_closed_category
+  - dagger_category
+  - preadditive_category
+  - additive_category
+  - abelian_category
+  - exact_category
+  - triangulated_category
+  - dg_category
+  - derived_category
+  - presheaf
+  - site
+  - sheaf
+  - elementary_topos
+  - grothendieck_topos

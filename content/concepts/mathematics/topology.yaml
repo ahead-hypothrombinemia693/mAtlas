@@ -1,0 +1,1805 @@
+nodes:
+- id: topological_space
+  label: Topological space
+  level: 1
+  kind: structure
+  summary: A set with a specified family of open subsets.
+  carriers:
+  - set $X$
+  data:
+  - topology $\tau\subseteq\mathcal P(X)$
+  axioms:
+  - $\varnothing$ and $X$ open
+  - arbitrary unions open
+  - finite intersections open
+  induces: []
+  notes: ''
+  citations:
+  - wp-top-space
+  - nlab-top-space
+  - stacks-topology
+  - topology-without-tears
+  primaryDomain: topology
+  domains:
+  - topology
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: compact_space
+  label: Compact space
+  level: 2
+  kind: structure
+  summary: A topological space in which every open cover has a finite subcover.
+  carriers:
+  - topological space $X$
+  data:
+  - existing topology
+  axioms:
+  - compactness
+  induces: []
+  notes: ''
+  citations:
+  - wp-compact
+  - topology-without-tears
+  primaryDomain: topology
+  domains:
+  - topology
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: locally_euclidean_space
+  label: Locally Euclidean space
+  level: 2
+  kind: structure
+  summary: A topological space locally homeomorphic to Euclidean space.
+  carriers:
+  - topological space $X$
+  data: []
+  axioms:
+  - each point has a neighborhood homeomorphic to an open subset of $\mathbb R^n$
+  induces: []
+  notes: No atlas is chosen at this node; local Euclidean charts are witnesses to a property of the topology. Dimension is normally fixed on each connected component.
+  citations:
+  - wp-locally-euclidean
+  - topology-without-tears
+  primaryDomain: topology
+  domains:
+  - topology
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: pseudometric_space
+  label: Pseudometric space
+  level: 2
+  kind: structure
+  summary: A set with a distance-like function that may assign zero distance to distinct points.
+  carriers:
+  - set $X$
+  data:
+  - $d\colon X\times X\to[0,\infty)$
+  axioms:
+  - symmetry
+  - triangle inequality
+  - $d(x,x)=0$
+  induces:
+  - Topology
+  - uniformity
+  notes: ''
+  citations:
+  - wp-pseudometric
+  - topology-without-tears
+  primaryDomain: topology
+  domains:
+  - topology
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: second_countable_space
+  label: Second-countable space
+  level: 2
+  kind: structure
+  summary: A topological space with a countable base.
+  carriers:
+  - topological space $X$
+  data:
+  - existing topology
+  axioms:
+  - existence of a countable base
+  induces: []
+  notes: ''
+  citations:
+  - wp-second-countable
+  - topology-without-tears
+  primaryDomain: topology
+  domains:
+  - topology
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: t0_space
+  label: $T_0$ space
+  level: 2
+  kind: structure
+  summary: A topological space whose distinct points are topologically distinguishable.
+  carriers:
+  - topological space $X$
+  data:
+  - existing topology
+  axioms:
+  - Kolmogorov $T_{0}$ axiom
+  induces: []
+  notes: ''
+  citations:
+  - wp-separation
+  - topology-without-tears
+  primaryDomain: topology
+  domains:
+  - topology
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: uniform_space
+  label: Uniform space
+  level: 2
+  kind: structure
+  summary: A set with structure that compares neighborhoods of pairs of points uniformly.
+  carriers:
+  - set $X$
+  data:
+  - uniformity, often specified by entourages
+  axioms:
+  - uniformity axioms
+  induces:
+  - Topology
+  - notions of uniform continuity and Cauchy filters
+  notes: ''
+  citations:
+  - wp-uniform
+  - nlab-uniform
+  - topology-without-tears
+  primaryDomain: topology
+  domains:
+  - topology
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: connected_space
+  label: Connected space
+  primaryDomain: topology
+  domains:
+  - topology
+  level: 3
+  kind: structure
+  summary: A topological space not expressible as the union of two disjoint nonempty open sets.
+  carriers:
+  - topological space $X$
+  data: []
+  axioms:
+  - only clopen subsets are $\varnothing$ and $X$
+  induces: []
+  notes: ''
+  citations:
+  - wp-connected-space
+  - nlab-connected-space
+  - topology-without-tears
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: first_countable_space
+  label: First-countable space
+  primaryDomain: topology
+  domains:
+  - topology
+  level: 3
+  kind: structure
+  summary: A space whose every point has a countable neighborhood basis.
+  carriers:
+  - topological space $X$
+  data: []
+  axioms:
+  - countable local base at each point
+  induces: []
+  notes: ''
+  citations:
+  - wp-first-countable
+  - topology-without-tears
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: locally_compact_space
+  label: Locally compact space
+  level: 3
+  kind: structure
+  summary: A topological space locally modeled by compact neighborhoods; conventions vary outside Hausdorff spaces.
+  carriers:
+  - topological space $X$
+  data:
+  - existing topology
+  axioms:
+  - local compactness
+  induces: []
+  notes: The exact definition has convention-sensitive variants. The combined “locally compact Hausdorff” node avoids most ambiguity.
+  citations:
+  - wp-locally-compact
+  - topology-without-tears
+  primaryDomain: topology
+  domains:
+  - topology
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: metric_space
+  label: Metric space
+  level: 3
+  kind: structure
+  summary: A pseudometric space in which zero distance implies equality.
+  carriers:
+  - set $X$
+  data:
+  - metric $d$
+  axioms:
+  - pseudometric axioms
+  - $d(x,y)=0 \Rightarrow x=y$
+  induces:
+  - Topology
+  - uniformity
+  notes: ''
+  citations:
+  - wp-metric
+  - nlab-metric
+  - topology-without-tears
+  primaryDomain: topology
+  domains:
+  - topology
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: t1_space
+  label: $T_1$ space
+  level: 3
+  kind: structure
+  summary: A topological space in which singletons are closed.
+  carriers:
+  - topological space $X$
+  data:
+  - existing topology
+  axioms:
+  - $T_{1}$ separation axiom
+  induces: []
+  notes: ''
+  citations:
+  - wp-separation
+  - topology-without-tears
+  primaryDomain: topology
+  domains:
+  - topology
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: complete_metric_space
+  label: Complete metric space
+  level: 4
+  kind: structure
+  summary: A metric space in which every Cauchy sequence converges.
+  carriers:
+  - metric space $X$
+  data:
+  - existing metric
+  axioms:
+  - metric completeness
+  induces: []
+  notes: ''
+  citations:
+  - wp-complete-metric
+  - topology-without-tears
+  primaryDomain: topology
+  domains:
+  - topology
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: hausdorff_space
+  label: Hausdorff space
+  level: 4
+  kind: structure
+  summary: A topological space whose distinct points have disjoint neighborhoods.
+  carriers:
+  - topological space $X$
+  data:
+  - existing topology
+  axioms:
+  - Hausdorff $T_{2}$ axiom
+  induces: []
+  notes: ''
+  citations:
+  - wp-separation
+  - topology-without-tears
+  primaryDomain: topology
+  domains:
+  - topology
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: locally_connected_space
+  label: Locally connected space
+  primaryDomain: topology
+  domains:
+  - topology
+  level: 4
+  kind: structure
+  summary: A space with a basis of connected open sets.
+  carriers:
+  - topological space $X$
+  data: []
+  axioms:
+  - connected neighborhoods form a local base
+  induces: []
+  notes: ''
+  citations:
+  - wp-locally-connected
+  - topology-without-tears
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: j_top_semigroup
+  label: semigroup + topology
+  primaryDomain: topology
+  domains:
+  - topology
+  - algebra
+  level: 4
+  kind: junction
+  summary: Compatibility construction producing Topological semigroup.
+  carriers: []
+  data: []
+  axioms: []
+  induces: []
+  notes: All incoming branches are jointly required.
+  citations:
+  - wp-topological-semigroup
+  - nlab-topological-monoid
+  - topology-without-tears
+  combination:
+    inputs:
+    - semigroup
+    - topological_space
+    compatibility: Require the semigroup multiplication $S\times S\to S$ to be continuous.
+    output: topological_semigroup
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: separable_metric_space
+  label: Separable metric space
+  level: 4
+  kind: structure
+  summary: A metric space with a countable dense subset.
+  carriers:
+  - metric space $X$
+  data:
+  - existing metric
+  axioms:
+  - separability
+  induces: []
+  notes: ''
+  citations:
+  - wp-separable
+  - topology-without-tears
+  primaryDomain: topology
+  domains:
+  - topology
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: totally_disconnected_space
+  label: Totally disconnected space
+  primaryDomain: topology
+  domains:
+  - topology
+  level: 4
+  kind: structure
+  summary: A space whose connected components are singletons.
+  carriers:
+  - topological space $X$
+  data: []
+  axioms:
+  - only connected subsets with more than one point are absent
+  induces: []
+  notes: ''
+  citations:
+  - wp-totally-disconnected
+  - topology-without-tears
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: j_compact_hausdorff
+  label: compact + Hausdorff
+  level: 5
+  kind: junction
+  summary: Combine compactness and Hausdorff separation on one topology.
+  carriers: []
+  data: []
+  axioms: []
+  induces: []
+  notes: 'Construction junction: it is a visual device, not a separate standard mathematical structure.'
+  citations:
+  - wp-compact
+  - wp-separation
+  - topology-without-tears
+  combination:
+    inputs:
+    - compact_space
+    - hausdorff_space
+    compatibility: Both properties concern the same topological space and topology.
+    output: compact_hausdorff_space
+  primaryDomain: topology
+  domains:
+  - topology
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: j_compact_metric
+  label: compact + metric
+  level: 5
+  kind: junction
+  summary: Combine a metric topology with compactness.
+  carriers: []
+  data: []
+  axioms: []
+  induces: []
+  notes: 'Construction junction: it is a visual device, not a separate standard mathematical structure.'
+  citations:
+  - wp-compact-metric
+  - topology-without-tears
+  combination:
+    inputs:
+    - metric_space
+    - compact_space
+    compatibility: The compact topology is the topology induced by the metric.
+    output: compact_metric_space
+  primaryDomain: topology
+  domains:
+  - topology
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: j_top_group
+  label: group + topology
+  level: 5
+  kind: junction
+  summary: Put group and topological structure on the same carrier.
+  carriers: []
+  data: []
+  axioms: []
+  induces: []
+  notes: 'Construction junction: it is a visual device, not a separate standard mathematical structure.'
+  citations:
+  - wp-top-group
+  - nlab-top-group
+  - topology-without-tears
+  combination:
+    inputs:
+    - group
+    - topological_space
+    compatibility: Multiplication $G\times G\to G$ and inversion $G\to G$ are continuous.
+    output: topological_group
+  primaryDomain: topology
+  domains:
+  - topology
+  - algebra
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: j_lch
+  label: local compactness + Hausdorff
+  level: 5
+  kind: junction
+  summary: Combine local compactness with Hausdorff separation.
+  carriers: []
+  data: []
+  axioms: []
+  induces: []
+  notes: 'Construction junction: it is a visual device, not a separate standard mathematical structure.'
+  citations:
+  - wp-locally-compact
+  - wp-separation
+  - topology-without-tears
+  combination:
+    inputs:
+    - locally_compact_space
+    - hausdorff_space
+    compatibility: Both properties concern the same topology.
+    output: locally_compact_hausdorff_space
+  primaryDomain: topology
+  domains:
+  - topology
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: j_manifold
+  label: manifold compatibility
+  level: 5
+  kind: junction
+  summary: Combine local Euclidean structure, Hausdorff separation, and a countable base.
+  carriers: []
+  data: []
+  axioms: []
+  induces: []
+  notes: 'Construction junction: it is a visual device, not a separate standard mathematical structure.'
+  citations:
+  - wp-manifold
+  - topology-without-tears
+  combination:
+    inputs:
+    - locally_euclidean_space
+    - hausdorff_space
+    - second_countable_space
+    compatibility: All three conditions refer to one topology; local Euclidean dimension is usually fixed on each connected component.
+    output: topological_manifold
+  primaryDomain: topology
+  domains:
+  - topology
+  - differential-geometry
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: j_top_monoid
+  label: monoid + topology
+  primaryDomain: topology
+  domains:
+  - topology
+  - algebra
+  level: 5
+  kind: junction
+  summary: Compatibility construction producing Topological monoid.
+  carriers: []
+  data: []
+  axioms: []
+  induces: []
+  notes: All incoming branches are jointly required.
+  citations:
+  - wp-topological-semigroup
+  - nlab-topological-monoid
+  - topology-without-tears
+  combination:
+    inputs:
+    - monoid
+    - topological_space
+    compatibility: Require multiplication to be continuous; the identity is already part of the monoid.
+    output: topological_monoid
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: regular_space
+  label: Regular $T_1$ space
+  primaryDomain: topology
+  domains:
+  - topology
+  level: 5
+  kind: structure
+  summary: A $T_1$ space in which points and closed sets can be separated by neighborhoods.
+  carriers:
+  - $T_{1}$ space $X$
+  data: []
+  axioms:
+  - point–closed-set separation
+  induces: []
+  notes: ''
+  citations:
+  - wp-regular-space
+  - topology-without-tears
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: topological_semigroup
+  label: Topological semigroup
+  primaryDomain: topology
+  domains:
+  - topology
+  - algebra
+  level: 5
+  kind: structure
+  summary: A semigroup whose multiplication is continuous.
+  carriers:
+  - semigroup $S$
+  - topological space $S$
+  data: []
+  axioms:
+  - continuous multiplication
+  induces: []
+  notes: ''
+  citations:
+  - wp-topological-semigroup
+  - nlab-topological-monoid
+  - topology-without-tears
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: j_covering_space
+  label: topological spaces + covering map
+  primaryDomain: topology
+  domains:
+  - topology
+  - algebraic-topology
+  level: 5
+  kind: junction
+  summary: Combine topologies on total and base spaces with a projection satisfying the covering condition.
+  carriers: []
+  data: []
+  axioms: []
+  induces: []
+  notes: The topological-space input is instantiated for both $E$ and $B$.
+  citations:
+  - wp-covering-space
+  - nlab-covering-space
+  - topology-without-tears
+  combination:
+    inputs:
+    - topological_space
+    - function
+    compatibility: Give $E$ and $B$ topologies and a continuous surjection $p\colon E\to B$; require every $b\in B$ to have an open neighborhood $U$ such that $p^{-1}(U)$ is a disjoint union of open sets mapped homeomorphically onto $U$ by $p$.
+    output: covering_space
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: zero_dimensional_space
+  label: Zero-dimensional space
+  primaryDomain: topology
+  domains:
+  - topology
+  - order
+  level: 5
+  kind: structure
+  summary: A topological space with a basis of clopen sets.
+  carriers:
+  - topological space $X$
+  data: []
+  axioms:
+  - clopen basis
+  induces: []
+  notes: 'Convention: “zero-dimensional” means having a basis of clopen sets. Other dimension theories and separation assumptions can produce different formulations.'
+  citations:
+  - wp-zero-dimensional
+  - topology-without-tears
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: compact_hausdorff_space
+  label: Compact Hausdorff space
+  level: 6
+  kind: structure
+  summary: A topological space that is both compact and Hausdorff.
+  carriers:
+  - topological space $X$
+  data:
+  - one topology
+  axioms:
+  - compactness
+  - Hausdorff separation
+  induces: []
+  notes: ''
+  citations:
+  - wp-compact
+  - wp-separation
+  - topology-without-tears
+  primaryDomain: topology
+  domains:
+  - topology
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: compact_metric_space
+  label: Compact metric space
+  level: 6
+  kind: structure
+  summary: A metric space that is compact in its metric topology.
+  carriers:
+  - set $X$
+  data:
+  - metric $d$
+  axioms:
+  - metric axioms
+  - compactness of induced topology
+  induces: []
+  notes: ''
+  citations:
+  - wp-compact-metric
+  - topology-without-tears
+  primaryDomain: topology
+  domains:
+  - topology
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: locally_compact_hausdorff_space
+  label: Locally compact Hausdorff space
+  level: 6
+  kind: structure
+  summary: A Hausdorff space in which every point has a compact neighborhood.
+  carriers:
+  - topological space $X$
+  data:
+  - one topology
+  axioms:
+  - Hausdorff
+  - locally compact
+  induces: []
+  notes: ''
+  citations:
+  - wp-locally-compact
+  - topology-without-tears
+  primaryDomain: topology
+  domains:
+  - topology
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: normal_space
+  label: Normal $T_1$ space
+  primaryDomain: topology
+  domains:
+  - topology
+  level: 6
+  kind: structure
+  summary: A $T_1$ space in which disjoint closed sets have disjoint neighborhoods.
+  carriers:
+  - $T_{1}$ space $X$
+  data: []
+  axioms:
+  - closed-set separation
+  induces: []
+  notes: ''
+  citations:
+  - wp-normal-space
+  - topology-without-tears
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: polish_space
+  label: Polish space
+  level: 6
+  kind: structure
+  summary: A separable topological space admitting a compatible complete metric.
+  carriers:
+  - topological space $X$
+  data: []
+  axioms:
+  - separable
+  - admits a compatible complete metric
+  induces: []
+  notes: A Polish space is a topological space; a particular compatible complete metric is generally not part of the specified data.
+  citations:
+  - wp-polish
+  - topology-without-tears
+  primaryDomain: topology
+  domains:
+  - topology
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: topological_group
+  label: Topological group
+  level: 6
+  kind: structure
+  summary: A group whose operations are continuous.
+  carriers:
+  - set $G$
+  data:
+  - group structure
+  - topology
+  axioms:
+  - continuous multiplication
+  - continuous inversion
+  induces: []
+  notes: ''
+  citations:
+  - wp-top-group
+  - nlab-top-group
+  - topology-without-tears
+  primaryDomain: topology
+  domains:
+  - topology
+  - algebra
+  - algebraic-topology
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: topological_manifold
+  label: Topological manifold
+  level: 6
+  kind: structure
+  summary: A Hausdorff, second-countable, locally Euclidean space.
+  carriers:
+  - topological space $M$
+  data:
+  - topology
+  axioms:
+  - Hausdorff
+  - second-countable
+  - locally Euclidean
+  induces: []
+  notes: The manifold condition asserts existence of local Euclidean charts; a particular topological atlas is not additional structure. This atlas adopts the Hausdorff, second-countable convention.
+  citations:
+  - wp-manifold
+  - topology-without-tears
+  primaryDomain: topology
+  domains:
+  - topology
+  - differential-geometry
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: topological_monoid
+  label: Topological monoid
+  primaryDomain: topology
+  domains:
+  - topology
+  - algebra
+  - algebraic-topology
+  level: 6
+  kind: structure
+  summary: A monoid whose multiplication is continuous.
+  carriers:
+  - monoid $M$
+  - topological space $M$
+  data: []
+  axioms:
+  - continuous multiplication
+  induces: []
+  notes: ''
+  citations:
+  - wp-topological-semigroup
+  - nlab-topological-monoid
+  - topology-without-tears
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: j_fiber_bundle
+  label: topological spaces + locally trivial projection
+  primaryDomain: topology
+  domains:
+  - topology
+  - differential-geometry
+  level: 6
+  kind: junction
+  summary: Combine total/base topologies with a projection, a typical fiber, and local product trivializations.
+  carriers: []
+  data: []
+  axioms: []
+  induces: []
+  notes: The topological-space input is instantiated for total space $E$, base $B$, and typical fiber $F$.
+  citations:
+  - wp-fiber-bundle
+  - nlab-fiber-bundle
+  - topology-without-tears
+  combination:
+    inputs:
+    - topological_space
+    - function
+    compatibility: Give $E$, $B$, and $F$ topologies and a continuous projection $p\colon E\to B$; require an open cover of $B$ with homeomorphisms $\phi_U\colon p^{-1}(U)\to U\times F$ satisfying $\operatorname{pr}_1\circ\phi_U=p$.
+    output: fiber_bundle
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: tychonoff_space
+  label: Tychonoff space
+  primaryDomain: topology
+  domains:
+  - topology
+  - analysis
+  level: 6
+  kind: structure
+  summary: A completely regular Hausdorff space.
+  carriers:
+  - Hausdorff space $X$
+  data: []
+  axioms:
+  - points and closed sets separated by continuous real functions
+  induces: []
+  notes: ''
+  citations:
+  - wp-tychonoff
+  - topology-without-tears
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: fiber_bundle
+  label: Fiber bundle
+  primaryDomain: topology
+  domains:
+  - topology
+  - differential-geometry
+  level: 7
+  kind: structure
+  summary: A locally trivial projection $p\colon E\to B$ with typical fiber $F$.
+  carriers:
+  - total space $E$
+  - base $B$
+  - fiber $F$
+  data:
+  - projection $p:E\to B$
+  - local trivializations
+  axioms:
+  - local product form
+  induces: []
+  notes: A bundle specifies total space, base space, projection, typical fiber, and local trivializations; it is not structure on a single topological space alone.
+  citations:
+  - wp-fiber-bundle
+  - nlab-fiber-bundle
+  - topology-without-tears
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: j_top_ring
+  label: ring + topology
+  level: 8
+  kind: junction
+  summary: Put ring and topological structure on the same carrier.
+  carriers: []
+  data: []
+  axioms: []
+  induces: []
+  notes: 'Construction junction: it is a visual device, not a separate standard mathematical structure.'
+  citations:
+  - stacks-top-ring
+  - topology-without-tears
+  combination:
+    inputs:
+    - ring
+    - topological_space
+    compatibility: Require addition, additive inversion, and multiplication to be continuous on the same carrier and topology.
+    output: topological_ring
+  primaryDomain: topology
+  domains:
+  - topology
+  - algebra
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: topological_ring
+  label: Topological ring
+  level: 9
+  kind: structure
+  summary: A ring with a topology for which addition, multiplication, and additive inversion are continuous.
+  carriers:
+  - set $R$
+  data:
+  - ring structure
+  - topology
+  axioms:
+  - addition and multiplication are continuous
+  - additive inverse is continuous
+  induces: []
+  notes: ''
+  citations:
+  - stacks-top-ring
+  - topology-without-tears
+  primaryDomain: topology
+  domains:
+  - topology
+  - algebra
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: locale
+  label: Locale
+  primaryDomain: topology
+  domains:
+  - topology
+  - order
+  - category-theory
+  - logic
+  level: 10
+  kind: structure
+  summary: A point-free space represented contravariantly by a frame of opens.
+  carriers:
+  - frame $\Omega$
+  data:
+  - opposite-direction interpretation as opens
+  axioms: []
+  induces: []
+  notes: ''
+  citations:
+  - wp-locale
+  - nlab-locale
+  - topology-without-tears
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: j_top_field
+  label: field + topology
+  level: 11
+  kind: junction
+  summary: Put field and topological structure on the same carrier.
+  carriers: []
+  data: []
+  axioms: []
+  induces: []
+  notes: 'Construction junction: it is a visual device, not a separate standard mathematical structure.'
+  citations:
+  - wp-top-field
+  - topology-without-tears
+  combination:
+    inputs:
+    - field
+    - topological_space
+    compatibility: Addition, multiplication, additive inversion, and inversion on $F\setminus\{0\}$ are continuous.
+    output: topological_field
+  primaryDomain: topology
+  domains:
+  - topology
+  - algebra
+  - number-theory
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: topological_field
+  label: Topological field
+  level: 12
+  kind: structure
+  summary: A field with a topology making its additive group, multiplication, and nonzero inversion continuous.
+  carriers:
+  - set $F$
+  data:
+  - field structure
+  - topology
+  axioms:
+  - addition, multiplication, and additive inverse are continuous
+  - inversion $F\setminus\{0\}\to F\setminus\{0\}$ is continuous
+  induces: []
+  notes: ''
+  citations:
+  - wp-top-field
+  - topology-without-tears
+  primaryDomain: topology
+  domains:
+  - topology
+  - algebra
+  - number-theory
+  primaryField: mathematics
+  fields:
+  - mathematics
+edges:
+- id: compact_metric_to_complete
+  source: compact_metric_space
+  target: complete_metric_space
+  type: theorem-implication
+  label: is complete
+  detail: Every compact metric space is complete.
+  citations:
+  - wp-compact-metric
+  - wp-complete-metric
+  - topology-without-tears
+- id: compact_metric_to_separable
+  source: compact_metric_space
+  target: separable_metric_space
+  type: theorem-implication
+  label: is separable
+  detail: Every compact metric space has a countable dense subset.
+  citations:
+  - wp-compact-metric
+  - wp-separable
+  - topology-without-tears
+- id: e_compact_jch
+  source: compact_space
+  target: j_compact_hausdorff
+  type: combine-compatible
+  label: compactness
+  detail: Supply compactness.
+  citations:
+  - wp-compact
+  - topology-without-tears
+- id: e_compact_jcm
+  source: compact_space
+  target: j_compact_metric
+  type: combine-compatible
+  label: compactness
+  detail: Supply compactness of that topology.
+  citations:
+  - wp-compact-metric
+  - topology-without-tears
+- id: j_principal_bundle__fiber_bundle
+  source: fiber_bundle
+  target: j_principal_bundle
+  type: combine-compatible
+  label: locally trivial projection
+  detail: Supply the Fiber bundle structure as one jointly required input.
+  citations:
+  - wp-principal-bundle
+  - nlab-principal-bundle
+  - lee-smooth-manifolds
+- id: e_fiber_vector
+  source: fiber_bundle
+  target: vector_bundle
+  type: add-data
+  label: + linear fibers
+  detail: Give each fiber a vector-space structure with linear transition functions.
+  citations:
+  - wp-vector-bundle
+  - nlab-vector-bundle
+  - lee-smooth-manifolds
+- id: e_haus_jch
+  source: hausdorff_space
+  target: j_compact_hausdorff
+  type: combine-compatible
+  label: Hausdorff property
+  detail: Supply separation.
+  citations:
+  - wp-separation
+  - topology-without-tears
+- id: e_haus_jlch
+  source: hausdorff_space
+  target: j_lch
+  type: combine-compatible
+  label: Hausdorff property
+  detail: Supply Hausdorff separation.
+  citations:
+  - wp-separation
+  - topology-without-tears
+- id: e_haus_jman
+  source: hausdorff_space
+  target: j_manifold
+  type: combine-compatible
+  label: Hausdorff property
+  detail: Supply separation.
+  citations:
+  - wp-manifold
+  - topology-without-tears
+- id: e_haus_tych
+  source: hausdorff_space
+  target: tychonoff_space
+  type: impose-axiom
+  label: + complete regularity
+  detail: Require continuous real-valued functions to separate points and closed sets.
+  citations:
+  - wp-tychonoff
+  - topology-without-tears
+- id: e_jch_ch
+  source: j_compact_hausdorff
+  target: compact_hausdorff_space
+  type: combine-compatible
+  label: same topology
+  detail: Apply both properties to one topology.
+  citations:
+  - wp-compact
+  - wp-separation
+  - topology-without-tears
+- id: e_jcm_cm
+  source: j_compact_metric
+  target: compact_metric_space
+  type: combine-compatible
+  label: same topology
+  detail: Require the metric topology to be compact.
+  citations:
+  - wp-compact-metric
+  - topology-without-tears
+- id: j_covering_space__out
+  source: j_covering_space
+  target: covering_space
+  type: combine-compatible
+  label: impose local triviality
+  detail: Give $E$ and $B$ topologies and a continuous surjection $p\colon E\to B$; require every point of $B$ to have an evenly covered open neighborhood.
+  citations:
+  - wp-covering-space
+  - nlab-covering-space
+  - hatcher-algebraic-topology
+- id: j_fiber_bundle__out
+  source: j_fiber_bundle
+  target: fiber_bundle
+  type: combine-compatible
+  label: impose local triviality
+  detail: Give $E$, $B$, and $F$ topologies and a continuous projection $p\colon E\to B$; require local trivializations $p^{-1}(U)\cong U\times F$ that commute with projection to $U$.
+  citations:
+  - wp-fiber-bundle
+  - nlab-fiber-bundle
+  - topology-without-tears
+- id: e_jlch_lch
+  source: j_lch
+  target: locally_compact_hausdorff_space
+  type: combine-compatible
+  label: same topology
+  detail: Apply both properties to one topology.
+  citations:
+  - wp-locally-compact
+  - topology-without-tears
+- id: e_jman_man
+  source: j_manifold
+  target: topological_manifold
+  type: combine-compatible
+  label: same topology
+  detail: Impose all manifold conditions on one topology.
+  citations:
+  - wp-manifold
+  - topology-without-tears
+- id: e_jtf_tf
+  source: j_top_field
+  target: topological_field
+  type: combine-compatible
+  label: + continuous field operations
+  detail: Require addition, multiplication, additive inverse, and inversion on the nonzero locus to be continuous.
+  citations:
+  - wp-top-field
+  - topology-without-tears
+- id: e_jtg_tg
+  source: j_top_group
+  target: topological_group
+  type: combine-compatible
+  label: + continuity
+  detail: Require multiplication and inversion to be continuous.
+  citations:
+  - wp-top-group
+  - nlab-top-group
+  - topology-without-tears
+- id: j_top_monoid__out
+  source: j_top_monoid
+  target: topological_monoid
+  type: combine-compatible
+  label: impose compatibility
+  detail: Require multiplication to be continuous; the identity is already part of the monoid.
+  citations:
+  - wp-topological-semigroup
+  - nlab-topological-monoid
+  - topology-without-tears
+- id: e_jtr_tr
+  source: j_top_ring
+  target: topological_ring
+  type: combine-compatible
+  label: + continuous + and ·
+  detail: Require compatibility with the topology.
+  citations:
+  - stacks-top-ring
+  - topology-without-tears
+- id: j_top_semigroup__out
+  source: j_top_semigroup
+  target: topological_semigroup
+  type: combine-compatible
+  label: impose compatibility
+  detail: Require the semigroup multiplication $S\times S\to S$ to be continuous.
+  citations:
+  - wp-topological-semigroup
+  - nlab-topological-monoid
+  - topology-without-tears
+- id: e_lch_jradon
+  source: locally_compact_hausdorff_space
+  target: j_radon
+  type: combine-compatible
+  label: topological carrier
+  detail: Supply the LCH topology.
+  citations:
+  - wp-radon
+  - tao-measure-theory
+- id: e_lc_jlch
+  source: locally_compact_space
+  target: j_lch
+  type: combine-compatible
+  label: local compactness
+  detail: Supply local compactness.
+  citations:
+  - wp-locally-compact
+  - topology-without-tears
+- id: e_localeuc_jman
+  source: locally_euclidean_space
+  target: j_manifold
+  type: combine-compatible
+  label: local Euclidean charts
+  detail: Supply local Euclidean structure.
+  citations:
+  - wp-manifold
+  - topology-without-tears
+- id: e_metric_complete
+  source: metric_space
+  target: complete_metric_space
+  type: impose-axiom
+  label: + completeness
+  detail: Require every Cauchy sequence to converge.
+  citations:
+  - wp-complete-metric
+  - topology-without-tears
+- id: metric_to_first_countable
+  source: metric_space
+  target: first_countable_space
+  type: theorem-implication
+  label: is first-countable
+  detail: Metric balls of radii $1/n$ give a countable local base at each point.
+  citations:
+  - wp-metric
+  - wp-first-countable
+  - topology-without-tears
+- id: metric_to_hausdorff
+  source: metric_space
+  target: hausdorff_space
+  type: theorem-implication
+  label: is Hausdorff
+  detail: Distinct points have disjoint sufficiently small metric balls.
+  citations:
+  - wp-metric
+  - wp-separation
+  - topology-without-tears
+- id: e_metric_jcm
+  source: metric_space
+  target: j_compact_metric
+  type: combine-compatible
+  label: metric topology
+  detail: Supply the metric and its induced topology.
+  citations:
+  - wp-compact-metric
+  - topology-without-tears
+- id: e_metric_separable
+  source: metric_space
+  target: separable_metric_space
+  type: impose-axiom
+  label: + countable dense set
+  detail: Require separability.
+  citations:
+  - wp-separable
+  - topology-without-tears
+- id: metric_to_topology
+  source: metric_space
+  target: topological_space
+  type: induced-forgotten
+  label: induce metric topology
+  detail: Open metric balls generate the canonical topology of a metric space.
+  citations:
+  - wp-metric
+  - nlab-metric
+  - wp-top-space
+  - nlab-top-space
+  - topology-without-tears
+- id: metric_to_uniformity
+  source: metric_space
+  target: uniform_space
+  type: induced-forgotten
+  label: induce metric uniformity
+  detail: The entourages $d(x,y)<\varepsilon$ define the canonical uniformity of a metric space.
+  citations:
+  - wp-metric
+  - nlab-metric
+  - wp-uniform
+  - nlab-uniform
+  - topology-without-tears
+- id: e_pseudo_metric
+  source: pseudometric_space
+  target: metric_space
+  type: impose-axiom
+  label: + point separation
+  detail: Require $d(x,y)=0$ only when $x=y$.
+  citations:
+  - wp-metric
+  - topology-without-tears
+- id: second_countable_to_first_countable
+  source: second_countable_space
+  target: first_countable_space
+  type: theorem-implication
+  label: implies first-countable
+  detail: Restricting a countable global base to neighborhoods of a point gives a countable local base.
+  citations:
+  - wp-second-countable
+  - wp-first-countable
+  - topology-without-tears
+- id: e_second_jman
+  source: second_countable_space
+  target: j_manifold
+  type: combine-compatible
+  label: countable base
+  detail: Supply second countability.
+  citations:
+  - wp-manifold
+  - topology-without-tears
+- id: e_t0_t1
+  source: t0_space
+  target: t1_space
+  type: impose-axiom
+  label: + $T_1$
+  detail: Require singletons to be closed.
+  citations:
+  - wp-separation
+  - topology-without-tears
+- id: e_t1_haus
+  source: t1_space
+  target: hausdorff_space
+  type: impose-axiom
+  label: + disjoint neighborhoods
+  detail: Require distinct points to have disjoint neighborhoods.
+  citations:
+  - wp-separation
+  - topology-without-tears
+- id: e_t1_normal
+  source: t1_space
+  target: normal_space
+  type: impose-axiom
+  label: + normal separation
+  detail: Separate disjoint closed sets by neighborhoods.
+  citations:
+  - wp-normal-space
+  - topology-without-tears
+- id: e_t1_regular
+  source: t1_space
+  target: regular_space
+  type: impose-axiom
+  label: + regular separation
+  detail: Separate points from closed sets by neighborhoods.
+  citations:
+  - wp-regular-space
+  - topology-without-tears
+- id: e_tf_jtvs
+  source: topological_field
+  target: j_tvs
+  type: combine-compatible
+  label: topological scalars
+  detail: Supply the topology on the scalar field.
+  citations:
+  - wp-top-vector
+  - princeton-functional-analysis
+- id: top_field_to_local_field
+  source: topological_field
+  target: local_field
+  type: impose-axiom
+  label: locally compact Hausdorff, nondiscrete
+  detail: Require the topology to be locally compact, Hausdorff, and nondiscrete.
+  citations:
+  - nlab-local-field
+  - milne-algebraic-number-theory
+- id: topological_group_to_j_haar_measure
+  source: topological_group
+  target: j_haar_measure
+  type: combine-compatible
+  label: topological-group input
+  detail: Supply the continuous group operations on $G$.
+  citations:
+  - wp-haar_measure
+  - nlab-haar_measure
+  - mathlib-haar-measure
+- id: locally_compact_hausdorff_to_j_haar_measure
+  source: locally_compact_hausdorff_space
+  target: j_haar_measure
+  type: combine-compatible
+  label: local-compactness input
+  detail: Require the topology on the same carrier $G$ to be locally compact and Hausdorff.
+  citations:
+  - wp-haar_measure
+  - nlab-haar_measure
+  - mathlib-haar-measure
+- id: j_principal_bundle__topological_group
+  source: topological_group
+  target: j_principal_bundle
+  type: combine-compatible
+  label: structure group
+  detail: Supply the topological group that acts continuously on the total space.
+  citations:
+  - wp-principal-bundle
+  - nlab-principal-bundle
+  - wp-top-group
+  - nlab-top-group
+  - lee-smooth-manifolds
+- id: top_manifold_to_complex
+  source: topological_manifold
+  target: complex_manifold
+  type: add-data
+  label: add holomorphic atlas
+  detail: Choose complex charts with holomorphic transition maps.
+  citations:
+  - wp-complex-manifold
+  - lee-smooth-manifolds
+- id: top_manifold_to_smooth
+  source: topological_manifold
+  target: smooth_manifold
+  type: add-data
+  label: add smooth atlas
+  detail: Choose a maximal atlas whose transition functions are smooth.
+  citations:
+  - nlab-smooth-manifold
+  - lee-smooth-manifolds
+- id: e_topmonoid_hspace
+  source: topological_monoid
+  target: h_space
+  type: induced-forgotten
+  label: forget strict associativity/unit
+  detail: A topological monoid determines an $H$-space after retaining only the multiplication and basepoint.
+  citations:
+  - wp-topological-semigroup
+  - nlab-topological-monoid
+  - wp-h-space
+  - nlab-h-space
+  - hatcher-algebraic-topology
+- id: topological_monoid_to_semigroup
+  source: topological_monoid
+  target: topological_semigroup
+  type: induced-forgotten
+  label: forget the identity
+  detail: Retain the continuous associative multiplication and forget the distinguished unit.
+  citations:
+  - wp-topological-semigroup
+  - nlab-topological-monoid
+  - topology-without-tears
+- id: topology_to_borel_measurable
+  source: topological_space
+  target: borel_measurable_space
+  type: induced-forgotten
+  label: generate the Borel $\sigma$-algebra
+  detail: Take the smallest $\sigma$-algebra containing every open set. This measurable structure is canonical for the topology.
+  citations:
+  - wp-borel
+  - wp-top-space
+  - tao-measure-theory
+- id: e_top_compact
+  source: topological_space
+  target: compact_space
+  type: impose-axiom
+  label: + compactness
+  detail: Require every open cover to have a finite subcover.
+  citations:
+  - wp-compact
+  - topology-without-tears
+- id: e_top_kspace
+  source: topological_space
+  target: compactly_generated_space
+  type: impose-axiom
+  label: + compact-generation
+  detail: Require closedness/topology to be detected by compact Hausdorff probes.
+  citations:
+  - wp-compactly-generated
+  - nlab-compactly-generated
+  - hatcher-algebraic-topology
+- id: e_top_connected
+  source: topological_space
+  target: connected_space
+  type: impose-axiom
+  label: + connectedness
+  detail: Require no separation into two nonempty disjoint open subsets.
+  citations:
+  - wp-connected-space
+  - nlab-connected-space
+  - topology-without-tears
+- id: e_top_contractible
+  source: topological_space
+  target: contractible_space
+  type: impose-axiom
+  label: require a contraction
+  detail: Require the identity map to be homotopic to a constant map. A particular contraction is not part of the structure.
+  citations:
+  - wp-contractible
+  - nlab-contractible
+  - hatcher-algebraic-topology
+- id: e_top_cw
+  source: topological_space
+  target: cw_complex
+  type: add-data
+  label: + cell decomposition
+  detail: Choose cells and attaching maps satisfying the CW axioms.
+  citations:
+  - wp-cw-complex
+  - nlab-cw-complex
+  - hatcher-algebraic-topology
+- id: e_top_firstcount
+  source: topological_space
+  target: first_countable_space
+  type: impose-axiom
+  label: + countable local bases
+  detail: Require a countable neighborhood basis at every point.
+  citations:
+  - wp-first-countable
+  - topology-without-tears
+- id: j_covering_space__spaces
+  source: topological_space
+  target: j_covering_space
+  type: combine-compatible
+  label: total and base topologies
+  detail: Instantiate topological-space structure on the spaces occurring in the map.
+  citations:
+  - wp-covering-space
+  - nlab-covering-space
+  - topology-without-tears
+- id: j_fiber_bundle__spaces
+  source: topological_space
+  target: j_fiber_bundle
+  type: combine-compatible
+  label: total, base, and fiber topologies
+  detail: Instantiate compatible topological-space structures on total space $E$, base $B$, and typical fiber $F$.
+  citations:
+  - wp-fiber-bundle
+  - nlab-fiber-bundle
+  - topology-without-tears
+- id: j_pointed_top__topological_space
+  source: topological_space
+  target: j_pointed_top
+  type: combine-compatible
+  label: topology
+  detail: Supply the Topological space structure as one jointly required input.
+  citations:
+  - wp-pointed-space
+  - nlab-pointed-space
+  - hatcher-algebraic-topology
+- id: j_ringed_space__topological_space
+  source: topological_space
+  target: j_ringed_space
+  type: combine-compatible
+  label: underlying space
+  detail: Supply the Topological space structure as one jointly required input.
+  citations:
+  - stacks-ringed-space
+  - nlab-ringed-space
+  - wp-ringed-space
+  - stacks-schemes-text
+- id: e_top_jtf
+  source: topological_space
+  target: j_top_field
+  type: combine-compatible
+  label: topology
+  detail: Supply a topology on the same carrier.
+  citations:
+  - wp-top-field
+  - topology-without-tears
+- id: e_top_jtg
+  source: topological_space
+  target: j_top_group
+  type: combine-compatible
+  label: topology
+  detail: Supply the topology.
+  citations:
+  - wp-top-group
+  - topology-without-tears
+- id: j_top_monoid__topological_space
+  source: topological_space
+  target: j_top_monoid
+  type: combine-compatible
+  label: topology
+  detail: Supply the Topological space structure as one jointly required input.
+  citations:
+  - wp-topological-semigroup
+  - nlab-topological-monoid
+  - topology-without-tears
+- id: e_top_jtr
+  source: topological_space
+  target: j_top_ring
+  type: combine-compatible
+  label: topology
+  detail: Supply a topology on the same carrier.
+  citations:
+  - stacks-top-ring
+  - topology-without-tears
+- id: j_top_semigroup__topological_space
+  source: topological_space
+  target: j_top_semigroup
+  type: combine-compatible
+  label: topology
+  detail: Supply the Topological space structure as one jointly required input.
+  citations:
+  - wp-topological-semigroup
+  - nlab-topological-monoid
+  - topology-without-tears
+- id: e_top_jtvs
+  source: topological_space
+  target: j_tvs
+  type: combine-compatible
+  label: topology on $V$
+  detail: Supply the topology on the vector carrier.
+  citations:
+  - wp-top-vector
+  - princeton-functional-analysis
+- id: e_top_localcompact
+  source: topological_space
+  target: locally_compact_space
+  type: impose-axiom
+  label: + local compactness
+  detail: Require compact neighborhoods under the selected convention.
+  citations:
+  - wp-locally-compact
+  - topology-without-tears
+- id: e_top_localconn
+  source: topological_space
+  target: locally_connected_space
+  type: impose-axiom
+  label: + connected local bases
+  detail: Require connected neighborhoods to form local bases.
+  citations:
+  - wp-locally-connected
+  - topology-without-tears
+- id: e_top_localeuc
+  source: topological_space
+  target: locally_euclidean_space
+  type: impose-axiom
+  label: + Euclidean neighborhoods
+  detail: Require local homeomorphisms to open subsets of Euclidean space.
+  citations:
+  - wp-locally-euclidean
+  - topology-without-tears
+- id: topological_space_to_manifold_with_boundary
+  source: topological_space
+  target: manifold_with_boundary
+  type: add-data
+  label: + smooth half-space manifold structure
+  detail: Require Hausdorffness and second countability, and add an atlas of charts to open subsets of the closed half-space with smooth transition maps.
+  citations:
+  - wp-manifold-boundary
+  - nlab-manifold-boundary
+  - lee-smooth-manifolds
+- id: e_top_pathconnected
+  source: topological_space
+  target: path_connected_space
+  type: impose-axiom
+  label: + paths between points
+  detail: Require every two points to be joined by a path.
+  citations:
+  - wp-path-connected
+  - nlab-path-connected
+  - hatcher-algebraic-topology
+- id: topological_space_to_polish
+  source: topological_space
+  target: polish_space
+  type: impose-axiom
+  label: + separable complete metrizability
+  detail: Require the topology to be separable and induced by at least one complete metric.
+  citations:
+  - wp-polish
+  - topology-without-tears
+- id: e_top_second
+  source: topological_space
+  target: second_countable_space
+  type: impose-axiom
+  label: + countable base
+  detail: Require a countable basis for the topology.
+  citations:
+  - wp-second-countable
+  - topology-without-tears
+- id: e_top_t0
+  source: topological_space
+  target: t0_space
+  type: impose-axiom
+  label: + $T_0$
+  detail: Distinct points must be topologically distinguishable.
+  citations:
+  - wp-separation
+  - topology-without-tears
+- id: e_top_pair
+  source: topological_space
+  target: topological_pair
+  type: add-data
+  label: + distinguished subspace
+  detail: Choose a subspace $A\subseteq X$.
+  citations:
+  - wp-topological-pair
+  - hatcher-algebraic-topology
+- id: e_top_totdisc
+  source: topological_space
+  target: totally_disconnected_space
+  type: impose-axiom
+  label: + singleton components
+  detail: Require every connected component to be a singleton.
+  citations:
+  - wp-totally-disconnected
+  - topology-without-tears
+- id: e_top_zerodim
+  source: topological_space
+  target: zero_dimensional_space
+  type: impose-axiom
+  label: + clopen basis
+  detail: Require a basis consisting of clopen sets.
+  citations:
+  - wp-zero-dimensional
+  - topology-without-tears
+- id: uniform_to_topology
+  source: uniform_space
+  target: topological_space
+  type: induced-forgotten
+  label: induce topology
+  detail: Every uniformity canonically determines a topology by its entourages.
+  citations:
+  - wp-uniform
+  - nlab-uniform
+  - wp-top-space
+  - topology-without-tears
+- id: story_topological_space_to_homotopy_add_data
+  source: topological_space
+  target: homotopy
+  type: add-data
+  label: deform maps continuously
+  detail: A homotopy is a continuous one-parameter family of maps.
+  citations:
+  - hatcher-algebraic-topology
+- id: story_topological_space_to_singular_chain_complex_canonical_construction
+  source: topological_space
+  target: singular_chain_complex
+  type: canonical-construction
+  label: take singular simplices
+  detail: Continuous simplices and alternating face maps form the singular chain complex.
+  citations:
+  - hatcher-algebraic-topology

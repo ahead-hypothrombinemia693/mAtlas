@@ -1,0 +1,60 @@
+id: foundations-and-logic
+title: Foundations and logic
+summary: Survey the concepts used to formalize mathematical objects, proof,
+  models, and foundational systems.
+narrative: Follow syntax, theories, structures, models, formal proof systems,
+  effective computation, and incompleteness. The Story separates semantic
+  satisfaction from syntactic derivability and treats Gödel’s results with their
+  actual hypotheses.
+tags:
+  - Logic
+  - Set theory
+  - Foundations
+settings:
+  fields:
+    - mathematics
+  domains:
+    - logic
+    - computability-theory
+    - foundation
+    - set-theory
+    - number-theory
+  edgeTypes:
+    - add-data
+    - impose-axiom
+    - induced-forgotten
+    - canonical-construction
+    - quotient-construction
+    - canonical-embedding
+    - combine-compatible
+    - representation-equivalence
+    - theorem-implication
+    - classification
+    - mathematical-formulation
+    - framework-specialization
+    - describes-governs
+    - historically-motivated
+  crossFieldVisibility: hidden
+  edgeLabels: true
+  junctions: true
+  edgeZoomActivation: true
+  layout: atlas
+nodeSequence:
+  - first_order_signature
+  - first_order_theory
+  - first_order_structure
+  - model_of_theory
+  - formal_proof_system
+  - consistent_theory
+  - syntactically_complete_theory
+  - algorithm
+  - turing_machine
+  - computable_function
+  - halting_problem
+  - undecidable_problem
+  - godel_numbering
+  - first_incompleteness_theorem
+  - second_incompleteness_theorem
+  - zermelo_fraenkel_set_theory
+  - axiom_of_choice
+  - zfc_set_theory

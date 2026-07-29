@@ -1,0 +1,74 @@
+id: geometry-of-gravity
+title: The geometry of gravity
+summary: Connect differential geometry to spacetime, gravitation, Einstein’s
+  equations, and their classical limits and tests.
+narrative: "Build the differential geometry used by general relativity: smooth
+  and Lorentzian manifolds, tangent and tensor fields, metrics, connections,
+  curvature, geodesics, stress–energy, and Einstein’s equation. Then follow
+  exact solutions and strong-field observations to black holes and gravitational
+  waves."
+tags:
+  - Geometry
+  - Relativity
+  - Cross-field
+featured: true
+settings:
+  fields:
+    - mathematics
+    - physics
+  domains:
+    - differential-geometry
+    - relativity
+    - cosmology
+    - experiments-observations
+  edgeTypes:
+    - add-data
+    - impose-axiom
+    - induced-forgotten
+    - canonical-construction
+    - quotient-construction
+    - canonical-embedding
+    - combine-compatible
+    - representation-equivalence
+    - theorem-implication
+    - classification
+    - mathematical-formulation
+    - framework-specialization
+    - quantization
+    - theory-component
+    - describes-governs
+    - composition
+    - state-description
+    - transformation-process
+    - mathematical-limit
+    - effective-theory
+    - emergence
+    - couples-interacts
+    - model-realization
+    - historically-motivated
+    - experimentally-verified-by
+  crossFieldVisibility: all
+  edgeLabels: true
+  junctions: false
+  edgeZoomActivation: true
+  layout: atlas
+nodeSequence:
+  - smooth_manifold
+  - tangent_bundle
+  - tensor_field
+  - pseudo_riemannian_manifold
+  - lorentzian_manifold
+  - levi_civita_connection
+  - riemann_curvature_tensor
+  - ricci_tensor
+  - scalar_curvature
+  - einstein_tensor
+  - geodesic
+  - stress_energy_tensor
+  - einstein_field_equation
+  - general_relativity
+  - schwarzschild_spacetime
+  - black_hole
+  - event_horizon
+  - hulse_taylor_binary_pulsar
+  - gw150914_detection

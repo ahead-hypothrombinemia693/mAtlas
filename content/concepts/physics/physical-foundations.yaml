@@ -1,0 +1,692 @@
+nodes:
+- id: physical_system
+  label: Physical system
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: physical-foundations
+  domains:
+  - physical-foundations
+  level: 0
+  kind: structure
+  conceptType: Entity or system
+  summary: A delimited portion or idealized part of the physical world selected for description by a physical theory or model.
+  citations:
+  - wp-physics-physical_system
+  - nlab-physics-physical_system
+  - nist-quantum-theory
+  status: General modeling concept
+  sections:
+  - title: Scope
+    body: The boundary and degrees of freedom are chosen for the problem; the same physical situation can support several valid system decompositions.
+  root: true
+- id: physical_theory
+  label: Physical theory
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: physical-foundations
+  domains:
+  - physical-foundations
+  level: 0
+  kind: structure
+  conceptType: Theory or framework
+  summary: A mathematically expressed, empirically constrained framework that represents classes of physical systems and predicts relations among measurable quantities.
+  citations:
+  - wp-physics-physical_theory
+  - nlab-physics-physical_theory
+  - cern-standard-model
+  - einstein-general-relativity
+  status: General scientific concept
+  sections:
+  - title: Epistemic status
+    body: Theories supply models and predictions within tested regimes; they are not logical consequences of their mathematical formalism alone.
+  root: true
+- id: physical_law
+  label: Physical law
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: physical-foundations
+  domains:
+  - physical-foundations
+  level: 1
+  kind: structure
+  conceptType: Law or relation
+  summary: A compact relation or rule describing a stable regularity of physical systems within a stated domain of validity.
+  citations:
+  - wp-physics-physical_law
+  - nist-codata
+- id: physical_quantity
+  label: Physical quantity
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: physical-foundations
+  domains:
+  - physical-foundations
+  level: 1
+  kind: structure
+  conceptType: Physical quantity
+  summary: A measurable or theoretically defined property represented by a value, unit, tensor, operator, field, or distribution.
+  citations:
+  - wp-physics-physical_quantity
+  - nist-codata
+- id: degree_of_freedom
+  label: Degree of freedom
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: physical-foundations
+  domains:
+  - physical-foundations
+  level: 2
+  kind: structure
+  conceptType: Model component
+  summary: An independent variable or mode needed to specify a state within a chosen description.
+  citations:
+  - wp-physics-degree_of_freedom
+  - cambridge-classical-dynamics
+- id: observable
+  label: Observable
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: physical-foundations
+  domains:
+  - physical-foundations
+  level: 2
+  kind: structure
+  conceptType: Physical quantity
+  summary: A quantity represented by a theory and connected to a possible measurement outcome or statistical distribution.
+  citations:
+  - wp-physics-observable
+  - nlab-physics-observable
+  - nist-quantum-theory
+  sections:
+  - title: Caution
+    body: 'The mathematical representation of an observable depends on the theory: functions on phase space in classical mechanics and self-adjoint operators or POVMs in quantum theory.'
+- id: physical_scale
+  label: Physical scale
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: physical-foundations
+  domains:
+  - physical-foundations
+  level: 2
+  kind: structure
+  conceptType: Regime parameter
+  summary: A characteristic length, time, energy, momentum, or mass used to separate relevant from unresolved degrees of freedom.
+  citations:
+  - wp-physics-physical_scale
+  - penco-eft
+- id: physical_state
+  label: Physical state
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: physical-foundations
+  domains:
+  - physical-foundations
+  level: 2
+  kind: structure
+  conceptType: State description
+  summary: A specification, relative to a theory, sufficient to determine probabilities or allowed future behavior for the observables represented by that theory.
+  citations:
+  - wp-physics-physical_state
+  - nlab-physics-physical_state
+  - nist-quantum-theory
+  sections:
+  - title: Theory dependence
+    body: Classical states are commonly points in phase space; quantum states are rays or density operators on a Hilbert space.
+- id: physical_symmetry
+  label: Physical symmetry
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: physical-foundations
+  domains:
+  - physical-foundations
+  level: 2
+  kind: structure
+  conceptType: Structural principle
+  summary: A transformation that leaves specified physical structure, laws, or observables invariant; exact, approximate, local, global, continuous, or discrete symmetries must be distinguished.
+  citations:
+  - wp-physics-physical_symmetry
+  - nlab-physics-physical_symmetry
+  - tong-qft
+- id: fundamental_interaction
+  label: Fundamental interaction
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: physical-foundations
+  domains:
+  - physical-foundations
+  level: 3
+  kind: structure
+  conceptType: Interaction class
+  summary: An interaction currently treated as irreducible within established theory. The conventional list is gravitational, electromagnetic, strong, and weak; the Standard Model describes the latter three, with electromagnetic and weak interactions unified electroweakly and QCD forming a separate gauge factor.
+  citations:
+  - wp-physics-fundamental_interaction
+  - cern-standard-model
+  sections:
+  - title: Current classification
+    body: Electromagnetic, weak, strong, and gravitational interactions are conventionally treated as fundamental. The Standard Model contains the electroweak and strong gauge sectors but not gravitation.
+  root: true
+- id: physical_model
+  label: Physical model
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: physical-foundations
+  domains:
+  - physical-foundations
+  level: 3
+  kind: structure
+  conceptType: Model
+  summary: A representation of a selected physical system that specifies retained degrees of freedom, laws, parameters, and idealizations; a model can instantiate a theory without being either exact or a controlled approximation.
+  citations:
+  - wp-physics-physical_model
+  - cambridge-classical-dynamics
+- id: conservation_law
+  label: Conservation law
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: physical-foundations
+  domains:
+  - physical-foundations
+  level: 4
+  kind: structure
+  conceptType: Physical law
+  summary: A statement that a physical quantity is constant under evolution or obeys a local continuity equation, often but not always associated with a symmetry.
+  citations:
+  - wp-physics-conservation_law
+  - nlab-physics-conservation_law
+  - tong-qft
+- id: coupling_constant
+  label: Coupling constant
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: physical-foundations
+  domains:
+  - physical-foundations
+  level: 4
+  kind: structure
+  conceptType: Theory parameter
+  summary: A parameter controlling the strength of an interaction term; in QFT its renormalized value may depend on scale.
+  citations:
+  - wp-physics-coupling_constant
+  - tong-qft
+- id: equation_of_motion
+  label: Equation of motion
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: physical-foundations
+  domains:
+  - physical-foundations
+  level: 4
+  kind: structure
+  conceptType: Physical law
+  summary: An equation determining allowed histories or evolution from the dynamical variables and initial or boundary data.
+  citations:
+  - wp-physics-equation_of_motion
+  - nlab-physics-equation_of_motion
+  - cambridge-classical-dynamics
+- id: effective_description
+  label: Effective description
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: physical-foundations
+  domains:
+  - physical-foundations
+  level: 8
+  kind: structure
+  conceptType: Approximate framework
+  summary: A description valid in a limited regime that suppresses, averages, or integrates out inaccessible degrees of freedom and encodes their effects in parameters or operators.
+  citations:
+  - wp-physics-effective_description
+  - burgess-eft
+  - penco-eft
+- id: energy
+  label: Energy
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: physical-foundations
+  domains:
+  - physical-foundations
+  level: 5
+  kind: structure
+  conceptType: Physical quantity
+  summary: A conserved generator associated with time-translation symmetry in closed time-independent systems; its concrete representation and localization depend on the theory.
+  citations:
+  - wp-physics-energy
+  - nlab-physics-energy
+  - cambridge-classical-dynamics
+  - tong-relativity
+- id: continuity_equation
+  label: Continuity equation
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: physical-foundations
+  domains:
+  - physical-foundations
+  level: 5
+  kind: structure
+  conceptType: Conservation law
+  summary: A local conservation equation of the form $\partial_t\rho+\nabla\cdot\mathbf j=0$; in flat relativistic spacetime it is $\partial_\mu j^\mu=0$, while on curved spacetime the corresponding form is $\nabla_\mu j^\mu=0$.
+  citations:
+  - wp-physics-continuity_equation
+  - nlab-physics-continuity_equation
+  - tong-em
+  - tong-qft
+- id: binding_energy
+  label: Binding energy
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: physical-foundations
+  domains:
+  - physical-foundations
+  level: 7
+  kind: structure
+  conceptType: Energy difference
+  summary: The energy required to separate a bound system into specified free constituents; equivalently, the bound state lies below that breakup threshold and has a corresponding mass deficit in its rest frame.
+  citations:
+  - wp-physics-binding_energy
+  - einstein-binding-energy
+edges:
+- id: atom_to_oneelectron
+  source: physical_system
+  target: one_electron_atom
+  type: classification
+  label: single bound electron
+  detail: One-electron atomic systems are physical systems that include neutral hydrogen and hydrogenlike positive ions with one bound electron.
+  citations:
+  - wp-physics-one_electron_atom
+  - nist-hydrogen
+  - wp-physics-atom
+  - nlab-physics-atom
+- id: eom_to_euler_lagrange
+  source: equation_of_motion
+  target: euler_lagrange_equation
+  type: classification
+  label: variational equation of motion
+  detail: Euler–Lagrange equations are the equations of motion obtained by stationarity of a Lagrangian action.
+  citations:
+  - wp-physics-euler_lagrange_equation
+  - nlab-physics-euler_lagrange_equation
+  - cambridge-classical-dynamics
+  - tong-qft
+  - wp-physics-equation_of_motion
+  - nlab-physics-equation_of_motion
+- id: fundamental_to_em
+  source: fundamental_interaction
+  target: electromagnetic_interaction
+  type: classification
+  label: electromagnetic interaction
+  detail: Electromagnetism is one of the four conventionally fundamental interactions.
+  citations:
+  - cern-standard-model
+  - wp-physics-electromagnetic_interaction
+  - tong-em
+  - wp-physics-fundamental_interaction
+- id: fundamental_to_gravity
+  source: fundamental_interaction
+  target: gravitation
+  type: classification
+  label: gravitational interaction
+  detail: Gravitation is conventionally one of the four fundamental interactions.
+  citations:
+  - cern-standard-model
+  - einstein-general-relativity
+  - wp-physics-gravitation
+  - wp-physics-fundamental_interaction
+- id: fundamental_to_strong
+  source: fundamental_interaction
+  target: strong_interaction
+  type: classification
+  label: strong interaction
+  detail: The strong interaction is one of the four conventionally fundamental interactions.
+  citations:
+  - cern-standard-model
+  - pdg-qcd
+  - wp-physics-strong_interaction
+  - wp-physics-fundamental_interaction
+- id: fundamental_to_weak
+  source: fundamental_interaction
+  target: weak_interaction
+  type: classification
+  label: weak interaction
+  detail: The weak interaction is one of the four conventionally fundamental interactions.
+  citations:
+  - cern-standard-model
+  - wp-physics-weak_interaction
+  - pdg-standard-model
+  - wp-physics-fundamental_interaction
+- id: quantum_observable_to_observable
+  source: observable
+  target: quantum_observable
+  type: framework-specialization
+  label: quantum observable
+  detail: A quantum observable is the quantum-theoretic specialization of the general observable concept.
+  citations:
+  - nist-quantum-theory
+  - wp-physics-observable
+  - nlab-physics-quantum_observable
+  - nlab-physics-observable
+- id: law_to_equation_motion
+  source: physical_law
+  target: equation_of_motion
+  type: framework-specialization
+  label: dynamical law
+  detail: Equations of motion are dynamical physical laws for histories or states.
+  citations:
+  - wp-physics-equation_of_motion
+  - nlab-physics-equation_of_motion
+  - wp-physics-physical_law
+  - nist-codata
+- id: physical_model_degrees
+  source: degree_of_freedom
+  target: physical_model
+  type: theory-component
+  label: retained variables
+  detail: A physical model specifies which independent variables or modes it retains.
+  citations:
+  - wp-physics-degree_of_freedom
+  - wp-physics-physical_model
+- id: physical_quantity_to_observable
+  source: physical_quantity
+  target: observable
+  type: framework-specialization
+  label: observable quantity
+  detail: An observable is a physical quantity represented so that the theory assigns possible outcomes or expectation values.
+  citations:
+  - wp-physics-observable
+  - nlab-physics-observable
+  - wp-physics-physical_quantity
+  - nist-codata
+- id: physical_scale_to_eft
+  source: physical_scale
+  target: effective_field_theory
+  type: theory-component
+  label: cutoff and power counting
+  detail: EFT power counting is organized by ratios of physical scales.
+  citations:
+  - wp-physics-effective_field_theory
+  - nlab-physics-effective_field_theory
+  - wp-physics-physical_scale
+- id: state_to_observable
+  source: physical_state
+  target: observable
+  type: state-description
+  label: observable statistics
+  detail: A state determines or constrains the probability distribution of observables represented by the theory.
+  citations:
+  - nist-quantum-theory
+  - wp-physics-observable
+  - nlab-physics-observable
+  - wp-physics-physical_state
+  - nlab-physics-physical_state
+- id: symmetry_conservation
+  source: physical_symmetry
+  target: conservation_law
+  type: theorem-implication
+  label: symmetry-associated conservation
+  detail: For continuous global action symmetries, Noether’s theorem yields a conserved current, subject to standard qualifications.
+  citations:
+  - wp-physics-noether_theorem
+  - nlab-physics-noether_theorem
+  - wp-physics-conservation_law
+  - nlab-physics-conservation_law
+  - wp-physics-physical_symmetry
+- id: symmetry_to_selection
+  source: physical_symmetry
+  target: selection_rule
+  type: theorem-implication
+  label: matrix-element constraint
+  detail: Symmetries and tensor transformation properties yield selection rules for transition operators.
+  citations:
+  - wp-physics-selection_rule
+  - nist-atomic-spectroscopy
+  - wp-physics-physical_symmetry
+  - nlab-physics-physical_symmetry
+- id: physical_system_has_quantity
+  source: physical_system
+  target: physical_quantity
+  type: state-description
+  label: physical quantities
+  detail: Physical quantities characterize properties or possible measurements of a system.
+  citations:
+  - wp-physics-physical_quantity
+  - nist-codata
+  - wp-physics-physical_system
+  - nlab-physics-physical_system
+- id: system_to_state
+  source: physical_system
+  target: physical_state
+  type: state-description
+  label: theory-relative state
+  detail: A physical theory assigns a space of allowed states to a selected physical system; the same system may admit different state descriptions in different effective theories.
+  citations:
+  - nist-quantum-theory
+  - wp-physics-physical_state
+  - nlab-physics-physical_state
+  - wp-physics-physical_system
+  - nlab-physics-physical_system
+- id: physical_system_to_quantum
+  source: physical_system
+  target: quantum_system
+  type: framework-specialization
+  label: quantum system
+  detail: A quantum system is a physical system represented in quantum theory.
+  citations:
+  - wp-physics-quantum_system
+  - nlab-physics-quantum_system
+  - wp-physics-physical_system
+  - nlab-physics-physical_system
+- id: theory_to_classical_field
+  source: physical_theory
+  target: classical_field_theory
+  type: framework-specialization
+  label: classical field framework
+  detail: Classical field theory describes continuous fields on spacetime without quantizing their dynamical degrees of freedom.
+  citations:
+  - cern-qft-intro
+  - einstein-spacetime
+  - wp-physics-classical_field_theory
+  - nlab-physics-classical_field_theory
+  - wp-physics-physical_theory
+- id: theory_to_classical
+  source: physical_theory
+  target: classical_mechanics
+  type: framework-specialization
+  label: classical dynamical framework
+  detail: Classical mechanics is a physical theory for regimes in which quantum, relativistic, and strong-gravity corrections are negligible.
+  citations:
+  - cambridge-classical-dynamics
+  - einstein-special-relativity
+  - nist-quantum-theory
+  - wp-physics-classical_mechanics
+  - nlab-physics-classical_mechanics
+- id: physical_theory_effective
+  source: physical_theory
+  target: effective_description
+  type: framework-specialization
+  label: effective descriptions
+  detail: Physical theories often admit descriptions specialized to a scale or regime.
+  citations:
+  - wp-physics-effective_description
+  - burgess-eft
+  - wp-physics-physical_theory
+  - nlab-physics-physical_theory
+- id: theory_to_gr
+  source: physical_theory
+  target: general_relativity
+  type: framework-specialization
+  label: classical gravitational theory
+  detail: General relativity is the classical geometric theory of gravitation.
+  citations:
+  - einstein-general-relativity
+  - wp-physics-general_relativity
+  - nlab-physics-general_relativity
+  - wp-physics-physical_theory
+  - nlab-physics-physical_theory
+- id: physical_theory_contains_law
+  source: physical_law
+  target: physical_theory
+  type: theory-component
+  label: law within theory
+  detail: A physical theory contains or entails laws within its stated domain.
+  citations:
+  - wp-physics-physical_law
+  - wp-physics-physical_theory
+- id: physical_theory_to_model
+  source: physical_theory
+  target: physical_model
+  type: model-realization
+  label: model realization
+  detail: A physical model selects a system, degrees of freedom, parameters, boundary or initial data, and often idealizations within or motivated by a theory; not every model is a controlled approximation.
+  citations:
+  - wp-physics-physical_model
+  - wp-physics-physical_theory
+  - nlab-physics-physical_theory
+- id: physical_theory_scale
+  source: physical_theory
+  target: physical_scale
+  type: state-description
+  label: domain of scales
+  detail: The validity and useful variables of a physical theory depend on physical scales.
+  citations:
+  - wp-physics-physical_scale
+  - wp-physics-physical_theory
+  - nlab-physics-physical_theory
+- id: theory_to_qm
+  source: physical_theory
+  target: quantum_mechanics
+  type: framework-specialization
+  label: quantum framework
+  detail: Quantum mechanics specializes physical theory to systems requiring quantum states, amplitudes, and probabilistic measurement rules.
+  citations:
+  - nist-quantum-theory
+  - wp-physics-quantum_mechanics
+  - nlab-physics-quantum_mechanics
+  - wp-physics-physical_theory
+  - nlab-physics-physical_theory
+- id: theory_to_sr
+  source: physical_theory
+  target: special_relativity
+  type: framework-specialization
+  label: relativistic spacetime framework
+  detail: Special relativity specializes physical theory to nongravitational laws compatible with Lorentz symmetry.
+  citations:
+  - einstein-special-relativity
+  - wp-physics-special_relativity
+  - nlab-physics-special_relativity
+  - wp-physics-physical_theory
+  - nlab-physics-physical_theory
+- id: coupling_to_interactingqft
+  source: coupling_constant
+  target: interacting_quantum_field
+  type: theory-component
+  label: interaction coefficients
+  detail: Coupling constants multiply or normalize interaction operators and set perturbative expansion parameters in an interacting QFT.
+  citations:
+  - wp-physics-coupling_constant
+  - tong-qft
+  - wp-physics-interacting_quantum_field
+  - nlab-physics-interacting_quantum_field
+- id: coupling_to_running
+  source: coupling_constant
+  target: running_coupling
+  type: state-description
+  label: renormalized scale dependence
+  detail: A renormalized coupling generally depends on the chosen energy scale according to its beta function.
+  citations:
+  - wp-physics-coupling_constant
+  - tong-qft
+  - wp-physics-running_coupling
+  - nlab-physics-running_coupling
+  - pdg-qcd
+- id: energy_to_fourmomentum
+  source: energy
+  target: energy_momentum_four_vector
+  type: theory-component
+  label: time component
+  detail: Energy is the time component, up to units, of relativistic four-momentum.
+  citations:
+  - wp-physics-energy
+  - nlab-physics-energy
+  - cambridge-classical-dynamics
+  - tong-relativity
+  - wp-physics-energy_momentum_four_vector
+  - pdg-rpp
+- id: quantity_to_energy
+  source: physical_quantity
+  target: energy
+  type: classification
+  label: energy quantity
+  detail: Energy is a physical quantity whose exact definition is theory-dependent.
+  citations:
+  - wp-physics-physical_quantity
+  - nist-codata
+  - wp-physics-energy
+  - nlab-physics-energy
+  - cambridge-classical-dynamics
+  - tong-relativity
+- id: quantity_to_momentum
+  source: physical_quantity
+  target: linear_momentum
+  type: classification
+  label: linear momentum
+  detail: Linear momentum is a physical quantity associated with spatial translations.
+  citations:
+  - wp-physics-physical_quantity
+  - nist-codata
+  - wp-physics-linear_momentum
+  - nlab-physics-linear_momentum
+  - cambridge-classical-dynamics
+  - tong-relativity
+- id: conservation_to_continuity
+  source: conservation_law
+  target: continuity_equation
+  type: framework-specialization
+  label: local conservation form
+  detail: A local conservation law is expressed by a continuity equation for a density and current.
+  citations:
+  - wp-physics-continuity_equation
+  - nlab-physics-continuity_equation
+- id: symmetry_to_isospin
+  source: physical_symmetry
+  target: isospin
+  type: classification
+  label: approximate internal symmetry
+  detail: Isospin is an approximate internal $SU(2)$ flavor symmetry.
+  citations:
+  - wp-physics-isospin
+  - nlab-physics-isospin
+- id: binding_to_nuclearbinding
+  source: binding_energy
+  target: nuclear_binding_energy
+  type: classification
+  label: nuclear separation energy
+  detail: Nuclear binding energy is the binding energy relative to specified separated nucleons or nuclear fragments.
+  citations:
+  - wp-physics-nuclear_binding_energy
+  - iaea-livechart
+- id: binding_to_ionization
+  source: binding_energy
+  target: ionization_energy
+  type: classification
+  label: electron separation energy
+  detail: Ionization energy is an electron-separation binding energy for a specified atom or ion.
+  citations:
+  - wp-physics-ionization_energy
+  - nist-ionization-energy

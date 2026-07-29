@@ -1,0 +1,85 @@
+id: spaces-operators-spectra
+title: Spaces, operators, and spectra
+summary: Build Banach and Hilbert spaces, then develop bounded and unbounded
+  operators, adjoints, spectra, spectral measures, and Fock-space constructions.
+narrative: Vector spaces acquire topology, seminorms, norms, completeness, and
+  inner products. Operators must then be classified with attention to
+  boundedness and domains. Adjoint, self-adjoint, unitary, positive, projection,
+  and trace-class operators lead to spectra and spectral measures; spectral and
+  Stone theorems connect operators with decompositions and continuous unitary
+  evolution. Rigged and tensor-product Hilbert spaces, partial traces,
+  distributions, and Fock spaces supply the analytic infrastructure of quantum
+  theory.
+tags:
+  - Mathematics
+  - Analysis
+  - Operators
+  - Quantum theory
+settings:
+  fields:
+    - mathematics
+    - physics
+  domains:
+    - algebra
+    - analysis
+    - quantum-mechanics
+    - quantum-field-theory
+  edgeTypes:
+    - add-data
+    - impose-axiom
+    - induced-forgotten
+    - canonical-construction
+    - quotient-construction
+    - canonical-embedding
+    - combine-compatible
+    - representation-equivalence
+    - theorem-implication
+    - classification
+    - mathematical-formulation
+    - framework-specialization
+    - quantization
+    - theory-component
+    - describes-governs
+    - composition
+    - state-description
+    - transformation-process
+    - mathematical-limit
+    - effective-theory
+    - emergence
+    - couples-interacts
+    - model-realization
+    - historically-motivated
+    - experimentally-verified-by
+  crossFieldVisibility: contextual
+  edgeLabels: true
+  junctions: false
+  edgeZoomActivation: true
+  layout: atlas
+nodeSequence:
+  - vector_space
+  - topological_vector_space
+  - seminormed_vector_space
+  - normed_vector_space
+  - banach_space
+  - inner_product_space
+  - hilbert_space
+  - linear_operator
+  - bounded_linear_operator
+  - densely_defined_operator
+  - adjoint_operator
+  - self_adjoint_operator
+  - unitary_operator
+  - positive_operator
+  - projection_operator
+  - trace_class_operator
+  - operator_spectrum
+  - spectral_measure
+  - spectral_theorem
+  - stone_theorem
+  - rigged_hilbert_space
+  - tensor_product_hilbert_space
+  - partial_trace
+  - distribution_space
+  - fock_space
+  - symmetric_fock_space
+  - antisymmetric_fock_space

@@ -1,0 +1,86 @@
+id: action-to-quantum-fields
+title: From action principles to quantum fields
+summary: Connect variational mechanics, Hamiltonian and symplectic structure,
+  quantization, Fock space, perturbation theory, and scattering.
+narrative: The classical branch starts from configuration space, Lagrangians,
+  action functionals, stationary action, and Euler–Lagrange equations. A
+  parallel phase-space branch introduces symplectic and Poisson geometry and
+  Hamiltonian evolution. Canonical quantization promotes suitable classical
+  observables to operators and supplies canonical commutation relations, while
+  path integrals use the action to sum over histories. Quantum mechanics leads
+  to QFT; free and asymptotic particle sectors use Fock space and creation
+  operators; perturbative expansions produce Feynman diagrams, amplitudes, and
+  the $S$-matrix.
+tags:
+  - Mathematics
+  - Physics
+  - Mechanics
+  - Quantum field theory
+settings:
+  fields:
+    - mathematics
+    - physics
+  domains:
+    - differential-geometry
+    - analysis
+    - classical-mechanics
+    - quantum-mechanics
+    - quantum-field-theory
+    - particle-physics
+  edgeTypes:
+    - add-data
+    - impose-axiom
+    - induced-forgotten
+    - canonical-construction
+    - quotient-construction
+    - canonical-embedding
+    - combine-compatible
+    - representation-equivalence
+    - theorem-implication
+    - classification
+    - mathematical-formulation
+    - framework-specialization
+    - quantization
+    - theory-component
+    - describes-governs
+    - composition
+    - state-description
+    - transformation-process
+    - mathematical-limit
+    - effective-theory
+    - emergence
+    - couples-interacts
+    - model-realization
+    - historically-motivated
+    - experimentally-verified-by
+  crossFieldVisibility: contextual
+  edgeLabels: true
+  junctions: false
+  edgeZoomActivation: true
+  layout: atlas
+nodeSequence:
+  - configuration_space
+  - lagrangian
+  - action_functional
+  - stationary_action_principle
+  - euler_lagrange_equation
+  - lagrangian_mechanics
+  - phase_space
+  - symplectic_manifold
+  - poisson_manifold
+  - poisson_bracket
+  - hamiltonian
+  - hamiltonian_mechanics
+  - canonical_quantization
+  - canonical_commutation_relations
+  - quantum_mechanics
+  - schrodinger_equation
+  - path_integral_quantization
+  - quantum_field_theory
+  - fock_space
+  - creation_operator
+  - annihilation_operator
+  - perturbative_qft
+  - feynman_diagram
+  - scattering_amplitude
+  - s_matrix

@@ -1,0 +1,65 @@
+id: standard-model-anatomy
+title: Anatomy of the Standard Model
+summary: Inspect the fields, particles, symmetries, interactions, and
+  measurements assembled into the Standard Model.
+narrative: "Read the Standard Model by layers: gauge group and chiral
+  representations, gauge and matter fields, covariant derivatives and field
+  strengths, QCD and electroweak sectors, Higgs symmetry breaking, Yukawa
+  couplings, mass eigenstates, conserved and anomalous currents, and effective
+  extensions."
+tags:
+  - Particle physics
+  - Gauge theory
+  - Collider evidence
+settings:
+  fields:
+    - physics
+  domains:
+    - quantum-field-theory
+    - particle-physics
+    - experiments-observations
+  edgeTypes:
+    - mathematical-formulation
+    - framework-specialization
+    - quantization
+    - theory-component
+    - describes-governs
+    - composition
+    - classification
+    - state-description
+    - transformation-process
+    - mathematical-limit
+    - effective-theory
+    - emergence
+    - couples-interacts
+    - model-realization
+    - historically-motivated
+    - experimentally-verified-by
+    - theorem-implication
+  crossFieldVisibility: hidden
+  edgeLabels: true
+  junctions: false
+  edgeZoomActivation: true
+  layout: atlas
+nodeSequence:
+  - standard_model_gauge_group
+  - standard_model_chiral_multiplet
+  - gauge_field
+  - matter_field
+  - gauge_covariant_derivative
+  - gauge_field_strength
+  - quantum_chromodynamics
+  - electroweak_theory
+  - higgs_doublet
+  - standard_model_lagrangian
+  - spontaneous_symmetry_breaking
+  - higgs_mechanism
+  - electroweak_symmetry_breaking
+  - yukawa_interaction
+  - particle_mass
+  - ckm_matrix
+  - pmns_matrix
+  - gauge_anomaly_cancellation
+  - standard_model
+  - standard_model_effective_field_theory
+  - low_energy_effective_field_theory

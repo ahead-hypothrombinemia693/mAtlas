@@ -1,0 +1,439 @@
+nodes:
+- id: bigraded_object
+  label: Bigraded object
+  primaryDomain: homological-algebra
+  domains:
+  - homological-algebra
+  - algebra
+  - category-theory
+  level: 5
+  kind: structure
+  summary: A family of objects indexed by two degrees, usually pairs of integers.
+  carriers:
+  - objects $A_{p,q}$ in a category
+  data:
+  - bidegree index $(p,q)$
+  axioms: []
+  induces:
+  - graded objects by total degree when suitable sums exist
+  notes: A bigraded object is not merely a singly graded object with extra maps; the second grading is part of its indexing data.
+  citations:
+  - wp-double-complex
+  - stacks-derived-text
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: graded_object
+  label: Graded object
+  primaryDomain: homological-algebra
+  domains:
+  - homological-algebra
+  - category-theory
+  - algebra
+  level: 5
+  kind: structure
+  summary: A family of objects indexed by degrees, usually integers or natural numbers.
+  carriers:
+  - objects $A_{n}$ in a category
+  data:
+  - degree index
+  axioms: []
+  induces: []
+  notes: ''
+  citations:
+  - wp-graded-object
+  - nlab-graded-object
+  - stacks-derived-text
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: chain_complex
+  label: Chain complex
+  primaryDomain: homological-algebra
+  domains:
+  - homological-algebra
+  - category-theory
+  - algebraic-topology
+  level: 7
+  kind: structure
+  summary: A graded object with degree $-1$ differential squaring to zero.
+  carriers:
+  - graded family $C_{n}$ in a preadditive category
+  data:
+  - differentials $d_{n}:C_{n}\to C_{n-1}$
+  axioms:
+  - $d_{n-1}\circ d_{n}=0$
+  induces:
+  - homology objects when the ambient category has the required kernels and images (for example, in an abelian category)
+  notes: The zero composite $d^{2}=0$ requires zero morphisms; preadditive categories suffice. Homology objects require additional kernel/image or abelian hypotheses.
+  citations:
+  - stacks-complexes
+  - stacks-abelian-category
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: cochain_complex
+  label: Cochain complex
+  primaryDomain: homological-algebra
+  domains:
+  - homological-algebra
+  - category-theory
+  - algebraic-topology
+  level: 7
+  kind: structure
+  summary: A graded object with degree +1 differential squaring to zero.
+  carriers:
+  - graded family $C^{n}$ in a preadditive category
+  data:
+  - differentials $d^{n}:C^{n}\to C^{n+1}$
+  axioms:
+  - $d^{n+1}\circ d^{n}=0$
+  induces:
+  - cohomology objects when the ambient category has the required kernels and images (for example, in an abelian category)
+  notes: The zero composite $d^{2}=0$ requires zero morphisms; preadditive categories suffice. Cohomology objects require additional kernel/image or abelian hypotheses.
+  citations:
+  - stacks-complexes
+  - stacks-abelian-category
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: exact_category
+  label: Exact category
+  primaryDomain: homological-algebra
+  domains:
+  - homological-algebra
+  - category-theory
+  level: 7
+  kind: structure
+  summary: An additive category with a chosen class of kernel–cokernel pairs behaving like short exact sequences.
+  carriers:
+  - additive category $C$
+  data:
+  - distinguished conflations
+  axioms:
+  - Quillen exact-category axioms
+  induces: []
+  notes: ''
+  citations:
+  - wp-exact-category
+  - nlab-exact-category
+  - stacks-derived-text
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: double_complex
+  label: Double complex
+  primaryDomain: homological-algebra
+  domains:
+  - homological-algebra
+  level: 8
+  kind: structure
+  summary: A bigraded object with horizontal and vertical differentials satisfying square-zero and anticommutation laws.
+  carriers:
+  - bigraded family $C^{p,q}$ in an additive category
+  data:
+  - horizontal and vertical differentials
+  axioms:
+  - each differential squares to zero
+  - $d_h d_v+d_v d_h=0$
+  induces:
+  - total complex when the required direct sums or products exist
+  notes: The usual total-complex construction additionally needs the relevant direct sums or products.
+  citations:
+  - stacks-double-complex
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: grothendieck_abelian_category
+  label: Grothendieck abelian category
+  primaryDomain: homological-algebra
+  domains:
+  - homological-algebra
+  - category-theory
+  - algebraic-geometry
+  level: 8
+  kind: structure
+  summary: An abelian category with all small colimits, exact filtered colimits (AB5), and a generator.
+  carriers:
+  - abelian category $A$
+  data: []
+  axioms:
+  - cocomplete
+  - filtered colimits are exact (AB5)
+  - has a generator
+  induces: []
+  notes: ''
+  citations:
+  - wp-grothendieck-category
+  - nlab-grothendieck-category
+  - stacks-derived-text
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: model_category
+  label: Model category
+  primaryDomain: homological-algebra
+  domains:
+  - homological-algebra
+  - category-theory
+  - algebraic-topology
+  level: 8
+  kind: structure
+  summary: A category with weak equivalences, fibrations, and cofibrations satisfying Quillen axioms.
+  carriers:
+  - category $C$
+  data:
+  - three classes of morphisms
+  axioms:
+  - all small limits and colimits
+  - two-out-of-three
+  - retract
+  - lifting
+  - factorization axioms
+  induces: []
+  notes: ''
+  citations:
+  - wp-model-category
+  - nlab-model-category
+  - stacks-derived-text
+  - hovey-model-categories
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: triangulated_category
+  label: Triangulated category
+  primaryDomain: homological-algebra
+  domains:
+  - homological-algebra
+  - category-theory
+  level: 8
+  kind: structure
+  summary: An additive category with a shift autoequivalence and distinguished triangles satisfying triangulation axioms.
+  carriers:
+  - additive category $D$
+  data:
+  - shift [1]
+  - distinguished triangles
+  axioms:
+  - TR1–TR4
+  induces: []
+  notes: ''
+  citations:
+  - stacks-triangulated
+  - wp-triangulated
+  - nlab-triangulated
+  - stacks-derived-text
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: derived_category
+  label: Derived category
+  primaryDomain: homological-algebra
+  domains:
+  - homological-algebra
+  - category-theory
+  - algebraic-geometry
+  level: 9
+  kind: structure
+  summary: For an abelian category $A$, the localization of its homotopy category $K(A)$ of complexes at quasi-isomorphisms.
+  carriers:
+  - abelian category $A$
+  - homotopy category $K(A)$ of complexes
+  data:
+  - formal inverses to quasi-isomorphisms
+  axioms: []
+  induces:
+  - triangulated structure under standard hypotheses
+  notes: A derived category is constructed from a category of complexes, not from one individual chain complex.
+  citations:
+  - wp-derived-category
+  - nlab-derived-category
+  - stacks-derived-modules
+  - stacks-derived-category
+  - stacks-derived-text
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: dg_category
+  label: DG-category
+  primaryDomain: homological-algebra
+  domains:
+  - homological-algebra
+  - category-theory
+  level: 9
+  kind: structure
+  summary: A category enriched over chain complexes.
+  carriers:
+  - objects
+  - chain-complex hom-objects
+  data:
+  - enriched composition
+  axioms:
+  - associativity and units compatible with differentials
+  induces: []
+  notes: A DG-category is a category enriched over chain complexes for a specified commutative base ring and grading/sign convention.
+  citations:
+  - wp-dg-category
+  - nlab-dg-category
+  - stacks-derived-text
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: differential_graded_algebra
+  label: Differential graded algebra
+  primaryDomain: homological-algebra
+  domains:
+  - homological-algebra
+  - algebra
+  level: 11
+  kind: structure
+  summary: A graded associative algebra with a square-zero differential satisfying the graded Leibniz rule.
+  carriers:
+  - graded object $A$ in a symmetric monoidal additive setting
+  data:
+  - graded associative multiplication
+  - degree-$+1$ differential $d$
+  axioms:
+  - associativity of graded multiplication
+  - $d^{2}=0$
+  - graded Leibniz rule
+  induces: []
+  notes: This node uses the cochain convention. An ordinary associative algebra can be formed from the total direct sum only when that direct sum exists in the ambient setting.
+  citations:
+  - stacks-dga
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: exact_sequence
+  label: Exact sequence
+  primaryDomain: homological-algebra
+  domains:
+  - homological-algebra
+  - algebra
+  level: 8
+  kind: structure
+  summary: A sequence of morphisms in which the image of each map equals the kernel of the next.
+  carriers:
+  - objects and composable morphisms
+  data: []
+  axioms:
+  - exactness at each intermediate object
+  induces:
+  - Algebraic control of kernels, cokernels, and extensions
+  notes: ''
+  citations:
+  - hatcher-algebraic-topology
+  - stacks-derived-text
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: long_exact_sequence
+  label: Long exact sequence
+  primaryDomain: homological-algebra
+  domains:
+  - homological-algebra
+  - algebraic-topology
+  level: 10
+  kind: structure
+  summary: An exact sequence extending through many degrees, commonly produced by a short exact sequence of complexes, a pair of spaces, or a fibration.
+  carriers:
+  - graded groups or objects
+  - connecting morphisms
+  data:
+  - graded objects and connecting morphisms
+  axioms:
+  - exactness at every term
+  induces:
+  - Relations across successive homological or cohomological degrees
+  notes: ''
+  citations:
+  - hatcher-algebraic-topology
+  primaryField: mathematics
+  fields:
+  - mathematics
+edges:
+- id: e_bigraded_double
+  source: bigraded_object
+  target: double_complex
+  type: add-data
+  label: add horizontal and vertical differentials
+  detail: Add differentials of bidegrees $(1,0)$ and $(0,1)$ (or the homological sign variant), require each square to vanish, and require anticommutation.
+  citations:
+  - wp-double-complex
+  - stacks-derived-text
+- id: cochain_complex_to_dga
+  source: cochain_complex
+  target: differential_graded_algebra
+  type: add-data
+  label: + graded associative multiplication
+  detail: For a cochain complex of modules in a compatible symmetric monoidal additive setting, add a degree-zero associative graded multiplication and require the graded Leibniz rule.
+  citations:
+  - stacks-dga
+- id: e_derived_triang
+  source: derived_category
+  target: triangulated_category
+  type: induced-forgotten
+  label: retain canonical triangulation
+  detail: A derived category carries a canonical triangulated structure.
+  citations:
+  - wp-derived-category
+  - nlab-derived-category
+  - stacks-derived-modules
+  - stacks-triangulated
+  - wp-triangulated
+  - nlab-triangulated
+  - stacks-derived-text
+- id: e_graded_chain
+  source: graded_object
+  target: chain_complex
+  type: add-data
+  label: + differential $d$ of degree $-1$
+  detail: Add boundary maps with $d^{2}=0$.
+  citations:
+  - stacks-complexes
+  - wp-chain-complex
+  - nlab-chain-complex
+  - stacks-derived-text
+- id: e_graded_cochain
+  source: graded_object
+  target: cochain_complex
+  type: add-data
+  label: + differential $d$ of degree $+1$
+  detail: Add coboundary maps with $d^{2}=0$.
+  citations:
+  - stacks-complexes
+  - wp-chain-complex
+  - nlab-chain-complex
+  - stacks-derived-text
+- id: story_chain_complex_to_singular_chain_complex_classification
+  source: chain_complex
+  target: singular_chain_complex
+  type: classification
+  label: has singular chains as a specialization
+  detail: The singular chain complex of a topological space is a particular chain complex, freely generated by singular simplices with the alternating-face boundary.
+  citations:
+  - hatcher-algebraic-topology
+- id: story_cochain_complex_to_singular_cochain_complex_classification
+  source: cochain_complex
+  target: singular_cochain_complex
+  type: classification
+  label: has singular cochains as a specialization
+  detail: The singular cochain complex with coefficients is a particular cochain complex obtained by applying Hom to singular chains.
+  citations:
+  - hatcher-algebraic-topology
+- id: story_exact_sequence_to_long_exact_sequence_classification
+  source: exact_sequence
+  target: long_exact_sequence
+  type: classification
+  label: specializes to an exact sequence across degrees
+  detail: A long exact sequence is an exact sequence indexed across successive degrees, usually linked by connecting homomorphisms.
+  citations:
+  - hatcher-algebraic-topology
+- id: story_exact_category_to_exact_sequence_induced_forgotten
+  source: exact_category
+  target: exact_sequence
+  type: induced-forgotten
+  label: has distinguished exact sequences
+  detail: An exact category comes with a specified class of kernel–cokernel pairs, called conflations; retaining one such pair gives an exact sequence in the chosen exact structure.
+  citations:
+  - stacks-derived-text

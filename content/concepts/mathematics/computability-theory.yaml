@@ -1,0 +1,355 @@
+nodes:
+- id: algorithm
+  label: Algorithm
+  primaryDomain: computability-theory
+  domains:
+  - computability-theory
+  - logic
+  level: 1
+  kind: structure
+  summary: A finitely specified, mechanically executable procedure given by unambiguous rules for transforming inputs, producing outputs when it terminates.
+  carriers:
+  - finite descriptions and inputs
+  data:
+  - effective transition rules
+  axioms: []
+  induces:
+  - A partial or total computed function
+  notes: ''
+  citations:
+  - turing-computable-numbers
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: decision_problem
+  label: Decision problem
+  primaryDomain: computability-theory
+  domains:
+  - computability-theory
+  - logic
+  level: 2
+  kind: structure
+  summary: A yes-or-no problem represented by a set of finite inputs whose membership is to be decided.
+  carriers:
+  - set of encoded instances
+  data:
+  - yes/no predicate
+  axioms: []
+  induces:
+  - Decidability or undecidability classification
+  notes: ''
+  citations:
+  - turing-computable-numbers
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: turing_machine
+  label: Turing machine
+  primaryDomain: computability-theory
+  domains:
+  - computability-theory
+  - logic
+  level: 3
+  kind: structure
+  summary: A finite-state abstract machine with a read-write tape and transition rules, used to define effective computation.
+  carriers:
+  - finite states
+  - tape alphabet
+  - tape
+  data:
+  - transition function
+  axioms: []
+  induces:
+  - A partial computable function
+  notes: ''
+  citations:
+  - turing-computable-numbers
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: computable_function
+  label: Computable function
+  primaryDomain: computability-theory
+  domains:
+  - computability-theory
+  - logic
+  level: 4
+  kind: structure
+  summary: A partial function computed by some Turing machine; a total computable function halts on every input in its domain type.
+  carriers:
+  - encoded inputs and outputs
+  data:
+  - a machine computing the graph
+  axioms: []
+  induces:
+  - A formal counterpart of effective calculability
+  notes: ''
+  citations:
+  - turing-computable-numbers
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: recursively_enumerable_set
+  label: Computably enumerable set
+  primaryDomain: computability-theory
+  domains:
+  - computability-theory
+  - logic
+  level: 5
+  kind: structure
+  summary: A set whose members can be enumerated by a Turing machine, equivalently whose membership is semidecidable.
+  carriers:
+  - finite strings or natural numbers
+  data:
+  - enumerator or recognizer
+  axioms: []
+  induces:
+  - A domain of a partial computable function
+  notes: ''
+  citations:
+  - turing-computable-numbers
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: universal_turing_machine
+  label: Universal Turing machine
+  primaryDomain: computability-theory
+  domains:
+  - computability-theory
+  - logic
+  level: 5
+  kind: structure
+  summary: A Turing machine that simulates any encoded Turing machine on encoded input.
+  carriers:
+  - machine descriptions and inputs
+  data:
+  - universal simulation procedure
+  axioms: []
+  induces:
+  - Stored-program universality
+  notes: ''
+  citations:
+  - turing-computable-numbers
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: decidable_problem
+  label: Decidable problem
+  primaryDomain: computability-theory
+  domains:
+  - computability-theory
+  - logic
+  level: 5
+  kind: structure
+  summary: A decision problem whose characteristic function is total computable.
+  carriers:
+  - decision problem
+  data:
+  - halting decider
+  axioms: []
+  induces:
+  - A computable yes/no classification
+  notes: ''
+  citations:
+  - turing-computable-numbers
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: halting_problem
+  label: Halting problem
+  primaryDomain: computability-theory
+  domains:
+  - computability-theory
+  - logic
+  level: 8
+  kind: structure
+  summary: The decision problem asking whether an encoded Turing machine eventually halts on an encoded input.
+  carriers:
+  - machine-input pair
+  data:
+  - halting predicate
+  axioms: []
+  induces:
+  - A canonical undecidable problem
+  notes: ''
+  citations:
+  - turing-computable-numbers
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: undecidable_problem
+  label: Undecidable problem
+  primaryDomain: computability-theory
+  domains:
+  - computability-theory
+  - logic
+  level: 7
+  kind: structure
+  summary: A decision problem for which no algorithm halts on every input with the correct yes-or-no answer.
+  carriers:
+  - decision problem
+  data: []
+  axioms:
+  - nonexistence of a total decider
+  induces:
+  - Limits of algorithmic solution
+  notes: ''
+  citations:
+  - turing-computable-numbers
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: church_turing_thesis
+  label: Church–Turing thesis
+  primaryDomain: computability-theory
+  domains:
+  - computability-theory
+  - foundation
+  level: 6
+  kind: structure
+  summary: The methodological thesis that every effectively calculable function is computable by a Turing machine, equivalently by other standard models of computation.
+  carriers:
+  - informal notion of effective calculability
+  data:
+  - equivalence class of formal models
+  axioms: []
+  induces:
+  - A bridge from informal procedure to mathematical computability
+  notes: This is a thesis identifying an informal notion with a formal class, not a theorem proved from purely formal premises.
+  citations:
+  - turing-computable-numbers
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: godel_numbering
+  label: Gödel numbering
+  primaryDomain: computability-theory
+  domains:
+  - computability-theory
+  - logic
+  - number-theory
+  level: 7.25
+  kind: structure
+  summary: An effective coding of symbols, formulas, and finite proofs by natural numbers so that syntactic operations become arithmetically representable.
+  carriers:
+  - formal syntax
+  - natural numbers
+  data:
+  - effective encoding
+  axioms: []
+  induces:
+  - Arithmetization of syntax
+  notes: ''
+  citations:
+  - godel-incompleteness-paper
+  - openlogic-incompleteness
+  primaryField: mathematics
+  fields:
+  - mathematics
+edges:
+- id: story_algorithm_to_turing_machine_framework_specialization
+  source: algorithm
+  target: turing_machine
+  type: framework-specialization
+  label: formalizes as a Turing-machine procedure
+  detail: A Turing machine is one precise mathematical model of a finitely specified mechanical procedure; identifying it with the full informal notion of algorithm invokes the Church–Turing thesis.
+  citations:
+  - turing-computable-numbers
+- id: story_decision_problem_to_decidable_problem_classification
+  source: decision_problem
+  target: decidable_problem
+  type: classification
+  label: has a total decider
+  detail: A decision problem is decidable when some algorithm halts with the correct answer on every input.
+  citations:
+  - turing-computable-numbers
+- id: story_turing_machine_to_computable_function_canonical_construction
+  source: turing_machine
+  target: computable_function
+  type: canonical-construction
+  label: computes a partial function
+  detail: Each deterministic Turing machine induces a partial function by its input-output behavior; machines that halt on every input compute total functions.
+  citations:
+  - turing-computable-numbers
+- id: story_turing_machine_to_recursively_enumerable_set_canonical_construction
+  source: turing_machine
+  target: recursively_enumerable_set
+  type: canonical-construction
+  label: recognizes or enumerates a set
+  detail: A Turing machine determines a computably enumerable set by accepting exactly its members, equivalently by enumerating them.
+  citations:
+  - turing-computable-numbers
+- id: story_turing_machine_to_universal_turing_machine_framework_specialization
+  source: turing_machine
+  target: universal_turing_machine
+  type: framework-specialization
+  label: encode and simulate machines
+  detail: A universal machine interprets encoded machines and their inputs.
+  citations:
+  - turing-computable-numbers
+- id: story_universal_turing_machine_to_halting_problem_canonical_construction
+  source: universal_turing_machine
+  target: halting_problem
+  type: canonical-construction
+  label: poses termination of encoded simulations
+  detail: Encoding machines and inputs permits the decision problem asking whether the universal simulation of a given machine on a given input eventually halts.
+  citations:
+  - turing-computable-numbers
+- id: story_undecidable_problem_to_halting_problem_classification
+  source: undecidable_problem
+  target: halting_problem
+  type: classification
+  label: has the halting problem as a canonical example
+  detail: 'The halting problem is a specific undecidable decision problem: no total algorithm correctly decides termination for every encoded machine-input pair.'
+  citations:
+  - turing-computable-numbers
+- id: story_algorithm_to_computable_function_representation_equivalence
+  source: algorithm
+  target: computable_function
+  type: representation-equivalence
+  label: corresponds to a computable input–output map under the Church–Turing thesis
+  detail: A terminating or partial algorithm determines a partial function. The assertion that every effective algorithm is captured by Turing computability is the Church–Turing thesis, not a formal theorem.
+  citations:
+  - turing-computable-numbers
+- id: story_algorithm_to_church_turing_thesis_historically_motivated
+  source: algorithm
+  target: church_turing_thesis
+  type: historically-motivated
+  label: motivated a precise account of effective procedure
+  detail: Attempts to characterize the informal notion of an effective algorithm led to mutually equivalent formal models and the Church–Turing thesis.
+  citations:
+  - turing-computable-numbers
+- id: story_decision_problem_to_undecidable_problem_classification
+  source: decision_problem
+  target: undecidable_problem
+  type: classification
+  label: has undecidable instances as a subclass
+  detail: An undecidable problem is a decision problem for which no total algorithm returns the correct yes-or-no answer on every encoded instance.
+  citations:
+  - turing-computable-numbers
+- id: story_decidable_problem_to_recursively_enumerable_set_theorem_implication
+  source: decidable_problem
+  target: recursively_enumerable_set
+  type: theorem-implication
+  label: has a computably enumerable yes-language
+  detail: If a decision problem is decidable, its set of yes-instances is computably enumerable; run the decider through an effective enumeration of inputs and output those accepted.
+  citations:
+  - turing-computable-numbers
+- id: j_first_incompleteness__godel_numbering
+  source: godel_numbering
+  target: j_first_incompleteness
+  type: combine-compatible
+  label: arithmetized syntax
+  detail: Use an effective coding of the theory’s formulas and proofs by natural numbers.
+  citations:
+  - openlogic-incompleteness
+  - godel-incompleteness-paper
+- id: j_second_incompleteness__godel_numbering
+  source: godel_numbering
+  target: j_second_incompleteness
+  type: combine-compatible
+  label: arithmetized syntax
+  detail: Use an effective coding of the theory’s formulas and proofs by natural numbers.
+  citations:
+  - openlogic-incompleteness
+  - godel-incompleteness-paper

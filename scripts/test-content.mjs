@@ -38,7 +38,7 @@ async function textFiles(directory) {
   for (const entry of await readdir(directory, { withFileTypes: true })) {
     const path = join(directory, entry.name);
     if (entry.isDirectory()) files.push(...await textFiles(path));
-    else if (/\.(?:ts|mjs|md|json|yml)$/u.test(entry.name)) files.push(path);
+    else if (/\.(?:ts|mjs|md|json|ya?ml)$/u.test(entry.name)) files.push(path);
   }
   return files;
 }

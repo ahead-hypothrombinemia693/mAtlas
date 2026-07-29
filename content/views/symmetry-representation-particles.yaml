@@ -1,0 +1,81 @@
+id: symmetry-representation-particles
+title: From symmetry to particle types
+summary: Follow the path from group actions to irreducible unitary
+  representations, spinors, chirality, multiplets, and particle classifications.
+narrative: A symmetry becomes predictive only after specifying how it acts.
+  Group actions linearize as representations; irreducible representations
+  provide elementary building blocks; Lie groups and Lie algebras organize
+  continuous symmetries. Lorentz, Poincaré, and spin-group representations then
+  classify spin and chirality, while tensor products and Clebsch–Gordan
+  coefficients explain composite angular momentum and gauge multiplets.
+tags:
+  - Mathematics
+  - Physics
+  - Symmetry
+  - Representation theory
+featured: true
+settings:
+  fields:
+    - mathematics
+    - physics
+  domains:
+    - algebra
+    - representation-theory
+    - differential-geometry
+    - quantum-mechanics
+    - quantum-field-theory
+    - particle-physics
+  edgeTypes:
+    - add-data
+    - impose-axiom
+    - induced-forgotten
+    - canonical-construction
+    - quotient-construction
+    - canonical-embedding
+    - combine-compatible
+    - representation-equivalence
+    - theorem-implication
+    - classification
+    - mathematical-formulation
+    - framework-specialization
+    - quantization
+    - theory-component
+    - describes-governs
+    - composition
+    - state-description
+    - transformation-process
+    - mathematical-limit
+    - effective-theory
+    - emergence
+    - couples-interacts
+    - model-realization
+    - historically-motivated
+    - experimentally-verified-by
+  crossFieldVisibility: contextual
+  edgeLabels: true
+  junctions: false
+  edgeZoomActivation: true
+  layout: atlas
+nodeSequence:
+  - group
+  - group_action
+  - vector_space
+  - group_representation
+  - irreducible_representation
+  - lie_group
+  - lie_algebra
+  - lie_algebra_representation
+  - unitary_representation
+  - lorentz_group
+  - poincare_group
+  - spin_group
+  - clifford_algebra
+  - spinor_representation
+  - spin
+  - spin_half
+  - chirality
+  - fermion
+  - boson
+  - tensor_product_vector_space
+  - clebsch_gordan_coefficient
+  - standard_model_gauge_group

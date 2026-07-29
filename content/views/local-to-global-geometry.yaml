@@ -1,0 +1,72 @@
+id: local-to-global-geometry
+title: "Local-to-global geometry: sheaves and schemes"
+summary: See how local data, germs, localization, gluing, and affine spectra
+  build schemes and their geometric refinements.
+narrative: Presheaves encode restriction; sheaves impose local identity and
+  gluing. Stalks isolate germs at points. Ring-valued sheaves create ringed and
+  locally ringed spaces; localization produces local coordinate rings;
+  $\operatorname{Spec}(R)$ packages prime ideals, topology, and a structure
+  sheaf into an affine scheme. Schemes are spaces locally modeled on affine
+  spectra, and additional hypotheses produce Noetherian, reduced, integral,
+  regular, separated, projective, and variety-like geometries.
+tags:
+  - Mathematics
+  - Algebraic geometry
+  - Sheaves
+  - Schemes
+featured: true
+settings:
+  fields:
+    - mathematics
+  domains:
+    - category-theory
+    - algebra
+    - algebraic-geometry
+    - topology
+    - homological-algebra
+  edgeTypes:
+    - add-data
+    - impose-axiom
+    - induced-forgotten
+    - canonical-construction
+    - quotient-construction
+    - canonical-embedding
+    - combine-compatible
+    - representation-equivalence
+    - theorem-implication
+    - classification
+    - mathematical-formulation
+    - framework-specialization
+  crossFieldVisibility: hidden
+  edgeLabels: true
+  junctions: false
+  edgeZoomActivation: true
+  layout: atlas
+nodeSequence:
+  - category
+  - functor
+  - site
+  - presheaf
+  - sheaf
+  - sheaf_stalk
+  - sheaf_of_rings
+  - ringed_space
+  - local_ring
+  - locally_ringed_space
+  - commutative_ring
+  - ring_localization
+  - prime_spectrum
+  - affine_scheme
+  - scheme
+  - scheme_over_base
+  - noetherian_scheme
+  - reduced_scheme
+  - integral_scheme
+  - regular_scheme
+  - separated_scheme
+  - projective_scheme
+  - algebraic_variety
+  - algebraic_space
+  - grothendieck_topos
+  - grothendieck_abelian_category
+  - derived_category

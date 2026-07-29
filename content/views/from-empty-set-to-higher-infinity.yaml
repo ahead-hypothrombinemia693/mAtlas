@@ -1,0 +1,84 @@
+id: from-empty-set-to-higher-infinity
+title: From the empty set to higher infinity
+summary: Build the standard number systems from the empty set, then continue
+  through ordinal and cardinal hierarchies, Choice, independence, and
+  large-cardinal notions.
+narrative: Follow von Neumann successor from the empty set to finite ordinals
+  and $\omega$; pass by quotients, completions, and canonical embeddings through
+  $\mathbb N$, $\mathbb Z$, $\mathbb Q$, $\mathbb R$, and $\mathbb C$; then
+  continue through transfinite ordinals, alephs, beths, the continuum, and large
+  cardinals. ZF is the baseline theory, Choice is shown explicitly, and
+  statements independent of ZFC are labeled as such. This route separates
+  abstract number systems from their chosen set-theoretic realizations.
+tags:
+  - Mathematics
+  - Set theory
+  - Number systems
+  - Infinity
+featured: true
+settings:
+  fields:
+    - mathematics
+  domains:
+    - set-theory
+    - order
+    - logic
+    - algebra
+    - foundation
+    - number-theory
+    - topology
+    - analysis
+    - measure
+  edgeTypes:
+    - add-data
+    - impose-axiom
+    - induced-forgotten
+    - canonical-construction
+    - quotient-construction
+    - canonical-embedding
+    - representation-equivalence
+    - theorem-implication
+    - classification
+  crossFieldVisibility: hidden
+  edgeLabels: true
+  junctions: false
+  edgeZoomActivation: true
+  layout: atlas
+nodeSequence:
+  - zermelo_fraenkel_set_theory
+  - empty_set
+  - von_neumann_zero
+  - von_neumann_successor
+  - von_neumann_one
+  - finite_ordinal
+  - omega
+  - natural_numbers
+  - integer_difference_pairs
+  - integers
+  - rational_fraction_pairs
+  - rational_numbers
+  - dedekind_cut_reals
+  - rational_cauchy_sequences
+  - real_numbers
+  - complex_pair_realization
+  - complex_numbers
+  - ordinal
+  - successor_ordinal
+  - limit_ordinal
+  - ordinal_arithmetic
+  - first_uncountable_ordinal
+  - epsilon_zero
+  - cardinal
+  - aleph_zero
+  - cantors_theorem
+  - aleph_hierarchy
+  - beth_hierarchy
+  - continuum_cardinal
+  - axiom_of_choice
+  - well_ordering_theorem
+  - zfc_set_theory
+  - continuum_hypothesis
+  - large_cardinal
+  - inaccessible_cardinal
+  - measurable_cardinal
+  - supercompact_cardinal

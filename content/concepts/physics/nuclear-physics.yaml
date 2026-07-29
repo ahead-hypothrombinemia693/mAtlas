@@ -1,0 +1,1575 @@
+nodes:
+- id: residual_strong_interaction
+  label: Residual strong interaction
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 15
+  kind: structure
+  conceptType: Emergent effective interaction
+  summary: The color-singlet interaction between hadrons arising from QCD, analogous in role—but not form—to a residual interaction between neutral composites.
+  citations:
+  - wp-physics-residual_strong_interaction
+  - nlab-physics-residual_strong_interaction
+  - epelbaum-nuclear-eft
+  - machleidt-entem-nuclear-forces
+- id: nuclear_effective_field_theory
+  label: Nuclear effective field theory
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 16
+  kind: structure
+  conceptType: Effective field theory
+  summary: A low-energy expansion for nuclear interactions and currents using nucleons, pions or pionless degrees of freedom according to the scale.
+  citations:
+  - wp-physics-nuclear_effective_field_theory
+  - nlab-physics-nuclear_effective_field_theory
+  - epelbaum-nuclear-eft
+  - machleidt-entem-nuclear-forces
+- id: nucleon
+  label: Nucleon
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 18
+  kind: structure
+  conceptType: Hadron class
+  summary: A proton or neutron, treated as a baryonic QCD bound state and as an effective degree of freedom in nuclei.
+  citations:
+  - wp-physics-nucleon
+  - nlab-physics-nucleon
+  - pdg-quark-model
+  - doe-nuclei
+- id: pion
+  label: Pion
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 18
+  kind: structure
+  conceptType: Meson / pseudo-Goldstone boson
+  summary: The lightest meson isotriplet, central to low-energy QCD and the long-range part of the nuclear force.
+  citations:
+  - wp-physics-pion
+  - nlab-physics-pion
+  - pdg-quark-model
+  - epelbaum-nuclear-eft
+- id: neutron
+  label: Neutron
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 19
+  kind: structure
+  conceptType: Composite particle
+  summary: A neutral baryon with valence content $udd$ plus gluon and sea-quark degrees of freedom; free neutrons are unstable to beta decay.
+  citations:
+  - wp-physics-neutron
+  - pdg-quark-model
+  - doe-neutrons
+  status: Observed
+- id: nuclear_force
+  label: Nuclear force
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 19
+  kind: structure
+  conceptType: Effective interaction
+  summary: The effective interaction among nucleons, including two-nucleon and three-nucleon terms. Its long-range part is governed by pion exchange, while shorter-range operators are organized and fitted within nuclear effective field theory.
+  citations:
+  - wp-physics-residual_strong_interaction
+  - nlab-physics-residual_strong_interaction
+  - epelbaum-nuclear-eft
+  - machleidt-entem-nuclear-forces
+- id: nucleon_nucleon_interaction
+  label: Nucleon–nucleon interaction
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 19
+  kind: structure
+  conceptType: Effective interaction
+  summary: The two-nucleon interaction extracted from scattering and constrained by QCD symmetries, forming a leading part of nuclear Hamiltonians.
+  citations:
+  - wp-physics-residual_strong_interaction
+  - epelbaum-nuclear-eft
+  - machleidt-entem-nuclear-forces
+- id: proton
+  label: Proton
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 19
+  kind: structure
+  conceptType: Composite particle
+  summary: The lightest baryon with electric charge $+e$, a QCD bound state with valence content $uud$ plus gluon and sea-quark degrees of freedom.
+  citations:
+  - wp-physics-proton
+  - pdg-quark-model
+  - doe-protons
+  status: Observed; stable or extraordinarily long-lived
+- id: antineutron
+  label: Antineutron
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 20
+  kind: structure
+  conceptType: Antibaryon
+  summary: 'The neutron antiparticle: electrically neutral, with baryon number $-1$, conjugate internal quantum numbers, and a magnetic moment opposite in sign to the neutron under standard conventions.'
+  citations:
+  - wp-physics-antineutron
+  - pdg-rpp
+  - pdg-quark-model
+- id: antiproton
+  label: Antiproton
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 20
+  kind: structure
+  conceptType: Antibaryon
+  summary: The antiparticle of the proton, with opposite additive charges.
+  citations:
+  - wp-physics-antiproton
+  - pdg-rpp
+  - pdg-quark-model
+- id: one_pion_exchange
+  label: One-pion exchange
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 20
+  kind: structure
+  conceptType: Long-range effective interaction
+  summary: The longest-range term in low-energy nucleon–nucleon interactions generated by pion dynamics; in perturbative diagrams it is represented by a pion propagator between nucleon vertices.
+  citations:
+  - wp-physics-one_pion_exchange
+  - nlab-physics-one_pion_exchange
+  - epelbaum-nuclear-eft
+  - machleidt-entem-nuclear-forces
+- id: three_nucleon_force
+  label: Three-nucleon force
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 20
+  kind: structure
+  conceptType: Effective interaction
+  summary: An irreducible effective interaction among three nucleons, required in nuclear EFT and precision nuclear structure beyond pairwise forces.
+  citations:
+  - wp-physics-three_nucleon_force
+  - epelbaum-nuclear-eft
+  - machleidt-entem-nuclear-forces
+- id: nuclear_coulomb_interaction
+  label: Nuclear Coulomb interaction
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 21
+  kind: structure
+  conceptType: Electromagnetic interaction in nuclei
+  summary: The electrostatic repulsion among protons and electromagnetic corrections within a nucleus, competing with nuclear attraction and breaking isospin symmetry.
+  citations:
+  - wp-physics-residual_strong_interaction
+  - epelbaum-nuclear-eft
+  - nist-codata
+- id: nuclear_potential
+  label: Nuclear potential
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 21
+  kind: structure
+  conceptType: Effective model interaction
+  summary: A nonunique potential representation of nuclear interactions, dependent on resolution, regulator, and unitary conventions while preserving observables.
+  citations:
+  - wp-physics-nuclear_potential
+  - machleidt-entem-nuclear-forces
+- id: nuclear_many_body_system
+  label: Nuclear many-body system
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 22
+  kind: structure
+  conceptType: Composite quantum system
+  summary: A bound or resonant system of interacting protons and neutrons with internal excitations and collective modes.
+  citations:
+  - wp-physics-atomic_nucleus
+  - doe-nuclei
+  - iaea-ensdf
+- id: atomic_nucleus
+  label: Atomic nucleus
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 23
+  kind: structure
+  conceptType: Composite system
+  summary: The compact positively charged core of an atom, ordinarily composed of protons and neutrons bound by residual strong interactions.
+  citations:
+  - wp-physics-atomic_nucleus
+  - nlab-physics-atomic_nucleus
+  - doe-nuclei
+  - iaea-ensdf
+  scale: Femtometre
+- id: alpha_particle
+  label: Alpha particle
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 24
+  kind: structure
+  conceptType: Atomic nucleus
+  summary: A tightly bound helium-4 nucleus containing two protons and two neutrons.
+  citations:
+  - wp-physics-alpha_particle
+  - iaea-livechart
+  - doe-nuclei
+- id: deuteron
+  label: Deuteron
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 24
+  kind: structure
+  conceptType: Atomic nucleus
+  summary: The bound proton–neutron nucleus of deuterium and the only bound two-nucleon system.
+  citations:
+  - wp-physics-deuteron
+  - iaea-livechart
+  - doe-nuclei
+- id: mass_number
+  label: Mass number $A$
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 24
+  kind: structure
+  conceptType: Composition number
+  summary: The integer $A=Z+N$ counting nucleons in a nucleus.
+  citations:
+  - wp-physics-mass_number
+  - iupac-nuclide
+  - iaea-livechart
+- id: neutron_number
+  label: Neutron number $N$
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 24
+  kind: structure
+  conceptType: Composition number
+  summary: The number of neutrons in a nucleus.
+  citations:
+  - wp-physics-neutron_number
+  - iupac-nuclide
+  - iaea-livechart
+- id: nuclear_spin
+  label: Nuclear spin
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 24
+  kind: structure
+  conceptType: State property
+  summary: The total angular momentum quantum number of a nuclear state, combining nucleon orbital and intrinsic spins.
+  citations:
+  - wp-physics-nuclear_spin
+  - iaea-ensdf
+  - iaea-livechart
+- id: nuclear_state
+  label: Nuclear state
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 24
+  kind: structure
+  conceptType: Quantum state
+  summary: A quantum state of a nucleus labeled by energy, angular momentum, parity, isospin-related quantities, and other quantum numbers.
+  citations:
+  - wp-physics-nuclear_state
+  - iaea-ensdf
+  - iaea-livechart
+- id: proton_number
+  label: Proton number $Z$
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 24
+  kind: structure
+  conceptType: Composition number
+  summary: The number of protons in a nucleus, determining the chemical element.
+  citations:
+  - wp-physics-proton_number
+  - iupac-nuclide
+  - iaea-livechart
+- id: liquid_drop_model
+  label: Liquid-drop model
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 25
+  kind: structure
+  conceptType: Collective effective model
+  summary: A coarse-grained nuclear model capturing volume, surface, Coulomb, asymmetry, and pairing contributions to masses and collective behavior.
+  citations:
+  - wp-physics-liquid_drop_model
+  - doe-nuclei
+  - iaea-livechart
+- id: nuclear_binding_energy
+  label: Nuclear binding energy
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 25
+  kind: structure
+  conceptType: Composite-system energy
+  summary: The energy required to separate a nucleus into free nucleons, equal to its mass defect times $c^2$.
+  citations:
+  - wp-physics-nuclear_binding_energy
+  - iaea-livechart
+  - pdg-2026-atomic
+- id: nuclear_energy_level
+  label: Nuclear energy level
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 25
+  kind: structure
+  conceptType: State property
+  summary: A discrete or resonant nuclear excitation energy above the ground state.
+  citations:
+  - wp-physics-nuclear_state
+  - iaea-ensdf
+  - iaea-livechart
+- id: nuclear_mean_field
+  label: Nuclear mean-field theory
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 25
+  kind: structure
+  conceptType: Effective approximation
+  summary: An approximation replacing much of the many-nucleon interaction by self-consistent one-body fields, often extended by pairing and correlations.
+  citations:
+  - wp-physics-nuclear_state
+  - machleidt-entem-nuclear-forces
+  - iaea-ensdf
+- id: nuclear_shell_model
+  label: Nuclear shell model
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 25
+  kind: structure
+  conceptType: Effective many-body model
+  summary: A model of nucleons moving in an effective mean field with residual interactions, organizing nuclear levels into shell-model configurations.
+  citations:
+  - wp-physics-nuclear_shell_model
+  - iaea-ensdf
+  - machleidt-entem-nuclear-forces
+- id: nuclide
+  label: Nuclide
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 25
+  kind: structure
+  conceptType: Atomic species classified by nucleus
+  summary: A species of atom characterized by the numbers of protons and neutrons in its nucleus and, when needed, by the nuclear energy state.
+  citations:
+  - wp-physics-nuclide
+  - nlab-physics-nuclide
+  - iupac-nuclide
+  - iaea-livechart
+- id: isotone
+  label: Isotone
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 26
+  kind: structure
+  conceptType: Nuclide relation class
+  summary: Nuclides with the same neutron number $N$ but different proton number $Z$.
+  citations:
+  - wp-physics-isotone
+  - iupac-nuclide
+  - iaea-livechart
+- id: isotope
+  label: Isotope
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 26
+  kind: structure
+  conceptType: Nuclide class
+  summary: A member of a set of nuclides having the same atomic number but different mass numbers; equivalently, the same proton number but different neutron numbers.
+  citations:
+  - wp-physics-isotope
+  - nlab-physics-isotope
+  - iupac-isotopes
+  - iaea-livechart
+- id: isobar
+  label: Nuclear isobar
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 26
+  kind: structure
+  conceptType: Nuclide relation class
+  summary: Nuclides with the same mass number $A$ but different proton number $Z$.
+  citations:
+  - wp-physics-isobar
+  - iupac-nuclide
+  - iaea-livechart
+- id: nuclear_isomer
+  label: Nuclear isomer
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 26
+  kind: structure
+  conceptType: Metastable nuclear state
+  summary: A relatively long-lived excited state of a nuclide, distinguished from its ground state and shorter-lived excitations.
+  citations:
+  - wp-physics-nuclear_isomer
+  - iaea-ensdf
+  - iaea-livechart
+- id: mass_defect
+  label: Nuclear mass defect
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 26
+  kind: structure
+  conceptType: Derived quantity
+  summary: The difference between the total rest mass of separated constituent nucleons and the measured nuclear mass.
+  citations:
+  - wp-physics-nuclear_binding_energy
+  - iaea-livechart
+  - pdg-2026-atomic
+- id: radioactive_decay
+  label: Radioactive decay
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 26
+  kind: structure
+  conceptType: Spontaneous process
+  summary: A transition of an unstable nuclear or particle state to lower-energy products with a characteristic probability per unit time.
+  citations:
+  - wp-physics-radioactive_decay
+  - iaea-ensdf
+  - pdg-2026-contents
+- id: alpha_decay
+  label: Alpha decay
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 27
+  kind: structure
+  conceptType: Nuclear decay process
+  summary: Quantum tunneling emission of an alpha particle from a parent nucleus.
+  citations:
+  - wp-physics-alpha_decay
+  - iaea-ensdf
+  - iaea-livechart
+- id: beta_decay
+  label: Beta decay
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 27
+  kind: structure
+  conceptType: Weak nuclear process
+  summary: A weak-interaction process changing nuclear charge through nucleon flavor conversion, including beta-minus, beta-plus, and related capture processes.
+  citations:
+  - wp-physics-beta_decay
+  - iaea-ensdf
+  - pdg-standard-model
+- id: gamma_decay
+  label: Gamma decay
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 27
+  kind: structure
+  conceptType: Electromagnetic nuclear transition
+  summary: An excited nuclear state emits one or more photons or transfers energy internally to atomic electrons.
+  citations:
+  - wp-physics-gamma_decay
+  - iaea-ensdf
+  - nist-atomic-spectroscopy
+- id: beta_minus_decay
+  label: Beta-minus decay
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 28
+  kind: structure
+  conceptType: Weak nuclear process
+  summary: A neutron-rich system converts a neutron to a proton while emitting an electron and electron antineutrino.
+  citations:
+  - wp-physics-beta_decay
+  - iaea-ensdf
+  - pdg-standard-model
+- id: beta_plus_decay
+  label: Beta-plus decay
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 28
+  kind: structure
+  conceptType: Weak nuclear process
+  summary: A proton-rich system converts a proton to a neutron while emitting a positron and electron neutrino, when energetically allowed.
+  citations:
+  - wp-physics-beta_decay
+  - iaea-ensdf
+  - pdg-standard-model
+- id: electron_capture
+  label: Electron capture
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  level: 28
+  kind: structure
+  conceptType: Weak nuclear process
+  summary: A nucleus captures an atomic electron and converts a proton to a neutron while emitting an electron neutrino.
+  citations:
+  - wp-physics-electron_capture
+  - iaea-ensdf
+  - pdg-standard-model
+- id: geiger_marsden_gold_foil_experiment
+  label: Geiger–Marsden gold-foil experiment
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  - experiments-observations
+  level: 23
+  kind: structure
+  conceptType: Discovery experiment
+  summary: Large-angle alpha-particle scattering from thin foils contradicted diffuse-charge atomic models and led Rutherford to a compact, positively charged nucleus.
+  citations:
+  - wp-physics-geiger_marsden_gold_foil_experiment
+  - aps-rutherford
+  status: Observed / performed
+- id: aston_mass_spectrograph_measurements
+  label: Aston mass-spectrograph measurements
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  - experiments-observations
+  level: 27
+  kind: structure
+  conceptType: Discovery and measurement program
+  summary: Aston separated isotopes by mass-to-charge ratio and established isotope masses and packing-fraction regularities central to nuclide and binding-energy systematics.
+  citations:
+  - wp-physics-aston_mass_spectrograph_measurements
+  - nobel-aston
+  status: Observed / performed
+- id: continuous_beta_spectrum_problem
+  label: Continuous beta-spectrum problem
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  - experiments-observations
+  level: 12
+  kind: structure
+  conceptType: Observation / conservation problem
+  summary: Measured beta-decay electron spectra were continuous, creating an apparent energy-and-momentum conservation problem before the neutrino hypothesis and Fermi’s theory.
+  citations:
+  - wp-physics-beta_decay
+  - nobel-neutrino-advanced
+  status: Observed / performed
+- id: chadwick_neutron_experiment
+  label: Chadwick neutron experiment
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  - experiments-observations
+  level: 20
+  kind: structure
+  conceptType: Discovery experiment
+  summary: Chadwick showed that penetrating radiation from alpha-bombarded beryllium consisted of neutral particles with mass near the proton mass, establishing the neutron.
+  citations:
+  - wp-physics-chadwick_neutron_experiment
+  - aps-chadwick
+  status: Observed / performed
+- id: pion_nuclear_emulsion_discovery
+  label: Pion discovery in nuclear emulsions
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  - experiments-observations
+  level: 19
+  kind: structure
+  conceptType: Discovery experiment
+  summary: Nuclear-emulsion observations identified the pion and its decay to the muon, establishing the light meson associated with the long-range nuclear interaction.
+  citations:
+  - wp-physics-pion
+  - nobel-pion
+  - pdg-rpp
+  status: Observed / performed
+- id: nuclear_magic_number_systematics
+  label: Nuclear magic-number systematics
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  - experiments-observations
+  level: 25
+  kind: structure
+  conceptType: Observation / structural pattern
+  summary: Enhanced stability and recurring spectroscopic patterns at particular proton and neutron numbers motivated the nuclear shell model and its spin–orbit structure.
+  citations:
+  - wp-physics-nuclear_shell_model
+  - nobel-shell-model
+  - iaea-ensdf
+  status: Observed / performed
+- id: rutherford_proton_transmutation
+  label: Rutherford proton-transmutation experiment
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: nuclear-physics
+  domains:
+  - nuclear-physics
+  - experiments-observations
+  level: 20
+  kind: structure
+  conceptType: Discovery experiment
+  summary: Alpha bombardment of nitrogen produced hydrogen nuclei, establishing the proton as a nuclear constituent and demonstrating artificial transmutation.
+  citations:
+  - wp-physics-rutherford_proton_transmutation
+  - doe-protons
+  - pdg-rpp
+  status: Observed / performed
+edges:
+- id: alpha_particle_to_alpha_decay
+  source: alpha_decay
+  target: alpha_particle
+  type: transformation-process
+  label: emitted alpha particle
+  detail: Alpha decay produces a helium-4 nucleus (alpha particle) and a daughter nuclide, with the cluster escaping through quantum tunneling.
+  citations:
+  - wp-physics-alpha_decay
+  - iaea-ensdf
+  - wp-physics-alpha_particle
+  - iaea-livechart
+- id: nucleus_to_atom_precise
+  source: atomic_nucleus
+  target: atom
+  type: composition
+  label: nuclear constituent
+  detail: An atom contains one nucleus carrying almost all its mass and all positive charge.
+  citations:
+  - wp-physics-atom
+  - nlab-physics-atom
+  - wp-physics-atomic_nucleus
+  - nlab-physics-atomic_nucleus
+- id: nucleus_to_finitesize
+  source: atomic_nucleus
+  target: finite_nuclear_size_effect
+  type: couples-interacts
+  label: extended charge distribution
+  detail: The finite nuclear charge radius perturbs electronic wavefunctions and energy levels.
+  citations:
+  - wp-physics-atomic_nucleus
+  - nlab-physics-atomic_nucleus
+  - doe-nuclei
+  - iaea-ensdf
+  - wp-physics-finite_nuclear_size_effect
+  - nist-hydrogen
+  - nist-codata
+- id: nucleus_to_isotopeshift
+  source: atomic_nucleus
+  target: isotope_shift
+  type: couples-interacts
+  label: mass and charge-radius dependence
+  detail: Nuclear mass and charge distribution shift atomic transition frequencies across isotopes.
+  citations:
+  - wp-physics-isotope_shift
+  - nist-atomic-spectroscopy
+  - wp-physics-atomic_nucleus
+  - nlab-physics-atomic_nucleus
+- id: nucleus_to_n
+  source: atomic_nucleus
+  target: neutron_number
+  type: state-description
+  label: neutron count
+  detail: Neutron number counts nuclear neutrons.
+  citations:
+  - wp-physics-neutron_number
+  - iupac-nuclide
+  - wp-physics-atomic_nucleus
+  - nlab-physics-atomic_nucleus
+- id: nucleus_to_binding
+  source: atomic_nucleus
+  target: nuclear_binding_energy
+  type: state-description
+  label: separation energy total
+  detail: Nuclear binding energy measures the mass-energy difference from separated nucleons.
+  citations:
+  - wp-physics-nuclear_binding_energy
+  - iaea-livechart
+  - wp-physics-atomic_nucleus
+  - nlab-physics-atomic_nucleus
+- id: nucleus_to_nuclearstate
+  source: atomic_nucleus
+  target: nuclear_state
+  type: state-description
+  label: nuclear quantum states
+  detail: Each nucleus has ground, excited, resonant, and continuum states.
+  citations:
+  - wp-physics-nuclear_state
+  - iaea-ensdf
+  - wp-physics-atomic_nucleus
+  - nlab-physics-atomic_nucleus
+- id: nucleus_to_z
+  source: atomic_nucleus
+  target: proton_number
+  type: state-description
+  label: proton count
+  detail: Proton number counts nuclear protons.
+  citations:
+  - wp-physics-proton_number
+  - iupac-nuclide
+  - wp-physics-atomic_nucleus
+  - nlab-physics-atomic_nucleus
+- id: nucleus_to_decay
+  source: atomic_nucleus
+  target: radioactive_decay
+  type: transformation-process
+  label: unstable nuclear transition
+  detail: Unstable nuclei transform through radioactive decay channels permitted by interactions and energetics.
+  citations:
+  - wp-physics-radioactive_decay
+  - iaea-ensdf
+  - wp-physics-atomic_nucleus
+  - nlab-physics-atomic_nucleus
+- id: beta_to_minus
+  source: beta_decay
+  target: beta_minus_decay
+  type: classification
+  label: beta-minus channel
+  detail: Beta-minus decay emits an electron and antineutrino.
+  citations:
+  - wp-physics-beta_decay
+  - iaea-ensdf
+- id: beta_to_plus
+  source: beta_decay
+  target: beta_plus_decay
+  type: classification
+  label: beta-plus channel
+  detail: Beta-plus decay emits a positron and neutrino.
+  citations:
+  - wp-physics-beta_decay
+  - iaea-ensdf
+- id: beta_to_capture
+  source: beta_decay
+  target: electron_capture
+  type: classification
+  label: electron-capture channel
+  detail: Electron capture is the crossed weak process competing with beta-plus decay.
+  citations:
+  - wp-physics-electron_capture
+  - iaea-ensdf
+  - wp-physics-beta_decay
+- id: betaminus_to_electron
+  source: beta_minus_decay
+  target: electron
+  type: transformation-process
+  label: electron product
+  detail: Beta-minus decay produces an electron.
+  citations:
+  - wp-physics-beta_decay
+  - iaea-ensdf
+  - pdg-standard-model
+  - wp-physics-electron
+  - nlab-physics-electron
+  - pdg-rpp
+  - nist-codata
+- id: betaminus_to_antinu
+  source: beta_minus_decay
+  target: electron_antineutrino
+  type: transformation-process
+  label: electron-antineutrino product
+  detail: Beta-minus decay produces an electron antineutrino.
+  citations:
+  - wp-physics-beta_decay
+  - iaea-ensdf
+  - pdg-standard-model
+  - wp-physics-electron_neutrino
+  - pdg-2026-neutrino
+  - pdg-rpp
+- id: betaminus_to_proton
+  source: beta_minus_decay
+  target: proton
+  type: transformation-process
+  label: proton product
+  detail: At the nucleon level, beta-minus decay converts a neutron into a proton.
+  citations:
+  - wp-physics-beta_decay
+  - iaea-ensdf
+  - pdg-standard-model
+  - wp-physics-proton
+  - pdg-quark-model
+  - doe-protons
+- id: betaplus_to_nu
+  source: beta_plus_decay
+  target: electron_neutrino
+  type: transformation-process
+  label: electron-neutrino product
+  detail: Beta-plus decay produces an electron neutrino.
+  citations:
+  - wp-physics-beta_decay
+  - iaea-ensdf
+  - pdg-standard-model
+  - wp-physics-electron_neutrino
+  - pdg-2026-neutrino
+  - cern-standard-model
+- id: betaplus_to_positron
+  source: beta_plus_decay
+  target: positron
+  type: transformation-process
+  label: positron product
+  detail: Beta-plus decay produces a positron and an electron neutrino while converting a proton to a neutron within a nucleus.
+  citations:
+  - wp-physics-beta_decay
+  - iaea-ensdf
+  - pdg-standard-model
+  - wp-physics-positron
+  - pdg-rpp
+  - nist-codata
+- id: capture_to_nu
+  source: electron_capture
+  target: electron_neutrino
+  type: transformation-process
+  label: electron-neutrino product
+  detail: Electron capture produces an electron neutrino.
+  citations:
+  - wp-physics-electron_capture
+  - iaea-ensdf
+  - pdg-standard-model
+  - wp-physics-electron_neutrino
+  - pdg-2026-neutrino
+  - cern-standard-model
+- id: gamma_to_photon
+  source: gamma_decay
+  target: photon
+  type: transformation-process
+  label: gamma photon
+  detail: In the radiative branch of nuclear gamma de-excitation, the nucleus emits a photon; internal conversion is a competing nonradiative channel.
+  citations:
+  - wp-physics-gamma_decay
+  - iaea-ensdf
+  - nist-atomic-spectroscopy
+  - wp-physics-photon
+  - nlab-physics-photon
+  - pdg-rpp
+  - tong-qft
+- id: neutron_to_alpha_particle
+  source: neutron
+  target: alpha_particle
+  type: composition
+  label: two neutron constituents
+  detail: An alpha particle contains two neutrons.
+  citations:
+  - wp-physics-alpha_particle
+  - iaea-livechart
+  - wp-physics-neutron
+  - pdg-quark-model
+- id: neutron_to_nucleus_precise
+  source: neutron
+  target: atomic_nucleus
+  type: composition
+  label: neutron constituent
+  detail: Neutrons are constituent nucleons of nuclei.
+  citations:
+  - wp-physics-atomic_nucleus
+  - nlab-physics-atomic_nucleus
+  - wp-physics-neutron
+  - pdg-quark-model
+- id: neutron_to_betaminus
+  source: neutron
+  target: beta_minus_decay
+  type: transformation-process
+  label: free-neutron beta decay
+  detail: A free neutron decays weakly to a proton, electron, and electron antineutrino.
+  citations:
+  - wp-physics-neutron
+  - pdg-quark-model
+  - doe-neutrons
+  - wp-physics-beta_decay
+  - iaea-ensdf
+  - pdg-standard-model
+- id: neutron_to_deuteron
+  source: neutron
+  target: deuteron
+  type: composition
+  label: neutron constituent
+  detail: The deuteron contains one neutron.
+  citations:
+  - wp-physics-deuteron
+  - iaea-livechart
+  - wp-physics-neutron
+  - pdg-quark-model
+- id: n_to_a
+  source: neutron_number
+  target: mass_number
+  type: theory-component
+  label: $A=Z+N$ contribution
+  detail: Mass number equals proton plus neutron number.
+  citations:
+  - wp-physics-mass_number
+  - iupac-nuclide
+  - wp-physics-neutron_number
+- id: binding_to_massdefect
+  source: nuclear_binding_energy
+  target: mass_defect
+  type: representation-equivalence
+  label: $E=\Delta mc^2$
+  detail: Mass defect and total binding energy are related by mass–energy equivalence.
+  citations:
+  - wp-physics-nuclear_binding_energy
+  - iaea-livechart
+- id: nuclearcoulomb_to_nucleus
+  source: nuclear_coulomb_interaction
+  target: atomic_nucleus
+  type: couples-interacts
+  label: Coulomb contribution to nuclear structure
+  detail: Proton Coulomb repulsion shifts nuclear energies and competes with nuclear attraction.
+  citations:
+  - wp-physics-residual_strong_interaction
+  - epelbaum-nuclear-eft
+  - nist-codata
+  - wp-physics-atomic_nucleus
+  - nlab-physics-atomic_nucleus
+  - doe-nuclei
+  - iaea-ensdf
+- id: nucleareft_to_nuclearforce
+  source: nuclear_effective_field_theory
+  target: nuclear_force
+  type: describes-governs
+  label: systematic nuclear interaction expansion
+  detail: Nuclear EFT organizes two-, three-, and higher-nucleon forces and currents by power counting.
+  citations:
+  - wp-physics-residual_strong_interaction
+  - nlab-physics-residual_strong_interaction
+  - wp-physics-nuclear_effective_field_theory
+  - nlab-physics-nuclear_effective_field_theory
+- id: nucleareft_to_threebody
+  source: nuclear_effective_field_theory
+  target: three_nucleon_force
+  type: describes-governs
+  label: three-nucleon operators
+  detail: Nuclear EFT generates and organizes irreducible three-nucleon forces together with two-nucleon forces and currents.
+  citations:
+  - wp-physics-nuclear_effective_field_theory
+  - nlab-physics-nuclear_effective_field_theory
+  - epelbaum-nuclear-eft
+  - machleidt-entem-nuclear-forces
+  - wp-physics-three_nucleon_force
+- id: nuclearforce_binds_nucleus
+  source: nuclear_force
+  target: atomic_nucleus
+  type: couples-interacts
+  label: nuclear binding
+  detail: Effective nuclear forces bind many nuclei against nucleon separation, opposed by proton Coulomb repulsion and modified by quantum statistics.
+  citations:
+  - wp-physics-atomic_nucleus
+  - nlab-physics-atomic_nucleus
+  - wp-physics-residual_strong_interaction
+  - nlab-physics-residual_strong_interaction
+- id: nuclearforce_binds_deuteron
+  source: nuclear_force
+  target: deuteron
+  type: couples-interacts
+  label: two-nucleon binding
+  detail: The deuteron is the shallow bound state of the proton–neutron interaction.
+  citations:
+  - wp-physics-deuteron
+  - iaea-livechart
+  - wp-physics-residual_strong_interaction
+  - nlab-physics-residual_strong_interaction
+- id: nuclearforce_to_nn
+  source: nuclear_force
+  target: nucleon_nucleon_interaction
+  type: framework-specialization
+  label: two-nucleon sector
+  detail: The nucleon–nucleon interaction is the two-body sector of nuclear forces.
+  citations:
+  - wp-physics-residual_strong_interaction
+  - epelbaum-nuclear-eft
+  - nlab-physics-residual_strong_interaction
+- id: nuclearmany_to_nucleus
+  source: nuclear_many_body_system
+  target: atomic_nucleus
+  type: classification
+  label: atomic nucleus
+  detail: An atomic nucleus is a nuclear many-body system with specified proton and neutron content.
+  citations:
+  - wp-physics-atomic_nucleus
+  - nlab-physics-atomic_nucleus
+  - doe-nuclei
+- id: nuclear_many_to_drop
+  source: nuclear_many_body_system
+  target: liquid_drop_model
+  type: model-realization
+  label: bulk collective description
+  detail: The liquid-drop model coarse-grains the nucleus into bulk and surface energy terms.
+  citations:
+  - wp-physics-liquid_drop_model
+  - doe-nuclei
+  - wp-physics-atomic_nucleus
+- id: nuclear_many_to_meanfield
+  source: nuclear_many_body_system
+  target: nuclear_mean_field
+  type: model-realization
+  label: self-consistent one-body field
+  detail: Mean-field theory replaces much of the many-body interaction by self-consistent fields.
+  citations:
+  - wp-physics-nuclear_state
+  - machleidt-entem-nuclear-forces
+  - wp-physics-atomic_nucleus
+  - doe-nuclei
+- id: nuclear_many_to_shell
+  source: nuclear_many_body_system
+  target: nuclear_shell_model
+  type: model-realization
+  label: valence-space effective Hamiltonian
+  detail: The shell model truncates to selected single-particle orbitals and an effective interaction.
+  citations:
+  - wp-physics-nuclear_shell_model
+  - iaea-ensdf
+  - wp-physics-atomic_nucleus
+  - doe-nuclei
+- id: nuclearspin_to_hyperfine
+  source: nuclear_spin
+  target: hyperfine_structure
+  type: couples-interacts
+  label: nuclear multipole coupling
+  detail: Nuclear magnetic dipole and electric quadrupole moments couple to electronic fields to produce hyperfine structure.
+  citations:
+  - wp-physics-hyperfine_structure
+  - nlab-physics-hyperfine_structure
+  - wp-physics-nuclear_spin
+  - iaea-ensdf
+- id: nuclearstate_to_level
+  source: nuclear_state
+  target: nuclear_energy_level
+  type: state-description
+  label: energy eigenvalue
+  detail: Nuclear energy levels label stationary or resonant states.
+  citations:
+  - wp-physics-nuclear_state
+  - iaea-ensdf
+- id: nuclearstate_to_isomer
+  source: nuclear_state
+  target: nuclear_isomer
+  type: classification
+  label: metastable state
+  detail: A nuclear isomer is a metastable excited state of a nuclide.
+  citations:
+  - wp-physics-nuclear_isomer
+  - iaea-ensdf
+  - wp-physics-nuclear_state
+- id: nuclearstate_to_spin
+  source: nuclear_state
+  target: nuclear_spin
+  type: state-description
+  label: total angular momentum
+  detail: Nuclear states carry total angular momentum and parity.
+  citations:
+  - wp-physics-nuclear_spin
+  - iaea-ensdf
+  - wp-physics-nuclear_state
+- id: nucleon_to_neutron
+  source: nucleon
+  target: neutron
+  type: classification
+  label: neutron
+  detail: The neutron is the neutral nucleon.
+  citations:
+  - wp-physics-neutron
+  - pdg-quark-model
+  - wp-physics-nucleon
+  - nlab-physics-nucleon
+- id: nucleon_to_nuclear_manybody
+  source: nucleon
+  target: nuclear_many_body_system
+  type: composition
+  label: nucleon constituents
+  detail: Nuclei are many-nucleon quantum systems of protons and neutrons.
+  citations:
+  - wp-physics-atomic_nucleus
+  - doe-nuclei
+  - wp-physics-nucleon
+  - nlab-physics-nucleon
+- id: nucleon_to_proton
+  source: nucleon
+  target: proton
+  type: classification
+  label: proton
+  detail: The proton is the positively charged nucleon.
+  citations:
+  - wp-physics-proton
+  - pdg-quark-model
+  - wp-physics-nucleon
+  - nlab-physics-nucleon
+- id: nn_to_potential
+  source: nucleon_nucleon_interaction
+  target: nuclear_potential
+  type: representation-equivalence
+  label: potential representation
+  detail: Nuclear interactions can be represented by resolution-dependent potentials that reproduce the same scattering observables when used consistently.
+  citations:
+  - wp-physics-nuclear_potential
+  - machleidt-entem-nuclear-forces
+  - wp-physics-residual_strong_interaction
+  - epelbaum-nuclear-eft
+- id: nuclide_to_isobar
+  source: nuclide
+  target: isobar
+  type: classification
+  label: same $A$ family
+  detail: Isobars share mass number but differ in proton number.
+  citations:
+  - wp-physics-isobar
+  - iupac-nuclide
+  - wp-physics-nuclide
+  - nlab-physics-nuclide
+- id: nuclide_to_isotone
+  source: nuclide
+  target: isotone
+  type: classification
+  label: same $N$ family
+  detail: Isotones share neutron number but differ in proton number.
+  citations:
+  - wp-physics-isotone
+  - iupac-nuclide
+  - wp-physics-nuclide
+  - nlab-physics-nuclide
+- id: nuclide_to_isotope
+  source: nuclide
+  target: isotope
+  type: classification
+  label: same-$Z$ nuclide family
+  detail: Isotopes are nuclides of the same chemical element, hence the same proton number $Z$, with different neutron number and mass number.
+  citations:
+  - iupac-isotopes
+  - iupac-nuclide
+  - wp-physics-isotope
+  - nlab-physics-isotope
+  - wp-physics-nuclide
+- id: onepion_to_nuclearforce
+  source: one_pion_exchange
+  target: nuclear_force
+  type: theory-component
+  label: long-range component
+  detail: One-pion exchange is the leading long-range nuclear-force component.
+  citations:
+  - wp-physics-residual_strong_interaction
+  - nlab-physics-residual_strong_interaction
+  - wp-physics-one_pion_exchange
+  - nlab-physics-one_pion_exchange
+- id: pion_to_onepion
+  source: pion
+  target: one_pion_exchange
+  type: theory-component
+  label: exchanged pion field
+  detail: Pion exchange produces the longest-range component of the nucleon–nucleon interaction.
+  citations:
+  - wp-physics-one_pion_exchange
+  - nlab-physics-one_pion_exchange
+  - wp-physics-pion
+  - nlab-physics-pion
+- id: nucleus_to_alpha_particle
+  source: proton
+  target: alpha_particle
+  type: composition
+  label: two proton constituents
+  detail: An alpha particle contains two protons.
+  citations:
+  - wp-physics-alpha_particle
+  - iaea-livechart
+  - wp-physics-proton
+  - pdg-quark-model
+- id: proton_to_nucleus_precise
+  source: proton
+  target: atomic_nucleus
+  type: composition
+  label: proton constituent
+  detail: Protons are constituent nucleons of nuclei.
+  citations:
+  - wp-physics-atomic_nucleus
+  - nlab-physics-atomic_nucleus
+  - wp-physics-proton
+  - pdg-quark-model
+- id: proton_to_deuteron
+  source: proton
+  target: deuteron
+  type: composition
+  label: proton constituent
+  detail: The deuteron contains one proton.
+  citations:
+  - wp-physics-deuteron
+  - iaea-livechart
+  - wp-physics-proton
+  - pdg-quark-model
+- id: z_to_element
+  source: proton_number
+  target: chemical_element
+  type: classification
+  label: element identity
+  detail: Chemical elements are defined by proton number.
+  citations:
+  - wp-physics-chemical_element
+  - iupac-atom
+  - wp-physics-proton_number
+  - iupac-nuclide
+- id: z_n_to_a
+  source: proton_number
+  target: mass_number
+  type: theory-component
+  label: $A=Z+N$ contribution
+  detail: Mass number equals proton plus neutron number.
+  citations:
+  - wp-physics-mass_number
+  - iupac-nuclide
+  - wp-physics-proton_number
+- id: radio_to_alpha
+  source: radioactive_decay
+  target: alpha_decay
+  type: classification
+  label: alpha decay channel
+  detail: Alpha decay is a radioactive decay channel.
+  citations:
+  - wp-physics-alpha_decay
+  - iaea-ensdf
+  - wp-physics-radioactive_decay
+- id: radio_to_beta
+  source: radioactive_decay
+  target: beta_decay
+  type: classification
+  label: beta decay channel
+  detail: Beta decay is a radioactive decay channel.
+  citations:
+  - wp-physics-beta_decay
+  - iaea-ensdf
+  - wp-physics-radioactive_decay
+- id: radio_to_gamma
+  source: radioactive_decay
+  target: gamma_decay
+  type: classification
+  label: gamma transition channel
+  detail: Gamma decay is an electromagnetic de-excitation channel.
+  citations:
+  - wp-physics-gamma_decay
+  - iaea-ensdf
+  - wp-physics-radioactive_decay
+- id: residual_to_nuclearforce
+  source: residual_strong_interaction
+  target: nuclear_force
+  type: framework-specialization
+  label: nucleon interaction
+  detail: The nuclear force is the residual strong interaction in the nucleon sector.
+  citations:
+  - wp-physics-residual_strong_interaction
+  - nlab-physics-residual_strong_interaction
+- id: threebody_to_nucleus
+  source: three_nucleon_force
+  target: atomic_nucleus
+  type: couples-interacts
+  label: many-nucleon binding contribution
+  detail: Three-nucleon forces contribute to nuclear binding, spectra, and saturation.
+  citations:
+  - wp-physics-three_nucleon_force
+  - epelbaum-nuclear-eft
+  - machleidt-entem-nuclear-forces
+  - wp-physics-atomic_nucleus
+  - nlab-physics-atomic_nucleus
+  - doe-nuclei
+  - iaea-ensdf
+- id: nucleon_to_isospin
+  source: nucleon
+  target: isospin
+  type: state-description
+  label: isospin doublet
+  detail: Proton and neutron form an approximate isospin doublet when electromagnetic effects and the up–down mass difference are neglected.
+  citations:
+  - wp-physics-isospin
+  - nlab-physics-isospin
+- id: pion_to_isospin
+  source: pion
+  target: isospin
+  type: state-description
+  label: isospin triplet
+  detail: The charged and neutral pions form an approximate isospin triplet.
+  citations:
+  - wp-physics-isospin
+  - nlab-physics-isospin
+- id: nuclearstate_to_parity
+  source: nuclear_state
+  target: parity_quantum_number
+  type: state-description
+  label: nuclear-state parity
+  detail: Nuclear states are conventionally labeled by total spin and parity.
+  citations:
+  - iaea-ensdf
+  - nuclear-data-bnl
+- id: hist_geiger_marsden_gold_foil_experiment_to_atomic_nucleus
+  source: geiger_marsden_gold_foil_experiment
+  target: atomic_nucleus
+  type: historically-motivated
+  label: large-angle alpha scattering
+  detail: The unexpected backscattering required a compact concentration of positive charge and led to the nuclear atom.
+  citations:
+  - wp-physics-geiger_marsden_gold_foil_experiment
+  - aps-rutherford
+- id: hist_geiger_marsden_gold_foil_experiment_to_rutherford_model
+  source: geiger_marsden_gold_foil_experiment
+  target: rutherford_model
+  type: historically-motivated
+  label: nuclear atom model
+  detail: Rutherford’s atomic model was formulated specifically to explain the Geiger–Marsden angular distribution.
+  citations:
+  - wp-physics-geiger_marsden_gold_foil_experiment
+  - aps-rutherford
+- id: hist_continuous_beta_spectrum_problem_to_neutrino
+  source: continuous_beta_spectrum_problem
+  target: neutrino
+  type: historically-motivated
+  label: missing energy and momentum
+  detail: Pauli proposed the neutrino to preserve conservation laws in continuous beta decay.
+  citations:
+  - wp-physics-beta_decay
+  - nobel-neutrino-advanced
+- id: hist_continuous_beta_spectrum_problem_to_fermi_theory
+  source: continuous_beta_spectrum_problem
+  target: fermi_theory
+  type: historically-motivated
+  label: quantitative beta-decay dynamics
+  detail: Fermi’s interaction theory incorporated the neutrino and supplied a dynamical account of beta spectra.
+  citations:
+  - wp-physics-beta_decay
+  - nobel-neutrino-advanced
+- id: hist_nuclear_magic_number_systematics_to_nuclear_shell_model
+  source: nuclear_magic_number_systematics
+  target: nuclear_shell_model
+  type: historically-motivated
+  label: recurring enhanced stability
+  detail: Magic-number patterns motivated an independent-particle shell structure with strong spin–orbit splitting.
+  citations:
+  - wp-physics-nuclear_shell_model
+  - nobel-shell-model
+  - iaea-ensdf
+- id: exp_proton_number_by_moseley_xray_spectroscopy
+  source: proton_number
+  target: moseley_xray_spectroscopy
+  type: experimentally-verified-by
+  label: X-ray frequency tracks nuclear charge
+  detail: Moseley’s law established atomic number as nuclear charge rather than atomic-weight order.
+  citations:
+  - wp-physics-moseley_xray_spectroscopy
+  - nist-atomic-spectrum-history
+- id: exp_isotope_by_aston_mass_spectrograph_measurements
+  source: isotope
+  target: aston_mass_spectrograph_measurements
+  type: experimentally-verified-by
+  label: same element, distinct masses
+  detail: Mass spectrograph peaks directly separated isotopes of the same chemical element.
+  citations:
+  - wp-physics-aston_mass_spectrograph_measurements
+  - nobel-aston
+- id: exp_nuclide_by_aston_mass_spectrograph_measurements
+  source: nuclide
+  target: aston_mass_spectrograph_measurements
+  type: experimentally-verified-by
+  label: mass-resolved nuclear species
+  detail: The measurements supplied mass-to-charge identification of nuclear species.
+  citations:
+  - wp-physics-aston_mass_spectrograph_measurements
+  - nobel-aston
+- id: exp_mass_defect_by_aston_mass_spectrograph_measurements
+  source: mass_defect
+  target: aston_mass_spectrograph_measurements
+  type: experimentally-verified-by
+  label: noninteger masses and packing fraction
+  detail: Precision isotope masses revealed systematic departures from integer mass multiples associated with nuclear binding.
+  citations:
+  - wp-physics-aston_mass_spectrograph_measurements
+  - nobel-aston
+- id: exp_neutron_by_chadwick_neutron_experiment
+  source: neutron
+  target: chadwick_neutron_experiment
+  type: experimentally-verified-by
+  label: neutral nucleon
+  detail: Recoil kinematics required a neutral particle with mass close to the proton mass.
+  citations:
+  - wp-physics-chadwick_neutron_experiment
+  - aps-chadwick
+- id: exp_pion_by_pion_nuclear_emulsion_discovery
+  source: pion
+  target: pion_nuclear_emulsion_discovery
+  type: experimentally-verified-by
+  label: pion track and decay chain
+  detail: Emulsion tracks distinguished the pion and its decay to a muon.
+  citations:
+  - wp-physics-pion
+  - nobel-pion
+  - pdg-rpp
+- id: exp_proton_by_rutherford_proton_transmutation
+  source: proton
+  target: rutherford_proton_transmutation
+  type: experimentally-verified-by
+  label: hydrogen nucleus emitted from nitrogen
+  detail: The transmutation experiment established the hydrogen nucleus as a recurring nuclear constituent identified with the proton.
+  citations:
+  - wp-physics-rutherford_proton_transmutation
+  - doe-protons
+  - pdg-rpp

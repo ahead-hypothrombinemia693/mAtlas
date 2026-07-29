@@ -1,0 +1,68 @@
+id: neutrino-discovery-and-oscillation
+title: The neutrino changes identity
+summary: Follow the neutrino from the beta-spectrum problem through direct
+  detection, flavor, helicity, solar and atmospheric anomalies, mixing, and
+  nonzero mass.
+narrative: The continuous beta spectrum motivated an unseen neutral particle and
+  a new weak-interaction account. Reactor experiments detected electron
+  antineutrinos; accelerator and helicity experiments distinguished flavors and
+  chiral behavior. Solar and atmospheric deficits became evidence for
+  propagation between flavor and mass bases. The PMNS matrix and oscillation
+  phases connect flavor states to mass eigenstates; Super-Kamiokande and SNO
+  established flavor change and therefore physics beyond massless-neutrino
+  Standard Model assumptions.
+tags:
+  - Physics
+  - Particle physics
+  - Neutrinos
+  - Experiments
+featured: true
+settings:
+  fields:
+    - physics
+  domains:
+    - quantum-mechanics
+    - particle-physics
+    - nuclear-physics
+    - experiments-observations
+  edgeTypes:
+    - mathematical-formulation
+    - framework-specialization
+    - quantization
+    - theory-component
+    - describes-governs
+    - composition
+    - classification
+    - state-description
+    - transformation-process
+    - mathematical-limit
+    - effective-theory
+    - emergence
+    - couples-interacts
+    - model-realization
+    - historically-motivated
+    - experimentally-verified-by
+    - theorem-implication
+  crossFieldVisibility: hidden
+  edgeLabels: true
+  junctions: false
+  edgeZoomActivation: true
+  layout: atlas
+nodeSequence:
+  - continuous_beta_spectrum_problem
+  - neutrino
+  - weak_interaction
+  - cowan_reines_neutrino_experiment
+  - electron_neutrino
+  - goldhaber_neutrino_helicity_experiment
+  - brookhaven_muon_neutrino_experiment
+  - muon_neutrino
+  - solar_neutrino_problem
+  - neutrino_flavor_state
+  - neutrino_mass_eigenstate
+  - pmns_matrix
+  - neutrino_mixing
+  - neutrino_oscillation
+  - super_k_atmospheric_neutrino_oscillation
+  - sno_solar_neutrino_flavor_change
+  - neutrino_mass

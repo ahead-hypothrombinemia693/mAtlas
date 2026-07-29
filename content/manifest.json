@@ -3,8 +3,8 @@
   "schemaVersion": "1.0.0",
   "contentVersion": "1.5.1",
   "files": {
-    "graph": "structures.json",
+    "graph": "concepts/index.yaml",
     "schema": "schema.json",
-    "views": "views.json"
+    "views": "views/index.yaml"
   }
 }

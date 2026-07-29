@@ -1,0 +1,71 @@
+id: scale-renormalization-effective-theory
+title: Scale, renormalization, and effective theory
+summary: See why physical laws are organized by resolution scale, with running
+  couplings, coarse-graining, and effective descriptions connecting high- and
+  low-energy regimes.
+narrative: Begin with physical scale and interacting quantum fields.
+  Perturbation theory introduces regularization and renormalization; running
+  couplings encode scale dependence; the renormalization group and Wilsonian
+  effective action turn this into a flow through theory space. Effective field
+  theory then explains decoupling and controlled low-energy expansions,
+  illustrated by QED, QCD, Fermi theory, chiral and nuclear EFT, SMEFT, and
+  LEFT.
+tags:
+  - Physics
+  - Quantum field theory
+  - Scale
+  - Effective theory
+featured: true
+settings:
+  fields:
+    - physics
+  domains:
+    - physical-foundations
+    - quantum-field-theory
+    - particle-physics
+    - nuclear-physics
+  edgeTypes:
+    - mathematical-formulation
+    - framework-specialization
+    - quantization
+    - theory-component
+    - describes-governs
+    - composition
+    - classification
+    - state-description
+    - transformation-process
+    - mathematical-limit
+    - effective-theory
+    - emergence
+    - couples-interacts
+    - model-realization
+    - historically-motivated
+    - experimentally-verified-by
+    - theorem-implication
+  crossFieldVisibility: hidden
+  edgeLabels: true
+  junctions: false
+  edgeZoomActivation: true
+  layout: atlas
+nodeSequence:
+  - physical_scale
+  - effective_description
+  - quantum_field_theory
+  - interacting_quantum_field
+  - perturbative_qft
+  - regularization
+  - renormalization
+  - running_coupling
+  - renormalization_group
+  - wilsonian_effective_action
+  - effective_field_theory
+  - quantum_electrodynamics
+  - quantum_chromodynamics
+  - asymptotic_freedom
+  - low_energy_qcd
+  - fermi_theory
+  - four_fermion_interaction
+  - chiral_perturbation_theory
+  - nuclear_effective_field_theory
+  - standard_model_effective_field_theory
+  - low_energy_effective_field_theory

@@ -23,8 +23,8 @@ function buildLastModifiedDate() {
   }
   const git = spawnSync('git', [
     'log', '-1', '--format=%cI', '--',
-    'content/structures.json',
-    'content/views.json',
+    'content/concepts/',
+    'content/views/',
     'content/schema.json',
     'content/manifest.json',
     'src/ui/svg-exporter.ts',

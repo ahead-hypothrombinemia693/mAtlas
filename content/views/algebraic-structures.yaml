@@ -1,0 +1,51 @@
+id: algebraic-structures
+title: Algebraic structures
+summary: Explore how operations and laws organize groups, rings, modules,
+  algebras, representations, and their categorical relationships.
+narrative: "Build algebraic structure in layers: operations produce magmas,
+  associativity produces semigroups, identities and inverses produce monoids and
+  groups, and compatibility between additive and multiplicative structures
+  produces rings, modules, vector spaces, algebras, and Hopf-like structures."
+tags:
+  - Algebra
+  - Categories
+  - Representations
+featured: true
+settings:
+  fields:
+    - mathematics
+  domains:
+    - foundation
+    - universal-algebra
+    - algebra
+    - representation-theory
+  edgeTypes:
+    - add-data
+    - impose-axiom
+    - induced-forgotten
+    - canonical-construction
+    - combine-compatible
+  crossFieldVisibility: hidden
+  edgeLabels: true
+  junctions: true
+  edgeZoomActivation: true
+  layout: atlas
+nodeSequence:
+  - set
+  - magma
+  - semigroup
+  - monoid
+  - group
+  - abelian_group
+  - commutative_monoid
+  - semiring
+  - ring
+  - commutative_ring
+  - field
+  - module
+  - vector_space
+  - algebra_over_field
+  - associative_algebra
+  - coalgebra
+  - bialgebra
+  - hopf_algebra

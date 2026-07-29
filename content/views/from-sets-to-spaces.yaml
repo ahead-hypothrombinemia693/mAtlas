@@ -1,0 +1,53 @@
+id: from-sets-to-spaces
+title: From sets to spaces
+summary: Trace how bare collections acquire relations, distance, topology,
+  measure, and analytic structure.
+narrative: Start with sets, functions, relations, and indexed families; add
+  topology to define continuity and convergence; strengthen through metric,
+  normed, Banach, inner-product, and Hilbert structures. The route distinguishes
+  added data from axioms and theorem-level consequences.
+tags:
+  - Mathematics
+  - Foundations
+  - Analysis
+featured: true
+settings:
+  fields:
+    - mathematics
+  domains:
+    - set-theory
+    - foundation
+    - order
+    - topology
+    - analysis
+  edgeTypes:
+    - add-data
+    - impose-axiom
+    - induced-forgotten
+    - canonical-construction
+    - combine-compatible
+  crossFieldVisibility: hidden
+  edgeLabels: true
+  junctions: true
+  edgeZoomActivation: true
+  layout: atlas
+nodeSequence:
+  - set
+  - function
+  - binary_relation
+  - indexed_family
+  - topological_space
+  - hausdorff_space
+  - first_countable_space
+  - pseudometric_space
+  - metric_space
+  - complete_metric_space
+  - topological_vector_space
+  - seminormed_vector_space
+  - normed_vector_space
+  - banach_space
+  - inner_product_space
+  - hilbert_space
+  - locally_convex_space
+  - frechet_space
+  - distribution_space

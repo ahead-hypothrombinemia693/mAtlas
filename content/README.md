@@ -8,8 +8,8 @@ tests.
 
 ## Source files
 
-- `structures.json` — canonical graph, taxonomy, relations, citations, and source metadata.
-- `views.json` — curated guided views and their editorial narratives.
+- `concepts/index.yaml`, `concepts/sources.yaml`, and `concepts/<field-id>/<domain-id>.yaml` — split canonical graph, taxonomy, relations, citations, and source metadata.
+- `views/index.yaml` and `views/*.yaml` — split curated guided-view definitions and editorial narratives.
 - `schema.json` — machine-readable graph schema published with the content.
 - `manifest.json` — content and schema contract versions plus source file mapping.
 
@@ -36,7 +36,9 @@ Validation is split into schema/shape, reference, semantic, editorial, and
 renderer-compatibility layers. Compilation writes normalized files and a
 hash-based `provenance.json` to `.build/content/`. Published hashed JSON files
 are produced only from that compiled directory and are served under the public
-`/content/` namespace; `/data/` is not emitted.
+`/content/` namespace; `/data/` is not emitted. YAML sources are assembled into
+intermediate JSON during content compilation so the deployed contract remains
+the same.
 
 ## License
 

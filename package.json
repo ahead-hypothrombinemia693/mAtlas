@@ -36,7 +36,8 @@
   "devDependencies": {
     "esbuild-wasm": "0.28.1",
     "puppeteer": "^25.4.0",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "yaml": "^2.9.0"
   },
   "allowScripts": {
     "puppeteer": true

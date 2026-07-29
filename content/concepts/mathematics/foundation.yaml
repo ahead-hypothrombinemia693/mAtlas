@@ -1,0 +1,712 @@
+nodes:
+- id: set
+  label: Set
+  level: 0
+  kind: structure
+  summary: A collection regarded as a single mathematical object.
+  carriers:
+  - one carrier set $X$
+  data: []
+  axioms: []
+  induces: []
+  notes: ''
+  citations:
+  - wp-set
+  - openlogic-set-theory
+  primaryDomain: foundation
+  domains:
+  - foundation
+  - set-theory
+  primaryField: mathematics
+  fields:
+  - mathematics
+  conceptType: Foundational structure
+- id: pointed_set
+  label: Pointed set
+  level: 1
+  kind: structure
+  summary: A set with one distinguished element.
+  carriers:
+  - set $X$
+  data:
+  - basepoint $x_{0} \in X$
+  axioms: []
+  induces: []
+  notes: ''
+  citations:
+  - wp-pointed
+  - openlogic-set-theory
+  primaryDomain: foundation
+  domains:
+  - foundation
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: function
+  label: Function
+  primaryDomain: foundation
+  domains:
+  - foundation
+  - set-theory
+  - logic
+  - category-theory
+  level: 2
+  kind: structure
+  summary: A total single-valued relation from a domain set to a codomain set.
+  carriers:
+  - domain $X$
+  - codomain $Y$
+  data:
+  - subset $f \subseteq X\times Y$
+  axioms:
+  - for every $x\in X$ there exists exactly one $y\in Y$ with $(x,y)\in f$
+  induces: []
+  notes: ''
+  citations:
+  - wp-function
+  - nlab-function
+  - openlogic-set-theory
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: successor_structure
+  label: Successor structure
+  primaryDomain: foundation
+  domains:
+  - foundation
+  - logic
+  - number-theory
+  level: 2
+  kind: structure
+  summary: A set equipped with a distinguished zero and a unary successor operation.
+  carriers:
+  - set $N$
+  data:
+  - distinguished element $0$
+  - 'successor map $S: N\to N$'
+  axioms: []
+  induces: []
+  notes: The second-order Peano axioms are categorical under full second-order semantics. First-order Peano arithmetic is not categorical by the compactness and Löwenheim–Skolem theorems.
+  citations:
+  - wp-peano
+  - openlogic-set-theory
+  primaryField: mathematics
+  fields:
+  - mathematics
+  conceptType: Foundational structure
+- kind: structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  id: zermelo_fraenkel_set_theory
+  label: Zermelo–Fraenkel set theory (ZF)
+  primaryDomain: foundation
+  domains:
+  - foundation
+  - set-theory
+  - logic
+  level: 2
+  conceptType: Axiomatic theory
+  summary: The standard first-order set theory with extensionality, foundation, pairing, union, power set, infinity, and the separation and replacement schemas, but without the axiom of choice.
+  carriers:
+  - first-order language with binary relation $\in$
+  data:
+  - axioms and axiom schemas of ZF
+  axioms: []
+  induces:
+  - formal universe in which the set-theoretic constructions are carried out
+  notes: Equivalent presentations may trade some axioms for theorems; the defining editorial distinction here is that ZF omits Choice.
+  citations:
+  - wp-zf
+  - openlogic-set-theory
+  - sep-set-theory
+- kind: structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  id: axiom_of_choice
+  label: Axiom of choice (AC)
+  primaryDomain: foundation
+  domains:
+  - foundation
+  - set-theory
+  - logic
+  level: 3
+  conceptType: Axiom
+  summary: The assertion that every set-indexed family of nonempty sets has a choice function.
+  carriers:
+  - set-theoretic statement
+  data:
+  - choice function selecting one element from each member of a family
+  axioms: []
+  induces:
+  - well-ordering theorem and Zorn’s lemma over ZF
+  notes: AC is independent of ZF, assuming ZF is consistent. Its standard equivalents are equivalent over ZF, not in arbitrary weak background theories.
+  citations:
+  - wp-axiom-choice
+  - sep-axiom-choice
+  - openlogic-set-theory
+- kind: structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  id: well_ordering_theorem
+  label: Well-ordering theorem
+  primaryDomain: foundation
+  domains:
+  - foundation
+  - set-theory
+  - order
+  - logic
+  level: 4
+  conceptType: Theorem
+  summary: Every set can be well-ordered.
+  carriers:
+  - set-theoretic statement
+  data: []
+  axioms: []
+  induces:
+  - a cardinal representative for every set
+  notes: Over ZF, the well-ordering theorem is equivalent to the axiom of choice.
+  citations:
+  - sep-axiom-choice
+  - openlogic-set-theory
+- kind: structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  id: zfc_set_theory
+  label: Zermelo–Fraenkel set theory with Choice (ZFC)
+  primaryDomain: foundation
+  domains:
+  - foundation
+  - set-theory
+  - logic
+  level: 4
+  conceptType: Axiomatic theory
+  summary: ZF augmented by the axiom of choice.
+  carriers:
+  - first-order language with binary relation $\in$
+  data:
+  - all axioms and schemas of ZF
+  - axiom of choice
+  axioms: []
+  induces:
+  - the conventional classical foundational setting for much of mathematics
+  notes: CH, GCH, and the existence of inaccessible, measurable, or supercompact cardinals are not theorems of ZFC, under the corresponding consistency assumptions.
+  citations:
+  - wp-zf
+  - wp-axiom-choice
+  - sep-set-theory
+  - sep-large-cardinals
+- kind: structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  id: von_neumann_zero
+  label: Von Neumann zero $0$
+  primaryDomain: foundation
+  domains:
+  - foundation
+  - set-theory
+  - number-theory
+  level: 2
+  conceptType: Set-theoretic numeral
+  summary: The chosen realization $0:=\varnothing$.
+  carriers:
+  - set $\varnothing$
+  data: []
+  axioms: []
+  induces:
+  - first finite ordinal and finite cardinal
+  notes: This is the standard von Neumann encoding; abstract zero is not intrinsically identical with the empty set.
+  citations:
+  - wp-von-neumann-ordinal
+  - nlab-natural-number
+  - openlogic-set-theory
+- kind: structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  id: von_neumann_successor
+  label: Von Neumann successor
+  primaryDomain: foundation
+  domains:
+  - foundation
+  - set-theory
+  - number-theory
+  level: 3
+  conceptType: Canonical construction
+  summary: The operation $S(x)=x\cup\{x\}$; on ordinals it produces the least larger ordinal.
+  carriers:
+  - set or ordinal $x$
+  data:
+  - $S(x)=x\cup\{x\}$
+  axioms: []
+  induces:
+  - finite ordinals by iteration from $0$
+  - successor ordinals
+  notes: ''
+  citations:
+  - wp-von-neumann-ordinal
+  - openlogic-set-theory
+- kind: structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  id: von_neumann_one
+  label: Von Neumann one $1$
+  primaryDomain: foundation
+  domains:
+  - foundation
+  - set-theory
+  - number-theory
+  level: 4
+  conceptType: Set-theoretic numeral
+  summary: The set $1:=S(0)=\{0\}=\{\varnothing\}$.
+  carriers:
+  - singleton $\{\varnothing\}$
+  data: []
+  axioms: []
+  induces:
+  - second finite ordinal and cardinal
+  notes: ''
+  citations:
+  - wp-von-neumann-ordinal
+  - nlab-natural-number
+- id: hilbert_program
+  label: Hilbert’s program
+  primaryDomain: foundation
+  domains:
+  - foundation
+  - logic
+  - computability-theory
+  level: 3
+  kind: structure
+  summary: The program of formalizing broad parts of mathematics and proving their consistency by secure finitary methods.
+  carriers:
+  - formalized mathematics
+  data:
+  - finitary metamathematical methods
+  axioms: []
+  induces:
+  - Consistency and completeness goals
+  notes: The incompleteness theorems constrain the original program; they do not eliminate formal axiomatic or proof-theoretic research.
+  citations:
+  - openlogic-incompleteness
+  primaryField: mathematics
+  fields:
+  - mathematics
+edges:
+- id: calculus_variations_functionals
+  source: function
+  target: calculus_of_variations
+  type: framework-specialization
+  label: functionals and variations
+  detail: Calculus of variations studies functionals on spaces of functions, curves, or fields.
+  citations:
+  - wp-function
+  - nlab-function
+  - openlogic-set-theory
+  - wp-calculus_of_variations
+  - nlab-calculus_of_variations
+  - cambridge-classical-dynamics
+  - tong-qft
+- id: e_function_family
+  source: function
+  target: indexed_family
+  type: representation-equivalence
+  label: read domain as index set
+  detail: An indexed family is a function whose domain is treated as an index set.
+  citations:
+  - wp-indexed-family
+  - openlogic-set-theory
+- id: j_covering_space__map
+  source: function
+  target: j_covering_space
+  type: combine-compatible
+  label: projection map
+  detail: Supply the map from total space to base space.
+  citations:
+  - wp-covering-space
+  - nlab-covering-space
+  - topology-without-tears
+- id: j_fiber_bundle__map
+  source: function
+  target: j_fiber_bundle
+  type: combine-compatible
+  label: projection map
+  detail: Supply the map from total space to base space.
+  citations:
+  - wp-fiber-bundle
+  - nlab-fiber-bundle
+  - topology-without-tears
+- id: j_measurable_function__function
+  source: function
+  target: j_measurable_function
+  type: combine-compatible
+  label: underlying function
+  detail: Supply the map between the underlying sets.
+  citations:
+  - wp-measurable-function
+  - tao-measure-theory
+- id: j_pointed_top__pointed_set
+  source: pointed_set
+  target: j_pointed_top
+  type: combine-compatible
+  label: basepoint
+  detail: Supply the Pointed set structure as one jointly required input.
+  citations:
+  - wp-pointed-space
+  - nlab-pointed-space
+  - hatcher-algebraic-topology
+- id: e_set_relation
+  source: set
+  target: binary_relation
+  type: add-data
+  label: + target set $Y$ and $R\subseteq X\times Y$
+  detail: Choose a target set $Y$ and a subset $R\subseteq X\times Y$. Endorelations are the specialization $Y=X$.
+  citations:
+  - mathlib-relations
+- id: e_set_countable
+  source: set
+  target: countable_set
+  type: impose-axiom
+  label: + countability
+  detail: Restrict to finite or countably infinite sets.
+  citations:
+  - wp-countable-set
+  - openlogic-set-theory
+- id: set_to_directed_graph
+  source: set
+  target: directed_graph
+  type: add-data
+  label: add vertices, arrows, source, target
+  detail: Use sets of vertices and arrows with source and target maps.
+  citations:
+  - wp-directed-graph
+  - diestel-graph-theory
+- id: e_set_finite
+  source: set
+  target: finite_set
+  type: impose-axiom
+  label: + finite cardinality
+  detail: Restrict to sets with finitely many elements.
+  citations:
+  - wp-finite-set
+  - openlogic-set-theory
+- id: set_to_signature
+  source: set
+  target: first_order_signature
+  type: add-data
+  label: choose symbols and arities
+  detail: Choose sets of function, relation, and constant symbols with arity assignments.
+  citations:
+  - wp-signature-logic
+  - openlogic-model-theory
+- id: e_set_hypergraph
+  source: set
+  target: hypergraph
+  type: add-data
+  label: + family of subsets
+  detail: Choose a family of hyperedges, each a subset of vertices.
+  citations:
+  - wp-hypergraph
+  - nlab-hypergraph
+  - diestel-graph-theory
+- id: j_enriched_category__set
+  source: set
+  target: j_enriched_category
+  type: combine-compatible
+  label: object set
+  detail: Supply the collection of objects (set-sized in this atlas presentation).
+  citations:
+  - wp-enriched-category
+  - nlab-enriched-category
+  - riehl-category-context
+- id: set_to_j_structure
+  source: set
+  target: j_first_order_structure
+  type: combine-compatible
+  label: supply carrier
+  detail: Use a nonempty carrier set.
+  citations:
+  - wp-structure-logic
+  - openlogic-model-theory
+- id: j_group_action__set
+  source: set
+  target: j_group_action
+  type: combine-compatible
+  label: acted-on carrier
+  detail: Supply the Set structure as one jointly required input.
+  citations:
+  - wp-group-action
+  - nlab-group-action
+  - etingof-representation-theory
+- id: set_to_j_universal
+  source: set
+  target: j_universal_algebra
+  type: combine-compatible
+  label: carrier set
+  detail: Supply the common carrier on which all operations are interpreted.
+  citations:
+  - wp-universal-algebra
+  - nlab-universal-algebra
+  - burris-universal-algebra
+- id: e_set_magma
+  source: set
+  target: magma
+  type: add-data
+  label: + binary operation
+  detail: Choose a closed operation $M\times M\to M$.
+  citations:
+  - wp-magma
+  - stacks-algebra-text
+- id: e_set_matroid
+  source: set
+  target: matroid
+  type: add-data
+  label: + independence system
+  detail: Add independent subsets satisfying hereditary and exchange axioms.
+  citations:
+  - wp-matroid
+  - nlab-matroid
+  - diestel-graph-theory
+- id: e_set_meas
+  source: set
+  target: measurable_space
+  type: add-data
+  label: + $\sigma$-algebra
+  detail: Choose measurable subsets.
+  citations:
+  - wp-measurable
+  - tao-measure-theory
+- id: e_set_pointed
+  source: set
+  target: pointed_set
+  type: add-data
+  label: + choose $x_0$
+  detail: Choose one distinguished element of the set.
+  citations:
+  - wp-pointed
+  - openlogic-set-theory
+- id: e_set_pseudo
+  source: set
+  target: pseudometric_space
+  type: add-data
+  label: + pseudometric $d$
+  detail: Choose a distance-like function.
+  citations:
+  - wp-pseudometric
+  - topology-without-tears
+- id: set_to_successor_structure
+  source: set
+  target: successor_structure
+  type: add-data
+  label: + zero and successor
+  detail: Choose a distinguished element 0 and a unary map $S:N\to N$.
+  citations:
+  - wp-peano
+  - openlogic-set-theory
+- id: e_set_top
+  source: set
+  target: topological_space
+  type: add-data
+  label: + topology $\tau$
+  detail: Choose open subsets satisfying the topology axioms.
+  citations:
+  - wp-top-space
+  - nlab-top-space
+  - topology-without-tears
+- id: e_set_transitive
+  source: set
+  target: transitive_set
+  type: impose-axiom
+  label: + transitivity
+  detail: Require every element of an element of $X$ to lie in $X$.
+  citations:
+  - wp-transitive-set
+  - openlogic-set-theory
+- id: e_set_undirected_graph
+  source: set
+  target: undirected_graph
+  type: add-data
+  label: + edges
+  detail: Add a collection of edges with endpoints in the vertex set.
+  citations:
+  - wp-graph
+  - nlab-graph
+  - diestel-graph-theory
+- id: e_set_uniform
+  source: set
+  target: uniform_space
+  type: add-data
+  label: + uniformity
+  detail: Choose entourages satisfying the uniformity axioms.
+  citations:
+  - wp-uniform
+  - nlab-uniform
+  - topology-without-tears
+- id: successor_structure_to_peano_system
+  source: successor_structure
+  target: peano_system
+  type: impose-axiom
+  label: + Peano axioms
+  detail: Require successor injectivity, zero not to be a successor, and the adopted second-order induction axiom.
+  citations:
+  - wp-peano
+  - milne-algebraic-number-theory
+- id: set_to_empty_set
+  source: set
+  target: empty_set
+  type: impose-axiom
+  label: require no elements
+  detail: Select the unique set having no elements.
+  citations:
+  - wp-empty-set
+  - openlogic-set-theory
+  overview: true
+- id: set_to_power_set
+  source: set
+  target: power_set
+  type: canonical-construction
+  label: form all subsets
+  detail: Send $X$ to $\mathcal P(X)$, the set of all subsets of $X$.
+  citations:
+  - wp-power-set
+  - openlogic-set-theory
+  overview: true
+- id: von_neumann_zero_to_one
+  source: von_neumann_zero
+  target: von_neumann_one
+  type: canonical-construction
+  label: apply successor
+  detail: Applying $S(x)=x\cup\{x\}$ to $0$ gives $1=\{0\}$.
+  citations:
+  - wp-von-neumann-ordinal
+  - openlogic-set-theory
+  overview: true
+- id: von_neumann_successor_to_one
+  source: von_neumann_successor
+  target: von_neumann_one
+  type: canonical-construction
+  label: $S(0)=1$
+  detail: The successor operation sends $0=\varnothing$ to $1=\{\varnothing\}$.
+  citations:
+  - wp-von-neumann-ordinal
+- id: von_neumann_successor_to_finite_ordinal
+  source: von_neumann_successor
+  target: finite_ordinal
+  type: canonical-construction
+  label: iterate from zero
+  detail: Finite iteration of von Neumann successor from $0$ produces exactly the finite ordinals.
+  citations:
+  - wp-von-neumann-ordinal
+  - openlogic-set-theory
+  overview: true
+- id: zf_to_zfc
+  source: zermelo_fraenkel_set_theory
+  target: zfc_set_theory
+  type: impose-axiom
+  label: + axiom of choice
+  detail: Adjoin AC to ZF; the resulting theory is ZFC.
+  citations:
+  - wp-zf
+  - wp-axiom-choice
+  - sep-axiom-choice
+  overview: true
+- id: zfc_implies_choice
+  source: zfc_set_theory
+  target: axiom_of_choice
+  type: theorem-implication
+  label: contains AC
+  detail: The axiom of choice is one of the axioms of ZFC.
+  citations:
+  - wp-zf
+  - wp-axiom-choice
+- id: choice_to_well_ordering
+  source: axiom_of_choice
+  target: well_ordering_theorem
+  type: theorem-implication
+  label: equivalent over ZF
+  detail: Over ZF, AC implies that every set can be well-ordered; conversely, the well-ordering theorem implies AC.
+  citations:
+  - sep-axiom-choice
+  - openlogic-set-theory
+  overview: true
+- id: well_ordering_to_cardinal
+  source: well_ordering_theorem
+  target: cardinal
+  type: theorem-implication
+  label: cardinal representative for every set
+  detail: A well-order on a set has a unique ordinal order type; its least equipotent ordinal is the set’s cardinal.
+  citations:
+  - wp-cardinal
+  - openlogic-set-theory
+  overview: true
+- id: zfc_to_aleph_hierarchy
+  source: zfc_set_theory
+  target: aleph_hierarchy
+  type: theorem-implication
+  label: all set cardinalities are alephs
+  detail: Choice ensures every set is well-orderable, so every infinite set has cardinality $\aleph_\alpha$ for some ordinal $\alpha$.
+  citations:
+  - wp-aleph-number
+  - sep-axiom-choice
+- id: well_ordering_implies_choice
+  source: well_ordering_theorem
+  target: axiom_of_choice
+  type: theorem-implication
+  label: equivalent over ZF
+  detail: Over ZF, well-order every member of a family and choose its least element; thus the well-ordering theorem implies AC.
+  citations:
+  - sep-axiom-choice
+  - openlogic-set-theory
+- id: zf_proves_empty_set
+  source: zermelo_fraenkel_set_theory
+  target: empty_set
+  type: theorem-implication
+  label: proves existence and uniqueness
+  detail: ZF proves that a set with no elements exists and extensionality proves that it is unique.
+  citations:
+  - wp-zf
+  - wp-empty-set
+  - openlogic-set-theory
+- id: zf_provides_power_sets
+  source: zermelo_fraenkel_set_theory
+  target: power_set
+  type: theorem-implication
+  label: power-set axiom
+  detail: The power-set axiom of ZF asserts that for every set $X$, the collection $\mathcal P(X)$ is a set.
+  citations:
+  - wp-zf
+  - wp-power-set
+  - openlogic-set-theory
+- id: zfc_well_orders_continuum
+  source: zfc_set_theory
+  target: continuum_cardinal
+  type: theorem-implication
+  label: well-orderable continuum
+  detail: Choice well-orders $\mathbb R$, so its equipotence type has a unique initial-ordinal representative $\mathfrak c$.
+  citations:
+  - wp-axiom-choice
+  - wp-cardinality-continuum
+  - sep-axiom-choice
+- id: zfc_supports_beth_hierarchy
+  source: zfc_set_theory
+  target: beth_hierarchy
+  type: theorem-implication
+  label: well-order power-set sizes
+  detail: Choice ensures that every power set appearing in the beth recursion has an initial-ordinal cardinal representative.
+  citations:
+  - wp-axiom-choice
+  - wp-beth-number
+  - sep-axiom-choice
+- id: story_hilbert_program_to_formal_proof_system_historically_motivated
+  source: hilbert_program
+  target: formal_proof_system
+  type: historically-motivated
+  label: formalize mathematics
+  detail: Hilbert’s program motivated precise formal systems and metamathematical consistency proofs.
+  citations:
+  - openlogic-incompleteness

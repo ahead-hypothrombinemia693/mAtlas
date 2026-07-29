@@ -1,0 +1,78 @@
+id: gauge-fields-as-geometry
+title: Gauge fields as geometry
+summary: Translate local gauge invariance into principal bundles, connections,
+  curvature, Yang–Mills theory, and the gauge sectors of the Standard Model.
+narrative: The geometric language starts with smooth manifolds, Lie groups,
+  fiber bundles, and principal bundles. A principal connection defines parallel
+  transport and covariant differentiation; its curvature is the geometric
+  counterpart of field strength. The physical branch identifies gauge fields
+  with local connection data and develops Abelian and non-Abelian Yang–Mills
+  theories, culminating in QED, QCD, electroweak theory, and the Standard Model
+  gauge group.
+tags:
+  - Mathematics
+  - Physics
+  - Gauge theory
+  - Differential geometry
+featured: true
+settings:
+  fields:
+    - mathematics
+    - physics
+  domains:
+    - differential-geometry
+    - representation-theory
+    - quantum-field-theory
+    - particle-physics
+    - electromagnetism
+  edgeTypes:
+    - add-data
+    - impose-axiom
+    - induced-forgotten
+    - canonical-construction
+    - quotient-construction
+    - canonical-embedding
+    - combine-compatible
+    - representation-equivalence
+    - theorem-implication
+    - classification
+    - mathematical-formulation
+    - framework-specialization
+    - quantization
+    - theory-component
+    - describes-governs
+    - composition
+    - state-description
+    - transformation-process
+    - mathematical-limit
+    - effective-theory
+    - emergence
+    - couples-interacts
+    - model-realization
+    - historically-motivated
+    - experimentally-verified-by
+  crossFieldVisibility: contextual
+  edgeLabels: true
+  junctions: false
+  edgeZoomActivation: true
+  layout: atlas
+nodeSequence:
+  - smooth_manifold
+  - lie_group
+  - lie_algebra
+  - fiber_bundle
+  - principal_bundle
+  - principal_connection
+  - curvature_form
+  - gauge_symmetry
+  - local_gauge_symmetry
+  - gauge_field
+  - gauge_covariant_derivative
+  - gauge_field_strength
+  - yang_mills_theory
+  - abelian_gauge_theory
+  - nonabelian_gauge_theory
+  - quantum_electrodynamics
+  - quantum_chromodynamics
+  - electroweak_theory
+  - standard_model_gauge_group

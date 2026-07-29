@@ -1,0 +1,64 @@
+id: local-global-principles
+title: Local–global principles in arithmetic
+summary: Compare global rational solutions with solutions over every real and
+  $p$-adic completion, including both Hasse–Minkowski success and genuine
+  failures.
+narrative: A number field has many places, each producing a local completion. A
+  global rational point necessarily gives points in every completion, but the
+  converse is a substantive theorem when true. Adeles collect all local fields
+  at once. An everywhere locally soluble variety has a point over each
+  completion. Quadratic forms satisfy the Hasse–Minkowski theorem, a clean
+  local–global principle; other varieties can be everywhere locally soluble yet
+  have no global point, showing why local evidence and global existence must be
+  separated.
+tags:
+  - Mathematics
+  - Number theory
+  - Algebraic geometry
+  - Local-global
+featured: true
+settings:
+  fields:
+    - mathematics
+  domains:
+    - number-theory
+    - algebraic-geometry
+    - algebra
+    - topology
+    - analysis
+  edgeTypes:
+    - add-data
+    - impose-axiom
+    - induced-forgotten
+    - canonical-construction
+    - quotient-construction
+    - canonical-embedding
+    - combine-compatible
+    - representation-equivalence
+    - theorem-implication
+    - classification
+    - mathematical-formulation
+    - framework-specialization
+  crossFieldVisibility: hidden
+  edgeLabels: true
+  junctions: true
+  edgeZoomActivation: true
+  layout: atlas
+nodeSequence:
+  - global_field
+  - number_field
+  - place_of_number_field
+  - valuation
+  - completion_at_valuation
+  - local_field
+  - p_adic_field
+  - algebraic_variety
+  - rational_point
+  - local_point
+  - adele_ring
+  - everywhere_locally_soluble_variety
+  - local_global_principle
+  - quadratic_form
+  - smooth_projective_quadric
+  - hasse_minkowski_theorem
+  - failure_hasse_principle

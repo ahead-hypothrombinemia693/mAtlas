@@ -1,0 +1,14 @@
+mathematics:
+  label: Mathematics
+  shortLabel: Math
+  color: '#334155'
+  order: 0
+  path: math
+  description: Formal structures, relations, transformations, and deductive consequences.
+physics:
+  label: Physics
+  shortLabel: Physics
+  color: '#0f766e'
+  order: 1
+  path: physics
+  description: Empirical theories and models of matter, energy, spacetime, interactions, and physical systems.

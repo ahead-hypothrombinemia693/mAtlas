@@ -225,7 +225,12 @@ export class LocationController {
 
   githubEditUrl(itemId: string): string {
     const textFragment = encodeURIComponent(`"id": "${itemId}"`);
-    return `https://github.com/madvay/mAtlas/blob/main/content/structures.json#:~:text=${textFragment}`;
+    const node = this.options.model.nodeRecord.get(itemId);
+    if (node?.kind === 'structure' && typeof node.primaryDomain === 'string') {
+      const fieldId = node.primaryField ?? this.options.model.fieldForDomain(node.primaryDomain);
+      return `https://github.com/madvay/mAtlas/blob/main/content/concepts/${fieldId}/${node.primaryDomain}.yaml#:~:text=${textFragment}`;
+    }
+    return `https://github.com/madvay/mAtlas/search?q=repo%3Amadvay%2FmAtlas+%22id%22+%22${encodeURIComponent(itemId)}%22+path%3Acontent%2Fconcepts&type=code`;
   }
 
   conceptPageUrl(nodeId: string): string {

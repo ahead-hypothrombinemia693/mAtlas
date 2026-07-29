@@ -1,0 +1,65 @@
+id: hierarchy-of-topological-spaces
+title: The hierarchy of topological properties
+summary: Explore separation, countability, metric, compactness, local,
+  connectedness, and zero-dimensionality properties as a branching implication
+  lattice.
+narrative: Topological properties do not form one linear ladder. Separation
+  axioms strengthen along one axis; countability conditions along another;
+  metrics, completeness, and separability produce Polish spaces; compactness
+  interacts strongly with Hausdorff and metric assumptions; local compactness
+  and connectedness form additional branches. The selected theorem edges show
+  valid implications without suggesting false converses.
+tags:
+  - Mathematics
+  - Topology
+  - Properties
+  - Classification
+settings:
+  fields:
+    - mathematics
+  domains:
+    - topology
+    - algebraic-topology
+  edgeTypes:
+    - add-data
+    - impose-axiom
+    - induced-forgotten
+    - canonical-construction
+    - quotient-construction
+    - canonical-embedding
+    - combine-compatible
+    - representation-equivalence
+    - theorem-implication
+    - classification
+    - mathematical-formulation
+    - framework-specialization
+  crossFieldVisibility: hidden
+  edgeLabels: true
+  junctions: false
+  edgeZoomActivation: true
+  layout: atlas
+nodeSequence:
+  - topological_space
+  - t0_space
+  - t1_space
+  - hausdorff_space
+  - regular_space
+  - normal_space
+  - tychonoff_space
+  - first_countable_space
+  - second_countable_space
+  - pseudometric_space
+  - metric_space
+  - complete_metric_space
+  - separable_metric_space
+  - polish_space
+  - compact_space
+  - compact_hausdorff_space
+  - compact_metric_space
+  - locally_compact_space
+  - locally_compact_hausdorff_space
+  - connected_space
+  - path_connected_space
+  - locally_connected_space
+  - totally_disconnected_space
+  - zero_dimensional_space

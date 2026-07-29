@@ -1,0 +1,1317 @@
+nodes:
+- id: finite_set
+  label: Finite set
+  primaryDomain: set-theory
+  domains:
+  - set-theory
+  - foundation
+  - combinatorics
+  level: 1
+  kind: structure
+  summary: A set in bijection with $\{0,\ldots,n-1\}$ for some natural number $n \in \mathbb{N}$, including $n=0$.
+  carriers:
+  - set $X$
+  data: []
+  axioms:
+  - finite cardinality
+  induces: []
+  notes: ''
+  citations:
+  - wp-finite-set
+  - openlogic-set-theory
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: countable_set
+  label: Countable set
+  primaryDomain: set-theory
+  domains:
+  - set-theory
+  - foundation
+  level: 2
+  kind: structure
+  summary: A finite or countably infinite set.
+  carriers:
+  - set $X$
+  data: []
+  axioms:
+  - injects into the natural numbers
+  induces: []
+  notes: 'Convention: “countable” means finite or countably infinite (at most countable). Some authors reserve “countable” for countably infinite sets.'
+  citations:
+  - wp-countable-set
+  - openlogic-set-theory
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: indexed_family
+  label: Indexed family
+  primaryDomain: set-theory
+  domains:
+  - set-theory
+  - foundation
+  level: 2
+  kind: structure
+  summary: A collection of objects labelled by elements of an index set.
+  carriers:
+  - index set $I$
+  - ambient class or set of values
+  data:
+  - function $I\to X$
+  axioms: []
+  induces: []
+  notes: ''
+  citations:
+  - wp-indexed-family
+  - openlogic-set-theory
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: transitive_set
+  label: Transitive set
+  primaryDomain: set-theory
+  domains:
+  - set-theory
+  - foundation
+  level: 2
+  kind: structure
+  summary: A set whose elements are all subsets of it.
+  carriers:
+  - set $X$
+  data: []
+  axioms:
+  - $y\in x\in X$ implies $y\in X$
+  induces: []
+  notes: ''
+  citations:
+  - wp-transitive-set
+  - openlogic-set-theory
+  primaryField: mathematics
+  fields:
+  - mathematics
+  conceptType: Set-theoretic property
+- id: well_founded_relation
+  label: Well-founded relation
+  primaryDomain: set-theory
+  domains:
+  - set-theory
+  - order
+  - logic
+  level: 2
+  kind: structure
+  summary: An endorelation for which every nonempty subset has an $R$-minimal element.
+  carriers:
+  - set $X$
+  data:
+  - binary endorelation $R \subseteq X\times X$
+  axioms:
+  - every nonempty subset has an $R$-minimal element
+  induces: []
+  notes: The formulation by absence of infinite descending sequences is equivalent only under suitable choice/dependent-choice assumptions and convention choices.
+  citations:
+  - wp-well-founded
+  - nlab-well-founded
+  - openlogic-set-theory
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: ordinal
+  label: Ordinal
+  primaryDomain: set-theory
+  domains:
+  - set-theory
+  - order
+  - logic
+  level: 4
+  kind: structure
+  summary: A transitive set well-ordered by membership.
+  carriers:
+  - transitive set $\alpha$
+  data: []
+  axioms:
+  - the membership relation $\in$ well-orders $\alpha$
+  induces:
+  - canonical well-order
+  notes: Equivalently, an ordinal is a transitive set all of whose elements are transitive; the present formulation follows the standard von Neumann definition.
+  citations:
+  - wp-ordinal
+  - nlab-ordinal
+  - openlogic-set-theory
+  primaryField: mathematics
+  fields:
+  - mathematics
+  conceptType: Set-theoretic order type
+- id: cardinal
+  label: Cardinal
+  primaryDomain: set-theory
+  domains:
+  - set-theory
+  - order
+  level: 5
+  kind: structure
+  summary: An initial ordinal used to represent the size of a set.
+  carriers:
+  - ordinal $\kappa$
+  data: []
+  axioms:
+  - not equipotent with any smaller ordinal
+  induces: []
+  notes: A cardinal is an initial ordinal. In ZF this represents the size of any well-orderable set; assigning a cardinal to every set is equivalent to the well-ordering principle and hence to the axiom of choice.
+  citations:
+  - wp-cardinal
+  - nlab-cardinal
+  - openlogic-set-theory
+  primaryField: mathematics
+  fields:
+  - mathematics
+  conceptType: Set-theoretic size representative
+- kind: structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  id: empty_set
+  label: Empty set
+  primaryDomain: set-theory
+  domains:
+  - set-theory
+  - foundation
+  level: 1
+  conceptType: Canonical set
+  summary: The unique set $\varnothing$ having no elements.
+  carriers:
+  - set $\varnothing$
+  data: []
+  axioms:
+  - for every set $x$, $x\notin\varnothing$
+  induces: []
+  notes: The empty set is used as the von Neumann realization of zero, but that identification is a chosen encoding rather than an intrinsic meaning of zero.
+  citations:
+  - wp-empty-set
+  - openlogic-set-theory
+- kind: structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  id: power_set
+  label: Power set
+  primaryDomain: set-theory
+  domains:
+  - set-theory
+  - foundation
+  level: 2
+  conceptType: Canonical construction
+  summary: For a set $X$, the set $\mathcal P(X)$ of all subsets of $X$.
+  carriers:
+  - set $X$
+  data:
+  - $\mathcal P(X)=\{A:A\subseteq X\}$
+  axioms: []
+  induces:
+  - strictly larger cardinality by Cantor’s theorem
+  notes: In ZF, the power-set axiom guarantees that $\mathcal P(X)$ is a set.
+  citations:
+  - wp-power-set
+  - openlogic-set-theory
+- kind: structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  id: cantors_theorem
+  label: Cantor’s theorem
+  primaryDomain: set-theory
+  domains:
+  - set-theory
+  - logic
+  - foundation
+  level: 4
+  conceptType: Theorem
+  summary: For every set $X$, no function $X\to\mathcal P(X)$ is surjective; hence $|X|<|\mathcal P(X)|$.
+  carriers:
+  - set $X$
+  data:
+  - diagonal subset $D=\{x\in X:x\notin f(x)\}$
+  axioms:
+  - ordinary classical or intuitionistic set theory suffices
+  induces:
+  - an unending hierarchy of larger cardinalities
+  notes: The theorem rules out a greatest cardinal and does not depend on the continuum hypothesis.
+  citations:
+  - wp-cantor-theorem
+  - openlogic-set-theory
+- kind: structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  id: finite_ordinal
+  label: Finite ordinal
+  primaryDomain: set-theory
+  domains:
+  - set-theory
+  - number-theory
+  - foundation
+  level: 5
+  conceptType: Ordinal class
+  summary: 'A von Neumann ordinal $n$ obtained from $0=\varnothing$ by finitely many successor steps, so $n=\{0,1,\ldots,n-1\}$.  For example, $0=\varnothing$, $1=\{0\}$, $2=\{0,1\}$, $3=\{0,1,2\}$, and so on, or in terms of empty sets: $0=\varnothing$, $1=\{\varnothing\}$, $2=\{\varnothing,\{\varnothing\}\}$, $3=\{\varnothing,\{\varnothing\},\{\varnothing,\{\varnothing\}\}\}$, and so on.'
+  carriers:
+  - transitive finite set $n$
+  data: []
+  axioms:
+  - membership well-orders $n$
+  induces:
+  - finite cardinal and natural-number numeral
+  notes: Finite ordinals are canonical representatives of finite order types and finite cardinalities.
+  citations:
+  - wp-von-neumann-ordinal
+  - openlogic-set-theory
+- kind: structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  id: successor_ordinal
+  label: Successor ordinal
+  primaryDomain: set-theory
+  domains:
+  - set-theory
+  - order
+  - foundation
+  level: 5
+  conceptType: Ordinal class
+  summary: An ordinal of the form $\alpha+1=\alpha\cup\{\alpha\}$.
+  carriers:
+  - ordinal $\alpha$
+  data:
+  - successor operation $S(\alpha)=\alpha\cup\{\alpha\}$
+  axioms: []
+  induces:
+  - least ordinal strictly greater than $\alpha$
+  notes: ''
+  citations:
+  - wp-ordinal
+  - openlogic-set-theory
+- kind: structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  id: limit_ordinal
+  label: Limit ordinal
+  primaryDomain: set-theory
+  domains:
+  - set-theory
+  - order
+  - logic
+  level: 5
+  conceptType: Ordinal class
+  summary: A nonzero ordinal that is not a successor ordinal; equivalently, an ordinal equal to the union of all smaller ordinals.
+  carriers:
+  - ordinal $\lambda$
+  data: []
+  axioms:
+  - $\lambda\ne0$ and $\alpha+1<\lambda$ for every $\alpha<\lambda$
+  induces:
+  - limit stages of transfinite definitions
+  notes: $\omega$ is the first limit ordinal.
+  citations:
+  - wp-ordinal
+  - openlogic-set-theory
+- kind: structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  id: omega
+  label: First infinite ordinal $\omega$
+  primaryDomain: set-theory
+  domains:
+  - set-theory
+  - number-theory
+  - order
+  - foundation
+  level: 6
+  conceptType: Distinguished ordinal
+  summary: The least infinite ordinal and the set of all finite von Neumann ordinals.
+  carriers:
+  - set $\omega=\{0,1,2,\ldots\}$
+  data:
+  - membership order
+  axioms:
+  - least inductive set
+  induces:
+  - standard carrier of the natural numbers
+  - first infinite cardinal when viewed by cardinality
+  notes: $\omega$ is an ordinal; $\aleph_0$ denotes its role as the least infinite cardinal. In the von Neumann convention they have the same underlying set but different structural roles.
+  citations:
+  - wp-von-neumann-ordinal
+  - nlab-natural-number
+  - openlogic-set-theory
+- kind: structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  id: finite_cardinal
+  label: Finite cardinal
+  primaryDomain: set-theory
+  domains:
+  - set-theory
+  - number-theory
+  level: 6
+  conceptType: Cardinal class
+  summary: A cardinal represented by a finite ordinal $n$.
+  carriers:
+  - finite initial ordinal $n$
+  data: []
+  axioms: []
+  induces:
+  - cardinality of every finite set
+  notes: ''
+  citations:
+  - wp-cardinal
+  - openlogic-set-theory
+- kind: structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  id: infinite_cardinal
+  label: Infinite cardinal
+  primaryDomain: set-theory
+  domains:
+  - set-theory
+  - order
+  - logic
+  level: 6
+  conceptType: Cardinal class
+  summary: A cardinal that is not finite.
+  carriers:
+  - initial ordinal $\kappa$
+  data: []
+  axioms:
+  - $\kappa\ge\aleph_0$
+  induces: []
+  notes: There is no greatest infinite cardinal, by Cantor’s theorem.
+  citations:
+  - wp-cardinal
+  - openlogic-set-theory
+- kind: structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  id: countable_ordinal
+  label: Countable ordinal
+  primaryDomain: set-theory
+  domains:
+  - set-theory
+  - order
+  - logic
+  level: 7
+  conceptType: Ordinal class
+  summary: An ordinal whose underlying set is finite or countably infinite.
+  carriers:
+  - ordinal $\alpha$
+  data: []
+  axioms:
+  - there is an injection $\alpha\to\omega$
+  induces: []
+  notes: The collection of all countable ordinals is itself uncountable and forms $\omega_1$.
+  citations:
+  - wp-first-uncountable-ordinal
+  - openlogic-set-theory
+- kind: structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  id: aleph_zero
+  label: Countable infinity $\aleph_0$
+  primaryDomain: set-theory
+  domains:
+  - set-theory
+  - number-theory
+  - order
+  level: 7
+  conceptType: Distinguished cardinal
+  summary: The least infinite cardinal, represented by the initial ordinal $\omega$.
+  carriers:
+  - cardinal $\aleph_0$
+  data: []
+  axioms: []
+  induces:
+  - cardinality of $\mathbb N$, $\mathbb Z$, and $\mathbb Q$
+  notes: ''
+  citations:
+  - wp-aleph-number
+  - openlogic-set-theory
+- kind: structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  id: ordinal_arithmetic
+  label: Ordinal arithmetic
+  primaryDomain: set-theory
+  domains:
+  - set-theory
+  - order
+  - logic
+  level: 7
+  conceptType: Transfinite construction
+  summary: Addition, multiplication, and exponentiation of ordinals, defined recursively in the right argument.
+  carriers:
+  - ordinals
+  data:
+  - $\alpha+\beta$
+  - $\alpha\cdot\beta$
+  - $\alpha^\beta$
+  axioms:
+  - successor and limit clauses
+  induces: []
+  notes: Ordinal addition and multiplication are associative but generally not commutative.
+  citations:
+  - wp-ordinal-arithmetic
+  - openlogic-set-theory
+- kind: structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  id: transfinite_recursion
+  label: Transfinite recursion
+  primaryDomain: set-theory
+  domains:
+  - set-theory
+  - logic
+  - foundation
+  level: 8
+  conceptType: Theorem schema
+  summary: A method for defining a function on all ordinals by specifying its value from the values at earlier ordinals.
+  carriers:
+  - ordinal domain
+  data:
+  - initial, successor, and limit clauses
+  axioms:
+  - well-foundedness of the ordinal order
+  induces:
+  - hierarchies indexed by ordinals
+  notes: ''
+  citations:
+  - wp-transfinite-induction
+  - openlogic-set-theory
+- kind: structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  id: first_uncountable_ordinal
+  label: First uncountable ordinal $\omega_1$
+  primaryDomain: set-theory
+  domains:
+  - set-theory
+  - order
+  - logic
+  level: 8
+  conceptType: Distinguished ordinal
+  summary: The least uncountable ordinal, equivalently the set of all countable ordinals.
+  carriers:
+  - ordinal $\omega_1$
+  data: []
+  axioms:
+  - every $\alpha<\omega_1$ is countable
+  induces:
+  - initial ordinal $\aleph_1$
+  notes: Its underlying cardinal is $\aleph_1$; the continuum hypothesis asks whether $|\mathbb R|=\aleph_1$.
+  citations:
+  - wp-first-uncountable-ordinal
+  - openlogic-set-theory
+- kind: structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  id: successor_cardinal
+  label: Successor cardinal
+  primaryDomain: set-theory
+  domains:
+  - set-theory
+  - order
+  level: 8
+  conceptType: Cardinal class
+  summary: For a cardinal $\kappa$, the least cardinal $\kappa^+$ strictly greater than $\kappa$.
+  carriers:
+  - cardinal $\kappa^+$
+  data: []
+  axioms:
+  - $\kappa<\kappa^+$ and no cardinal lies strictly between them
+  induces: []
+  notes: Cantor’s theorem gives $\kappa^+\le 2^\kappa$, but equality is not provable in ZFC in general.
+  citations:
+  - wp-cardinal
+  - wp-continuum-hypothesis
+  - openlogic-set-theory
+- kind: structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  id: limit_cardinal
+  label: Limit cardinal
+  primaryDomain: set-theory
+  domains:
+  - set-theory
+  - order
+  - logic
+  level: 8
+  conceptType: Cardinal class
+  summary: An infinite cardinal that is not the successor cardinal of any smaller cardinal.
+  carriers:
+  - cardinal $\lambda$
+  data: []
+  axioms:
+  - $\lambda$ is infinite, and $\kappa^+<\lambda$ for every cardinal $\kappa<\lambda$
+  induces: []
+  notes: This convention includes $\aleph_0$ as the least limit cardinal. Some authors instead use “limit cardinal” only for uncountable alephs whose indices are limit ordinals.
+  citations:
+  - wp-aleph-number
+  - openlogic-set-theory
+- kind: structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  id: epsilon_zero
+  label: Epsilon-zero ordinal $\varepsilon_0$
+  primaryDomain: set-theory
+  domains:
+  - set-theory
+  - logic
+  - order
+  level: 9
+  conceptType: Distinguished ordinal
+  summary: The least nonzero fixed point of ordinal exponentiation $\alpha\mapsto\omega^\alpha$.
+  carriers:
+  - ordinal $\varepsilon_0$
+  data: []
+  axioms:
+  - $\omega^{\varepsilon_0}=\varepsilon_0$
+  induces:
+  - proof-theoretic ordinal of Peano arithmetic
+  notes: $\varepsilon_0$ is countable despite lying far beyond every finite tower formed from $\omega$ by ordinal exponentiation.
+  citations:
+  - wp-epsilon-number
+  - wp-ordinal-arithmetic
+- kind: structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  id: aleph_hierarchy
+  label: Aleph hierarchy
+  primaryDomain: set-theory
+  domains:
+  - set-theory
+  - order
+  - logic
+  level: 9
+  conceptType: Cardinal hierarchy
+  summary: The transfinite enumeration $\aleph_\alpha$ of the infinite initial ordinals.
+  carriers:
+  - class-indexed family of cardinals
+  data:
+  - $\aleph_0$
+  - $\aleph_{\alpha+1}=\aleph_\alpha^+$
+  - $\aleph_\lambda=\sup_{\alpha<\lambda}\aleph_\alpha$ for limit $\lambda$
+  axioms: []
+  induces: []
+  notes: In ZF, alephs enumerate the well-orderable infinite cardinalities; Choice says every set is well-orderable and hence has an aleph cardinality.
+  citations:
+  - wp-aleph-number
+  - openlogic-set-theory
+- kind: structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  id: beth_hierarchy
+  label: Beth hierarchy
+  primaryDomain: set-theory
+  domains:
+  - set-theory
+  - logic
+  - foundation
+  level: 9
+  conceptType: Cardinal hierarchy
+  summary: In ZFC, the cardinal hierarchy generated from $\beth_0=\aleph_0$ by repeated power sets and suprema at limit stages.
+  carriers:
+  - class-indexed family of cardinals
+  data:
+  - $\beth_{\alpha+1}=2^{\beth_\alpha}$
+  - $\beth_\lambda=\sup_{\alpha<\lambda}\beth_\alpha$
+  axioms: []
+  induces: []
+  notes: Without Choice, a power set of a well-orderable set need not be well-orderable; the displayed initial-ordinal beth hierarchy therefore uses the ZFC setting selected later in the story.
+  citations:
+  - wp-beth-number
+  - wp-cantor-theorem
+- kind: structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  id: class_of_all_ordinals
+  label: Class of all ordinals $\mathrm{Ord}$
+  primaryDomain: set-theory
+  domains:
+  - set-theory
+  - logic
+  - foundation
+  level: 10
+  conceptType: Proper class
+  summary: The collection of every ordinal, ordered by membership.
+  carriers:
+  - proper class $\mathrm{Ord}$
+  data: []
+  axioms:
+  - not a set
+  induces:
+  - indexing class for transfinite hierarchies
+  notes: If $\mathrm{Ord}$ were a set, it would itself determine an ordinal larger than every ordinal, giving the Burali–Forti contradiction.
+  citations:
+  - wp-ordinal
+  - sep-set-theory
+- kind: structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  id: continuum_cardinal
+  label: Cardinality of the continuum $\mathfrak c$
+  primaryDomain: set-theory
+  domains:
+  - set-theory
+  - analysis
+  - number-theory
+  level: 10
+  conceptType: Distinguished cardinal
+  summary: The size of the real line, denoted $\mathfrak c$; in ZFC it is the cardinal $|\mathbb R|=2^{\aleph_0}$.
+  carriers:
+  - equipotence type of $\mathbb R$; an initial ordinal under Choice
+  data: []
+  axioms: []
+  induces:
+  - size of $\mathcal P(\mathbb N)$ and of the real line
+  notes: In bare ZF, $\mathbb R$ need not be well-orderable, so its size need not have an initial-ordinal representative. The equality with $|\mathcal P(\mathbb N)|$ is equipotence, not literal identity.
+  citations:
+  - wp-cardinality-continuum
+  - wp-cantor-theorem
+- kind: structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  id: continuum_hypothesis
+  label: Continuum hypothesis
+  primaryDomain: set-theory
+  domains:
+  - set-theory
+  - logic
+  - foundation
+  level: 11
+  conceptType: Independent statement
+  summary: The assertion $2^{\aleph_0}=\aleph_1$, equivalently that no cardinal lies strictly between $\aleph_0$ and $\mathfrak c$.
+  carriers:
+  - set-theoretic statement
+  data: []
+  axioms: []
+  induces: []
+  notes: Gödel and Cohen showed that CH can neither be disproved nor proved from ZFC, assuming ZFC is consistent.
+  citations:
+  - wp-continuum-hypothesis
+  - sep-set-theory
+- kind: structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  id: generalized_continuum_hypothesis
+  label: Generalized continuum hypothesis
+  primaryDomain: set-theory
+  domains:
+  - set-theory
+  - logic
+  - foundation
+  level: 12
+  conceptType: Independent statement
+  summary: The assertion $2^\kappa=\kappa^+$ for every infinite cardinal $\kappa$.
+  carriers:
+  - set-theoretic statement
+  data: []
+  axioms: []
+  induces: []
+  notes: GCH implies CH and is independent of ZFC, relative to the consistency of ZFC.
+  citations:
+  - wp-continuum-hypothesis
+  - sep-set-theory
+- kind: structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  id: large_cardinal
+  label: Large cardinal
+  primaryDomain: set-theory
+  domains:
+  - set-theory
+  - logic
+  - foundation
+  level: 13
+  conceptType: Cardinal hierarchy class
+  summary: A cardinal satisfying one of several strong closure, compactness, measure, or elementary-embedding properties used to calibrate set-theoretic strength.
+  carriers:
+  - cardinal $\kappa$
+  data: []
+  axioms:
+  - a specified large-cardinal property
+  induces:
+  - strong consistency and reflection principles
+  notes: ZFC does not prove that inaccessible, measurable, or supercompact cardinals exist, assuming the usual consistency hypotheses; their existence is adopted through additional axioms.
+  citations:
+  - wp-large-cardinal
+  - sep-large-cardinals
+- kind: structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  id: inaccessible_cardinal
+  label: Strongly inaccessible cardinal
+  primaryDomain: set-theory
+  domains:
+  - set-theory
+  - logic
+  - foundation
+  level: 14
+  conceptType: Large-cardinal notion
+  summary: An uncountable regular strong-limit cardinal.
+  carriers:
+  - cardinal $\kappa$
+  data: []
+  axioms:
+  - $\operatorname{cf}(\kappa)=\kappa$
+  - $2^\lambda<\kappa$ for every $\lambda<\kappa$
+  induces:
+  - a transitive set $V_\kappa$ modeling a substantial fragment of ZFC
+  notes: The existence of an inaccessible cardinal is not provable in ZFC if ZFC is consistent.
+  citations:
+  - wp-inaccessible-cardinal
+  - sep-large-cardinals
+- kind: structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  id: measurable_cardinal
+  label: Measurable cardinal
+  primaryDomain: set-theory
+  domains:
+  - set-theory
+  - logic
+  - measure
+  level: 15
+  conceptType: Large-cardinal notion
+  summary: An uncountable cardinal $\kappa$ carrying a nonprincipal $\kappa$-complete ultrafilter.
+  carriers:
+  - cardinal $\kappa$
+  data:
+  - nonprincipal $\kappa$-complete ultrafilter on $\kappa$
+  axioms: []
+  induces:
+  - elementary embedding of the universe into an inner model
+  notes: Every measurable cardinal is strongly inaccessible in ZFC.
+  citations:
+  - wp-measurable-cardinal
+  - sep-large-cardinals
+- kind: structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  id: supercompact_cardinal
+  label: Supercompact cardinal
+  primaryDomain: set-theory
+  domains:
+  - set-theory
+  - logic
+  - foundation
+  level: 16
+  conceptType: Large-cardinal notion
+  summary: A cardinal $\kappa$ whose elementary-embedding or fine-measure properties witness compactness at every scale $\lambda\ge\kappa$.
+  carriers:
+  - cardinal $\kappa$
+  data:
+  - fine normal $\kappa$-complete measures on $\mathcal P_\kappa(\lambda)$ for all $\lambda\ge\kappa$
+  axioms: []
+  induces:
+  - very strong compactness and reflection principles
+  notes: Every supercompact cardinal is measurable. Measurability alone does not imply supercompactness.
+  citations:
+  - wp-supercompact-cardinal
+  - sep-large-cardinals
+edges:
+- id: e_family_bigraded
+  source: indexed_family
+  target: bigraded_object
+  type: add-data
+  label: equip the index set with two degree coordinates
+  detail: Identify or replace the index set by a product of degree sets, usually $\mathbb{Z}\times \mathbb{Z}$.
+  citations:
+  - stacks-graded-objects
+- id: e_family_graded
+  source: indexed_family
+  target: graded_object
+  type: add-data
+  label: equip the index set with degree indexing
+  detail: Identify or replace the index set by a degree set, usually $\mathbb{Z}$ or $\mathbb{N}$.
+  citations:
+  - stacks-graded-objects
+- id: indexed_family_to_hypergraph
+  source: indexed_family
+  target: hypergraph
+  type: induced-forgotten
+  label: forget indices and repetitions
+  detail: For a family of subsets of a vertex set, take its image in the power set. This forgets the index labels and repeated hyperedges, so the construction is not invertible in general.
+  citations:
+  - mathlib-hypergraph
+- id: j_cosimplicial_object__indexed_family
+  source: indexed_family
+  target: j_cosimplicial_object
+  type: combine-compatible
+  label: degree-indexed objects
+  detail: Supply the family of objects indexed by nonnegative degrees.
+  citations:
+  - stacks-simplicial-objects
+  - nlab-simplicial-object
+  - wp-cosimplicial-object
+  - riehl-category-context
+- id: j_filtration__family
+  source: indexed_family
+  target: j_filtration
+  type: combine-compatible
+  label: ordered family
+  detail: Supply a family indexed by an ordered time set.
+  citations:
+  - wp-filtration-probability
+  - durrett-probability
+- id: j_simplicial_object__indexed_family
+  source: indexed_family
+  target: j_simplicial_object
+  type: combine-compatible
+  label: degree-indexed objects
+  detail: Supply the family of objects indexed by nonnegative degrees.
+  citations:
+  - stacks-simplicial-objects
+  - nlab-simplicial-object
+  - riehl-category-context
+- id: j_stochastic_process__indexed_family
+  source: indexed_family
+  target: j_stochastic_process
+  type: combine-compatible
+  label: time-indexed variables
+  detail: Supply the Indexed family structure as one jointly required input.
+  citations:
+  - wp-stochastic-process
+  - durrett-probability
+- id: e_ordinal_cardinal
+  source: ordinal
+  target: cardinal
+  type: impose-axiom
+  label: + initiality
+  detail: Require the ordinal to have no equipotent smaller ordinal.
+  citations:
+  - wp-cardinal
+  - nlab-cardinal
+  - openlogic-set-theory
+- id: transitive_set_to_ordinal
+  source: transitive_set
+  target: ordinal
+  type: impose-axiom
+  label: + membership well-orders the set
+  detail: Require the inherited membership relation $\in$ to be a well-order of the transitive set.
+  citations:
+  - wp-ordinal
+  - nlab-ordinal
+  - openlogic-set-theory
+- id: power_set_to_cantors_theorem
+  source: power_set
+  target: cantors_theorem
+  type: theorem-implication
+  label: strictly larger than its base
+  detail: Cantor’s diagonal argument proves that $|X|<|\mathcal P(X)|$ for every set $X$.
+  citations:
+  - wp-cantor-theorem
+  - openlogic-set-theory
+  overview: true
+- id: empty_set_to_von_neumann_zero
+  source: empty_set
+  target: von_neumann_zero
+  type: representation-equivalence
+  label: chosen as zero
+  detail: The von Neumann convention uses the empty set as the set-theoretic representative of the abstract numeral $0$.
+  citations:
+  - wp-von-neumann-ordinal
+  - nlab-natural-number
+  overview: true
+- id: finite_set_to_finite_ordinal
+  source: finite_set
+  target: finite_ordinal
+  type: impose-axiom
+  label: require ordinal form
+  detail: Select the finite sets that are transitive and well-ordered by membership; these are the finite von Neumann ordinals.
+  citations:
+  - wp-von-neumann-ordinal
+  - openlogic-set-theory
+- id: ordinal_to_finite_ordinal
+  source: ordinal
+  target: finite_ordinal
+  type: classification
+  label: finite ordinals
+  detail: Finite ordinals are the finite members of the ordinal hierarchy.
+  citations:
+  - wp-ordinal
+  - wp-von-neumann-ordinal
+- id: ordinal_to_successor_ordinal
+  source: ordinal
+  target: successor_ordinal
+  type: classification
+  label: successor ordinals
+  detail: Successor ordinals are ordinals of the form $\alpha+1$.
+  citations:
+  - wp-ordinal
+  - openlogic-set-theory
+- id: ordinal_to_limit_ordinal
+  source: ordinal
+  target: limit_ordinal
+  type: classification
+  label: limit ordinals
+  detail: Limit ordinals are the nonzero ordinals with no immediate predecessor.
+  citations:
+  - wp-ordinal
+  - openlogic-set-theory
+- id: finite_ordinal_to_omega
+  source: finite_ordinal
+  target: omega
+  type: canonical-construction
+  label: collect all finite ordinals
+  detail: $\omega$ is the set of all finite ordinals.
+  citations:
+  - wp-von-neumann-ordinal
+  - openlogic-set-theory
+  overview: true
+- id: limit_ordinal_to_omega
+  source: limit_ordinal
+  target: omega
+  type: classification
+  label: first limit ordinal
+  detail: $\omega$ is the least nonzero limit ordinal.
+  citations:
+  - wp-ordinal
+  - openlogic-set-theory
+- id: ordinal_to_omega
+  source: ordinal
+  target: omega
+  type: classification
+  label: first infinite ordinal
+  detail: $\omega$ is the first infinite member of the ordinal hierarchy.
+  citations:
+  - wp-ordinal
+  - openlogic-set-theory
+- id: omega_to_natural_numbers
+  source: omega
+  target: natural_numbers
+  type: representation-equivalence
+  label: standard carrier of $\mathbb N$
+  detail: Equip $\omega$ with zero, successor, recursively defined arithmetic, and its membership order to obtain the standard natural-number system.
+  citations:
+  - nlab-natural-number
+  - wp-natural-number
+  overview: true
+- id: ordinal_to_ordinal_arithmetic
+  source: ordinal
+  target: ordinal_arithmetic
+  type: canonical-construction
+  label: define transfinite operations
+  detail: Define addition, multiplication, and exponentiation recursively on ordinal arguments.
+  citations:
+  - wp-ordinal-arithmetic
+  - openlogic-set-theory
+  overview: true
+- id: ordinal_to_transfinite_recursion
+  source: ordinal
+  target: transfinite_recursion
+  type: theorem-implication
+  label: well-founded recursion
+  detail: The well-ordering of every ordinal supports unique definitions from earlier stages.
+  citations:
+  - wp-transfinite-induction
+  - openlogic-set-theory
+- id: ordinal_to_countable_ordinal
+  source: ordinal
+  target: countable_ordinal
+  type: classification
+  label: countable ordinals
+  detail: Countable ordinals are the ordinals admitting an injection into $\omega$.
+  citations:
+  - wp-first-uncountable-ordinal
+- id: countable_ordinal_to_omega1
+  source: countable_ordinal
+  target: first_uncountable_ordinal
+  type: canonical-construction
+  label: collect all countable ordinals
+  detail: $\omega_1$ is the set of all countable ordinals.
+  citations:
+  - wp-first-uncountable-ordinal
+  - openlogic-set-theory
+  overview: true
+- id: ordinal_to_omega1
+  source: ordinal
+  target: first_uncountable_ordinal
+  type: classification
+  label: first uncountable ordinal
+  detail: $\omega_1$ is the least uncountable member of the ordinal hierarchy.
+  citations:
+  - wp-first-uncountable-ordinal
+- id: ordinal_arithmetic_to_epsilon_zero
+  source: ordinal_arithmetic
+  target: epsilon_zero
+  type: canonical-construction
+  label: least fixed point of $\omega^\alpha$
+  detail: Iterating $\alpha\mapsto\omega^\alpha$ from finite stages and taking the supremum yields $\varepsilon_0$.
+  citations:
+  - wp-epsilon-number
+  - wp-ordinal-arithmetic
+  overview: true
+- id: countable_ordinal_to_epsilon_zero
+  source: countable_ordinal
+  target: epsilon_zero
+  type: classification
+  label: distinguished countable ordinal
+  detail: $\varepsilon_0$ is a countable ordinal.
+  citations:
+  - wp-epsilon-number
+- id: ordinal_to_all_ordinals
+  source: ordinal
+  target: class_of_all_ordinals
+  type: canonical-construction
+  label: collect as a proper class
+  detail: The ordinals form a proper class rather than a set.
+  citations:
+  - wp-ordinal
+  - sep-set-theory
+- id: cardinal_to_finite_cardinal
+  source: cardinal
+  target: finite_cardinal
+  type: classification
+  label: finite cardinals
+  detail: Finite cardinals are the finite initial ordinals.
+  citations:
+  - wp-cardinal
+  - openlogic-set-theory
+- id: cardinal_to_infinite_cardinal
+  source: cardinal
+  target: infinite_cardinal
+  type: classification
+  label: infinite cardinals
+  detail: Infinite cardinals are the nonfinite initial ordinals.
+  citations:
+  - wp-cardinal
+  - openlogic-set-theory
+- id: omega_to_aleph_zero
+  source: omega
+  target: aleph_zero
+  type: representation-equivalence
+  label: view by cardinality
+  detail: The same initial ordinal $\omega$ is denoted $\aleph_0$ when regarded as the least infinite cardinal.
+  citations:
+  - wp-aleph-number
+  - nlab-natural-number
+  overview: true
+- id: cardinal_to_aleph_zero
+  source: cardinal
+  target: aleph_zero
+  type: classification
+  label: least infinite cardinal
+  detail: $\aleph_0$ is the first infinite cardinal.
+  citations:
+  - wp-aleph-number
+  - openlogic-set-theory
+- id: infinite_cardinal_to_aleph_zero
+  source: infinite_cardinal
+  target: aleph_zero
+  type: classification
+  label: least member
+  detail: $\aleph_0$ is the least infinite cardinal.
+  citations:
+  - wp-aleph-number
+- id: cardinal_to_successor_cardinal
+  source: cardinal
+  target: successor_cardinal
+  type: canonical-construction
+  label: take least larger cardinal
+  detail: For each cardinal $\kappa$, well-order the cardinals above it and take the least one, denoted $\kappa^+$.
+  citations:
+  - wp-cardinal
+  - openlogic-set-theory
+- id: cardinal_to_limit_cardinal
+  source: cardinal
+  target: limit_cardinal
+  type: classification
+  label: limit cardinals
+  detail: Limit cardinals are infinite cardinals that are not successors.
+  citations:
+  - wp-aleph-number
+  - openlogic-set-theory
+- id: aleph_zero_to_aleph_hierarchy
+  source: aleph_zero
+  target: aleph_hierarchy
+  type: canonical-construction
+  label: transfinite successor enumeration
+  detail: Starting from $\aleph_0$, take successor cardinals and suprema at limit stages.
+  citations:
+  - wp-aleph-number
+  - openlogic-set-theory
+  overview: true
+- id: successor_cardinal_to_aleph_hierarchy
+  source: successor_cardinal
+  target: aleph_hierarchy
+  type: canonical-construction
+  label: successor stages
+  detail: $\aleph_{\alpha+1}$ is the successor cardinal of $\aleph_\alpha$.
+  citations:
+  - wp-aleph-number
+- id: limit_cardinal_to_aleph_hierarchy
+  source: limit_cardinal
+  target: aleph_hierarchy
+  type: canonical-construction
+  label: limit stages
+  detail: At limit indices, the aleph hierarchy takes the supremum of earlier alephs.
+  citations:
+  - wp-aleph-number
+- id: aleph_zero_to_beth_hierarchy
+  source: aleph_zero
+  target: beth_hierarchy
+  type: canonical-construction
+  label: start at $\beth_0$
+  detail: Set $\beth_0=\aleph_0$ and iterate cardinal exponentiation by $2$.
+  citations:
+  - wp-beth-number
+  overview: true
+- id: power_set_to_beth_hierarchy
+  source: power_set
+  target: beth_hierarchy
+  type: canonical-construction
+  label: power-set successor stages
+  detail: In ZFC, the step $\beth_{\alpha+1}=2^{\beth_\alpha}$ records the initial-ordinal cardinality of a power set.
+  citations:
+  - wp-beth-number
+  - wp-power-set
+  overview: true
+- id: cantors_theorem_to_beth_hierarchy
+  source: cantors_theorem
+  target: beth_hierarchy
+  type: theorem-implication
+  label: strict growth at successors
+  detail: Cantor’s theorem ensures $\beth_\alpha<\beth_{\alpha+1}$.
+  citations:
+  - wp-cantor-theorem
+  - wp-beth-number
+- id: beth_hierarchy_to_continuum
+  source: beth_hierarchy
+  target: continuum_cardinal
+  type: classification
+  label: first power-set step
+  detail: $\mathfrak c=\beth_1=2^{\aleph_0}$.
+  citations:
+  - wp-beth-number
+  - wp-cardinality-continuum
+  overview: true
+- id: power_set_to_continuum
+  source: power_set
+  target: continuum_cardinal
+  type: theorem-implication
+  label: $|\mathcal P(\mathbb N)|=\mathfrak c$
+  detail: Binary sequences, subsets of $\mathbb N$, and real numbers have the same cardinality.
+  citations:
+  - wp-cardinality-continuum
+  - wp-power-set
+- id: continuum_hypothesis_to_continuum
+  source: continuum_hypothesis
+  target: continuum_cardinal
+  type: theorem-implication
+  label: $\mathfrak c=\aleph_1$
+  detail: CH identifies the continuum cardinal with the first uncountable cardinal.
+  citations:
+  - wp-continuum-hypothesis
+  - wp-cardinality-continuum
+  overview: true
+- id: gch_to_ch
+  source: generalized_continuum_hypothesis
+  target: continuum_hypothesis
+  type: theorem-implication
+  label: specialize to $\aleph_0$
+  detail: Taking $\kappa=\aleph_0$ in GCH yields CH.
+  citations:
+  - wp-continuum-hypothesis
+- id: gch_to_aleph_beth
+  source: generalized_continuum_hypothesis
+  target: beth_hierarchy
+  type: theorem-implication
+  label: $\beth_\alpha=\aleph_\alpha$
+  detail: GCH identifies the beth and aleph hierarchies at every ordinal index.
+  citations:
+  - wp-beth-number
+  - wp-continuum-hypothesis
+- id: cardinal_to_large_cardinal
+  source: cardinal
+  target: large_cardinal
+  type: impose-axiom
+  label: + strong cardinal property
+  detail: Select cardinals satisfying additional closure, compactness, measure, or elementary-embedding properties.
+  citations:
+  - wp-large-cardinal
+  - sep-large-cardinals
+  overview: true
+- id: large_cardinal_to_inaccessible
+  source: large_cardinal
+  target: inaccessible_cardinal
+  type: classification
+  label: inaccessible cardinals
+  detail: Strongly inaccessible cardinals form an early benchmark in the large-cardinal hierarchy.
+  citations:
+  - wp-inaccessible-cardinal
+  - sep-large-cardinals
+  overview: true
+- id: large_cardinal_to_measurable
+  source: large_cardinal
+  target: measurable_cardinal
+  type: classification
+  label: measurable cardinals
+  detail: Measurable cardinals are a stronger large-cardinal notion defined by a highly complete nonprincipal measure.
+  citations:
+  - wp-measurable-cardinal
+  - sep-large-cardinals
+  overview: true
+- id: large_cardinal_to_supercompact
+  source: large_cardinal
+  target: supercompact_cardinal
+  type: classification
+  label: supercompact cardinals
+  detail: Supercompact cardinals satisfy compactness properties at every greater scale.
+  citations:
+  - wp-supercompact-cardinal
+  - sep-large-cardinals
+  overview: true
+- id: measurable_implies_inaccessible
+  source: measurable_cardinal
+  target: inaccessible_cardinal
+  type: theorem-implication
+  label: measurable implies inaccessible
+  detail: In ZFC, every measurable cardinal is strongly inaccessible.
+  citations:
+  - wp-measurable-cardinal
+  - wp-inaccessible-cardinal
+- id: supercompact_implies_measurable
+  source: supercompact_cardinal
+  target: measurable_cardinal
+  type: theorem-implication
+  label: supercompact implies measurable
+  detail: Every supercompact cardinal is measurable.
+  citations:
+  - wp-supercompact-cardinal
+  - wp-measurable-cardinal
+- id: successor_ordinal_no_greatest_ordinal
+  source: successor_ordinal
+  target: class_of_all_ordinals
+  type: theorem-implication
+  label: no greatest ordinal
+  detail: For every ordinal $\alpha$, its successor $\alpha+1$ is a strictly larger ordinal; therefore the ordinal hierarchy has no greatest member.
+  citations:
+  - wp-ordinal
+  - openlogic-set-theory

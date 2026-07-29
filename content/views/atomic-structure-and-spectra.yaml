@@ -1,0 +1,81 @@
+id: atomic-structure-and-spectra
+title: The atom becomes calculable
+summary: Follow the historical and mathematical route from spectral regularities
+  and nuclear atoms to orbitals, many-electron methods, precision structure, and
+  transitions.
+narrative: Balmer and Rydberg exposed regular spectral structure before quantum
+  mechanics. Rutherford concentrated positive charge in the nucleus; Bohr
+  captured hydrogen’s gross spectrum; the Schrödinger equation replaced orbits
+  with states and orbitals. Quantum numbers, exclusion, shells, and
+  configurations organize many-electron atoms, while Hartree, Hartree–Fock,
+  configuration interaction, coupled cluster, and density-functional theory
+  provide computational frameworks with different approximation structures.
+  Fine, hyperfine, Lamb, Stark, and Zeeman effects refine the spectrum.
+tags:
+  - Physics
+  - Atomic physics
+  - Spectroscopy
+  - Quantum mechanics
+settings:
+  fields:
+    - physics
+  domains:
+    - quantum-mechanics
+    - nuclear-physics
+    - atomic-molecular-physics
+    - electromagnetism
+    - experiments-observations
+  edgeTypes:
+    - mathematical-formulation
+    - framework-specialization
+    - quantization
+    - theory-component
+    - describes-governs
+    - composition
+    - classification
+    - state-description
+    - transformation-process
+    - mathematical-limit
+    - effective-theory
+    - emergence
+    - couples-interacts
+    - model-realization
+    - historically-motivated
+    - experimentally-verified-by
+    - theorem-implication
+  crossFieldVisibility: hidden
+  edgeLabels: true
+  junctions: false
+  edgeZoomActivation: true
+  layout: atlas
+nodeSequence:
+  - balmer_hydrogen_spectrum_observations
+  - rydberg_formula
+  - geiger_marsden_gold_foil_experiment
+  - rutherford_model
+  - bohr_model
+  - quantum_mechanics
+  - schrodinger_equation
+  - hydrogen_atom
+  - atomic_orbital
+  - quantum_number
+  - principal_quantum_number
+  - orbital_quantum_number
+  - electron_shell
+  - electron_subshell
+  - electron_configuration
+  - pauli_exclusion_principle
+  - many_electron_atom
+  - hartree_method
+  - hartree_fock_method
+  - configuration_interaction_method
+  - coupled_cluster_method
+  - density_functional_theory
+  - atomic_energy_level
+  - atomic_transition
+  - selection_rule
+  - fine_structure
+  - hyperfine_structure
+  - lamb_shift
+  - stark_effect
+  - zeeman_effect

@@ -1,0 +1,265 @@
+nodes:
+- id: cosmological_principle
+  label: Cosmological principle
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: cosmology
+  domains:
+  - cosmology
+  - relativity
+  level: 3
+  kind: structure
+  conceptType: Large-scale assumption
+  summary: The idealization that the universe is statistically homogeneous and isotropic on sufficiently large spatial scales.
+  citations:
+  - wp-physics-cosmological-principle
+  - nasa-big-bang
+  - einstein-general-relativity
+- id: flrw_spacetime
+  label: FLRW spacetime
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: cosmology
+  domains:
+  - cosmology
+  - relativity
+  level: 4
+  kind: structure
+  conceptType: Cosmological geometry
+  summary: A homogeneous and isotropic spacetime geometry with a time-dependent scale factor and constant-curvature spatial slices.
+  citations:
+  - wp-physics-flrw-spacetime
+  - nasa-big-bang
+  - einstein-equation
+- id: friedmann_equations
+  label: Friedmann equations
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: cosmology
+  domains:
+  - cosmology
+  - relativity
+  level: 5
+  kind: structure
+  conceptType: Cosmological field equations
+  summary: The reduced Einstein equations governing the scale factor of an FLRW universe from its energy density, pressure, spatial curvature, and cosmological constant.
+  citations:
+  - wp-physics-friedmann-equations
+  - nasa-big-bang
+  - einstein-equation
+- id: expanding_universe
+  label: Expanding universe
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: cosmology
+  domains:
+  - cosmology
+  - relativity
+  - experiments-observations
+  level: 6
+  kind: structure
+  conceptType: Observed cosmic behavior
+  summary: A universe whose cosmological scale factor increases over time; observationally inferred through redshift-distance relations and other cosmological data.
+  citations:
+  - wp-physics-expanding-universe
+  - nasa-big-bang
+  - nasa-dark-energy
+- id: big_bang_model
+  label: Hot Big Bang model
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: cosmology
+  domains:
+  - cosmology
+  - particle-physics
+  - nuclear-physics
+  level: 7
+  kind: structure
+  conceptType: Cosmological model
+  summary: The model in which the observable universe evolved from an earlier hot, dense state under expansion, supported by cosmic expansion, primordial light-element abundances, and the cosmic microwave background.
+  citations:
+  - wp-physics-big-bang-model
+  - nasa-big-bang
+  - nasa-dark-matter
+- id: cosmic_microwave_background
+  label: Cosmic microwave background
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: cosmology
+  domains:
+  - cosmology
+  - experiments-observations
+  level: 8
+  kind: structure
+  conceptType: Cosmological observation
+  summary: Nearly thermal microwave radiation released when the primordial plasma became transparent, carrying anisotropy and polarization information about the early universe.
+  citations:
+  - wp-physics-cosmic-microwave-background
+  - nasa-big-bang
+  - nasa-dark-matter
+- id: cosmological_inflation
+  label: Cosmological inflation
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: cosmology
+  domains:
+  - cosmology
+  - quantum-field-theory
+  level: 8
+  kind: structure
+  conceptType: Early-universe framework
+  summary: A hypothesized period of accelerated expansion in the early universe that can generate nearly scale-invariant primordial perturbations and address horizon and flatness puzzles.
+  citations:
+  - wp-physics-cosmological-inflation
+  - nasa-big-bang
+  - tong-qft
+- id: dark_matter
+  label: Dark matter
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: cosmology
+  domains:
+  - cosmology
+  - particle-physics
+  - experiments-observations
+  level: 8
+  kind: structure
+  conceptType: Inferred matter component
+  summary: Nonluminous gravitating matter inferred from galaxies, clusters, lensing, structure formation, and cosmological observations; its microscopic identity remains unknown.
+  citations:
+  - wp-physics-dark-matter
+  - nasa-dark-matter
+  - nasa-big-bang
+- id: dark_energy
+  label: Dark energy
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: cosmology
+  domains:
+  - cosmology
+  - relativity
+  - experiments-observations
+  level: 8
+  kind: structure
+  conceptType: Inferred cosmic component
+  summary: The name for the component or modification responsible for the observed late-time accelerated expansion; a cosmological constant is the simplest current model.
+  citations:
+  - wp-physics-dark-energy
+  - nasa-dark-energy
+  - nasa-big-bang
+- id: lambda_cdm_model
+  label: $\Lambda$CDM cosmological model
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: cosmology
+  domains:
+  - cosmology
+  - relativity
+  - particle-physics
+  level: 9
+  kind: structure
+  conceptType: Standard cosmological model
+  summary: The concordance model combining general relativity, a cosmological constant $\Lambda$, cold dark matter, ordinary matter, radiation, and nearly adiabatic primordial perturbations.
+  citations:
+  - wp-physics-lambda-cdm-model
+  - nasa-big-bang
+  - nasa-dark-matter
+  - nasa-dark-energy
+edges:
+- id: story_cosmological_principle_to_flrw_spacetime_model_realization
+  source: cosmological_principle
+  target: flrw_spacetime
+  type: model-realization
+  label: is realized by homogeneous and isotropic spacetime models
+  detail: Exact spatial homogeneity and isotropy lead to the FLRW family of spacetime geometries; the empirical cosmological principle is an idealization applied only on sufficiently large scales.
+  citations:
+  - nasa-big-bang
+  - einstein-equation
+- id: story_flrw_spacetime_to_friedmann_equations_mathematical_formulation
+  source: flrw_spacetime
+  target: friedmann_equations
+  type: mathematical-formulation
+  label: reduce Einstein’s equation
+  detail: Substitution of the FLRW metric and homogeneous stress–energy into Einstein’s equation yields the Friedmann equations.
+  citations:
+  - einstein-equation
+  - nasa-big-bang
+- id: story_friedmann_equations_to_expanding_universe_describes_governs
+  source: friedmann_equations
+  target: expanding_universe
+  type: describes-governs
+  label: evolve the scale factor
+  detail: Solutions with increasing scale factor describe cosmic expansion.
+  citations:
+  - nasa-big-bang
+  - nasa-dark-energy
+- id: story_expanding_universe_to_big_bang_model_historically_motivated
+  source: expanding_universe
+  target: big_bang_model
+  type: historically-motivated
+  label: extrapolate to a hot dense past
+  detail: Expansion combined with thermal and nuclear evidence supports the hot Big Bang framework.
+  citations:
+  - nasa-big-bang
+- id: story_big_bang_model_to_cosmic_microwave_background_experimentally_verified_by
+  source: big_bang_model
+  target: cosmic_microwave_background
+  type: experimentally-verified-by
+  label: predicts relic radiation
+  detail: The hot Big Bang predicts a cooled relic photon background with an approximately blackbody spectrum.
+  citations:
+  - nasa-big-bang
+- id: story_big_bang_model_to_cosmological_inflation_framework_specialization
+  source: big_bang_model
+  target: cosmological_inflation
+  type: framework-specialization
+  label: extends with an earlier accelerated phase
+  detail: Inflationary cosmology augments the hot Big Bang history with a hypothesized earlier epoch of accelerated expansion and a mechanism for primordial perturbations.
+  citations:
+  - nasa-big-bang
+  - tong-qft
+- id: story_dark_matter_to_lambda_cdm_model_theory_component
+  source: dark_matter
+  target: lambda_cdm_model
+  type: theory-component
+  label: cold gravitating matter component
+  detail: Cold dark matter supplies the dominant clustering matter component of $\Lambda$CDM.
+  citations:
+  - nasa-dark-matter
+  - nasa-big-bang
+- id: story_dark_energy_to_lambda_cdm_model_theory_component
+  source: dark_energy
+  target: lambda_cdm_model
+  type: theory-component
+  label: modeled by $\Lambda$
+  detail: The standard cosmological model represents dark energy by a cosmological constant.
+  citations:
+  - nasa-dark-energy
+  - nasa-big-bang
+- id: story_lambda_cdm_model_to_cosmic_microwave_background_experimentally_verified_by
+  source: lambda_cdm_model
+  target: cosmic_microwave_background
+  type: experimentally-verified-by
+  label: is constrained by CMB anisotropies
+  detail: The temperature and polarization spectra of the cosmic microwave background provide major quantitative tests and parameter constraints for $\Lambda$CDM.
+  citations:
+  - nasa-big-bang
+- id: story_flrw_spacetime_to_lambda_cdm_model_mathematical_formulation
+  source: flrw_spacetime
+  target: lambda_cdm_model
+  type: mathematical-formulation
+  label: background geometry
+  detail: The standard cosmological model uses a perturbed FLRW spacetime.
+  citations:
+  - nasa-big-bang
+  - einstein-equation

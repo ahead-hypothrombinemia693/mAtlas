@@ -1,0 +1,1415 @@
+nodes:
+- id: spacetime
+  label: Spacetime
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  level: 1
+  kind: structure
+  conceptType: Geometric physical framework
+  summary: The four-dimensional collection of physical events in which temporal and spatial relations are represented together.
+  citations:
+  - wp-physics-spacetime
+  - nlab-physics-spacetime
+  - einstein-spacetime
+  - tong-relativity
+  scale: All relativistic scales
+  sections:
+  - title: Relativity
+    body: Special relativity uses flat spacetime; general relativity permits curved Lorentzian spacetime whose geometry is dynamical.
+- id: special_relativity
+  label: Special relativity
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  level: 2
+  kind: structure
+  conceptType: Theory or framework
+  summary: The relativistic framework for nongravitational physics in inertial frames, with invariant light speed and Lorentz symmetry.
+  citations:
+  - wp-physics-special_relativity
+  - nlab-physics-special_relativity
+  - einstein-special-relativity
+  - tong-relativity
+  sections:
+  - title: Scope
+    body: It neglects dynamical gravitation but constrains every relativistic local field theory, including the Standard Model.
+- id: general_relativity
+  label: General relativity
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  level: 3
+  kind: structure
+  conceptType: Theory or framework
+  summary: Einstein’s classical theory of gravitation, in which gravity is represented by dynamical Lorentzian spacetime geometry.
+  citations:
+  - wp-physics-general_relativity
+  - nlab-physics-general_relativity
+  - einstein-general-relativity
+  - tong-gr
+  sections:
+  - title: Core content
+    body: Matter and non-gravitational fields source curvature; freely falling bodies follow the geometry rather than experiencing gravity as an ordinary force.
+  - title: Limits
+    body: It is classical and is not a complete quantum theory of gravity.
+- id: minkowski_spacetime
+  label: Minkowski spacetime
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  level: 3
+  kind: structure
+  conceptType: Geometric model
+  summary: Flat four-dimensional spacetime equipped with the Lorentzian metric used by special relativity.
+  citations:
+  - wp-physics-minkowski_spacetime
+  - nlab-physics-minkowski_spacetime
+  - einstein-spacetime
+  - tong-relativity
+  sections:
+  - title: Structure
+    body: Its invariant interval and light-cone causal structure are preserved by Poincaré transformations.
+- id: equivalence_principle
+  label: Equivalence principle
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  level: 4
+  kind: structure
+  conceptType: Foundational principle
+  summary: The local universality of free fall and local equivalence between gravitation and acceleration, in formulations appropriate to general relativity.
+  citations:
+  - wp-physics-equivalence_principle
+  - einstein-general-relativity
+  - tong-gr
+- id: gravitation
+  label: Gravitation
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  level: 4
+  kind: structure
+  conceptType: Fundamental interaction
+  summary: The interaction described classically by general relativity as spacetime curvature.
+  citations:
+  - wp-physics-gravitation
+  - einstein-general-relativity
+  - tong-gr
+  status: Observed; classical theory well tested
+  sections:
+  - title: Standard Model boundary
+    body: Gravitation is not included in the Standard Model of particle physics.
+- id: lorentz_symmetry
+  label: Lorentz symmetry
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  level: 4
+  kind: structure
+  conceptType: Spacetime symmetry
+  summary: Invariance or covariance under Lorentz transformations preserving the Minkowski metric.
+  citations:
+  - wp-physics-lorentz_symmetry
+  - nlab-physics-lorentz_symmetry
+  - einstein-special-relativity
+  - tong-relativity
+- id: spacetime_metric
+  label: Spacetime metric
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  level: 4
+  kind: structure
+  conceptType: Geometric field
+  summary: The Lorentzian metric that determines intervals, causal structure, geodesics, and in general relativity the gravitational geometry.
+  citations:
+  - wp-physics-spacetime_metric
+  - einstein-general-relativity
+  - tong-gr
+- id: four_vector
+  label: Four-vector
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  level: 5
+  kind: structure
+  conceptType: Relativistic tensor
+  summary: A vector transforming in the defining representation of the Lorentz group.
+  citations:
+  - wp-physics-four_vector
+  - nlab-physics-four_vector
+  - tong-relativity
+- id: inertial_frame
+  label: Inertial frame
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  level: 5
+  kind: structure
+  conceptType: Reference-frame structure
+  summary: A frame in which free particles move uniformly and the nongravitational laws take their special-relativistic form.
+  citations:
+  - wp-physics-inertial_frame
+  - einstein-special-relativity
+  - tong-relativity
+- id: poincare_symmetry
+  label: Poincaré symmetry
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  level: 5
+  kind: structure
+  conceptType: Spacetime symmetry
+  summary: The spacetime symmetry combining Lorentz transformations with translations in Minkowski spacetime.
+  citations:
+  - wp-poincare_group
+  - nlab-physics-poincare_symmetry
+  - tong-relativity
+  - tong-qft
+- id: proper_time
+  label: Proper time
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  level: 5
+  kind: structure
+  conceptType: Invariant quantity
+  summary: The Lorentz-invariant time measured along a timelike worldline.
+  citations:
+  - wp-physics-proper_time
+  - nlab-physics-proper_time
+  - einstein-spacetime
+  - tong-relativity
+- id: stress_energy_tensor
+  label: Stress–energy tensor
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  level: 5
+  kind: structure
+  conceptType: Source tensor
+  summary: The tensor encoding local energy density, momentum density, stresses, and fluxes that sources spacetime curvature.
+  citations:
+  - wp-physics-stress_energy_tensor
+  - nlab-physics-stress_energy_tensor
+  - einstein-equation
+  - tong-gr
+- id: einstein_field_equation
+  label: Einstein field equation
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  level: 6
+  kind: structure
+  conceptType: Physical law
+  summary: The field equation relating spacetime curvature to the stress–energy content of matter and non-gravitational fields.
+  citations:
+  - wp-physics-einstein_field_equation
+  - nlab-physics-einstein_field_equation
+  - einstein-equation
+  - tong-gr
+  sections:
+  - title: Schematic form
+    body: The geometric tensor $G_{\mu\nu}$, optionally with a cosmological term, is proportional to the stress–energy tensor $T_{\mu\nu}$.
+- id: energy_momentum_four_vector
+  label: Energy–momentum four-vector
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  level: 6
+  kind: structure
+  conceptType: Relativistic quantity
+  summary: The four-vector $p^\mu=(E/c,\mathbf p)$ satisfying the mass-shell relation for a free particle.
+  citations:
+  - wp-physics-energy_momentum_four_vector
+  - tong-relativity
+  - pdg-rpp
+- id: geodesic_motion
+  label: Geodesic motion
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  level: 7
+  kind: structure
+  conceptType: Dynamical law
+  summary: Ideal freely falling test bodies follow timelike geodesics, while light rays follow null geodesics in the geometric-optics limit, when nongravitational forces, finite-wavelength effects, and self-force are neglected.
+  citations:
+  - wp-physics-geodesic_motion
+  - einstein-general-relativity
+  - tong-gr
+- id: relativistic_particle_mechanics
+  label: Relativistic particle mechanics
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  level: 8
+  kind: structure
+  conceptType: Theory formulation
+  summary: Classical particle mechanics constrained by Minkowski spacetime and Lorentz invariance.
+  citations:
+  - wp-physics-relativistic_particle_mechanics
+  - tong-relativity
+- id: weak_field_gravity
+  label: Weak-field gravity
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  level: 9
+  kind: structure
+  conceptType: Controlled approximation
+  summary: The expansion of general relativity about nearly flat spacetime when metric perturbations are small.
+  citations:
+  - wp-physics-weak_field_gravity
+  - tong-gr
+- id: newtonian_gravitation
+  label: Newtonian gravitation
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  level: 11
+  kind: structure
+  conceptType: Effective theory
+  summary: The inverse-square gravitational theory recovered from general relativity in the weak-field, slow-motion regime.
+  citations:
+  - wp-physics-newtonian_gravitation
+  - einstein-general-relativity
+  - tong-gr
+- id: causal_structure
+  label: Causal structure
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  level: 5
+  kind: structure
+  conceptType: Spacetime structure
+  summary: The chronological and causal reachability relations determined by a spacetime metric. Causal reachability is a partial order only under suitable causality conditions, such as the absence of closed causal curves.
+  citations:
+  - wp-physics-causal_structure
+  - nlab-physics-causal_structure
+  - einstein-spacetime
+  - tong-relativity
+- id: four_velocity
+  label: Four-velocity
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  level: 6
+  kind: structure
+  conceptType: Relativistic kinematic quantity
+  summary: The tangent vector $u^\mu=dx^\mu/d\tau$ to a timelike worldline, normalized by the spacetime metric according to convention.
+  citations:
+  - wp-physics-four_velocity
+  - nlab-physics-four_velocity
+  - tong-relativity
+- id: light_cone
+  label: Light cone
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  level: 4
+  kind: structure
+  conceptType: Causal-geometric structure
+  summary: At an event, the null directions of the Lorentzian metric separating timelike from spacelike directions and determining possible light propagation.
+  citations:
+  - wp-physics-light_cone
+  - nlab-physics-light_cone
+  - einstein-spacetime
+  - tong-relativity
+- id: physical_event
+  label: Physical event
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  level: 1
+  kind: structure
+  conceptType: Spacetime element
+  summary: An idealized occurrence localized at a point of spacetime.
+  citations:
+  - wp-physics-physical_event
+  - nlab-physics-physical_event
+  - einstein-spacetime
+  - tong-relativity
+- id: worldline
+  label: Worldline
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  level: 5
+  kind: structure
+  conceptType: Spacetime history
+  summary: A timelike or null curve representing the spacetime history of an idealized particle or light signal; extended bodies require worldtubes or field descriptions.
+  citations:
+  - wp-physics-worldline
+  - nlab-physics-worldline
+  - einstein-spacetime
+  - tong-relativity
+- id: mass_energy_equivalence
+  label: Mass–energy equivalence
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  level: 6
+  kind: structure
+  conceptType: Relativistic relation
+  summary: The invariant mass of an isolated system equals its total rest-frame energy divided by $c^2$; binding, kinetic, field, and internal energies therefore contribute to composite mass.
+  citations:
+  - wp-physics-mass_energy_equivalence
+  - nlab-physics-mass_energy_equivalence
+  - einstein-mass-energy
+  - einstein-binding-energy
+- id: cavendish_torsion_balance_experiment
+  label: Cavendish torsion-balance experiment
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  - experiments-observations
+  level: 13
+  kind: structure
+  conceptType: Canonical experiment
+  summary: Cavendish’s 1798 torsion-balance measurements detected gravitational attraction between laboratory masses and determined the mean density of Earth.
+  citations:
+  - wp-physics-cavendish_torsion_balance_experiment
+  - aps-cavendish
+  status: Observed / performed
+  sections:
+  - title: Result
+    body: The experiment supplied a terrestrial quantitative test of universal Newtonian gravitation; the modern value of $G$ is inferred when the result is expressed in later notation.
+- id: fizeau_moving_water_experiment
+  label: Fizeau moving-water experiment
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  - experiments-observations
+  level: 2
+  kind: structure
+  conceptType: Canonical experiment
+  summary: Fizeau measured the speed of light in moving water in 1851, obtaining partial ether-drag behavior later explained by relativistic velocity addition.
+  citations:
+  - wp-physics-fizeau_moving_water_experiment
+  - einstein-special-relativity
+  - tong-relativity
+  status: Observed / performed
+- id: mercury_perihelion_anomaly
+  label: Mercury perihelion anomaly
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  - experiments-observations
+  level: 3
+  kind: structure
+  conceptType: Observation / anomaly
+  summary: Nineteenth-century orbital analyses found a residual advance of Mercury’s perihelion not accounted for by known Newtonian perturbations.
+  citations:
+  - wp-physics-mercury_perihelion_anomaly
+  - einstein-online-classical-tests
+  status: Observed / performed
+- id: michelson_morley_experiment
+  label: Michelson–Morley experiment
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  - experiments-observations
+  level: 2
+  kind: structure
+  conceptType: Canonical experiment
+  summary: The 1887 interferometer experiment found no ether-wind fringe shift of the expected magnitude, sharply constraining stationary luminiferous-ether models.
+  citations:
+  - wp-physics-michelson_morley_experiment
+  - aps-michelson-morley
+  status: Observed / performed
+- id: eotvos_torsion_balance_experiments
+  label: Eötvös torsion-balance experiments
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  - experiments-observations
+  level: 5
+  kind: structure
+  conceptType: Canonical experimental test
+  summary: Eötvös and collaborators compared the accelerations of bodies of different composition, tightly testing equality of inertial and gravitational mass.
+  citations:
+  - wp-physics-eotvos_torsion_balance_experiments
+  - einstein-general-relativity
+  - tong-gr
+  status: Observed / performed
+- id: eddington_eclipse_observations
+  label: 1919 eclipse light-deflection observations
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  - experiments-observations
+  level: 5
+  kind: structure
+  conceptType: Canonical observational test
+  summary: Eclipse expeditions in 1919 measured the apparent displacement of stars near the Sun and were interpreted as supporting Einstein’s predicted gravitational deflection of light.
+  citations:
+  - wp-physics-eddington_eclipse_observations
+  - einstein-online-classical-tests
+  status: Observed / performed
+  sections:
+  - title: Qualification
+    body: The 1919 data were historically influential but less precise than later radio and optical measurements of light deflection.
+- id: kennedy_thorndike_experiment
+  label: Kennedy–Thorndike experiment
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  - experiments-observations
+  level: 6
+  kind: structure
+  conceptType: Canonical experimental test
+  summary: The 1932 unequal-arm interferometer test constrained changes in light speed associated with Earth’s changing velocity and, together with Michelson–Morley, tested Lorentz transformations.
+  citations:
+  - wp-physics-kennedy_thorndike_experiment
+  - aps-kennedy-thorndike
+  status: Observed / performed
+- id: ives_stilwell_experiment
+  label: Ives–Stilwell experiment
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  - experiments-observations
+  level: 6
+  kind: structure
+  conceptType: Canonical experimental test
+  summary: Ives and Stilwell measured the transverse Doppler effect using moving ions, providing an early quantitative test of relativistic time dilation.
+  citations:
+  - wp-physics-ives_stilwell_experiment
+  - aps-ives-stilwell
+  status: Observed / performed
+- id: pound_rebka_experiment
+  label: Pound–Rebka experiment
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  - experiments-observations
+  level: 7
+  kind: structure
+  conceptType: Canonical experimental test
+  summary: The 1959–1960 Mössbauer experiment measured the gravitational frequency shift of gamma rays over a vertical height in Earth’s field.
+  citations:
+  - wp-physics-pound_rebka_experiment
+  - aps-pound-rebka
+  status: Observed / performed
+- id: shapiro_time_delay_measurement
+  label: Shapiro time-delay measurement
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  - experiments-observations
+  level: 7
+  kind: structure
+  conceptType: Canonical observational test
+  summary: Radar ranging to planets measured the extra propagation time of signals passing near the Sun, testing the relativistic gravitational time delay.
+  citations:
+  - wp-physics-shapiro_time_delay_measurement
+  - aps-shapiro-delay
+  - einstein-online-postnewton
+  status: Observed / performed
+- id: hulse_taylor_binary_pulsar
+  label: Hulse–Taylor binary-pulsar observations
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  - experiments-observations
+  level: 8
+  kind: structure
+  conceptType: Canonical observational test
+  summary: Long-term timing of PSR B1913+16 revealed orbital decay agreeing with general-relativistic energy loss by gravitational radiation.
+  citations:
+  - wp-physics-hulse_taylor_binary_pulsar
+  - nobel-hulse-taylor
+  status: Observed / performed
+- id: gw150914_detection
+  label: GW150914 gravitational-wave detection
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  - experiments-observations
+  level: 9
+  kind: structure
+  conceptType: Canonical observational test
+  summary: LIGO observed a transient waveform from a binary-black-hole merger in 2015, the first direct detection of gravitational waves and a strong-field test of general relativity.
+  citations:
+  - wp-physics-gw150914_detection
+  - ligo-gw150914
+  status: Observed / performed
+- id: black_hole
+  label: Black hole
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  - cosmology
+  level: 8
+  kind: structure
+  conceptType: Relativistic object
+  summary: A region of spacetime from which no future-directed causal signal can reach a specified exterior infinity; in asymptotically flat settings its boundary is the event horizon.
+  citations:
+  - wp-physics-black-hole
+  - nasa-black-holes
+  - einstein-online-black-holes
+- id: event_horizon
+  label: Event horizon
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  - cosmology
+  level: 8.5
+  kind: structure
+  conceptType: Causal boundary
+  summary: A global null boundary separating events that can communicate with the exterior future from those that cannot.
+  citations:
+  - wp-physics-event-horizon
+  - nasa-black-holes
+  - einstein-online-black-holes
+- id: schwarzschild_spacetime
+  label: Schwarzschild spacetime
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  level: 9
+  kind: structure
+  conceptType: Exact spacetime solution
+  summary: The unique spherically symmetric vacuum solution of the Einstein equation, with a black-hole exterior characterized by mass in its asymptotically flat form.
+  citations:
+  - wp-physics-schwarzschild-spacetime
+  - einstein-online-black-holes
+  - einstein-equation
+- id: kerr_spacetime
+  label: Kerr spacetime
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  level: 9
+  kind: structure
+  conceptType: Exact spacetime solution
+  summary: A stationary, axisymmetric, asymptotically flat vacuum solution describing the exterior geometry of an uncharged rotating black hole.
+  citations:
+  - wp-physics-kerr-spacetime
+  - einstein-online-black-holes
+  - einstein-equation
+- id: gravitational_collapse
+  label: Gravitational collapse
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  - cosmology
+  level: 7
+  kind: structure
+  conceptType: Dynamical process
+  summary: Contraction driven by self-gravity; sufficiently compact collapse can form trapped regions and a black hole, depending on matter and global conditions.
+  citations:
+  - wp-physics-gravitational-collapse
+  - nasa-black-holes
+  - einstein-general-relativity
+- id: binary_black_hole
+  label: Binary black-hole system
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  - cosmology
+  level: 9
+  kind: structure
+  conceptType: Astrophysical system
+  summary: Two black holes in mutual orbit whose inspiral and merger can radiate strong gravitational waves.
+  citations:
+  - wp-physics-binary-black-hole
+  - ligo-gravitational-wave-science
+  - nasa-black-holes
+- id: j_hawking_radiation
+  label: black-hole background + quantum fields
+  primaryDomain: relativity
+  domains:
+  - relativity
+  - quantum-field-theory
+  - cosmology
+  level: 9
+  kind: junction
+  summary: Compatibility construction for the semiclassical prediction of Hawking radiation.
+  carriers: []
+  data: []
+  axioms: []
+  induces: []
+  notes: The result uses quantum fields on a classical black-hole background; backreaction and full quantum gravity are additional problems.
+  citations:
+  - einstein-online-black-holes
+  - wp-physics-hawking-radiation
+  - tong-qft
+  combination:
+    inputs:
+    - black_hole
+    - quantum_field_theory
+    compatibility: Place quantum fields in an appropriate state on a stationary or slowly varying classical black-hole spacetime and compare suitable asymptotic particle notions.
+    output: hawking_radiation
+  primaryField: physics
+  fields:
+  - physics
+- id: hawking_radiation
+  label: Hawking radiation
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: relativity
+  domains:
+  - relativity
+  - quantum-field-theory
+  - cosmology
+  level: 10
+  kind: structure
+  conceptType: Semiclassical prediction
+  summary: Quantum fields on a black-hole background predict approximately thermal radiation at infinity, with temperature set by surface gravity in the stationary case.
+  citations:
+  - wp-physics-hawking-radiation
+  - nasa-black-holes
+  - tong-qft
+edges:
+- id: relmomentum_to_kineticcorr
+  source: energy_momentum_four_vector
+  target: relativistic_kinetic_correction
+  type: mathematical-limit
+  label: low-momentum expansion
+  detail: Expanding $E=\sqrt{p^2c^2+m^2c^4}$ yields the leading relativistic kinetic correction.
+  citations:
+  - wp-physics-fine_structure
+  - nist-hydrogen
+  - wp-physics-energy_momentum_four_vector
+  - tong-relativity
+- id: gr_equivalence
+  source: equivalence_principle
+  target: general_relativity
+  type: theory-component
+  label: equivalence principle
+  detail: The equivalence principle motivates and constrains the geometric description of gravitation.
+  citations:
+  - wp-physics-equivalence_principle
+  - einstein-general-relativity
+  - wp-physics-general_relativity
+  - nlab-physics-general_relativity
+- id: fourvector_to_momentum
+  source: four_vector
+  target: energy_momentum_four_vector
+  type: framework-specialization
+  label: four-momentum
+  detail: Energy and three-momentum form a four-vector.
+  citations:
+  - wp-physics-energy_momentum_four_vector
+  - tong-relativity
+  - wp-physics-four_vector
+  - nlab-physics-four_vector
+- id: gr_to_equation
+  source: einstein_field_equation
+  target: general_relativity
+  type: theory-component
+  label: field equation
+  detail: Einstein’s field equation supplies the central metric dynamics of general relativity.
+  citations:
+  - wp-physics-einstein_field_equation
+  - wp-physics-general_relativity
+- id: gr_to_geodesic
+  source: general_relativity
+  target: geodesic_motion
+  type: describes-governs
+  label: test-body free fall
+  detail: In the test-body approximation, freely falling bodies follow geodesics of the spacetime metric.
+  citations:
+  - wp-physics-geodesic_motion
+  - einstein-general-relativity
+  - wp-physics-general_relativity
+  - nlab-physics-general_relativity
+- id: gr_to_gravitation
+  source: general_relativity
+  target: gravitation
+  type: describes-governs
+  label: geometric gravity
+  detail: General relativity describes gravitation as spacetime curvature.
+  citations:
+  - einstein-general-relativity
+  - wp-physics-gravitation
+  - wp-physics-general_relativity
+  - nlab-physics-general_relativity
+- id: gr_to_newton_gravity
+  source: general_relativity
+  target: newtonian_gravitation
+  type: mathematical-limit
+  label: weak-field slow-motion limit
+  detail: Newtonian gravitation is recovered for weak stationary fields, slow motion, and negligible pressure relative to energy density.
+  citations:
+  - wp-physics-newtonian_gravitation
+  - einstein-general-relativity
+  - wp-physics-general_relativity
+  - nlab-physics-general_relativity
+- id: gr_to_weak_field
+  source: general_relativity
+  target: weak_field_gravity
+  type: mathematical-limit
+  label: small metric perturbation
+  detail: Linearized gravity expands $g_{\mu\nu}=\eta_{\mu\nu}+h_{\mu\nu}$ for small $h$.
+  citations:
+  - wp-physics-weak_field_gravity
+  - tong-gr
+  - wp-physics-general_relativity
+  - nlab-physics-general_relativity
+- id: lorentz_to_poincare_phys
+  source: lorentz_symmetry
+  target: poincare_symmetry
+  type: canonical-construction
+  label: spacetime translations
+  detail: For a fixed Minkowski spacetime, Poincaré symmetry is the semidirect product of spacetime translations with Lorentz symmetry.
+  citations:
+  - wp-poincare_group
+  - nlab-physics-poincare_symmetry
+  - wp-physics-lorentz_symmetry
+  - nlab-physics-lorentz_symmetry
+- id: minkowski_to_inertial
+  source: minkowski_spacetime
+  target: inertial_frame
+  type: state-description
+  label: inertial coordinates
+  detail: Inertial frames are related by Poincaré transformations in Minkowski spacetime.
+  citations:
+  - wp-physics-inertial_frame
+  - einstein-special-relativity
+  - wp-physics-minkowski_spacetime
+  - nlab-physics-minkowski_spacetime
+- id: newton_gravity_to_newton
+  source: newtonian_gravitation
+  target: newtonian_mechanics
+  type: theory-component
+  label: gravitational force law
+  detail: Newtonian gravitation supplies a force law within Newtonian mechanics.
+  citations:
+  - wp-physics-newtonian_gravitation
+  - einstein-general-relativity
+  - wp-physics-newtonian_mechanics
+  - cambridge-classical-dynamics
+- id: poincare_to_mass
+  source: poincare_symmetry
+  target: particle_mass
+  type: state-description
+  label: mass Casimir
+  detail: For a stable one-particle sector, mass is fixed by the Poincaré energy–momentum Casimir; unstable resonances are not exact asymptotic one-particle representations.
+  citations:
+  - wp-physics-particle_mass
+  - pdg-rpp
+  - wp-poincare_group
+  - nlab-physics-poincare_symmetry
+- id: spacetime_to_gr
+  source: spacetime
+  target: general_relativity
+  type: theory-component
+  label: dynamical spacetime geometry
+  detail: General relativity treats spacetime geometry as a dynamical component coupled to matter and non-gravitational fields.
+  citations:
+  - einstein-general-relativity
+  - einstein-equation
+  - wp-physics-general_relativity
+  - nlab-physics-general_relativity
+  - wp-physics-spacetime
+- id: spacetime_to_minkowski
+  source: spacetime
+  target: minkowski_spacetime
+  type: framework-specialization
+  label: flat spacetime
+  detail: Minkowski spacetime is the flat, nongravitating special case of relativistic spacetime.
+  citations:
+  - einstein-spacetime
+  - wp-physics-minkowski_spacetime
+  - nlab-physics-minkowski_spacetime
+  - wp-physics-spacetime
+  - nlab-physics-spacetime
+- id: metric_to_einstein
+  source: spacetime_metric
+  target: einstein_field_equation
+  type: theory-component
+  label: curvature dynamics
+  detail: Einstein’s equation relates curvature of the metric to stress–energy.
+  citations:
+  - wp-physics-einstein_field_equation
+  - nlab-physics-einstein_field_equation
+  - wp-physics-spacetime_metric
+  - einstein-general-relativity
+- id: metric_to_gr
+  source: spacetime_metric
+  target: general_relativity
+  type: theory-component
+  label: dynamical Lorentzian metric
+  detail: General relativity treats the spacetime metric as a dynamical gravitational field.
+  citations:
+  - wp-physics-general_relativity
+  - nlab-physics-general_relativity
+  - wp-physics-spacetime_metric
+  - einstein-general-relativity
+- id: sr_to_four_vector
+  source: special_relativity
+  target: four_vector
+  type: mathematical-formulation
+  label: four-vector kinematics
+  detail: Relativistic events, velocities, currents, and momenta are organized as Lorentz tensors including four-vectors.
+  citations:
+  - wp-physics-four_vector
+  - nlab-physics-four_vector
+  - wp-physics-special_relativity
+  - nlab-physics-special_relativity
+- id: sr_to_lorentz_symmetry
+  source: lorentz_symmetry
+  target: special_relativity
+  type: theory-component
+  label: Lorentz invariance
+  detail: Lorentz symmetry is the defining spacetime symmetry of special relativity.
+  citations:
+  - wp-physics-lorentz_symmetry
+  - wp-physics-special_relativity
+- id: sr_to_minkowski
+  source: special_relativity
+  target: minkowski_spacetime
+  type: describes-governs
+  label: flat relativistic spacetime
+  detail: Minkowski spacetime is the standard flat spacetime geometry of special relativity.
+  citations:
+  - einstein-spacetime
+  - wp-physics-minkowski_spacetime
+  - nlab-physics-minkowski_spacetime
+  - wp-physics-special_relativity
+  - nlab-physics-special_relativity
+- id: sr_to_newton_limit
+  source: relativistic_particle_mechanics
+  target: newtonian_mechanics
+  type: mathematical-limit
+  label: $c\to\infty$ / low-velocity limit
+  detail: Newtonian particle kinematics and dynamics are recovered from relativistic particle mechanics when characteristic velocities are small compared with $c$ and relativistic energy corrections are negligible.
+  citations:
+  - wp-physics-special_relativity
+  - nlab-physics-special_relativity
+  - wp-physics-newtonian_mechanics
+  - cambridge-classical-dynamics
+- id: sr_to_qft
+  source: special_relativity
+  target: quantum_field_theory
+  type: theory-component
+  label: relativistic causal and symmetry structure
+  detail: Relativistic QFT in Minkowski spacetime incorporates Lorentz/Poincaré symmetry and causal locality; QFT as a general framework can also be formulated on curved or nonrelativistic backgrounds.
+  citations:
+  - cern-qft-intro
+  - wp-physics-quantum_field_theory
+  - nlab-physics-quantum_field_theory
+  - wp-physics-special_relativity
+  - nlab-physics-special_relativity
+- id: sr_to_rel_particle
+  source: special_relativity
+  target: relativistic_particle_mechanics
+  type: framework-specialization
+  label: relativistic particle dynamics
+  detail: Relativistic particle mechanics specializes classical dynamics to Minkowski spacetime.
+  citations:
+  - wp-physics-relativistic_particle_mechanics
+  - tong-relativity
+  - wp-physics-special_relativity
+  - nlab-physics-special_relativity
+- id: stress_to_einstein
+  source: stress_energy_tensor
+  target: einstein_field_equation
+  type: theory-component
+  label: matter source
+  detail: The stress–energy tensor appears on the matter side of Einstein’s equation.
+  citations:
+  - wp-physics-einstein_field_equation
+  - nlab-physics-einstein_field_equation
+  - wp-physics-stress_energy_tensor
+  - nlab-physics-stress_energy_tensor
+- id: event_to_spacetime
+  source: physical_event
+  target: spacetime
+  type: composition
+  label: spacetime event
+  detail: Spacetime is modeled as the manifold of physical events; the edge expresses point-set composition, not a material assembly.
+  citations:
+  - wp-physics-physical_event
+  - nlab-physics-physical_event
+  - einstein-spacetime
+  - tong-relativity
+  - wp-physics-spacetime
+  - nlab-physics-spacetime
+- id: event_to_worldline
+  source: physical_event
+  target: worldline
+  type: composition
+  label: ordered event history
+  detail: A worldline is a curve of events parameterized by proper time or an affine parameter.
+  citations:
+  - wp-physics-physical_event
+  - nlab-physics-physical_event
+  - einstein-spacetime
+  - tong-relativity
+  - wp-physics-worldline
+  - nlab-physics-worldline
+- id: lightcone_to_causal
+  source: light_cone
+  target: causal_structure
+  type: theory-component
+  label: local causal cones
+  detail: The continuous arrangement of light cones determines local causal relations and, under suitable conditions, global causal structure.
+  citations:
+  - wp-physics-light_cone
+  - nlab-physics-light_cone
+  - einstein-spacetime
+  - tong-relativity
+  - wp-physics-causal_structure
+  - nlab-physics-causal_structure
+- id: metric_to_lightcone
+  source: spacetime_metric
+  target: light_cone
+  type: canonical-construction
+  label: null cone
+  detail: A Lorentzian metric determines the null cone at every spacetime point.
+  citations:
+  - wp-physics-spacetime_metric
+  - einstein-general-relativity
+  - tong-gr
+  - wp-physics-light_cone
+  - nlab-physics-light_cone
+  - einstein-spacetime
+  - tong-relativity
+- id: sr_to_causalstructure
+  source: special_relativity
+  target: causal_structure
+  type: describes-governs
+  label: Minkowski causal structure
+  detail: Special relativity fixes causal ordering through Minkowski light cones.
+  citations:
+  - wp-physics-special_relativity
+  - nlab-physics-special_relativity
+  - einstein-special-relativity
+  - tong-relativity
+  - wp-physics-causal_structure
+  - nlab-physics-causal_structure
+  - einstein-spacetime
+- id: worldline_to_fourvelocity
+  source: worldline
+  target: four_velocity
+  type: state-description
+  label: tangent four-velocity
+  detail: Differentiating a timelike worldline with respect to proper time gives four-velocity.
+  citations:
+  - wp-physics-worldline
+  - nlab-physics-worldline
+  - einstein-spacetime
+  - tong-relativity
+  - wp-physics-four_velocity
+  - nlab-physics-four_velocity
+- id: worldline_to_propertime
+  source: worldline
+  target: proper_time
+  type: state-description
+  label: elapsed proper time
+  detail: Proper time is the metric length parameter along a timelike worldline.
+  citations:
+  - wp-physics-worldline
+  - nlab-physics-worldline
+  - einstein-spacetime
+  - tong-relativity
+  - wp-physics-proper_time
+  - nlab-physics-proper_time
+- id: sr_to_massenergy
+  source: special_relativity
+  target: mass_energy_equivalence
+  type: describes-governs
+  label: rest-frame energy and invariant mass
+  detail: Special relativity identifies invariant mass with total rest-frame energy divided by $c^2$.
+  citations:
+  - wp-physics-mass_energy_equivalence
+  - nlab-physics-mass_energy_equivalence
+- id: massenergy_to_binding
+  source: mass_energy_equivalence
+  target: binding_energy
+  type: describes-governs
+  label: binding changes composite mass
+  detail: Negative binding energy relative to separated constituents reduces the invariant mass of the bound system by the corresponding energy divided by $c^2$.
+  citations:
+  - einstein-mass-energy
+  - einstein-binding-energy
+- id: hist_fizeau_moving_water_experiment_to_special_relativity
+  source: fizeau_moving_water_experiment
+  target: special_relativity
+  type: historically-motivated
+  label: moving-medium light speed
+  detail: Fizeau’s result became an important constraint on ether theories and was naturally recovered by relativistic velocity addition; it was one historical input among several, not a unique origin of special relativity.
+  citations:
+  - wp-physics-fizeau_moving_water_experiment
+  - einstein-special-relativity
+  - tong-relativity
+- id: hist_mercury_perihelion_anomaly_to_general_relativity
+  source: mercury_perihelion_anomaly
+  target: general_relativity
+  type: historically-motivated
+  label: unexplained perihelion advance
+  detail: Einstein used the residual Mercury precession as a decisive target while developing general relativity and reproduced it in 1915.
+  citations:
+  - wp-physics-mercury_perihelion_anomaly
+  - einstein-online-classical-tests
+- id: hist_michelson_morley_experiment_to_special_relativity
+  source: michelson_morley_experiment
+  target: special_relativity
+  type: historically-motivated
+  label: ether-drift null result
+  detail: The null result undermined simple stationary-ether models and became part of the experimental setting in which Lorentz invariance and special relativity were accepted; direct influence on Einstein’s 1905 reasoning remains historically uncertain.
+  citations:
+  - wp-physics-michelson_morley_experiment
+  - aps-michelson-morley
+- id: exp_newtonian_gravitation_by_cavendish_torsion_balance_experiment
+  source: newtonian_gravitation
+  target: cavendish_torsion_balance_experiment
+  type: experimentally-verified-by
+  label: laboratory gravitation
+  detail: The measured attraction between laboratory masses quantitatively supported universal Newtonian gravitation and permitted later extraction of $G$.
+  citations:
+  - wp-physics-cavendish_torsion_balance_experiment
+  - aps-cavendish
+- id: exp_equivalence_principle_by_eotvos_torsion_balance_experiments
+  source: equivalence_principle
+  target: eotvos_torsion_balance_experiments
+  type: experimentally-verified-by
+  label: composition-independent free fall
+  detail: The torsion balances found no differential acceleration at their sensitivity, strongly supporting the weak equivalence principle.
+  citations:
+  - wp-physics-eotvos_torsion_balance_experiments
+  - einstein-general-relativity
+  - tong-gr
+- id: exp_general_relativity_by_eddington_eclipse_observations
+  source: general_relativity
+  target: eddington_eclipse_observations
+  type: experimentally-verified-by
+  label: solar light deflection
+  detail: The measured deflection was interpreted as supporting the relativistic prediction; later experiments provide much higher precision.
+  citations:
+  - wp-physics-eddington_eclipse_observations
+  - einstein-online-classical-tests
+- id: exp_special_relativity_by_kennedy_thorndike_experiment
+  source: special_relativity
+  target: kennedy_thorndike_experiment
+  type: experimentally-verified-by
+  label: boost invariance with unequal paths
+  detail: The null result constrained velocity-dependent light propagation and supported Lorentz-Einstein transformations.
+  citations:
+  - wp-physics-kennedy_thorndike_experiment
+  - aps-kennedy-thorndike
+- id: exp_special_relativity_by_ives_stilwell_experiment
+  source: special_relativity
+  target: ives_stilwell_experiment
+  type: experimentally-verified-by
+  label: relativistic time dilation
+  detail: The measured Doppler shift included the transverse second-order term predicted by special relativity.
+  citations:
+  - wp-physics-ives_stilwell_experiment
+  - aps-ives-stilwell
+- id: exp_general_relativity_by_pound_rebka_experiment
+  source: general_relativity
+  target: pound_rebka_experiment
+  type: experimentally-verified-by
+  label: gravitational frequency shift
+  detail: The measured gamma-ray shift agreed with the weak-field gravitational-redshift prediction.
+  citations:
+  - wp-physics-pound_rebka_experiment
+  - aps-pound-rebka
+- id: exp_equivalence_principle_by_pound_rebka_experiment
+  source: equivalence_principle
+  target: pound_rebka_experiment
+  type: experimentally-verified-by
+  label: local gravitational redshift
+  detail: The result is consistent with the equivalence-principle connection between acceleration and gravitational frequency shifts.
+  citations:
+  - wp-physics-pound_rebka_experiment
+  - aps-pound-rebka
+- id: exp_general_relativity_by_shapiro_time_delay_measurement
+  source: general_relativity
+  target: shapiro_time_delay_measurement
+  type: experimentally-verified-by
+  label: gravitational signal delay
+  detail: Radar ranging measured the additional delay predicted for propagation through curved spacetime near the Sun.
+  citations:
+  - wp-physics-shapiro_time_delay_measurement
+  - aps-shapiro-delay
+  - einstein-online-postnewton
+- id: exp_general_relativity_by_hulse_taylor_binary_pulsar
+  source: general_relativity
+  target: hulse_taylor_binary_pulsar
+  type: experimentally-verified-by
+  label: radiative orbital decay
+  detail: The observed orbital-period decrease agrees with general-relativistic gravitational-wave energy loss.
+  citations:
+  - wp-physics-hulse_taylor_binary_pulsar
+  - nobel-hulse-taylor
+- id: exp_general_relativity_by_gw150914_detection
+  source: general_relativity
+  target: gw150914_detection
+  type: experimentally-verified-by
+  label: strong-field binary-merger waveform
+  detail: The signal’s inspiral, merger, and ringdown were consistent with numerical general-relativistic predictions.
+  citations:
+  - wp-physics-gw150914_detection
+  - ligo-gw150914
+- id: story_einstein_field_equation_to_schwarzschild_spacetime_model_realization
+  source: einstein_field_equation
+  target: schwarzschild_spacetime
+  type: model-realization
+  label: solve in spherical vacuum symmetry
+  detail: The Schwarzschild geometry solves the vacuum Einstein equation under spherical symmetry.
+  citations:
+  - einstein-equation
+  - einstein-online-black-holes
+- id: story_einstein_field_equation_to_kerr_spacetime_model_realization
+  source: einstein_field_equation
+  target: kerr_spacetime
+  type: model-realization
+  label: solve in stationary rotating vacuum
+  detail: The Kerr geometry is a rotating vacuum solution of the Einstein equation.
+  citations:
+  - einstein-equation
+  - einstein-online-black-holes
+- id: story_black_hole_to_schwarzschild_spacetime_model_realization
+  source: black_hole
+  target: schwarzschild_spacetime
+  type: model-realization
+  label: has a static uncharged idealization
+  detail: The Schwarzschild black-hole spacetime is the static, spherically symmetric, asymptotically flat vacuum model of an uncharged nonrotating black hole.
+  citations:
+  - einstein-online-black-holes
+  - nasa-black-holes
+- id: story_black_hole_to_kerr_spacetime_model_realization
+  source: black_hole
+  target: kerr_spacetime
+  type: model-realization
+  label: has a rotating uncharged idealization
+  detail: The Kerr spacetime is the stationary, axisymmetric, asymptotically flat vacuum model used for an uncharged rotating black hole.
+  citations:
+  - einstein-online-black-holes
+  - nasa-black-holes
+- id: story_general_relativity_to_gravitational_collapse_describes_governs
+  source: general_relativity
+  target: gravitational_collapse
+  type: describes-governs
+  label: governs self-gravitating collapse
+  detail: Einstein’s equation governs the dynamical geometry and matter involved in relativistic collapse.
+  citations:
+  - einstein-general-relativity
+  - nasa-black-holes
+- id: story_gravitational_collapse_to_black_hole_transformation_process
+  source: gravitational_collapse
+  target: black_hole
+  type: transformation-process
+  label: can form a black hole
+  detail: Sufficiently compact collapse can produce a trapped black-hole region.
+  citations:
+  - nasa-black-holes
+  - einstein-online-black-holes
+- id: story_black_hole_to_event_horizon_state_description
+  source: black_hole
+  target: event_horizon
+  type: state-description
+  label: bounded by a causal horizon
+  detail: In standard asymptotically predictable settings, the event horizon is the boundary of the black-hole region.
+  citations:
+  - nasa-black-holes
+  - einstein-online-black-holes
+- id: story_black_hole_to_binary_black_hole_composition
+  source: black_hole
+  target: binary_black_hole
+  type: composition
+  label: form a bound pair
+  detail: Two black holes can form an inspiraling binary system.
+  citations:
+  - ligo-gravitational-wave-science
+  - nasa-black-holes
+- id: story_binary_black_hole_to_gw150914_detection_experimentally_verified_by
+  source: binary_black_hole
+  target: gw150914_detection
+  type: experimentally-verified-by
+  label: observed through merger waves
+  detail: GW150914 matched a binary-black-hole inspiral, merger, and ringdown waveform.
+  citations:
+  - ligo-gw150914
+  - ligo-gravitational-wave-science
+- id: story_general_relativity_to_flrw_spacetime_model_realization
+  source: general_relativity
+  target: flrw_spacetime
+  type: model-realization
+  label: cosmological spacetime ansatz
+  detail: FLRW geometries model homogeneous and isotropic universes in general relativity.
+  citations:
+  - einstein-general-relativity
+  - nasa-big-bang
+- id: story_causal_structure_to_event_horizon_state_description
+  source: causal_structure
+  target: event_horizon
+  type: state-description
+  label: has a global causal boundary
+  detail: An event horizon is defined globally from causal reachability relative to an exterior future; it is not determined from local curvature data alone.
+  citations:
+  - einstein-online-black-holes
+  - nasa-black-holes
+- id: story_stress_energy_tensor_to_friedmann_equations_theory_component
+  source: stress_energy_tensor
+  target: friedmann_equations
+  type: theory-component
+  label: supplies cosmological energy density and pressure
+  detail: For an FLRW geometry, the stress–energy tensor—usually modeled as a homogeneous isotropic fluid—provides the density and pressure terms in the Friedmann equations.
+  citations:
+  - einstein-equation
+  - nasa-big-bang
+- id: story_general_relativity_to_lambda_cdm_model_framework_specialization
+  source: general_relativity
+  target: lambda_cdm_model
+  type: framework-specialization
+  label: specializes to the concordance cosmological model
+  detail: $\Lambda$CDM applies general relativity to an FLRW background with a cosmological constant, cold dark matter, ordinary matter, radiation, and specified primordial perturbations.
+  citations:
+  - einstein-general-relativity
+  - nasa-big-bang
+  - nasa-dark-matter
+- id: j_hawking_radiation__black_hole
+  source: black_hole
+  target: j_hawking_radiation
+  type: combine-compatible
+  label: classical black-hole background
+  detail: Supply the causal horizon and stationary or adiabatically evolving black-hole geometry.
+  citations:
+  - einstein-online-black-holes
+  - nasa-black-holes
+- id: j_hawking_radiation__out
+  source: j_hawking_radiation
+  target: hawking_radiation
+  type: combine-compatible
+  label: derive semiclassical emission
+  detail: The combined semiclassical setting predicts an approximately thermal outgoing flux, with stationary temperature proportional to surface gravity.
+  citations:
+  - einstein-online-black-holes
+  - wp-physics-hawking-radiation

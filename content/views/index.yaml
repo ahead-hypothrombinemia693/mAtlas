@@ -1,0 +1,37 @@
+meta:
+  version: 1.5.1
+  license: Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/
+  attribution: mAtlas - Copyright (c) 2026 Advay Mengle - https://atlas.madvay.com/
+views:
+  - file: from-empty-set-to-higher-infinity.yaml
+  - file: experimental-discovery.yaml
+  - file: from-sets-to-spaces.yaml
+  - file: algebraic-structures.yaml
+  - file: foundations-and-logic.yaml
+  - file: geometry-of-gravity.yaml
+  - file: quantum-revolution.yaml
+  - file: standard-model-anatomy.yaml
+  - file: classical-to-relativistic.yaml
+  - file: probability-measure-analysis.yaml
+  - file: scale-renormalization-effective-theory.yaml
+  - file: symmetry-representation-particles.yaml
+  - file: quantum-states-measurement-entanglement.yaml
+  - file: gauge-fields-as-geometry.yaml
+  - file: action-to-quantum-fields.yaml
+  - file: fields-to-ordinary-matter.yaml
+  - file: hierarchy-of-topological-spaces.yaml
+  - file: spaces-operators-spectra.yaml
+  - file: local-to-global-geometry.yaml
+  - file: orders-lattices-logics.yaml
+  - file: manifolds-and-geometric-structure.yaml
+  - file: local-arithmetic-p-adic-world.yaml
+  - file: atomic-structure-and-spectra.yaml
+  - file: nuclear-structure-and-decay.yaml
+  - file: neutrino-discovery-and-oscillation.yaml
+  - file: architectures-of-categories.yaml
+  - file: homotopy-homology-cohomology.yaml
+  - file: computability-and-incompleteness.yaml
+  - file: galois-theory-polynomials-symmetry.yaml
+  - file: black-holes-and-cosmology.yaml
+  - file: local-global-principles.yaml

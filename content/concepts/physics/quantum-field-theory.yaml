@@ -1,0 +1,4096 @@
+nodes:
+- id: quantum_field_theory
+  label: Quantum field theory
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 3
+  kind: structure
+  conceptType: Theory or framework
+  summary: A framework in which fields are quantum degrees of freedom, supporting many-body and variable-particle-number descriptions. Relativistic QFT additionally imposes relativistic symmetry and causal locality and naturally accommodates antiparticles and scattering.
+  citations:
+  - wp-physics-quantum_field_theory
+  - nlab-physics-quantum_field_theory
+  - cern-qft-intro
+  - tong-qft
+  sections:
+  - title: Core ingredients
+    items:
+    - Quantum fields or local observables and a quantum state space.
+    - Dynamics encoded by a Hamiltonian, action, or algebraic evolution law.
+    - In relativistic formulations, Lorentz or spacetime symmetry and causal locality.
+    - Correlation functions, response functions, or scattering observables, with renormalization where required.
+  - title: Scope
+    body: Relativistic QFT underlies the Standard Model; nonrelativistic quantum field theories also provide effective descriptions of many-body and condensed-matter systems.
+- id: gauge_field_theory
+  label: Gauge field theory
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 4
+  kind: structure
+  conceptType: Theory class
+  summary: A field theory with local gauge redundancy, whose gauge structure constrains interactions and introduces gauge fields.
+  citations:
+  - wp-physics-gauge_field_theory
+  - nlab-physics-gauge_field_theory
+  - tong-gauge
+  - pdg-standard-model
+  sections:
+  - title: Mathematical structure
+    body: Gauge theories are formulated using Lie groups and Lie algebras; globally, connections on principal bundles provide the geometric language.
+- id: gauge_symmetry
+  label: Gauge redundancy
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 4
+  kind: structure
+  conceptType: Descriptive redundancy
+  summary: 'A local redundancy in field variables: gauge-related configurations represent the same physical state, while global and boundary gauge transformations may carry physical charges.'
+  citations:
+  - wp-physics-gauge_symmetry
+  - nlab-physics-gauge_symmetry
+  - tong-gauge
+- id: global_symmetry
+  label: Global physical symmetry
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 4
+  kind: structure
+  conceptType: Symmetry
+  summary: A symmetry whose transformation parameters are not arbitrary functions of spacetime. Internal global symmetries act on fields at fixed spacetime points; spacetime symmetries are also global but act on spacetime itself.
+  citations:
+  - wp-physics-global_symmetry
+  - nlab-physics-global_symmetry
+  - tong-qft
+  - tong-gauge
+- id: locality_principle
+  label: Locality principle
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 4
+  kind: structure
+  conceptType: Structural principle
+  summary: The requirement that physical influence and observables respect spacetime locality or causal separation in the theory’s precise formulation.
+  citations:
+  - wp-physics-locality_principle
+  - nlab-physics-locality_principle
+  - tong-qft
+- id: quantum_field
+  label: Quantum field
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 4
+  kind: structure
+  conceptType: Field
+  summary: A field degree of freedom in a quantum field theory; in common formulations fields are operator-valued distributions, while particle states arise from the theory’s excitations and asymptotic sectors.
+  citations:
+  - wp-physics-quantum_field_theory
+  - nlab-physics-quantum_field
+  - cern-qft-intro
+  - tong-qft
+  sections:
+  - title: Particle relation
+    body: In regimes with a useful particle interpretation, particle states are excitations of quantum fields; that interpretation can be observer- and background-dependent.
+- id: abelian_gauge_theory
+  label: Abelian gauge theory
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 5
+  kind: structure
+  conceptType: Gauge field theory
+  summary: A gauge theory with Abelian gauge group, lacking the pure-gauge self-couplings characteristic of non-Abelian Yang–Mills fields.
+  citations:
+  - wp-physics-abelian_gauge_theory
+  - nlab-physics-abelian_gauge_theory
+  - tong-gauge
+  - tong-qft
+- id: canonical_quantization
+  label: Canonical field quantization
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 5
+  kind: structure
+  conceptType: Quantization procedure
+  summary: A procedure promoting canonical field variables and momenta to operators with commutation or anticommutation relations.
+  citations:
+  - wp-physics-canonical_quantization
+  - nlab-physics-canonical_quantization
+  - tong-qft
+- id: gauge_field
+  label: Gauge field
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 6
+  kind: structure
+  conceptType: Connection field
+  summary: A connection on a principal bundle or its local gauge potential, whose curvature is the field strength.
+  citations:
+  - wp-physics-gauge_field_theory
+  - nlab-physics-gauge_field
+  - tong-gauge
+- id: local_gauge_symmetry
+  label: Local gauge invariance
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 5
+  kind: structure
+  conceptType: Gauge principle
+  summary: Invariance of the description under spacetime-dependent gauge transformations, implemented by gauge connections and constraints.
+  citations:
+  - wp-physics-gauge_field_theory
+  - nlab-physics-gauge_symmetry
+  - tong-gauge
+- id: matter_field
+  label: Matter field
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 5
+  kind: structure
+  conceptType: Quantum field class
+  summary: A quantum field carrying matter quantum numbers rather than serving as the gauge connection itself; its gauge representation may be fundamental, adjoint, or another representation depending on the theory.
+  citations:
+  - wp-physics-matter_field
+  - nlab-physics-matter_field
+  - tong-qft
+- id: microcausality
+  label: Microcausality
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 5
+  kind: structure
+  conceptType: QFT axiom
+  summary: Local observables commute, or graded-commute for fields, at spacelike separation.
+  citations:
+  - wp-physics-microcausality
+  - nlab-physics-microcausality
+  - tong-qft
+- id: noether_theorem
+  label: Noether theorem
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 5
+  kind: structure
+  conceptType: Theorem / structural relation
+  summary: A continuous global symmetry of the action yields a conserved current on equations of motion, subject to boundary and gauge qualifications.
+  citations:
+  - wp-physics-noether_theorem
+  - nlab-physics-noether_theorem
+  - tong-qft
+- id: nonabelian_gauge_theory
+  label: Non-Abelian gauge theory
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 5
+  kind: structure
+  conceptType: Gauge field theory
+  summary: A gauge theory with noncommutative gauge group and self-interacting gauge fields.
+  citations:
+  - wp-physics-yang_mills_theory
+  - nlab-physics-nonabelian_gauge_theory
+  - tong-gauge
+- id: path_integral_quantization
+  label: Path-integral formulation
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 5
+  kind: structure
+  conceptType: Quantization formalism
+  summary: A formulation of amplitudes and correlation functions as functional integrals, often defined perturbatively or through regulated Euclidean constructions.
+  citations:
+  - wp-physics-path_integral_quantization
+  - nlab-physics-path_integral_quantization
+  - tong-qft
+- id: quantum_field_operator
+  label: Quantum field operator
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 5
+  kind: structure
+  conceptType: Operator-valued field
+  summary: A spacetime-indexed operator-valued object; rigorously, fields are generally distributions that must be smeared with test functions.
+  citations:
+  - wp-physics-quantum_field_theory
+  - nlab-physics-quantum_field
+  - tong-qft
+- id: scalar_field
+  label: Scalar field
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 6
+  kind: structure
+  conceptType: Field representation
+  summary: A field transforming as a Lorentz scalar; in QFT its quanta have spin zero.
+  citations:
+  - wp-physics-scalar_field
+  - nlab-physics-scalar_field
+  - tong-qft
+- id: spinor_field
+  label: Spinor field
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 6
+  kind: structure
+  conceptType: Field representation
+  summary: A field transforming in a spinor representation of the Lorentz spin group, used for fermionic matter.
+  citations:
+  - wp-physics-spinor_field
+  - nlab-physics-spinor_field
+  - tong-qft
+- id: standard_model_gauge_group
+  label: Standard Model gauge group
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 5
+  kind: structure
+  conceptType: Gauge group
+  summary: The local gauge group $SU(3)_C\times SU(2)_L\times U(1)_Y$, modulo possible finite central identifications, underlying the Standard Model interactions.
+  citations:
+  - wp-physics-standard_model_gauge_group
+  - nlab-physics-standard_model_gauge_group
+  - pdg-standard-model
+  - tong-particle
+- id: vector_field_physics
+  label: Vector field in physics
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 6
+  kind: structure
+  conceptType: Field representation
+  summary: A field transforming as a spacetime vector; gauge potentials are important examples but not every vector field is a gauge field.
+  citations:
+  - wp-physics-vector_field_physics
+  - nlab-physics-vector_field_physics
+  - tong-qft
+  - tong-gauge
+- id: yang_mills_theory
+  label: Yang–Mills theory
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 5
+  kind: structure
+  conceptType: Gauge field theory
+  summary: A non-Abelian gauge theory with curvature field strength and self-interacting gauge bosons.
+  citations:
+  - wp-physics-yang_mills_theory
+  - nlab-physics-yang_mills_theory
+  - tong-gauge
+  - pdg-qcd
+- id: bosonic_field
+  label: Bosonic quantum field
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 5
+  kind: structure
+  conceptType: Quantum field class
+  summary: A physical quantum field whose particle excitations obey bosonic statistics under the spin–statistics assumptions; auxiliary ghost fields require separate treatment.
+  citations:
+  - wp-physics-bosonic_field
+  - nlab-physics-bosonic_field
+  - tong-qft
+- id: effective_field_theory
+  label: Effective field theory
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 6
+  kind: structure
+  conceptType: Effective theory framework
+  summary: A QFT organized as all local operators allowed by chosen degrees of freedom and symmetries, ordered by powers of a high-energy scale.
+  citations:
+  - wp-physics-effective_field_theory
+  - nlab-physics-effective_field_theory
+  - burgess-eft
+  - penco-eft
+- id: electroweak_theory
+  label: Electroweak theory
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 6
+  kind: structure
+  conceptType: Quantum field theory
+  summary: The unified gauge theory of weak and electromagnetic interactions before and through spontaneous electroweak symmetry breaking.
+  citations:
+  - wp-physics-electroweak_theory
+  - nlab-physics-electroweak_theory
+  - pdg-standard-model
+  - tong-particle
+  sections:
+  - title: Gauge structure
+    body: The theory is based on $SU(2)_L \times U(1)_Y$ and yields the photon and massive $W^\pm$ and $Z$ bosons after symmetry breaking.
+- id: fermionic_field
+  label: Fermionic quantum field
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 5
+  kind: structure
+  conceptType: Quantum field class
+  summary: A physical quantum field whose particle excitations obey fermionic statistics and whose canonical operators anticommute under the spin–statistics assumptions.
+  citations:
+  - wp-physics-fermionic_field
+  - nlab-physics-fermionic_field
+  - tong-qft
+- id: free_quantum_field
+  label: Free quantum field
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 6
+  kind: structure
+  conceptType: Solvable QFT
+  summary: A quantum field theory with quadratic action and no interaction vertices, decomposable into independent oscillator modes.
+  citations:
+  - wp-physics-free_quantum_field
+  - nlab-physics-free_quantum_field
+  - tong-qft
+- id: gauge_fixing
+  label: Gauge fixing
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 6
+  kind: structure
+  conceptType: Quantization procedure
+  summary: A choice that removes redundant gauge descriptions sufficiently to define propagators or quantization, while preserving physical gauge independence.
+  citations:
+  - wp-physics-gauge_fixing
+  - nlab-physics-gauge_fixing
+  - tong-gauge
+- id: gauge_interaction
+  label: Gauge interaction
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 6
+  kind: structure
+  conceptType: Interaction structure
+  summary: Interactions fixed by replacing ordinary derivatives with gauge-covariant derivatives and by the gauge-field curvature terms.
+  citations:
+  - wp-physics-gauge_field_theory
+  - tong-gauge
+  - pdg-standard-model
+- id: noether_current
+  label: Noether current
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 6
+  kind: structure
+  conceptType: Conserved current
+  summary: The local current associated with a continuous global symmetry by Noether’s theorem, modulo improvement and gauge ambiguities.
+  citations:
+  - wp-physics-noether_current
+  - nlab-physics-noether_current
+  - tong-qft
+- id: operator_valued_distribution
+  label: Operator-valued distribution
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 6
+  kind: structure
+  conceptType: Distributional field
+  summary: A distribution whose values act as operators on a state space, providing the mathematically appropriate local-field notion in many QFT frameworks.
+  citations:
+  - wp-physics-operator_valued_distribution
+  - nlab-physics-operator_valued_distribution
+  - tong-qft
+- id: quantum_chromodynamics
+  label: Quantum chromodynamics
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 6
+  kind: structure
+  conceptType: Quantum field theory
+  summary: The non-Abelian gauge theory of quarks and gluons and the fundamental strong interaction.
+  citations:
+  - wp-physics-quantum_chromodynamics
+  - nlab-physics-quantum_chromodynamics
+  - pdg-qcd
+  - tong-particle
+  sections:
+  - title: Characteristic behavior
+    items:
+    - Color confinement prevents isolated quarks and gluons at ordinary energies.
+    - Asymptotic freedom makes the interaction weaker at sufficiently high momentum transfer.
+- id: scalar_self_interaction
+  label: Scalar self-interaction
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 6
+  kind: structure
+  conceptType: Interaction term
+  summary: A nonlinear scalar potential term, such as the quartic Higgs interaction, controlling scalar-field vacuum structure and self-coupling.
+  citations:
+  - wp-physics-scalar_self_interaction
+  - tong-qft
+  - pdg-2026-higgs
+- id: spontaneous_symmetry_breaking
+  label: Spontaneous symmetry breaking
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 6
+  kind: structure
+  conceptType: Vacuum structure / phenomenon
+  summary: A situation in which the dynamics has a symmetry but the chosen vacuum state does not, producing order parameters and, for global continuous symmetries, Goldstone modes.
+  citations:
+  - wp-physics-spontaneous_symmetry_breaking
+  - nlab-physics-spontaneous_symmetry_breaking
+  - tong-qft
+  - tong-gauge
+- id: standard_model_lagrangian
+  label: Standard Model Lagrangian
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 6
+  kind: structure
+  conceptType: Theory formulation
+  summary: The gauge-invariant renormalizable Lagrangian containing gauge kinetic terms, chiral fermion kinetic terms, one Higgs doublet, Yukawa couplings, and the Higgs potential.
+  citations:
+  - wp-physics-standard_model_gauge_group
+  - nlab-physics-standard_model_lagrangian
+  - pdg-standard-model
+  - pdg-qcd
+  - tong-particle
+- id: vacuum_state
+  label: Vacuum state
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 6
+  kind: structure
+  conceptType: Quantum state
+  summary: A lowest-energy or invariant state relative to a chosen Hamiltonian and spacetime structure; a unique particle vacuum need not exist in general curved spacetime.
+  citations:
+  - wp-physics-vacuum_state
+  - nlab-physics-vacuum_state
+  - tong-qft
+- id: yukawa_interaction
+  label: Yukawa interaction
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 6
+  kind: structure
+  conceptType: Interaction term
+  summary: A coupling between scalar and fermion fields; in the Standard Model, Yukawa matrices generate charged-fermion masses after electroweak symmetry breaking.
+  citations:
+  - wp-physics-yukawa_interaction
+  - nlab-physics-yukawa_interaction
+  - tong-particle
+  - pdg-standard-model
+- id: brst_symmetry
+  label: BRST symmetry
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 7
+  kind: structure
+  conceptType: Graded symmetry
+  summary: A nilpotent graded symmetry encoding gauge invariance after gauge fixing and organizing physical states by cohomology.
+  citations:
+  - wp-physics-brst_symmetry
+  - nlab-physics-brst_symmetry
+  - tong-gauge
+- id: conserved_charge
+  label: Conserved charge
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 7
+  kind: structure
+  conceptType: Integrated conserved quantity
+  summary: A charge obtained by integrating the time component of a conserved current under suitable boundary conditions.
+  citations:
+  - wp-physics-conserved_charge
+  - nlab-physics-conserved_charge
+  - tong-qft
+- id: faddeev_popov_ghost
+  label: Faddeev–Popov ghost field
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 7
+  kind: structure
+  conceptType: Auxiliary quantum field
+  summary: An anticommuting auxiliary field introduced in covariant quantization of non-Abelian gauge theories; it does not represent an asymptotic physical particle.
+  citations:
+  - wp-physics-faddeev_popov_ghost
+  - nlab-physics-faddeev_popov_ghost
+  - tong-gauge
+- id: gluon_field
+  label: Gluon gauge field
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 7
+  kind: structure
+  conceptType: Gauge field
+  summary: The eight gauge-field components of $SU(3)_C$, transforming in the adjoint representation and self-interacting.
+  citations:
+  - wp-physics-gluon_field
+  - pdg-qcd
+  - tong-gauge
+- id: higgs_doublet
+  label: Higgs doublet field
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 7
+  kind: structure
+  conceptType: Scalar matter field
+  summary: The complex scalar field transforming as an $SU(2)_L$ doublet with weak hypercharge $Y=1/2$ in the Standard Model. Its nonzero vacuum expectation value breaks electroweak symmetry.
+  citations:
+  - wp-physics-higgs_mechanism
+  - nlab-physics-higgs_field
+  - pdg-standard-model
+  - cern-higgs-origins
+- id: interacting_quantum_field
+  label: Interacting quantum field
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 7
+  kind: structure
+  conceptType: Interacting QFT
+  summary: A quantum field theory with nonquadratic couplings, requiring perturbative, lattice, bootstrap, algebraic, or other nonperturbative methods.
+  citations:
+  - wp-physics-interacting_quantum_field
+  - nlab-physics-interacting_quantum_field
+  - tong-qft
+- id: perturbative_qft
+  label: Perturbative quantum field theory
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 7
+  kind: structure
+  conceptType: Controlled formal expansion
+  summary: A formal expansion in coupling constants or loops around a free or solvable theory, with domain controlled when couplings and kinematics permit.
+  citations:
+  - wp-physics-quantum_perturbation_theory
+  - nlab-physics-perturbative_qft
+  - tong-qft
+- id: regularization
+  label: Regularization
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 7
+  kind: structure
+  conceptType: Intermediate mathematical procedure
+  summary: A modification introducing a cutoff, dimension shift, lattice, or other regulator so divergent expressions become well-defined before renormalization.
+  citations:
+  - wp-physics-regularization
+  - nlab-physics-regularization
+  - tong-qft
+- id: renormalization_group
+  label: Renormalization group
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 7
+  kind: structure
+  conceptType: Scale-flow framework
+  summary: The flow of couplings and operators with resolution scale, expressing how descriptions change under coarse-graining or scale transformations.
+  citations:
+  - wp-physics-renormalization_group
+  - nlab-physics-renormalization_group
+  - tong-qft
+  - burgess-eft
+- id: standard_model_chiral_multiplet
+  label: Standard Model chiral fermion multiplet
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 7
+  kind: structure
+  conceptType: Matter-field representation
+  summary: A left- or right-chiral fermion field transforming in a specified representation of $SU(3)_C\times SU(2)_L\times U(1)_Y$.
+  citations:
+  - wp-physics-standard_model_chiral_multiplet
+  - nlab-physics-standard_model
+  - pdg-standard-model
+  - tong-particle
+- id: fermion_matter_field
+  label: Standard Model fermion field
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 7
+  kind: structure
+  conceptType: Chiral matter field
+  summary: A quark or lepton field transforming chirally under the electroweak group and in a color representation for quarks.
+  citations:
+  - wp-physics-fermionic_field
+  - pdg-standard-model
+  - tong-particle
+- id: hypercharge_field
+  label: Weak-hypercharge gauge field
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 7
+  kind: structure
+  conceptType: Gauge field
+  summary: The $U(1)_Y$ gauge field coupling to weak hypercharge before electroweak symmetry breaking.
+  citations:
+  - wp-physics-hypercharge_field
+  - pdg-standard-model
+  - tong-particle
+- id: weak_isospin_field
+  label: Weak-isospin gauge fields
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 7
+  kind: structure
+  conceptType: Gauge fields
+  summary: The three $SU(2)_L$ gauge fields coupling to left-handed weak-isospin doublets.
+  citations:
+  - wp-physics-weak_interaction
+  - pdg-standard-model
+  - tong-particle
+- id: asymptotic_freedom
+  label: Asymptotic freedom
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 8
+  kind: structure
+  conceptType: Scale-dependent QFT behavior
+  summary: The decrease of the QCD coupling at high momentum transfer, enabling perturbative calculations at short distances.
+  citations:
+  - wp-physics-asymptotic_freedom
+  - nlab-physics-asymptotic_freedom
+  - pdg-qcd
+  - nobel-qcd
+- id: higgs_mechanism
+  label: Brout–Englert–Higgs mechanism
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 8
+  kind: structure
+  conceptType: Physical mechanism
+  summary: In a gauge theory with a symmetry-breaking scalar vacuum, gauge fields associated with broken generators acquire longitudinal modes and masses, while gauge fields of the unbroken subgroup remain massless.
+  citations:
+  - wp-physics-higgs_mechanism
+  - nlab-physics-higgs_mechanism
+  - cern-higgs-origins
+  - pdg-2026-higgs
+  sections:
+  - title: Qualification
+    body: Most of the mass of ordinary matter is not directly supplied by the Higgs mechanism; proton and neutron masses arise predominantly from QCD dynamics.
+- id: correlation_function
+  label: Correlation function
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 8
+  kind: structure
+  conceptType: Observable distribution
+  summary: An expectation value of products of fields or observables, encoding propagation, response, and scattering information.
+  citations:
+  - wp-physics-correlation_function
+  - nlab-physics-correlation_function
+  - tong-qft
+- id: electroweak_symmetry_breaking
+  label: Electroweak symmetry breaking
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 8
+  kind: structure
+  conceptType: Vacuum mechanism
+  summary: The Higgs vacuum reduces $SU(2)_L\times U(1)_Y$ to electromagnetic $U(1)_{\rm em}$, producing massive $W^\pm$ and $Z$ fields and a massless photon.
+  citations:
+  - wp-physics-electroweak_symmetry_breaking
+  - nlab-physics-electroweak_symmetry_breaking
+  - cern-higgs-origins
+  - pdg-standard-model
+- id: gluon_self_interaction
+  label: Gluon self-interaction
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 8
+  kind: structure
+  conceptType: Non-Abelian gauge interaction
+  summary: Three-gluon and four-gluon interactions generated by the non-Abelian $SU(3)_C$ field-strength term.
+  citations:
+  - wp-physics-gluon
+  - pdg-qcd
+  - tong-gauge
+- id: higgs_vacuum_expectation_value
+  label: Higgs vacuum expectation value
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 8
+  kind: structure
+  conceptType: Order parameter
+  summary: The nonzero vacuum expectation value of the neutral Higgs component, setting the electroweak scale.
+  citations:
+  - wp-physics-higgs_mechanism
+  - pdg-standard-model
+  - cern-higgs-origins
+- id: left_handed_lepton_doublet
+  label: Left-handed lepton doublet field
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 8
+  kind: structure
+  conceptType: Chiral matter multiplet
+  summary: For each generation, a color-singlet $SU(2)_L$ doublet $L_L=(\nu_L,e_L)$ with weak hypercharge $-1/2$.
+  citations:
+  - wp-physics-standard_model_chiral_multiplet
+  - pdg-standard-model
+  - tong-particle
+- id: left_handed_quark_doublet
+  label: Left-handed quark doublet field
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 8
+  kind: structure
+  conceptType: Chiral matter multiplet
+  summary: For each generation, a color-triplet $SU(2)_L$ doublet $Q_L=(u_L,d_L)$ with weak hypercharge $1/6$.
+  citations:
+  - wp-physics-standard_model_chiral_multiplet
+  - pdg-standard-model
+  - tong-particle
+- id: lepton_field
+  label: Lepton field
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 8
+  kind: structure
+  conceptType: Matter field
+  summary: A color-singlet spinor field carrying electroweak quantum numbers and lepton flavor.
+  citations:
+  - wp-physics-lepton
+  - pdg-standard-model
+  - pdg-2026-neutrino
+- id: one_particle_state
+  label: One-particle state
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 8
+  kind: structure
+  conceptType: Asymptotic state
+  summary: A state in a one-particle representation or asymptotic sector associated with a stable particle species.
+  citations:
+  - wp-physics-one_particle_state
+  - nlab-physics-one_particle_state
+  - tong-qft
+- id: quark_field
+  label: Quark field
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 8
+  kind: structure
+  conceptType: Matter field
+  summary: A color-triplet spinor field carrying flavor, electric charge, weak quantum numbers, and baryon number.
+  citations:
+  - wp-physics-quark
+  - pdg-qcd
+  - pdg-standard-model
+- id: quark_gluon_interaction
+  label: Quark–gluon interaction
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 8
+  kind: structure
+  conceptType: Gauge interaction
+  summary: The QCD coupling of color-triplet quark fields to the gluon connection through the covariant derivative.
+  citations:
+  - wp-physics-quantum_chromodynamics
+  - nlab-physics-quantum_chromodynamics
+  - pdg-qcd
+  - tong-gauge
+- id: renormalization
+  label: Renormalization
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 8
+  kind: structure
+  conceptType: Scale-dependent parameterization procedure
+  summary: The systematic relation between regulated parameters and finite observables, including counterterms and renormalization conditions.
+  citations:
+  - wp-physics-renormalization
+  - nlab-physics-renormalization
+  - tong-qft
+  - burgess-eft
+- id: right_handed_charged_lepton_field
+  label: Right-handed charged-lepton field
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 8
+  kind: structure
+  conceptType: Chiral matter multiplet
+  summary: For each generation, a color-singlet $SU(2)_L$ singlet $e_R$ with weak hypercharge $-1$. The minimal Standard Model has no right-handed neutrino field.
+  citations:
+  - wp-physics-standard_model_chiral_multiplet
+  - pdg-standard-model
+  - tong-particle
+- id: right_handed_down_quark_field
+  label: Right-handed down-type quark field
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 8
+  kind: structure
+  conceptType: Chiral matter multiplet
+  summary: For each generation, a color-triplet $SU(2)_L$ singlet $d_R$ with weak hypercharge $-1/3$.
+  citations:
+  - wp-physics-standard_model_chiral_multiplet
+  - pdg-standard-model
+  - tong-particle
+- id: right_handed_up_quark_field
+  label: Right-handed up-type quark field
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 8
+  kind: structure
+  conceptType: Chiral matter multiplet
+  summary: For each generation, a color-triplet $SU(2)_L$ singlet $u_R$ with weak hypercharge $2/3$.
+  citations:
+  - wp-physics-standard_model_chiral_multiplet
+  - pdg-standard-model
+  - tong-particle
+- id: running_coupling
+  label: Running coupling
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 8
+  kind: structure
+  conceptType: Scale-dependent parameter
+  summary: A renormalized interaction strength whose value depends on energy or length scale according to a beta function.
+  citations:
+  - wp-physics-running_coupling
+  - nlab-physics-running_coupling
+  - pdg-qcd
+  - tong-qft
+- id: z_field
+  label: $Z$ field
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 9
+  kind: structure
+  conceptType: Massive gauge field
+  summary: The massive neutral electroweak gauge field obtained by mixing the neutral weak-isospin and hypercharge fields.
+  citations:
+  - wp-physics-w_boson
+  - pdg-standard-model
+  - tong-particle
+- id: w_field
+  label: Charged $W$ fields
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 9
+  kind: structure
+  conceptType: Massive gauge fields
+  summary: The charged combinations of weak-isospin gauge fields that mediate charged-current weak interactions.
+  citations:
+  - wp-physics-w_boson
+  - pdg-standard-model
+  - tong-particle
+- id: electroweak_mixing
+  label: Electroweak gauge-field mixing
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 9
+  kind: structure
+  conceptType: Field mixing mechanism
+  summary: After electroweak symmetry breaking, the neutral $W^3_\mu$ and hypercharge $B_\mu$ fields mix into the photon and $Z$ fields.
+  citations:
+  - wp-physics-electroweak_mixing
+  - pdg-standard-model
+  - tong-particle
+- id: higgs_field
+  label: Higgs field
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 9
+  kind: structure
+  conceptType: Quantum field
+  summary: The physical scalar degree of freedom remaining from the Standard Model Higgs doublet after electroweak symmetry breaking; its quantum excitation is the Higgs boson.
+  citations:
+  - wp-physics-higgs_field
+  - nlab-physics-higgs_field
+  - cern-higgs-overview
+  - pdg-2026-higgs
+- id: lattice_qcd
+  label: Lattice QCD
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 9
+  kind: structure
+  conceptType: Regulated nonperturbative formulation and computational method
+  summary: A Euclidean spacetime lattice regularization of QCD enabling numerical path-integral calculations and continuum extrapolation.
+  citations:
+  - wp-physics-lattice_qcd
+  - nlab-physics-lattice_qcd
+  - pdg-qcd
+  - pdg-2026-contents
+- id: multiparticle_state
+  label: Multiparticle state
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 9
+  kind: structure
+  conceptType: Quantum state
+  summary: A Fock or scattering state containing several particle excitations, with exchange statistics and interactions treated appropriately.
+  citations:
+  - wp-physics-occupation_number_state
+  - nlab-physics-multiparticle_state
+  - tong-qft
+- id: photon_field
+  label: Photon field
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 9
+  kind: structure
+  conceptType: Gauge field after symmetry breaking
+  summary: The massless electromagnetic gauge field obtained from electroweak neutral-field mixing.
+  citations:
+  - wp-physics-electromagnetic_field
+  - pdg-standard-model
+  - tong-particle
+- id: propagator
+  label: Propagator
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 9
+  kind: structure
+  conceptType: Green function / correlation kernel
+  summary: A two-point Green function or inverse kinetic operator with specified boundary prescription, not a literal particle trajectory.
+  citations:
+  - wp-physics-propagator
+  - nlab-physics-propagator
+  - tong-qft
+- id: charge_conjugation
+  label: Charge conjugation
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 10
+  kind: structure
+  conceptType: Discrete transformation
+  summary: A transformation exchanging particle and antiparticle fields and conjugating internal charges; it need not be a symmetry of the full theory.
+  citations:
+  - wp-physics-charge_conjugation
+  - nlab-physics-charge_conjugation
+  - tong-qft
+- id: feynman_diagram
+  label: Feynman diagram
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 10
+  kind: structure
+  conceptType: Perturbative bookkeeping object
+  summary: A graph organizing terms in a perturbative expansion of correlation functions or amplitudes; internal lines are not directly observed particles.
+  citations:
+  - wp-physics-feynman_diagram
+  - nlab-physics-feynman_diagram
+  - tong-qft
+- id: quantum_electrodynamics
+  label: Quantum electrodynamics
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 10
+  kind: structure
+  conceptType: Quantum field theory
+  summary: The relativistic quantum field theory of the electromagnetic interaction between electrically charged fields and the photon field.
+  citations:
+  - wp-physics-quantum_electrodynamics
+  - nlab-physics-quantum_electrodynamics
+  - tong-qft
+  - nobel-qed
+  sections:
+  - title: Status
+    body: QED is the electromagnetic sector of the broken electroweak theory and is extraordinarily well tested.
+- id: s_matrix
+  label: $S$-matrix
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 10
+  kind: structure
+  conceptType: Scattering operator
+  summary: The operator mapping asymptotic in-states to out-states when such asymptotic particle states exist.
+  citations:
+  - wp-physics-s_matrix
+  - nlab-physics-s_matrix
+  - tong-qft
+- id: scattering_amplitude
+  label: Scattering amplitude
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 10
+  kind: structure
+  conceptType: Transition quantity
+  summary: A complex quantity whose squared magnitude and phase-space factors determine scattering probabilities and cross sections.
+  citations:
+  - wp-physics-scattering_amplitude
+  - nlab-physics-scattering_amplitude
+  - tong-qft
+  - pdg-rpp
+- id: wilsonian_effective_action
+  label: Wilsonian effective action
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 10
+  kind: structure
+  conceptType: Scale-dependent action
+  summary: An action for low-momentum modes obtained by integrating out higher-momentum degrees of freedom down to a cutoff scale.
+  citations:
+  - wp-physics-wilsonian_effective_action
+  - nlab-physics-wilsonian_effective_action
+  - burgess-eft
+  - penco-eft
+- id: left_handed_fermion
+  label: Left-handed fermion field
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 11
+  kind: structure
+  conceptType: Chiral field
+  summary: A field in a left-handed Weyl representation; Standard Model left-handed quarks and leptons form $SU(2)_L$ doublets.
+  citations:
+  - wp-physics-chirality
+  - pdg-standard-model
+  - tong-particle
+- id: photon_fermion_interaction
+  label: Photon–fermion interaction
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 11
+  kind: structure
+  conceptType: Gauge interaction
+  summary: The QED coupling $eQ\,\bar\psi\gamma^\mu\psi A_\mu$ between the photon field and an electrically charged fermion current.
+  citations:
+  - wp-physics-quantum_electrodynamics
+  - nlab-physics-quantum_electrodynamics
+  - tong-qft
+  - nobel-qed
+- id: right_handed_fermion
+  label: Right-handed fermion field
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 11
+  kind: structure
+  conceptType: Chiral field
+  summary: A right-handed Weyl field; charged right-handed Standard Model fermions are $SU(2)_L$ singlets.
+  citations:
+  - wp-physics-chirality
+  - pdg-standard-model
+  - tong-particle
+- id: standard_model_effective_field_theory
+  label: Standard Model effective field theory
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 11
+  kind: structure
+  conceptType: Effective field theory
+  summary: An extension of the Standard Model Lagrangian by higher-dimension operators built from Standard Model fields and preserving its gauge symmetry, organized in inverse powers of a heavy new-physics scale. It is not obtained by integrating the Standard Model out of itself.
+  citations:
+  - wp-physics-standard_model_effective_field_theory
+  - penco-eft
+  - pdg-standard-model
+- id: fermi_theory
+  label: Fermi theory of weak interactions
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 12
+  kind: structure
+  conceptType: Low-energy effective field theory
+  summary: A local four-fermion theory approximating charged-current weak processes at momentum transfers far below the $W$-boson mass.
+  citations:
+  - wp-physics-fermi_theory
+  - nlab-physics-fermi_theory
+  - pdg-standard-model
+  - burgess-eft
+- id: low_energy_qcd
+  label: Low-energy QCD
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 12
+  kind: structure
+  conceptType: Nonperturbative regime
+  summary: The strongly coupled regime of QCD where quarks and gluons are confined and hadrons are the useful degrees of freedom.
+  citations:
+  - wp-physics-quantum_chromodynamics
+  - pdg-qcd
+  - pdg-quark-model
+- id: four_fermion_interaction
+  label: Four-fermion interaction
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 13
+  kind: structure
+  conceptType: Effective interaction operator
+  summary: A local operator involving four fermion fields, generated at low energy by integrating out a heavy mediator in cases such as Fermi theory.
+  citations:
+  - wp-physics-four_fermion_interaction
+  - nlab-physics-four_fermion_interaction
+  - burgess-eft
+  - penco-eft
+- id: chiral_perturbation_theory
+  label: Chiral perturbation theory
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 14
+  kind: structure
+  conceptType: Low-energy effective field theory
+  summary: The systematic low-energy expansion of QCD in momenta and light-quark masses using pions and, when included, nucleons as effective degrees of freedom.
+  citations:
+  - wp-physics-chiral_perturbation_theory
+  - nlab-physics-chiral_perturbation_theory
+  - epelbaum-nuclear-eft
+  - machleidt-entem-nuclear-forces
+- id: cpt_theorem
+  label: CPT theorem
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 7
+  kind: structure
+  conceptType: Theorem
+  summary: A broad class of local Lorentz-invariant quantum field theories with standard unitarity and spectral assumptions is invariant under the combined action of charge conjugation, parity, and time reversal.
+  citations:
+  - wp-physics-cpt_theorem
+  - nlab-physics-cpt_theorem
+  - tong-qft
+  - pdg-rpp
+- id: electroweak_gauge_self_interaction
+  label: Electroweak gauge-boson self-interaction
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 8
+  kind: structure
+  conceptType: Interaction term
+  summary: Triple and quartic gauge-boson interactions generated by the non-Abelian $SU(2)_L$ field strength; after electroweak mixing they include vertices such as $WW\gamma$, $WWZ$, and quartic counterparts.
+  citations:
+  - wp-physics-electroweak_gauge_self_interaction
+  - tong-standard-model
+  - pdg-standard-model
+  - tong-gauge
+- id: gauge_anomaly_cancellation
+  label: Gauge-anomaly cancellation
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 9
+  kind: structure
+  conceptType: Consistency condition
+  summary: Cancellation of all local gauge anomalies among chiral fermion representations, required for a consistent quantum gauge theory; the Standard Model representation assignments satisfy these constraints.
+  citations:
+  - wp-physics-quantum_anomaly
+  - nlab-physics-gauge_anomaly_cancellation
+  - bilal-anomalies
+  - pdg-standard-model
+  - tong-standard-model
+- id: higgs_gauge_interaction
+  label: Higgs–gauge interaction
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 8
+  kind: structure
+  conceptType: Interaction term
+  summary: The coupling of the Higgs doublet to electroweak gauge fields through its covariant derivative; after symmetry breaking it produces $W$ and $Z$ mass terms and Higgs couplings to those bosons.
+  citations:
+  - wp-physics-higgs_mechanism
+  - nlab-physics-higgs_mechanism
+  - tong-standard-model
+  - pdg-standard-model
+  - pdg-2026-higgs
+- id: quantum_anomaly
+  label: Quantum anomaly
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 8
+  kind: structure
+  conceptType: Quantum effect
+  summary: Failure of a classical symmetry to survive quantization or regularization; global anomalies can encode real physics, while uncancelled gauge anomalies make a gauge theory inconsistent.
+  citations:
+  - wp-physics-quantum_anomaly
+  - nlab-physics-quantum_anomaly
+  - bilal-anomalies
+  - tong-gauge
+- id: spin_statistics_theorem
+  label: Spin–statistics theorem
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 7
+  kind: structure
+  conceptType: Theorem
+  summary: Under the locality, relativistic covariance, positive-energy, and Hilbert-space assumptions of standard relativistic QFT, integer-spin fields have bosonic statistics and half-integer-spin fields have fermionic statistics.
+  citations:
+  - wp-physics-spin_statistics_theorem
+  - nlab-physics-spin_statistics_theorem
+  - tong-qft
+- id: gauge_covariant_derivative
+  label: Gauge-covariant derivative
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 6
+  kind: structure
+  conceptType: Geometric differential operator
+  summary: A derivative $D_\mu=\partial_\mu+A_\mu$ in mathematical convention, or with coupling and representation factors in physics convention, that differentiates charged fields while transforming covariantly under local gauge transformations.
+  citations:
+  - wp-physics-gauge_covariant_derivative
+  - nlab-physics-gauge_covariant_derivative
+  - tong-gauge
+  - tong-standard-model
+- id: gauge_field_strength
+  label: Gauge field strength
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 6
+  kind: structure
+  conceptType: Curvature field
+  summary: The curvature $F=dA+A\wedge A$ of a gauge connection; its Abelian specialization is the electromagnetic field-strength tensor, while non-Abelian theories contain gauge self-interactions.
+  citations:
+  - wp-physics-gauge_field_strength
+  - nlab-physics-gauge_field_strength
+  - tong-gauge
+  - tong-standard-model
+- id: goldstone_theorem
+  label: Goldstone theorem
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 7
+  kind: structure
+  conceptType: Theorem
+  summary: Under its relativistic-QFT assumptions, spontaneous breaking of a continuous global symmetry implies gapless Nambu–Goldstone excitations, one per broken generator subject to the theorem’s qualifications.
+  citations:
+  - wp-physics-goldstone_theorem
+  - nlab-physics-goldstone_theorem
+  - tong-standard-model
+  - tong-gauge
+- id: nambu_goldstone_mode
+  label: Nambu–Goldstone mode
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 8
+  kind: structure
+  conceptType: Collective field excitation
+  summary: A gapless mode associated with spontaneous breaking of a continuous global symmetry; explicit breaking generally gives a pseudo-Nambu–Goldstone mode a nonzero mass.
+  citations:
+  - wp-physics-nambu_goldstone_mode
+  - nlab-physics-nambu_goldstone_mode
+  - tong-standard-model
+  - tong-gauge
+- id: would_be_goldstone_mode
+  label: Would-be Goldstone mode
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  - particle-physics
+  level: 9
+  kind: structure
+  conceptType: Gauge-dependent scalar degree of freedom
+  summary: 'A scalar fluctuation along a broken gauge direction in a gauge-fixed description of a Higgs phase. It is not an independent physical gapless particle: its degree of freedom is reorganized with a gauge field into the longitudinal polarization of a massive vector boson.'
+  citations:
+  - wp-physics-higgs_mechanism
+  - nlab-physics-higgs_mechanism
+  - pdg-2026-higgs
+  - tong-standard-model
+  sections:
+  - title: Distinction from a physical Nambu–Goldstone mode
+    body: Breaking a continuous global symmetry can produce a physical gapless Nambu–Goldstone excitation. In a gauge theory, by contrast, the would-be Goldstone field is gauge-dependent; in unitary gauge it is absent from the scalar spectrum, while the corresponding massive gauge boson has a longitudinal polarization.
+- id: longitudinal_gauge_boson_mode
+  label: Longitudinal massive-gauge-boson mode
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 9
+  kind: structure
+  conceptType: Polarization state
+  summary: The third physical polarization of a massive vector boson. In a Higgs phase, degrees of freedom represented as would-be Goldstone modes in a gauge-fixed description reorganize into longitudinal massive-gauge-boson polarizations.
+  citations:
+  - wp-physics-polarization
+  - nlab-physics-higgs_mechanism
+  - tong-standard-model
+- id: low_energy_effective_field_theory
+  label: Low-energy effective field theory below the electroweak scale (LEFT)
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 12
+  kind: structure
+  conceptType: Effective field theory
+  summary: The effective field theory below the electroweak scale after integrating out the $W$, $Z$, Higgs, and top quark. It contains QCD and QED for light fields plus higher-dimension weak and possible beyond-Standard-Model operators.
+  citations:
+  - wp-physics-effective_field_theory
+  - jhep-left
+  - penco-eft
+- id: qcd_chiral_symmetry
+  label: Approximate chiral symmetry of QCD
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 9
+  kind: structure
+  conceptType: Approximate global symmetry
+  summary: For light-quark masses small compared with the strong scale, the QCD Lagrangian has an approximate $SU(N_f)_L\times SU(N_f)_R$ flavor symmetry, apart from anomalous and mass effects.
+  citations:
+  - wp-physics-qcd_chiral_symmetry
+  - nlab-physics-qcd_chiral_symmetry
+  - pdg-qcd
+  - tong-standard-model
+  - tong-gauge
+- id: qcd_chiral_symmetry_breaking
+  label: Spontaneous chiral-symmetry breaking in QCD
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 11
+  kind: structure
+  conceptType: Nonperturbative phenomenon
+  summary: The low-energy QCD vacuum does not preserve the approximate light-quark chiral symmetry, producing a quark condensate and light pseudo-Nambu–Goldstone mesons.
+  citations:
+  - wp-physics-qcd_chiral_symmetry_breaking
+  - nlab-physics-qcd_chiral_symmetry_breaking
+  - pdg-qcd
+  - tong-standard-model
+  - tong-gauge
+- id: quark_condensate
+  label: Quark condensate
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 11
+  kind: structure
+  conceptType: Vacuum order parameter
+  summary: The vacuum expectation value $\langle\bar q q\rangle$, an order parameter for spontaneous chiral-symmetry breaking in the chiral limit; its numerical value depends on renormalization scheme and scale.
+  citations:
+  - wp-physics-quark_condensate
+  - nlab-physics-quark_condensate
+  - pdg-qcd
+  - tong-standard-model
+  - tong-gauge
+- id: pseudo_nambu_goldstone_mode
+  label: Pseudo-Nambu–Goldstone mode
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 13
+  kind: structure
+  conceptType: Approximate-symmetry excitation
+  summary: A would-be Goldstone mode that acquires a nonzero mass because the corresponding symmetry is explicitly as well as spontaneously broken; the light pions are the principal QCD example.
+  citations:
+  - wp-physics-pseudo_nambu_goldstone_mode
+  - nlab-physics-pseudo_nambu_goldstone_mode
+  - pdg-qcd
+  - tong-standard-model
+  - tong-gauge
+- id: yang_mills_mass_gap
+  label: Yang–Mills mass gap
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  level: 12
+  kind: structure
+  conceptType: Expected nonperturbative property / open mathematical problem
+  summary: Pure four-dimensional confining quantum Yang–Mills theory is expected to have a positive energy gap above its vacuum. Constructing the continuum theory rigorously and proving the gap remains an open Clay Millennium problem. This must not be conflated with exact chiral-limit QCD, whose spontaneously broken chiral symmetry gives massless Nambu–Goldstone modes.
+  citations:
+  - wp-physics-yang_mills_mass_gap
+  - nlab-physics-yang_mills_mass_gap
+  - clay-yang-mills-mass-gap
+  - tong-gauge
+  sections:
+  - title: Distinction from QCD
+    body: Physical QCD with nonzero light-quark masses has a gapped hadron spectrum. In the exact massless-light-quark limit, however, spontaneous chiral-symmetry breaking produces massless pions, so the full theory does not have a positive spectral gap. The Clay problem concerns pure Yang–Mills theory.
+  - title: Mathematical status
+    body: A satisfactory solution must construct a nontrivial four-dimensional quantum Yang–Mills theory with appropriate axiomatic properties and prove a strictly positive mass gap.
+- id: electron_g_minus_2_measurements
+  label: Electron anomalous-magnetic-moment measurements
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  - experiments-observations
+  level: 11
+  kind: structure
+  conceptType: Canonical precision test
+  summary: Measurements of the electron magnetic-moment anomaly, compared with high-order calculations, provide one of the most precise quantitative tests of QED.
+  citations:
+  - wp-physics-electron_g_minus_2_measurements
+  - nist-codata-2022
+  status: Observed / performed
+- id: casimir_force_measurements
+  label: Casimir-force measurements
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-field-theory
+  domains:
+  - quantum-field-theory
+  - experiments-observations
+  level: 11
+  kind: structure
+  conceptType: Canonical precision test
+  summary: Measurements of forces between closely spaced conductors agree with QED calculations of boundary-dependent electromagnetic fluctuations and material response.
+  citations:
+  - wp-physics-casimir_force_measurements
+  - casimir-lamoreaux
+  status: Observed / performed
+  sections:
+  - title: Qualification
+    body: The Casimir effect tests QED predictions for interacting boundaries; it is not by itself a unique measurement of an absolute vacuum energy.
+edges:
+- id: canonical_quant_to_qft
+  source: canonical_quantization
+  target: quantum_field_theory
+  type: theory-component
+  label: canonical construction
+  detail: Canonical quantization is one route to QFT formulations.
+  citations:
+  - wp-physics-canonical_quantization
+  - nlab-physics-canonical_quantization
+  - wp-physics-quantum_field_theory
+  - nlab-physics-quantum_field_theory
+- id: charge_conj_to_antiparticle
+  source: charge_conjugation
+  target: antiparticle
+  type: transformation-process
+  label: particle–antiparticle conjugation
+  detail: Charge conjugation maps a particle field to its conjugate representation.
+  citations:
+  - wp-physics-charge_conjugation
+  - nlab-physics-charge_conjugation
+  - wp-physics-antiparticle
+  - nlab-physics-antiparticle
+- id: chiral_to_nucleareft
+  source: chiral_perturbation_theory
+  target: nuclear_effective_field_theory
+  type: framework-specialization
+  label: multi-nucleon EFT
+  detail: Nuclear chiral EFT extends the low-energy chiral expansion to nucleons, nuclear forces, and currents.
+  citations:
+  - wp-physics-nuclear_effective_field_theory
+  - nlab-physics-nuclear_effective_field_theory
+  - wp-physics-chiral_perturbation_theory
+  - nlab-physics-chiral_perturbation_theory
+- id: chirality_to_left
+  source: left_handed_fermion
+  target: chirality
+  type: state-description
+  label: left chirality
+  detail: A left-handed Weyl field carries one of the two inequivalent chiral Lorentz representations.
+  citations:
+  - wp-physics-chirality
+  - nlab-physics-chirality
+- id: chirality_to_right
+  source: right_handed_fermion
+  target: chirality
+  type: state-description
+  label: right chirality
+  detail: A right-handed Weyl field carries the conjugate chiral Lorentz representation.
+  citations:
+  - wp-physics-chirality
+  - nlab-physics-chirality
+- id: corr_to_prop
+  source: correlation_function
+  target: propagator
+  type: classification
+  label: two-point function / Green function
+  detail: A propagator is a two-point correlation or Green function with a specified prescription.
+  citations:
+  - wp-physics-propagator
+  - nlab-physics-propagator
+  - wp-physics-correlation_function
+  - nlab-physics-correlation_function
+- id: eft_to_wilson
+  source: effective_field_theory
+  target: wilsonian_effective_action
+  type: state-description
+  label: scale-dependent effective action
+  detail: A Wilsonian effective action is a scale-dependent action representation of an EFT after integrating out modes above a cutoff.
+  citations:
+  - wp-physics-wilsonian_effective_action
+  - nlab-physics-wilsonian_effective_action
+- id: mixing_to_photon
+  source: electroweak_mixing
+  target: photon_field
+  type: canonical-construction
+  label: massless electromagnetic combination
+  detail: The photon field is the massless neutral combination after electroweak mixing.
+  citations:
+  - wp-physics-electroweak_mixing
+  - pdg-standard-model
+  - tong-particle
+  - wp-physics-electromagnetic_field
+- id: mixing_to_z
+  source: electroweak_mixing
+  target: z_field
+  type: canonical-construction
+  label: massive neutral combination
+  detail: The orthogonal neutral combination is the massive $Z$ field.
+  citations:
+  - wp-physics-electroweak_mixing
+  - pdg-standard-model
+  - tong-particle
+  - wp-physics-w_boson
+- id: ewsb_to_mixing
+  source: electroweak_symmetry_breaking
+  target: electroweak_mixing
+  type: canonical-construction
+  label: neutral gauge-field mixing
+  detail: Electroweak symmetry breaking produces mass eigenstates by mixing the neutral weak-isospin and hypercharge fields.
+  citations:
+  - wp-physics-electroweak_symmetry_breaking
+  - nlab-physics-electroweak_symmetry_breaking
+  - cern-higgs-origins
+  - pdg-standard-model
+  - wp-physics-electroweak_mixing
+  - tong-particle
+- id: higgsmechanism_to_ewsb
+  source: higgs_mechanism
+  target: electroweak_symmetry_breaking
+  type: describes-governs
+  label: realizes broken electroweak phase
+  detail: The Brout–Englert–Higgs mechanism realizes electroweak symmetry breaking and gives longitudinal modes and masses to $W^\pm$ and $Z$; charged-fermion masses require separate Yukawa couplings.
+  citations:
+  - wp-physics-higgs_mechanism
+  - nlab-physics-higgs_mechanism
+  - wp-physics-electroweak_symmetry_breaking
+  - nlab-physics-electroweak_symmetry_breaking
+- id: ewsb_to_wfield
+  source: electroweak_symmetry_breaking
+  target: w_field
+  type: canonical-construction
+  label: massive charged combinations
+  detail: The charged weak gauge combinations acquire mass through the Higgs mechanism.
+  citations:
+  - wp-physics-w_boson
+  - pdg-standard-model
+  - wp-physics-electroweak_symmetry_breaking
+  - nlab-physics-electroweak_symmetry_breaking
+- id: ew_to_ewsb
+  source: electroweak_symmetry_breaking
+  target: electroweak_theory
+  type: theory-component
+  label: broken vacuum phase
+  detail: The observed electroweak theory is realized in the Higgs-broken vacuum phase.
+  citations:
+  - wp-physics-electroweak_symmetry_breaking
+  - wp-physics-electroweak_theory
+- id: ew_to_fermi
+  source: electroweak_theory
+  target: fermi_theory
+  type: effective-theory
+  label: integrate out $W$ boson
+  detail: At momentum transfer much smaller than $m_W$, charged-current weak exchange is approximated by local four-fermion operators.
+  citations:
+  - wp-physics-fermi_theory
+  - nlab-physics-fermi_theory
+  - wp-physics-electroweak_theory
+  - nlab-physics-electroweak_theory
+- id: ew_to_hyperfield
+  source: hypercharge_field
+  target: electroweak_theory
+  type: theory-component
+  label: hypercharge gauge field
+  detail: The $U(1)_Y$ hypercharge field is an electroweak gauge-field component before symmetry breaking.
+  citations:
+  - wp-physics-hypercharge_field
+  - wp-physics-electroweak_theory
+- id: electroweak_to_photon
+  source: electroweak_theory
+  target: photon
+  type: describes-governs
+  label: massless electromagnetic gauge boson
+  detail: Electroweak mixing leaves the photon massless as the gauge boson of unbroken electromagnetism.
+  citations:
+  - pdg-standard-model
+  - cern-higgs
+  - wp-physics-photon
+  - nlab-physics-photon
+  - wp-physics-electroweak_theory
+- id: electroweak_to_sm
+  source: electroweak_theory
+  target: standard_model
+  type: theory-component
+  label: electroweak sector
+  detail: Electroweak theory supplies the $SU(2)_L \times U(1)_Y$ sector of the Standard Model.
+  citations:
+  - pdg-standard-model
+  - cern-standard-model
+  - wp-physics-standard_model
+  - nlab-physics-standard_model
+  - wp-physics-electroweak_theory
+- id: electroweak_to_w
+  source: electroweak_theory
+  target: w_boson
+  type: describes-governs
+  label: massive charged gauge bosons
+  detail: Electroweak symmetry breaking produces massive $W^+$ and $W^-$ bosons.
+  citations:
+  - pdg-standard-model
+  - cern-higgs
+  - wp-physics-w_boson
+  - wp-physics-electroweak_theory
+  - nlab-physics-electroweak_theory
+- id: electroweak_to_weak
+  source: electroweak_theory
+  target: weak_interaction
+  type: describes-governs
+  label: weak sector
+  detail: The broken electroweak theory describes charged- and neutral-current weak interactions.
+  citations:
+  - pdg-standard-model
+  - cern-standard-model
+  - wp-physics-weak_interaction
+  - wp-physics-electroweak_theory
+  - nlab-physics-electroweak_theory
+- id: ew_to_weakfield
+  source: weak_isospin_field
+  target: electroweak_theory
+  type: theory-component
+  label: weak-isospin gauge fields
+  detail: The three $SU(2)_L$ gauge fields are electroweak theory components.
+  citations:
+  - wp-physics-weak_interaction
+  - wp-physics-electroweak_theory
+- id: electroweak_to_z
+  source: electroweak_theory
+  target: z_boson
+  type: describes-governs
+  label: massive neutral gauge boson
+  detail: Electroweak symmetry breaking produces the massive $Z$ boson.
+  citations:
+  - pdg-standard-model
+  - cern-higgs
+  - wp-physics-w_boson
+  - wp-physics-electroweak_theory
+  - nlab-physics-electroweak_theory
+- id: fermi_to_beta
+  source: fermi_theory
+  target: beta_decay
+  type: describes-governs
+  label: low-energy beta-decay dynamics
+  detail: Fermi theory gives the leading local weak description of beta decay below the $W$ scale.
+  citations:
+  - wp-physics-beta_decay
+  - iaea-ensdf
+  - wp-physics-fermi_theory
+  - nlab-physics-fermi_theory
+- id: fermi_to_fourfermion
+  source: four_fermion_interaction
+  target: fermi_theory
+  type: theory-component
+  label: contact operator
+  detail: Fermi theory is built from local four-fermion charged-current operators.
+  citations:
+  - wp-physics-four_fermion_interaction
+  - wp-physics-fermi_theory
+- id: fermionfield_to_left
+  source: fermion_matter_field
+  target: left_handed_fermion
+  type: classification
+  label: left-handed chiral fields
+  detail: Left-handed quarks and leptons transform in weak doublets.
+  citations:
+  - wp-physics-chirality
+  - pdg-standard-model
+  - wp-physics-fermionic_field
+- id: fermionfield_to_leptonfield
+  source: fermion_matter_field
+  target: lepton_field
+  type: classification
+  label: lepton matter field
+  detail: Lepton fields are color-singlet Standard Model fermion fields.
+  citations:
+  - wp-physics-lepton
+  - pdg-standard-model
+  - wp-physics-fermionic_field
+- id: fermionfield_to_quarkfield
+  source: fermion_matter_field
+  target: quark_field
+  type: classification
+  label: quark matter field
+  detail: Quark fields are color-charged Standard Model fermion fields.
+  citations:
+  - wp-physics-quark
+  - pdg-qcd
+  - wp-physics-fermionic_field
+  - pdg-standard-model
+- id: fermionfield_to_right
+  source: fermion_matter_field
+  target: right_handed_fermion
+  type: classification
+  label: right-handed chiral fields
+  detail: Charged right-handed fermion fields are weak singlets in the minimal Standard Model.
+  citations:
+  - wp-physics-chirality
+  - pdg-standard-model
+  - wp-physics-fermionic_field
+- id: fermionfield_to_smlag
+  source: fermion_matter_field
+  target: standard_model_lagrangian
+  type: theory-component
+  label: chiral matter kinetic terms
+  detail: The Standard Model Lagrangian contains three generations of chiral fermion fields.
+  citations:
+  - wp-physics-fermionic_field
+  - pdg-standard-model
+  - wp-physics-standard_model_gauge_group
+  - nlab-physics-standard_model_lagrangian
+- id: gaugefield_to_bosonic
+  source: bosonic_field
+  target: gauge_field
+  type: classification
+  label: bosonic gauge field
+  detail: Physical integer-spin gauge fields obey bosonic statistics under the spin–statistics assumptions; Faddeev–Popov ghosts are auxiliary scalar anticommuting fields rather than physical gauge-boson states.
+  citations:
+  - wp-physics-gauge_field_theory
+  - nlab-physics-gauge_field
+  - tong-qft
+  - tong-gauge
+- id: gauge_theory_to_abelian
+  source: gauge_field_theory
+  target: abelian_gauge_theory
+  type: framework-specialization
+  label: Abelian gauge theory
+  detail: Abelian gauge theories use commuting gauge groups.
+  citations:
+  - wp-physics-abelian_gauge_theory
+  - nlab-physics-abelian_gauge_theory
+  - wp-physics-gauge_field_theory
+  - nlab-physics-gauge_field_theory
+- id: gauge_to_electroweak
+  source: gauge_field_theory
+  target: electroweak_theory
+  type: framework-specialization
+  label: electroweak gauge theory
+  detail: Electroweak theory is a chiral $SU(2)_L \times U(1)_Y$ gauge theory.
+  citations:
+  - pdg-standard-model
+  - wp-physics-electroweak_theory
+  - nlab-physics-electroweak_theory
+  - wp-physics-gauge_field_theory
+  - nlab-physics-gauge_field_theory
+- id: gauge_theory_to_nonabelian
+  source: gauge_field_theory
+  target: nonabelian_gauge_theory
+  type: framework-specialization
+  label: non-Abelian gauge theory
+  detail: Non-Abelian gauge theories use noncommutative gauge groups.
+  citations:
+  - wp-physics-yang_mills_theory
+  - nlab-physics-nonabelian_gauge_theory
+  - wp-physics-gauge_field_theory
+  - nlab-physics-gauge_field_theory
+- id: gauge_to_qcd
+  source: gauge_field_theory
+  target: quantum_chromodynamics
+  type: framework-specialization
+  label: $SU(3)$ gauge theory
+  detail: QCD is a non-Abelian gauge field theory with color gauge group $SU(3)_C$.
+  citations:
+  - pdg-qcd
+  - wp-physics-quantum_chromodynamics
+  - nlab-physics-quantum_chromodynamics
+  - wp-physics-gauge_field_theory
+  - nlab-physics-gauge_field_theory
+- id: gauge_to_qed
+  source: gauge_field_theory
+  target: quantum_electrodynamics
+  type: framework-specialization
+  label: $U(1)$ gauge theory
+  detail: QED is an Abelian gauge field theory of electromagnetic interactions.
+  citations:
+  - cern-qft-intro
+  - wp-physics-quantum_electrodynamics
+  - nlab-physics-quantum_electrodynamics
+  - wp-physics-gauge_field_theory
+  - nlab-physics-gauge_field_theory
+- id: gauge_theory_to_yangmills
+  source: gauge_field_theory
+  target: yang_mills_theory
+  type: framework-specialization
+  label: non-Abelian gauge dynamics
+  detail: Yang–Mills theory is the standard non-Abelian gauge-field dynamics.
+  citations:
+  - wp-physics-yang_mills_theory
+  - nlab-physics-yang_mills_theory
+  - wp-physics-gauge_field_theory
+  - nlab-physics-gauge_field_theory
+- id: fixing_to_brst
+  source: gauge_fixing
+  target: brst_symmetry
+  type: canonical-construction
+  label: BRST structure
+  detail: BRST symmetry encodes residual gauge consistency of the gauge-fixed theory.
+  citations:
+  - wp-physics-brst_symmetry
+  - nlab-physics-brst_symmetry
+  - wp-physics-gauge_fixing
+  - nlab-physics-gauge_fixing
+- id: fixing_to_ghost
+  source: gauge_fixing
+  target: faddeev_popov_ghost
+  type: canonical-construction
+  label: functional determinant
+  detail: Faddeev–Popov ghosts represent the gauge-fixing determinant in covariant non-Abelian perturbation theory.
+  citations:
+  - wp-physics-faddeev_popov_ghost
+  - nlab-physics-faddeev_popov_ghost
+  - wp-physics-gauge_fixing
+  - nlab-physics-gauge_fixing
+- id: gaugeinteraction_to_smlag
+  source: gauge_interaction
+  target: standard_model_lagrangian
+  type: theory-component
+  label: covariant-derivative interactions
+  detail: Gauge interactions and field-strength terms are core Standard Model components.
+  citations:
+  - wp-physics-gauge_field_theory
+  - tong-gauge
+  - wp-physics-standard_model_gauge_group
+  - nlab-physics-standard_model_lagrangian
+- id: gauge_to_fixing
+  source: gauge_symmetry
+  target: gauge_fixing
+  type: transformation-process
+  label: choose gauge representative
+  detail: Gauge fixing selects representatives or conditions to remove redundant gauge descriptions sufficiently for a chosen quantization or calculation.
+  citations:
+  - wp-physics-gauge_fixing
+  - nlab-physics-gauge_fixing
+- id: gauge_sym_to_local
+  source: gauge_symmetry
+  target: local_gauge_symmetry
+  type: framework-specialization
+  label: spacetime-dependent redundancy
+  detail: Local gauge transformations depend on spacetime position.
+  citations:
+  - wp-physics-gauge_field_theory
+  - nlab-physics-gauge_symmetry
+  - wp-physics-gauge_symmetry
+- id: global_sym_to_noether
+  source: global_symmetry
+  target: noether_theorem
+  type: theorem-implication
+  label: continuous symmetry current
+  detail: Continuous global action symmetries yield Noether currents on shell.
+  citations:
+  - wp-physics-noether_theorem
+  - nlab-physics-noether_theorem
+  - wp-physics-global_symmetry
+  - nlab-physics-global_symmetry
+- id: gluonfield_to_gluon
+  source: gluon_field
+  target: gluon
+  type: composition
+  label: gluon quanta
+  detail: Gluons are the gauge-field quanta in perturbative and asymptotic descriptions; isolated gluons are confined.
+  citations:
+  - wp-physics-gluon
+  - nlab-physics-gluon
+  - wp-physics-gluon_field
+  - pdg-qcd
+- id: gluonfield_to_self
+  source: gluon_field
+  target: gluon_self_interaction
+  type: couples-interacts
+  label: non-Abelian self-coupling
+  detail: The gluon field self-interacts because the color gauge group is non-Abelian.
+  citations:
+  - wp-physics-gluon_field
+  - pdg-qcd
+  - tong-gauge
+  - wp-physics-gluon
+- id: gluonfield_to_hadron
+  source: gluon_field
+  target: hadron
+  type: composition
+  label: gluon-field degrees of freedom
+  detail: Hadron states contain dynamical gluon fields that contribute substantially to structure and mass.
+  citations:
+  - wp-physics-hadron
+  - nlab-physics-hadron
+  - wp-physics-gluon_field
+  - pdg-qcd
+- id: gluon_to_neutron_field
+  source: gluon_field
+  target: neutron
+  type: composition
+  label: gluon contribution
+  detail: Gluon fields contribute to neutron structure and mass.
+  citations:
+  - wp-physics-neutron
+  - pdg-quark-model
+  - wp-physics-gluon_field
+  - pdg-qcd
+- id: gluon_to_proton_field
+  source: gluon_field
+  target: proton
+  type: composition
+  label: gluon contribution
+  detail: Gluon fields contribute to proton momentum, interactions, and mass.
+  citations:
+  - wp-physics-proton
+  - pdg-quark-model
+  - wp-physics-gluon_field
+  - pdg-qcd
+- id: gluonfield_to_quarkgluon
+  source: gluon_field
+  target: quark_gluon_interaction
+  type: couples-interacts
+  label: color gauge coupling
+  detail: The gluon field couples to quark color current.
+  citations:
+  - wp-physics-gluon_field
+  - pdg-qcd
+  - tong-gauge
+  - wp-physics-quantum_chromodynamics
+  - nlab-physics-quantum_chromodynamics
+- id: gluon_couples_strong
+  source: gluon_field
+  target: strong_interaction
+  type: describes-governs
+  label: color interaction
+  detail: The gluon field and its coupling to color currents define the QCD strong interaction.
+  citations:
+  - wp-physics-quantum_chromodynamics
+  - nlab-physics-quantum_chromodynamics
+  - wp-physics-strong_interaction
+  - pdg-qcd
+  - wp-physics-gluon_field
+- id: higgsdoublet_to_higgsfield
+  source: higgs_doublet
+  target: higgs_field
+  type: state-description
+  label: physical scalar after symmetry breaking
+  detail: After expansion about the electroweak vacuum and gauge fixing, three doublet degrees of freedom supply longitudinal $W^\pm$ and $Z$ modes and one physical scalar field remains.
+  citations:
+  - wp-physics-higgs_field
+  - nlab-physics-higgs_field
+  - wp-physics-higgs_mechanism
+- id: higgsdoublet_to_vev
+  source: higgs_doublet
+  target: higgs_vacuum_expectation_value
+  type: state-description
+  label: nonzero vacuum value
+  detail: The Higgs doublet’s neutral component has a nonzero vacuum expectation value.
+  citations:
+  - wp-physics-higgs_mechanism
+  - pdg-standard-model
+  - nlab-physics-higgs_field
+- id: higgsdoublet_to_smlag
+  source: higgs_doublet
+  target: standard_model_lagrangian
+  type: theory-component
+  label: Higgs kinetic and potential terms
+  detail: The Higgs doublet and its potential are Standard Model components.
+  citations:
+  - wp-physics-higgs_mechanism
+  - nlab-physics-higgs_field
+  - wp-physics-standard_model_gauge_group
+  - nlab-physics-standard_model_lagrangian
+- id: higgsfield_to_higgsboson_precise
+  source: higgs_field
+  target: higgs_boson
+  type: composition
+  label: physical scalar excitation
+  detail: The Higgs boson is the observed scalar excitation about the Higgs vacuum.
+  citations:
+  - wp-physics-higgs_boson
+  - cern-higgs-overview
+  - wp-physics-higgs_field
+  - nlab-physics-higgs_field
+- id: higgs_mechanism_to_sm
+  source: higgs_mechanism
+  target: standard_model
+  type: theory-component
+  label: symmetry-breaking sector
+  detail: The Higgs mechanism is part of the Standard Model electroweak sector.
+  citations:
+  - cern-higgs
+  - pdg-standard-model
+  - wp-physics-standard_model
+  - nlab-physics-standard_model
+  - wp-physics-higgs_mechanism
+- id: vev_to_ewsb
+  source: higgs_vacuum_expectation_value
+  target: electroweak_symmetry_breaking
+  type: theory-component
+  label: electroweak order parameter
+  detail: The Higgs vacuum selects the electromagnetic subgroup.
+  citations:
+  - wp-physics-electroweak_symmetry_breaking
+  - nlab-physics-electroweak_symmetry_breaking
+  - wp-physics-higgs_mechanism
+  - pdg-standard-model
+- id: ldoublet_to_leptonfield
+  source: left_handed_lepton_doublet
+  target: lepton_field
+  type: theory-component
+  label: left-handed lepton components
+  detail: The lepton field content includes left-handed weak doublets.
+  citations:
+  - wp-physics-standard_model_chiral_multiplet
+  - pdg-standard-model
+  - tong-particle
+  - wp-physics-lepton
+  - pdg-2026-neutrino
+- id: qdoublet_to_quarkfield
+  source: left_handed_quark_doublet
+  target: quark_field
+  type: theory-component
+  label: left-handed quark components
+  detail: The quark field content includes left-handed weak doublets.
+  citations:
+  - wp-physics-standard_model_chiral_multiplet
+  - pdg-standard-model
+  - tong-particle
+  - wp-physics-quark
+  - pdg-qcd
+- id: locality_to_micro
+  source: locality_principle
+  target: microcausality
+  type: framework-specialization
+  label: spacelike commutativity
+  detail: Microcausality is the operator-algebraic locality condition at spacelike separation.
+  citations:
+  - wp-physics-microcausality
+  - nlab-physics-microcausality
+  - wp-physics-locality_principle
+  - nlab-physics-locality_principle
+- id: locality_to_qft
+  source: locality_principle
+  target: quantum_field_theory
+  type: theory-component
+  label: local causal structure
+  detail: Local relativistic QFT imposes locality or causal commutativity in an appropriate formulation.
+  citations:
+  - wp-physics-locality_principle
+  - nlab-physics-locality_principle
+  - wp-physics-quantum_field_theory
+  - nlab-physics-quantum_field_theory
+- id: lowqcd_to_hadron
+  source: low_energy_qcd
+  target: hadron
+  type: emergence
+  label: confined bound states
+  detail: Hadrons are the observable composite excitations of low-energy confined QCD.
+  citations:
+  - wp-physics-hadron
+  - nlab-physics-hadron
+  - wp-physics-quantum_chromodynamics
+  - pdg-qcd
+- id: current_to_charge
+  source: noether_current
+  target: conserved_charge
+  type: canonical-construction
+  label: spatial integral
+  detail: A conserved charge is obtained by integrating the current over a Cauchy surface under suitable boundary conditions.
+  citations:
+  - wp-physics-conserved_charge
+  - nlab-physics-conserved_charge
+  - wp-physics-noether_current
+  - nlab-physics-noether_current
+- id: noether_to_current
+  source: noether_theorem
+  target: noether_current
+  type: canonical-construction
+  label: Noether current
+  detail: The theorem constructs a current, subject to improvement ambiguities.
+  citations:
+  - wp-physics-noether_current
+  - nlab-physics-noether_current
+  - wp-physics-noether_theorem
+  - nlab-physics-noether_theorem
+- id: nonabelian_to_yangmills
+  source: nonabelian_gauge_theory
+  target: yang_mills_theory
+  type: framework-specialization
+  label: Yang–Mills action
+  detail: Yang–Mills theory supplies the canonical renormalizable kinetic dynamics for non-Abelian gauge fields.
+  citations:
+  - wp-physics-yang_mills_theory
+  - nlab-physics-yang_mills_theory
+  - nlab-physics-nonabelian_gauge_theory
+- id: path_quant_to_qft
+  source: path_integral_quantization
+  target: quantum_field_theory
+  type: theory-component
+  label: functional-integral construction
+  detail: Path-integral quantization is one major QFT formulation.
+  citations:
+  - wp-physics-path_integral_quantization
+  - nlab-physics-path_integral_quantization
+  - wp-physics-quantum_field_theory
+  - nlab-physics-quantum_field_theory
+- id: pertqft_to_feynman
+  source: perturbative_qft
+  target: feynman_diagram
+  type: state-description
+  label: diagram expansion
+  detail: Feynman diagrams index perturbative terms.
+  citations:
+  - wp-physics-feynman_diagram
+  - nlab-physics-feynman_diagram
+  - wp-physics-quantum_perturbation_theory
+  - nlab-physics-perturbative_qft
+- id: pertqft_to_amplitude
+  source: perturbative_qft
+  target: scattering_amplitude
+  type: describes-governs
+  label: perturbative amplitudes
+  detail: Perturbation theory computes scattering amplitudes order by order.
+  citations:
+  - wp-physics-scattering_amplitude
+  - nlab-physics-scattering_amplitude
+  - wp-physics-quantum_perturbation_theory
+  - nlab-physics-perturbative_qft
+- id: photon_couples_em
+  source: photon_field
+  target: electromagnetic_interaction
+  type: describes-governs
+  label: quantized electromagnetic interaction
+  detail: The photon field is the quantum gauge field of electromagnetism; perturbative internal photon propagators organize interactions but are not classical constituents.
+  citations:
+  - wp-physics-quantum_electrodynamics
+  - nlab-physics-quantum_electrodynamics
+  - wp-physics-electromagnetic_interaction
+  - tong-em
+  - wp-physics-electromagnetic_field
+- id: photonfield_to_photon
+  source: photon_field
+  target: photon
+  type: composition
+  label: photon quantum
+  detail: The photon is the quantum excitation of the electromagnetic gauge field.
+  citations:
+  - wp-physics-photon
+  - nlab-physics-photon
+  - wp-physics-electromagnetic_field
+  - pdg-standard-model
+- id: photonfield_to_photonfermion
+  source: photon_field
+  target: photon_fermion_interaction
+  type: couples-interacts
+  label: photon gauge field coupling
+  detail: The photon field couples to electric current.
+  citations:
+  - wp-physics-electromagnetic_field
+  - pdg-standard-model
+  - tong-particle
+  - wp-physics-quantum_electrodynamics
+  - nlab-physics-quantum_electrodynamics
+  - tong-qft
+  - nobel-qed
+- id: photonfield_to_spontaneous
+  source: photon_field
+  target: spontaneous_emission
+  type: couples-interacts
+  label: vacuum electromagnetic modes
+  detail: Spontaneous emission requires the quantized electromagnetic field; a purely classical field does not produce vacuum spontaneous emission.
+  citations:
+  - wp-physics-spontaneous_emission
+  - nist-atomic-spectroscopy
+  - wp-physics-electromagnetic_field
+  - pdg-standard-model
+- id: qcd_to_asymptotic
+  source: quantum_chromodynamics
+  target: asymptotic_freedom
+  type: describes-governs
+  label: ultraviolet running
+  detail: The renormalization-group flow of QCD produces asymptotic freedom at high momentum transfer.
+  citations:
+  - wp-physics-asymptotic_freedom
+  - nlab-physics-asymptotic_freedom
+  - wp-physics-quantum_chromodynamics
+  - nlab-physics-quantum_chromodynamics
+- id: qcd_to_chiral
+  source: quantum_chromodynamics
+  target: chiral_perturbation_theory
+  type: effective-theory
+  label: low-energy pion expansion
+  detail: Chiral perturbation theory is the low-energy EFT of QCD’s approximate chiral symmetry and its breaking.
+  citations:
+  - wp-physics-chiral_perturbation_theory
+  - nlab-physics-chiral_perturbation_theory
+  - wp-physics-quantum_chromodynamics
+  - nlab-physics-quantum_chromodynamics
+- id: qcd_to_confinement
+  source: quantum_chromodynamics
+  target: color_confinement
+  type: emergence
+  label: nonperturbative confined phase
+  detail: Confinement is a nonperturbative property of low-energy QCD, supported by experiment and lattice calculations, though no general continuum proof exists for physical QCD.
+  citations:
+  - wp-physics-color_confinement
+  - nlab-physics-color_confinement
+  - wp-physics-quantum_chromodynamics
+  - nlab-physics-quantum_chromodynamics
+- id: qcd_to_constituent_model
+  source: quantum_chromodynamics
+  target: constituent_quark_model
+  type: model-realization
+  label: dressed-quark hadron model
+  detail: The constituent-quark model is a phenomenological low-energy model of selected hadron properties, not a controlled universal reduction of QCD.
+  citations:
+  - wp-physics-constituent_quark_model
+  - nlab-physics-constituent_quark_model
+  - wp-physics-quantum_chromodynamics
+  - nlab-physics-quantum_chromodynamics
+- id: qcd_to_gluon
+  source: quantum_chromodynamics
+  target: gluon
+  type: describes-governs
+  label: gluon fields
+  detail: QCD describes self-interacting gluon gauge fields.
+  citations:
+  - pdg-qcd
+  - wp-physics-gluon
+  - nlab-physics-gluon
+  - wp-physics-quantum_chromodynamics
+  - nlab-physics-quantum_chromodynamics
+- id: qcd_to_gluonfield
+  source: gluon_field
+  target: quantum_chromodynamics
+  type: theory-component
+  label: gluon field
+  detail: The $SU(3)_C$ gluon connection is a QCD field component.
+  citations:
+  - wp-physics-gluon_field
+  - wp-physics-quantum_chromodynamics
+- id: qcd_to_gluonself
+  source: gluon_self_interaction
+  target: quantum_chromodynamics
+  type: theory-component
+  label: gauge self-interaction
+  detail: Three- and four-gluon vertices are QCD interaction components.
+  citations:
+  - wp-physics-gluon
+  - wp-physics-quantum_chromodynamics
+- id: qcd_to_hadronization
+  source: quantum_chromodynamics
+  target: hadronization
+  type: describes-governs
+  label: colored-to-hadronic conversion
+  detail: Hadronization is a nonperturbative QCD process modeled phenomenologically in event generators.
+  citations:
+  - wp-physics-hadronization
+  - nlab-physics-hadronization
+  - wp-physics-quantum_chromodynamics
+  - nlab-physics-quantum_chromodynamics
+- id: qcd_to_lattice
+  source: quantum_chromodynamics
+  target: lattice_qcd
+  type: model-realization
+  label: regulated nonperturbative formulation
+  detail: Lattice QCD is a gauge-invariant regulator and nonperturbative computational formulation. Finite lattice spacing, finite volume, and unphysical parameter choices introduce controlled errors that are extrapolated away.
+  citations:
+  - wp-physics-lattice_qcd
+  - nlab-physics-lattice_qcd
+  - wp-physics-quantum_chromodynamics
+  - nlab-physics-quantum_chromodynamics
+- id: qcd_to_lowenergy
+  source: quantum_chromodynamics
+  target: low_energy_qcd
+  type: framework-specialization
+  label: strongly coupled regime
+  detail: Low-energy QCD is the confined, nonperturbative regime of the theory.
+  citations:
+  - wp-physics-quantum_chromodynamics
+  - pdg-qcd
+  - nlab-physics-quantum_chromodynamics
+- id: qcd_to_nucleareft
+  source: quantum_chromodynamics
+  target: nuclear_effective_field_theory
+  type: effective-theory
+  label: low-energy nucleon/pion degrees of freedom
+  detail: Nuclear EFT matches QCD symmetries and low-energy constants using nucleons and pions or pionless degrees of freedom.
+  citations:
+  - wp-physics-nuclear_effective_field_theory
+  - nlab-physics-nuclear_effective_field_theory
+  - wp-physics-quantum_chromodynamics
+  - nlab-physics-quantum_chromodynamics
+- id: qcd_to_quark
+  source: quantum_chromodynamics
+  target: quark
+  type: describes-governs
+  label: quark fields
+  detail: QCD describes color-charged quark fields.
+  citations:
+  - pdg-qcd
+  - wp-physics-quark
+  - nlab-physics-quark
+  - wp-physics-quantum_chromodynamics
+  - nlab-physics-quantum_chromodynamics
+- id: qcd_to_quarkfield
+  source: quark_field
+  target: quantum_chromodynamics
+  type: theory-component
+  label: quark matter fields
+  detail: Color-triplet quark fields are QCD matter components.
+  citations:
+  - wp-physics-quark
+  - wp-physics-quantum_chromodynamics
+- id: qcd_to_quarkgluon
+  source: quark_gluon_interaction
+  target: quantum_chromodynamics
+  type: theory-component
+  label: quark–gluon coupling
+  detail: The covariant-derivative quark–gluon coupling is a QCD interaction component.
+  citations:
+  - wp-physics-quantum_chromodynamics
+- id: qcd_to_residual
+  source: quantum_chromodynamics
+  target: residual_strong_interaction
+  type: emergence
+  label: color-singlet residual interaction
+  detail: Interactions between color-singlet hadrons emerge from low-energy QCD. At nuclear scales they are represented systematically by hadronic and nuclear effective field theories.
+  citations:
+  - wp-physics-residual_strong_interaction
+  - nlab-physics-residual_strong_interaction
+  - wp-physics-quantum_chromodynamics
+  - nlab-physics-quantum_chromodynamics
+- id: qcd_to_sm
+  source: quantum_chromodynamics
+  target: standard_model
+  type: theory-component
+  label: strong sector
+  detail: QCD supplies the $SU(3)_C$ strong-interaction sector of the Standard Model.
+  citations:
+  - pdg-qcd
+  - cern-standard-model
+  - wp-physics-standard_model
+  - nlab-physics-standard_model
+  - wp-physics-quantum_chromodynamics
+- id: qcd_to_strong
+  source: quantum_chromodynamics
+  target: strong_interaction
+  type: describes-governs
+  label: color interaction
+  detail: QCD is the fundamental theory of the strong interaction.
+  citations:
+  - pdg-qcd
+  - wp-physics-strong_interaction
+  - wp-physics-quantum_chromodynamics
+  - nlab-physics-quantum_chromodynamics
+- id: qed_to_atomic_h
+  source: quantum_electrodynamics
+  target: atomic_hamiltonian
+  type: effective-theory
+  label: bound-state low-energy Hamiltonian
+  detail: Atomic Hamiltonians are low-energy bound-state descriptions matched to QED, with nuclear structure and weak/gravitational effects added when relevant.
+  citations:
+  - wp-physics-atomic_hamiltonian
+  - nlab-physics-atomic_hamiltonian
+  - wp-physics-quantum_electrodynamics
+  - nlab-physics-quantum_electrodynamics
+- id: qed_to_atomicqed
+  source: quantum_electrodynamics
+  target: atomic_qed_corrections
+  type: mathematical-limit
+  label: bound-state perturbative corrections
+  detail: Atomic QED computes radiative corrections in expansions adapted to bound states, with nonperturbative-in-$Z\alpha$ methods for high $Z$.
+  citations:
+  - wp-physics-quantum_electrodynamics
+  - nist-hydrogen
+  - nlab-physics-quantum_electrodynamics
+- id: qed_to_breit
+  source: quantum_electrodynamics
+  target: breit_interaction
+  type: mathematical-limit
+  label: one-transverse-photon correction
+  detail: The Breit operator is a leading low-frequency, one-transverse-photon relativistic correction to instantaneous Coulomb interaction, not the full QED interaction.
+  citations:
+  - wp-physics-breit_interaction
+  - nist-atomic-spectroscopy
+- id: qed_to_classical_em
+  source: quantum_electrodynamics
+  target: classical_electromagnetism
+  type: mathematical-limit
+  label: classical coherent-field limit
+  detail: Maxwell electrodynamics is recovered for suitable coherent states, weak quantum fluctuations, and classical sources; radiative quantum corrections are neglected.
+  citations:
+  - wp-physics-classical_electromagnetism
+  - nlab-physics-classical_electromagnetism
+  - wp-physics-quantum_electrodynamics
+  - nlab-physics-quantum_electrodynamics
+- id: qed_to_coulomb
+  source: quantum_electrodynamics
+  target: coulomb_potential
+  type: effective-theory
+  label: static nonrelativistic one-photon sector
+  detail: The Coulomb potential is the leading low-energy static interaction obtained from QED between charged sources.
+  citations:
+  - wp-physics-coulomb_potential
+  - tong-em
+  - wp-physics-quantum_electrodynamics
+  - nlab-physics-quantum_electrodynamics
+- id: qed_to_diraccoulomb
+  source: quantum_electrodynamics
+  target: dirac_coulomb_hamiltonian
+  type: effective-theory
+  label: no-pair relativistic bound-state Hamiltonian
+  detail: The Dirac–Coulomb Hamiltonian is an effective bound-state reduction of QED and is not the full field theory.
+  citations:
+  - wp-physics-relativistic_atomic_structure
+  - nist-atomic-spectroscopy
+  - wp-physics-quantum_electrodynamics
+  - nlab-physics-quantum_electrodynamics
+- id: qed_to_em
+  source: quantum_electrodynamics
+  target: electromagnetic_interaction
+  type: describes-governs
+  label: quantum electromagnetism
+  detail: QED describes electromagnetic interactions of charged quantum fields and photons.
+  citations:
+  - cern-qft-intro
+  - cern-standard-model
+  - wp-physics-electromagnetic_interaction
+  - tong-em
+  - wp-physics-quantum_electrodynamics
+- id: qed_to_electron
+  source: quantum_electrodynamics
+  target: electron
+  type: describes-governs
+  label: charged lepton field
+  detail: QED describes electron and positron fields interacting with the electromagnetic field.
+  citations:
+  - cern-qft-intro
+  - wp-physics-electron
+  - nlab-physics-electron
+  - wp-physics-quantum_electrodynamics
+  - nlab-physics-quantum_electrodynamics
+- id: qed_to_nrqed
+  source: quantum_electrodynamics
+  target: nonrelativistic_qed
+  type: effective-theory
+  label: low-velocity charged-particle EFT
+  detail: NRQED integrates out relativistic modes and expands in $v/c$, momentum over mass, and $\alpha$.
+  citations:
+  - wp-physics-nonrelativistic_qed
+  - burgess-eft
+  - wp-physics-quantum_electrodynamics
+  - nlab-physics-quantum_electrodynamics
+- id: qed_to_photon
+  source: quantum_electrodynamics
+  target: photon
+  type: describes-governs
+  label: photon field
+  detail: The photon is the gauge quantum of QED.
+  citations:
+  - cern-qft-intro
+  - wp-physics-photon
+  - nlab-physics-photon
+  - wp-physics-quantum_electrodynamics
+  - nlab-physics-quantum_electrodynamics
+- id: qed_to_photonfermion
+  source: photon_fermion_interaction
+  target: quantum_electrodynamics
+  type: theory-component
+  label: electromagnetic-current vertex
+  detail: The photon coupling to the conserved electric current of charged fermion fields is the basic QED interaction term.
+  citations:
+  - wp-physics-quantum_electrodynamics
+  - tong-qft
+  - nobel-qed
+- id: qed_to_photonfield
+  source: photon_field
+  target: quantum_electrodynamics
+  type: theory-component
+  label: photon gauge field
+  detail: The photon field is the gauge-field component of QED.
+  citations:
+  - wp-physics-electromagnetic_field
+  - wp-physics-quantum_electrodynamics
+- id: quantum_field_to_gaugefield
+  source: quantum_field
+  target: gauge_field
+  type: classification
+  label: gauge connection field
+  detail: Gauge fields implement local gauge structure.
+  citations:
+  - wp-physics-gauge_field_theory
+  - nlab-physics-gauge_field
+  - wp-physics-quantum_field_theory
+  - nlab-physics-quantum_field
+- id: quantum_field_to_higgs_field
+  source: quantum_field
+  target: higgs_field
+  type: classification
+  label: scalar quantum field
+  detail: The Higgs field is a scalar quantum field.
+  citations:
+  - cern-higgs
+  - wp-physics-higgs_field
+  - nlab-physics-higgs_field
+  - wp-physics-quantum_field_theory
+  - nlab-physics-quantum_field
+- id: quantum_field_to_matter
+  source: quantum_field
+  target: matter_field
+  type: classification
+  label: matter field
+  detail: Matter fields are quantum fields representing material degrees of freedom rather than gauge connections. They often carry nontrivial gauge representations, but gauge-singlet matter fields are possible.
+  citations:
+  - wp-physics-matter_field
+  - nlab-physics-matter_field
+  - wp-physics-quantum_field_theory
+  - nlab-physics-quantum_field
+- id: quantum_field_to_scalar
+  source: quantum_field
+  target: scalar_field
+  type: classification
+  label: scalar field
+  detail: A scalar field transforms in the trivial finite-dimensional representation of the Lorentz group under Lorentz transformations.
+  citations:
+  - wp-physics-scalar_field
+  - nlab-physics-scalar_field
+  - wp-physics-quantum_field_theory
+  - nlab-physics-quantum_field
+- id: quantum_field_to_spinor
+  source: quantum_field
+  target: spinor_field
+  type: classification
+  label: spinor field
+  detail: Spinor fields transform under spin representations.
+  citations:
+  - wp-physics-spinor_field
+  - nlab-physics-spinor_field
+  - wp-physics-quantum_field_theory
+  - nlab-physics-quantum_field
+- id: quantum_field_to_vector
+  source: quantum_field
+  target: vector_field_physics
+  type: classification
+  label: vector field
+  detail: Vector fields transform in Lorentz-vector representations.
+  citations:
+  - wp-physics-vector_field_physics
+  - nlab-physics-vector_field_physics
+  - wp-physics-quantum_field_theory
+  - nlab-physics-quantum_field
+- id: field_to_particle_state
+  source: quantum_field_operator
+  target: one_particle_state
+  type: composition
+  label: interpolated one-particle state
+  detail: A suitably smeared field acting on the vacuum can have overlap with one-particle states; the relation is theory- and stability-dependent.
+  citations:
+  - wp-physics-one_particle_state
+  - nlab-physics-one_particle_state
+  - wp-physics-quantum_field_theory
+  - nlab-physics-quantum_field
+- id: fieldop_to_ovd
+  source: quantum_field_operator
+  target: operator_valued_distribution
+  type: mathematical-formulation
+  label: distributional definition
+  detail: In rigorous local formulations, a quantum field is represented as an operator-valued distribution that must be smeared with test functions rather than as a pointwise operator.
+  citations:
+  - wp-physics-operator_valued_distribution
+  - nlab-physics-operator_valued_distribution
+  - wp-physics-quantum_field_theory
+  - nlab-physics-quantum_field
+- id: qft_to_antiparticle
+  source: quantum_field_theory
+  target: antiparticle
+  type: describes-governs
+  label: conjugate particle sectors
+  detail: Relativistic QFT naturally includes antiparticle sectors for charged fields.
+  citations:
+  - wp-physics-antiparticle
+  - nlab-physics-antiparticle
+  - wp-physics-quantum_field_theory
+  - nlab-physics-quantum_field_theory
+- id: qft_to_corr
+  source: quantum_field_theory
+  target: correlation_function
+  type: state-description
+  label: correlation functions
+  detail: Correlation functions encode QFT observables and dynamics.
+  citations:
+  - wp-physics-correlation_function
+  - nlab-physics-correlation_function
+  - wp-physics-quantum_field_theory
+  - nlab-physics-quantum_field_theory
+- id: qft_to_eft
+  source: quantum_field_theory
+  target: effective_field_theory
+  type: framework-specialization
+  label: scale-organized QFT
+  detail: Effective field theory is a scale-organized use of QFT with a specified cutoff and degrees of freedom.
+  citations:
+  - wp-physics-effective_field_theory
+  - nlab-physics-effective_field_theory
+  - wp-physics-quantum_field_theory
+  - nlab-physics-quantum_field_theory
+- id: qft_to_free
+  source: quantum_field_theory
+  target: free_quantum_field
+  type: framework-specialization
+  label: quadratic theory
+  detail: Free QFTs have quadratic actions and no interactions.
+  citations:
+  - wp-physics-free_quantum_field
+  - nlab-physics-free_quantum_field
+  - wp-physics-quantum_field_theory
+  - nlab-physics-quantum_field_theory
+- id: qft_to_gauge
+  source: quantum_field_theory
+  target: gauge_field_theory
+  type: framework-specialization
+  label: gauge-invariant QFT
+  detail: The Standard Model interactions are described by relativistic quantum gauge field theories.
+  citations:
+  - cern-qft-intro
+  - cern-standard-model
+  - wp-physics-gauge_field_theory
+  - nlab-physics-gauge_field_theory
+  - wp-physics-quantum_field_theory
+- id: qft_to_interacting
+  source: quantum_field_theory
+  target: interacting_quantum_field
+  type: framework-specialization
+  label: interacting theory
+  detail: Interacting QFTs include nonquadratic couplings.
+  citations:
+  - wp-physics-interacting_quantum_field
+  - nlab-physics-interacting_quantum_field
+  - wp-physics-quantum_field_theory
+  - nlab-physics-quantum_field_theory
+- id: qft_to_multiparticle
+  source: quantum_field_theory
+  target: multiparticle_state
+  type: state-description
+  label: multiparticle sectors
+  detail: QFT supports multiparticle states and variable particle number.
+  citations:
+  - wp-physics-occupation_number_state
+  - nlab-physics-multiparticle_state
+  - wp-physics-quantum_field_theory
+  - nlab-physics-quantum_field_theory
+- id: qft_to_nrqm
+  source: quantum_field_theory
+  target: nonrelativistic_quantum_mechanics
+  type: effective-theory
+  label: low-energy fixed-particle sector
+  detail: Nonrelativistic quantum mechanics emerges as a low-energy effective description of suitable QFT sectors when pair creation and relativistic corrections are suppressed.
+  citations:
+  - wp-physics-quantum_mechanics
+  - nlab-physics-nonrelativistic_quantum_mechanics
+  - wp-physics-quantum_field_theory
+  - nlab-physics-quantum_field_theory
+- id: qft_to_oneparticle
+  source: quantum_field_theory
+  target: one_particle_state
+  type: state-description
+  label: one-particle sector
+  detail: Stable particles correspond to one-particle asymptotic sectors or representations when they exist.
+  citations:
+  - wp-physics-one_particle_state
+  - nlab-physics-one_particle_state
+  - wp-physics-quantum_field_theory
+  - nlab-physics-quantum_field_theory
+- id: qft_to_pertqft
+  source: quantum_field_theory
+  target: perturbative_qft
+  type: model-realization
+  label: coupling / loop expansion
+  detail: Perturbative QFT is a loop or coupling expansion around a solvable theory. It is often asymptotic rather than convergent and is quantitatively useful only in appropriate coupling and kinematic regimes.
+  citations:
+  - wp-physics-quantum_perturbation_theory
+  - nlab-physics-perturbative_qft
+  - wp-physics-quantum_field_theory
+  - nlab-physics-quantum_field_theory
+- id: qft_to_fieldop
+  source: quantum_field_operator
+  target: quantum_field_theory
+  type: theory-component
+  label: local field operator
+  detail: Local field operators are formal ingredients of common QFT formulations.
+  citations:
+  - wp-physics-quantum_field_theory
+- id: qft_to_regularization
+  source: quantum_field_theory
+  target: regularization
+  type: model-realization
+  label: regulated expressions
+  detail: Perturbative and lattice formulations introduce regulators to define intermediate quantities.
+  citations:
+  - wp-physics-regularization
+  - nlab-physics-regularization
+  - wp-physics-quantum_field_theory
+  - nlab-physics-quantum_field_theory
+- id: qft_to_smatrix
+  source: quantum_field_theory
+  target: s_matrix
+  type: state-description
+  label: asymptotic scattering operator
+  detail: QFT defines an $S$-matrix when asymptotic particle states and suitable long-time limits exist.
+  citations:
+  - wp-physics-s_matrix
+  - nlab-physics-s_matrix
+  - wp-physics-quantum_field_theory
+  - nlab-physics-quantum_field_theory
+- id: qft_to_ssb
+  source: quantum_field_theory
+  target: spontaneous_symmetry_breaking
+  type: state-description
+  label: vacuum selection
+  detail: QFT can have vacua that do not preserve all symmetries of the action.
+  citations:
+  - wp-physics-spontaneous_symmetry_breaking
+  - nlab-physics-spontaneous_symmetry_breaking
+  - wp-physics-quantum_field_theory
+  - nlab-physics-quantum_field_theory
+- id: qft_to_vacuum
+  source: quantum_field_theory
+  target: vacuum_state
+  type: state-description
+  label: vacuum state
+  detail: A QFT may have one or more vacuum states relative to its dynamics and spacetime.
+  citations:
+  - wp-physics-vacuum_state
+  - nlab-physics-vacuum_state
+  - wp-physics-quantum_field_theory
+  - nlab-physics-quantum_field_theory
+- id: quarkfield_to_hadron
+  source: quark_field
+  target: hadron
+  type: composition
+  label: quark-field degrees of freedom
+  detail: Hadron states contain quark and antiquark field degrees of freedom, including valence and sea components.
+  citations:
+  - wp-physics-hadron
+  - nlab-physics-hadron
+  - wp-physics-quark
+  - pdg-qcd
+- id: quarkfield_to_quark
+  source: quark_field
+  target: quark
+  type: composition
+  label: quark quanta
+  detail: Quark particles are excitations/asymptotic partonic states of quark fields, though isolated quarks are not asymptotic states in the confined regime.
+  citations:
+  - wp-physics-quark
+  - nlab-physics-quark
+  - pdg-qcd
+- id: regularization_to_renorm
+  source: regularization
+  target: renormalization
+  type: theory-component
+  label: remove regulator dependence
+  detail: Renormalization relates regulated parameters to finite observables and controlled regulator removal or matching.
+  citations:
+  - wp-physics-renormalization
+  - nlab-physics-renormalization
+  - wp-physics-regularization
+  - nlab-physics-regularization
+- id: renorm_to_rg
+  source: renormalization
+  target: renormalization_group
+  type: theory-component
+  label: scale dependence
+  detail: Renormalization-group equations describe how renormalized couplings and operators change with scale.
+  citations:
+  - wp-physics-renormalization_group
+  - nlab-physics-renormalization_group
+  - wp-physics-renormalization
+  - nlab-physics-renormalization
+- id: rg_to_running
+  source: renormalization_group
+  target: running_coupling
+  type: state-description
+  label: beta-function flow
+  detail: Running couplings solve renormalization-group flow equations.
+  citations:
+  - wp-physics-running_coupling
+  - nlab-physics-running_coupling
+  - wp-physics-renormalization_group
+  - nlab-physics-renormalization_group
+- id: eright_to_leptonfield
+  source: right_handed_charged_lepton_field
+  target: lepton_field
+  type: theory-component
+  label: right-handed charged-lepton components
+  detail: The lepton field content includes right-handed charged-lepton weak singlets.
+  citations:
+  - wp-physics-standard_model_chiral_multiplet
+  - pdg-standard-model
+  - tong-particle
+  - wp-physics-lepton
+  - pdg-2026-neutrino
+- id: dright_to_quarkfield
+  source: right_handed_down_quark_field
+  target: quark_field
+  type: theory-component
+  label: right-handed down-type components
+  detail: The quark field content includes right-handed down-type weak singlets.
+  citations:
+  - wp-physics-standard_model_chiral_multiplet
+  - pdg-standard-model
+  - tong-particle
+  - wp-physics-quark
+  - pdg-qcd
+- id: uright_to_quarkfield
+  source: right_handed_up_quark_field
+  target: quark_field
+  type: theory-component
+  label: right-handed up-type components
+  detail: The quark field content includes right-handed up-type weak singlets.
+  citations:
+  - wp-physics-standard_model_chiral_multiplet
+  - pdg-standard-model
+  - tong-particle
+  - wp-physics-quark
+  - pdg-qcd
+- id: s_matrix_to_amplitude
+  source: s_matrix
+  target: scattering_amplitude
+  type: state-description
+  label: matrix elements
+  detail: Scattering amplitudes are matrix elements of the $S$-matrix after removing normalization and conservation factors.
+  citations:
+  - wp-physics-scattering_amplitude
+  - nlab-physics-scattering_amplitude
+  - wp-physics-s_matrix
+  - nlab-physics-s_matrix
+- id: scalar_to_bosonic
+  source: bosonic_field
+  target: scalar_field
+  type: classification
+  label: bosonic scalar field
+  detail: Physical Lorentz-scalar particles are bosonic under the spin–statistics assumptions; auxiliary ghost scalars are not physical asymptotic particle fields.
+  citations:
+  - wp-physics-scalar_field
+  - nlab-physics-scalar_field
+  - tong-qft
+- id: scalarself_to_higgs
+  source: scalar_self_interaction
+  target: standard_model_lagrangian
+  type: theory-component
+  label: Higgs potential
+  detail: The Higgs potential includes a quartic self-interaction.
+  citations:
+  - wp-physics-scalar_self_interaction
+  - tong-qft
+  - wp-physics-higgs_mechanism
+  - nlab-physics-higgs_field
+- id: spinor_to_fermionic
+  source: fermionic_field
+  target: spinor_field
+  type: classification
+  label: fermionic spinor field
+  detail: Physical half-integer-spin spinor fields obey fermionic statistics under the spin–statistics assumptions; commuting spinor auxiliaries are not ordinary physical particle fields.
+  citations:
+  - wp-physics-spinor_field
+  - nlab-physics-spinor_field
+  - tong-qft
+- id: chiral_to_ldoublet
+  source: standard_model_chiral_multiplet
+  target: left_handed_lepton_doublet
+  type: classification
+  label: left lepton doublet
+  detail: One Standard Model chiral representation type is the left-handed lepton doublet.
+  citations:
+  - wp-physics-standard_model_chiral_multiplet
+  - nlab-physics-standard_model
+  - pdg-standard-model
+  - tong-particle
+- id: chiral_to_qdoublet
+  source: standard_model_chiral_multiplet
+  target: left_handed_quark_doublet
+  type: classification
+  label: left quark doublet
+  detail: One Standard Model chiral representation type is the left-handed quark doublet.
+  citations:
+  - wp-physics-standard_model_chiral_multiplet
+  - nlab-physics-standard_model
+  - pdg-standard-model
+  - tong-particle
+- id: chiral_to_eright
+  source: standard_model_chiral_multiplet
+  target: right_handed_charged_lepton_field
+  type: classification
+  label: right charged-lepton singlet
+  detail: One Standard Model chiral representation type is the right-handed charged-lepton singlet.
+  citations:
+  - wp-physics-standard_model_chiral_multiplet
+  - nlab-physics-standard_model
+  - pdg-standard-model
+  - tong-particle
+- id: chiral_to_dright
+  source: standard_model_chiral_multiplet
+  target: right_handed_down_quark_field
+  type: classification
+  label: right down-type singlet
+  detail: One Standard Model chiral representation type is the right-handed down-type quark singlet.
+  citations:
+  - wp-physics-standard_model_chiral_multiplet
+  - nlab-physics-standard_model
+  - pdg-standard-model
+  - tong-particle
+- id: chiral_to_uright
+  source: standard_model_chiral_multiplet
+  target: right_handed_up_quark_field
+  type: classification
+  label: right up-type singlet
+  detail: One Standard Model chiral representation type is the right-handed up-type quark singlet.
+  citations:
+  - wp-physics-standard_model_chiral_multiplet
+  - nlab-physics-standard_model
+  - pdg-standard-model
+  - tong-particle
+- id: sm_to_chiral_multiplets
+  source: standard_model_chiral_multiplet
+  target: standard_model_lagrangian
+  type: theory-component
+  label: chiral fermion kinetic and gauge terms
+  detail: The Standard Model Lagrangian contains three generations of chiral fermion multiplets.
+  citations:
+  - wp-physics-standard_model_chiral_multiplet
+  - nlab-physics-standard_model
+  - pdg-standard-model
+  - tong-particle
+  - wp-physics-standard_model_gauge_group
+  - nlab-physics-standard_model_lagrangian
+  - pdg-qcd
+- id: smgroup_to_sm
+  source: standard_model_gauge_group
+  target: standard_model
+  type: theory-component
+  label: gauge symmetry
+  detail: The Standard Model is built around the color and electroweak gauge group.
+  citations:
+  - wp-physics-standard_model
+  - nlab-physics-standard_model
+  - wp-physics-standard_model_gauge_group
+  - nlab-physics-standard_model_gauge_group
+- id: smgroup_to_smlag
+  source: standard_model_gauge_group
+  target: standard_model_lagrangian
+  type: theory-component
+  label: gauge invariance
+  detail: The Lagrangian is invariant under the local Standard Model gauge group before gauge fixing.
+  citations:
+  - wp-physics-standard_model_gauge_group
+  - nlab-physics-standard_model_lagrangian
+  - nlab-physics-standard_model_gauge_group
+- id: smlagrangian_to_sm
+  source: standard_model_lagrangian
+  target: standard_model
+  type: mathematical-formulation
+  label: dynamical formulation
+  detail: The Standard Model Lagrangian is the usual local action formulation encoding the theory’s field content, symmetries, masses, and interactions.
+  citations:
+  - wp-physics-standard_model_gauge_group
+  - nlab-physics-standard_model_lagrangian
+  - wp-physics-standard_model
+  - nlab-physics-standard_model
+- id: w_to_chargedcurrent
+  source: w_field
+  target: charged_current_weak_interaction
+  type: describes-governs
+  label: $W^\pm$ interaction field
+  detail: The charged weak fields generate charged-current amplitudes in perturbative electroweak theory.
+  citations:
+  - wp-physics-w_boson
+  - pdg-standard-model
+  - tong-particle
+  - wp-physics-weak_interaction
+- id: wfield_to_w
+  source: w_field
+  target: w_boson
+  type: composition
+  label: $W^\pm$ quantum
+  detail: The charged $W$ bosons are excitations of the charged weak fields.
+  citations:
+  - wp-physics-w_boson
+  - pdg-standard-model
+- id: w_couples_weak
+  source: w_field
+  target: weak_interaction
+  type: describes-governs
+  label: charged-current weak interaction
+  detail: The charged $W$ fields generate charged-current weak processes.
+  citations:
+  - wp-physics-weak_interaction
+  - pdg-standard-model
+  - wp-physics-w_boson
+- id: yukawa_to_smlag
+  source: yukawa_interaction
+  target: standard_model_lagrangian
+  type: theory-component
+  label: Yukawa matrices
+  detail: Yukawa couplings connect Higgs and fermion fields.
+  citations:
+  - wp-physics-yukawa_interaction
+  - nlab-physics-yukawa_interaction
+  - wp-physics-standard_model_gauge_group
+  - nlab-physics-standard_model_lagrangian
+- id: z_to_neutralcurrent
+  source: z_field
+  target: neutral_current_weak_interaction
+  type: describes-governs
+  label: $Z$ interaction field
+  detail: The $Z$ field generates neutral-current amplitudes in perturbative electroweak theory.
+  citations:
+  - wp-physics-w_boson
+  - pdg-standard-model
+  - tong-particle
+  - wp-physics-neutral_current_weak_interaction
+- id: z_couples_weak
+  source: z_field
+  target: weak_interaction
+  type: describes-governs
+  label: neutral-current weak interaction
+  detail: The $Z$ field generates neutral-current weak processes.
+  citations:
+  - wp-physics-weak_interaction
+  - pdg-standard-model
+  - wp-physics-w_boson
+- id: zfield_to_z
+  source: z_field
+  target: z_boson
+  type: composition
+  label: $Z$ quantum
+  detail: The $Z$ boson is the excitation of the massive neutral $Z$ field.
+  citations:
+  - wp-physics-w_boson
+  - pdg-standard-model
+- id: anomalycancellation_to_sm
+  source: gauge_anomaly_cancellation
+  target: standard_model
+  type: theory-component
+  label: quantum consistency condition
+  detail: Gauge-anomaly cancellation is a non-negotiable consistency condition on Standard Model chiral field content.
+  citations:
+  - wp-physics-quantum_anomaly
+  - nlab-physics-gauge_anomaly_cancellation
+  - bilal-anomalies
+  - pdg-standard-model
+  - tong-standard-model
+  - wp-physics-standard_model
+  - nlab-physics-standard_model
+  - cern-standard-model
+  - tong-particle
+- id: ewself_to_ew
+  source: electroweak_gauge_self_interaction
+  target: electroweak_theory
+  type: theory-component
+  label: electroweak gauge vertices
+  detail: Electroweak theory contains gauge-boson self-interactions fixed by the non-Abelian gauge structure.
+  citations:
+  - wp-physics-electroweak_gauge_self_interaction
+  - tong-standard-model
+  - pdg-standard-model
+  - tong-gauge
+  - wp-physics-electroweak_theory
+  - nlab-physics-electroweak_theory
+  - tong-particle
+- id: ewself_to_smlag
+  source: electroweak_gauge_self_interaction
+  target: standard_model_lagrangian
+  type: theory-component
+  label: gauge kinetic interaction terms
+  detail: Triple and quartic electroweak gauge vertices arise from Standard Model gauge kinetic terms.
+  citations:
+  - wp-physics-electroweak_gauge_self_interaction
+  - tong-standard-model
+  - pdg-standard-model
+  - tong-gauge
+  - wp-physics-standard_model_gauge_group
+  - nlab-physics-standard_model_lagrangian
+  - pdg-qcd
+  - tong-particle
+- id: gluonfield_to_smlag
+  source: gluon_field
+  target: standard_model_lagrangian
+  type: theory-component
+  label: color gauge kinetic terms
+  detail: The Standard Model Lagrangian contains the $SU(3)_C$ gluon field strength and quark color coupling.
+  citations:
+  - wp-physics-gluon_field
+  - pdg-qcd
+  - tong-gauge
+  - wp-physics-standard_model_gauge_group
+  - nlab-physics-standard_model_lagrangian
+  - pdg-standard-model
+  - tong-particle
+- id: higgsdoublet_to_gaugeinteraction
+  source: higgs_doublet
+  target: higgs_gauge_interaction
+  type: couples-interacts
+  label: covariant-derivative coupling
+  detail: The Higgs kinetic term couples the doublet to $SU(2)_L$ and $U(1)_Y$ gauge fields.
+  citations:
+  - wp-physics-higgs_mechanism
+  - nlab-physics-higgs_field
+  - pdg-standard-model
+  - cern-higgs-origins
+  - nlab-physics-higgs_mechanism
+  - tong-standard-model
+  - pdg-2026-higgs
+- id: higgsgauge_to_ewsb
+  source: higgs_gauge_interaction
+  target: electroweak_symmetry_breaking
+  type: theory-component
+  label: gauge-boson mass terms
+  detail: In the Higgs vacuum, the covariant-derivative term yields masses for $W^\pm$ and $Z$ while leaving the photon massless.
+  citations:
+  - wp-physics-higgs_mechanism
+  - nlab-physics-higgs_mechanism
+  - tong-standard-model
+  - pdg-standard-model
+  - pdg-2026-higgs
+  - wp-physics-electroweak_symmetry_breaking
+  - nlab-physics-electroweak_symmetry_breaking
+  - cern-higgs-origins
+- id: higgsgauge_to_smlag
+  source: higgs_gauge_interaction
+  target: standard_model_lagrangian
+  type: theory-component
+  label: Higgs covariant-derivative terms
+  detail: Higgs–gauge interactions are explicit terms in the Standard Model Lagrangian.
+  citations:
+  - wp-physics-higgs_mechanism
+  - nlab-physics-higgs_mechanism
+  - tong-standard-model
+  - pdg-standard-model
+  - pdg-2026-higgs
+  - wp-physics-standard_model_gauge_group
+  - nlab-physics-standard_model_lagrangian
+  - pdg-qcd
+  - tong-particle
+- id: higgsmechanism_to_w
+  source: higgs_mechanism
+  target: w_boson
+  type: describes-governs
+  label: $W$ mass generation
+  detail: The Brout–Englert–Higgs mechanism generates the $W$-boson mass through the Higgs vacuum and gauge coupling.
+  citations:
+  - wp-physics-higgs_mechanism
+  - nlab-physics-higgs_mechanism
+  - cern-higgs-origins
+  - pdg-2026-higgs
+  - wp-physics-w_boson
+  - pdg-standard-model
+  - pdg-rpp
+- id: higgsmechanism_to_z
+  source: higgs_mechanism
+  target: z_boson
+  type: describes-governs
+  label: $Z$ mass generation
+  detail: The Brout–Englert–Higgs mechanism generates the $Z$-boson mass while the orthogonal photon combination remains massless.
+  citations:
+  - wp-physics-higgs_mechanism
+  - nlab-physics-higgs_mechanism
+  - cern-higgs-origins
+  - pdg-2026-higgs
+  - wp-physics-w_boson
+  - pdg-standard-model
+  - pdg-rpp
+- id: hyperfield_to_smlag
+  source: hypercharge_field
+  target: standard_model_lagrangian
+  type: theory-component
+  label: hypercharge gauge kinetic term
+  detail: The Standard Model Lagrangian contains the $U(1)_Y$ hypercharge gauge field and its couplings.
+  citations:
+  - wp-physics-hypercharge_field
+  - pdg-standard-model
+  - tong-particle
+  - wp-physics-standard_model_gauge_group
+  - nlab-physics-standard_model_lagrangian
+  - pdg-qcd
+- id: leptonfield_to_lepton
+  source: lepton_field
+  target: lepton
+  type: composition
+  label: leptonic particle states
+  detail: After electroweak symmetry breaking and mass diagonalization, lepton fields interpolate charged-lepton and neutrino particle states; unstable particles appear as resonances rather than exact asymptotic states.
+  citations:
+  - wp-physics-lepton
+  - pdg-standard-model
+  - pdg-2026-neutrino
+  - pdg-rpp
+  - tong-particle
+- id: qft_to_anomaly
+  source: quantum_field_theory
+  target: quantum_anomaly
+  type: describes-governs
+  label: quantum symmetry obstruction
+  detail: Quantization and regularization can obstruct classical symmetries, producing anomalies.
+  citations:
+  - wp-physics-quantum_field_theory
+  - nlab-physics-quantum_field_theory
+  - cern-qft-intro
+  - tong-qft
+  - wp-physics-quantum_anomaly
+  - nlab-physics-quantum_anomaly
+  - bilal-anomalies
+  - tong-gauge
+- id: qft_to_cpt
+  source: quantum_field_theory
+  target: cpt_theorem
+  type: theorem-implication
+  label: CPT invariance under standard assumptions
+  detail: Local Lorentz-invariant QFT with the usual spectral and unitarity assumptions obeys CPT symmetry.
+  citations:
+  - wp-physics-quantum_field_theory
+  - nlab-physics-quantum_field_theory
+  - cern-qft-intro
+  - tong-qft
+  - wp-physics-cpt_theorem
+  - nlab-physics-cpt_theorem
+  - pdg-rpp
+- id: qft_to_spinstatistics
+  source: quantum_field_theory
+  target: spin_statistics_theorem
+  type: theorem-implication
+  label: relativistic spin–statistics connection
+  detail: The spin–statistics connection follows under the stated structural assumptions, not from spin labels alone.
+  citations:
+  - wp-physics-quantum_field_theory
+  - nlab-physics-quantum_field_theory
+  - cern-qft-intro
+  - tong-qft
+  - wp-physics-spin_statistics_theorem
+  - nlab-physics-spin_statistics_theorem
+- id: spinstatistics_to_bose
+  source: spin_statistics_theorem
+  target: bose_einstein_statistics
+  type: theorem-implication
+  label: integer-spin bosonic statistics
+  detail: The theorem connects integer spin with bosonic exchange statistics under its assumptions.
+  citations:
+  - wp-physics-spin_statistics_theorem
+  - nlab-physics-spin_statistics_theorem
+  - tong-qft
+  - wp-physics-bose_einstein_statistics
+  - nlab-physics-bose_einstein_statistics
+  - tong-quantum
+- id: spinstatistics_to_fermi
+  source: spin_statistics_theorem
+  target: fermi_dirac_statistics
+  type: theorem-implication
+  label: half-integer-spin fermionic statistics
+  detail: The theorem connects half-integer spin with fermionic exchange statistics under its assumptions.
+  citations:
+  - wp-physics-spin_statistics_theorem
+  - nlab-physics-spin_statistics_theorem
+  - tong-qft
+  - wp-physics-fermi_dirac_statistics
+  - nlab-physics-fermi_dirac_statistics
+  - tong-quantum
+- id: weakfield_to_ew_self
+  source: weak_isospin_field
+  target: electroweak_gauge_self_interaction
+  type: couples-interacts
+  label: non-Abelian gauge self-coupling
+  detail: The $SU(2)_L$ field strength contains cubic and quartic gauge-field terms.
+  citations:
+  - wp-physics-weak_interaction
+  - pdg-standard-model
+  - tong-particle
+  - wp-physics-electroweak_gauge_self_interaction
+  - tong-standard-model
+  - tong-gauge
+- id: weakfield_to_smlag
+  source: weak_isospin_field
+  target: standard_model_lagrangian
+  type: theory-component
+  label: weak gauge kinetic terms
+  detail: The Standard Model Lagrangian contains the three $SU(2)_L$ gauge fields and their non-Abelian field strength.
+  citations:
+  - wp-physics-weak_interaction
+  - pdg-standard-model
+  - tong-particle
+  - wp-physics-standard_model_gauge_group
+  - nlab-physics-standard_model_lagrangian
+  - pdg-qcd
+- id: yukawa_to_particlemass
+  source: yukawa_interaction
+  target: particle_mass
+  type: describes-governs
+  label: charged-fermion mass parameters
+  detail: After electroweak symmetry breaking, Yukawa matrices times the Higgs vacuum expectation value determine charged-fermion mass matrices. Minimal Standard Model neutrinos remain massless.
+  citations:
+  - wp-physics-yukawa_interaction
+  - nlab-physics-yukawa_interaction
+  - tong-particle
+  - pdg-standard-model
+  - wp-physics-particle_mass
+  - pdg-rpp
+  - nist-codata
+  - pdg-2026-neutrino
+- id: higgsdoublet_to_mechanism
+  source: higgs_doublet
+  target: higgs_mechanism
+  type: theory-component
+  label: symmetry-breaking scalar multiplet
+  detail: The Higgs doublet and its vacuum configuration supply the scalar degrees of freedom used by the electroweak Higgs mechanism.
+  citations:
+  - tong-standard-model
+  - cern-higgs-origins
+- id: qed_to_standard_model
+  source: quantum_electrodynamics
+  target: standard_model
+  type: theory-component
+  label: electromagnetic low-energy sector
+  detail: QED is the unbroken electromagnetic gauge sector obtained from the Standard Model after electroweak symmetry breaking and field mixing.
+  citations:
+  - tong-standard-model
+  - pdg-standard-model
+- id: smeft_to_left
+  source: standard_model_effective_field_theory
+  target: low_energy_effective_field_theory
+  type: effective-theory
+  label: match below electroweak scale
+  detail: SMEFT matches onto LEFT after electroweak symmetry breaking and integration of heavy Standard Model fields; LEFT Wilson coefficients retain the effects of SMEFT operators.
+  citations:
+  - jhep-left
+  - penco-eft
+- id: qed_to_left
+  source: quantum_electrodynamics
+  target: low_energy_effective_field_theory
+  type: theory-component
+  label: QED gauge sector
+  detail: QED for the light charged fields is a renormalizable gauge-sector component of LEFT.
+  citations:
+  - jhep-left
+  - tong-qft
+- id: qcd_to_left
+  source: quantum_chromodynamics
+  target: low_energy_effective_field_theory
+  type: theory-component
+  label: QCD gauge sector
+  detail: QCD for the light quarks and gluons is a renormalizable gauge-sector component of LEFT.
+  citations:
+  - jhep-left
+  - pdg-qcd
+- id: fermi_to_left
+  source: fermi_theory
+  target: low_energy_effective_field_theory
+  type: theory-component
+  label: charged-current operator sector
+  detail: Fermi four-fermion interactions are leading weak-operator components within the broader low-energy effective field theory.
+  citations:
+  - jhep-left
+  - tong-standard-model
+- id: current_to_continuity
+  source: noether_current
+  target: continuity_equation
+  type: theorem-implication
+  label: vanishing divergence
+  detail: On the equations of motion and with the stated symmetry assumptions, a Noether current obeys a local continuity equation.
+  citations:
+  - tong-qft
+  - tong-standard-model
+- id: gaugefield_to_covariantderivative
+  source: gauge_field
+  target: gauge_covariant_derivative
+  type: theory-component
+  label: connection ingredient
+  detail: A gauge connection together with a representation of the gauge group defines the covariant derivative acting on the associated matter field.
+  citations:
+  - wp-physics-gauge_covariant_derivative
+  - nlab-physics-gauge_covariant_derivative
+- id: gaugefield_to_fieldstrength
+  source: gauge_field
+  target: gauge_field_strength
+  type: canonical-construction
+  label: connection curvature
+  detail: The gauge field strength is the curvature of the gauge connection.
+  citations:
+  - wp-physics-gauge_field_strength
+  - nlab-physics-gauge_field_strength
+- id: covariantderivative_to_gaugeinteraction
+  source: gauge_covariant_derivative
+  target: gauge_interaction
+  type: theory-component
+  label: minimal gauge coupling
+  detail: Replacing ordinary derivatives by gauge-covariant derivatives generates matter–gauge interaction terms fixed by the representation and coupling.
+  citations:
+  - wp-physics-gauge_covariant_derivative
+  - nlab-physics-gauge_covariant_derivative
+- id: covariantderivative_to_smlag
+  source: gauge_covariant_derivative
+  target: standard_model_lagrangian
+  type: theory-component
+  label: covariant kinetic terms
+  detail: Standard Model fermion and Higgs kinetic terms use the gauge-covariant derivative and thereby encode gauge interactions.
+  citations:
+  - tong-standard-model
+  - pdg-standard-model
+- id: fieldstrength_to_yangmills
+  source: gauge_field_strength
+  target: yang_mills_theory
+  type: theory-component
+  label: Yang–Mills kinetic term
+  detail: The Yang–Mills action is constructed from the non-Abelian field strength, whose commutator term produces gauge self-interactions.
+  citations:
+  - tong-gauge
+  - tong-standard-model
+- id: fieldstrength_to_smlag
+  source: gauge_field_strength
+  target: standard_model_lagrangian
+  type: theory-component
+  label: gauge kinetic terms
+  detail: The Standard Model Lagrangian contains field-strength kinetic terms for $SU(3)_C$, $SU(2)_L$, and $U(1)_Y$.
+  citations:
+  - tong-standard-model
+  - pdg-standard-model
+- id: ssb_to_goldstone
+  source: spontaneous_symmetry_breaking
+  target: goldstone_theorem
+  type: theorem-implication
+  label: continuous global symmetry theorem
+  detail: For spontaneous breaking of a continuous global symmetry under the theorem’s assumptions, Goldstone’s theorem requires gapless modes.
+  citations:
+  - wp-physics-goldstone_theorem
+  - nlab-physics-goldstone_theorem
+- id: goldstone_to_mode
+  source: goldstone_theorem
+  target: nambu_goldstone_mode
+  type: theorem-implication
+  label: gapless mode
+  detail: Each independent broken global generator gives a Nambu–Goldstone mode subject to relativistic-QFT qualifications.
+  citations:
+  - wp-physics-nambu_goldstone_mode
+  - nlab-physics-nambu_goldstone_mode
+- id: goldstonemode_to_higgs
+  source: would_be_goldstone_mode
+  target: higgs_mechanism
+  type: theory-component
+  label: would-be Goldstone degrees
+  detail: In a gauge-fixed Higgs phase, would-be Goldstone degrees of freedom combine with gauge fields rather than appearing as physical massless particles.
+  citations:
+  - tong-standard-model
+  - cern-higgs-origins
+  - pdg-2026-higgs
+- id: goldstone_to_longitudinal
+  source: would_be_goldstone_mode
+  target: longitudinal_gauge_boson_mode
+  type: representation-equivalence
+  label: reorganized polarization degree
+  detail: The degrees of freedom represented as would-be Goldstone modes are reorganized into longitudinal polarizations of massive gauge bosons; this is not literal particle consumption.
+  citations:
+  - tong-standard-model
+  - wp-physics-polarization
+  - pdg-2026-higgs
+- id: qcd_to_chiralsym
+  source: quantum_chromodynamics
+  target: qcd_chiral_symmetry
+  type: state-description
+  label: light-quark chiral symmetry
+  detail: QCD has an approximate light-flavor chiral symmetry when light-quark masses are neglected, with the axial singlet modified by the anomaly.
+  citations:
+  - wp-physics-qcd_chiral_symmetry
+  - nlab-physics-qcd_chiral_symmetry
+- id: chiralsym_to_breaking
+  source: qcd_chiral_symmetry
+  target: qcd_chiral_symmetry_breaking
+  type: transformation-process
+  label: spontaneously broken vacuum
+  detail: The low-energy QCD vacuum spontaneously breaks the approximate non-singlet chiral symmetry to its vector subgroup.
+  citations:
+  - wp-physics-qcd_chiral_symmetry_breaking
+  - nlab-physics-qcd_chiral_symmetry_breaking
+- id: condensate_to_chiralbreaking
+  source: qcd_chiral_symmetry_breaking
+  target: quark_condensate
+  type: state-description
+  label: vacuum order parameter
+  detail: The quark condensate is a conventional order parameter for chiral-symmetry breaking in idealized light-quark limits.
+  citations:
+  - wp-physics-quark_condensate
+  - nlab-physics-quark_condensate
+- id: chiralbreaking_to_pseudogoldstone
+  source: qcd_chiral_symmetry_breaking
+  target: pseudo_nambu_goldstone_mode
+  type: emergence
+  label: light pseudo-Goldstone modes
+  detail: Spontaneous breaking gives Goldstone modes, while nonzero light-quark masses make the observed light mesons pseudo-Nambu–Goldstone modes.
+  citations:
+  - wp-physics-pseudo_nambu_goldstone_mode
+  - nlab-physics-pseudo_nambu_goldstone_mode
+- id: pseudogoldstone_to_pion
+  source: pseudo_nambu_goldstone_mode
+  target: pion
+  type: classification
+  label: pion multiplet
+  detail: The pions are the lightest pseudo-Nambu–Goldstone mesons of approximate QCD chiral symmetry.
+  citations:
+  - pdg-qcd
+  - tong-standard-model
+  - pdg-quark-model
+- id: chiralpt_to_pion
+  source: chiral_perturbation_theory
+  target: pion
+  type: describes-governs
+  label: pion low-energy degree
+  detail: Mesonic chiral perturbation theory describes pions as its principal low-energy degrees of freedom; baryonic variants also include nucleons.
+  citations:
+  - pdg-qcd
+  - epelbaum-nuclear-eft
+- id: chiralsym_to_chiralpt
+  source: qcd_chiral_symmetry
+  target: chiral_perturbation_theory
+  type: theory-component
+  label: symmetry and power counting
+  detail: Chiral perturbation theory is organized by the approximate chiral symmetry, its spontaneous breaking pattern, momenta, and light-quark masses.
+  citations:
+  - pdg-qcd
+  - epelbaum-nuclear-eft
+- id: photonfield_to_radiation
+  source: photon_field
+  target: electromagnetic_radiation
+  type: state-description
+  label: quantized radiation field
+  detail: Quantum electromagnetic radiation is represented by states of the photon field, including number states, wave packets, thermal states, and coherent states.
+  citations:
+  - tong-qft
+  - tong-em
+- id: yang_mills_to_massgap
+  source: yang_mills_theory
+  target: yang_mills_mass_gap
+  type: emergence
+  label: expected nonperturbative gap
+  detail: Pure confining four-dimensional quantum Yang–Mills theory is expected to have a positive spectral gap above the vacuum; rigorous continuum construction and proof remain open.
+  citations:
+  - clay-yang-mills-mass-gap
+  - tong-gauge
+  - wp-physics-yang_mills_mass_gap
+- id: quarkfield_to_proton
+  source: quark_field
+  target: proton
+  type: composition
+  label: up/down quark-field degrees of freedom
+  detail: The proton is a QCD bound state whose quark-field content has net valence flavor $uud$ together with sea-quark and antiquark excitations.
+  citations:
+  - pdg-quark-model
+  - pdg-qcd
+  - tong-standard-model
+- id: quarkfield_to_neutron
+  source: quark_field
+  target: neutron
+  type: composition
+  label: up/down quark-field degrees of freedom
+  detail: The neutron is a QCD bound state whose quark-field content has net valence flavor $udd$ together with sea-quark and antiquark excitations.
+  citations:
+  - pdg-quark-model
+  - pdg-qcd
+  - tong-standard-model
+- id: exp_quantum_electrodynamics_by_lamb_retherford_experiment
+  source: quantum_electrodynamics
+  target: lamb_retherford_experiment
+  type: experimentally-verified-by
+  label: radiative bound-state correction
+  detail: Renormalized QED quantitatively accounts for the shift through self-energy, vacuum-polarization, recoil, and related corrections.
+  citations:
+  - wp-physics-lamb_shift
+  - nobel-lamb
+  - nist-qed-tests
+- id: exp_quantum_electrodynamics_by_electron_g_minus_2_measurements
+  source: quantum_electrodynamics
+  target: electron_g_minus_2_measurements
+  type: experimentally-verified-by
+  label: electron magnetic anomaly
+  detail: The measured anomaly agrees with perturbative QED at extraordinary precision when an independent fine-structure constant is used.
+  citations:
+  - wp-physics-electron_g_minus_2_measurements
+  - nist-codata-2022
+- id: exp_quantum_electrodynamics_by_casimir_force_measurements
+  source: quantum_electrodynamics
+  target: casimir_force_measurements
+  type: experimentally-verified-by
+  label: boundary-dependent electromagnetic force
+  detail: Measured forces agree with QED calculations after geometry, conductivity, temperature, roughness, and electrostatic backgrounds are modeled.
+  citations:
+  - wp-physics-casimir_force_measurements
+  - casimir-lamoreaux
+- id: exp_left_handed_fermion_by_goldhaber_neutrino_helicity_experiment
+  source: left_handed_fermion
+  target: goldhaber_neutrino_helicity_experiment
+  type: experimentally-verified-by
+  label: negative neutrino helicity
+  detail: The polarization correlation supported left-handed neutrinos in the ultrarelativistic weak interaction.
+  citations:
+  - wp-physics-goldhaber_neutrino_helicity_experiment
+  - goldhaber-original
+- id: exp_electroweak_theory_by_gargamelle_neutral_current_discovery
+  source: electroweak_theory
+  target: gargamelle_neutral_current_discovery
+  type: experimentally-verified-by
+  label: predicted neutral weak current
+  detail: The discovery was a major early confirmation of electroweak gauge theory.
+  citations:
+  - wp-physics-neutral_current_weak_interaction
+  - cern-electroweak-discoveries
+- id: exp_quantum_chromodynamics_by_slac_deep_inelastic_scattering
+  source: quantum_chromodynamics
+  target: slac_deep_inelastic_scattering
+  type: experimentally-verified-by
+  label: partonic scaling and later scaling violations
+  detail: Deep-inelastic data underpin the QCD description of nucleon structure; exact scaling is modified by QCD evolution.
+  citations:
+  - wp-physics-slac_deep_inelastic_scattering
+  - slac-dis
+  - pdg-qcd
+- id: exp_quantum_chromodynamics_by_petra_three_jet_gluon_discovery
+  source: quantum_chromodynamics
+  target: petra_three_jet_gluon_discovery
+  type: experimentally-verified-by
+  label: QCD jet topology
+  detail: The observed three-jet events matched QCD predictions for quark–antiquark–gluon final states.
+  citations:
+  - wp-physics-gluon
+  - desy-gluon
+  - pdg-qcd
+- id: exp_electroweak_theory_by_ua1_ua2_w_z_discovery
+  source: electroweak_theory
+  target: ua1_ua2_w_z_discovery
+  type: experimentally-verified-by
+  label: predicted weak gauge bosons
+  detail: The measured masses and decay signatures confirmed the massive electroweak gauge-boson sector.
+  citations:
+  - wp-physics-w_boson
+  - cern-electroweak-discoveries
+  - cern-wz
+- id: exp_electroweak_theory_by_lep_precision_electroweak_measurements
+  source: electroweak_theory
+  target: lep_precision_electroweak_measurements
+  type: experimentally-verified-by
+  label: $Z$-pole and electroweak observables
+  detail: Precision measurements confirmed the detailed electroweak coupling structure.
+  citations:
+  - wp-physics-lep_precision_electroweak_measurements
+  - cern-lep
+  - pdg-standard-model
+- id: exp_higgs_mechanism_by_atlas_cms_higgs_discovery
+  source: higgs_mechanism
+  target: atlas_cms_higgs_discovery
+  type: experimentally-verified-by
+  label: Higgs-field excitation
+  detail: The boson and its measured couplings strongly support the Brout–Englert–Higgs mechanism, while ongoing measurements test its exact Standard Model form.
+  citations:
+  - wp-physics-higgs_boson
+  - cern-higgs-discovery
+  - cern-higgs-overview
+  - pdg-2026-higgs
+- id: j_hawking_radiation__quantum_field_theory
+  source: quantum_field_theory
+  target: j_hawking_radiation
+  type: combine-compatible
+  label: quantum fields on that background
+  detail: Quantize matter fields on the same classical curved spacetime with appropriate state and asymptotic conditions.
+  citations:
+  - tong-qft
+  - einstein-online-black-holes
+- id: story_canonical_quantization_to_canonical_commutation_relations_theory_component
+  source: canonical_quantization
+  target: canonical_commutation_relations
+  type: canonical-construction
+  label: imposes canonical operator brackets
+  detail: For canonical coordinates and momenta, the quantization prescription yields the canonical commutation relations in representations where the operators and their domains are defined.
+  citations:
+  - wp-physics-canonical_quantization
+  - nlab-physics-canonical_quantization
+- id: story_quantum_field_theory_to_fock_space_state_description
+  source: quantum_field_theory
+  target: fock_space
+  type: state-description
+  label: uses particle-number sectors in free or asymptotic regimes
+  detail: Free fields and asymptotic particle states are naturally represented in Fock space. Generic interacting QFT need not admit a global particle interpretation or a Fock representation unitarily equivalent to the free one.
+  citations:
+  - tong-qft
+  - wp-fock_space
+  - nlab-fock_space

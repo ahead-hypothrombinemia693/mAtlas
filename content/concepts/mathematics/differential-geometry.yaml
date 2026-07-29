@@ -1,0 +1,2041 @@
+nodes:
+- id: j_lie_groupoid
+  label: groupoid + smooth structure
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  - category-theory
+  level: 7
+  kind: junction
+  summary: Compatibility construction producing Lie groupoid.
+  carriers: []
+  data: []
+  axioms: []
+  induces: []
+  notes: All incoming branches are jointly required.
+  citations:
+  - wp-lie-groupoid
+  - nlab-lie-groupoid
+  - lee-smooth-manifolds
+  combination:
+    inputs:
+    - groupoid
+    - smooth_manifold
+    compatibility: Equip both the object set and arrow set with smooth manifold structures; require all groupoid structure maps smooth and source and target submersions.
+    output: lie_groupoid
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: smooth_manifold
+  label: Smooth manifold
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  - topology
+  - algebraic-topology
+  level: 7
+  kind: structure
+  summary: A topological manifold equipped with a compatible smooth atlas.
+  carriers:
+  - topological manifold $M$
+  data:
+  - maximal smooth atlas
+  axioms:
+  - chart transition maps are smooth
+  induces:
+  - Tangent spaces and smooth functions
+  notes: ''
+  citations:
+  - nlab-smooth-manifold
+  - lee-smooth-manifolds
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: j_principal_bundle
+  label: bundle + group action
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  - topology
+  - representation-theory
+  level: 8
+  kind: junction
+  summary: Compatibility construction producing Principal bundle.
+  carriers: []
+  data: []
+  axioms: []
+  induces: []
+  notes: All incoming branches are jointly required.
+  citations:
+  - wp-principal-bundle
+  - nlab-principal-bundle
+  - lee-smooth-manifolds
+  combination:
+    inputs:
+    - fiber_bundle
+    - topological_group
+    compatibility: Add a continuous right $G$-action on the total space that is free and transitive on each fiber and locally equivariantly trivial.
+    output: principal_bundle
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: complex_manifold
+  label: Complex manifold
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  - analysis
+  - topology
+  level: 8
+  kind: structure
+  summary: A manifold locally modeled on complex Euclidean space with holomorphic transition maps.
+  carriers:
+  - topological manifold $M$
+  data:
+  - complex atlas
+  axioms:
+  - transition maps are holomorphic
+  induces:
+  - A smooth real manifold
+  - canonical smooth manifold
+  notes: ''
+  citations:
+  - wp-complex-manifold
+  - lee-smooth-manifolds
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: j_lie_group
+  label: group + smooth manifold
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  - topology
+  - algebra
+  level: 8
+  kind: junction
+  summary: Put compatible group and smooth-manifold structure on one carrier.
+  carriers: []
+  data: []
+  axioms: []
+  induces: []
+  notes: 'Construction junction: it is a visual device, not a separate standard mathematical structure.'
+  citations:
+  - nlab-lie-group
+  - lee-smooth-manifolds
+  combination:
+    inputs:
+    - group
+    - smooth_manifold
+    compatibility: Use the same carrier and require multiplication and inversion to be smooth.
+    output: lie_group
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: lie_groupoid
+  label: Lie groupoid
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  - category-theory
+  - algebra
+  level: 8
+  kind: structure
+  summary: A groupoid whose object and arrow spaces are smooth manifolds and whose structure maps are smooth, with source and target submersions.
+  carriers:
+  - groupoid $G_{1}\rightrightarrows G_{0}$
+  - smooth manifolds $G_{0},G_{1}$
+  data: []
+  axioms:
+  - smooth structure maps
+  - source and target submersions
+  induces: []
+  notes: ''
+  citations:
+  - wp-lie-groupoid
+  - nlab-lie-groupoid
+  - lee-smooth-manifolds
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: manifold_with_connection
+  label: Manifold with affine connection
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  - analysis
+  level: 8
+  kind: structure
+  summary: A smooth manifold equipped with a covariant derivative on vector fields.
+  carriers:
+  - smooth manifold $M$
+  data:
+  - affine connection $\nabla$
+  axioms:
+  - linearity and Leibniz rules
+  induces:
+  - Parallel transport and curvature
+  notes: ''
+  citations:
+  - wp-affine-connection
+  - lee-smooth-manifolds
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: poisson_manifold
+  label: Poisson manifold
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  - algebra
+  - analysis
+  level: 8
+  kind: structure
+  summary: A smooth manifold whose smooth functions carry a compatible Poisson bracket.
+  carriers:
+  - smooth manifold $M$
+  data:
+  - Poisson bivector or bracket on smooth functions
+  axioms:
+  - antisymmetry
+  - Jacobi identity
+  - Leibniz rule
+  induces: []
+  notes: ''
+  citations:
+  - wp-poisson
+  - lee-smooth-manifolds
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: pseudo_riemannian_manifold
+  label: Pseudo-Riemannian manifold
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  - analysis
+  - topology
+  level: 8
+  kind: structure
+  summary: A smooth manifold with a smoothly varying nondegenerate symmetric bilinear form of fixed signature.
+  carriers:
+  - smooth manifold $M$
+  data:
+  - pseudo-Riemannian metric $g$
+  axioms:
+  - smoothness
+  - nondegeneracy
+  - fixed signature
+  induces: []
+  notes: ''
+  citations:
+  - wp-pseudo-riemannian
+  - lee-smooth-manifolds
+  - lee-riemannian-manifolds
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: real_analytic_manifold
+  label: Real-analytic manifold
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  - analysis
+  - topology
+  level: 8
+  kind: structure
+  summary: A manifold whose chart transitions are real-analytic.
+  carriers:
+  - topological manifold $M$
+  data:
+  - compatible real-analytic atlas
+  axioms:
+  - transition maps are real-analytic
+  induces:
+  - A smooth manifold
+  notes: A real-analytic atlas refines the smooth structure. The analytic structure is extra data; the underlying smooth structure is canonically obtained by forgetting analyticity.
+  citations:
+  - wp-analytic-manifold
+  - lee-smooth-manifolds
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: riemannian_manifold
+  label: Riemannian manifold
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  - analysis
+  - topology
+  level: 8
+  kind: structure
+  summary: A smooth manifold with a smoothly varying positive-definite inner product on tangent spaces.
+  carriers:
+  - smooth manifold $M$
+  data:
+  - Riemannian metric $g$
+  axioms:
+  - smoothness and positive definiteness
+  induces:
+  - Length, angle, distance, volume
+  notes: ''
+  citations:
+  - wp-riemannian
+  - lee-smooth-manifolds
+  - lee-riemannian-manifolds
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: manifold_with_boundary
+  label: Smooth manifold with boundary
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  - topology
+  level: 8
+  kind: structure
+  summary: A Hausdorff, second-countable space locally modeled on the closed half-space, equipped with a compatible smooth atlas.
+  carriers:
+  - topological space $M$
+  data:
+  - smooth half-space atlas
+  axioms:
+  - Hausdorff
+  - second-countable
+  - smooth transition maps
+  induces: []
+  notes: This node includes a smooth half-space atlas; it is not merely a topological manifold with boundary.
+  citations:
+  - wp-manifold-boundary
+  - nlab-manifold-boundary
+  - lee-smooth-manifolds
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: symplectic_manifold
+  label: Symplectic manifold
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  - analysis
+  - topology
+  level: 8
+  kind: structure
+  summary: A smooth manifold with a closed nondegenerate differential 2-form.
+  carriers:
+  - smooth manifold $M$
+  data:
+  - 2-form $\omega$
+  axioms:
+  - $d\omega =0$
+  - $\omega$ is nondegenerate
+  induces:
+  - A Poisson structure
+  notes: ''
+  citations:
+  - nlab-symplectic
+  - lee-smooth-manifolds
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: vector_bundle
+  label: Vector bundle
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  - topology
+  - algebra
+  - algebraic-topology
+  level: 8
+  kind: structure
+  summary: A fiber bundle whose fibers are vector spaces and transition functions are linear.
+  carriers:
+  - fiber bundle $E\to B$
+  data:
+  - vector-space structure on each fiber
+  axioms:
+  - local trivializations are fiberwise linear
+  induces: []
+  notes: ''
+  citations:
+  - wp-vector-bundle
+  - nlab-vector-bundle
+  - lee-smooth-manifolds
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: cotangent_bundle
+  label: Cotangent bundle
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  level: 9
+  kind: structure
+  conceptType: Vector bundle
+  summary: The dual vector bundle $T^*M$ of covectors on a smooth manifold.
+  citations:
+  - wp-cotangent_bundle
+  - nlab-cotangent_bundle
+  carriers:
+  - smooth manifold $M$
+  data:
+  - disjoint union $T^*M=\bigsqcup_{p\in M}T_p^*M$
+  - bundle projection
+  axioms:
+  - smooth vector-bundle compatibility
+  induces:
+  - canonical one-form and canonical symplectic form
+  notes: ''
+- id: tangent_bundle
+  label: Tangent bundle
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  level: 9
+  kind: structure
+  conceptType: Vector bundle
+  summary: The vector bundle $TM$ whose fiber at each point is the tangent space of a smooth manifold.
+  citations:
+  - wp-tangent_bundle
+  - nlab-tangent_bundle
+  carriers:
+  - smooth manifold $M$
+  data:
+  - disjoint union $TM=\bigsqcup_{p\in M}T_pM$
+  - bundle projection
+  axioms:
+  - smooth vector-bundle compatibility
+  induces:
+  - vector fields as smooth sections
+  notes: ''
+- id: j_hermitian
+  label: complex manifold + metric
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  - analysis
+  level: 9
+  kind: junction
+  summary: Compatibility construction producing Hermitian manifold.
+  carriers: []
+  data: []
+  axioms: []
+  induces: []
+  notes: All incoming branches are jointly required.
+  citations:
+  - wp-hermitian-manifold
+  - nlab-hermitian-manifold
+  - lee-smooth-manifolds
+  - lee-riemannian-manifolds
+  combination:
+    inputs:
+    - complex_manifold
+    - riemannian_manifold
+    compatibility: Use the same underlying real manifold and require $g(JX,JY)=g(X,Y)$; equivalently, the metric is the real part of a positive-definite Hermitian form.
+    output: hermitian_manifold
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: contact_manifold
+  label: Contact manifold
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  - topology
+  level: 9
+  kind: structure
+  summary: An odd-dimensional manifold with a maximally nonintegrable hyperplane distribution.
+  carriers:
+  - smooth manifold $M$
+  data:
+  - smooth hyperplane distribution $\xi\subset TM$
+  axioms:
+  - locally $\xi=\ker\alpha$ with $d\alpha|_\xi$ nondegenerate (equivalently $\alpha\wedge(d\alpha)^n$ nowhere zero)
+  induces: []
+  notes: A globally defined contact form is extra coorientation/trivialization data. The contact distribution is the intrinsic object.
+  citations:
+  - grabowska-grabowski-contact
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: differential_form
+  label: Differential form
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  - analysis
+  level: 9
+  kind: structure
+  conceptType: Geometric object
+  summary: A smooth section of an exterior-power cotangent bundle; differential forms can be integrated and differentiated by $d$.
+  citations:
+  - wp-differential_form
+  - nlab-differential_form
+  carriers:
+  - smooth manifold $M$
+  data:
+  - smooth section of $\Lambda^kT^*M$
+  axioms:
+  - smoothness
+  induces:
+  - wedge product
+  - exterior derivative
+  - pullback
+  notes: A differential $k$-form is alternating and covariant; orientation is not required merely to define forms.
+- id: foliated_manifold
+  label: Foliated manifold
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  - topology
+  level: 9
+  kind: structure
+  summary: A manifold partitioned locally into parallel submanifolds called leaves.
+  carriers:
+  - smooth manifold $M$
+  data:
+  - integrable subbundle of TM or foliation atlas
+  axioms:
+  - Frobenius integrability
+  induces: []
+  notes: ''
+  citations:
+  - wp-foliation
+  - nlab-foliation
+  - lee-smooth-manifolds
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: lie_group
+  label: Lie group
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  - algebra
+  - topology
+  level: 9
+  kind: structure
+  summary: A smooth manifold whose group operations are smooth.
+  carriers:
+  - set $G$
+  data:
+  - group structure
+  - smooth manifold structure
+  axioms:
+  - smooth multiplication
+  - smooth inversion
+  induces:
+  - A Lie algebra at the identity
+  notes: ''
+  citations:
+  - nlab-lie-group
+  - lee-smooth-manifolds
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: lorentzian_manifold
+  label: Lorentzian manifold
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  - analysis
+  level: 9
+  kind: structure
+  summary: A pseudo-Riemannian manifold with Lorentzian signature.
+  carriers:
+  - smooth manifold $M$
+  data:
+  - Lorentzian metric
+  axioms:
+  - signature has one time-like direction
+  induces:
+  - Causal cones
+  notes: ''
+  citations:
+  - wp-lorentzian
+  - lee-smooth-manifolds
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: oriented_manifold
+  label: Oriented smooth manifold
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  - algebraic-topology
+  level: 9
+  kind: structure
+  summary: A smooth manifold with a consistent choice of orientation.
+  carriers:
+  - smooth manifold $M$
+  data:
+  - orientation of tangent spaces or oriented atlas
+  axioms:
+  - orientation compatibility
+  induces: []
+  notes: ''
+  citations:
+  - wp-orientable-manifold
+  - nlab-oriented-manifold
+  - lee-smooth-manifolds
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: principal_bundle
+  label: Principal bundle
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  - topology
+  - representation-theory
+  level: 9
+  kind: structure
+  summary: A fiber bundle with a free and transitive right action of a structure group on each fiber.
+  carriers:
+  - topological group $G$
+  - total space $P$
+  - base space $B$
+  data:
+  - projection $\pi:P\to B$
+  - continuous right $G$-action
+  - local equivariant trivializations
+  axioms:
+  - the $G$-action is free and transitive on each fiber
+  - local $G$-equivariant triviality
+  induces: []
+  notes: This node denotes a topological principal bundle. Smooth principal bundles require a Lie group and smooth total/base spaces.
+  citations:
+  - wp-principal-bundle
+  - nlab-principal-bundle
+  - lee-smooth-manifolds
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: tensor_bundle
+  label: Tensor bundle
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  level: 9
+  kind: structure
+  conceptType: Vector bundle
+  summary: A vector bundle assembled from tensor powers of tangent and cotangent bundles.
+  citations:
+  - wp-tensor_bundle
+  - nlab-tensor_bundle
+  carriers:
+  - smooth manifold $M$
+  data:
+  - bundle built from tensor powers of $TM$ and $T^*M$
+  axioms:
+  - smooth transition functions induced from those of $TM$
+  induces:
+  - tensor fields as smooth sections
+  notes: ''
+- id: j_smooth_vector_bundle
+  label: vector bundle over smooth base
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  - algebra
+  level: 9
+  kind: junction
+  summary: Compatibility construction producing Smooth vector bundle.
+  carriers: []
+  data: []
+  axioms: []
+  induces: []
+  notes: All incoming branches are jointly required.
+  citations:
+  - wp-vector-bundle
+  - nlab-vector-bundle
+  - lee-smooth-manifolds
+  combination:
+    inputs:
+    - vector_bundle
+    - smooth_manifold
+    compatibility: Use the smooth manifold as base and require smooth fiberwise-linear transition functions.
+    output: smooth_vector_bundle
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: compact_lie_group
+  label: Compact Lie group
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  - representation-theory
+  level: 10
+  kind: structure
+  conceptType: Lie group
+  summary: A Lie group whose underlying topological space is compact.
+  citations:
+  - wp-compact_lie_group
+  - nlab-compact_lie_group
+  carriers:
+  - group $G$
+  - smooth manifold structure
+  data:
+  - smooth group operations
+  axioms:
+  - Lie-group axioms
+  - compact underlying topology
+  induces:
+  - finite Haar measure after normalization
+  - finite-dimensional unitary representations
+  notes: ''
+- id: bundle_connection
+  label: Connection on a vector bundle
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  level: 10
+  kind: structure
+  conceptType: Geometric structure
+  summary: A covariant derivative that differentiates sections of a vector bundle along tangent directions.
+  citations:
+  - wp-bundle_connection
+  - nlab-bundle_connection
+  carriers:
+  - smooth vector bundle $E\to M$
+  data:
+  - covariant derivative $\nabla$ on sections
+  axioms:
+  - Leibniz rule
+  - $C^\infty(M)$-linearity in the vector-field argument
+  induces:
+  - parallel transport
+  - curvature
+  notes: A connection is additional data; a generic vector bundle has no preferred connection.
+- id: de_rham_complex
+  label: de Rham complex
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  - algebraic-topology
+  - homological-algebra
+  level: 10
+  kind: structure
+  conceptType: Cochain complex
+  summary: The cochain complex of differential forms with exterior derivative $d$, satisfying $d^2=0$.
+  citations:
+  - wp-de_rham_complex
+  - nlab-de_rham_complex
+  carriers:
+  - smooth manifold $M$
+  - graded vector space $\Omega^*(M)$
+  data:
+  - exterior derivative $d$
+  axioms:
+  - $d^2=0$
+  induces:
+  - de Rham cohomology
+  notes: The de Rham theorem identifies this cohomology with singular cohomology over $\mathbb R$ under standard hypotheses.
+- id: hermitian_manifold
+  label: Hermitian manifold
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  - analysis
+  level: 10
+  kind: structure
+  summary: A complex manifold with a smoothly varying Hermitian inner product on tangent spaces.
+  carriers:
+  - complex manifold $M$
+  data:
+  - Hermitian metric $h$
+  axioms:
+  - smooth positive-definite sesquilinear form
+  induces: []
+  notes: ''
+  citations:
+  - wp-hermitian-manifold
+  - nlab-hermitian-manifold
+  - lee-smooth-manifolds
+  - lee-riemannian-manifolds
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: principal_connection
+  label: Principal connection
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  - representation-theory
+  level: 10
+  kind: structure
+  conceptType: Geometric structure
+  summary: A connection on a principal bundle, equivalently a suitable Lie-algebra-valued one-form.
+  citations:
+  - wp-principal_connection
+  - nlab-principal_connection
+  carriers:
+  - principal $G$-bundle $P\to M$
+  data:
+  - horizontal distribution or connection one-form
+  axioms:
+  - equivariance
+  - reproduction of fundamental vertical vector fields
+  induces:
+  - parallel transport
+  - curvature
+  - connections on associated bundles
+  notes: ''
+- id: smooth_vector_bundle
+  label: Smooth vector bundle
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  - algebra
+  level: 10
+  kind: structure
+  summary: A vector bundle over a smooth manifold with smooth total space and smooth linear transition functions.
+  carriers:
+  - vector bundle $E\to M$
+  - smooth manifold $M$
+  data: []
+  axioms:
+  - smooth local trivializations
+  induces: []
+  notes: ''
+  citations:
+  - wp-vector-bundle
+  - nlab-vector-bundle
+  - lee-smooth-manifolds
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: tensor_field
+  label: Tensor field
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  - analysis
+  level: 10
+  kind: structure
+  conceptType: Geometric field
+  summary: A smooth section of a tensor bundle.
+  citations:
+  - wp-tensor_field
+  - nlab-tensor_field
+  carriers:
+  - smooth manifold $M$
+  data:
+  - smooth section of a tensor bundle
+  axioms:
+  - smoothness
+  induces:
+  - coordinate components with tensorial transformation law
+  notes: ''
+- id: curvature_form
+  label: Curvature form
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  level: 11
+  kind: structure
+  conceptType: Geometric invariant
+  summary: The Lie-algebra-valued (or endomorphism-valued) two-form measuring the non-flatness of a connection.
+  citations:
+  - wp-curvature_form
+  - nlab-curvature_form
+  carriers:
+  - bundle with connection
+  data:
+  - Lie-algebra- or endomorphism-valued two-form $F$
+  axioms:
+  - defined by $F=dA+A\wedge A$ locally, with convention-dependent signs
+  induces:
+  - holonomy information
+  - characteristic forms
+  notes: Curvature is tensorial even though a local connection potential is gauge-dependent.
+- id: kahler_manifold
+  label: Kähler manifold
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  - algebraic-geometry
+  - analysis
+  level: 11
+  kind: structure
+  summary: A Hermitian manifold whose fundamental 2-form is closed.
+  carriers:
+  - Hermitian manifold $M$
+  data: []
+  axioms:
+  - $d\omega =0$
+  induces:
+  - symplectic structure
+  - Riemannian structure
+  notes: ''
+  citations:
+  - wp-kahler-manifold
+  - nlab-kahler-manifold
+  - lee-smooth-manifolds
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: j_hodge_star
+  label: metric + orientation
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  level: 11
+  kind: junction
+  summary: Combine a pseudo-Riemannian metric and an orientation on the same smooth manifold to define the Hodge star.
+  carriers: []
+  data: []
+  axioms: []
+  induces: []
+  notes: 'Construction junction: both inputs are jointly required; a pseudo-Riemannian metric alone does not choose an orientation.'
+  citations:
+  - wp-hodge_star_operator
+  - nlab-hodge_star_operator
+  - tong-em
+  - tong-gr
+  combination:
+    inputs:
+    - pseudo_riemannian_manifold
+    - oriented_manifold
+    compatibility: The metric and orientation are carried by the same smooth $n$-manifold $M$.
+    output: hodge_star_operator
+  primaryField: mathematics
+  fields:
+  - mathematics
+- id: hodge_star_operator
+  label: Hodge star operator
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  level: 12
+  kind: structure
+  conceptType: Geometric operator
+  summary: The metric- and orientation-dependent isomorphism between complementary-degree differential forms.
+  citations:
+  - wp-hodge_star_operator
+  - nlab-hodge_star_operator
+  - tong-em
+  - tong-gr
+  carriers:
+  - oriented pseudo-Riemannian manifold $(M,g)$
+  data:
+  - linear maps $*\colon\Omega^k(M)\to\Omega^{n-k}(M)$
+  axioms:
+  - defined by $\alpha\wedge *\beta=\langle\alpha,\beta\rangle_g\,\mathrm{vol}_g$
+  induces:
+  - codifferential
+  - Hodge Laplacian
+  notes: The square of $*$ depends on degree, dimension, and metric signature.
+- id: levi_civita_connection
+  label: Levi–Civita connection
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  level: 12
+  kind: structure
+  conceptType: Geometric connection
+  summary: The unique torsion-free connection compatible with a pseudo-Riemannian metric.
+  citations:
+  - wp-levi_civita_connection
+  - nlab-levi_civita_connection
+  - tong-gr
+  carriers:
+  - pseudo-Riemannian manifold $(M,g)$
+  data:
+  - connection $\nabla$ on $TM$
+  axioms:
+  - torsion-free
+  - metric-compatible
+  induces:
+  - geodesics
+  - Riemann curvature tensor
+  notes: Existence and uniqueness are consequences of the metric.
+- id: geodesic
+  label: Geodesic
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  level: 13
+  kind: structure
+  conceptType: Geometric curve
+  summary: A curve whose tangent is parallel transported along itself with respect to a connection.
+  citations:
+  - wp-geodesic
+  - nlab-geodesic
+  - tong-gr
+  carriers:
+  - manifold with affine connection
+  data:
+  - smooth curve $\gamma$
+  axioms:
+  - $\nabla_{\dot\gamma}\dot\gamma=0$ for an affine parameter
+  induces:
+  - locally extremal-length behavior in Riemannian geometry
+  notes: For pseudo-Riemannian metrics, geodesics need not minimize length; null geodesics have zero proper length.
+- id: riemann_curvature_tensor
+  label: Riemann curvature tensor
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  level: 13
+  kind: structure
+  conceptType: Curvature tensor
+  summary: The tensor measuring failure of covariant derivatives to commute and of parallel transport to be path independent.
+  citations:
+  - wp-riemann_curvature_tensor
+  - nlab-riemann_curvature_tensor
+  - tong-gr
+  carriers:
+  - manifold with connection
+  data:
+  - tensor $R(X,Y)Z$
+  axioms:
+  - multilinearity and curvature symmetries appropriate to the connection
+  induces:
+  - sectional curvature
+  - Ricci contraction for metric connections
+  notes: Sign conventions for $R$ vary.
+- id: spin_structure
+  label: Spin structure
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  level: 13
+  kind: structure
+  conceptType: Geometric lift
+  summary: A lift of an oriented orthonormal frame bundle to the appropriate spin-group principal bundle, enabling globally defined spinor fields on an oriented Riemannian manifold (or on a suitably oriented pseudo-Riemannian manifold for the chosen signature).
+  citations:
+  - wp-spin_structure
+  - nlab-spin_structure
+  - tong-qft
+  - tong-gr
+  carriers:
+  - oriented pseudo-Riemannian manifold
+  - oriented orthonormal frame bundle
+  data:
+  - principal spin bundle
+  - twofold bundle map to the frame bundle
+  axioms:
+  - compatibility with the spin covering
+  induces:
+  - spinor bundles
+  notes: Existence is obstructed by the second Stiefel–Whitney class; when structures exist they need not be unique.
+- id: ricci_tensor
+  label: Ricci curvature tensor
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  level: 14
+  kind: structure
+  conceptType: Contracted curvature tensor
+  summary: The contraction of the Riemann curvature tensor entering the Einstein field equation.
+  citations:
+  - wp-ricci_tensor
+  - nlab-ricci_tensor
+  - tong-gr
+  carriers:
+  - pseudo-Riemannian manifold
+  data:
+  - contraction of the Riemann curvature tensor
+  axioms:
+  - tensoriality
+  induces:
+  - scalar curvature after contraction with the inverse metric
+  notes: Index and sign conventions depend on the convention for the Riemann tensor.
+- id: scalar_curvature
+  label: Scalar curvature
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  level: 15
+  kind: structure
+  conceptType: Curvature scalar
+  summary: The trace of the Ricci tensor with the inverse metric.
+  citations:
+  - wp-scalar_curvature
+  - nlab-scalar_curvature
+  - tong-gr
+  carriers:
+  - pseudo-Riemannian manifold
+  data:
+  - scalar $R=g^{ab}R_{ab}$
+  axioms:
+  - coordinate invariance
+  induces:
+  - Einstein–Hilbert action density with the volume form
+  notes: ''
+- id: einstein_tensor
+  label: Einstein tensor
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  level: 16
+  kind: structure
+  conceptType: Divergence-free curvature tensor
+  summary: The tensor $G_{\mu\nu}=R_{\mu\nu}-\tfrac12 Rg_{\mu\nu}$, whose covariant divergence vanishes.
+  citations:
+  - wp-einstein_tensor
+  - nlab-einstein_tensor
+  - tong-gr
+  - einstein-equation
+  carriers:
+  - pseudo-Riemannian manifold
+  data:
+  - tensor $G_{ab}=R_{ab}-\tfrac12Rg_{ab}$
+  axioms:
+  - symmetric
+  - covariantly divergence-free
+  induces:
+  - left-hand side of Einstein field equations
+  notes: ''
+- id: smooth_curve
+  label: Smooth curve
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  - analysis
+  level: 8
+  kind: structure
+  conceptType: Smooth map
+  summary: A smooth map from an interval or one-dimensional manifold into a smooth manifold.
+  citations:
+  - wp-smooth_curve
+  - nlab-smooth_curve
+  - lee-smooth-manifolds
+  carriers:
+  - interval or one-dimensional smooth manifold $I$
+  - smooth manifold $M$
+  data:
+  - smooth map $\gamma:I\to M$
+  axioms:
+  - smoothness
+  induces:
+  - tangent vector $\dot\gamma(t)$
+  - pullback along the curve
+  notes: ''
+- id: tangent_vector
+  label: Tangent vector
+  primaryField: mathematics
+  fields:
+  - mathematics
+  primaryDomain: differential-geometry
+  domains:
+  - differential-geometry
+  - analysis
+  level: 9
+  kind: structure
+  conceptType: Geometric vector
+  summary: An element of the tangent space at a point of a smooth manifold, equivalently a velocity of a curve or a derivation at that point.
+  citations:
+  - wp-tangent_vector
+  - nlab-tangent_vector
+  - lee-smooth-manifolds
+  carriers:
+  - smooth manifold $M$
+  - point $p\in M$
+  data:
+  - derivation at $p$ or equivalence class of curves through $p$
+  axioms:
+  - linearity and Leibniz rule in the derivation model
+  induces:
+  - tangent space $T_pM$
+  notes: The curve and derivation constructions are canonically equivalent for finite-dimensional smooth manifolds.
+edges:
+- id: bundleconn_to_gauge
+  source: bundle_connection
+  target: gauge_field_theory
+  type: mathematical-formulation
+  label: covariant differentiation
+  detail: Gauge covariant derivatives are connections on associated vector bundles.
+  citations:
+  - wp-physics-gauge_field_theory
+  - nlab-physics-gauge_field_theory
+  - wp-bundle_connection
+  - nlab-bundle_connection
+  overview: true
+- id: math_compact_lie_group_to_circle_group
+  source: compact_lie_group
+  target: circle_group
+  type: framework-specialization
+  label: $U(1)$
+  detail: The circle group is the compact one-dimensional unitary group.
+  citations:
+  - wp-circle_group
+  - nlab-circle_group
+- id: math_compact_lie_group_to_special_unitary_group
+  source: compact_lie_group
+  target: special_unitary_group
+  type: framework-specialization
+  label: $SU(n)$
+  detail: The special unitary groups are compact matrix Lie groups.
+  citations:
+  - wp-special_unitary_group
+  - nlab-special_unitary_group
+- id: j_hermitian__complex_manifold
+  source: complex_manifold
+  target: j_hermitian
+  type: combine-compatible
+  label: complex structure
+  detail: Supply the Complex manifold structure as one jointly required input.
+  citations:
+  - wp-hermitian-manifold
+  - nlab-hermitian-manifold
+  - lee-smooth-manifolds
+  - lee-riemannian-manifolds
+- id: e_complex_smooth
+  source: complex_manifold
+  target: smooth_manifold
+  type: induced-forgotten
+  label: forget holomorphic charts to smooth charts
+  detail: Holomorphic transition maps are smooth, so a complex atlas canonically determines an underlying smooth manifold of twice the complex dimension.
+  citations:
+  - wp-complex-manifold
+  - nlab-smooth-manifold
+  - lee-smooth-manifolds
+- id: de_rham_to_maxwell
+  source: de_rham_complex
+  target: maxwell_equations
+  type: mathematical-formulation
+  label: exterior-calculus formulation
+  detail: The homogeneous Maxwell equation is $dF=0$ and the sourced equation uses the Hodge dual and current form.
+  citations:
+  - wp-physics-maxwell_equations
+  - nlab-physics-maxwell_equations
+  - wp-de_rham_complex
+  - nlab-de_rham_complex
+  overview: true
+- id: math_differential_form_to_de_rham_complex
+  source: differential_form
+  target: de_rham_complex
+  type: canonical-construction
+  label: exterior derivative complex
+  detail: The exterior derivative organizes differential forms into a cochain complex.
+  citations:
+  - wp-de_rham_complex
+  - nlab-de_rham_complex
+- id: forms_to_em
+  source: differential_form
+  target: electromagnetic_field
+  type: mathematical-formulation
+  label: field-strength two-form
+  detail: The electromagnetic field strength is represented by a differential two-form $F$.
+  citations:
+  - wp-physics-electromagnetic_field
+  - nlab-physics-electromagnetic_field
+  - wp-differential_form
+  - nlab-differential_form
+  overview: true
+- id: hodge_from_forms
+  source: j_hodge_star
+  target: hodge_star_operator
+  type: combine-compatible
+  label: outputs the Hodge star
+  detail: A pseudo-Riemannian metric and an orientation on the same smooth manifold jointly define the Hodge star on differential forms.
+  citations:
+  - wp-differential_form
+  - nlab-differential_form
+  - wp-hodge_star_operator
+  - nlab-hodge_star_operator
+  - tong-em
+  - tong-gr
+- id: pseudo_riemannian_to_j_hodge_star
+  source: pseudo_riemannian_manifold
+  target: j_hodge_star
+  type: combine-compatible
+  label: metric input
+  detail: Supply the pseudo-Riemannian metric on the common smooth manifold.
+  citations:
+  - wp-hodge_star_operator
+  - nlab-hodge_star_operator
+  - tong-gr
+- id: oriented_manifold_to_j_hodge_star
+  source: oriented_manifold
+  target: j_hodge_star
+  type: combine-compatible
+  label: orientation input
+  detail: Supply an orientation on the same smooth manifold; reversing it reverses the sign of the Hodge star.
+  citations:
+  - wp-hodge_star_operator
+  - nlab-hodge_star_operator
+  - tong-em
+- id: einstein_tensor_to_equation
+  source: einstein_tensor
+  target: einstein_field_equation
+  type: mathematical-formulation
+  label: geometric left-hand side
+  detail: The Einstein tensor, plus the cosmological term when included, forms the geometric side of Einstein’s equation.
+  citations:
+  - wp-einstein_tensor
+  - nlab-einstein_tensor
+  - tong-gr
+  - einstein-equation
+  - wp-physics-einstein_field_equation
+  - nlab-physics-einstein_field_equation
+- id: geodesic_math_to_motion
+  source: geodesic
+  target: geodesic_motion
+  type: mathematical-formulation
+  label: geodesic worldlines
+  detail: Free test-body trajectories are represented by timelike or null geodesics under the stated approximation.
+  citations:
+  - wp-geodesic
+  - nlab-geodesic
+  - tong-gr
+  - wp-physics-geodesic_motion
+  - einstein-general-relativity
+- id: e_hermitian_kahler
+  source: hermitian_manifold
+  target: kahler_manifold
+  type: impose-axiom
+  label: + closed fundamental form
+  detail: Require the associated real 2-form to be closed.
+  citations:
+  - wp-kahler-manifold
+  - nlab-kahler-manifold
+  - lee-smooth-manifolds
+- id: hodge_to_maxwell
+  source: hodge_star_operator
+  target: maxwell_equations
+  type: mathematical-formulation
+  label: metric dual in sourced Maxwell equation
+  detail: The Hodge star enters the metric-dependent Maxwell equation $d{*F}=J$ in differential-form notation.
+  citations:
+  - wp-hodge_star_operator
+  - nlab-hodge_star_operator
+  - tong-em
+  - tong-gr
+  - wp-physics-maxwell_equations
+  - nlab-physics-maxwell_equations
+- id: j_hermitian__out
+  source: j_hermitian
+  target: hermitian_manifold
+  type: combine-compatible
+  label: impose compatibility
+  detail: Require the Riemannian metric to be compatible with the complex structure, equivalently give a Hermitian metric.
+  citations:
+  - wp-hermitian-manifold
+  - nlab-hermitian-manifold
+  - lee-smooth-manifolds
+  - lee-riemannian-manifolds
+- id: j_lie_to_group
+  source: j_lie_group
+  target: lie_group
+  type: combine-compatible
+  label: require smooth operations
+  detail: Require multiplication and inversion to be smooth.
+  citations:
+  - nlab-lie-group
+  - lee-smooth-manifolds
+- id: j_lie_groupoid__out
+  source: j_lie_groupoid
+  target: lie_groupoid
+  type: combine-compatible
+  label: impose compatibility
+  detail: Make both object and arrow sets into manifolds, require all groupoid structure maps smooth, and source/target submersions.
+  citations:
+  - wp-lie-groupoid
+  - nlab-lie-groupoid
+  - lee-smooth-manifolds
+- id: j_principal_bundle__out
+  source: j_principal_bundle
+  target: principal_bundle
+  type: combine-compatible
+  label: impose compatibility
+  detail: Require a free, fiber-preserving group action that is transitive on every fiber and locally equivariantly trivial.
+  citations:
+  - wp-principal-bundle
+  - nlab-principal-bundle
+  - lee-smooth-manifolds
+- id: j_smooth_vector_bundle__out
+  source: j_smooth_vector_bundle
+  target: smooth_vector_bundle
+  type: combine-compatible
+  label: impose compatibility
+  detail: Use the smooth manifold as base and require smooth fiberwise-linear transition functions.
+  citations:
+  - wp-vector-bundle
+  - nlab-vector-bundle
+  - lee-smooth-manifolds
+- id: e_kahler_symplectic
+  source: kahler_manifold
+  target: symplectic_manifold
+  type: induced-forgotten
+  label: retain closed nondegenerate 2-form
+  detail: The fundamental form of a Kähler manifold is symplectic.
+  citations:
+  - wp-kahler-manifold
+  - nlab-kahler-manifold
+  - nlab-symplectic
+  - lee-smooth-manifolds
+- id: geodesic_from_connection
+  source: levi_civita_connection
+  target: geodesic
+  type: canonical-construction
+  label: autoparallel curves
+  detail: The connection defines geodesics by vanishing covariant acceleration.
+  citations:
+  - wp-levi_civita_connection
+  - nlab-levi_civita_connection
+  - tong-gr
+  - wp-geodesic
+  - nlab-geodesic
+- id: riemann_from_connection
+  source: levi_civita_connection
+  target: riemann_curvature_tensor
+  type: canonical-construction
+  label: connection curvature
+  detail: The Levi–Civita connection determines the Riemann curvature tensor.
+  citations:
+  - wp-levi_civita_connection
+  - nlab-levi_civita_connection
+  - tong-gr
+  - wp-riemann_curvature_tensor
+  - nlab-riemann_curvature_tensor
+- id: math_lie_group_to_compact_lie_group
+  source: lie_group
+  target: compact_lie_group
+  type: impose-axiom
+  label: compactness
+  detail: A compact Lie group has compact underlying topology.
+  citations:
+  - wp-compact_lie_group
+  - nlab-compact_lie_group
+- id: math_lie_group_to_gauge
+  source: lie_group
+  target: gauge_field_theory
+  type: mathematical-formulation
+  label: gauge symmetry group
+  detail: Gauge theories use Lie groups to encode local symmetry transformations and classify gauge fields and matter representations.
+  citations:
+  - cern-qft-intro
+  - pdg-standard-model
+  - wp-physics-gauge_field_theory
+  - nlab-physics-gauge_field_theory
+  - nlab-lie-group
+  overview: true
+- id: lie_group_to_lie_algebra
+  source: lie_group
+  target: lie_algebra
+  type: canonical-construction
+  label: differentiate at the identity
+  detail: Take the tangent space at the identity with the bracket induced by left-invariant vector fields.
+  citations:
+  - nlab-lie-group
+  - wp-lie-algebra
+  - stacks-algebra-text
+- id: math_lie_group_to_lorentz_group
+  source: lie_group
+  target: lorentz_group
+  type: framework-specialization
+  label: Lorentz isometries
+  detail: The Lorentz group is the Lie group preserving a Lorentzian quadratic form.
+  citations:
+  - wp-lorentz_group
+  - nlab-lorentz_group
+- id: liegroup_to_symmetry
+  source: lie_group
+  target: physical_symmetry
+  type: mathematical-formulation
+  label: continuous symmetry groups
+  detail: Continuous physical symmetries are modeled by Lie groups.
+  citations:
+  - wp-physics-physical_symmetry
+  - nlab-physics-physical_symmetry
+  - nlab-lie-group
+  - lee-smooth-manifolds
+  overview: true
+- id: math_lorentzian_to_gr
+  source: lorentzian_manifold
+  target: general_relativity
+  type: mathematical-formulation
+  label: dynamical Lorentzian geometry
+  detail: General relativity treats a Lorentzian metric and related geometric fields as dynamical variables constrained by Einstein’s equations.
+  citations:
+  - einstein-general-relativity
+  - einstein-equation
+  - wp-physics-general_relativity
+  - nlab-physics-general_relativity
+  - wp-lorentzian
+  overview: true
+- id: math_lorentzian_to_spacetime
+  source: lorentzian_manifold
+  target: spacetime
+  type: mathematical-formulation
+  label: Lorentzian geometry
+  detail: A relativistic spacetime carries a Lorentzian metric encoding intervals, light cones, and causal structure.
+  citations:
+  - einstein-spacetime
+  - einstein-general-relativity
+  - wp-physics-spacetime
+  - nlab-physics-spacetime
+  - wp-lorentzian
+  overview: true
+- id: lorentzian_to_metric
+  source: lorentzian_manifold
+  target: spacetime_metric
+  type: mathematical-formulation
+  label: Lorentzian metric
+  detail: A spacetime metric is mathematically a Lorentzian metric on a manifold.
+  citations:
+  - wp-physics-spacetime_metric
+  - einstein-general-relativity
+  - wp-lorentzian
+  - lee-smooth-manifolds
+  overview: true
+- id: math_poisson_to_hamiltonian
+  source: poisson_manifold
+  target: hamiltonian_mechanics
+  type: mathematical-formulation
+  label: Poisson-bracket geometry
+  detail: Poisson manifolds supply the bracket structure generating Hamiltonian evolution and include symplectic phase spaces as the nondegenerate case.
+  citations:
+  - cern-qft-intro
+  - wp-physics-hamiltonian_mechanics
+  - nlab-physics-hamiltonian_mechanics
+  - wp-poisson
+  - lee-smooth-manifolds
+- id: math_principal_bundle_to_gauge
+  source: principal_bundle
+  target: gauge_field_theory
+  type: mathematical-formulation
+  label: global gauge geometry
+  detail: Connections on principal bundles provide the global geometric formulation of gauge potentials and curvature.
+  citations:
+  - cern-qft-intro
+  - wp-physics-gauge_field_theory
+  - nlab-physics-gauge_field_theory
+  - wp-principal-bundle
+  - nlab-principal-bundle
+  overview: true
+- id: math_principal_bundle_to_principal_connection
+  source: principal_bundle
+  target: principal_connection
+  type: add-data
+  label: principal connection
+  detail: A principal connection is additional equivariant horizontal-distribution or connection-form data.
+  citations:
+  - wp-principal_connection
+  - nlab-principal_connection
+- id: spinstructure_from_frame
+  source: principal_bundle
+  target: spin_structure
+  type: add-data
+  label: spin lift
+  detail: When this principal bundle is the oriented orthonormal frame bundle and the obstruction vanishes, choose a principal $\operatorname{Spin}(p,q)$ lift together with its twofold bundle map to the frame bundle.
+  citations:
+  - wp-principal-bundle
+  - nlab-principal-bundle
+  - lee-smooth-manifolds
+  - wp-spin_structure
+  - nlab-spin_structure
+  - tong-qft
+  - tong-gr
+- id: math_principal_connection_to_curvature_form
+  source: principal_connection
+  target: curvature_form
+  type: induced-forgotten
+  label: connection curvature
+  detail: A connection canonically determines its curvature two-form.
+  citations:
+  - wp-curvature_form
+  - nlab-curvature_form
+- id: principal_connection_to_gauge
+  source: principal_connection
+  target: gauge_field
+  type: mathematical-formulation
+  label: connection one-form
+  detail: Gauge potentials are local representatives of principal connections.
+  citations:
+  - wp-physics-gauge_field_theory
+  - nlab-physics-gauge_field
+  - wp-principal_connection
+  - nlab-principal_connection
+  overview: true
+- id: levicivita_from_metric
+  source: pseudo_riemannian_manifold
+  target: levi_civita_connection
+  type: canonical-construction
+  label: metric-compatible torsion-free connection
+  detail: Every pseudo-Riemannian metric determines a unique Levi–Civita connection.
+  citations:
+  - wp-pseudo-riemannian
+  - lee-smooth-manifolds
+  - lee-riemannian-manifolds
+  - wp-levi_civita_connection
+  - nlab-levi_civita_connection
+  - tong-gr
+- id: pseudo_to_lorentzian
+  source: pseudo_riemannian_manifold
+  target: lorentzian_manifold
+  type: impose-axiom
+  label: fix Lorentzian signature
+  detail: Require one time-like direction in the metric signature.
+  citations:
+  - wp-lorentzian
+  - lee-smooth-manifolds
+- id: pseudo_riemannian_to_riemannian
+  source: pseudo_riemannian_manifold
+  target: riemannian_manifold
+  type: impose-axiom
+  label: + positive definiteness
+  detail: Require the nondegenerate metric tensor to be positive definite at every point.
+  citations:
+  - wp-pseudo-riemannian
+  - wp-riemannian
+  - lee-smooth-manifolds
+  - lee-riemannian-manifolds
+- id: einstein_from_curvature
+  source: ricci_tensor
+  target: einstein_tensor
+  type: canonical-construction
+  label: divergence-free curvature combination
+  detail: Combining Ricci and scalar curvature gives the Einstein tensor.
+  citations:
+  - wp-ricci_tensor
+  - nlab-ricci_tensor
+  - tong-gr
+  - wp-einstein_tensor
+  - nlab-einstein_tensor
+  - einstein-equation
+- id: scalar_from_ricci
+  source: ricci_tensor
+  target: scalar_curvature
+  type: canonical-construction
+  label: metric trace
+  detail: Tracing Ricci curvature with the inverse metric gives scalar curvature.
+  citations:
+  - wp-ricci_tensor
+  - nlab-ricci_tensor
+  - tong-gr
+  - wp-scalar_curvature
+  - nlab-scalar_curvature
+- id: riemann_to_gr
+  source: riemann_curvature_tensor
+  target: general_relativity
+  type: mathematical-formulation
+  label: spacetime curvature
+  detail: General relativity formulates gravitation using the curvature of a Lorentzian metric.
+  citations:
+  - wp-riemann_curvature_tensor
+  - nlab-riemann_curvature_tensor
+  - tong-gr
+  - wp-physics-general_relativity
+  - nlab-physics-general_relativity
+  - einstein-general-relativity
+- id: ricci_from_riemann
+  source: riemann_curvature_tensor
+  target: ricci_tensor
+  type: canonical-construction
+  label: tensor contraction
+  detail: Contracting the Riemann tensor gives the Ricci tensor.
+  citations:
+  - wp-riemann_curvature_tensor
+  - nlab-riemann_curvature_tensor
+  - tong-gr
+  - wp-ricci_tensor
+  - nlab-ricci_tensor
+- id: j_hermitian__riemannian_manifold
+  source: riemannian_manifold
+  target: j_hermitian
+  type: combine-compatible
+  label: positive metric
+  detail: Supply the Riemannian manifold structure as one jointly required input.
+  citations:
+  - wp-hermitian-manifold
+  - nlab-hermitian-manifold
+  - lee-smooth-manifolds
+  - lee-riemannian-manifolds
+- id: e_smooth_contact
+  source: smooth_manifold
+  target: contact_manifold
+  type: add-data
+  label: + contact distribution
+  detail: Add a maximally nonintegrable hyperplane field.
+  citations:
+  - wp-contact-manifold
+  - nlab-contact-manifold
+  - lee-smooth-manifolds
+- id: math_smooth_manifold_to_differential_form
+  source: smooth_manifold
+  target: differential_form
+  type: add-data
+  label: smooth alternating covariant tensor field
+  detail: Differential forms are smooth sections of exterior powers of the cotangent bundle.
+  citations:
+  - wp-differential_form
+  - nlab-differential_form
+- id: e_smooth_foliated
+  source: smooth_manifold
+  target: foliated_manifold
+  type: add-data
+  label: + integrable distribution
+  detail: Add an integrable tangent distribution or foliation atlas.
+  citations:
+  - wp-foliation
+  - nlab-foliation
+  - lee-smooth-manifolds
+- id: smooth_to_j_lie
+  source: smooth_manifold
+  target: j_lie_group
+  type: combine-compatible
+  label: supply smooth manifold
+  detail: Use the smooth-manifold structure on the common carrier.
+  citations:
+  - nlab-lie-group
+  - lee-smooth-manifolds
+- id: j_lie_groupoid__smooth_manifold
+  source: smooth_manifold
+  target: j_lie_groupoid
+  type: combine-compatible
+  label: smooth object/arrow spaces
+  detail: Supply the Smooth manifold structure as one jointly required input.
+  citations:
+  - wp-lie-groupoid
+  - nlab-lie-groupoid
+  - lee-smooth-manifolds
+- id: j_smooth_vector_bundle__smooth_manifold
+  source: smooth_manifold
+  target: j_smooth_vector_bundle
+  type: combine-compatible
+  label: smooth base
+  detail: Supply the Smooth manifold structure as one jointly required input.
+  citations:
+  - wp-vector-bundle
+  - nlab-vector-bundle
+  - lee-smooth-manifolds
+- id: smooth_to_connection
+  source: smooth_manifold
+  target: manifold_with_connection
+  type: add-data
+  label: add affine connection
+  detail: Add a covariant derivative on vector fields.
+  citations:
+  - wp-affine-connection
+  - lee-smooth-manifolds
+- id: e_smooth_oriented
+  source: smooth_manifold
+  target: oriented_manifold
+  type: add-data
+  label: + orientation
+  detail: Choose a consistent orientation.
+  citations:
+  - wp-orientable-manifold
+  - nlab-oriented-manifold
+  - lee-smooth-manifolds
+- id: smooth_to_poisson
+  source: smooth_manifold
+  target: poisson_manifold
+  type: add-data
+  label: add Poisson bracket
+  detail: Add a Lie bracket on smooth functions that is a derivation in each argument.
+  citations:
+  - wp-poisson
+  - lee-smooth-manifolds
+- id: smooth_to_pseudo_riemannian
+  source: smooth_manifold
+  target: pseudo_riemannian_manifold
+  type: add-data
+  label: add nondegenerate metric tensor
+  detail: Add a smoothly varying nondegenerate symmetric bilinear form.
+  citations:
+  - wp-pseudo-riemannian
+  - lee-smooth-manifolds
+  - lee-riemannian-manifolds
+- id: smooth_to_analytic
+  source: smooth_manifold
+  target: real_analytic_manifold
+  type: add-data
+  label: + compatible analytic atlas
+  detail: Choose a real-analytic atlas compatible with the underlying smooth structure.
+  citations:
+  - wp-analytic-manifold
+  - lee-smooth-manifolds
+- id: math_smooth_to_spacetime
+  source: smooth_manifold
+  target: spacetime
+  type: mathematical-formulation
+  label: smooth event manifold
+  detail: Relativistic spacetime is modeled as a smooth manifold so that fields, curves, and differential equations are defined locally.
+  citations:
+  - einstein-general-relativity
+  - wp-physics-spacetime
+  - nlab-physics-spacetime
+  - nlab-smooth-manifold
+  - lee-smooth-manifolds
+  overview: true
+- id: smooth_to_symplectic
+  source: smooth_manifold
+  target: symplectic_manifold
+  type: add-data
+  label: add closed nondegenerate 2-form
+  detail: Add a differential 2-form that is closed and nondegenerate.
+  citations:
+  - nlab-symplectic
+  - lee-smooth-manifolds
+- id: math_smooth_manifold_to_tangent_bundle
+  source: smooth_manifold
+  target: tangent_bundle
+  type: canonical-construction
+  label: tangent bundle
+  detail: Each smooth manifold canonically determines its tangent bundle.
+  citations:
+  - wp-tangent_bundle
+  - nlab-tangent_bundle
+- id: math_smooth_vector_bundle_to_bundle_connection
+  source: smooth_vector_bundle
+  target: bundle_connection
+  type: add-data
+  label: covariant derivative
+  detail: A connection is additional differentiation data on a smooth vector bundle.
+  citations:
+  - wp-bundle_connection
+  - nlab-bundle_connection
+- id: spinstructure_to_spinorfield
+  source: spin_structure
+  target: spinor_field
+  type: mathematical-formulation
+  label: global spinor geometry
+  detail: A spin structure is required to define spinor bundles globally on a curved spacetime.
+  citations:
+  - wp-spin_structure
+  - nlab-spin_structure
+  - tong-qft
+  - tong-gr
+  - wp-physics-spinor_field
+  - nlab-physics-spinor_field
+- id: math_symplectic_to_hamiltonian
+  source: symplectic_manifold
+  target: hamiltonian_mechanics
+  type: mathematical-formulation
+  label: phase-space geometry
+  detail: Hamiltonian mechanics is naturally formulated on symplectic manifolds, whose symplectic form defines Hamiltonian vector fields and Poisson brackets.
+  citations:
+  - cern-qft-intro
+  - wp-physics-hamiltonian_mechanics
+  - nlab-physics-hamiltonian_mechanics
+  - nlab-symplectic
+  - lee-smooth-manifolds
+  overview: true
+- id: symplectic_to_phase
+  source: symplectic_manifold
+  target: phase_space
+  type: mathematical-formulation
+  label: symplectic phase space
+  detail: Hamiltonian phase spaces are symplectic manifolds or appropriate generalizations.
+  citations:
+  - wp-physics-phase_space
+  - nlab-physics-phase_space
+  - nlab-symplectic
+  - lee-smooth-manifolds
+  overview: true
+- id: symplectic_to_poisson
+  source: symplectic_manifold
+  target: poisson_manifold
+  type: induced-forgotten
+  label: invert the symplectic form
+  detail: The inverse bivector of a symplectic form defines a Poisson bracket.
+  citations:
+  - nlab-symplectic
+  - wp-poisson
+  - lee-smooth-manifolds
+- id: math_tangent_bundle_to_cotangent_bundle
+  source: tangent_bundle
+  target: cotangent_bundle
+  type: canonical-construction
+  label: dual bundle
+  detail: The cotangent bundle is the fiberwise dual of the tangent bundle.
+  citations:
+  - wp-cotangent_bundle
+  - nlab-cotangent_bundle
+- id: math_tangent_bundle_to_tensor_bundle
+  source: tangent_bundle
+  target: tensor_bundle
+  type: canonical-construction
+  label: tensor bundles
+  detail: Tensor powers and duals of tangent bundles form tensor bundles.
+  citations:
+  - wp-tensor_bundle
+  - nlab-tensor_bundle
+- id: math_tensor_bundle_to_tensor_field
+  source: tensor_bundle
+  target: tensor_field
+  type: add-data
+  label: smooth section
+  detail: A tensor field is a smooth section of a tensor bundle.
+  citations:
+  - wp-tensor_field
+  - nlab-tensor_field
+- id: tensorfield_to_gr
+  source: tensor_field
+  target: general_relativity
+  type: mathematical-formulation
+  label: metric and curvature tensors
+  detail: General relativity uses tensor fields on a smooth manifold.
+  citations:
+  - wp-physics-general_relativity
+  - nlab-physics-general_relativity
+  - wp-tensor_field
+  - nlab-tensor_field
+  overview: true
+- id: tensor_to_stress
+  source: tensor_field
+  target: stress_energy_tensor
+  type: mathematical-formulation
+  label: rank-two tensor field
+  detail: Stress–energy is represented by a symmetric tensor field.
+  citations:
+  - wp-physics-stress_energy_tensor
+  - nlab-physics-stress_energy_tensor
+  - wp-tensor_field
+  - nlab-tensor_field
+  overview: true
+- id: j_smooth_vector_bundle__vector_bundle
+  source: vector_bundle
+  target: j_smooth_vector_bundle
+  type: combine-compatible
+  label: linear bundle
+  detail: Supply the Vector bundle structure as one jointly required input.
+  citations:
+  - wp-vector-bundle
+  - nlab-vector-bundle
+  - lee-smooth-manifolds
+- id: smoothcurve_from_manifold
+  source: smooth_manifold
+  target: smooth_curve
+  type: add-data
+  label: smooth parameterized map
+  detail: A smooth curve is a smooth map from a one-dimensional parameter domain into a smooth manifold.
+  citations:
+  - wp-smooth_curve
+  - nlab-smooth_curve
+  - lee-smooth-manifolds
+- id: smoothcurve_to_worldline
+  source: smooth_curve
+  target: worldline
+  type: mathematical-formulation
+  label: smooth spacetime curve
+  detail: Ideal particle histories are represented by smooth causal curves in spacetime.
+  citations:
+  - wp-smooth_curve
+  - nlab-smooth_curve
+  - lee-smooth-manifolds
+  - wp-physics-worldline
+  - nlab-physics-worldline
+  - einstein-spacetime
+  - tong-relativity
+- id: tangentvector_from_curve
+  source: smooth_curve
+  target: tangent_vector
+  type: canonical-construction
+  label: curve velocity
+  detail: The derivative of a smooth curve at a parameter value defines a tangent vector.
+  citations:
+  - wp-tangent_vector
+  - nlab-tangent_vector
+  - lee-smooth-manifolds
+- id: tangentvector_to_fourvelocity
+  source: tangent_vector
+  target: four_velocity
+  type: mathematical-formulation
+  label: timelike tangent vector
+  detail: Four-velocity is a normalized timelike tangent vector to a worldline.
+  citations:
+  - wp-tangent_vector
+  - nlab-tangent_vector
+  - lee-smooth-manifolds
+  - wp-physics-four_velocity
+  - nlab-physics-four_velocity
+  - tong-relativity
+- id: bundleconnection_to_covariantderivative
+  source: bundle_connection
+  target: gauge_covariant_derivative
+  type: mathematical-formulation
+  label: connection derivative
+  detail: Gauge-covariant differentiation is the physical use of a connection on an associated vector bundle.
+  citations:
+  - wp-physics-gauge_covariant_derivative
+  - nlab-physics-gauge_covariant_derivative
+- id: curvature_to_gaugefieldstrength
+  source: curvature_form
+  target: gauge_field_strength
+  type: mathematical-formulation
+  label: curvature two-form
+  detail: Gauge field strengths are Lie-algebra-valued curvature two-forms.
+  citations:
+  - wp-physics-gauge_field_strength
+  - nlab-physics-gauge_field_strength
+- id: story_lorentzian_manifold_to_schwarzschild_spacetime_mathematical_formulation
+  source: lorentzian_manifold
+  target: schwarzschild_spacetime
+  type: mathematical-formulation
+  label: supplies the spacetime metric structure
+  detail: The Schwarzschild solution is a Lorentzian manifold with a metric satisfying the vacuum Einstein equation and spherical symmetry.
+  citations:
+  - lee-smooth-manifolds
+  - einstein-equation
+- id: story_lorentzian_manifold_to_kerr_spacetime_mathematical_formulation
+  source: lorentzian_manifold
+  target: kerr_spacetime
+  type: mathematical-formulation
+  label: supplies the spacetime metric structure
+  detail: The Kerr solution is a Lorentzian manifold with a stationary, axisymmetric metric satisfying the vacuum Einstein equation.
+  citations:
+  - lee-smooth-manifolds
+  - einstein-equation

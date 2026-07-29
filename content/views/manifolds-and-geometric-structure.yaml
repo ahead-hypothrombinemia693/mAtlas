@@ -1,0 +1,66 @@
+id: manifolds-and-geometric-structure
+title: Manifolds and geometric structure
+summary: Build smooth manifolds and then layer tangent, cotangent, bundle,
+  differential-form, connection, curvature, metric, symplectic, complex, and
+  contact structures.
+narrative: Local Euclidean charts turn topological spaces into manifolds; smooth
+  compatibility enables calculus. Tangent and cotangent bundles support vector
+  fields, tensors, and differential forms. Connections differentiate geometric
+  data, curvature measures noncommutativity of covariant differentiation, and
+  geodesics encode distinguished motion. Metrics, symplectic forms, Poisson
+  brackets, complex structures, Hermitian metrics, Kähler compatibility, contact
+  forms, and Lorentzian signature produce major geometric families.
+tags:
+  - Mathematics
+  - Differential geometry
+  - Manifolds
+  - Geometry
+settings:
+  fields:
+    - mathematics
+  domains:
+    - topology
+    - differential-geometry
+    - algebraic-topology
+    - analysis
+  edgeTypes:
+    - add-data
+    - impose-axiom
+    - induced-forgotten
+    - canonical-construction
+    - quotient-construction
+    - canonical-embedding
+    - combine-compatible
+    - representation-equivalence
+    - theorem-implication
+    - classification
+    - mathematical-formulation
+    - framework-specialization
+  crossFieldVisibility: hidden
+  edgeLabels: true
+  junctions: false
+  edgeZoomActivation: true
+  layout: atlas
+nodeSequence:
+  - topological_space
+  - locally_euclidean_space
+  - topological_manifold
+  - smooth_manifold
+  - tangent_bundle
+  - cotangent_bundle
+  - smooth_vector_bundle
+  - tensor_bundle
+  - differential_form
+  - tensor_field
+  - manifold_with_connection
+  - riemann_curvature_tensor
+  - geodesic
+  - riemannian_manifold
+  - pseudo_riemannian_manifold
+  - symplectic_manifold
+  - poisson_manifold
+  - complex_manifold
+  - hermitian_manifold
+  - kahler_manifold
+  - contact_manifold
+  - lorentzian_manifold

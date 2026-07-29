@@ -1,0 +1,58 @@
+id: galois-theory-polynomials-symmetry
+title: "Galois theory: polynomial equations and symmetry"
+summary: See how field extensions, splitting fields, automorphism groups, and
+  subgroup lattices encode polynomial solvability.
+narrative: A polynomial over a field may require adjoining roots. Algebraic,
+  separable, and normal extensions isolate the conditions under which all
+  embeddings and roots behave symmetrically; their conjunction is a Galois
+  extension. Base-fixing field automorphisms form the Galois group. The
+  fundamental theorem reverses inclusion between intermediate fields and
+  subgroups, converting field questions into group structure. Solvable groups
+  then characterize solvability by radicals under the standard hypotheses.
+tags:
+  - Mathematics
+  - Algebra
+  - Galois theory
+  - Polynomials
+settings:
+  fields:
+    - mathematics
+  domains:
+    - algebra
+    - number-theory
+    - representation-theory
+    - algebraic-geometry
+  edgeTypes:
+    - add-data
+    - impose-axiom
+    - induced-forgotten
+    - canonical-construction
+    - quotient-construction
+    - canonical-embedding
+    - combine-compatible
+    - representation-equivalence
+    - theorem-implication
+    - classification
+    - mathematical-formulation
+    - framework-specialization
+  crossFieldVisibility: hidden
+  edgeLabels: true
+  junctions: true
+  edgeZoomActivation: true
+  layout: atlas
+nodeSequence:
+  - commutative_ring
+  - polynomial_ring
+  - field
+  - field_extension
+  - algebraic_extension
+  - separable_extension
+  - normal_extension
+  - splitting_field
+  - field_automorphism
+  - galois_extension
+  - galois_group
+  - fixed_field
+  - fundamental_theorem_galois_theory
+  - solvable_group
+  - solvability_by_radicals

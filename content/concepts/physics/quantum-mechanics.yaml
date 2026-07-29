@@ -1,0 +1,1916 @@
+nodes:
+- id: quantum_mechanics
+  label: Quantum mechanics
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 2
+  kind: structure
+  conceptType: Theory or framework
+  summary: The framework governing physical systems whose states exhibit superposition, probabilistic measurement outcomes, and noncommuting observables.
+  citations:
+  - wp-physics-quantum_mechanics
+  - nlab-physics-quantum_mechanics
+  - nist-quantum-theory
+  - tong-quantum
+  sections:
+  - title: Mathematical core
+    body: States are represented in a complex Hilbert space, observables by operators, and isolated-system evolution by unitary dynamics.
+  - title: Scope
+    body: Nonrelativistic quantum mechanics is an effective framework; relativistic particle creation and annihilation require quantum field theory.
+- id: quantum_system
+  label: Quantum system
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 3
+  kind: structure
+  conceptType: Physical system
+  summary: A system described by quantum states, observables, probabilities, and quantum dynamics.
+  citations:
+  - wp-physics-quantum_system
+  - nlab-physics-quantum_system
+  - nist-quantum-theory
+  - tong-quantum
+- id: quantum_state
+  label: Quantum state
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 4
+  kind: structure
+  conceptType: State description
+  summary: 'In standard Hilbert-space quantum mechanics, a complete specification of a system’s statistical predictions: a ray (or vector representative) for a pure state, and more generally a positive trace-one density operator for a mixed state.'
+  citations:
+  - wp-physics-quantum_state
+  - nlab-physics-quantum_state
+  - nist-quantum-theory
+  - tong-quantum
+  sections:
+  - title: Pure and mixed
+    body: Pure states are represented by rays in Hilbert space; mixed states require density operators.
+- id: mixed_quantum_state
+  label: Mixed quantum state
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 5
+  kind: structure
+  conceptType: State description
+  summary: A non-extremal statistical quantum state represented by a positive trace-one density operator.
+  citations:
+  - wp-physics-quantum_state
+  - nlab-physics-mixed_quantum_state
+  - tong-quantum
+- id: pure_quantum_state
+  label: Pure quantum state
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 5
+  kind: structure
+  conceptType: State description
+  summary: An extremal quantum state represented by a ray in Hilbert space or a rank-one density operator.
+  citations:
+  - wp-physics-quantum_state
+  - nlab-physics-pure_quantum_state
+  - tong-quantum
+- id: density_operator
+  label: Density operator
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 6
+  kind: structure
+  conceptType: State representation
+  summary: A positive trace-one operator representing pure or mixed quantum states and reduced states of subsystems.
+  citations:
+  - wp-physics-density_operator
+  - nlab-physics-density_operator
+  - tong-quantum
+- id: quantum_observable
+  label: Quantum observable
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 6
+  kind: structure
+  conceptType: Physical quantity
+  summary: An observable represented in standard quantum mechanics by a self-adjoint operator, or more generally by a positive-operator-valued measure for a measurement.
+  citations:
+  - wp-physics-observable
+  - nlab-physics-quantum_observable
+  - nist-quantum-theory
+  - tong-quantum
+  sections:
+  - title: Noncommutativity
+    body: Incompatible observables need not have simultaneously sharp values because their operators do not commute.
+- id: wavefunction
+  label: Wavefunction
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 6
+  kind: structure
+  conceptType: State representation
+  summary: A coordinate representation of a quantum state, commonly a complex-valued amplitude over position or another configuration basis.
+  citations:
+  - wp-physics-wavefunction
+  - nlab-physics-wavefunction
+  - nist-atomic-wavefunctions
+  - tong-quantum
+  sections:
+  - title: Interpretation
+    body: The wavefunction itself depends on basis and phase convention; the Born rule extracts probabilities from amplitudes.
+- id: born_rule
+  label: Born rule
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 7
+  kind: structure
+  conceptType: Probability rule
+  summary: The rule assigning probabilities from a quantum state and measurement operators, including $|\langle a|\psi\rangle|^2$ in the projective case.
+  citations:
+  - wp-physics-born_rule
+  - nlab-physics-born_rule
+  - nist-quantum-theory
+  - tong-quantum
+- id: canonical_commutation_relations
+  label: Canonical commutation relations
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 7
+  kind: structure
+  conceptType: Algebraic relation
+  summary: Relations such as $[Q_i,P_j]=i\hbar\delta_{ij}$ encoding canonical quantum kinematics in suitable representations.
+  citations:
+  - wp-physics-canonical_commutation_relations
+  - nlab-physics-canonical_commutation_relations
+  - tong-quantum
+- id: quantum_measurement
+  label: Quantum measurement
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 7
+  kind: structure
+  conceptType: Physical process / operational rule
+  summary: An interaction and outcome-description represented by projective measurements or, more generally, positive-operator-valued measures and quantum instruments.
+  citations:
+  - wp-physics-quantum_measurement
+  - nlab-physics-quantum_measurement
+  - nist-quantum-theory
+  - tong-quantum
+- id: relativistic_quantum_mechanics
+  label: Relativistic wave equations
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 7
+  kind: structure
+  conceptType: Limited framework
+  summary: Single-particle relativistic wave equations such as Klein–Gordon and Dirac equations; a full interacting relativistic theory generally requires QFT.
+  citations:
+  - wp-physics-relativistic_quantum_mechanics
+  - nlab-physics-relativistic_quantum_mechanics
+  - tong-qft
+- id: unitary_time_evolution
+  label: Unitary time evolution
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 7
+  kind: structure
+  conceptType: Dynamical law
+  summary: Closed-system quantum evolution generated by a self-adjoint Hamiltonian through a unitary one-parameter group.
+  citations:
+  - wp-physics-unitary_time_evolution
+  - nlab-physics-unitary_time_evolution
+  - tong-quantum
+- id: dirac_equation
+  label: Dirac equation
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 8
+  kind: structure
+  conceptType: Relativistic field equation
+  summary: The first-order Lorentz-covariant equation for spinor fields, predicting spin-$1/2$ structure and antiparticle solutions.
+  citations:
+  - wp-physics-dirac_equation
+  - nlab-physics-dirac_equation
+  - tong-qft
+  - pdg-rpp
+- id: klein_gordon_equation
+  label: Klein–Gordon equation
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 8
+  kind: structure
+  conceptType: Relativistic field equation
+  summary: The relativistic second-order wave equation for a scalar field, serving as a classical field equation and free scalar-QFT equation.
+  citations:
+  - wp-physics-klein_gordon_equation
+  - nlab-physics-klein_gordon_equation
+  - tong-qft
+- id: angular_momentum
+  label: Quantum angular momentum
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 8
+  kind: structure
+  conceptType: Observable and symmetry generator
+  summary: The generators of spatial rotations satisfying the $\mathfrak{su}(2)$ commutation relations.
+  citations:
+  - wp-physics-angular_momentum
+  - nlab-physics-angular_momentum
+  - tong-quantum
+- id: second_quantization
+  label: Second-quantized formalism
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 8
+  kind: structure
+  conceptType: Representation / formalism
+  summary: A Fock-space formalism using field, creation, and annihilation operators to represent variable occupation numbers; it is a reformulation for fixed particle species, not literally a second act of quantization in all uses.
+  citations:
+  - wp-physics-second_quantization
+  - nlab-physics-second_quantization
+  - tong-qft
+- id: spin
+  label: Spin
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 8
+  kind: structure
+  conceptType: Intrinsic angular momentum
+  summary: Intrinsic quantum angular momentum classified by representations of the rotation or Poincaré symmetry groups.
+  citations:
+  - wp-physics-spin
+  - nlab-physics-spin
+  - tong-quantum
+  - pdg-rpp
+- id: uncertainty_principle
+  label: Uncertainty principle
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 8
+  kind: structure
+  conceptType: Theorem / bound
+  summary: Bounds such as $\Delta A\Delta B\ge |\langle[A,B]\rangle|/2$, distinct from mere measurement disturbance.
+  citations:
+  - wp-physics-uncertainty_principle
+  - nlab-physics-uncertainty_principle
+  - tong-quantum
+- id: annihilation_operator
+  label: Annihilation operator
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 9
+  kind: structure
+  conceptType: Operator
+  summary: An operator lowering the occupation number of a mode, subject to bosonic commutation or fermionic anticommutation relations.
+  citations:
+  - wp-physics-creation_operator
+  - nlab-physics-annihilation_operator
+  - tong-qft
+- id: creation_operator
+  label: Creation operator
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 9
+  kind: structure
+  conceptType: Operator
+  summary: An operator raising the occupation number of a mode, subject to bosonic commutation or fermionic anticommutation relations.
+  citations:
+  - wp-physics-creation_operator
+  - nlab-physics-creation_operator
+  - tong-qft
+- id: identical_particles
+  label: Identical quantum particles
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 9
+  kind: structure
+  conceptType: Many-body principle
+  summary: Particles of the same species are represented without individually observable labels, with states constrained by exchange statistics.
+  citations:
+  - wp-physics-identical_particles
+  - nlab-physics-identical_particles
+  - tong-quantum
+- id: nonrelativistic_quantum_mechanics
+  label: Nonrelativistic quantum mechanics
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 9
+  kind: structure
+  conceptType: Effective theory
+  summary: Quantum mechanics for degrees of freedom with velocities small compared with $c$ and energies far below pair-production thresholds.
+  citations:
+  - wp-physics-quantum_mechanics
+  - nlab-physics-nonrelativistic_quantum_mechanics
+  - tong-quantum
+  - penco-eft
+- id: orbital_angular_momentum
+  label: Orbital angular momentum
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 9
+  kind: structure
+  conceptType: Observable
+  summary: The position–momentum angular momentum $\mathbf L=\mathbf r\times\mathbf p$ in nonrelativistic quantum mechanics.
+  citations:
+  - wp-physics-angular_momentum
+  - tong-quantum
+- id: quantum_number
+  label: Quantum number
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 9
+  kind: structure
+  conceptType: State label
+  summary: An eigenvalue or representation label used to classify quantum states under commuting observables and symmetries.
+  citations:
+  - wp-physics-quantum_number
+  - nist-atomic-spectroscopy
+  - tong-quantum
+- id: spin_half
+  label: Spin one-half
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 9
+  kind: structure
+  conceptType: Representation class
+  summary: The two-dimensional irreducible representation of $SU(2)\cong\mathrm{Spin}(3)$, corresponding to a projective representation of $SO(3)$ and spin projections $\pm\hbar/2$ along a chosen axis.
+  citations:
+  - wp-physics-spin_half
+  - nlab-physics-spin_half
+  - tong-quantum
+- id: bose_einstein_statistics
+  label: Bose–Einstein statistics
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 10
+  kind: structure
+  conceptType: Exchange statistics
+  summary: The symmetric exchange sector for identical bosons, yielding Bose–Einstein occupation statistics in applicable ensembles.
+  citations:
+  - wp-physics-bose_einstein_statistics
+  - nlab-physics-bose_einstein_statistics
+  - tong-quantum
+- id: fermi_dirac_statistics
+  label: Fermi–Dirac statistics
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 10
+  kind: structure
+  conceptType: Exchange statistics
+  summary: The antisymmetric exchange sector for identical fermions, yielding Fermi–Dirac occupation statistics in applicable ensembles and the Pauli exclusion consequence.
+  citations:
+  - wp-physics-fermi_dirac_statistics
+  - nlab-physics-fermi_dirac_statistics
+  - tong-quantum
+- id: occupation_number_state
+  label: Occupation-number state
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 10
+  kind: structure
+  conceptType: State representation
+  summary: A Fock-basis state labeled by the occupation number of each one-particle mode.
+  citations:
+  - wp-physics-occupation_number_state
+  - nlab-physics-occupation_number_state
+  - tong-qft
+- id: pauli_equation
+  label: Pauli equation
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 10
+  kind: structure
+  conceptType: Effective equation
+  summary: The nonrelativistic spin-$1/2$ equation coupling a two-component spinor to electromagnetic fields, obtained from the Dirac theory at low velocity.
+  citations:
+  - wp-physics-pauli_equation
+  - nlab-physics-pauli_equation
+  - tong-quantum
+  - penco-eft
+- id: bound_state
+  label: Quantum bound state
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 10
+  kind: structure
+  conceptType: State class
+  summary: A normalizable state spatially confined by an interaction, typically associated with discrete spectrum below a continuum threshold.
+  citations:
+  - wp-physics-bound_state
+  - nlab-physics-bound_state
+  - tong-quantum
+- id: quantum_harmonic_oscillator
+  label: Quantum harmonic oscillator
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 10
+  kind: structure
+  conceptType: Solvable model
+  summary: The quantum system with a quadratic Hamiltonian. The standard one-dimensional oscillator has equally spaced energy levels and creation–annihilation operator structure.
+  citations:
+  - wp-physics-quantum_harmonic_oscillator
+  - nlab-physics-quantum_harmonic_oscillator
+  - tong-quantum
+- id: quantum_scattering_theory
+  label: Quantum scattering theory
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 10
+  kind: structure
+  conceptType: Theory formalism
+  summary: The analysis of asymptotic in/out states, cross sections, phase shifts, and transition amplitudes.
+  citations:
+  - wp-physics-scattering_state
+  - nlab-physics-quantum_scattering_theory
+  - tong-quantum
+  - tong-qft
+- id: scattering_state
+  label: Scattering state
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 10
+  kind: structure
+  conceptType: State class
+  summary: An asymptotic or generalized state associated with continuum spectrum and unbound motion.
+  citations:
+  - wp-physics-scattering_state
+  - tong-quantum
+- id: schrodinger_equation
+  label: Schrödinger equation
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 10
+  kind: structure
+  conceptType: Evolution equation
+  summary: The Schrödinger-picture evolution equation $i\hbar\,\partial_t|\psi(t)\rangle=H|\psi(t)\rangle$; its concrete Hamiltonian may describe a nonrelativistic system or an effective quantum theory.
+  citations:
+  - wp-physics-schrodinger_equation
+  - nlab-physics-schrodinger_equation
+  - tong-quantum
+- id: many_body_quantum_mechanics
+  label: Many-body quantum mechanics
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 11
+  kind: structure
+  conceptType: Theory framework
+  summary: Quantum mechanics of several or many interacting identical or distinguishable degrees of freedom.
+  citations:
+  - wp-physics-many_body_quantum_mechanics
+  - nlab-physics-many_body_quantum_mechanics
+  - tong-quantum
+- id: pauli_exclusion_principle
+  label: Pauli exclusion principle
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 11
+  kind: structure
+  conceptType: Consequence of fermionic statistics
+  summary: No two identical fermions can occupy the same one-particle state, as a consequence of antisymmetry of the many-fermion state.
+  citations:
+  - wp-physics-pauli_exclusion_principle
+  - nlab-physics-pauli_exclusion_principle
+  - tong-quantum
+  - nist-atomic-states
+- id: quantum_perturbation_theory
+  label: Quantum perturbation theory
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 11
+  kind: structure
+  conceptType: Controlled approximation method
+  summary: An expansion around a solvable Hamiltonian in powers of a small interaction or parameter.
+  citations:
+  - wp-physics-quantum_perturbation_theory
+  - tong-quantum
+- id: variational_method
+  label: Quantum variational method
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 11
+  kind: structure
+  conceptType: Approximation method
+  summary: An approximation based on optimizing trial states, with the Rayleigh–Ritz bound for the ground-state energy.
+  citations:
+  - wp-physics-variational_method
+  - tong-quantum
+- id: quantum_decoherence
+  label: Quantum decoherence
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 9
+  kind: structure
+  conceptType: Open-system process
+  summary: Suppression of interference in a subsystem’s reduced state through entanglement with uncontrolled environmental degrees of freedom; decoherence does not by itself select a unique measurement outcome.
+  citations:
+  - wp-physics-quantum_decoherence
+  - nlab-physics-quantum_decoherence
+  - schlosshauer-decoherence-2019
+  - tong-quantum
+- id: quantum_entanglement
+  label: Quantum entanglement
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 8
+  kind: structure
+  conceptType: Composite-state property
+  summary: A composite quantum state is entangled when it is not separable into a mixture of product states across the chosen subsystem partition.
+  citations:
+  - wp-physics-quantum_entanglement
+  - nlab-physics-quantum_entanglement
+  - horodecki-entanglement-review
+  - tong-quantum
+- id: quantum_superposition
+  label: Quantum superposition
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 5
+  kind: structure
+  conceptType: Structural principle
+  summary: A linear combination of state vectors representing another possible pure state within the same superselection sector; relative phases can produce interference.
+  citations:
+  - wp-physics-quantum_superposition
+  - nlab-physics-quantum_superposition
+  - nist-quantum-theory
+  - tong-quantum
+- id: ground_state
+  label: Ground state
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  - atomic-molecular-physics
+  level: 9
+  kind: structure
+  conceptType: Quantum state class
+  summary: A state of minimum energy for a specified Hamiltonian or sector; degeneracy is possible, and some systems have no normalizable ground state.
+  citations:
+  - wp-physics-ground_state
+  - nlab-physics-ground_state
+  - tong-quantum
+  - nist-atomic-states
+- id: excited_state
+  label: Excited state
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  - atomic-molecular-physics
+  level: 10
+  kind: structure
+  conceptType: Quantum state class
+  summary: A state with energy above the ground state of the specified Hamiltonian; it may be stationary, metastable, resonant, or unstable.
+  citations:
+  - wp-physics-excited_state
+  - nlab-physics-excited_state
+  - tong-quantum
+  - nist-atomic-states
+- id: parity_quantum_number
+  label: Parity
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  - particle-physics
+  - nuclear-physics
+  - atomic-molecular-physics
+  level: 9
+  kind: structure
+  conceptType: Discrete-symmetry quantum number
+  summary: The eigenvalue under spatial inversion when parity is a symmetry. Atomic and nuclear states are commonly labeled by parity, and transition operators impose parity selection rules.
+  citations:
+  - wp-physics-parity_quantum_number
+  - nlab-physics-parity_quantum_number
+  - tong-standard-model
+  - nist-atomic-states
+- id: quantum_expectation_value
+  label: Quantum expectation value
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  level: 7
+  kind: structure
+  conceptType: State-dependent statistical quantity
+  summary: For a state $\rho$ and observable $A$, the expectation value is $\langle A\rangle_\rho=\operatorname{Tr}(\rho A)$ when defined; for a pure vector state it reduces to $\langle\psi|A|\psi\rangle$.
+  citations:
+  - wp-physics-expectation-value
+  - nlab-physics-expectation-value
+  - tong-quantum
+  - nist-quantum-theory
+- id: anomalous_zeeman_observations
+  label: Anomalous Zeeman-effect observations
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  - experiments-observations
+  level: 8
+  kind: structure
+  conceptType: Observation / theoretical problem
+  summary: Spectral-line splittings more complex than the normal Zeeman triplet resisted orbital explanations and became an important clue toward electron spin and modern angular-momentum theory.
+  citations:
+  - wp-physics-zeeman_effect
+  - nobel-zeeman
+  - nist-atomic-spectrum-history
+  status: Observed / performed
+- id: blackbody_ultraviolet_catastrophe
+  label: Blackbody spectrum and ultraviolet catastrophe
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  - experiments-observations
+  level: 1
+  kind: structure
+  conceptType: Observation / theoretical problem
+  summary: Measured blackbody spectra remained finite at high frequency, while classical equipartition produced the divergent Rayleigh–Jeans prediction known as the ultraviolet catastrophe.
+  citations:
+  - wp-physics-blackbody_ultraviolet_catastrophe
+  - nist-blackbody
+  status: Observed / performed
+- id: photoelectric_effect_experiments
+  label: Photoelectric-effect experiments
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  - experiments-observations
+  level: 2
+  kind: structure
+  conceptType: Canonical experiment
+  summary: Photoelectron energies depend on light frequency rather than intensity alone and show a threshold frequency, behavior explained by quantized light energy.
+  citations:
+  - wp-physics-photoelectric_effect_experiments
+  - nobel-photoelectric
+  - nist-historical-constants
+  status: Observed / performed
+- id: stern_gerlach_experiment
+  label: Stern–Gerlach experiment
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  - experiments-observations
+  level: 8
+  kind: structure
+  conceptType: Canonical experiment
+  summary: A beam of silver atoms split into discrete components in an inhomogeneous magnetic field, demonstrating space quantization and later becoming a canonical manifestation of spin-$1/2$.
+  citations:
+  - wp-physics-stern_gerlach_experiment
+  - aps-stern-gerlach
+  status: Observed / performed
+- id: compton_scattering_experiment
+  label: Compton scattering experiment
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  - experiments-observations
+  level: 13
+  kind: structure
+  conceptType: Canonical experiment
+  summary: X-ray scattering exhibited a wavelength shift determined by scattering angle, quantitatively supporting photon energy and momentum.
+  citations:
+  - wp-physics-compton_scattering_experiment
+  - nobel-compton
+  status: Observed / performed
+- id: davisson_germer_experiment
+  label: Davisson–Germer electron-diffraction experiment
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  - experiments-observations
+  level: 7
+  kind: structure
+  conceptType: Canonical experiment
+  summary: Electrons scattered from a nickel crystal produced diffraction peaks with the de Broglie wavelength, directly demonstrating matter-wave behavior.
+  citations:
+  - wp-physics-davisson_germer_experiment
+  - aps-davisson-germer
+  status: Observed / performed
+- id: single_particle_double_slit_experiments
+  label: Single-particle double-slit experiments
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  - experiments-observations
+  level: 9
+  kind: structure
+  conceptType: Canonical experiment family
+  summary: Electron, neutron, atom, and molecule experiments build interference patterns from individually detected particles, displaying superposition amplitudes and probabilistic detection.
+  citations:
+  - wp-physics-single_particle_double_slit_experiments
+  - tonomura-double-slit
+  status: Observed / performed
+- id: epr_argument
+  label: Einstein–Podolsky–Rosen argument
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  - experiments-observations
+  level: 8
+  kind: structure
+  conceptType: Thought experiment / foundational problem
+  summary: The 1935 EPR argument used entangled correlations to challenge the completeness of quantum mechanics under locality and separability assumptions.
+  citations:
+  - wp-physics-epr_argument
+  - epr-original
+  status: Observed / performed
+- id: bell_test_experiments
+  label: Bell-test experiments
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  - experiments-observations
+  level: 10
+  kind: structure
+  conceptType: Canonical experiment family
+  summary: Bell tests measure correlations between separated entangled systems and violate Bell inequalities, excluding broad classes of local hidden-variable models under the tested assumptions.
+  citations:
+  - wp-physics-bell_test_experiments
+  - nobel-bell-tests
+  - aps-loophole-free-bell
+  status: Observed / performed
+- id: aharonov_bohm_interference_experiments
+  label: Aharonov–Bohm interference experiments
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  - experiments-observations
+  level: 13
+  kind: structure
+  conceptType: Canonical experiment
+  summary: Electron-interference phases respond to enclosed magnetic flux even when the electrons traverse regions with negligible magnetic field, testing the gauge-potential structure of quantum mechanics.
+  citations:
+  - wp-physics-aharonov_bohm_interference_experiments
+  - aharonov-bohm-experiment
+  status: Observed / performed
+- id: cavity_qed_decoherence_experiments
+  label: Cavity-QED decoherence experiments
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  - experiments-observations
+  level: 10
+  kind: structure
+  conceptType: Canonical experiment family
+  summary: Controlled cavity experiments tracked the loss of coherence in superpositions coupled to an environment, directly testing quantitative decoherence models.
+  citations:
+  - wp-physics-quantum_decoherence
+  - nobel-decoherence
+  status: Observed / performed
+- id: hong_ou_mandel_experiment
+  label: Hong–Ou–Mandel experiment
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  - experiments-observations
+  level: 11
+  kind: structure
+  conceptType: Canonical experiment
+  summary: Two indistinguishable photons entering a balanced beam splitter from different inputs bunch into the same output, producing the Hong–Ou–Mandel dip.
+  citations:
+  - wp-physics-hong_ou_mandel_experiment
+  - hom-original
+  status: Observed / performed
+- id: fullerene_matter_wave_interference
+  label: Fullerene matter-wave interference
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  - experiments-observations
+  level: 10
+  kind: structure
+  conceptType: Canonical experiment
+  summary: Interference of $C_{60}$ molecules extended matter-wave superposition to large composite particles and enabled quantitative study of environmental decoherence.
+  citations:
+  - wp-physics-fullerene_matter_wave_interference
+  - fullerene-interference
+  status: Observed / performed
+- id: bell_theorem
+  label: Bell theorem
+  primaryField: physics
+  fields:
+  - physics
+  primaryDomain: quantum-mechanics
+  domains:
+  - quantum-mechanics
+  - physical-foundations
+  level: 9
+  kind: structure
+  conceptType: No-go theorem
+  summary: Bell inequalities constrain correlations produced by local hidden-variable models, while quantum mechanics predicts and experiments observe violations under appropriate conditions.
+  citations:
+  - wp-physics-bell_theorem
+  - nist-quantum-theory
+  - horodecki-entanglement-review
+edges:
+- id: angular_to_orbital
+  source: angular_momentum
+  target: orbital_angular_momentum
+  type: classification
+  label: orbital contribution
+  detail: Orbital angular momentum is the contribution from spatial wavefunction transformations.
+  citations:
+  - wp-physics-angular_momentum
+  - tong-quantum
+  - nlab-physics-angular_momentum
+- id: angular_to_spin
+  source: angular_momentum
+  target: spin
+  type: classification
+  label: intrinsic contribution
+  detail: Spin is intrinsic quantum angular momentum associated with symmetry representations.
+  citations:
+  - wp-physics-spin
+  - nlab-physics-spin
+  - wp-physics-angular_momentum
+  - nlab-physics-angular_momentum
+- id: born_to_measurement
+  source: born_rule
+  target: quantum_measurement
+  type: theory-component
+  label: outcome probabilities
+  detail: The Born rule maps states and measurement operators to probabilities.
+  citations:
+  - wp-physics-born_rule
+  - nlab-physics-born_rule
+  - wp-physics-quantum_measurement
+  - nlab-physics-quantum_measurement
+- id: commutation_to_uncertainty
+  source: canonical_commutation_relations
+  target: uncertainty_principle
+  type: theorem-implication
+  label: noncommuting-observable bound
+  detail: Canonical noncommutation implies position–momentum uncertainty relations.
+  citations:
+  - wp-physics-uncertainty_principle
+  - nlab-physics-uncertainty_principle
+  - wp-physics-canonical_commutation_relations
+  - nlab-physics-canonical_commutation_relations
+- id: dirac_to_darwin
+  source: dirac_equation
+  target: darwin_term
+  type: mathematical-limit
+  label: Foldy–Wouthuysen term
+  detail: The Darwin contact term appears at order $1/c^2$ in the low-energy Foldy–Wouthuysen expansion of Dirac dynamics in an electric field.
+  citations:
+  - wp-physics-darwin_term
+  - nist-hydrogen
+- id: dirac_to_diraccoulomb
+  source: dirac_equation
+  target: dirac_coulomb_hamiltonian
+  type: theory-component
+  label: one-electron Dirac terms
+  detail: The Dirac–Coulomb Hamiltonian uses Dirac one-electron dynamics for each electron.
+  citations:
+  - wp-physics-relativistic_atomic_structure
+  - nist-atomic-spectroscopy
+  - wp-physics-dirac_equation
+  - nlab-physics-dirac_equation
+- id: dirac_to_pauli
+  source: dirac_equation
+  target: pauli_equation
+  type: effective-theory
+  label: nonrelativistic spinor limit
+  detail: The Pauli Hamiltonian is obtained by a low-energy expansion of the Dirac theory in electromagnetic fields.
+  citations:
+  - wp-physics-pauli_equation
+  - nlab-physics-pauli_equation
+  - wp-physics-dirac_equation
+  - nlab-physics-dirac_equation
+- id: dirac_to_spinorbit
+  source: dirac_equation
+  target: spin_orbit_coupling
+  type: mathematical-limit
+  label: Foldy–Wouthuysen spin–orbit term
+  detail: Spin–orbit coupling appears at order $1/c^2$ in the low-energy expansion of Dirac dynamics, with many-electron and nuclear corrections treated separately.
+  citations:
+  - wp-physics-spin_orbit_coupling
+  - nist-atomic-spectroscopy
+- id: fermi_to_pauli
+  source: fermi_dirac_statistics
+  target: pauli_exclusion_principle
+  type: theorem-implication
+  label: exclusion
+  detail: Antisymmetry makes a state vanish when two identical fermions occupy the same one-particle state.
+  citations:
+  - wp-physics-pauli_exclusion_principle
+  - nlab-physics-pauli_exclusion_principle
+  - wp-physics-fermi_dirac_statistics
+  - nlab-physics-fermi_dirac_statistics
+- id: identical_to_bose
+  source: identical_particles
+  target: bose_einstein_statistics
+  type: state-description
+  label: symmetric exchange sector
+  detail: Bosonic identical-particle state spaces use symmetric exchange statistics.
+  citations:
+  - wp-physics-bose_einstein_statistics
+  - nlab-physics-bose_einstein_statistics
+- id: identical_to_fermi
+  source: identical_particles
+  target: fermi_dirac_statistics
+  type: state-description
+  label: antisymmetric exchange sector
+  detail: Fermionic identical-particle state spaces use antisymmetric exchange statistics.
+  citations:
+  - wp-physics-fermi_dirac_statistics
+  - nlab-physics-fermi_dirac_statistics
+- id: manybody_to_second
+  source: many_body_quantum_mechanics
+  target: second_quantization
+  type: representation-equivalence
+  label: occupation-number formalism
+  detail: Second quantization reformulates many-body states and operators in Fock space.
+  citations:
+  - wp-physics-second_quantization
+  - nlab-physics-second_quantization
+  - wp-physics-many_body_quantum_mechanics
+  - nlab-physics-many_body_quantum_mechanics
+- id: mixed_to_density
+  source: mixed_quantum_state
+  target: density_operator
+  type: state-description
+  label: density-operator representation
+  detail: Mixed states are represented by positive trace-one density operators; pure states are the rank-one case.
+  citations:
+  - wp-physics-density_operator
+  - nlab-physics-density_operator
+  - wp-physics-quantum_state
+  - nlab-physics-mixed_quantum_state
+- id: nrqm_to_coulomb_h
+  source: nonrelativistic_quantum_mechanics
+  target: nonrelativistic_coulomb_hamiltonian
+  type: framework-specialization
+  label: nonrelativistic charged particles
+  detail: The Coulomb Hamiltonian is the standard nonrelativistic quantum model of electrons and nuclei.
+  citations:
+  - wp-physics-atomic_hamiltonian
+  - nist-atomic-spectroscopy
+  - wp-physics-quantum_mechanics
+  - nlab-physics-nonrelativistic_quantum_mechanics
+- id: pauli_to_schrodinger
+  source: pauli_equation
+  target: schrodinger_equation
+  type: mathematical-limit
+  label: neglect spin coupling
+  detail: For spin-independent interactions or after suppressing spin terms, the Pauli equation reduces to Schrödinger dynamics.
+  citations:
+  - wp-physics-schrodinger_equation
+  - nlab-physics-schrodinger_equation
+  - wp-physics-pauli_equation
+  - nlab-physics-pauli_equation
+- id: pauli_to_configuration
+  source: pauli_exclusion_principle
+  target: electron_configuration
+  type: describes-governs
+  label: fermionic occupation constraints
+  detail: Pauli exclusion constrains occupation of one-electron spin orbitals.
+  citations:
+  - wp-physics-electron_configuration
+  - nlab-physics-electron_configuration
+  - wp-physics-pauli_exclusion_principle
+  - nlab-physics-pauli_exclusion_principle
+- id: antisymmetry_to_exchange
+  source: pauli_exclusion_principle
+  target: exchange_interaction
+  type: theorem-implication
+  label: exchange energy and structure
+  detail: Antisymmetry produces exchange terms and selection effects without introducing a new force.
+  citations:
+  - wp-physics-pauli_exclusion_principle
+  - nlab-physics-pauli_exclusion_principle
+  - tong-quantum
+  - nist-atomic-states
+  - wp-physics-exchange_interaction
+  - nist-atomic-spectroscopy
+  - nist-atomic-wavefunctions
+- id: qm_to_bohr
+  source: quantum_mechanics
+  target: bohr_model
+  type: model-realization
+  label: semiclassical correspondence model
+  detail: The Bohr model is a semiclassical approximation superseded by wave mechanics.
+  citations:
+  - wp-physics-bohr_model
+  - nist-hydrogen
+  - wp-physics-quantum_mechanics
+  - nlab-physics-quantum_mechanics
+- id: qm_to_bound
+  source: quantum_mechanics
+  target: bound_state
+  type: state-description
+  label: bound spectrum
+  detail: Quantum Hamiltonians may have normalizable bound states.
+  citations:
+  - wp-physics-bound_state
+  - nlab-physics-bound_state
+  - wp-physics-quantum_mechanics
+  - nlab-physics-quantum_mechanics
+- id: qm_to_classical_limit
+  source: quantum_mechanics
+  target: classical_mechanics
+  type: emergence
+  label: semiclassical and decohered regimes
+  detail: Classical behavior emerges in suitable large-action, narrow-wavepacket, coarse-grained, and environmentally decohered regimes; no single universal $\hbar\to0$ limit covers all quantum systems.
+  citations:
+  - tong-quantum
+  - schlosshauer-decoherence-2019
+- id: qm_to_manybody
+  source: quantum_mechanics
+  target: many_body_quantum_mechanics
+  type: framework-specialization
+  label: many-body systems
+  detail: Many-body quantum mechanics specializes quantum theory to interacting multi-degree systems.
+  citations:
+  - wp-physics-many_body_quantum_mechanics
+  - nlab-physics-many_body_quantum_mechanics
+  - wp-physics-quantum_mechanics
+  - nlab-physics-quantum_mechanics
+- id: qm_describes_molecule
+  source: quantum_mechanics
+  target: molecule
+  type: describes-governs
+  label: molecular quantum states
+  detail: Molecular electronic, vibrational, and rotational states are quantum mechanical; practical calculations use controlled approximations such as Born–Oppenheimer separation.
+  citations:
+  - iupac-molecule
+  - nist-quantum-theory
+  - wp-physics-molecule
+  - wp-physics-quantum_mechanics
+  - nlab-physics-quantum_mechanics
+- id: qm_to_nrqm
+  source: quantum_mechanics
+  target: nonrelativistic_quantum_mechanics
+  type: framework-specialization
+  label: nonrelativistic regime
+  detail: Nonrelativistic quantum mechanics specializes quantum theory to low velocities and fixed particle number.
+  citations:
+  - wp-physics-quantum_mechanics
+  - nlab-physics-nonrelativistic_quantum_mechanics
+  - nlab-physics-quantum_mechanics
+- id: qm_to_qft_component
+  source: quantum_mechanics
+  target: quantum_field_theory
+  type: theory-component
+  label: quantum principles
+  detail: QFT incorporates quantum states, observables, amplitudes, and probabilistic prediction while allowing fields and variable particle number.
+  citations:
+  - wp-physics-quantum_field_theory
+  - nlab-physics-quantum_field_theory
+  - wp-physics-quantum_mechanics
+  - nlab-physics-quantum_mechanics
+- id: qm_to_oscillator
+  source: quantum_mechanics
+  target: quantum_harmonic_oscillator
+  type: framework-specialization
+  label: quadratic model
+  detail: The harmonic oscillator is the universal quadratic quantum model near stable equilibria and for free field modes.
+  citations:
+  - wp-physics-quantum_harmonic_oscillator
+  - nlab-physics-quantum_harmonic_oscillator
+  - wp-physics-quantum_mechanics
+  - nlab-physics-quantum_mechanics
+- id: qm_to_quantum_observable
+  source: quantum_mechanics
+  target: quantum_observable
+  type: state-description
+  label: operator observable
+  detail: Quantum mechanics represents observables by operators or generalized measurements.
+  citations:
+  - nist-quantum-theory
+  - wp-physics-observable
+  - nlab-physics-quantum_observable
+  - wp-physics-quantum_mechanics
+  - nlab-physics-quantum_mechanics
+- id: qm_to_perturb
+  source: quantum_mechanics
+  target: quantum_perturbation_theory
+  type: mathematical-limit
+  label: small perturbation expansion
+  detail: Perturbation theory expands around a solvable Hamiltonian in a controlled small parameter when convergence or asymptotic accuracy permits.
+  citations:
+  - wp-physics-quantum_perturbation_theory
+  - tong-quantum
+  - wp-physics-quantum_mechanics
+  - nlab-physics-quantum_mechanics
+- id: qm_to_quantum_state
+  source: quantum_mechanics
+  target: quantum_state
+  type: state-description
+  label: quantum state
+  detail: Quantum mechanics represents the state of a system by a state vector, ray, or density operator.
+  citations:
+  - nist-quantum-theory
+  - wp-physics-quantum_state
+  - nlab-physics-quantum_state
+  - wp-physics-quantum_mechanics
+  - nlab-physics-quantum_mechanics
+- id: qm_to_qsystem
+  source: quantum_mechanics
+  target: quantum_system
+  type: describes-governs
+  label: quantum dynamics and predictions
+  detail: Quantum mechanics governs quantum systems in its domain.
+  citations:
+  - wp-physics-quantum_mechanics
+  - nlab-physics-quantum_mechanics
+  - wp-physics-quantum_system
+  - nlab-physics-quantum_system
+- id: qm_to_scattering_state
+  source: quantum_mechanics
+  target: scattering_state
+  type: state-description
+  label: continuum state
+  detail: Quantum Hamiltonians may have continuum scattering states.
+  citations:
+  - wp-physics-scattering_state
+  - wp-physics-quantum_mechanics
+  - nlab-physics-quantum_mechanics
+- id: qm_to_variational
+  source: quantum_mechanics
+  target: variational_method
+  type: model-realization
+  label: trial-state restriction
+  detail: The variational method restricts the state search to a parameterized family and optimizes the energy.
+  citations:
+  - wp-physics-variational_method
+  - tong-quantum
+  - wp-physics-quantum_mechanics
+  - nlab-physics-quantum_mechanics
+- id: qnumber_to_m
+  source: quantum_number
+  target: magnetic_quantum_number
+  type: classification
+  label: projection quantum number
+  detail: The magnetic number labels a chosen-axis projection.
+  citations:
+  - wp-physics-quantum_number
+  - nist-atomic-spectroscopy
+  - tong-quantum
+  - wp-physics-magnetic_quantum_number
+- id: qnumber_to_l
+  source: quantum_number
+  target: orbital_quantum_number
+  type: classification
+  label: orbital angular-momentum number
+  detail: The orbital number is one angular-momentum quantum number.
+  citations:
+  - wp-physics-quantum_number
+  - nist-atomic-spectroscopy
+  - tong-quantum
+  - wp-physics-orbital_quantum_number
+- id: qnumber_to_n
+  source: quantum_number
+  target: principal_quantum_number
+  type: classification
+  label: principal quantum number
+  detail: The principal number is one atomic quantum number.
+  citations:
+  - wp-physics-quantum_number
+  - nist-atomic-spectroscopy
+  - tong-quantum
+  - wp-physics-principal_quantum_number
+- id: qnumber_to_ms
+  source: quantum_number
+  target: spin_projection_quantum_number
+  type: classification
+  label: spin projection
+  detail: Electron spin projection is an atomic quantum number.
+  citations:
+  - wp-physics-quantum_number
+  - nist-atomic-spectroscopy
+  - tong-quantum
+  - wp-physics-spin_projection_quantum_number
+- id: qnumber_to_j
+  source: quantum_number
+  target: total_angular_momentum_quantum_number
+  type: classification
+  label: total angular momentum
+  detail: Total $J$ labels a coupled angular-momentum representation.
+  citations:
+  - wp-physics-quantum_number
+  - nist-atomic-spectroscopy
+  - tong-quantum
+  - wp-physics-total_angular_momentum_quantum_number
+- id: scattering_to_state
+  source: quantum_scattering_theory
+  target: scattering_state
+  type: describes-governs
+  label: asymptotic scattering states
+  detail: Scattering theory analyzes continuum in/out states.
+  citations:
+  - wp-physics-scattering_state
+  - nlab-physics-quantum_scattering_theory
+- id: qstate_to_mixed
+  source: quantum_state
+  target: mixed_quantum_state
+  type: classification
+  label: mixed state
+  detail: Mixed states are non-extremal quantum states.
+  citations:
+  - wp-physics-quantum_state
+  - nlab-physics-mixed_quantum_state
+  - nlab-physics-quantum_state
+- id: qstate_to_pure
+  source: quantum_state
+  target: pure_quantum_state
+  type: classification
+  label: pure state
+  detail: Pure states are extremal quantum states.
+  citations:
+  - wp-physics-quantum_state
+  - nlab-physics-pure_quantum_state
+  - nlab-physics-quantum_state
+- id: quantum_state_to_wavefunction
+  source: quantum_state
+  target: wavefunction
+  type: state-description
+  label: coordinate representation
+  detail: A wavefunction is a representation of a quantum state in a chosen basis, commonly position.
+  citations:
+  - nist-atomic-wavefunctions
+  - nist-quantum-theory
+  - wp-physics-wavefunction
+  - nlab-physics-wavefunction
+  - wp-physics-quantum_state
+- id: rel_qm_to_dirac
+  source: relativistic_quantum_mechanics
+  target: dirac_equation
+  type: framework-specialization
+  label: spin-$1/2$ wave equation
+  detail: The Dirac equation is the relativistic spinor wave equation.
+  citations:
+  - wp-physics-dirac_equation
+  - nlab-physics-dirac_equation
+  - wp-physics-relativistic_quantum_mechanics
+  - nlab-physics-relativistic_quantum_mechanics
+- id: rel_qm_to_kg
+  source: relativistic_quantum_mechanics
+  target: klein_gordon_equation
+  type: framework-specialization
+  label: spin-zero wave equation
+  detail: The Klein–Gordon equation is the relativistic scalar wave equation.
+  citations:
+  - wp-physics-klein_gordon_equation
+  - nlab-physics-klein_gordon_equation
+  - wp-physics-relativistic_quantum_mechanics
+  - nlab-physics-relativistic_quantum_mechanics
+- id: schrodinger_to_evolution
+  source: schrodinger_equation
+  target: unitary_time_evolution
+  type: representation-equivalence
+  label: differential evolution equation
+  detail: For a self-adjoint time-independent Hamiltonian, the Schrödinger equation is the differential form of the strongly continuous unitary evolution $U(t)=e^{-itH/\hbar}$. Time-dependent Hamiltonians require additional domain and well-posedness hypotheses.
+  citations:
+  - wp-physics-schrodinger_equation
+  - nlab-physics-schrodinger_equation
+  - wp-physics-unitary_time_evolution
+  - nlab-physics-unitary_time_evolution
+- id: second_to_annihilation
+  source: annihilation_operator
+  target: second_quantization
+  type: theory-component
+  label: mode-lowering operator
+  detail: Annihilation operators are components of the second-quantized occupation-number formalism.
+  citations:
+  - wp-physics-creation_operator
+  - wp-physics-second_quantization
+- id: second_to_creation
+  source: creation_operator
+  target: second_quantization
+  type: theory-component
+  label: mode-raising operator
+  detail: Creation operators are components of the second-quantized occupation-number formalism.
+  citations:
+  - wp-physics-creation_operator
+  - wp-physics-second_quantization
+- id: spin_to_helicity
+  source: spin
+  target: helicity
+  type: state-description
+  label: spin projection on momentum
+  detail: Helicity is the projection of spin along momentum.
+  citations:
+  - wp-physics-helicity
+  - pdg-rpp
+  - wp-physics-spin
+  - nlab-physics-spin
+- id: spin_to_half
+  source: spin
+  target: spin_half
+  type: classification
+  label: spin-$1/2$
+  detail: Spin one-half is a particular irreducible angular-momentum representation.
+  citations:
+  - wp-physics-spin_half
+  - nlab-physics-spin_half
+  - wp-physics-spin
+  - nlab-physics-spin
+- id: entanglement_to_decoherence
+  source: quantum_entanglement
+  target: quantum_decoherence
+  type: transformation-process
+  label: environment-induced reduced-state decoherence
+  detail: System–environment entanglement transfers phase coherence into nonlocal correlations, suppressing interference in the reduced subsystem state.
+  citations:
+  - wp-physics-quantum_entanglement
+  - nlab-physics-quantum_entanglement
+  - horodecki-entanglement-review
+  - tong-quantum
+  - wp-physics-quantum_decoherence
+  - nlab-physics-quantum_decoherence
+  - schlosshauer-decoherence-2019
+- id: manybody_to_entanglement
+  source: many_body_quantum_mechanics
+  target: quantum_entanglement
+  type: state-description
+  label: nonseparable many-body states
+  detail: Interacting and identical-particle many-body states generally exhibit correlations that can include entanglement relative to a chosen subsystem structure.
+  citations:
+  - wp-physics-many_body_quantum_mechanics
+  - nlab-physics-many_body_quantum_mechanics
+  - tong-quantum
+  - wp-physics-quantum_entanglement
+  - nlab-physics-quantum_entanglement
+  - horodecki-entanglement-review
+- id: qnumber_to_baryonnumber
+  source: quantum_number
+  target: baryon_number
+  type: classification
+  label: baryon quantum number
+  detail: Baryon number is an additive internal quantum number, perturbatively conserved in the Standard Model but violated by electroweak anomalies in $B+L$.
+  citations:
+  - wp-physics-quantum_number
+  - nist-atomic-spectroscopy
+  - tong-quantum
+  - wp-physics-baryon_number
+  - pdg-rpp
+  - tong-particle
+- id: qnumber_to_flavor
+  source: quantum_number
+  target: flavor
+  type: classification
+  label: flavor label
+  detail: Flavor distinguishes repeated quark and lepton species with otherwise analogous gauge roles.
+  citations:
+  - wp-physics-quantum_number
+  - nist-atomic-spectroscopy
+  - tong-quantum
+  - wp-physics-flavor
+  - pdg-rpp
+  - tong-particle
+- id: qnumber_to_leptonnumber
+  source: quantum_number
+  target: lepton_number
+  type: classification
+  label: lepton quantum number
+  detail: Lepton numbers label leptonic states; flavor lepton numbers are violated by neutrino mixing and total lepton number is not established as exact.
+  citations:
+  - wp-physics-quantum_number
+  - nist-atomic-spectroscopy
+  - tong-quantum
+  - wp-physics-lepton_number
+  - pdg-2026-neutrino
+  - tong-particle
+- id: superposition_to_qstate
+  source: quantum_state
+  target: quantum_superposition
+  type: state-description
+  label: supports coherent superposition
+  detail: Pure state vectors support coherent linear superposition, while mixtures represent statistical rather than coherent combinations.
+  citations:
+  - wp-physics-quantum_superposition
+  - nlab-physics-quantum_superposition
+- id: qstate_to_ground
+  source: quantum_state
+  target: ground_state
+  type: classification
+  label: minimum-energy state
+  detail: A ground state is a quantum state of minimum energy in a specified Hamiltonian sector.
+  citations:
+  - wp-physics-ground_state
+  - nlab-physics-ground_state
+- id: qstate_to_excited
+  source: quantum_state
+  target: excited_state
+  type: classification
+  label: above-ground state
+  detail: An excited state is a quantum state above the ground-state energy of the specified system.
+  citations:
+  - wp-physics-excited_state
+  - nlab-physics-excited_state
+- id: excited_to_spontaneous
+  source: excited_state
+  target: spontaneous_emission
+  type: transformation-process
+  label: radiative de-excitation
+  detail: An excited atomic state with an allowed radiative channel may decay by spontaneous emission; metastability and nonradiative channels depend on selection rules and environment.
+  citations:
+  - nist-atomic-spectroscopy
+  - tong-qft
+- id: qnumber_to_parity
+  source: quantum_number
+  target: parity_quantum_number
+  type: classification
+  label: discrete symmetry label
+  detail: Parity is a discrete quantum number when spatial inversion commutes with the relevant Hamiltonian.
+  citations:
+  - wp-physics-parity_quantum_number
+  - nlab-physics-parity_quantum_number
+- id: parity_to_selection
+  source: parity_quantum_number
+  target: selection_rule
+  type: describes-governs
+  label: parity selection rule
+  detail: The parity of initial, final, and transition-operator states constrains allowed multipole transitions.
+  citations:
+  - nist-atomic-states
+  - nist-atomic-spectroscopy
+- id: state_to_expectation
+  source: quantum_state
+  target: quantum_expectation_value
+  type: theory-component
+  label: state functional
+  detail: A quantum state assigns expectation values to observables; in operator formulations this assignment is a positive normalized functional.
+  citations:
+  - tong-quantum
+  - nist-quantum-theory
+  - wp-physics-expectation-value
+- id: observable_to_expectation
+  source: quantum_observable
+  target: quantum_expectation_value
+  type: theory-component
+  label: observable argument
+  detail: An expectation value is evaluated for a specified observable in a specified state.
+  citations:
+  - tong-quantum
+  - nist-quantum-theory
+  - wp-physics-expectation-value
+- id: density_to_expectation
+  source: density_operator
+  target: quantum_expectation_value
+  type: mathematical-formulation
+  label: trace formula
+  detail: For a density operator $\rho$, the expectation of $A$ is $\operatorname{Tr}(\rho A)$ whenever the product and trace are defined.
+  citations:
+  - tong-quantum
+  - wp-physics-expectation-value
+  - nlab-physics-expectation-value
+- id: hist_blackbody_ultraviolet_catastrophe_to_quantum_mechanics
+  source: blackbody_ultraviolet_catastrophe
+  target: quantum_mechanics
+  type: historically-motivated
+  label: failure of classical equipartition
+  detail: Planck’s quantized energy elements solved the blackbody problem and initiated the quantum developments that culminated in quantum mechanics.
+  citations:
+  - wp-physics-blackbody_ultraviolet_catastrophe
+  - nist-blackbody
+- id: hist_photoelectric_effect_experiments_to_quantum_mechanics
+  source: photoelectric_effect_experiments
+  target: quantum_mechanics
+  type: historically-motivated
+  label: frequency-dependent photoemission
+  detail: The photoelectric effect was a central anomaly motivating quantum descriptions of radiation and matter.
+  citations:
+  - wp-physics-photoelectric_effect_experiments
+  - nobel-photoelectric
+  - nist-historical-constants
+- id: hist_photoelectric_effect_experiments_to_photon
+  source: photoelectric_effect_experiments
+  target: photon
+  type: historically-motivated
+  label: light quanta
+  detail: Einstein’s light-quantum explanation accounted for the threshold and energy relation and helped establish the photon concept.
+  citations:
+  - wp-physics-photoelectric_effect_experiments
+  - nobel-photoelectric
+  - nist-historical-constants
+- id: hist_stern_gerlach_experiment_to_spin
+  source: stern_gerlach_experiment
+  target: spin
+  type: historically-motivated
+  label: two-valued beam splitting
+  detail: The later reinterpretation of the silver-atom splitting made the experiment a central empirical motivation and illustration for intrinsic spin.
+  citations:
+  - wp-physics-stern_gerlach_experiment
+  - aps-stern-gerlach
+- id: hist_anomalous_zeeman_observations_to_spin
+  source: anomalous_zeeman_observations
+  target: spin
+  type: historically-motivated
+  label: unexplained magnetic multiplets
+  detail: The anomalous Zeeman patterns were a major empirical clue that orbital angular momentum alone was insufficient and helped motivate the introduction of electron spin.
+  citations:
+  - wp-physics-zeeman_effect
+  - nobel-zeeman
+  - nist-atomic-spectrum-history
+- id: hist_epr_argument_to_quantum_entanglement
+  source: epr_argument
+  target: quantum_entanglement
+  type: historically-motivated
+  label: nonclassical separated correlations
+  detail: The EPR argument isolated the conceptual stakes of entangled correlations and made them a central foundational problem.
+  citations:
+  - wp-physics-epr_argument
+  - epr-original
+- id: hist_epr_argument_to_bell_test_experiments
+  source: epr_argument
+  target: bell_test_experiments
+  type: historically-motivated
+  label: experimental discrimination of local hidden-variable models
+  detail: EPR’s locality and completeness challenge motivated Bell’s theorem and the subsequent experimental test programs.
+  citations:
+  - wp-physics-epr_argument
+  - epr-original
+- id: exp_quantum_mechanics_by_stern_gerlach_experiment
+  source: quantum_mechanics
+  target: stern_gerlach_experiment
+  type: experimentally-verified-by
+  label: discrete angular-momentum outcomes
+  detail: Modern quantum mechanics accounts for the two-valued spin measurement of the silver valence electron.
+  citations:
+  - wp-physics-stern_gerlach_experiment
+  - aps-stern-gerlach
+- id: exp_quantum_mechanics_by_compton_scattering_experiment
+  source: quantum_mechanics
+  target: compton_scattering_experiment
+  type: experimentally-verified-by
+  label: quantized radiation–matter scattering
+  detail: The result supported quantum kinematics beyond classical wave scattering.
+  citations:
+  - wp-physics-compton_scattering_experiment
+  - nobel-compton
+- id: exp_quantum_mechanics_by_davisson_germer_experiment
+  source: quantum_mechanics
+  target: davisson_germer_experiment
+  type: experimentally-verified-by
+  label: electron diffraction
+  detail: The diffraction peaks agreed with de Broglie wavelengths and quantum wave mechanics.
+  citations:
+  - wp-physics-davisson_germer_experiment
+  - aps-davisson-germer
+- id: exp_wavefunction_by_davisson_germer_experiment
+  source: wavefunction
+  target: davisson_germer_experiment
+  type: experimentally-verified-by
+  label: matter-wave amplitude
+  detail: Electron diffraction is described by coherent wave amplitudes associated with the electron state.
+  citations:
+  - wp-physics-davisson_germer_experiment
+  - aps-davisson-germer
+- id: exp_quantum_superposition_by_single_particle_double_slit_experiments
+  source: quantum_superposition
+  target: single_particle_double_slit_experiments
+  type: experimentally-verified-by
+  label: path-amplitude interference
+  detail: Individual particles produce an interference distribution only when alternatives remain coherent.
+  citations:
+  - wp-physics-single_particle_double_slit_experiments
+  - tonomura-double-slit
+- id: exp_born_rule_by_single_particle_double_slit_experiments
+  source: born_rule
+  target: single_particle_double_slit_experiments
+  type: experimentally-verified-by
+  label: probabilistic detection distribution
+  detail: Accumulated detection frequencies follow the squared-amplitude interference pattern.
+  citations:
+  - wp-physics-single_particle_double_slit_experiments
+  - tonomura-double-slit
+- id: exp_wavefunction_by_single_particle_double_slit_experiments
+  source: wavefunction
+  target: single_particle_double_slit_experiments
+  type: experimentally-verified-by
+  label: interference of quantum amplitudes
+  detail: The experiments directly display the predictive role of a coherent state amplitude without implying a classical trajectory through both slits.
+  citations:
+  - wp-physics-single_particle_double_slit_experiments
+  - tonomura-double-slit
+- id: exp_quantum_entanglement_by_bell_test_experiments
+  source: quantum_entanglement
+  target: bell_test_experiments
+  type: experimentally-verified-by
+  label: Bell-inequality-violating correlations
+  detail: Observed correlations agree with quantum entanglement and exclude tested local hidden-variable bounds.
+  citations:
+  - wp-physics-bell_test_experiments
+  - nobel-bell-tests
+  - aps-loophole-free-bell
+- id: exp_quantum_mechanics_by_bell_test_experiments
+  source: quantum_mechanics
+  target: bell_test_experiments
+  type: experimentally-verified-by
+  label: nonclassical correlation predictions
+  detail: Successive Bell tests, including loophole-reduced and loophole-free implementations, support quantum predictions.
+  citations:
+  - wp-physics-bell_test_experiments
+  - nobel-bell-tests
+  - aps-loophole-free-bell
+- id: exp_quantum_mechanics_by_aharonov_bohm_interference_experiments
+  source: quantum_mechanics
+  target: aharonov_bohm_interference_experiments
+  type: experimentally-verified-by
+  label: flux-dependent quantum phase
+  detail: The phase shift agrees with quantum minimal coupling and cannot be represented solely by the local magnetic field along the particle paths.
+  citations:
+  - wp-physics-aharonov_bohm_interference_experiments
+  - aharonov-bohm-experiment
+- id: exp_quantum_decoherence_by_cavity_qed_decoherence_experiments
+  source: quantum_decoherence
+  target: cavity_qed_decoherence_experiments
+  type: experimentally-verified-by
+  label: measured coherence-loss rate
+  detail: The observed decay of interference and cat-state coherence followed environment-coupling predictions.
+  citations:
+  - wp-physics-quantum_decoherence
+  - nobel-decoherence
+- id: exp_bose_einstein_statistics_by_hong_ou_mandel_experiment
+  source: bose_einstein_statistics
+  target: hong_ou_mandel_experiment
+  type: experimentally-verified-by
+  label: two-boson bunching
+  detail: Indistinguishable photons exhibit the exchange interference expected for bosons.
+  citations:
+  - wp-physics-hong_ou_mandel_experiment
+  - hom-original
+- id: exp_identical_particles_by_hong_ou_mandel_experiment
+  source: identical_particles
+  target: hong_ou_mandel_experiment
+  type: experimentally-verified-by
+  label: indistinguishability interference
+  detail: The coincidence dip depends on erasing distinguishing information between the two photons.
+  citations:
+  - wp-physics-hong_ou_mandel_experiment
+  - hom-original
+- id: exp_quantum_superposition_by_fullerene_matter_wave_interference
+  source: quantum_superposition
+  target: fullerene_matter_wave_interference
+  type: experimentally-verified-by
+  label: interference of composite molecules
+  detail: The molecular beam formed fringes requiring coherent center-of-mass amplitudes.
+  citations:
+  - wp-physics-fullerene_matter_wave_interference
+  - fullerene-interference
+- id: exp_quantum_decoherence_by_fullerene_matter_wave_interference
+  source: quantum_decoherence
+  target: fullerene_matter_wave_interference
+  type: experimentally-verified-by
+  label: environment-dependent visibility
+  detail: Controlled thermal and collisional coupling quantitatively suppresses molecular interference.
+  citations:
+  - wp-physics-fullerene_matter_wave_interference
+  - fullerene-interference
+- id: exp_dirac_equation_by_positron_discovery_experiment
+  source: dirac_equation
+  target: positron_discovery_experiment
+  type: experimentally-verified-by
+  label: positive-energy antiparticle realization
+  detail: The positron supplied empirical support for the antiparticle sector implied by relativistic electron theory.
+  citations:
+  - wp-physics-positron
+  - aps-positron
+- id: story_epr_argument_to_bell_theorem_historically_motivated
+  source: epr_argument
+  target: bell_theorem
+  type: historically-motivated
+  label: formalize local hidden-variable constraints
+  detail: Bell converted the locality problem sharpened by EPR into experimentally testable inequalities.
+  citations:
+  - wp-physics-bell_theorem
+  - horodecki-entanglement-review
+- id: story_bell_theorem_to_bell_test_experiments_experimentally_verified_by
+  source: bell_theorem
+  target: bell_test_experiments
+  type: experimentally-verified-by
+  label: is tested through Bell-inequality experiments
+  detail: Bell tests measure correlations and close specified loopholes to test local hidden-variable bounds. They test physical assumptions and observed violations; the mathematical inequality itself does not require experimental proof.
+  citations:
+  - wp-physics-bell_theorem
+  - nist-quantum-theory
+- id: story_quantum_mechanics_to_bell_theorem_theorem_implication
+  source: quantum_mechanics
+  target: bell_theorem
+  type: theorem-implication
+  label: predicts correlations incompatible with local hidden-variable bounds
+  detail: Quantum mechanics permits entangled-state measurement correlations that violate Bell inequalities. Not every entangled state violates a Bell inequality, so entanglement alone is not the theorem premise.
+  citations:
+  - nist-quantum-theory
+  - horodecki-entanglement-review
+- id: story_quantum_mechanics_to_schrodinger_equation_theory_component
+  source: schrodinger_equation
+  target: quantum_mechanics
+  type: theory-component
+  label: Schrödinger-picture evolution law
+  detail: The Schrödinger equation supplies the state-evolution law for the Schrödinger-picture formulation of nonrelativistic quantum mechanics; it is not the universal evolution equation of all quantum theories.
+  citations:
+  - wp-physics-schrodinger_equation
+  - nlab-physics-schrodinger_equation
+  - wp-physics-quantum_mechanics
