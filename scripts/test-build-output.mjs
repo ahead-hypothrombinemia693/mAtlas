@@ -8,22 +8,25 @@ const manifest = JSON.parse(await readFile(new URL('asset-manifest.json', dist),
 const sitemap = await readFile(new URL('sitemap.xml', dist), 'utf8');
 const llms = await readFile(new URL('llms.txt', dist), 'utf8');
 const atlasSvg = await readFile(new URL('static/atlas.svg', dist), 'utf8');
-const atlasPage = await readFile(new URL('static/atlas/index.html', dist), 'utf8');
+const directoryPage = await readFile(new URL('directory/index.html', dist), 'utf8');
+const conceptsIndex = await readFile(new URL('concepts/index.html', dist), 'utf8');
 const viewIndex = await readFile(new URL('views/index.html', dist), 'utf8');
 const appIndex = await readFile(new URL('index.html', dist), 'utf8');
 
 if (!manifest.assets?.views) throw new Error('asset-manifest.json does not include the hashed views data asset.');
 if (!manifest.assets?.css) throw new Error('asset-manifest.json does not include the application stylesheet.');
 if (manifest.assets?.atlasSvg !== 'static/atlas.svg') throw new Error('asset-manifest.json does not expose the stable static/atlas.svg path.');
-if (manifest.assets?.atlasPage !== 'static/atlas/') throw new Error('asset-manifest.json does not expose the stable static/atlas/ page.');
+if (manifest.assets?.directory !== 'directory/') throw new Error('asset-manifest.json does not expose the stable directory/ page.');
+if ('atlasPage' in (manifest.assets ?? {})) throw new Error('asset-manifest.json still exposes the retired atlasPage entry.');
 await access(new URL(manifest.assets.views, dist));
 await access(new URL(manifest.assets.atlasSvg, dist));
-await access(new URL(`${manifest.assets.atlasPage}index.html`, dist));
+await access(new URL(`${manifest.assets.directory}index.html`, dist));
 const appCss = await readFile(new URL(manifest.assets.css, dist), 'utf8');
 if (!appIndex.includes('id="mobileViewContext"')) throw new Error('The application template lacks the mobile guided-view context host.');
-if (!appIndex.includes('href="/static/atlas/"')) throw new Error('The application omits the complete static atlas page link.');
+if (!appIndex.includes('href="/directory/"')) throw new Error('The application omits the atlas directory link.');
+if (appIndex.includes('href="/static/atlas/"')) throw new Error('The application still links to the retired static atlas page.');
 if (!appIndex.includes('href="/static/atlas.svg"')) throw new Error('The application data panel omits the stable all-in SVG link.');
-if (!appIndex.includes('<noscript>') || !appIndex.includes('Open the complete static atlas')) throw new Error('The application lacks its no-JavaScript static-atlas fallback.');
+if (!appIndex.includes('<noscript>') || !appIndex.includes('Open the atlas directory')) throw new Error('The application lacks its no-JavaScript directory fallback.');
 if ((appIndex.match(/data-filter-section-toggle/g) ?? []).length !== 4) throw new Error('The application template lacks the four collapsible filter subsections.');
 const displaySectionStart = appIndex.indexOf('id="displayFilterSection"');
 const displaySectionEnd = appIndex.indexOf('</section>', displaySectionStart);
@@ -33,11 +36,14 @@ if (!appCss.includes('.view-sequence-controls') || !appCss.includes('.filter-sec
 if (!viewIndex.includes('Guided views')) throw new Error('The static view directory was not generated.');
 if (!sitemap.includes('<loc>https://atlas.madvay.com/views/</loc>')) throw new Error('The sitemap omits the view directory.');
 if (!sitemap.includes('xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"')) throw new Error('The sitemap lacks the image sitemap namespace.');
-if (!sitemap.includes('<loc>https://atlas.madvay.com/static/atlas/</loc>')) throw new Error('The sitemap omits static/atlas/.');
+if (!sitemap.includes('<loc>https://atlas.madvay.com/directory/</loc>')) throw new Error('The sitemap omits directory/.');
+if (sitemap.includes('<loc>https://atlas.madvay.com/static/atlas/</loc>')) throw new Error('The sitemap still lists the retired static atlas page.');
+if (sitemap.includes('<loc>https://atlas.madvay.com/concepts/</loc>')) throw new Error('The sitemap lists the redirect-only concepts index instead of directory/.');
 if (!sitemap.includes('<image:image><image:loc>https://atlas.madvay.com/static/atlas.svg</image:loc></image:image>')) throw new Error('The sitemap does not associate static/atlas.svg with its HTML landing page.');
 if (!sitemap.includes('<loc>https://atlas.madvay.com/static/atlas.svg</loc>')) throw new Error('The sitemap omits static/atlas.svg.');
 if (!sitemap.includes('<lastmod>')) throw new Error('The sitemap lacks last-modified dates.');
-if (!llms.includes('[Complete static atlas page](https://atlas.madvay.com/static/atlas/)')) throw new Error('llms.txt omits static/atlas/.');
+if (!llms.includes('[Atlas Directory](https://atlas.madvay.com/directory/)')) throw new Error('llms.txt omits directory/.');
+if (llms.includes('https://atlas.madvay.com/static/atlas/')) throw new Error('llms.txt still references the retired static atlas page.');
 if (!llms.includes('[All-in atlas SVG](https://atlas.madvay.com/static/atlas.svg)')) throw new Error('llms.txt omits static/atlas.svg.');
 if (!atlasSvg.startsWith('<?xml version="1.0" encoding="UTF-8"?>')) throw new Error('static/atlas.svg is not the runtime SVG export format.');
 if (!atlasSvg.includes('<title id="atlas-title">') || !atlasSvg.endsWith('</svg>')) throw new Error('static/atlas.svg is incomplete.');
@@ -51,14 +57,17 @@ const exportedRelationPaths = atlasSvg.match(/<path d="M [^"]+" fill="none" stro
 if (exportedRelationPaths !== graphData.edges.length) throw new Error(`static/atlas.svg contains ${exportedRelationPaths} relations; expected ${graphData.edges.length}.`);
 
 const atlasSvgFragment = atlasSvg.replace(/^\uFEFF?\s*<\?xml\s+[^?]*\?>\s*/i, '').trim();
-if (!atlasPage.includes(atlasSvgFragment)) throw new Error('static/atlas/index.html does not transclude the exact generated SVG document.');
-if (!atlasPage.includes('<link rel="canonical" href="https://atlas.madvay.com/static/atlas/">')) throw new Error('The static atlas page has the wrong canonical URL.');
-if (!atlasPage.includes('"primaryImageOfPage"') || !atlasPage.includes('"ImageObject"')) throw new Error('The static atlas page lacks primary-image structured data.');
-if (!atlasPage.includes('Browse all') || !atlasPage.includes('Relation legend:')) throw new Error('The static atlas page lacks its semantic concept and relation directories.');
+if (!directoryPage.includes(atlasSvgFragment)) throw new Error('directory/index.html does not transclude the exact generated SVG document.');
+if (!directoryPage.includes('<link rel="canonical" href="https://atlas.madvay.com/directory/">')) throw new Error('The directory page has the wrong canonical URL.');
+if (!directoryPage.includes('"primaryImageOfPage"') || !directoryPage.includes('"ImageObject"')) throw new Error('The directory page lacks primary-image structured data.');
+if (!directoryPage.includes('Browse all') || !directoryPage.includes('Relation legend:')) throw new Error('The directory page lacks its semantic concept and relation directories.');
 const firstConcept = graphData.nodes.find((node) => node.kind === 'structure');
 const firstConceptLink = firstConcept ? `href="/concepts/${encodeURIComponent(firstConcept.id)}/"` : '';
-if (!firstConceptLink || atlasPage.indexOf(firstConceptLink) < 0 || atlasPage.indexOf(firstConceptLink) > atlasPage.indexOf('<svg ')) throw new Error('Crawlable concept links must appear before the inline SVG.');
-if (atlasPage.includes('/m/')) throw new Error('The static atlas page contains the retired /m/ base path.');
+if (!firstConceptLink || directoryPage.indexOf(firstConceptLink) < 0 || directoryPage.indexOf(firstConceptLink) > directoryPage.indexOf('<svg ')) throw new Error('Crawlable concept links must appear before the inline SVG.');
+if (directoryPage.includes('/m/')) throw new Error('The directory page contains the retired /m/ base path.');
+if (!conceptsIndex.includes('<meta http-equiv="refresh" content="0; url=/directory/">')) throw new Error('concepts/index.html lacks its HTML redirect to /directory/.');
+if (!conceptsIndex.includes('window.location.replace(target)')) throw new Error('concepts/index.html lacks its JavaScript redirect to /directory/.');
+if (!conceptsIndex.includes('<link rel="canonical" href="https://atlas.madvay.com/directory/">')) throw new Error('concepts/index.html does not canonicalize to /directory/.');
 
 for (const view of viewsData.views) {
   const encodedId = encodeURIComponent(view.id);
@@ -74,4 +83,4 @@ for (const view of viewsData.views) {
   if (!sitemap.includes(`<loc>https://atlas.madvay.com/views/${encodedId}/</loc>`)) throw new Error(`The sitemap omits ${view.id}.`);
 }
 
-console.log(`Verified ${viewsData.views.length} static view pages, the semantic all-in atlas page, the standalone SVG export, data assets, and sitemap entries.`);
+console.log(`Verified ${viewsData.views.length} static view pages, the atlas directory, the concepts redirect, the standalone SVG export, data assets, and sitemap entries.`);

@@ -8,7 +8,7 @@ import { generateSeoAssets } from '../scripts/generate-seo-assets.mjs';
 
 const root = new URL('../', import.meta.url);
 
-test('SEO assets publish and associate the semantic atlas page and standalone SVG', async () => {
+test('SEO assets publish and associate the directory page and standalone SVG', async () => {
   const graphData = JSON.parse(await readFile(new URL('src/data/structures.json', root), 'utf8'));
   const viewsData = JSON.parse(await readFile(new URL('src/data/views.json', root), 'utf8'));
   const directory = await mkdtemp(join(tmpdir(), 'atlas-seo-'));
@@ -22,19 +22,23 @@ test('SEO assets publish and associate the semantic atlas page and standalone SV
       schemaPath: 'data/schema.test.json',
       viewsPath: 'data/views.test.json',
       atlasSvgPath: 'static/atlas.svg',
-      atlasPagePath: 'static/atlas/',
+      directoryPath: 'directory/',
       lastModified: '2026-07-28'
     });
     const sitemap = await readFile(new URL('sitemap.xml', distUrl), 'utf8');
     const robots = await readFile(new URL('robots.txt', distUrl), 'utf8');
     const llms = await readFile(new URL('llms.txt', distUrl), 'utf8');
     assert.match(sitemap, /xmlns:image="http:\/\/www\.google\.com\/schemas\/sitemap-image\/1\.1"/);
-    assert.ok(sitemap.includes('<loc>https://atlas.madvay.com/static/atlas/</loc><lastmod>2026-07-28</lastmod><image:image><image:loc>https://atlas.madvay.com/static/atlas.svg</image:loc></image:image>'));
+    assert.ok(sitemap.includes('<loc>https://atlas.madvay.com/directory/</loc><lastmod>2026-07-28</lastmod><image:image><image:loc>https://atlas.madvay.com/static/atlas.svg</image:loc></image:image>'));
     assert.ok(sitemap.includes('<loc>https://atlas.madvay.com/static/atlas.svg</loc><lastmod>2026-07-28</lastmod>'));
+    assert.ok(!sitemap.includes('<loc>https://atlas.madvay.com/concepts/</loc>'));
+    assert.ok(!sitemap.includes('<loc>https://atlas.madvay.com/static/atlas/</loc>'));
     assert.ok(!sitemap.includes('/m/'));
     assert.ok(robots.includes('User-agent: *\nAllow: /'));
-    assert.ok(llms.includes('[Complete static atlas page](https://atlas.madvay.com/static/atlas/)'));
+    assert.ok(llms.includes('[Atlas Directory](https://atlas.madvay.com/directory/)'));
     assert.ok(llms.includes('[All-in atlas SVG](https://atlas.madvay.com/static/atlas.svg)'));
+    assert.ok(!llms.includes('https://atlas.madvay.com/static/atlas/'));
+    assert.ok(!llms.includes('[Concept Directory](https://atlas.madvay.com/concepts/)'));
   } finally {
     await rm(directory, { recursive: true, force: true });
   }

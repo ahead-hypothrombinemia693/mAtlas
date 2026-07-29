@@ -19,21 +19,20 @@ function sitemapEntry(url, { lastModified, imageUrl } = {}) {
   return `  <url>${children.join('')}</url>`;
 }
 
-function buildSitemapXml(graphData, viewsData, atlasSvgPath, atlasPagePath, lastModified) {
+function buildSitemapXml(graphData, viewsData, atlasSvgPath, directoryPath, lastModified) {
   const concepts = graphData.nodes.filter((node) => node.kind === 'structure');
   const fieldUrls = (graphData.meta.fieldOrder ?? Object.keys(graphData.fields))
     .map((fieldId) => appUrl(`${graphData.fields[fieldId].path}/`));
   const viewUrls = viewsData.views.map((view) => appUrl(`views/${encodeURIComponent(view.id)}/`));
   const atlasSvgUrl = appUrl(atlasSvgPath);
-  const atlasPageUrl = appUrl(atlasPagePath);
+  const directoryUrl = appUrl(directoryPath);
   const urls = [
     appUrl(),
     ...fieldUrls,
-    appUrl('concepts/'),
+    directoryUrl,
     appUrl('views/'),
     ...viewUrls,
     ...concepts.map((node) => appUrl(conceptPath(node.id))),
-    atlasPageUrl,
     atlasSvgUrl
   ];
   return [
@@ -41,25 +40,24 @@ function buildSitemapXml(graphData, viewsData, atlasSvgPath, atlasPagePath, last
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">',
     ...urls.map((url) => sitemapEntry(url, {
       lastModified,
-      imageUrl: url === atlasPageUrl ? atlasSvgUrl : undefined
+      imageUrl: url === directoryUrl ? atlasSvgUrl : undefined
     })),
     '</urlset>',
     ''
   ].join('\n');
 }
 
-function buildLlmsTxt(graphData, viewsData, graphDataPath, schemaPath, viewsPath, atlasSvgPath, atlasPagePath) {
+function buildLlmsTxt(graphData, viewsData, graphDataPath, schemaPath, viewsPath, atlasSvgPath, directoryPath) {
   const fields = (graphData.meta.fieldOrder ?? Object.keys(graphData.fields)).map((id) => graphData.fields[id].label).join(', ');
   return [
     '# Atlas of Fundamental Concepts', '', `Canonical: ${appUrl()}`, `Version: ${graphData.meta.version}`, `Description: ${graphData.meta.description}`, '',
     '## Scope', graphData.meta.scope, '',
     '## Data',
-    `- [Complete static atlas page](${appUrl(atlasPagePath)})`,
+    `- [Atlas Directory](${appUrl(directoryPath)})`,
     `- [All-in atlas SVG](${appUrl(atlasSvgPath)})`,
     `- [Graph JSON](${appUrl(graphDataPath)})`,
     `- [JSON Schema](${appUrl(schemaPath)})`,
     `- [Views JSON](${appUrl(viewsPath)})`,
-    `- [Concept Directory](${appUrl('concepts/')})`,
     `- [Guided Views](${appUrl('views/')})`, '',
     '## Coverage',
     `- Fields: ${fields}`,
@@ -70,7 +68,7 @@ function buildLlmsTxt(graphData, viewsData, graphDataPath, schemaPath, viewsPath
     `- Guided views: ${viewsData.views.length}`, '',
     '## Editorial guidance',
     '- Use canonical /concepts/<id>/ URLs when citing atlas concepts.',
-    '- Use /static/atlas/ for the complete crawlable visual overview and /static/atlas.svg for the standalone vector document.',
+    '- Use /directory/ for the complete crawlable visual overview and concept directory, and /static/atlas.svg for the standalone vector document.',
     '- Treat the atlas as editorially selective and source-backed.',
     '- Verify technical claims against the attached sources.', ''
   ].join('\n');
@@ -84,12 +82,12 @@ export async function generateSeoAssets({
   schemaPath = 'data/schema.json',
   viewsPath = 'data/views.json',
   atlasSvgPath = 'static/atlas.svg',
-  atlasPagePath = 'static/atlas/',
+  directoryPath = 'directory/',
   lastModified
 }) {
   await Promise.all([
     writeFile(new URL('robots.txt', distUrl), buildRobotsTxt()),
-    writeFile(new URL('sitemap.xml', distUrl), buildSitemapXml(graphData, viewsData, atlasSvgPath, atlasPagePath, lastModified)),
-    writeFile(new URL('llms.txt', distUrl), buildLlmsTxt(graphData, viewsData, graphDataPath, schemaPath, viewsPath, atlasSvgPath, atlasPagePath))
+    writeFile(new URL('sitemap.xml', distUrl), buildSitemapXml(graphData, viewsData, atlasSvgPath, directoryPath, lastModified)),
+    writeFile(new URL('llms.txt', distUrl), buildLlmsTxt(graphData, viewsData, graphDataPath, schemaPath, viewsPath, atlasSvgPath, directoryPath))
   ]);
 }

@@ -41,7 +41,7 @@ export function inlineSvgFragment(svg) {
     .replace(/^\s*<!DOCTYPE\s+svg(?:\s+[^>]*)?>\s*/i, '')
     .trim();
   if (!fragment.startsWith('<svg ') || !fragment.endsWith('</svg>')) {
-    throw new Error('The static atlas page requires a complete SVG document from the runtime exporter.');
+    throw new Error('The directory page requires a complete SVG document from the runtime exporter.');
   }
   return fragment;
 }
@@ -113,15 +113,15 @@ function renderConceptDirectory(graphData) {
     }).join('');
     return `<section class="concept-field"><h3>${escapeHtml(graphData.fields[fieldId].label)}</h3>${domainSections}</section>`;
   }).join('');
-  return `<details class="semantic-directory concept-directory">
+  return `<details id="concept-directory" class="semantic-directory concept-directory">
     <summary>Browse all ${concepts.length.toLocaleString('en-US')} canonical concepts</summary>
     <p>These are ordinary HTML links to the canonical concept pages. Construction junctions remain visible in the diagram but are omitted here because they are visual combination devices rather than standalone concepts.</p>
     ${sections}
   </details>`;
 }
 
-function staticPageJsonLd({ graphData, atlasSvgPath, atlasPagePath, graphDataPath, dimensions, lastModified }) {
-  const canonicalUrl = appUrl(atlasPagePath);
+function directoryPageJsonLd({ graphData, atlasSvgPath, directoryPath, graphDataPath, dimensions, lastModified }) {
+  const canonicalUrl = appUrl(directoryPath);
   const svgUrl = appUrl(atlasSvgPath);
   const image = {
     '@type': 'ImageObject',
@@ -161,21 +161,21 @@ function staticPageJsonLd({ graphData, atlasSvgPath, atlasPagePath, graphDataPat
   };
 }
 
-export function renderStaticAtlasPage({
+export function renderDirectoryPage({
   graphData,
   svg,
   atlasSvgPath = 'static/atlas.svg',
-  atlasPagePath = 'static/atlas/',
+  directoryPath = 'directory/',
   graphDataPath = 'data/atlas.json',
   lastModified
 }) {
   const svgFragment = inlineSvgFragment(svg);
   const dimensions = svgDimensions(svgFragment);
-  const canonicalUrl = appUrl(atlasPagePath);
+  const canonicalUrl = appUrl(directoryPath);
   const svgUrl = appUrl(atlasSvgPath);
   const pageTitle = `${graphData.meta.title} — Directory`;
   const description = `The complete all-field, all-domain, all-relation visual export of ${graphData.meta.title}, with crawlable concept links and relation definitions.`;
-  const jsonLd = staticPageJsonLd({ graphData, atlasSvgPath, atlasPagePath, graphDataPath, dimensions, lastModified });
+  const jsonLd = directoryPageJsonLd({ graphData, atlasSvgPath, directoryPath, graphDataPath, dimensions, lastModified });
   const modifiedMeta = lastModified ? `<meta name="dateModified" content="${escapeHtml(lastModified)}">` : '';
   return `<!doctype html>
 <html lang="en">
@@ -215,7 +215,7 @@ export function renderStaticAtlasPage({
     <nav class="resource-nav" aria-label="Atlas resources">
       <a href="/">Explore the interactive atlas</a>
       <a href="/views/">Follow guided views</a>
-      <a href="/concepts/">Open the concept directory</a>
+      <a href="#concept-directory">Browse canonical concepts</a>
       <a href="${svgUrl}">Open the standalone SVG</a>
       <a href="/${escapeHtml(graphDataPath)}">Download graph JSON</a>
     </nav>
@@ -240,11 +240,11 @@ export function renderStaticAtlasPage({
 </html>`;
 }
 
-export async function generateStaticAtlasPage(options) {
-  const pagePath = options.atlasPagePath ?? 'static/atlas/';
+export async function generateDirectoryPage(options) {
+  const pagePath = options.directoryPath ?? 'directory/';
   const pageDirectory = new URL(pagePath, options.distUrl);
   await mkdir(pageDirectory, { recursive: true });
-  const html = renderStaticAtlasPage(options);
+  const html = renderDirectoryPage(options);
   await writeFile(new URL('index.html', pageDirectory), html);
   return html;
 }

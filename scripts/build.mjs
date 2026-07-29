@@ -8,7 +8,7 @@ import { generateSeoAssets } from './generate-seo-assets.mjs';
 import { generateConceptPages } from './generate-concept-pages.mjs';
 import { generateViewPages } from './generate-view-pages.mjs';
 import { generateStaticAtlasSvg } from './generate-static-atlas-svg.mjs';
-import { generateStaticAtlasPage } from './generate-static-atlas-page.mjs';
+import { generateDirectoryPage } from './generate-directory-page.mjs';
 
 const root = new URL('../', import.meta.url);
 const dist = new URL('../dist/', import.meta.url);
@@ -27,7 +27,7 @@ function buildLastModifiedDate() {
     'src/data/views.json',
     'src/ui/svg-exporter.ts',
     'scripts/generate-static-atlas-svg.mjs',
-    'scripts/generate-static-atlas-page.mjs'
+    'scripts/generate-directory-page.mjs'
   ], { cwd: rootPath, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] });
   const timestamp = git.status === 0 ? git.stdout.trim() : '';
   const parsed = timestamp ? new Date(timestamp) : null;
@@ -125,13 +125,13 @@ await Promise.all([
 await generateConceptPages({ graphData, templateHtml: builtTemplate, distUrl: dist });
 await generateViewPages({ graphData, viewsData, templateHtml: builtTemplate, distUrl: dist });
 const atlasSvg = await generateStaticAtlasSvg({ distUrl: dist });
-await generateStaticAtlasPage({
+await generateDirectoryPage({
   graphData,
   svg: atlasSvg,
   distUrl: dist,
   graphDataPath: `data/${graphFile}`,
   atlasSvgPath: 'static/atlas.svg',
-  atlasPagePath: 'static/atlas/',
+  directoryPath: 'directory/',
   lastModified
 });
 await generateSeoAssets({
@@ -142,7 +142,7 @@ await generateSeoAssets({
   schemaPath: `data/${schemaFile}`,
   viewsPath: `data/${viewsFile}`,
   atlasSvgPath: 'static/atlas.svg',
-  atlasPagePath: 'static/atlas/',
+  directoryPath: 'directory/',
   lastModified
 });
 
@@ -155,8 +155,8 @@ const manifest = {
     schema: `data/${schemaFile}`,
     views: `data/${viewsFile}`,
     atlasSvg: 'static/atlas.svg',
-    atlasPage: 'static/atlas/'
+    directory: 'directory/'
   }
 };
 await writeFile(new URL('asset-manifest.json', dist), `${JSON.stringify(manifest, null, 2)}\n`);
-console.log(`Built ${graphData.nodes.length} nodes, ${graphData.edges.length} edges, ${viewsData.views.length} views, static/atlas.svg, and static/atlas/ into dist/.`);
+console.log(`Built ${graphData.nodes.length} nodes, ${graphData.edges.length} edges, ${viewsData.views.length} views, static/atlas.svg, and directory/ into dist/.`);
