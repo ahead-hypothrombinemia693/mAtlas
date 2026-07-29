@@ -108,7 +108,7 @@ Relations are not treated as one undifferentiated “built from” ordering. Thi
 
 ## User interface and URL state
 
-The left panel contains hierarchical field and domain filters plus a **Cross-field links** preference:
+The left panel contains collapsible field/domain, edge, display, and data sections. The Display section contains the layout selector and a **Cross-field links** preference:
 
 - `contextual` — show designated overview bridges and reveal local bridges for the selected neighborhood
 - `all` — show all admitted cross-field relations
@@ -121,13 +121,13 @@ The scoped routes initialize their corresponding field while using the same grap
 
 ### Guided views
 
-A view is a named preset in `src/data/views.json`. It contains editorial copy (`title`, `summary`, `narrative`, and `tags`), an optional image and focus concept, and a complete settings object for fields, domains, edge types, cross-field visibility, display controls, and layout.
+A view is a named preset in `src/data/views.json`. It contains editorial copy (`title`, `summary`, `narrative`, and `tags`), an optional image, an ordered `nodeSequence`, and a complete settings object for fields, domains, edge types, cross-field visibility, display controls, and layout.
 
-The build emits a static directory page and one crawlable application page per view. View routes are included in `sitemap.xml` and represented as `CollectionPage` JSON-LD. In the application, the **Views** toolbar control opens the same data-driven catalog, while a dismissible first-visit prompt makes the feature discoverable without permanently occupying graph space.
+The first sequence node is the view’s initial selection. Previous and Next controls advance through the ordered concepts on desktop and mobile; selecting anything else leaves the sequence position unchanged. The build emits a static directory page and one crawlable application page per view. View routes are included in `sitemap.xml` and represented as `CollectionPage` JSON-LD. In the application, the **Views** toolbar control opens the same data-driven catalog, while a dismissible first-visit prompt makes the feature discoverable without permanently occupying graph space.
 
 A `/views/<id>/` URL remains active while the effective settings exactly match its preset. Selecting concepts, highlighting neighborhoods, searching, and opening details do not leave the route. Changing any filter, display setting, or layout exits the named view and writes the resulting configuration through the ordinary atlas/concept URL scheme. Returning through browser history restores the preset.
 
-`hideIsolatedNodes` is exposed as **Hide isolated concepts** and serialized as the `connected=1|0` URL parameter. Curated views use it where a narrow relation set should display actual connected paths rather than unrelated concepts in the selected domains.
+All concepts admitted by the selected taxonomy are shown, including concepts with no currently visible edges. There is no isolated-node suppression state or URL parameter.
 
 ## Inline mathematics
 

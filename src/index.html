@@ -67,11 +67,6 @@
         <button id="fitButton" class="button icon-button" aria-label="Fit graph" title="Fit all concepts currently allowed by the filters into the viewport (F)">
           <span class="material-icons" aria-hidden="true">fit_screen</span>
         </button>
-        <select id="layoutSelect" class="select" aria-label="Layout">
-          <option value="atlas">Layered by field and domain</option>
-          <option value="cose-bilkent">Organic</option>
-          <option value="breadthfirst">Compact hierarchy</option>
-        </select>
         <button id="detailsToggle" class="button icon-button panel-button" aria-label="Toggle details" aria-pressed="false" title="Show or hide details">
           <span class="material-icons" aria-hidden="true">density_medium</span>
         </button>
@@ -92,39 +87,59 @@
 
     <div id="workspace" class="workspace filters-collapsed details-collapsed">
       <aside id="filtersPanel" class="sidebar filters-panel" aria-label="Filters" aria-hidden="true">
-        <section>
+        <section class="filter-section">
           <div class="section-heading">
-            <h2>Fields / Domains</h2>
+            <button type="button" class="filter-section-toggle" aria-expanded="true" aria-controls="fieldFilterSection" data-filter-section-toggle>
+              <span>Fields / Domains</span><span class="material-icons" aria-hidden="true">expand_more</span>
+            </button>
             <div class="section-actions">
-              <button id="fieldsAll" class="text-button">all</button>
+              <button id="fieldsAll" type="button" class="text-button">all</button>
             </div>
           </div>
-          <div id="fieldFilters" class="filter-list"></div>
-          <p class="filter-note">Multi-domain and future multi-field concepts remain visible when any membership is enabled. Required prerequisites remain at 50% opacity.</p>
-        </section>
-
-        <section>
-          <div class="section-heading">
-            <h2>Edge meanings</h2>
-            <button id="edgesAll" class="text-button">all</button>
+          <div id="fieldFilterSection" class="filter-section-body">
+            <div id="fieldFilters" class="filter-list"></div>
+            <p class="filter-note">Multi-domain and future multi-field concepts remain visible when any membership is enabled. Required prerequisites remain at 50% opacity.</p>
           </div>
-          <div id="edgeFilters" class="filter-list"></div>
         </section>
 
-        <section>
-          <h2>Display</h2>
-          <label class="toggle-row"><input id="edgeLabelsToggle" type="checkbox" checked> Edge annotations</label>
-          <label class="toggle-row"><input id="edgeZoomToggle" type="checkbox" checked> Edge interaction only when zoomed in</label>
-          <label class="toggle-row"><input id="junctionsToggle" type="checkbox" checked> Construction junctions</label>
-          <label class="toggle-row"><input id="hideIsolatedToggle" type="checkbox"> Hide isolated concepts</label>
-          <label class="select-row" for="crossFieldSelect"><span>Cross-field links</span><select id="crossFieldSelect" class="select"><option value="contextual">Contextual</option><option value="all">All</option><option value="hidden">Hidden</option></select></label>
+        <section class="filter-section">
+          <div class="section-heading">
+            <button type="button" class="filter-section-toggle" aria-expanded="true" aria-controls="edgeFilterSection" data-filter-section-toggle>
+              <span>Edge meanings</span><span class="material-icons" aria-hidden="true">expand_more</span>
+            </button>
+            <button id="edgesAll" type="button" class="text-button">all</button>
+          </div>
+          <div id="edgeFilterSection" class="filter-section-body">
+            <div id="edgeFilters" class="filter-list"></div>
+          </div>
         </section>
 
-        <section class="data-section">
-          <h2>Data</h2>
-          <a class="small-link" href="__ATLAS_DATA_URL__" target="_blank" rel="noopener">View graph data</a>
-          <a class="small-link" href="__ATLAS_SCHEMA_URL__" target="_blank" rel="noopener">View data schema</a>
-          <a class="small-link" href="__ATLAS_VIEWS_URL__" target="_blank" rel="noopener">View guided-view data</a>
+        <section class="filter-section">
+          <div class="section-heading">
+            <button type="button" class="filter-section-toggle" aria-expanded="true" aria-controls="displayFilterSection" data-filter-section-toggle>
+              <span>Display</span><span class="material-icons" aria-hidden="true">expand_more</span>
+            </button>
+          </div>
+          <div id="displayFilterSection" class="filter-section-body display-filter-controls">
+            <label class="toggle-row"><input id="edgeLabelsToggle" type="checkbox" checked> Edge annotations</label>
+            <label class="toggle-row"><input id="edgeZoomToggle" type="checkbox" checked> Edge interaction only when zoomed in</label>
+            <label class="toggle-row"><input id="junctionsToggle" type="checkbox" checked> Construction junctions</label>
+            <label class="select-row" for="crossFieldSelect"><span>Cross-field links</span><select id="crossFieldSelect" class="select"><option value="contextual">Contextual</option><option value="all">All</option><option value="hidden">Hidden</option></select></label>
+            <label class="select-row" for="layoutSelect"><span>Layout</span><select id="layoutSelect" class="select"><option value="atlas">Layered by field and domain</option><option value="cose-bilkent">Organic</option><option value="breadthfirst">Compact hierarchy</option></select></label>
+          </div>
+        </section>
+
+        <section class="filter-section data-section">
+          <div class="section-heading">
+            <button type="button" class="filter-section-toggle" aria-expanded="true" aria-controls="dataFilterSection" data-filter-section-toggle>
+              <span>Data</span><span class="material-icons" aria-hidden="true">expand_more</span>
+            </button>
+          </div>
+          <div id="dataFilterSection" class="filter-section-body">
+            <a class="small-link" href="__ATLAS_DATA_URL__" target="_blank" rel="noopener">View graph data</a>
+            <a class="small-link" href="__ATLAS_SCHEMA_URL__" target="_blank" rel="noopener">View data schema</a>
+            <a class="small-link" href="__ATLAS_VIEWS_URL__" target="_blank" rel="noopener">View guided-view data</a>
+          </div>
         </section>
       </aside>
 

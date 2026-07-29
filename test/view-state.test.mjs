@@ -14,7 +14,7 @@ const view = {
   summary: 'Summary',
   narrative: 'Narrative',
   tags: ['Physics'],
-  focusNode: 'blackbody',
+  nodeSequence: ['blackbody', 'quantum'],
   settings: {
     fields: ['physics'],
     domains: ['experiments'],
@@ -23,7 +23,6 @@ const view = {
     edgeLabels: true,
     junctions: false,
     edgeZoomActivation: false,
-    hideIsolatedNodes: true,
     layout: 'atlas'
   }
 };
@@ -37,7 +36,6 @@ function appState() {
     showEdgeLabels: true,
     showJunctions: false,
     edgeZoomActivation: false,
-    hideIsolatedNodes: true,
     neighborhoodActive: false,
     neighborhoodElementId: null,
     layout: 'atlas',
@@ -61,7 +59,6 @@ test('view routes parse canonical static paths and templates', () => {
 test('view settings become URL-state defaults without mutation', () => {
   const state = viewSettingsAsUrlState(view.settings);
   assert.deepEqual(state.fields, ['physics']);
-  assert.equal(state.hideIsolatedNodes, true);
   state.fields.push('mathematics');
   assert.deepEqual(view.settings.fields, ['physics']);
 });

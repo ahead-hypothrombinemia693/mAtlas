@@ -91,7 +91,6 @@ export class FilterControls {
     byId<HTMLInputElement>('edgeLabelsToggle').checked = state.showEdgeLabels;
     byId<HTMLInputElement>('junctionsToggle').checked = state.showJunctions;
     byId<HTMLInputElement>('edgeZoomToggle').checked = state.edgeZoomActivation;
-    byId<HTMLInputElement>('hideIsolatedToggle').checked = state.hideIsolatedNodes;
     byId<HTMLSelectElement>('crossFieldSelect').value = state.crossFieldVisibility;
     byId<HTMLSelectElement>('layoutSelect').value = state.layout;
   }
@@ -118,6 +117,8 @@ export class FilterControls {
     byId('fieldsAll').addEventListener('click', () => this.toggleAllFields());
     byId('edgesAll').addEventListener('click', () => this.toggleAllEdges());
 
+    byId('filtersPanel').addEventListener('click', (event) => this.handleSectionToggle(event));
+
     byId<HTMLSelectElement>('crossFieldSelect').addEventListener('change', (event) => {
       const value = (event.currentTarget as HTMLSelectElement).value;
       if (!isCrossFieldVisibility(value)) return;
@@ -137,14 +138,24 @@ export class FilterControls {
       this.options.state.showJunctions = (event.currentTarget as HTMLInputElement).checked;
       this.commit(true);
     });
-    byId<HTMLInputElement>('hideIsolatedToggle').addEventListener('change', (event) => {
-      this.options.state.hideIsolatedNodes = (event.currentTarget as HTMLInputElement).checked;
-      this.commit(true);
-    });
     byId<HTMLSelectElement>('layoutSelect').addEventListener('change', (event) => {
       const value = (event.currentTarget as HTMLSelectElement).value;
       if (isLayoutName(value)) this.options.runLayout(value, true);
     });
+  }
+
+  private handleSectionToggle(event: Event): void {
+    const target = event.target;
+    if (!(target instanceof Element)) return;
+    const button = target.closest<HTMLButtonElement>('[data-filter-section-toggle]');
+    if (!button) return;
+    const bodyId = button.getAttribute('aria-controls');
+    if (!bodyId) return;
+    const body = document.getElementById(bodyId);
+    if (!body) return;
+    const expanded = button.getAttribute('aria-expanded') !== 'false';
+    button.setAttribute('aria-expanded', String(!expanded));
+    body.hidden = expanded;
   }
 
   private handleFieldOrDomainChange(event: Event): void {

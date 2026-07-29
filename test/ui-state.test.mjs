@@ -16,13 +16,12 @@ const known = {
 };
 
 test('URL state parser accepts canonical values and migrates cose', () => {
-  const parsed = parseUrlUiState(new URLSearchParams('fields=math&domains=algebra&edges=built-from&layout=cose&edgeLabels=0&junctions=true&connected=1'), known);
+  const parsed = parseUrlUiState(new URLSearchParams('fields=math&domains=algebra&edges=built-from&layout=cose&edgeLabels=0&junctions=true'), known);
   assert.deepEqual(parsed.fields, ['math']);
   assert.deepEqual(parsed.domains, ['algebra']);
   assert.equal(parsed.layout, 'cose-bilkent');
   assert.equal(parsed.edgeLabels, false);
   assert.equal(parsed.junctions, true);
-  assert.equal(parsed.hideIsolatedNodes, true);
 });
 
 test('URL state parser rejects duplicate and unknown ids', () => {
@@ -39,7 +38,6 @@ test('stored state validation rejects malformed state', () => {
 test('state serialization and URL writing preserve canonical order', () => {
   const state = createInitialState({}, null, { fields: ['physics'], domains: ['mechanics'], edgeTypes: ['built-from'] });
   state.showEdgeLabels = false;
-  state.hideIsolatedNodes = true;
   const serialized = serializeUiState(state, ['math', 'physics'], ['algebra', 'mechanics'], ['built-from']);
   assert.deepEqual(serialized.fields, ['physics']);
   assert.deepEqual(serialized.domains, ['mechanics']);
@@ -47,7 +45,6 @@ test('state serialization and URL writing preserve canonical order', () => {
   addUiStateToParams(params, state, ['math', 'physics'], ['algebra', 'mechanics'], ['built-from']);
   assert.equal(params.get('fields'), 'physics');
   assert.equal(params.get('edgeLabels'), '0');
-  assert.equal(params.get('connected'), '1');
 });
 
 test('sameIdSet ignores ordering but not membership', () => {

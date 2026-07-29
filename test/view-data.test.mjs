@@ -44,24 +44,18 @@ function visibleGraph(view) {
     return crossFieldAllowed(edge);
   });
 
-  if (settings.hideIsolatedNodes) {
-    const connected = new Set(edges.flatMap((edge) => [edge.source, edge.target]));
-    for (const nodeId of nodes) if (!connected.has(nodeId)) nodes.delete(nodeId);
-  }
   return { nodes, edges };
 }
 
-test('every curated view opens a non-empty graph with a visible, connected focus concept', () => {
+test('every curated view opens a non-empty graph and every sequence node is visible', () => {
   for (const view of viewsData.views) {
     const visible = visibleGraph(view);
     assert.ok(visible.nodes.size >= 2, `${view.id} should expose at least two concepts`);
     assert.ok(visible.edges.length >= 1, `${view.id} should expose at least one relation`);
-    if (view.focusNode) {
-      assert.ok(visible.nodes.has(view.focusNode), `${view.id} focus node should be visible`);
-      assert.ok(
-        visible.edges.some((edge) => edge.source === view.focusNode || edge.target === view.focusNode),
-        `${view.id} focus node should participate in a visible relation`
-      );
+    assert.ok(view.nodeSequence.length >= 2, `${view.id} should contain a useful multi-step sequence`);
+    for (const nodeId of view.nodeSequence) {
+      assert.ok(visible.nodes.has(nodeId), `${view.id} sequence node ${nodeId} should be visible`);
+      assert.equal(model.nodeRecord.get(nodeId)?.kind, 'structure', `${view.id} sequence node ${nodeId} should be a structure`);
     }
   }
 });

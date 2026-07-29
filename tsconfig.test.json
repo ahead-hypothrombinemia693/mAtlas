@@ -16,10 +16,13 @@
     "src/model/graph-model.ts",
     "src/state/ui-state.ts",
     "src/state/view-state.ts",
+    "src/state/view-sequence.ts",
     "src/graph/organic-layout-core.ts",
     "src/app/location-controller.ts",
     "src/graph/visibility-policy.ts",
     "src/state/taxonomy-selection.ts",
-    "src/ui/view-surface.ts"
+    "src/ui/view-surface.ts",
+    "src/ui/filter-controls.ts",
+    "src/ui/views-controller.ts"
   ]
 }

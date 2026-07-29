@@ -21,11 +21,16 @@ test('view page generator emits a directory and crawlable static routes', async 
     assert.match(index, /Guided views/);
     for (const view of viewsData.views) {
       const html = await readFile(new URL(`views/${encodeURIComponent(view.id)}/index.html`, distUrl), 'utf8');
-      assert.match(html, new RegExp(`atlas:view" content="${view.id}`));
+      assert.match(html, new RegExp(`atlas:view\" content=\"${view.id}`));
+      assert.ok(html.includes(`<meta name="atlas:selection" content="node:${view.nodeSequence[0]}">`));
       assert.ok(html.includes(view.title));
       assert.ok(html.includes(view.narrative));
       assert.match(html, /<base href="\.\.\/\.\.\/">/);
       assert.match(html, /<script id="view-page-jsonld" type="application\/ld\+json">/);
+      assert.match(html, /"@type":\s*"ItemList"/);
+      assert.match(html, /data-view-prev/);
+      assert.match(html, /data-view-next/);
+      assert.ok(html.includes(`Step 1 of ${view.nodeSequence.length}`));
     }
   } finally {
     await rm(directory, { recursive: true, force: true });

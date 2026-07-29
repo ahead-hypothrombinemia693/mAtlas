@@ -8,7 +8,7 @@ const view = {
   summary: 'Follow evidence through physics.',
   narrative: 'A guided history of experiments and theories.',
   tags: ['Physics'],
-  focusNode: 'blackbody',
+  nodeSequence: ['blackbody', 'quantum'],
   settings: {
     fields: ['physics'],
     domains: ['experiments'],
@@ -17,7 +17,6 @@ const view = {
     edgeLabels: true,
     junctions: false,
     edgeZoomActivation: false,
-    hideIsolatedNodes: true,
     layout: 'atlas'
   }
 };
@@ -31,7 +30,6 @@ function matchingState() {
     showEdgeLabels: true,
     showJunctions: false,
     edgeZoomActivation: false,
-    hideIsolatedNodes: true,
     neighborhoodActive: true,
     neighborhoodElementId: 'blackbody',
     layout: 'atlas',
@@ -100,13 +98,25 @@ function controllerFor(state) {
   });
 }
 
-
 test('static view metadata is used only during initial route resolution', () => {
   const browser = installBrowser('https://atlas.madvay.com/concepts/quantum/', view.id);
   try {
     const controller = controllerFor(matchingState());
     assert.equal(controller.resolveViewFromLocation(), null);
     assert.equal(controller.resolveViewFromLocation({ includeTemplate: true })?.id, view.id);
+  } finally {
+    browser.restore();
+  }
+});
+
+test('the first sequence node is the default selection and bare view URL', () => {
+  const browser = installBrowser('https://atlas.madvay.com/views/experimental-discovery/');
+  try {
+    const controller = controllerFor(matchingState());
+    controller.setActiveView(view.id);
+    assert.deepEqual(controller.scopedDefaultViewSelection(), { kind: 'node', id: 'blackbody' });
+    controller.write({ kind: 'node', id: 'blackbody' }, 'replace');
+    assert.equal(browser.writtenUrl(), null);
   } finally {
     browser.restore();
   }
@@ -141,7 +151,6 @@ test('changing a filter exits the view route and writes ordinary atlas state', (
     assert.equal(written.searchParams.get('fields'), 'physics');
     assert.equal(written.searchParams.get('domains'), 'experiments');
     assert.equal(written.searchParams.get('edges'), 'motivated');
-    assert.equal(written.searchParams.get('connected'), '1');
     assert.equal(controller.activeView(), null);
   } finally {
     browser.restore();

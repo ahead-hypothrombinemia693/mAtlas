@@ -26,7 +26,6 @@ export function viewSettingsAsUrlState(settings: AtlasViewSettings): UrlUiState 
     edgeLabels: settings.edgeLabels,
     junctions: settings.junctions,
     edgeZoomActivation: settings.edgeZoomActivation,
-    hideIsolatedNodes: settings.hideIsolatedNodes,
     layout: settings.layout
   };
 }
@@ -44,7 +43,6 @@ export function stateMatchesView(state: AppState, view: AtlasView): boolean {
     && state.showEdgeLabels === settings.edgeLabels
     && state.showJunctions === settings.junctions
     && state.edgeZoomActivation === settings.edgeZoomActivation
-    && state.hideIsolatedNodes === settings.hideIsolatedNodes
     && state.layout === settings.layout;
 }
 

@@ -123,7 +123,8 @@ export class LocationController {
 
   scopedDefaultViewSelection(): SelectionTarget | null {
     const view = this.activeView();
-    return view?.focusNode ? { kind: 'node', id: view.focusNode } : null;
+    const firstNodeId = view?.nodeSequence[0];
+    return firstNodeId ? { kind: 'node', id: firstNodeId } : null;
   }
 
   parseSelectionPath(): SelectionTarget | null {
@@ -295,7 +296,7 @@ export class LocationController {
     const url = new URL(this.viewPageUrl(view.id));
     if (!target) {
       url.searchParams.set('selection', 'none');
-    } else if (!(target.kind === 'node' && target.id === view.focusNode)) {
+    } else if (!(target.kind === 'node' && target.id === view.nodeSequence[0])) {
       url.searchParams.set(target.kind, target.id);
     }
     return url;
@@ -373,9 +374,17 @@ export class LocationController {
       url: canonicalUrl,
       isPartOf: { '@type': 'WebSite', name: this.options.model.data.meta.title, url: this.canonicalRootUrl },
       about: view.tags,
-      ...(view.focusNode
-        ? { mainEntity: { '@type': 'DefinedTerm', '@id': new URL(`concepts/${encodeURIComponent(view.focusNode)}/`, this.canonicalRootUrl).toString() } }
-        : {})
+      mainEntity: {
+        '@type': 'ItemList',
+        itemListElement: view.nodeSequence.map((nodeId, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          item: {
+            '@type': 'DefinedTerm',
+            '@id': new URL(`concepts/${encodeURIComponent(nodeId)}/`, this.canonicalRootUrl).toString()
+          }
+        }))
+      }
     };
     const script = existing ?? document.createElement('script');
     script.id = scriptId;

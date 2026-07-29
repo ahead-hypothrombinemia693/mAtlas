@@ -335,7 +335,8 @@ for (const [index, view] of (viewsData.views ?? []).entries()) {
   requireStringArray(view?.tags, `${path}.tags`, { nonEmpty: true, unique: true });
   if (view?.featured !== undefined && typeof view.featured !== 'boolean') errors.push(`${path}.featured must be a boolean.`);
   if (view?.featured === true) featuredViewCount += 1;
-  if (view?.focusNode !== undefined && !nodeIds.has(view.focusNode)) errors.push(`${path}.focusNode references unknown node: ${view.focusNode}`);
+  requireStringArray(view?.nodeSequence, `${path}.nodeSequence`, { nonEmpty: true, unique: true });
+  for (const nodeId of view?.nodeSequence ?? []) if (!nodeIds.has(nodeId)) errors.push(`${path}.nodeSequence references unknown node: ${nodeId}`);
   if (view?.image !== undefined) {
     requireObject(view.image, `${path}.image`);
     requireString(view.image?.src, `${path}.image.src`);
@@ -363,19 +364,20 @@ for (const [index, view] of (viewsData.views ?? []).entries()) {
   }
   if (!allowedCrossField.has(settings.crossFieldVisibility)) errors.push(`${path}.settings.crossFieldVisibility is invalid.`);
   if (!allowedLayouts.has(settings.layout)) errors.push(`${path}.settings.layout is invalid.`);
-  for (const key of ['edgeLabels', 'junctions', 'edgeZoomActivation', 'hideIsolatedNodes']) {
+  for (const key of ['edgeLabels', 'junctions', 'edgeZoomActivation']) {
     if (typeof settings[key] !== 'boolean') errors.push(`${path}.settings.${key} must be a boolean.`);
   }
-  if (view?.focusNode && nodeById.has(view.focusNode)) {
-    const focus = nodeById.get(view.focusNode);
-    if (focus.kind !== 'structure') errors.push(`${path}.focusNode must reference a structure node.`);
-    const focusDomains = focus.domains?.length ? focus.domains : [focus.primaryDomain];
-    const focusFields = focus.fields?.length
-      ? focus.fields
-      : [...new Set(focusDomains.map((domainId) => graph.domains?.[domainId]?.field).filter(Boolean))];
-    if (!focusFields.some((fieldId) => (settings.fields ?? []).includes(fieldId))
-      || !focusDomains.some((domainId) => (settings.domains ?? []).includes(domainId))) {
-      errors.push(`${path}.focusNode ${view.focusNode} is outside the view's selected taxonomy.`);
+  for (const nodeId of view?.nodeSequence ?? []) {
+    const node = nodeById.get(nodeId);
+    if (!node) continue;
+    if (node.kind !== 'structure') errors.push(`${path}.nodeSequence must reference structure nodes; ${nodeId} is ${node.kind}.`);
+    const nodeDomains = node.domains?.length ? node.domains : [node.primaryDomain];
+    const nodeFields = node.fields?.length
+      ? node.fields
+      : [...new Set(nodeDomains.map((domainId) => graph.domains?.[domainId]?.field).filter(Boolean))];
+    if (!nodeFields.some((fieldId) => (settings.fields ?? []).includes(fieldId))
+      || !nodeDomains.some((domainId) => (settings.domains ?? []).includes(domainId))) {
+      errors.push(`${path}.nodeSequence node ${nodeId} is outside the view's selected taxonomy.`);
     }
   }
 }

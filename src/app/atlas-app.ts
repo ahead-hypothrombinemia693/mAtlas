@@ -100,7 +100,6 @@ export async function startAtlasApp(): Promise<void> {
     edgeLabels: viewDefaults?.edgeLabels,
     junctions: viewDefaults?.junctions,
     edgeZoomActivation: viewDefaults?.edgeZoomActivation,
-    hideIsolatedNodes: viewDefaults?.hideIsolatedNodes,
     layout: viewDefaults?.layout
   });
   if (initialView && stateMatchesView(state, initialView)) locationController.setActiveView(initialView.id);
@@ -286,6 +285,7 @@ export async function startAtlasApp(): Promise<void> {
     element.select();
     setNeighborhoodHighlight(true, id, false);
     showNodeDetails(id);
+    viewsController?.syncSelection({ kind: 'node', id });
     syncDocumentMetadata({ kind: 'node', id });
     if (historyMode) writeLocationState({ kind: 'node', id }, historyMode);
 
@@ -311,6 +311,7 @@ export async function startAtlasApp(): Promise<void> {
     element.select();
     setNeighborhoodHighlight(true, id, false);
     showEdgeDetails(id);
+    viewsController?.syncSelection({ kind: 'edge', id });
     syncDocumentMetadata({ kind: 'edge', id });
     if (historyMode) writeLocationState({ kind: 'edge', id }, historyMode);
     if (center) {
@@ -328,6 +329,7 @@ export async function startAtlasApp(): Promise<void> {
     cy.$(':selected').unselect();
     setNeighborhoodHighlight(false, null, false);
     showEmptyDetails();
+    viewsController?.syncSelection(null);
     if (historyMode) writeLocationState(null, historyMode);
   }
 
@@ -369,7 +371,6 @@ export async function startAtlasApp(): Promise<void> {
     const nextEdgeLabels = next.edgeLabels ?? state.showEdgeLabels;
     const nextJunctions = next.junctions ?? state.showJunctions;
     const nextEdgeZoomActivation = next.edgeZoomActivation ?? state.edgeZoomActivation;
-    const nextHideIsolatedNodes = next.hideIsolatedNodes ?? state.hideIsolatedNodes;
     const nextLayout = next.layout ?? state.layout;
 
     const fieldsChanged = !sameIdSet(state.selectedFields, nextFields);
@@ -379,11 +380,10 @@ export async function startAtlasApp(): Promise<void> {
     const edgeLabelsChanged = state.showEdgeLabels !== nextEdgeLabels;
     const junctionsChanged = state.showJunctions !== nextJunctions;
     const edgeZoomChanged = state.edgeZoomActivation !== nextEdgeZoomActivation;
-    const hideIsolatedChanged = state.hideIsolatedNodes !== nextHideIsolatedNodes;
     const layoutChanged = state.layout !== nextLayout;
 
     if (!fieldsChanged && !domainsChanged && !edgeTypesChanged && !crossFieldChanged
-      && !edgeLabelsChanged && !junctionsChanged && !edgeZoomChanged && !hideIsolatedChanged && !layoutChanged) {
+      && !edgeLabelsChanged && !junctionsChanged && !edgeZoomChanged && !layoutChanged) {
       if (routeView && !stateMatchesView(state, routeView)) locationController.deactivateView();
       viewsController?.syncActiveView();
       return;
@@ -396,7 +396,6 @@ export async function startAtlasApp(): Promise<void> {
     state.showEdgeLabels = nextEdgeLabels;
     state.showJunctions = nextJunctions;
     state.edgeZoomActivation = nextEdgeZoomActivation;
-    state.hideIsolatedNodes = nextHideIsolatedNodes;
     state.layout = nextLayout;
 
     buildFilters();
@@ -404,7 +403,7 @@ export async function startAtlasApp(): Promise<void> {
     updateFieldNavActiveState();
     writeStoredUiState();
     if (routeView && !stateMatchesView(state, routeView)) locationController.deactivateView();
-    applyFilters({ relayout: fieldsChanged || domainsChanged || junctionsChanged || edgeZoomChanged || hideIsolatedChanged || layoutChanged });
+    applyFilters({ relayout: fieldsChanged || domainsChanged || junctionsChanged || edgeZoomChanged || layoutChanged });
     viewsController?.syncActiveView();
   }
 
@@ -503,6 +502,9 @@ export async function startAtlasApp(): Promise<void> {
   viewsController = new ViewsController({
     views: viewsData.views,
     activeView: () => locationController.activeView(),
+    currentSelection: () => currentSelectionTarget(),
+    activateNode: (nodeId) => activateNode(nodeId, { center: true, zoomIn: true, historyMode: 'push' }),
+    nodeLabel: (nodeId) => nodeRecord.get(nodeId)?.label ?? nodeId,
     viewPageUrl: (viewId) => locationController.viewPageUrl(viewId),
     isMobileLayout: () => panelController.isMobileLayout(),
     detailsOpen: () => state.detailsOpen

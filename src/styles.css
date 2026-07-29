@@ -287,8 +287,66 @@ input:focus-visible {
 
 .section-heading {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
+  gap: 8px;
+}
+
+.filter-section-toggle {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 0;
+  padding: 2px 0;
+  border: 0;
+  background: transparent;
+  color: #475569;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .055em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.filter-section-toggle:hover,
+.filter-section-toggle:focus-visible {
+  color: #1d4ed8;
+}
+
+.filter-section-toggle:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, .24);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.filter-section-toggle .material-icons {
+  flex: 0 0 auto;
+  font-size: 18px;
+  transition: transform 140ms ease;
+}
+
+.filter-section-toggle[aria-expanded="false"] .material-icons {
+  transform: rotate(-90deg);
+}
+
+.filter-section-body[hidden] {
+  display: none !important;
+}
+
+.filter-section-body {
+  padding-top: 8px;
+}
+
+.display-filter-controls {
+  display: grid;
+  gap: 8px;
+}
+
+.data-section .filter-section-body {
+  display: grid;
+  justify-items: start;
 }
 
 .filter-list {
@@ -1031,8 +1089,7 @@ input:focus-visible {
     width: 100%;
   }
 
-  #focusButton,
-  #layoutSelect {
+  #focusButton {
     display: none;
   }
 
@@ -1321,6 +1378,16 @@ input:focus-visible {
   font-size: 12px;
 }
 
+.display-filter-controls .select-row {
+  grid-template-columns: 1fr;
+  margin-top: 0;
+}
+
+.display-filter-controls .select {
+  width: 100%;
+  max-width: none;
+}
+
 .field-bands {
   position: absolute;
   inset: 0;
@@ -1459,6 +1526,97 @@ input:focus-visible {
 
 .view-banner-actions .text-button {
   padding: 0;
+}
+
+.view-sequence-controls {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  padding: 7px;
+  border: 1px solid #dbeafe;
+  border-radius: 9px;
+  background: #f8fbff;
+}
+
+.view-sequence-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  min-height: 30px;
+  padding: 3px 7px;
+  border: 1px solid #bfdbfe;
+  border-radius: 7px;
+  background: white;
+  color: #1e40af;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.view-sequence-button:hover:not(:disabled),
+.view-sequence-button:focus-visible:not(:disabled) {
+  border-color: #60a5fa;
+  background: #eff6ff;
+}
+
+.view-sequence-button:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, .24);
+  outline-offset: 1px;
+}
+
+.view-sequence-button:disabled {
+  color: #94a3b8;
+  cursor: default;
+  opacity: .65;
+}
+
+.view-sequence-button .material-icons {
+  font-size: 18px;
+}
+
+.view-sequence-position {
+  display: grid;
+  min-width: 0;
+  gap: 1px;
+  text-align: center;
+}
+
+.view-sequence-position span {
+  color: #64748b;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.view-sequence-position strong {
+  overflow: hidden;
+  color: #172033;
+  font-size: 11px;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.view-sequence-controls.compact {
+  margin-top: 8px;
+  padding: 5px;
+  gap: 5px;
+}
+
+.view-sequence-controls.compact .view-sequence-button {
+  min-height: 28px;
+  padding: 2px 5px;
+}
+
+.view-card-meta {
+  margin: -4px 0 9px;
+  color: #64748b;
+  font-size: 10px;
+  font-weight: 650;
 }
 
 .view-banner-close {
@@ -1787,6 +1945,10 @@ input:focus-visible {
     padding-left: 27px;
   }
 
+  .view-banner-mobile .view-sequence-controls {
+    margin-top: 7px;
+  }
+
   .mobile-view-context:not([hidden]) {
     display: block;
     flex: 0 0 auto;
@@ -1816,6 +1978,15 @@ input:focus-visible {
 
   .view-context-heading strong {
     font-size: 12px;
+  }
+
+  .view-sequence-button-label {
+    display: none;
+  }
+
+  .view-sequence-button {
+    width: 30px;
+    padding-inline: 3px;
   }
 
   .mobile-view-context:not([hidden]) {
