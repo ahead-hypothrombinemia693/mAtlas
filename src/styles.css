@@ -1994,3 +1994,17 @@ input:focus-visible {
     padding: 7px 9px 8px;
   }
 }
+
+.noscript-atlas-link {
+  position: fixed;
+  inset: auto 1rem 1rem;
+  z-index: 1000;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.14);
+  color: #334155;
+  font-size: 0.9rem;
+}

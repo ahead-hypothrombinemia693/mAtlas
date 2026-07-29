@@ -8,12 +8,35 @@ import { generateSeoAssets } from './generate-seo-assets.mjs';
 import { generateConceptPages } from './generate-concept-pages.mjs';
 import { generateViewPages } from './generate-view-pages.mjs';
 import { generateStaticAtlasSvg } from './generate-static-atlas-svg.mjs';
+import { generateStaticAtlasPage } from './generate-static-atlas-page.mjs';
 
 const root = new URL('../', import.meta.url);
 const dist = new URL('../dist/', import.meta.url);
 const buildDir = new URL('../.build/', import.meta.url);
 const rootPath = fileURLToPath(root);
 const distPath = fileURLToPath(dist);
+
+function buildLastModifiedDate() {
+  const sourceDateEpoch = Number(process.env.SOURCE_DATE_EPOCH);
+  if (Number.isFinite(sourceDateEpoch) && sourceDateEpoch > 0) {
+    return new Date(sourceDateEpoch * 1000).toISOString().slice(0, 10);
+  }
+  const git = spawnSync('git', [
+    'log', '-1', '--format=%cI', '--',
+    'src/data/structures.json',
+    'src/data/views.json',
+    'src/ui/svg-exporter.ts',
+    'scripts/generate-static-atlas-svg.mjs',
+    'scripts/generate-static-atlas-page.mjs'
+  ], { cwd: rootPath, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] });
+  const timestamp = git.status === 0 ? git.stdout.trim() : '';
+  const parsed = timestamp ? new Date(timestamp) : null;
+  return parsed && Number.isFinite(parsed.getTime())
+    ? parsed.toISOString().slice(0, 10)
+    : new Date().toISOString().slice(0, 10);
+}
+
+const lastModified = buildLastModifiedDate();
 
 const validation = spawnSync(process.execPath, ['scripts/validate-data.mjs'], { cwd: rootPath, stdio: 'inherit' });
 if (validation.status !== 0) process.exit(validation.status ?? 1);
@@ -101,7 +124,16 @@ await Promise.all([
 
 await generateConceptPages({ graphData, templateHtml: builtTemplate, distUrl: dist });
 await generateViewPages({ graphData, viewsData, templateHtml: builtTemplate, distUrl: dist });
-await generateStaticAtlasSvg({ distUrl: dist });
+const atlasSvg = await generateStaticAtlasSvg({ distUrl: dist });
+await generateStaticAtlasPage({
+  graphData,
+  svg: atlasSvg,
+  distUrl: dist,
+  graphDataPath: `data/${graphFile}`,
+  atlasSvgPath: 'static/atlas.svg',
+  atlasPagePath: 'static/atlas/',
+  lastModified
+});
 await generateSeoAssets({
   graphData,
   viewsData,
@@ -109,7 +141,9 @@ await generateSeoAssets({
   graphDataPath: `data/${graphFile}`,
   schemaPath: `data/${schemaFile}`,
   viewsPath: `data/${viewsFile}`,
-  atlasSvgPath: 'static/atlas.svg'
+  atlasSvgPath: 'static/atlas.svg',
+  atlasPagePath: 'static/atlas/',
+  lastModified
 });
 
 const manifest = {
@@ -120,8 +154,9 @@ const manifest = {
     graph: `data/${graphFile}`,
     schema: `data/${schemaFile}`,
     views: `data/${viewsFile}`,
-    atlasSvg: 'static/atlas.svg'
+    atlasSvg: 'static/atlas.svg',
+    atlasPage: 'static/atlas/'
   }
 };
 await writeFile(new URL('asset-manifest.json', dist), `${JSON.stringify(manifest, null, 2)}\n`);
-console.log(`Built ${graphData.nodes.length} concepts, ${graphData.edges.length} edges, ${viewsData.views.length} views, and static/atlas.svg into dist/.`);
+console.log(`Built ${graphData.nodes.length} nodes, ${graphData.edges.length} edges, ${viewsData.views.length} views, static/atlas.svg, and static/atlas/ into dist/.`);

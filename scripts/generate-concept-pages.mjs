@@ -125,7 +125,7 @@ function renderConceptIndexPage(graphData) {
   }).join('');
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Directory of canonical concepts in the Atlas of Fundamental Concepts."><link rel="canonical" href="${appUrl('concepts/')}"><title>Concept Directory — ${escapeHtml(graphData.meta.title)}</title><style>
   body{font-family:system-ui,sans-serif;margin:0;background:#f8fafc;color:#0f172a}main{max-width:1100px;margin:auto;padding:2rem 1rem 3rem}.field{margin:2rem 0}section{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:1rem;margin:.75rem 0}h1,h2,h3{margin-top:0}ul{columns:2;padding-left:1.2rem}li{break-inside:avoid;margin:.2rem 0}a{color:#0b4ccf;text-decoration:none}@media(max-width:800px){ul{columns:1}}
-  </style></head><body><main><h1>Concept Directory</h1><p>Canonical pages for concepts in the atlas, grouped by field and primary domain.</p>${sections}</main></body></html>`;
+  </style></head><body><main><h1>Concept Directory</h1><p>Canonical pages for concepts in the atlas, grouped by field and primary domain.</p><p><a href="/static/atlas/">View the complete static atlas</a> · <a href="/">Open the interactive atlas</a></p>${sections}</main></body></html>`;
 }
 
 function renderScopePage(templateHtml, graphData, fieldId) {

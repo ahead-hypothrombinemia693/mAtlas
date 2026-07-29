@@ -47,7 +47,7 @@ export class SvgExporter {
     parts.push(`<rect x="${minX}" y="${minY}" width="${width}" height="${headerHeight}" fill="#ffffff" opacity="0.93"/>`);
     parts.push(`<g transform="translate(${minX + 24} ${minY + 20})"><image href="${SvgExporter.logoDataUri}" width="48" height="48"/></g>`);
     parts.push(`<text x="${minX + 86}" y="${minY + 28}" font-family="${escapeHtml(this.fontFamily)}" font-size="20" font-weight="700" fill="#172033">Atlas of Fundamental Concepts</text>`);
-    parts.push(`<text x="${minX + 86}" y="${minY + 46}" font-family="${escapeHtml(this.fontFamily)}" font-size="11" fill="#475569"><a xlink:href="https://atlas.madvay.com">https://atlas.madvay.com</a> · © 2026 Advay Mengle · <a xlink:href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a></text>`);
+    parts.push(`<text x="${minX + 86}" y="${minY + 46}" font-family="${escapeHtml(this.fontFamily)}" font-size="11" fill="#475569"><a href="https://atlas.madvay.com" xlink:href="https://atlas.madvay.com">https://atlas.madvay.com</a> · © 2026 Advay Mengle · <a href="https://creativecommons.org/licenses/by-sa/4.0/" xlink:href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a></text>`);
     parts.push(`<text x="${minX + 86}" y="${minY + 62}" font-family="${escapeHtml(this.fontFamily)}" font-size="9" fill="#64748b">Exported from the current visible graph; use the atlas site for the latest data and terms.</text>`);
     parts.push(`<text x="${minX + 26}" y="${minY + 87}" font-family="${escapeHtml(this.fontFamily)}" font-size="11" fill="#64748b">General structures are above; added data and axioms generally move downward.</text>`);
     parts.push(`<g transform="translate(${graphOriginX} ${graphOriginY}) scale(0.5) translate(${-graphOriginX} ${-graphOriginY})">`);
@@ -132,8 +132,10 @@ export class SvgExporter {
       const searchMatch = element.hasClass('search-match');
       const borderColor = selected ? '#0f172a' : searchMatch ? '#facc15' : emphasized ? '#f59e0b' : isJunction ? '#b45309' : '#ffffff';
       const borderWidth = selected || searchMatch ? 5 : emphasized ? 4 : isJunction ? 3 : 2;
-      const linkHref = `https://atlas.madvay.com/concepts/${encodeURIComponent(record.id)}/`;
-      parts.push(`<a xlink:href="${linkHref}" target="_blank" rel="noopener">`);
+      const linkHref = record.kind === 'structure'
+        ? `https://atlas.madvay.com/concepts/${encodeURIComponent(record.id)}/`
+        : `https://atlas.madvay.com/?node=${encodeURIComponent(record.id)}`;
+      parts.push(`<a href="${linkHref}" xlink:href="${linkHref}" target="_blank" rel="noopener">`);
       if (isJunction) {
         const backgroundOpacity = isDependencyFaded ? 0.46 : 1;
         parts.push(`<rect x="${x}" y="${y}" width="${nodeWidth}" height="${nodeHeight}" rx="8" fill="#fff7ed" stroke="${borderColor}" stroke-width="${borderWidth}" stroke-dasharray="8 5" fill-opacity="${backgroundOpacity}" opacity="${opacity}"/>`);

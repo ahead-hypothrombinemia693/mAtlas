@@ -14,6 +14,8 @@ const testFiles = [
   'test/view-location.test.mjs',
   'test/view-data.test.mjs',
   'test/view-pages.test.mjs',
+  'test/static-atlas-page.test.mjs',
+  'test/seo-assets.test.mjs',
   'test/filter-panel.test.mjs',
   'test/taxonomy-selection.test.mjs',
   'test/visibility-policy.test.mjs'
