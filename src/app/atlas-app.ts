@@ -8,6 +8,7 @@ import { createGraph } from '../graph/create-graph.js';
 import { LayoutManager } from '../graph/layout-manager.js';
 import { GraphViewController } from '../graph/graph-view-controller.js';
 import { GraphMathLabelLayer } from '../graph/graph-math-label-layer.js';
+import { IdleRenderController } from '../graph/idle-render-controller.js';
 import { MathRenderer } from '../ui/math-renderer.js';
 import { DetailsController } from '../ui/details-controller.js';
 import { SvgExporter } from '../ui/svg-exporter.js';
@@ -145,6 +146,7 @@ export async function startAtlasApp(): Promise<void> {
   const renderMathText = (value: unknown): string => mathRenderer.renderText(value);
 
   const cy = createGraph(graphEl, model, labelSizer);
+  new IdleRenderController(cy, graphEl);
   new GraphMathLabelLayer(cy, graphEl, mathRenderer);
   window.cy = cy;
   currentSelectionTarget = () => {
@@ -310,6 +312,9 @@ export async function startAtlasApp(): Promise<void> {
   }: { center?: boolean; zoomIn?: boolean; pointer?: { x: number; y: number }; historyMode?: HistoryMode } = {}): boolean {
     const element = cy.getElementById(id);
     if (!element || element.empty()) return false;
+    // A second details-panel navigation must replace, rather than queue behind,
+    // any viewport animation that is still settling from the previous link.
+    cy.stop(true, false);
     ensureNodeVisible(id);
     cy.$(':selected').unselect();
     element.select();
@@ -337,6 +342,7 @@ export async function startAtlasApp(): Promise<void> {
   }: { center?: boolean; zoomIn?: boolean; pointer?: { x: number; y: number }; historyMode?: HistoryMode } = {}): boolean {
     const element = cy.getElementById(id);
     if (!element || element.empty()) return false;
+    cy.stop(true, false);
     cy.$(':selected').unselect();
     element.select();
     setNeighborhoodHighlight(true, id, false);

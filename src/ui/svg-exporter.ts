@@ -161,13 +161,12 @@ export class SvgExporter {
         parts.push(`<rect x="${x}" y="${y}" width="${nodeWidth}" height="${nodeHeight}" rx="8" fill="${escapeHtml(fill)}" fill-opacity="${backgroundOpacity}" stroke="${borderColor}" stroke-width="${borderWidth}" opacity="${opacity}"/>`);
         const additionalDomains = this.model.nodeDomainIds(record).slice(1);
         if (additionalDomains.length) {
-          const markerWidth = additionalDomains.length * 10 + 6;
+          const markerWidth = additionalDomains.length * 12 - 3;
           const markerX = x + nodeWidth - markerWidth;
-          const markerY = y + nodeHeight - 13;
-          parts.push(`<rect x="${markerX}" y="${markerY}" width="${markerWidth}" height="13" rx="6" fill="#ffffff" fill-opacity="0.9" stroke="#0f172a" stroke-opacity="0.16" stroke-width="1" opacity="${opacity}"/>`);
+          const markerY = y + nodeHeight - 9;
           additionalDomains.forEach((domainId, index) => {
             const color = data.domains[domainId]?.color ?? '#64748b';
-            parts.push(`<circle cx="${markerX + 8 + index * 10}" cy="${markerY + 6.5}" r="3.5" fill="${escapeHtml(color)}" stroke="#0f172a" stroke-opacity="0.3" stroke-width="1" opacity="${opacity}"/>`);
+            parts.push(`<circle cx="${markerX + 4.5 + index * 12}" cy="${markerY + 4.5}" r="4.5" fill="${escapeHtml(color)}" opacity="${opacity}"/>`);
           });
         }
       }

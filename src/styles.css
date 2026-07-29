@@ -481,7 +481,6 @@ input:focus-visible {
   position: absolute;
   inset: 0;
   transform-origin: 0 0;
-  will-change: transform;
   pointer-events: none;
 }
 
@@ -550,12 +549,7 @@ body:not(.atlas-loading) .graph-loader {
   position: absolute;
   display: flex;
   gap: 3px;
-  padding: 3px;
-  border-radius: 8px 0 6px 0;
-  background: rgba(255, 255, 255, .9);
-  box-shadow: 0 0 0 1px rgba(15, 23, 42, .16);
   pointer-events: none;
-  contain: layout style paint;
 }
 
 .graph-domain-markers[hidden] {
@@ -563,9 +557,8 @@ body:not(.atlas-loading) .graph-loader {
 }
 
 .graph-domain-markers > span {
-  width: 7px;
-  height: 7px;
-  border: 1px solid rgba(15, 23, 42, .3);
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
 }
 

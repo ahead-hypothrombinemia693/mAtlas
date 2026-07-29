@@ -49,12 +49,32 @@ test('static export uses the npm-managed browser and domain markers stay consist
   const generator = await readFile(new URL('../scripts/generate-static-atlas-svg.mjs', import.meta.url), 'utf8');
   const labelLayer = await readFile(new URL('../src/graph/graph-math-label-layer.ts', import.meta.url), 'utf8');
   const exporter = await readFile(new URL('../src/ui/svg-exporter.ts', import.meta.url), 'utf8');
+  const styles = await readFile(new URL('../src/styles.css', import.meta.url), 'utf8');
   const fieldBands = await readFile(new URL('../src/ui/field-band-controller.ts', import.meta.url), 'utf8');
 
   assert.match(generator, /import puppeteer from 'puppeteer'/);
   assert.doesNotMatch(generator, /CHROME_BIN|spawnSync|browserCandidates/);
   assert.match(labelLayer, /graph-domain-markers/);
   assert.match(exporter, /<circle cx=/);
+  assert.doesNotMatch(exporter, /markerY[^\n]*<rect|stroke-opacity="0\.3"/);
+  assert.doesNotMatch(styles, /\.graph-domain-markers\s*\{[^}]*?(?:background|box-shadow|contain):/s);
+  assert.doesNotMatch(styles, /\.graph-domain-markers\s*>\s*span\s*\{[^}]*border:/s);
+  assert.doesNotMatch(styles, /will-change:\s*transform/);
   assert.match(fieldBands, /container\.hidden = true/);
   assert.match(fieldBands, /container\.hidden = false/);
+});
+
+test('selection navigation replaces an in-flight viewport animation', async () => {
+  const appSource = await readFile(new URL('../src/app/atlas-app.ts', import.meta.url), 'utf8');
+  const activators = appSource.slice(appSource.indexOf('function activateNode'), appSource.indexOf('function clearSelection'));
+  assert.equal((activators.match(/cy\.stop\(true, false\)/g) ?? []).length, 2);
+});
+
+test('the canvas renderer parks its perpetual frame loop while idle', async () => {
+  const controller = await readFile(new URL('../src/graph/idle-render-controller.ts', import.meta.url), 'utf8');
+  const appSource = await readFile(new URL('../src/app/atlas-app.ts', import.meta.url), 'utf8');
+  assert.match(appSource, /new IdleRenderController\(cy, graphEl\)/);
+  assert.match(controller, /this\.renderer\.destroyed = true/);
+  assert.match(controller, /this\.renderer\.startRenderLoop\(\)/);
+  assert.match(controller, /this\.cy\.animated\(\) \|\| this\.renderer\.requestedFrame/);
 });
