@@ -1,10 +1,42 @@
-import { writeFile } from 'node:fs/promises';
+import { mkdir, writeFile } from 'node:fs/promises';
 
 const SITE_ORIGIN = 'https://atlas.madvay.com';
 const appUrl = (pathname = '') => new URL(pathname, `${SITE_ORIGIN}/`).toString();
 const conceptPath = (nodeId) => `concepts/${encodeURIComponent(nodeId)}/`;
 const fieldPath = (graphData, fieldId) => `${graphData.fields[fieldId]?.path ?? fieldId}/`;
 const domainPath = (graphData, domainId) => `${fieldPath(graphData, graphData.domains[domainId]?.field)}${encodeURIComponent(domainId)}/`;
+
+function buildOpenSearchXml() {
+  return [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">',
+    '  <ShortName>Fundamental Concepts</ShortName>',
+    '  <Description>Search the Atlas of Fundamental Concepts</Description>',
+    `  <Image height="96" width="96" type="image/png">${appUrl('favicon-96x96.png')}</Image>`,
+    `  <Url type="text/html" template="${escapeXml(appUrl('?q={searchTerms}'))}"/>`,
+    '  <InputEncoding>UTF-8</InputEncoding>',
+    '</OpenSearchDescription>',
+    ''
+  ].join('\n');
+}
+
+function buildSearchIndex(graphData) {
+  const concepts = graphData.nodes.filter((node) => node.kind === 'structure').map((node) => ({
+    id: node.id,
+    label: node.label,
+    summary: node.summary,
+    url: appUrl(conceptPath(node.id)),
+    conceptType: node.conceptType ?? null,
+    fields: node.fields ?? [node.primaryField].filter(Boolean),
+    domains: node.domains ?? [node.primaryDomain].filter(Boolean)
+  }));
+  return `${JSON.stringify({
+    version: 1,
+    generatedFrom: graphData.meta.version,
+    canonical: appUrl(),
+    concepts
+  })}\n`;
+}
 
 function buildRobotsTxt() {
   return ['User-agent: *', 'Allow: /', `Sitemap: ${appUrl('sitemap.xml')}`, ''].join('\n');
@@ -98,9 +130,12 @@ export async function generateSeoAssets({
   directoryPath = 'directory/',
   lastModified
 }) {
+  await mkdir(new URL('data/', distUrl), { recursive: true });
   await Promise.all([
     writeFile(new URL('robots.txt', distUrl), buildRobotsTxt()),
     writeFile(new URL('sitemap.xml', distUrl), buildSitemapXml(graphData, viewsData, atlasSvgPath, directoryPath, lastModified)),
-    writeFile(new URL('llms.txt', distUrl), buildLlmsTxt(graphData, viewsData, graphDataPath, schemaPath, viewsPath, atlasSvgPath, directoryPath))
+    writeFile(new URL('llms.txt', distUrl), buildLlmsTxt(graphData, viewsData, graphDataPath, schemaPath, viewsPath, atlasSvgPath, directoryPath)),
+    writeFile(new URL('opensearch.xml', distUrl), buildOpenSearchXml()),
+    writeFile(new URL('data/search-index.json', distUrl), buildSearchIndex(graphData))
   ]);
 }

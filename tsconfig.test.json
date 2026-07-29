@@ -10,9 +10,11 @@
     "sourceMap": false
   },
   "include": [
+    "src/env.d.ts",
     "src/types.ts",
     "src/core/hash.ts",
     "src/core/text.ts",
+    "src/core/search.ts",
     "src/model/graph-model.ts",
     "src/state/ui-state.ts",
     "src/state/view-state.ts",
@@ -20,6 +22,7 @@
     "src/graph/organic-layout-core.ts",
     "src/graph/graph-math-label-layer.ts",
     "src/app/location-controller.ts",
+    "src/app/data-loader.ts",
     "src/graph/visibility-policy.ts",
     "src/state/taxonomy-selection.ts",
     "src/ui/view-surface.ts",

@@ -96,8 +96,8 @@ const cssOutput = outputs.find(([name, info]) => info.entryPoint?.endsWith('src/
   ?? outputs.find(([name]) => name.endsWith('.css'))?.[0];
 const publicPath = (output) => `/${relative(distPath, output).replaceAll('\\', '/')}`;
 const assetTags = [
-  cssOutput ? `<link rel="stylesheet" href="${publicPath(cssOutput)}">` : '',
-  `<script type="module" src="${publicPath(jsOutput)}"></script>`
+  cssOutput ? `<link rel="stylesheet" href="${publicPath(cssOutput)}" data-atlas-critical-asset="stylesheet">` : '',
+  `<script type="module" src="${publicPath(jsOutput)}" data-atlas-critical-asset="script"></script>`
 ].filter(Boolean).join('\n  ');
 
 const sourceTemplate = await readFile(new URL('src/index.html', root), 'utf8');
@@ -155,7 +155,9 @@ const manifest = {
     schema: `data/${schemaFile}`,
     views: `data/${viewsFile}`,
     atlasSvg: 'static/atlas.svg',
-    directory: 'directory/'
+    directory: 'directory/',
+    searchIndex: 'data/search-index.json',
+    openSearch: 'opensearch.xml'
   }
 };
 await writeFile(new URL('asset-manifest.json', dist), `${JSON.stringify(manifest, null, 2)}\n`);

@@ -19,6 +19,8 @@ import { ViewsController } from '../ui/views-controller.js';
 import { LocationController } from './location-controller.js';
 import type { AppState, AtlasViewsData, GraphData, GraphNode, HistoryMode, LayoutName, SelectionTarget, UrlUiState } from '../types.js';
 import { renderHtml } from '../ui/render.js';
+import { rankNodeMatches } from '../core/search.js';
+import { fetchAtlasJson } from './data-loader.js';
 
 function encodeUtf8Base64(value: string): string {
   const bytes = new TextEncoder().encode(value);
@@ -35,14 +37,10 @@ export async function startAtlasApp(): Promise<void> {
 
   const graphDataUrl = new URL(__GRAPH_DATA_URL__, document.baseURI).toString();
   const viewsDataUrl = new URL(__VIEWS_DATA_URL__, document.baseURI).toString();
-  const [graphResponse, viewsResponse] = await Promise.all([
-    fetch(graphDataUrl, { cache: 'force-cache' }),
-    fetch(viewsDataUrl, { cache: 'force-cache' })
+  const [graphData, viewsData] = await Promise.all([
+    fetchAtlasJson<GraphData>(graphDataUrl, 'graph data'),
+    fetchAtlasJson<AtlasViewsData>(viewsDataUrl, 'views data')
   ]);
-  if (!graphResponse.ok) throw new Error(`Unable to load graph data (${graphResponse.status}).`);
-  if (!viewsResponse.ok) throw new Error(`Unable to load views data (${viewsResponse.status}).`);
-  const graphData = await graphResponse.json() as GraphData;
-  const viewsData = await viewsResponse.json() as AtlasViewsData;
   const viewsById = new Map(viewsData.views.map((view) => [view.id, view]));
   const graphEl = document.getElementById('graph');
   if (!(graphEl instanceof HTMLElement)) throw new Error('Missing #graph element.');
@@ -461,32 +459,19 @@ export async function startAtlasApp(): Promise<void> {
     const raw = byId<HTMLInputElement>('searchInput').value.trim();
     clearSearch();
     if (!raw) return;
-    const query = raw.toLocaleLowerCase();
-    state.searchQuery = query;
-    const matches = graphData.nodes.filter((node) => {
-      const haystack = [
-        node.label,
-        node.summary,
-        ...(node.carriers || []),
-        ...(node.data || []),
-        ...(node.axioms || []),
-        node.notes || '',
-        ...(node.sections || []).flatMap((section) => [section.title, section.body || '', ...(section.items || [])]),
-        node.conceptType || '',
-        node.scale || '',
-        node.status || '',
-        ...nodeFieldLabels(node),
-        ...nodeDomainLabels(node)
-      ].join(' ').toLocaleLowerCase();
-      return haystack.includes(query);
-    });
+    state.searchQuery = raw.toLocaleLowerCase();
+    const rankedMatches = rankNodeMatches(graphData.nodes, raw, (node) => ({
+      fieldLabels: nodeFieldLabels(node),
+      domainLabels: nodeDomainLabels(node)
+    }));
+    const matches = rankedMatches.map((match) => match.node);
     if (!matches.length) {
       byId('status').textContent = `No concept matches “${raw}”.`;
       return;
     }
     const matchIds = new Set(matches.map((node) => node.id));
     cy.nodes().filter((node) => matchIds.has(node.id())).addClass('search-match');
-    const exact = matches.find((node) => node.label.toLocaleLowerCase() === query) ?? matches[0];
+    const exact = matches[0];
     if (!exact) return;
     selectAndCenter(exact.id);
     byId('status').textContent = `${matches.length} search match${matches.length === 1 ? '' : 'es'} for “${raw}”.`;
@@ -668,6 +653,9 @@ export async function startAtlasApp(): Promise<void> {
   window.addEventListener('popstate', scheduleLocationStateSync);
   window.addEventListener('resize', () => { syncPanelUi(); scheduleFieldBands(); });
 
+  const initialSearchQuery = new URL(window.location.href).searchParams.get('q')?.trim() ?? '';
+  if (initialSearchQuery) byId<HTMLInputElement>('searchInput').value = initialSearchQuery;
+
   // Initial view
   syncPanelUi();
   applyFilters({ relayout: false });
@@ -681,6 +669,7 @@ export async function startAtlasApp(): Promise<void> {
       return;
     }
     applyLocationState({ initial: true });
+    if (initialSearchQuery) performSearch();
     syncNeighborhoodButton();
     scheduleFieldBands();
   });

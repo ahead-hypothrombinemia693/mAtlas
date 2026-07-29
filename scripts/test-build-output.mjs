@@ -7,12 +7,34 @@ const viewsData = JSON.parse(await readFile(new URL('src/data/views.json', root)
 const manifest = JSON.parse(await readFile(new URL('asset-manifest.json', dist), 'utf8'));
 const sitemap = await readFile(new URL('sitemap.xml', dist), 'utf8');
 const llms = await readFile(new URL('llms.txt', dist), 'utf8');
+const openSearch = await readFile(new URL('opensearch.xml', dist), 'utf8');
+const searchIndex = JSON.parse(await readFile(new URL('data/search-index.json', dist), 'utf8'));
 const atlasSvg = await readFile(new URL('static/atlas.svg', dist), 'utf8');
 const directoryPage = await readFile(new URL('directory/index.html', dist), 'utf8');
 const conceptsIndex = await readFile(new URL('concepts/index.html', dist), 'utf8');
 const viewIndex = await readFile(new URL('views/index.html', dist), 'utf8');
 const appIndex = await readFile(new URL('index.html', dist), 'utf8');
 
+const recoveryParameter = '__atlas_refresh';
+function assertCacheRecovery(html, pageLabel) {
+  const bootstrapIndex = html.indexOf('window.__atlasRecovery =');
+  const stylesheetIndex = html.indexOf('data-atlas-critical-asset="stylesheet"');
+  const scriptIndex = html.indexOf('data-atlas-critical-asset="script"');
+  if (!html.includes(`<meta name="atlas:cache-bust-param" content="${recoveryParameter}">`)) throw new Error(`${pageLabel} lacks the cache-recovery parameter declaration.`);
+  if (bootstrapIndex < 0 || stylesheetIndex < 0 || scriptIndex < 0 || bootstrapIndex > stylesheetIndex || bootstrapIndex > scriptIndex) throw new Error(`${pageLabel} does not install cache recovery before critical assets load.`);
+  if (!html.includes('searchParams.set(parameterName, randomValue())') || !html.includes('window.location.replace(target)')) throw new Error(`${pageLabel} does not perform a random cache-busting replacement navigation.`);
+  if (!html.includes('searchParams.delete(parameterName)') || !html.includes('window.history.replaceState')) throw new Error(`${pageLabel} does not remove the recovery parameter after successful startup.`);
+  const canonicals = [...html.matchAll(/<link rel="canonical" href="([^"]+)">/g)].map((match) => match[1]);
+  if (!canonicals.length || canonicals.some((href) => href.includes(recoveryParameter))) throw new Error(`${pageLabel} has a missing or cache-polluted canonical URL.`);
+}
+
+assertCacheRecovery(appIndex, 'The application root');
+
+if (!appIndex.includes('rel="search" type="application/opensearchdescription+xml"')) throw new Error('The application does not advertise OpenSearch discovery.');
+if (!appIndex.includes('class="skip-link"')) throw new Error('The application lacks a keyboard skip link.');
+if (!openSearch.includes('<OpenSearchDescription') || !openSearch.includes('?q={searchTerms}')) throw new Error('opensearch.xml is incomplete.');
+if (searchIndex.concepts?.length !== graphData.nodes.filter((node) => node.kind === 'structure').length) throw new Error('The public search index does not contain every concept.');
+if (searchIndex.concepts.some((concept) => !concept.id || !concept.label || !concept.url || !concept.summary)) throw new Error('The public search index contains incomplete concept records.');
 if (!manifest.assets?.views) throw new Error('asset-manifest.json does not include the hashed views data asset.');
 if (!manifest.assets?.css) throw new Error('asset-manifest.json does not include the application stylesheet.');
 if (manifest.assets?.atlasSvg !== 'static/atlas.svg') throw new Error('asset-manifest.json does not expose the stable static/atlas.svg path.');
@@ -79,6 +101,7 @@ if (!conceptsIndex.includes('<link rel="canonical" href="https://atlas.madvay.co
 for (const view of viewsData.views) {
   const encodedId = encodeURIComponent(view.id);
   const html = await readFile(new URL(`views/${encodedId}/index.html`, dist), 'utf8');
+  assertCacheRecovery(html, `Static view page ${view.id}`);
   if (!html.includes(`<meta name="atlas:view" content="${view.id}">`)) throw new Error(`Static page for ${view.id} lacks its view metadata.`);
   if (!html.includes(`<meta name="atlas:selection" content="node:${view.nodeSequence[0]}">`)) throw new Error(`Static page for ${view.id} does not start on its first sequence node.`);
   if (!html.includes('<base href="../../">')) throw new Error(`Static page for ${view.id} has the wrong base path.`);
@@ -90,12 +113,24 @@ for (const view of viewsData.views) {
   if (!sitemap.includes(`<loc>https://atlas.madvay.com/views/${encodedId}/</loc>`)) throw new Error(`The sitemap omits ${view.id}.`);
 }
 
+for (const fieldId of graphData.meta.fieldOrder ?? Object.keys(graphData.fields)) {
+  const field = graphData.fields[fieldId];
+  const html = await readFile(new URL(`${field.path}/index.html`, dist), 'utf8');
+  assertCacheRecovery(html, `Static field page ${fieldId}`);
+}
+
+for (const node of graphData.nodes.filter((candidate) => candidate.kind === 'structure')) {
+  const html = await readFile(new URL(`concepts/${encodeURIComponent(node.id)}/index.html`, dist), 'utf8');
+  assertCacheRecovery(html, `Static concept page ${node.id}`);
+}
+
 for (const domainId of graphData.meta.domainOrder ?? Object.keys(graphData.domains)) {
   const domain = graphData.domains[domainId];
   const field = graphData.fields[domain.field];
   const encodedId = encodeURIComponent(domainId);
   const path = `${field.path}/${encodedId}/`;
   const html = await readFile(new URL(`${path}index.html`, dist), 'utf8');
+  assertCacheRecovery(html, `Static domain page ${domainId}`);
   if (!html.includes(`<meta name="atlas:scope" content="${domain.field}">`)) throw new Error(`Static domain page for ${domainId} lacks its field metadata.`);
   if (!html.includes(`<meta name="atlas:domain" content="${domainId}">`)) throw new Error(`Static domain page for ${domainId} lacks its domain metadata.`);
   if (!html.includes('<base href="../../">')) throw new Error(`Static domain page for ${domainId} has the wrong base path.`);
@@ -105,4 +140,4 @@ for (const domainId of graphData.meta.domainOrder ?? Object.keys(graphData.domai
   if (!directoryPage.includes(`href="/${path}"`)) throw new Error(`The directory page does not link to domain ${domainId}.`);
 }
 
-console.log(`Verified ${viewsData.views.length} static view pages, ${Object.keys(graphData.domains).length} static domain pages, the atlas directory, the concepts redirect, the standalone SVG export, data assets, and sitemap entries.`);
+console.log(`Verified cache recovery across the root and ${graphData.nodes.filter((node) => node.kind === 'structure').length} concept, ${Object.keys(graphData.fields).length} field, ${Object.keys(graphData.domains).length} domain, and ${viewsData.views.length} view pages, plus the atlas directory, redirects, SVG export, data assets, and sitemap entries.`);

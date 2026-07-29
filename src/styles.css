@@ -2136,3 +2136,39 @@ input:focus-visible {
   color: #334155;
   font-size: 0.9rem;
 }
+
+.skip-link {
+  position: fixed;
+  left: 0.75rem;
+  top: 0.75rem;
+  z-index: 10000;
+  transform: translateY(-180%);
+  padding: 0.55rem 0.8rem;
+  border-radius: 0.4rem;
+  background: #fff;
+  color: #111;
+  box-shadow: 0 2px 12px rgb(0 0 0 / 28%);
+}
+
+.skip-link:focus { transform: translateY(0); }
+
+.startup-error {
+  max-width: 36rem;
+  margin: 10vh auto;
+  padding: 1.25rem;
+  border: 1px solid var(--border-color, #ccd3df);
+  border-radius: 0.75rem;
+  background: var(--panel-bg, #fff);
+  box-shadow: 0 8px 28px rgb(0 0 0 / 12%);
+}
+
+.startup-error .button { display: inline-flex; text-decoration: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

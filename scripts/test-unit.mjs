@@ -6,6 +6,9 @@ const buildDirectory = new URL('../.test-build/', import.meta.url);
 const typeScriptCli = fileURLToPath(new URL('../node_modules/typescript/bin/tsc', import.meta.url));
 const testFiles = [
   'test/core.test.mjs',
+  'test/cache-recovery-bootstrap.test.mjs',
+  'test/data-loader.test.mjs',
+  'test/search.test.mjs',
   'test/graph-model.test.mjs',
   'test/graph-math-label-layer.test.mjs',
   'test/ui-state.test.mjs',
