@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { deterministicRandom, runWithDeterministicRandom, stableStringHash } from '../.test-build/core/hash.js';
-import { normalizeCitationPart, shortenSourceLabel, stripInlineMathText, summarizePlainText } from '../.test-build/core/text.js';
+import { hasInlineMathText, normalizeCitationPart, shortenSourceLabel, stripInlineMathText, summarizePlainText } from '../.test-build/core/text.js';
 import { organicIterationBudget, organicSeedPosition } from '../.test-build/graph/organic-layout-core.js';
 
 test('stableStringHash is stable and order-sensitive', () => {
@@ -24,6 +24,8 @@ test('runWithDeterministicRandom restores Math.random after errors', () => {
 test('citation and inline-math text normalization preserves prose', () => {
   assert.equal(normalizeCitationPart('Title (Section 3)'), 'title');
   assert.equal(shortenSourceLabel('SEP — Groups', 'Groups', { SEP: 'Stanford' }), 'Stanford');
+  assert.equal(hasInlineMathText('A $G$-action'), true);
+  assert.equal(hasInlineMathText('A G-action'), false);
   assert.equal(stripInlineMathText('A $G$-action'), 'A G-action');
   assert.equal(summarizePlainText('  A   $G$-action  ', 100), 'A G-action');
   assert.equal(summarizePlainText('abcdefghij', 6), 'abcde…');

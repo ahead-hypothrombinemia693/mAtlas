@@ -1,16 +1,9 @@
 import { mkdir, writeFile } from 'node:fs/promises';
+import { escapeHtml, renderInlineMath } from './inline-math.mjs';
 
 const SITE_ORIGIN = 'https://atlas.madvay.com';
 const appUrl = (pathname = '') => new URL(pathname, `${SITE_ORIGIN}/`).toString();
 const viewPath = (viewId) => `views/${encodeURIComponent(viewId)}/`;
-
-function escapeHtml(value) {
-  return String(value)
-    .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;');
-}
 
 function replaceFirst(html, pattern, replacement) {
   return pattern.test(html) ? html.replace(pattern, replacement) : html;
@@ -25,7 +18,7 @@ function renderStaticSequence(view, graphData) {
   const firstLabel = graphData.nodes.find((node) => node.id === firstNodeId)?.label ?? firstNodeId ?? '';
   return `<div class="view-sequence-controls" role="group" aria-label="Guided sequence navigation">
       <button type="button" class="view-sequence-button" data-view-prev aria-label="Previous step" title="Previous step" disabled><span class="material-icons" aria-hidden="true">chevron_left</span><span class="view-sequence-button-label">Previous</span></button>
-      <div class="view-sequence-position"><span>Step 1 of ${view.nodeSequence.length}</span><strong>${escapeHtml(firstLabel)}</strong></div>
+      <div class="view-sequence-position"><span>Step 1 of ${view.nodeSequence.length}</span><strong>${renderInlineMath(firstLabel)}</strong></div>
       <button type="button" class="view-sequence-button" data-view-next aria-label="Next step" title="Next step"${view.nodeSequence.length < 2 ? ' disabled' : ''}><span class="view-sequence-button-label">Next</span><span class="material-icons" aria-hidden="true">chevron_right</span></button>
     </div>`;
 }

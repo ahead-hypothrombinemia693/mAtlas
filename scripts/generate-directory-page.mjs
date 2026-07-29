@@ -1,22 +1,11 @@
 import { mkdir, writeFile } from 'node:fs/promises';
+import { escapeHtml, renderInlineMath, stripInlineMath } from './inline-math.mjs';
 
 const SITE_ORIGIN = 'https://atlas.madvay.com';
 const appUrl = (pathname = '') => new URL(pathname, `${SITE_ORIGIN}/`).toString();
 const conceptPath = (nodeId) => `concepts/${encodeURIComponent(nodeId)}/`;
 const fieldPath = (graphData, fieldId) => `${graphData.fields[fieldId]?.path ?? fieldId}/`;
 const domainPath = (graphData, domainId) => `${fieldPath(graphData, graphData.domains[domainId]?.field)}${encodeURIComponent(domainId)}/`;
-
-function escapeHtml(value) {
-  return String(value ?? '')
-    .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;');
-}
-
-function stripInlineMath(value) {
-  return String(value ?? '').replace(/\$([^$\n]+?)\$/g, '$1');
-}
 
 function fieldIdForNode(graphData, node) {
   return node.primaryField ?? graphData.domains[node.primaryDomain]?.field ?? graphData.meta.defaultField;
@@ -111,7 +100,7 @@ function renderConceptDirectory(graphData) {
         .filter((node) => fieldIdForNode(graphData, node) === fieldId && node.primaryDomain === domainId)
         .sort((a, b) => stripInlineMath(a.label).localeCompare(stripInlineMath(b.label)));
       if (!nodes.length) return '';
-      return `<section class="concept-domain"><h4><a href="/${domainPath(graphData, domainId)}"><span class="domain-swatch" style="--domain-color:${escapeHtml(graphData.domains[domainId].color)}" aria-hidden="true"></span>${escapeHtml(graphData.domains[domainId].label)}</a> <small>${nodes.length}</small></h4><ul>${nodes.map((node) => `<li><a href="/${conceptPath(node.id)}">${escapeHtml(stripInlineMath(node.label))}</a></li>`).join('')}</ul></section>`;
+      return `<section class="concept-domain"><h4><a href="/${domainPath(graphData, domainId)}"><span class="domain-swatch" style="--domain-color:${escapeHtml(graphData.domains[domainId].color)}" aria-hidden="true"></span>${escapeHtml(graphData.domains[domainId].label)}</a> <small>${nodes.length}</small></h4><ul>${nodes.map((node) => `<li><a href="/${conceptPath(node.id)}">${renderInlineMath(node.label, 'mathml')}</a></li>`).join('')}</ul></section>`;
     }).join('');
     return `<section class="concept-field"><h3><a href="/${fieldPath(graphData, fieldId)}">${escapeHtml(graphData.fields[fieldId].label)}</a></h3>${domainSections}</section>`;
   }).join('');

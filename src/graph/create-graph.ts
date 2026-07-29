@@ -2,7 +2,7 @@ import cytoscape from 'cytoscape';
 import type { GraphNode } from '../types.js';
 import type { GraphModel } from '../model/graph-model.js';
 import { stableStringHash } from '../core/hash.js';
-import { stripInlineMathText } from '../core/text.js';
+import { hasInlineMathText, stripInlineMathText } from '../core/text.js';
 import type { LabelSizer } from './label-sizer.js';
 
 const domainRailCache = new Map<string, string>();
@@ -45,12 +45,15 @@ export function createGraphElements(model: GraphModel, labels: LabelSizer): cyto
     if (!primaryDomain) throw new Error(`Node ${node.id} has an unknown primary domain: ${node.primaryDomain}`);
     const domainIds = model.nodeDomainIds(node);
     const displayLabel = stripInlineMathText(node.label);
+    const hasMathLabel = hasInlineMathText(node.label);
     elements.push({
       group: 'nodes',
       data: {
         id: node.id,
         label: node.label,
         displayLabel,
+        canvasLabel: hasMathLabel ? '' : displayLabel,
+        hasMathLabel: hasMathLabel ? 1 : 0,
         labelFontSize: labels.semanticSize(node, 1, displayLabel),
         kind: node.kind,
         primaryField: model.nodePrimaryField(node),
@@ -71,6 +74,8 @@ export function createGraphElements(model: GraphModel, labels: LabelSizer): cyto
   for (const edge of model.allEdges) {
     const type = model.data.edgeTypes[edge.type];
     if (!type) throw new Error(`Edge ${edge.id} has an unknown type: ${edge.type}`);
+    const displayLabel = stripInlineMathText(edge.label);
+    const hasMathLabel = hasInlineMathText(edge.label);
     elements.push({
       group: 'edges',
       data: {
@@ -81,7 +86,10 @@ export function createGraphElements(model: GraphModel, labels: LabelSizer): cyto
         typeLabel: type.label,
         typeColor: type.color,
         lineStyle: type.lineStyle ?? 'solid',
-        label: stripInlineMathText(edge.label),
+        label: edge.label,
+        displayLabel,
+        canvasLabel: hasMathLabel ? '' : displayLabel,
+        hasMathLabel: hasMathLabel ? 1 : 0,
         detail: edge.detail,
         synthetic: edge.synthetic ? 1 : 0,
         junctionId: edge.junctionId ?? '',
@@ -101,7 +109,7 @@ export const graphStyles: cytoscape.StylesheetJson = [
       'background-color': 'data(domainColor)', 'background-opacity': 0.92,
       'background-image': 'data(domainRailImage)', 'background-fit': 'cover',
       'background-repeat': 'no-repeat', 'background-clip': 'node', 'background-image-opacity': 1,
-      'border-width': 2, 'border-color': '#ffffff', label: 'data(displayLabel)', color: '#ffffff',
+      'border-width': 2, 'border-color': '#ffffff', label: 'data(canvasLabel)', color: '#ffffff',
       'font-size': 'data(labelFontSize)', 'font-weight': 600, 'text-wrap': 'wrap',
       'text-overflow-wrap': 'whitespace', 'text-max-width': '144px', 'text-halign': 'center',
       'text-valign': 'center', 'text-outline-width': 0, 'overlay-opacity': 0,
@@ -123,7 +131,7 @@ export const graphStyles: cytoscape.StylesheetJson = [
       width: 2.1, 'curve-style': 'bezier', 'control-point-distances': 'data(curveDistance)',
       'control-point-weights': 0.5, 'line-color': 'data(typeColor)',
       'target-arrow-color': 'data(typeColor)', 'target-arrow-shape': 'triangle',
-      'arrow-scale': 0.85, 'line-style': 'data(lineStyle)' as unknown as cytoscape.Css.Edge['line-style'], label: 'data(label)',
+      'arrow-scale': 0.85, 'line-style': 'data(lineStyle)' as unknown as cytoscape.Css.Edge['line-style'], label: 'data(canvasLabel)',
       'font-size': 9, 'font-weight': 600, color: '#334155', 'text-wrap': 'wrap',
       'text-max-width': '120px', 'text-background-color': '#ffffff', 'text-background-opacity': 0.88,
       'text-background-padding': '3px', 'text-border-width': 1, 'text-border-color': '#e2e8f0',

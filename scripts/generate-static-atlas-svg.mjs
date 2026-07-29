@@ -4,6 +4,7 @@ import { tmpdir } from 'node:os';
 import { delimiter, join } from 'node:path';
 
 const STATIC_EXPORT_MARKER = '<meta name="atlas:static-svg-build" content="1">';
+const SITE_ORIGIN = 'https://atlas.madvay.com/';
 const BUILD_TIMEOUT_MS = 120_000;
 const DEVTOOLS_REQUEST_TIMEOUT_MS = 10_000;
 
@@ -156,10 +157,40 @@ function escapeInlineStyle(value) {
   return value.replaceAll('</style', '<\\/style');
 }
 
+
+function escapeHtmlAttribute(value) {
+  return String(value).replaceAll('&', '&amp;').replaceAll('"', '&quot;');
+}
+
+function cssAssetMimeType(pathname) {
+  if (pathname.endsWith('.woff2')) return 'font/woff2';
+  if (pathname.endsWith('.woff')) return 'font/woff';
+  if (pathname.endsWith('.ttf')) return 'font/ttf';
+  if (pathname.endsWith('.otf')) return 'font/otf';
+  if (pathname.endsWith('.svg')) return 'image/svg+xml';
+  if (pathname.endsWith('.png')) return 'image/png';
+  if (pathname.endsWith('.jpg') || pathname.endsWith('.jpeg')) return 'image/jpeg';
+  if (pathname.endsWith('.webp')) return 'image/webp';
+  return 'application/octet-stream';
+}
+
 function relativeDistUrl(pathname, distUrl) {
   const path = pathname.replace(/^\/+/, '');
   if (!path || path.includes('..')) throw new Error(`Unsafe build asset path: ${pathname}`);
   return new URL(path, distUrl);
+}
+
+async function inlineLocalCssAssets(css, stylesheetHref, distUrl) {
+  const stylesheetUrl = new URL(stylesheetHref, SITE_ORIGIN);
+  return replaceAsync(css, /url\((['"]?)([^'"\)]+)\1\)/g, async (match) => {
+    const rawUrl = match[2].trim();
+    if (!rawUrl || /^(?:data:|blob:|#|https?:)/i.test(rawUrl)) return match[0];
+    const assetUrl = new URL(rawUrl, stylesheetUrl);
+    if (assetUrl.origin !== new URL(SITE_ORIGIN).origin) return match[0];
+    const bytes = await readFile(relativeDistUrl(assetUrl.pathname, distUrl));
+    const mimeType = cssAssetMimeType(assetUrl.pathname.toLowerCase());
+    return `url("data:${mimeType};base64,${bytes.toString('base64')}")`;
+  });
 }
 
 async function replaceAsync(source, pattern, replacement) {
@@ -183,7 +214,8 @@ async function selfContainedBuildPage(distUrl) {
       const href = match[1];
       if (/^https?:/i.test(href)) return '';
       const css = await readFile(relativeDistUrl(href, distUrl), 'utf8');
-      return `<style>${escapeInlineStyle(css)}</style>`;
+      const selfContainedCss = await inlineLocalCssAssets(css, href, distUrl);
+      return `<style data-atlas-source-href="${escapeHtmlAttribute(href)}">${escapeInlineStyle(selfContainedCss)}</style>`;
     }
   );
   html = await replaceAsync(

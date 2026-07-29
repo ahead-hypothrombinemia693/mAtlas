@@ -7,6 +7,7 @@ import { LabelSizer } from '../graph/label-sizer.js';
 import { createGraph } from '../graph/create-graph.js';
 import { LayoutManager } from '../graph/layout-manager.js';
 import { GraphViewController } from '../graph/graph-view-controller.js';
+import { GraphMathLabelLayer } from '../graph/graph-math-label-layer.js';
 import { MathRenderer } from '../ui/math-renderer.js';
 import { DetailsController } from '../ui/details-controller.js';
 import { SvgExporter } from '../ui/svg-exporter.js';
@@ -145,6 +146,7 @@ export async function startAtlasApp(): Promise<void> {
   const renderMathText = (value: unknown): string => mathRenderer.renderText(value);
 
   const cy = createGraph(graphEl, model, labelSizer);
+  new GraphMathLabelLayer(cy, graphEl, mathRenderer);
   window.cy = cy;
   currentSelectionTarget = () => {
     const selected = cy.$(':selected').first();
@@ -524,7 +526,7 @@ export async function startAtlasApp(): Promise<void> {
       <p><strong>/</strong> focuses search, <strong>F</strong> fits the filtered graph, and <strong>Escape</strong> clears search or closes mobile panels.</p>`;
   }
 
-  const svgExporter = new SvgExporter(cy, model, state);
+  const svgExporter = new SvgExporter(cy, model, state, mathRenderer);
   const exportVisibleSvg = (): void => svgExporter.exportVisible();
   const publishStaticAtlasSvg = (): void => {
     const result = svgExporter.serializeVisible();

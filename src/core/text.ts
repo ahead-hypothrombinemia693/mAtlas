@@ -29,6 +29,10 @@ export function stripInlineMathText(text: string): string {
   return text.replace(/\$([^$\n]+?)\$/g, '$1');
 }
 
+export function hasInlineMathText(text: unknown): boolean {
+  return /\$([^$\n]+?)\$/.test(String(text ?? ''));
+}
+
 export function summarizePlainText(text: string, maxLength = 240): string {
   const normalized = stripInlineMathText(text).replace(/\s+/g, ' ').trim();
   if (normalized.length <= maxLength) return normalized;

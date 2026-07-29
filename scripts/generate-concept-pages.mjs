@@ -1,4 +1,5 @@
 import { mkdir, writeFile } from 'node:fs/promises';
+import { escapeHtml, renderInlineMath, stripInlineMath } from './inline-math.mjs';
 
 const SITE_ORIGIN = 'https://atlas.madvay.com';
 
@@ -19,22 +20,10 @@ function domainPath(graphData, domainId) {
   return `${fieldPath(graphData, fieldId)}${encodeURIComponent(domainId)}/`;
 }
 
-function stripInlineMath(text) {
-  return String(text ?? '').replace(/\$([^$\n]+?)\$/g, '$1');
-}
-
 function summarize(text, maxLength = 240) {
   const normalized = stripInlineMath(text).replace(/\s+/g, ' ').trim();
   if (normalized.length <= maxLength) return normalized;
   return `${normalized.slice(0, Math.max(0, maxLength - 1)).trimEnd()}...`;
-}
-
-function escapeHtml(value) {
-  return String(value)
-    .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;');
 }
 
 function replaceFirst(html, pattern, replacement) {
@@ -54,7 +43,7 @@ function nodeJsonLd({ node, graphData, canonicalUrl, description }) {
     '@context': 'https://schema.org',
     '@type': 'DefinedTerm',
     '@id': canonicalUrl,
-    name: node.label,
+    name: stripInlineMath(node.label),
     description,
     url: canonicalUrl,
     identifier: node.id,
@@ -82,7 +71,7 @@ function relatedConcepts(graphData, nodeId) {
 function renderStaticLinkSection(graphData, node) {
   const neighbors = relatedConcepts(graphData, node.id).slice(0, 64);
   const links = neighbors.length
-    ? neighbors.map((related) => `<li><a href="concepts/${encodeURIComponent(related.id)}/">${escapeHtml(related.label)}</a></li>`).join('')
+    ? neighbors.map((related) => `<li><a href="concepts/${encodeURIComponent(related.id)}/">${renderInlineMath(related.label)}</a></li>`).join('')
     : '<li>No direct relation links recorded for this concept.</li>';
   return `<section class="concept-static-links" aria-label="Related concepts">
   <h2>Related concepts</h2>
@@ -94,7 +83,7 @@ function renderStaticLinkSection(graphData, node) {
 function renderConceptPage(templateHtml, { graphData, node }) {
   const canonicalUrl = appUrl(conceptPath(node.id));
   const description = summarize(node.summary || graphData.meta.description);
-  const pageTitle = `${node.label} — ${graphData.meta.title}`;
+  const pageTitle = `${stripInlineMath(node.label)} — ${graphData.meta.title}`;
   let html = templateHtml;
   html = replaceFirst(html, /<title>[^<]*<\/title>/, `<title>${escapeHtml(pageTitle)}</title>`);
   html = replaceFirst(html, /<meta name="description" content="[^"]*">/, `<meta name="description" content="${escapeHtml(description)}">`);
