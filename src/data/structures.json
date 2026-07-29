@@ -8050,6 +8050,10 @@
       "citations": [
         "wp-finite-set",
         "openlogic-set-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -8075,6 +8079,10 @@
       "citations": [
         "wp-countable-set",
         "openlogic-set-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -8101,6 +8109,10 @@
       "citations": [
         "wp-indexed-family",
         "openlogic-set-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -8126,6 +8138,10 @@
       "citations": [
         "wp-transitive-set",
         "openlogic-set-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -8155,6 +8171,10 @@
         "wp-well-founded",
         "nlab-well-founded",
         "openlogic-set-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -8184,6 +8204,10 @@
         "wp-ordinal",
         "nlab-ordinal",
         "openlogic-set-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -8210,6 +8234,10 @@
         "wp-cardinal",
         "nlab-cardinal",
         "openlogic-set-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -8237,6 +8265,10 @@
         "order",
         "logic",
         "set-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -8268,6 +8300,10 @@
       "domains": [
         "order",
         "logic"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -8295,6 +8331,10 @@
       "primaryDomain": "order",
       "domains": [
         "order"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -8324,6 +8364,10 @@
       "domains": [
         "order",
         "combinatorics"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -8352,6 +8396,10 @@
       "citations": [
         "wp-bounded-poset",
         "gierz-order"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -8381,6 +8429,10 @@
       "citations": [
         "wp-directed-set",
         "gierz-order"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -8408,6 +8460,10 @@
       "citations": [
         "wp-semilattice",
         "gierz-order"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -8435,6 +8491,10 @@
       "citations": [
         "wp-semilattice",
         "gierz-order"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -8462,6 +8522,10 @@
       "primaryDomain": "order",
       "domains": [
         "order"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -8491,7 +8555,11 @@
         ],
         "compatibility": "The order is invariant under translation by group elements.",
         "output": "ordered_group"
-      }
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
     },
     {
       "id": "j_lattice",
@@ -8520,7 +8588,11 @@
         ],
         "compatibility": "The meet and join are computed with respect to the same partial order.",
         "output": "lattice"
-      }
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
     },
     {
       "id": "well_order",
@@ -8548,6 +8620,10 @@
       "citations": [
         "wp-well-order",
         "gierz-order"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -8574,6 +8650,10 @@
         "wp-dcpo",
         "nlab-dcpo",
         "gierz-order"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -8601,6 +8681,10 @@
       "citations": [
         "nlab-lattice",
         "gierz-order"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -8629,6 +8713,10 @@
       "citations": [
         "wp-ordered-group",
         "gierz-order"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -8658,6 +8746,10 @@
       "citations": [
         "wp-bounded-lattice",
         "gierz-order"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -8685,6 +8777,10 @@
       "citations": [
         "wp-distributive-lattice",
         "gierz-order"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -8714,7 +8810,11 @@
         ],
         "compatibility": "Require left and right translations to preserve the lattice order.",
         "output": "lattice_ordered_group"
-      }
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
     },
     {
       "id": "j_residuated",
@@ -8744,7 +8844,11 @@
         ],
         "compatibility": "Require monoid multiplication to be monotone and admit left and right residuals with respect to the order.",
         "output": "residuated_lattice"
-      }
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
     },
     {
       "id": "cpo",
@@ -8772,6 +8876,10 @@
         "wp-cpo",
         "nlab-cpo",
         "gierz-order"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -8803,7 +8911,11 @@
         ],
         "compatibility": "The bounds, meet, and join belong to the same lattice structure.",
         "output": "bounded_distributive_lattice"
-      }
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
     },
     {
       "id": "complete_lattice",
@@ -8829,6 +8941,10 @@
       "citations": [
         "wp-complete-lattice",
         "gierz-order"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -8855,6 +8971,10 @@
       "citations": [
         "wp-lattice-ordered-group",
         "gierz-order"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -8884,6 +9004,10 @@
       "citations": [
         "wp-residuated-lattice",
         "gierz-order"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -8914,7 +9038,11 @@
         ],
         "compatibility": "Addition preserves order and products of nonnegative elements are nonnegative.",
         "output": "ordered_ring"
-      }
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
     },
     {
       "id": "bounded_distributive_lattice",
@@ -8946,6 +9074,10 @@
       "citations": [
         "wp-distributive-lattice",
         "gierz-order"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -8976,6 +9108,10 @@
         "wp-frame-order",
         "nlab-frame",
         "gierz-order"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -9006,6 +9142,10 @@
       "citations": [
         "wp-ordered-ring",
         "gierz-order"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -9039,6 +9179,10 @@
       "citations": [
         "wp-boolean-algebra",
         "gierz-order"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -9071,6 +9215,10 @@
       "citations": [
         "wp-heyting-algebra",
         "gierz-order"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -9100,6 +9248,10 @@
         "wp-boolean-algebra",
         "wp-complete-lattice",
         "gierz-order"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -9130,7 +9282,11 @@
         ],
         "compatibility": "The field operations preserve the ordered-ring laws.",
         "output": "ordered_field"
-      }
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
     },
     {
       "id": "ordered_field",
@@ -9159,6 +9315,10 @@
       "citations": [
         "wp-ordered-field",
         "gierz-order"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -9185,6 +9345,10 @@
       "citations": [
         "wp-signature-logic",
         "openlogic-model-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -9212,6 +9376,10 @@
       "citations": [
         "wp-model-theory",
         "openlogic-model-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -9238,6 +9406,10 @@
       "citations": [
         "wp-kripke-semantics",
         "openlogic-model-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -9268,7 +9440,11 @@
         ],
         "compatibility": "Each symbol is assigned an operation, relation, or distinguished element of the specified arity on the carrier.",
         "output": "first_order_structure"
-      }
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
     },
     {
       "id": "first_order_structure",
@@ -9297,6 +9473,10 @@
       "citations": [
         "wp-structure-logic",
         "openlogic-model-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -9324,6 +9504,10 @@
       "citations": [
         "wp-kripke-semantics",
         "openlogic-model-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -9334,7 +9518,7 @@
         "logic",
         "foundation"
       ],
-      "level": 3.5,
+      "level": 4,
       "kind": "junction",
       "summary": "Combine a first-order theory with a structure in the same signature and impose satisfaction.",
       "carriers": [],
@@ -9353,7 +9537,11 @@
         ],
         "compatibility": "The theory and structure use the same signature L, and the structure satisfies every sentence in T.",
         "output": "model_of_theory"
-      }
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
     },
     {
       "id": "model_of_theory",
@@ -9378,6 +9566,10 @@
       "citations": [
         "wp-model-theory",
         "openlogic-model-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -9407,6 +9599,10 @@
       "citations": [
         "wp-modal-algebra",
         "openlogic-model-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -9442,6 +9638,10 @@
         "nlab-category",
         "stacks-categories",
         "riehl-category-context"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -9470,6 +9670,10 @@
       "citations": [
         "wp-cartesian-category",
         "riehl-category-context"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -9497,6 +9701,10 @@
       "citations": [
         "nlab-finite-limits",
         "riehl-category-context"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -9524,6 +9732,10 @@
       "citations": [
         "wp-groupoid",
         "riehl-category-context"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -9553,6 +9765,10 @@
       "citations": [
         "nlab-monoidal-category",
         "riehl-category-context"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -9581,6 +9797,10 @@
       "citations": [
         "wp-preadditive-category",
         "riehl-category-context"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -9608,6 +9828,10 @@
         "nlab-category",
         "stacks-categories",
         "riehl-category-context"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -9637,6 +9861,10 @@
       "citations": [
         "wp-thin-category",
         "riehl-category-context"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -9666,6 +9894,10 @@
       "citations": [
         "wp-additive-category",
         "riehl-category-context"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -9693,6 +9925,10 @@
       "citations": [
         "wp-braided-category",
         "riehl-category-context"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -9720,6 +9956,10 @@
       "citations": [
         "wp-ccc",
         "riehl-category-context"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -9751,7 +9991,11 @@
         ],
         "compatibility": "Every $X^{n}$ is an object of the same category C; add coface and codegeneracy morphisms in C satisfying the cosimplicial identities.",
         "output": "cosimplicial_object"
-      }
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
     },
     {
       "id": "j_simplicial_object",
@@ -9782,7 +10026,11 @@
         ],
         "compatibility": "Every $X_{n}$ is an object of the same category C; add face and degeneracy morphisms in C satisfying the simplicial identities.",
         "output": "simplicial_object"
-      }
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
     },
     {
       "id": "dagger_category",
@@ -9811,6 +10059,10 @@
         "wp-dagger-category",
         "nlab-dagger-category",
         "riehl-category-context"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -9840,7 +10092,11 @@
         ],
         "compatibility": "Choose a hom-object in the monoidal base for each ordered object pair, together with enriched composition and units satisfying enriched associativity and unit laws.",
         "output": "enriched_category"
-      }
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
     },
     {
       "id": "presheaf",
@@ -9868,6 +10124,10 @@
         "wp-presheaf",
         "nlab-presheaf",
         "riehl-category-context"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -9903,6 +10163,10 @@
         "wp-site",
         "nlab-site",
         "riehl-category-context"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -9934,6 +10198,10 @@
         "nlab-abelian-category",
         "stacks-abelian-category",
         "riehl-category-context"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -9962,6 +10230,10 @@
         "wp-closed-monoidal",
         "nlab-closed-monoidal",
         "riehl-category-context"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -9992,6 +10264,10 @@
         "nlab-simplicial-object",
         "wp-cosimplicial-object",
         "riehl-category-context"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -10022,6 +10298,10 @@
         "wp-enriched-category",
         "nlab-enriched-category",
         "riehl-category-context"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -10051,7 +10331,11 @@
         ],
         "compatibility": "The finite products used by the closed structure agree with those from finite limits; a subobject classifier is also supplied.",
         "output": "elementary_topos"
-      }
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
     },
     {
       "id": "simplicial_object",
@@ -10081,6 +10365,10 @@
         "stacks-simplicial-objects",
         "nlab-simplicial-object",
         "riehl-category-context"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -10108,6 +10396,10 @@
       "citations": [
         "wp-symmetric-category",
         "riehl-category-context"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -10140,6 +10432,10 @@
         "nlab-topos",
         "stacks-topos",
         "riehl-category-context"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -10168,6 +10464,10 @@
         "wp-compact-closed",
         "nlab-compact-closed",
         "riehl-category-context"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -10196,6 +10496,10 @@
         "wp-groth-topos",
         "nlab-topos",
         "riehl-category-context"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -10223,6 +10527,10 @@
       "citations": [
         "wp-directed-graph",
         "diestel-graph-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -10250,6 +10558,10 @@
         "wp-graph",
         "nlab-graph",
         "diestel-graph-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -10277,6 +10589,10 @@
       "citations": [
         "wp-dag",
         "diestel-graph-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -10303,6 +10619,10 @@
         "wp-hypergraph",
         "nlab-hypergraph",
         "diestel-graph-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -10330,6 +10650,10 @@
       "citations": [
         "wp-simple-graph",
         "diestel-graph-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -10361,6 +10685,10 @@
         "wp-simplicial-complex",
         "nlab-simplicial-complex",
         "diestel-graph-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -10385,6 +10713,10 @@
       "citations": [
         "wp-bipartite",
         "diestel-graph-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -10409,6 +10741,10 @@
       "citations": [
         "wp-forest-graph",
         "diestel-graph-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -10442,6 +10778,10 @@
         "wp-matroid",
         "nlab-matroid",
         "diestel-graph-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -10467,6 +10807,10 @@
       "citations": [
         "wp-planar",
         "diestel-graph-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -10492,6 +10836,10 @@
       "citations": [
         "wp-tournament",
         "diestel-graph-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -10517,6 +10865,10 @@
       "citations": [
         "wp-weighted-graph",
         "diestel-graph-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -10543,6 +10895,10 @@
       "citations": [
         "wp-oriented-matroid",
         "diestel-graph-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -10567,6 +10923,10 @@
       "citations": [
         "wp-tree-graph",
         "diestel-graph-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -10594,6 +10954,10 @@
         "wp-signature-logic",
         "nlab-algebraic-theory",
         "burris-universal-algebra"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -10622,6 +10986,10 @@
         "wp-quasigroup",
         "nlab-quasigroup",
         "burris-universal-algebra"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -10654,7 +11022,11 @@
         ],
         "compatibility": "Use a nonempty carrier A and, for each n-ary operation symbol, choose an operation $A^{n}\\to A$.",
         "output": "universal_algebra"
-      }
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
     },
     {
       "id": "universal_algebra",
@@ -10682,6 +11054,10 @@
         "wp-universal-algebra",
         "nlab-universal-algebra",
         "burris-universal-algebra"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -10709,6 +11085,10 @@
       "citations": [
         "wp-loop",
         "burris-universal-algebra"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -10739,6 +11119,10 @@
         "wp-rack",
         "nlab-rack",
         "burris-universal-algebra"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -10766,6 +11150,10 @@
         "wp-quandle",
         "nlab-quandle",
         "burris-universal-algebra"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -10791,6 +11179,10 @@
       "domains": [
         "algebra",
         "universal-algebra"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -10819,6 +11211,10 @@
       "domains": [
         "algebra",
         "universal-algebra"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -10849,6 +11245,10 @@
       "domains": [
         "algebra",
         "universal-algebra"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -10877,6 +11277,10 @@
       "primaryDomain": "algebra",
       "domains": [
         "algebra"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -10910,6 +11314,10 @@
         "algebra",
         "universal-algebra",
         "representation-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -10937,6 +11345,10 @@
       "primaryDomain": "algebra",
       "domains": [
         "algebra"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -10966,6 +11378,10 @@
       "primaryDomain": "algebra",
       "domains": [
         "algebra"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -10999,6 +11415,10 @@
       "primaryDomain": "algebra",
       "domains": [
         "algebra"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -11030,6 +11450,10 @@
       "primaryDomain": "algebra",
       "domains": [
         "algebra"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -11059,6 +11483,10 @@
       "domains": [
         "algebra",
         "algebraic-geometry"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -11086,6 +11514,10 @@
       "primaryDomain": "algebra",
       "domains": [
         "algebra"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -11115,6 +11547,10 @@
       "primaryDomain": "algebra",
       "domains": [
         "algebra"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -11147,6 +11583,10 @@
         "algebra",
         "representation-theory",
         "homological-algebra"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -11180,6 +11620,10 @@
       "domains": [
         "algebra",
         "algebraic-geometry"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -11243,6 +11687,10 @@
         "wp-algebraically-closed",
         "nlab-algebraically-closed",
         "stacks-algebra-text"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -11272,6 +11720,10 @@
       "primaryDomain": "algebra",
       "domains": [
         "algebra"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -11298,6 +11750,10 @@
       "citations": [
         "wp-perfect-field",
         "stacks-algebra-text"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -11328,6 +11784,10 @@
       "domains": [
         "algebra",
         "representation-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -11427,6 +11887,10 @@
       "notes": "The alternating axiom implies antisymmetry over every field. The converse needs characteristic different from 2, so antisymmetry is not used as an unrestricted substitute.",
       "citations": [
         "sage-lie-algebra"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -11490,6 +11954,10 @@
       "primaryDomain": "algebra",
       "domains": [
         "algebra"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -11518,6 +11986,10 @@
         "wp-associative-algebra",
         "nlab-associative-algebra",
         "stacks-algebra-text"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -11585,6 +12057,10 @@
         "wp-coalgebra",
         "nlab-coalgebra",
         "stacks-algebra-text"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -11650,6 +12126,10 @@
         "wp-associative-algebra",
         "nlab-associative-algebra",
         "stacks-algebra-text"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -11679,6 +12159,10 @@
       "notes": "The scalar involution here is complex conjugation.",
       "citations": [
         "mathlib-star-module"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -11709,7 +12193,11 @@
         ],
         "compatibility": "Use the same module or vector space and require comultiplication and counit to be algebra homomorphisms (equivalently multiplication and unit are coalgebra homomorphisms).",
         "output": "bialgebra"
-      }
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
     },
     {
       "id": "clifford_algebra",
@@ -11776,6 +12264,10 @@
         "nlab-associative-algebra",
         "wp-commutative-algebra",
         "stacks-algebra-text"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -11840,6 +12332,10 @@
         "wp-bialgebra",
         "nlab-bialgebra",
         "stacks-algebra-text"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -11905,6 +12401,10 @@
         "wp-hopf-algebra",
         "nlab-hopf-algebra",
         "stacks-algebra-text"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -11971,7 +12471,11 @@
         ],
         "compatibility": "Use the group multiplication to act associatively on the set and let the group identity act trivially.",
         "output": "group_action"
-      }
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
     },
     {
       "id": "group_action",
@@ -12002,6 +12506,10 @@
         "wp-group-action",
         "nlab-group-action",
         "etingof-representation-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -12030,6 +12538,10 @@
         "wp-g-set",
         "nlab-g-set",
         "etingof-representation-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -12238,7 +12750,11 @@
         ],
         "compatibility": "Require the group action maps to be invertible linear transformations.",
         "output": "group_representation"
-      }
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
     },
     {
       "id": "j_lie_rep",
@@ -12266,7 +12782,11 @@
         ],
         "compatibility": "The Lie algebra $\\mathfrak{g}$ and vector space V are over the same field k, and the k-linear action sends [x,y] to the commutator of the corresponding endomorphisms.",
         "output": "lie_algebra_representation"
-      }
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
     },
     {
       "id": "group_representation",
@@ -12295,6 +12815,10 @@
         "wp-group-representation",
         "nlab-representation",
         "etingof-representation-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -12354,6 +12878,10 @@
       "notes": "",
       "citations": [
         "mathlib-lie-module"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -12484,6 +13012,10 @@
       "domains": [
         "foundation",
         "set-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -12508,6 +13040,10 @@
       "primaryDomain": "foundation",
       "domains": [
         "foundation"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -12539,6 +13075,10 @@
         "wp-function",
         "nlab-function",
         "openlogic-set-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -12566,6 +13106,10 @@
       "citations": [
         "wp-peano",
         "openlogic-set-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -12597,6 +13141,10 @@
       "citations": [
         "wp-peano",
         "milne-algebraic-number-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -12626,6 +13174,10 @@
       "citations": [
         "wp-integral-domain",
         "milne-algebraic-number-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -12656,6 +13208,10 @@
         "nlab-dedekind-domain",
         "stacks-dedekind",
         "milne-algebraic-number-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -12683,6 +13239,10 @@
       "citations": [
         "wp-gcd-domain",
         "milne-algebraic-number-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -12713,6 +13273,10 @@
         "wp-valuation-ring",
         "nlab-valuation-ring",
         "milne-algebraic-number-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -12740,6 +13304,10 @@
       "citations": [
         "wp-finite-field",
         "milne-algebraic-number-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -12767,6 +13335,10 @@
       "citations": [
         "nlab-number-field",
         "milne-algebraic-number-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -12794,6 +13366,10 @@
       "citations": [
         "wp-ufd",
         "milne-algebraic-number-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -12824,6 +13400,10 @@
       "citations": [
         "wp-valued-field",
         "milne-algebraic-number-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -12850,6 +13430,10 @@
         "wp-global-field",
         "nlab-global-field",
         "milne-algebraic-number-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -12877,6 +13461,10 @@
       "citations": [
         "wp-pid",
         "milne-algebraic-number-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -12906,6 +13494,10 @@
         "wp-real-closed",
         "nlab-real-closed",
         "milne-algebraic-number-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -12936,6 +13528,10 @@
         "wp-ring-integers",
         "nlab-dedekind-domain",
         "milne-algebraic-number-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -12963,6 +13559,10 @@
         "wp-complete-valued",
         "nlab-complete-valued",
         "milne-algebraic-number-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -12993,6 +13593,10 @@
         "wp-dvr",
         "stacks-dvr-regular",
         "milne-algebraic-number-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -13018,6 +13622,10 @@
       "citations": [
         "nlab-euclidean-domain",
         "milne-algebraic-number-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -13051,6 +13659,10 @@
       "citations": [
         "nlab-local-field",
         "milne-algebraic-number-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -13078,6 +13690,10 @@
         "wp-p-adic-field",
         "nlab-p-adic-field",
         "milne-algebraic-number-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -13111,7 +13727,11 @@
         ],
         "compatibility": "The presheaf is defined on the site’s underlying category and satisfies the sheaf equalizer/gluing condition for every cover.",
         "output": "sheaf"
-      }
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
     },
     {
       "id": "sheaf",
@@ -13137,6 +13757,10 @@
       "notes": "This node means a sheaf of sets on a site. Sheaves valued in groups, rings, modules, or other categories are modeled by the corresponding algebraic-object nodes.",
       "citations": [
         "stacks-sheaf"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -13166,6 +13790,10 @@
         "stacks-abelian-sheaf",
         "wp-sheaf-groups",
         "stacks-schemes-text"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -13195,6 +13823,10 @@
         "stacks-sheaf-algebraic",
         "wp-sheaf-rings",
         "stacks-schemes-text"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -13220,6 +13852,10 @@
       "notes": "",
       "citations": [
         "stacks-ringed-space"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -13252,7 +13888,11 @@
         ],
         "compatibility": "Use the same topological space as the base of the sheaf of rings.",
         "output": "ringed_space"
-      }
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
     },
     {
       "id": "local_ring",
@@ -13282,6 +13922,10 @@
         "wp-local-ring",
         "nlab-local-ring",
         "stacks-schemes-text"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -13307,6 +13951,10 @@
       "notes": "",
       "citations": [
         "stacks-locally-ringed"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -13335,6 +13983,10 @@
         "wp-noetherian-ring",
         "nlab-noetherian-ring",
         "stacks-schemes-text"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -13363,6 +14015,10 @@
         "stacks-artinian-ring",
         "wp-artinian-ring",
         "stacks-schemes-text"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -13393,7 +14049,11 @@
         ],
         "compatibility": "Use the same ring and require the embedding dimension to equal the Krull dimension.",
         "output": "regular_local_ring"
-      }
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
     },
     {
       "id": "scheme",
@@ -13421,6 +14081,10 @@
         "wp-scheme",
         "nlab-scheme",
         "stacks-schemes-text"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -13449,6 +14113,10 @@
         "wp-affine-scheme",
         "nlab-affine-scheme",
         "stacks-schemes-text"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -13475,6 +14143,10 @@
         "stacks-dvr-regular",
         "wp-regular-local-ring",
         "stacks-schemes-text"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -13502,6 +14174,10 @@
       "notes": "The existence of an étale cover is a property; no atlas is selected as part of the algebraic-space structure. Equivalent étale-site formulations are standard.",
       "citations": [
         "stacks-algebraic-space"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -13529,6 +14205,10 @@
         "wp-complete-ring",
         "nlab-complete-local-ring",
         "stacks-schemes-text"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -13556,6 +14236,10 @@
         "stacks-noetherian-scheme",
         "wp-noetherian-scheme",
         "stacks-schemes-text"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -13582,6 +14266,10 @@
         "wp-reduced-scheme",
         "nlab-reduced-scheme",
         "stacks-schemes-text"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -13613,7 +14301,11 @@
         ],
         "compatibility": "Equip X with a finite-type structure morphism $X\\to \\operatorname{Spec}(k)$ and require X to be integral and the morphism separated.",
         "output": "algebraic_variety"
-      }
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
     },
     {
       "id": "separated_scheme",
@@ -13637,6 +14329,10 @@
       "notes": "For an S-scheme $X\\to S$, relative separatedness uses $\\Delta_{X/S}\\colon X\\to X\\times_S X$.",
       "citations": [
         "stacks-separated-scheme"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -13668,6 +14364,10 @@
         "nlab-variety",
         "stacks-varieties",
         "stacks-schemes-text"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -13695,6 +14395,10 @@
         "wp-integral-scheme",
         "nlab-integral-scheme",
         "stacks-schemes-text"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -13722,6 +14426,10 @@
         "stacks-regular-scheme",
         "wp-regular-scheme",
         "stacks-schemes-text"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -13749,6 +14457,10 @@
         "stacks-scheme",
         "stacks-projective-morphisms",
         "stacks-schemes-text"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -13778,6 +14490,10 @@
         "nlab-projective-scheme",
         "stacks-projective-morphisms",
         "stacks-schemes-text"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -13808,6 +14524,10 @@
       "primaryDomain": "topology",
       "domains": [
         "topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -13834,6 +14554,10 @@
       "primaryDomain": "topology",
       "domains": [
         "topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -13858,6 +14582,10 @@
       "primaryDomain": "topology",
       "domains": [
         "topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -13889,6 +14617,10 @@
       "primaryDomain": "topology",
       "domains": [
         "topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -13915,6 +14647,10 @@
       "primaryDomain": "topology",
       "domains": [
         "topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -13941,6 +14677,10 @@
       "primaryDomain": "topology",
       "domains": [
         "topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -13971,6 +14711,10 @@
       "primaryDomain": "topology",
       "domains": [
         "topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -13996,6 +14740,10 @@
         "wp-connected-space",
         "nlab-connected-space",
         "topology-without-tears"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -14020,6 +14768,10 @@
       "citations": [
         "wp-first-countable",
         "topology-without-tears"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -14046,6 +14798,10 @@
       "primaryDomain": "topology",
       "domains": [
         "topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -14077,6 +14833,10 @@
       "primaryDomain": "topology",
       "domains": [
         "topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -14103,6 +14863,10 @@
       "primaryDomain": "topology",
       "domains": [
         "topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -14129,6 +14893,10 @@
       "primaryDomain": "topology",
       "domains": [
         "topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -14155,6 +14923,10 @@
       "primaryDomain": "topology",
       "domains": [
         "topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -14179,6 +14951,10 @@
       "citations": [
         "wp-locally-connected",
         "topology-without-tears"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -14209,7 +14985,11 @@
         ],
         "compatibility": "Require the semigroup multiplication $S\\times S\\to S$ to be continuous.",
         "output": "topological_semigroup"
-      }
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
     },
     {
       "id": "separable_metric_space",
@@ -14235,6 +15015,10 @@
       "primaryDomain": "topology",
       "domains": [
         "topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -14259,6 +15043,10 @@
       "citations": [
         "wp-totally-disconnected",
         "topology-without-tears"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -14288,6 +15076,10 @@
       "primaryDomain": "topology",
       "domains": [
         "topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -14316,6 +15108,10 @@
       "primaryDomain": "topology",
       "domains": [
         "topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -14346,6 +15142,10 @@
       "domains": [
         "topology",
         "algebra"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -14375,6 +15175,10 @@
       "primaryDomain": "topology",
       "domains": [
         "topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -14405,6 +15209,10 @@
       "domains": [
         "topology",
         "differential-geometry"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -14435,7 +15243,11 @@
         ],
         "compatibility": "Require multiplication to be continuous; the identity is already part of the monoid.",
         "output": "topological_monoid"
-      }
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
     },
     {
       "id": "regular_space",
@@ -14459,6 +15271,10 @@
       "citations": [
         "wp-regular-space",
         "topology-without-tears"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -14486,6 +15302,10 @@
         "wp-topological-semigroup",
         "nlab-topological-monoid",
         "topology-without-tears"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -14516,7 +15336,11 @@
         ],
         "compatibility": "Give E and B topologies, take $p:E\\to B,$ require continuity and that every $b\\in B$ has an evenly covered neighborhood.",
         "output": "covering_space"
-      }
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
     },
     {
       "id": "zero_dimensional_space",
@@ -14541,6 +15365,10 @@
       "citations": [
         "wp-zero-dimensional",
         "topology-without-tears"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -14569,6 +15397,10 @@
       "primaryDomain": "topology",
       "domains": [
         "topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -14596,6 +15428,10 @@
       "primaryDomain": "topology",
       "domains": [
         "topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -14623,6 +15459,10 @@
       "primaryDomain": "topology",
       "domains": [
         "topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -14647,6 +15487,10 @@
       "citations": [
         "wp-normal-space",
         "topology-without-tears"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -14672,6 +15516,10 @@
       "primaryDomain": "topology",
       "domains": [
         "topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -14703,6 +15551,10 @@
         "topology",
         "algebra",
         "algebraic-topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -14732,6 +15584,10 @@
       "domains": [
         "topology",
         "differential-geometry"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -14760,6 +15616,10 @@
         "wp-topological-semigroup",
         "nlab-topological-monoid",
         "topology-without-tears"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -14790,7 +15650,11 @@
         ],
         "compatibility": "Give E and B topologies, take $p\\colon E\\to B$, require continuity and that every $b\\in B$ has an evenly covered neighborhood.",
         "output": "fiber_bundle"
-      }
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
     },
     {
       "id": "tychonoff_space",
@@ -14815,6 +15679,10 @@
       "citations": [
         "wp-tychonoff",
         "topology-without-tears"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -14846,6 +15714,10 @@
         "wp-fiber-bundle",
         "nlab-fiber-bundle",
         "topology-without-tears"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -14875,6 +15747,10 @@
       "domains": [
         "topology",
         "algebra"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -14904,6 +15780,10 @@
       "domains": [
         "topology",
         "algebra"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -14932,6 +15812,10 @@
         "wp-locale",
         "nlab-locale",
         "topology-without-tears"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -14962,6 +15846,10 @@
         "topology",
         "algebra",
         "number-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -14992,6 +15880,10 @@
         "topology",
         "algebra",
         "number-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -15022,7 +15914,11 @@
         ],
         "compatibility": "Use the same carrier set, topology, and distinguished point.",
         "output": "pointed_topological_space"
-      }
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
     },
     {
       "id": "pointed_topological_space",
@@ -15049,6 +15945,10 @@
         "wp-pointed-space",
         "nlab-pointed-space",
         "hatcher-algebraic-topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -15074,6 +15974,10 @@
       "citations": [
         "wp-topological-pair",
         "hatcher-algebraic-topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -15102,6 +16006,10 @@
         "wp-path-connected",
         "nlab-path-connected",
         "hatcher-algebraic-topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -15129,6 +16037,10 @@
         "wp-compactly-generated",
         "nlab-compactly-generated",
         "hatcher-algebraic-topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -15158,6 +16070,10 @@
         "wp-contractible",
         "nlab-contractible",
         "hatcher-algebraic-topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -15187,6 +16103,10 @@
         "wp-h-space",
         "nlab-h-space",
         "hatcher-algebraic-topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -15213,6 +16133,10 @@
         "wp-simply-connected",
         "nlab-simply-connected",
         "hatcher-algebraic-topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -15241,6 +16165,10 @@
         "wp-covering-space",
         "nlab-covering-space",
         "hatcher-algebraic-topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -15270,6 +16198,10 @@
         "wp-cw-complex",
         "nlab-cw-complex",
         "hatcher-algebraic-topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -15301,6 +16233,10 @@
         "wp-simplicial-set",
         "nlab-simplicial-set",
         "hatcher-algebraic-topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -15331,7 +16267,11 @@
         ],
         "compatibility": "Equip both the object set and arrow set with smooth manifold structures; require all groupoid structure maps smooth and source and target submersions.",
         "output": "lie_groupoid"
-      }
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
     },
     {
       "id": "smooth_manifold",
@@ -15361,6 +16301,10 @@
       "citations": [
         "nlab-smooth-manifold",
         "lee-smooth-manifolds"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -15392,7 +16336,11 @@
         ],
         "compatibility": "Add a continuous right G-action on the total space that is free and transitive on each fiber and locally equivariantly trivial.",
         "output": "principal_bundle"
-      }
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
     },
     {
       "id": "complex_manifold",
@@ -15423,6 +16371,10 @@
       "citations": [
         "wp-complex-manifold",
         "lee-smooth-manifolds"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -15453,7 +16405,11 @@
         ],
         "compatibility": "Use the same carrier and require multiplication and inversion to be smooth.",
         "output": "lie_group"
-      }
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
     },
     {
       "id": "lie_groupoid",
@@ -15482,6 +16438,10 @@
         "wp-lie-groupoid",
         "nlab-lie-groupoid",
         "lee-smooth-manifolds"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -15511,6 +16471,10 @@
       "citations": [
         "wp-affine-connection",
         "lee-smooth-manifolds"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -15541,6 +16505,10 @@
       "citations": [
         "wp-poisson",
         "lee-smooth-manifolds"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -15572,6 +16540,10 @@
         "wp-pseudo-riemannian",
         "lee-smooth-manifolds",
         "lee-riemannian-manifolds"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -15602,6 +16574,10 @@
       "citations": [
         "wp-analytic-manifold",
         "lee-smooth-manifolds"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -15633,6 +16609,10 @@
         "wp-riemannian",
         "lee-smooth-manifolds",
         "lee-riemannian-manifolds"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -15663,6 +16643,10 @@
         "wp-manifold-boundary",
         "nlab-manifold-boundary",
         "lee-smooth-manifolds"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -15694,6 +16678,10 @@
       "citations": [
         "nlab-symplectic",
         "lee-smooth-manifolds"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -15724,6 +16712,10 @@
         "wp-vector-bundle",
         "nlab-vector-bundle",
         "lee-smooth-manifolds"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -15737,7 +16729,7 @@
       "domains": [
         "differential-geometry"
       ],
-      "level": 8.5,
+      "level": 9,
       "kind": "structure",
       "conceptType": "Vector bundle",
       "summary": "The dual vector bundle $T^*M$ of covectors on a smooth manifold.",
@@ -15771,7 +16763,7 @@
       "domains": [
         "differential-geometry"
       ],
-      "level": 8.5,
+      "level": 9,
       "kind": "structure",
       "conceptType": "Vector bundle",
       "summary": "The vector bundle $TM$ whose fiber at each point is the tangent space of a smooth manifold.",
@@ -15823,7 +16815,11 @@
         ],
         "compatibility": "Use the same underlying real manifold and require $g(JX,JY)=g(X,Y)$; equivalently, the metric is the real part of a positive-definite Hermitian form.",
         "output": "hermitian_manifold"
-      }
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
     },
     {
       "id": "contact_manifold",
@@ -15849,6 +16845,10 @@
       "notes": "A globally defined contact form is extra coorientation/trivialization data. The contact distribution is the intrinsic object.",
       "citations": [
         "grabowska-grabowski-contact"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -15913,6 +16913,10 @@
         "wp-foliation",
         "nlab-foliation",
         "lee-smooth-manifolds"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -15945,6 +16949,10 @@
       "citations": [
         "nlab-lie-group",
         "lee-smooth-manifolds"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -15974,6 +16982,10 @@
       "citations": [
         "wp-lorentzian",
         "lee-smooth-manifolds"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -16002,6 +17014,10 @@
         "wp-orientable-manifold",
         "nlab-oriented-manifold",
         "lee-smooth-manifolds"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -16036,6 +17052,10 @@
         "wp-principal-bundle",
         "nlab-principal-bundle",
         "lee-smooth-manifolds"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -16099,7 +17119,11 @@
         ],
         "compatibility": "Use the smooth manifold as base and require smooth fiberwise-linear transition functions.",
         "output": "smooth_vector_bundle"
-      }
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
     },
     {
       "id": "compact_lie_group",
@@ -16236,6 +17260,10 @@
         "nlab-hermitian-manifold",
         "lee-smooth-manifolds",
         "lee-riemannian-manifolds"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -16300,6 +17328,10 @@
         "wp-vector-bundle",
         "nlab-vector-bundle",
         "lee-smooth-manifolds"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -16398,6 +17430,10 @@
         "wp-kahler-manifold",
         "nlab-kahler-manifold",
         "lee-smooth-manifolds"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -16708,6 +17744,10 @@
       "citations": [
         "wp-double-complex",
         "stacks-derived-text"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -16735,6 +17775,10 @@
         "wp-graded-object",
         "nlab-graded-object",
         "stacks-derived-text"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -16765,6 +17809,10 @@
       "citations": [
         "stacks-complexes",
         "stacks-abelian-category"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -16795,6 +17843,10 @@
       "citations": [
         "stacks-complexes",
         "stacks-abelian-category"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -16823,6 +17875,10 @@
         "wp-exact-category",
         "nlab-exact-category",
         "stacks-derived-text"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -16851,6 +17907,10 @@
       "notes": "The usual total-complex construction additionally needs the relevant direct sums or products.",
       "citations": [
         "stacks-double-complex"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -16880,6 +17940,10 @@
         "wp-grothendieck-category",
         "nlab-grothendieck-category",
         "stacks-derived-text"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -16914,6 +17978,10 @@
         "nlab-model-category",
         "stacks-derived-text",
         "hovey-model-categories"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -16944,6 +18012,10 @@
         "wp-triangulated",
         "nlab-triangulated",
         "stacks-derived-text"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -16976,6 +18048,10 @@
         "stacks-derived-modules",
         "stacks-derived-category",
         "stacks-derived-text"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -17005,6 +18081,10 @@
         "wp-dg-category",
         "nlab-dg-category",
         "stacks-derived-text"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -17034,6 +18114,10 @@
       "notes": "This node uses the cochain convention. An ordinary associative algebra can be formed from the total direct sum only when that direct sum exists in the ambient setting.",
       "citations": [
         "stacks-dga"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -17067,6 +18151,10 @@
         "algebra",
         "topology",
         "number-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -17135,6 +18223,10 @@
         "analysis",
         "topology",
         "algebra"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -17168,6 +18260,10 @@
         "analysis",
         "topology",
         "algebra"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -17200,6 +18296,10 @@
         "analysis",
         "topology",
         "algebra"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -17233,6 +18333,10 @@
       "domains": [
         "analysis",
         "algebra"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -17260,6 +18364,10 @@
         "analysis",
         "topology",
         "algebra"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -17394,6 +18502,10 @@
         "analysis",
         "topology",
         "algebra"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -17423,6 +18535,10 @@
         "analysis",
         "topology",
         "algebra"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -17628,6 +18744,10 @@
         "analysis",
         "algebra",
         "topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -17728,6 +18848,10 @@
         "analysis",
         "topology",
         "algebra"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -17756,7 +18880,11 @@
         ],
         "compatibility": "Use the same complex algebra structure and norm; star is conjugate-linear and antimultiplicative, and $\\lVert a^*a\\rVert=\\lVert a\\rVert^2$.",
         "output": "c_star_algebra"
-      }
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
     },
     {
       "id": "greens_function",
@@ -17819,6 +18947,10 @@
         "analysis",
         "topology",
         "algebra"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -18056,6 +19188,10 @@
         "wp-cstar-algebra",
         "nlab-cstar-algebra",
         "princeton-functional-analysis"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -18523,7 +19659,7 @@
         "measure",
         "order"
       ],
-      "level": 3.5,
+      "level": 4,
       "kind": "junction",
       "summary": "Combine an ordered indexed family with one ambient measurable space to form nested sub-σ-algebras.",
       "carriers": [],
@@ -18542,7 +19678,11 @@
         ],
         "compatibility": "Index by a preorder (usually time), make every family member a sub-σ-algebra of the same ambient σ-algebra, and require $F_s\\subseteq F_t$ whenever $s\\le t$.",
         "output": "filtration"
-      }
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
     },
     {
       "id": "j_random_variable",
@@ -18552,7 +19692,7 @@
         "probability",
         "measure"
       ],
-      "level": 3.5,
+      "level": 4,
       "kind": "junction",
       "summary": "Combine a probability space with a measurable map having that space as domain.",
       "carriers": [],
@@ -18571,7 +19711,11 @@
         ],
         "compatibility": "The measurable-function domain is the measurable space underlying the probability space; its codomain is the value space.",
         "output": "random_variable"
-      }
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
     },
     {
       "id": "filtration",
@@ -18600,6 +19744,10 @@
       "citations": [
         "wp-filtration-probability",
         "durrett-probability"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -18627,6 +19775,10 @@
       "citations": [
         "wp-random-variable",
         "durrett-probability"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -18654,6 +19806,10 @@
       "citations": [
         "wp-filtered-probability",
         "durrett-probability"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -18683,7 +19839,11 @@
         ],
         "compatibility": "Use a filtration of sub-σ-algebras of the probability space.",
         "output": "filtered_probability_space"
-      }
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
     },
     {
       "id": "standard_probability_space",
@@ -18709,6 +19869,10 @@
       "citations": [
         "wp-standard-probability",
         "durrett-probability"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -18738,7 +19902,11 @@
         ],
         "compatibility": "All random variables have the same probability-space domain and a common state space (or a specified family of state spaces), and the indexed family enumerates them.",
         "output": "stochastic_process"
-      }
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
     },
     {
       "id": "stochastic_process",
@@ -18766,6 +19934,10 @@
       "citations": [
         "wp-stochastic-process",
         "durrett-probability"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -18792,6 +19964,10 @@
       "citations": [
         "wp-markov-chain",
         "durrett-probability"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -18821,6 +19997,10 @@
       "domains": [
         "measure",
         "probability"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -18850,6 +20030,10 @@
       "domains": [
         "measure",
         "probability"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -18860,7 +20044,7 @@
         "measure",
         "foundation"
       ],
-      "level": 2.5,
+      "level": 3,
       "kind": "junction",
       "summary": "Combine a function with measurable structures on its domain and codomain, then impose measurability.",
       "carriers": [],
@@ -18879,7 +20063,11 @@
         ],
         "compatibility": "The function domain and codomain carry the supplied σ-algebras, and inverse images of codomain-measurable sets are domain-measurable.",
         "output": "measurable_function"
-      }
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
     },
     {
       "id": "borel_measurable_space",
@@ -18906,6 +20094,10 @@
       "domains": [
         "measure",
         "topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -18933,6 +20125,10 @@
       "citations": [
         "wp-measurable-function",
         "tao-measure-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -18962,6 +20158,10 @@
       "domains": [
         "measure",
         "probability"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -18988,6 +20188,10 @@
       "primaryDomain": "measure",
       "domains": [
         "measure"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -19018,6 +20222,10 @@
         "measure",
         "topology",
         "analysis"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -19047,6 +20255,10 @@
         "measure",
         "topology",
         "analysis"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
       ]
     },
     {
@@ -27458,7 +28670,7 @@
       "domains": [
         "relativity"
       ],
-      "level": 0.5,
+      "level": 1,
       "kind": "structure",
       "conceptType": "Spacetime element",
       "summary": "An idealized occurrence localized at a point of spacetime.",
@@ -28395,7 +29607,7 @@
         "classical-mechanics",
         "experiments-observations"
       ],
-      "level": 9.5,
+      "level": 10,
       "kind": "structure",
       "conceptType": "Canonical experiment",
       "summary": "Galileo used inclined planes to slow free fall enough to measure approximately uniform acceleration and to replace Aristotelian motion with quantitative kinematics.",
@@ -28423,7 +29635,7 @@
         "relativity",
         "experiments-observations"
       ],
-      "level": 12.5,
+      "level": 13,
       "kind": "structure",
       "conceptType": "Canonical experiment",
       "summary": "Cavendish’s 1798 torsion-balance measurements detected gravitational attraction between laboratory masses and determined the mean density of Earth.",
@@ -28451,7 +29663,7 @@
         "electromagnetism",
         "experiments-observations"
       ],
-      "level": 10.5,
+      "level": 11,
       "kind": "structure",
       "conceptType": "Canonical experiment",
       "summary": "Young’s early nineteenth-century interference experiment showed that light intensities form fringes when coherent paths overlap, providing strong evidence for a wave description of light.",
@@ -28479,7 +29691,7 @@
         "electromagnetism",
         "experiments-observations"
       ],
-      "level": 10.5,
+      "level": 11,
       "kind": "structure",
       "conceptType": "Canonical experiment",
       "summary": "Ørsted observed in 1820 that an electric current deflects a nearby compass needle, establishing an empirical link between electricity and magnetism.",
@@ -28501,7 +29713,7 @@
         "electromagnetism",
         "experiments-observations"
       ],
-      "level": 11.5,
+      "level": 12,
       "kind": "structure",
       "conceptType": "Canonical experiment",
       "summary": "Faraday’s 1831 experiments showed that changing magnetic flux induces an electromotive effect and introduced field-based patterns that Maxwell later mathematized.",
@@ -28523,7 +29735,7 @@
         "relativity",
         "experiments-observations"
       ],
-      "level": 1.5,
+      "level": 2,
       "kind": "structure",
       "conceptType": "Canonical experiment",
       "summary": "Fizeau measured the speed of light in moving water in 1851, obtaining partial ether-drag behavior later explained by relativistic velocity addition.",
@@ -28546,7 +29758,7 @@
         "relativity",
         "experiments-observations"
       ],
-      "level": 2.5,
+      "level": 3,
       "kind": "structure",
       "conceptType": "Observation / anomaly",
       "summary": "Nineteenth-century orbital analyses found a residual advance of Mercury’s perihelion not accounted for by known Newtonian perturbations.",
@@ -28568,7 +29780,7 @@
         "relativity",
         "experiments-observations"
       ],
-      "level": 1.5,
+      "level": 2,
       "kind": "structure",
       "conceptType": "Canonical experiment",
       "summary": "The 1887 interferometer experiment found no ether-wind fringe shift of the expected magnitude, sharply constraining stationary luminiferous-ether models.",
@@ -28590,7 +29802,7 @@
         "electromagnetism",
         "experiments-observations"
       ],
-      "level": 14.5,
+      "level": 15,
       "kind": "structure",
       "conceptType": "Canonical experiment",
       "summary": "Hertz generated and detected radio-frequency electromagnetic waves in the late 1880s, confirming central wave predictions of Maxwellian electrodynamics.",
@@ -28613,7 +29825,7 @@
         "relativity",
         "experiments-observations"
       ],
-      "level": 4.5,
+      "level": 5,
       "kind": "structure",
       "conceptType": "Canonical experimental test",
       "summary": "Eötvös and collaborators compared the accelerations of bodies of different composition, tightly testing equality of inertial and gravitational mass.",
@@ -28636,7 +29848,7 @@
         "relativity",
         "experiments-observations"
       ],
-      "level": 4.2,
+      "level": 5,
       "kind": "structure",
       "conceptType": "Canonical observational test",
       "summary": "Eclipse expeditions in 1919 measured the apparent displacement of stars near the Sun and were interpreted as supporting Einstein’s predicted gravitational deflection of light.",
@@ -28664,7 +29876,7 @@
         "relativity",
         "experiments-observations"
       ],
-      "level": 5.5,
+      "level": 6,
       "kind": "structure",
       "conceptType": "Canonical experimental test",
       "summary": "The 1932 unequal-arm interferometer test constrained changes in light speed associated with Earth’s changing velocity and, together with Michelson–Morley, tested Lorentz transformations.",
@@ -28708,7 +29920,7 @@
         "relativity",
         "experiments-observations"
       ],
-      "level": 6.5,
+      "level": 7,
       "kind": "structure",
       "conceptType": "Canonical experimental test",
       "summary": "The 1959–1960 Mössbauer experiment measured the gravitational frequency shift of gamma rays over a vertical height in Earth’s field.",
@@ -28847,7 +30059,7 @@
         "quantum-mechanics",
         "experiments-observations"
       ],
-      "level": 7.5,
+      "level": 8,
       "kind": "structure",
       "conceptType": "Observation / theoretical problem",
       "summary": "Spectral-line splittings more complex than the normal Zeeman triplet resisted orbital explanations and became an important clue toward electron spin and modern angular-momentum theory.",
@@ -28892,7 +30104,7 @@
         "quantum-mechanics",
         "experiments-observations"
       ],
-      "level": 1.5,
+      "level": 2,
       "kind": "structure",
       "conceptType": "Canonical experiment",
       "summary": "Photoelectron energies depend on light frequency rather than intensity alone and show a threshold frequency, behavior explained by quantized light energy.",
@@ -28915,7 +30127,7 @@
         "particle-physics",
         "experiments-observations"
       ],
-      "level": 12.5,
+      "level": 13,
       "kind": "structure",
       "conceptType": "Discovery experiment",
       "summary": "J. J. Thomson’s deflection measurements showed that cathode rays consist of negatively charged particles with a common charge-to-mass ratio, establishing the electron as a constituent of matter.",
@@ -28959,7 +30171,7 @@
         "nuclear-physics",
         "experiments-observations"
       ],
-      "level": 22.5,
+      "level": 23,
       "kind": "structure",
       "conceptType": "Discovery experiment",
       "summary": "Large-angle alpha-particle scattering from thin foils contradicted diffuse-charge atomic models and led Rutherford to a compact, positively charged nucleus.",
@@ -29003,7 +30215,7 @@
         "nuclear-physics",
         "experiments-observations"
       ],
-      "level": 26.5,
+      "level": 27,
       "kind": "structure",
       "conceptType": "Discovery and measurement program",
       "summary": "Aston separated isotopes by mass-to-charge ratio and established isotope masses and packing-fraction regularities central to nuclide and binding-energy systematics.",
@@ -29053,7 +30265,7 @@
         "quantum-mechanics",
         "experiments-observations"
       ],
-      "level": 7.5,
+      "level": 8,
       "kind": "structure",
       "conceptType": "Canonical experiment",
       "summary": "A beam of silver atoms split into discrete components in an inhomogeneous magnetic field, demonstrating space quantization and later becoming a canonical manifestation of spin-$1/2$.",
@@ -29119,7 +30331,7 @@
         "quantum-mechanics",
         "experiments-observations"
       ],
-      "level": 8.5,
+      "level": 9,
       "kind": "structure",
       "conceptType": "Canonical experiment family",
       "summary": "Electron, neutron, atom, and molecule experiments build interference patterns from individually detected particles, displaying superposition amplitudes and probabilistic detection.",
@@ -29141,7 +30353,7 @@
         "quantum-mechanics",
         "experiments-observations"
       ],
-      "level": 7.5,
+      "level": 8,
       "kind": "structure",
       "conceptType": "Thought experiment / foundational problem",
       "summary": "The 1935 EPR argument used entangled correlations to challenge the completeness of quantum mechanics under locality and separability assumptions.",
@@ -29347,7 +30559,7 @@
         "atomic-molecular-physics",
         "experiments-observations"
       ],
-      "level": 26.5,
+      "level": 27,
       "kind": "structure",
       "conceptType": "Precision anomaly / problem",
       "summary": "Muonic-hydrogen spectroscopy initially inferred a proton charge radius significantly smaller than the value from ordinary hydrogen and electron scattering, motivating renewed recoil, finite-size, and radiative analyses.",
@@ -29369,7 +30581,7 @@
         "nuclear-physics",
         "experiments-observations"
       ],
-      "level": 11.5,
+      "level": 12,
       "kind": "structure",
       "conceptType": "Observation / conservation problem",
       "summary": "Measured beta-decay electron spectra were continuous, creating an apparent energy-and-momentum conservation problem before the neutrino hypothesis and Fermi’s theory.",
@@ -29391,7 +30603,7 @@
         "particle-physics",
         "experiments-observations"
       ],
-      "level": 13.5,
+      "level": 14,
       "kind": "structure",
       "conceptType": "Discovery experiment",
       "summary": "Anderson identified positively curved electron-like cloud-chamber tracks in cosmic rays, establishing the positron predicted by relativistic electron theory.",
@@ -29435,7 +30647,7 @@
         "particle-physics",
         "experiments-observations"
       ],
-      "level": 12.5,
+      "level": 13,
       "kind": "structure",
       "conceptType": "Discovery experiment",
       "summary": "Cloud-chamber cosmic-ray tracks revealed a charged particle heavier than the electron and lighter than the proton, later identified as the muon.",
@@ -29457,7 +30669,7 @@
         "nuclear-physics",
         "experiments-observations"
       ],
-      "level": 18.5,
+      "level": 19,
       "kind": "structure",
       "conceptType": "Discovery experiment",
       "summary": "Nuclear-emulsion observations identified the pion and its decay to the muon, establishing the light meson associated with the long-range nuclear interaction.",
@@ -29480,7 +30692,7 @@
         "particle-physics",
         "experiments-observations"
       ],
-      "level": 13.5,
+      "level": 14,
       "kind": "structure",
       "conceptType": "Discovery experiment",
       "summary": "Inverse-beta events near a nuclear reactor provided the first direct detection of the electron antineutrino.",
@@ -29502,7 +30714,7 @@
         "particle-physics",
         "experiments-observations"
       ],
-      "level": 11.5,
+      "level": 12,
       "kind": "structure",
       "conceptType": "Canonical experimental test",
       "summary": "Angular correlations in polarized cobalt-60 beta decay showed that the weak interaction violates spatial parity.",
@@ -29546,7 +30758,7 @@
         "particle-physics",
         "experiments-observations"
       ],
-      "level": 13.5,
+      "level": 14,
       "kind": "structure",
       "conceptType": "Discovery experiment",
       "summary": "A high-energy neutrino beam produced muons but not electrons at the expected rate, establishing the muon neutrino as distinct from the electron neutrino.",
@@ -29569,7 +30781,7 @@
         "particle-physics",
         "experiments-observations"
       ],
-      "level": 9.5,
+      "level": 10,
       "kind": "structure",
       "conceptType": "Discovery experiment",
       "summary": "Cronin and Fitch’s group observed the nominally CP-forbidden decay of the long-lived neutral kaon into two pions, establishing CP violation.",
@@ -29591,7 +30803,7 @@
         "particle-physics",
         "experiments-observations"
       ],
-      "level": 11.5,
+      "level": 12,
       "kind": "structure",
       "conceptType": "Observation / anomaly",
       "summary": "Radiochemical solar-neutrino experiments detected substantially fewer electron neutrinos than predicted by solar models, creating the solar-neutrino problem.",
@@ -29613,7 +30825,7 @@
         "particle-physics",
         "experiments-observations"
       ],
-      "level": 10.5,
+      "level": 11,
       "kind": "structure",
       "conceptType": "Canonical experiment program",
       "summary": "High-energy electron scattering from nucleons revealed approximately pointlike charged constituents and scaling behavior, establishing partonic nucleon structure and driving quark acceptance.",
@@ -29636,7 +30848,7 @@
         "particle-physics",
         "experiments-observations"
       ],
-      "level": 11.5,
+      "level": 12,
       "kind": "structure",
       "conceptType": "Discovery experiment",
       "summary": "The Gargamelle bubble chamber observed weak neutrino interactions without charged leptons, establishing neutral-current weak interactions predicted by electroweak theory.",
@@ -29658,7 +30870,7 @@
         "particle-physics",
         "experiments-observations"
       ],
-      "level": 12.5,
+      "level": 13,
       "kind": "structure",
       "conceptType": "Discovery experiment",
       "summary": "Independent discoveries of a narrow $J/\\psi$ resonance in 1974 established charmonium and transformed acceptance of the quark model and Standard Model.",
@@ -29681,7 +30893,7 @@
         "particle-physics",
         "experiments-observations"
       ],
-      "level": 12.5,
+      "level": 13,
       "kind": "structure",
       "conceptType": "Discovery experiment",
       "summary": "Electron–positron collision events with missing energy revealed the tau, establishing a third charged-lepton species.",
@@ -29703,7 +30915,7 @@
         "particle-physics",
         "experiments-observations"
       ],
-      "level": 12.5,
+      "level": 13,
       "kind": "structure",
       "conceptType": "Discovery experiment",
       "summary": "A narrow dimuon resonance near $9.5\\,\\mathrm{GeV}$ revealed bottomonium and established the bottom-quark flavor.",
@@ -29840,7 +31052,7 @@
         "particle-physics",
         "experiments-observations"
       ],
-      "level": 13.5,
+      "level": 14,
       "kind": "structure",
       "conceptType": "Discovery experiment",
       "summary": "SNO separately measured electron-neutrino and all-flavor solar-neutrino fluxes, showing that the missing electron neutrinos changed flavor rather than disappearing.",
@@ -29887,7 +31099,7 @@
         "nuclear-physics",
         "experiments-observations"
       ],
-      "level": 24.5,
+      "level": 25,
       "kind": "structure",
       "conceptType": "Observation / structural pattern",
       "summary": "Enhanced stability and recurring spectroscopic patterns at particular proton and neutron numbers motivated the nuclear shell model and its spin–orbit structure.",
@@ -29910,7 +31122,7 @@
         "nuclear-physics",
         "experiments-observations"
       ],
-      "level": 19.5,
+      "level": 20,
       "kind": "structure",
       "conceptType": "Discovery experiment",
       "summary": "Alpha bombardment of nitrogen produced hydrogen nuclei, establishing the proton as a nuclear constituent and demonstrating artificial transmutation.",
