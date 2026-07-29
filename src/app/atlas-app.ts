@@ -237,6 +237,8 @@ export async function startAtlasApp(): Promise<void> {
     itemUrl: (itemId, itemKind) => locationController.itemUrl(itemId, itemKind),
     permalinkUrl: (itemId, itemKind) => locationController.itemUrl(itemId, itemKind),
     githubEditUrl: (itemId) => locationController.githubEditUrl(itemId),
+    views: viewsData.views,
+    viewNodeUrl: (viewId, nodeId) => locationController.viewNodeUrl(viewId, nodeId),
     activateNode: (id) => { activateNode(id, { center: true, zoomIn: true, historyMode: 'push' }); },
     activateEdge: (id) => { activateEdge(id, { center: true, zoomIn: true, historyMode: 'push' }); },
     openPanel: openDetailsPanel

@@ -18,6 +18,7 @@
     "src/state/view-state.ts",
     "src/state/view-sequence.ts",
     "src/graph/organic-layout-core.ts",
+    "src/graph/graph-math-label-layer.ts",
     "src/app/location-controller.ts",
     "src/graph/visibility-policy.ts",
     "src/state/taxonomy-selection.ts",

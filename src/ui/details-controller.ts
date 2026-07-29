@@ -1,8 +1,9 @@
 import type cytoscape from 'cytoscape';
 import { byId, escapeHtml, queryAll } from '../core/dom.js';
 import { shortenSourceLabel } from '../core/text.js';
-import type { DetailSection, GraphNode, RelationGroup } from '../types.js';
+import type { AtlasView, DetailSection, GraphNode, RelationGroup } from '../types.js';
 import type { GraphModel } from '../model/graph-model.js';
+import { viewsContainingNode } from '../state/view-sequence.js';
 import type { MathRenderer } from './math-renderer.js';
 
 interface DetailsControllerOptions {
@@ -15,6 +16,8 @@ interface DetailsControllerOptions {
   itemUrl: (itemId: string, itemKind: 'node' | 'edge') => string;
   permalinkUrl: (itemId: string, itemKind: 'node' | 'edge') => string;
   githubEditUrl: (itemId: string) => string;
+  views: readonly AtlasView[];
+  viewNodeUrl: (viewId: string, nodeId: string) => string;
   activateNode: (nodeId: string) => void;
   activateEdge: (edgeId: string) => void;
   openPanel: () => void;
@@ -71,6 +74,7 @@ export class DetailsController {
       }
     }
 
+    html += this.renderViewsSection(id);
     byId('detailBody').innerHTML = html;
     byId('detailEditLink').innerHTML = this.renderHeaderActions(id, 'node');
     this.bindHeaderActions();
@@ -126,6 +130,16 @@ export class DetailsController {
     byId('detailBody').innerHTML = `
       <p>Click any concept, construction junction, or annotated edge.</p>
       <p class="muted">Construction junctions are diamonds. They show where multiple structures must coexist on the same carrier and satisfy compatibility conditions.</p>`;
+  }
+
+  private renderViewsSection(nodeId: string): string {
+    const matches = viewsContainingNode(this.options.views, nodeId);
+    if (!matches.length) return '';
+    return `<section class="detail-section"><h3>Views</h3><div class="detail-view-list">${matches.map(({ view, sequenceIndex }) => `
+      <a class="detail-view-link" href="${escapeHtml(this.options.viewNodeUrl(view.id, nodeId))}">
+        <span class="material-icons" aria-hidden="true">explore</span>
+        <span class="detail-view-copy"><strong>${escapeHtml(view.title)}</strong><span>Start at step ${sequenceIndex + 1} of ${view.nodeSequence.length}</span></span>
+      </a>`).join('')}</div></section>`;
   }
 
   private renderTaxonomyBadges(node: GraphNode): string {

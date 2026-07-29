@@ -117,6 +117,20 @@ test('static view metadata is used only during initial route resolution', () => 
   }
 });
 
+
+test('view node links select the requested sequence step explicitly', () => {
+  const browser = installBrowser('https://atlas.madvay.com/concepts/quantum/');
+  try {
+    const controller = controllerFor(matchingState());
+    assert.equal(
+      controller.viewNodeUrl(view.id, 'quantum'),
+      'https://atlas.madvay.com/views/experimental-discovery/?node=quantum'
+    );
+  } finally {
+    browser.restore();
+  }
+});
+
 test('field and domain paths resolve to taxonomy scopes', () => {
   const model = modelFixture();
   assert.deepEqual(taxonomyScopeFromPath('/physics/', model, ['physics']), { fieldId: 'physics', domainId: null });
@@ -172,7 +186,6 @@ test('changing a filter exits the view route but keeps the selected concept rout
     browser.restore();
   }
 });
-
 
 test('an exclusive domain pathname appears only with no selected item or view', () => {
   const browser = installBrowser('https://atlas.madvay.com/concepts/quantum/');

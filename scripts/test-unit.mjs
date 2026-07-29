@@ -7,6 +7,7 @@ const typeScriptCli = fileURLToPath(new URL('../node_modules/typescript/bin/tsc'
 const testFiles = [
   'test/core.test.mjs',
   'test/graph-model.test.mjs',
+  'test/graph-math-label-layer.test.mjs',
   'test/ui-state.test.mjs',
   'test/view-state.test.mjs',
   'test/view-sequence.test.mjs',

@@ -477,6 +477,14 @@ input:focus-visible {
   pointer-events: none;
 }
 
+.graph-math-label-viewport {
+  position: absolute;
+  inset: 0;
+  transform-origin: 0 0;
+  will-change: transform;
+  pointer-events: none;
+}
+
 .graph-math-label {
   position: absolute;
   box-sizing: border-box;
@@ -489,7 +497,7 @@ input:focus-visible {
   overflow: hidden;
   pointer-events: none;
   contain: layout style paint;
-  will-change: transform, opacity;
+  transition: opacity 120ms linear;
 }
 
 .graph-math-label[hidden] {
@@ -708,6 +716,54 @@ input:focus-visible {
 .relation-item {
   margin: 4px 0 0;
   padding-left: 0.4rem;
+}
+
+.detail-view-list {
+  display: grid;
+  gap: 7px;
+}
+
+.detail-view-link {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+  padding: 8px 9px;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  background: #f8fafc;
+  color: #1e293b;
+  text-decoration: none;
+}
+
+.detail-view-link:hover,
+.detail-view-link:focus-visible {
+  border-color: #94a3b8;
+  background: #f1f5f9;
+}
+
+.detail-view-link>.material-icons {
+  flex: 0 0 auto;
+  color: #475569;
+  font-size: 19px;
+}
+
+.detail-view-copy {
+  display: grid;
+  min-width: 0;
+  gap: 1px;
+}
+
+.detail-view-copy strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+.detail-view-copy span {
+  color: #64748b;
+  font-size: 10px;
 }
 
 .details-header {

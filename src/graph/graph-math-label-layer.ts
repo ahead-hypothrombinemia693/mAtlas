@@ -8,6 +8,11 @@ interface MathLabelEntry {
   label: HTMLDivElement;
 }
 
+const VIEWPORT_DIRTY = 1;
+const GEOMETRY_DIRTY = 2;
+const STATE_DIRTY = 4;
+const ALL_DIRTY = VIEWPORT_DIRTY | GEOMETRY_DIRTY | STATE_DIRTY;
+
 function numericOpacity(element: GraphElement, fallback: number): number {
   const value = Number(element.style('opacity'));
   return Number.isFinite(value) ? value : fallback;
@@ -15,8 +20,10 @@ function numericOpacity(element: GraphElement, fallback: number): number {
 
 export class GraphMathLabelLayer {
   private readonly layer = document.createElement('div');
+  private readonly viewport = document.createElement('div');
   private readonly entries: MathLabelEntry[] = [];
   private frame = 0;
+  private dirty = 0;
 
   constructor(
     private readonly cy: cytoscape.Core,
@@ -25,17 +32,29 @@ export class GraphMathLabelLayer {
   ) {
     this.layer.className = 'graph-math-label-layer';
     this.layer.setAttribute('aria-hidden', 'true');
+    this.viewport.className = 'graph-math-label-viewport';
+    this.layer.appendChild(this.viewport);
     graphContainer.insertAdjacentElement('afterend', this.layer);
     this.buildEntries();
-    this.cy.on('render pan zoom position style data select unselect', () => this.schedule());
-    this.schedule();
+
+    // Pan and zoom are the hot path: one compositor transform updates every label.
+    this.cy.on('pan zoom resize', () => this.schedule(VIEWPORT_DIRTY));
+    this.cy.on('position', () => this.schedule(GEOMETRY_DIRTY));
+    this.cy.on('style data', () => this.schedule(GEOMETRY_DIRTY | STATE_DIRTY));
+    this.cy.on('select unselect', () => this.schedule(STATE_DIRTY));
+    this.schedule(ALL_DIRTY);
   }
 
-  schedule(): void {
+  schedule(dirty = ALL_DIRTY): void {
+    this.dirty |= dirty;
     if (this.frame) return;
     this.frame = window.requestAnimationFrame(() => {
       this.frame = 0;
-      this.sync();
+      const pending = this.dirty;
+      this.dirty = 0;
+      if (pending & VIEWPORT_DIRTY) this.syncViewport();
+      if (pending & GEOMETRY_DIRTY) this.syncGeometry();
+      if (pending & STATE_DIRTY) this.syncState();
     });
   }
 
@@ -50,18 +69,47 @@ export class GraphMathLabelLayer {
         ? `graph-math-label graph-math-node-label${isJunction ? ' junction' : ''}`
         : `graph-math-label graph-math-edge-label${isSynthetic ? ' synthetic' : ''}`;
       label.innerHTML = this.math.renderText(element.data('label'));
-      this.layer.appendChild(label);
+
+      if (isNode) {
+        label.style.width = `${isJunction ? 92 : 144}px`;
+        label.style.maxHeight = `${isJunction ? 54 : 52}px`;
+        label.style.transform = 'translate(-50%, -50%)';
+      } else {
+        label.style.maxWidth = `${isSynthetic ? 138 : 120}px`;
+        label.style.fontSize = '9px';
+        label.style.padding = '3px';
+        label.style.borderWidth = '1px';
+        label.style.borderRadius = '3px';
+      }
+
+      this.viewport.appendChild(label);
       this.entries.push({ element, label });
     };
 
-    this.cy.edges().forEach((element) => add(element));
-    this.cy.nodes().forEach((element) => add(element));
+    this.cy.edges().forEach((element: cytoscape.EdgeSingular) => add(element));
+    this.cy.nodes().forEach((element: cytoscape.NodeSingular) => add(element));
   }
 
-  private sync(): void {
+  private syncViewport(): void {
+    const pan = this.cy.pan();
     const zoom = this.cy.zoom();
-    for (const entry of this.entries) {
-      const { element, label } = entry;
+    this.viewport.style.transform = `translate3d(${pan.x}px, ${pan.y}px, 0) scale(${zoom})`;
+  }
+
+  private syncGeometry(): void {
+    const pan = this.cy.pan();
+    const zoom = this.cy.zoom();
+    for (const { element, label } of this.entries) {
+      if (element.hasClass('filter-hidden')
+        || element.style('display') === 'none'
+        || (element.isEdge() && element.hasClass('edge-labels-off'))) continue;
+      if (element.isNode()) this.syncNodeGeometry(element as cytoscape.NodeSingular, label);
+      else this.syncEdgeGeometry(element as cytoscape.EdgeSingular, label, pan, zoom);
+    }
+  }
+
+  private syncState(): void {
+    for (const { element, label } of this.entries) {
       const hidden = element.hasClass('filter-hidden')
         || element.style('display') === 'none'
         || (element.isEdge() && element.hasClass('edge-labels-off'));
@@ -79,27 +127,22 @@ export class GraphMathLabelLayer {
       label.hidden = false;
       label.style.opacity = String(opacity);
       label.style.zIndex = element.selected() ? '4' : element.isNode() ? '2' : '1';
-      if (element.isNode()) this.syncNode(element as cytoscape.NodeSingular, label, zoom);
-      else this.syncEdge(element as cytoscape.EdgeSingular, label, zoom);
     }
   }
 
-  private syncNode(node: cytoscape.NodeSingular, label: HTMLDivElement, zoom: number): void {
-    const position = node.renderedPosition();
-    const junction = node.data('kind') === 'junction';
-    const fontSize = Math.max(0.5, Number(node.data('labelFontSize') ?? 13) * zoom);
-    const maxWidth = (junction ? 92 : 144) * zoom;
-    const maxHeight = (junction ? 54 : 52) * zoom;
-
+  private syncNodeGeometry(node: cytoscape.NodeSingular, label: HTMLDivElement): void {
+    const position = node.position();
     label.style.left = `${position.x}px`;
     label.style.top = `${position.y}px`;
-    label.style.width = `${Math.max(1, maxWidth)}px`;
-    label.style.maxHeight = `${Math.max(1, maxHeight)}px`;
-    label.style.fontSize = `${fontSize}px`;
-    label.style.transform = 'translate(-50%, -50%)';
+    label.style.fontSize = `${Math.max(0.5, Number(node.data('labelFontSize') ?? 13))}px`;
   }
 
-  private syncEdge(edge: cytoscape.EdgeSingular, label: HTMLDivElement, zoom: number): void {
+  private syncEdgeGeometry(
+    edge: cytoscape.EdgeSingular,
+    label: HTMLDivElement,
+    pan: cytoscape.Position,
+    zoom: number
+  ): void {
     const position = edge.renderedMidpoint();
     const source = edge.renderedSourceEndpoint();
     const target = edge.renderedTargetEndpoint();
@@ -115,18 +158,8 @@ export class GraphMathLabelLayer {
     let angle = Math.atan2(dy, dx) * 180 / Math.PI;
     if (angle > 90 || angle < -90) angle += 180;
 
-    const synthetic = Number(edge.data('synthetic')) === 1;
-    const fontSize = Math.max(0.5, 9 * zoom);
-    const maxWidth = (synthetic ? 138 : 120) * zoom;
-    const padding = Math.max(0.25, 3 * zoom);
-
-    label.style.left = `${position.x}px`;
-    label.style.top = `${position.y}px`;
-    label.style.maxWidth = `${Math.max(1, maxWidth)}px`;
-    label.style.fontSize = `${fontSize}px`;
-    label.style.padding = `${padding}px`;
-    label.style.borderWidth = `${Math.max(0.35, zoom)}px`;
-    label.style.borderRadius = `${Math.max(0.5, 3 * zoom)}px`;
+    label.style.left = `${(position.x - pan.x) / zoom}px`;
+    label.style.top = `${(position.y - pan.y) / zoom}px`;
     label.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
   }
 }

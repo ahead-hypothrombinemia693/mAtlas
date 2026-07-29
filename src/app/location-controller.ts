@@ -160,6 +160,12 @@ export class LocationController {
     return new URL(viewPagePath(viewId), this.runtimeGlobalRootUrl).toString();
   }
 
+  viewNodeUrl(viewId: string, nodeId: string): string {
+    const url = new URL(this.viewPageUrl(viewId));
+    url.searchParams.set('node', nodeId);
+    return url.toString();
+  }
+
   scopedDefaultViewSelection(): SelectionTarget | null {
     const view = this.activeView();
     const firstNodeId = view?.nodeSequence[0];

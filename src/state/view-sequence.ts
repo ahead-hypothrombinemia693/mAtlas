@@ -1,3 +1,5 @@
+import type { AtlasView } from '../types.js';
+
 export function sequenceIndexForNode(
   nodeSequence: readonly string[],
   nodeId: string | null | undefined,
@@ -18,4 +20,18 @@ export function moveSequenceIndex(
   const normalizedIndex = Math.min(Math.max(currentIndex, 0), nodeSequence.length - 1);
   const nextIndex = normalizedIndex + direction;
   return nextIndex >= 0 && nextIndex < nodeSequence.length ? nextIndex : null;
+}
+
+export interface NodeViewMatch {
+  view: AtlasView;
+  sequenceIndex: number;
+}
+
+export function viewsContainingNode(views: readonly AtlasView[], nodeId: string): NodeViewMatch[] {
+  const matches: NodeViewMatch[] = [];
+  for (const view of views) {
+    const sequenceIndex = view.nodeSequence.indexOf(nodeId);
+    if (sequenceIndex >= 0) matches.push({ view, sequenceIndex });
+  }
+  return matches;
 }
