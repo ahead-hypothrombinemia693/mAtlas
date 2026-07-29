@@ -143,6 +143,7 @@ export interface Preferences {
   indicateOtherDomains: boolean;
   showGraphEdgeLabels: boolean;
   hideEdgesWhileMoving: boolean;
+  allowNodeMovement: boolean;
   dimPrerequisites: boolean;
 }
 

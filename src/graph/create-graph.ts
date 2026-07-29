@@ -148,7 +148,7 @@ export function createGraph(container: HTMLElement, model: GraphModel, labels: L
     hideEdgesOnViewport: preferences.hideEdgesWhileMoving,
     motionBlur: preferences.motionBlur,
     boxSelectionEnabled: false,
-    autoungrabify: false,
+    autoungrabify: !preferences.allowNodeMovement,
     style: graphStyles
   });
   applyRendererPreferences(cy, preferences);
@@ -168,6 +168,15 @@ export function applyRendererPreferences(cy: cytoscape.Core, preferences: Prefer
   renderer.motionBlurEnabled = preferences.motionBlur;
   renderer.motionBlur = preferences.motionBlur;
   renderer.hideEdgesOnViewport = preferences.hideEdgesWhileMoving;
+  cy.autoungrabify(!preferences.allowNodeMovement);
+  const nodes = cy.nodes();
+  if (preferences.allowNodeMovement) {
+    nodes.unpanify();
+    nodes.grabify();
+  } else {
+    nodes.ungrabify();
+    nodes.panify();
+  }
   cy.style()
     .selector('node').style('transition-property', preferences.transitions ? 'opacity, border-width, border-color, background-opacity' : 'none')
     .style('transition-duration', preferences.transitions ? 120 : 0)

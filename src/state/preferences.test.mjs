@@ -14,6 +14,7 @@ test('preferences have performance-conscious defaults and their own storage name
     indicateOtherDomains: true,
     showGraphEdgeLabels: true,
     hideEdgesWhileMoving: true,
+    allowNodeMovement: false,
     dimPrerequisites: true
   });
   assert.equal(parsePreferences('{bad').formulaeInGraph, false);
@@ -25,4 +26,9 @@ test('preferences restore valid booleans and default missing values', () => {
   assert.equal(preferences.formulaeInGraph, false);
   assert.equal(preferences.transitions, true);
   assert.equal(preferences.indicateOtherDomains, true);
+  assert.equal(preferences.allowNodeMovement, false);
+
+  const enabled = parsePreferences(JSON.stringify({ version: 1, allowNodeMovement: true }));
+  assert.equal(enabled.allowNodeMovement, true);
 });
+
