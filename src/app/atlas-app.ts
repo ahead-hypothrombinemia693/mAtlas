@@ -541,7 +541,8 @@ export async function startAtlasApp(): Promise<void> {
     nodeLabel: (nodeId) => nodeRecord.get(nodeId)?.label ?? nodeId,
     viewPageUrl: (viewId) => locationController.viewPageUrl(viewId),
     isMobileLayout: () => panelController.isMobileLayout(),
-    detailsOpen: () => state.detailsOpen
+    detailsOpen: () => state.detailsOpen,
+    math: mathRenderer
   });
   viewsController.initialize();
   buildHelp();
