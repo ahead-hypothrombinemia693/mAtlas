@@ -379,21 +379,24 @@ input:focus-visible {
 .exclude-toggle {
   order: 99;
   margin-left: auto;
-  padding: 1px 4px;
-  border: 1px solid #cbd5e1;
-  border-radius: 4px;
+  padding: 2px 4px;
+  border: none;
   color: #64748b;
-  background: #fff;
-  font: inherit;
-  font-size: 9px;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
 }
 
+.exclude-toggle .material-icons {
+  font-size: 12px;
+  line-height: 1;
+}
+
 .exclude-toggle[aria-pressed="true"] {
-  color: #991b1b;
-  border-color: #fca5a5;
-  background: #fef2f2;
-  font-weight: 750;
+  color: #b91c1c;
+  background: #fee2e2;
 }
 
 .filter-link {

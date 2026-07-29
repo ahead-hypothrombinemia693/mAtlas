@@ -52,7 +52,7 @@ export class FilterControls {
       fieldLabel.title = field.description;
       renderHtml(fieldLabel, `
         <input type="checkbox" data-field="${escapeHtml(fieldId)}" ${state.selectedFields.has(fieldId) ? 'checked' : ''}>
-        <button type="button" class="exclude-toggle" data-exclude-field="${escapeHtml(fieldId)}" aria-pressed="${state.excludedFields.has(fieldId)}" title="Exclude concepts whose primary field is ${escapeHtml(field.label)}">exclude</button>
+        <button type="button" class="exclude-toggle" data-exclude-field="${escapeHtml(fieldId)}" aria-pressed="${state.excludedFields.has(fieldId)}" title="Exclude concepts whose primary field is ${escapeHtml(field.label)}" aria-label="Exclude concepts whose primary field is ${escapeHtml(field.label)}"><span class="material-icons" aria-hidden="true">visibility_off</span></button>
         <span class="swatch" style="background:${escapeHtml(field.color)}"></span>
         <span><a href="${escapeHtml(this.options.fieldPageUrl(fieldId))}" class="filter-link filter-field-link" data-field-link="${escapeHtml(fieldId)}">${escapeHtml(field.label)}</a> <span class="filter-count">${memberCount}</span></span>`);
       group.appendChild(fieldLabel);
@@ -71,7 +71,7 @@ export class FilterControls {
         label.title = `${domainMemberCount} concepts belong to this domain; ${primaryCount} use it as their primary layout domain.`;
         renderHtml(label, `
           <input type="checkbox" data-domain="${escapeHtml(domainId)}" ${state.selectedDomains.has(domainId) ? 'checked' : ''}>
-          <button type="button" class="exclude-toggle" data-exclude-domain="${escapeHtml(domainId)}" aria-pressed="${state.excludedDomains.has(domainId)}" title="Exclude concepts whose primary domain is ${escapeHtml(domain.label)}">exclude</button>
+          <button type="button" class="exclude-toggle" data-exclude-domain="${escapeHtml(domainId)}" aria-pressed="${state.excludedDomains.has(domainId)}" title="Exclude concepts whose primary domain is ${escapeHtml(domain.label)}" aria-label="Exclude concepts whose primary domain is ${escapeHtml(domain.label)}"><span class="material-icons" aria-hidden="true">visibility_off</span></button>
           <span class="swatch" style="background:${escapeHtml(domain.color)}"></span>
           <span><a href="${escapeHtml(this.options.domainPageUrl(domainId))}" class="filter-link filter-domain-link" data-domain-link="${escapeHtml(domainId)}">${escapeHtml(domain.label)}</a> <span class="filter-count">${domainMemberCount}</span></span>`);
         domainList.appendChild(label);
