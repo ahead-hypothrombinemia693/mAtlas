@@ -89,7 +89,7 @@
       "id": "experimental-discovery",
       "title": "Experimental discovery",
       "summary": "Follow the experiments, observations, and anomalies that forced physics to change—and the later tests that decided whether the new theories survived.",
-      "narrative": "Read the sequence as a historical argument. Experimental results and unresolved problems motivate theories; later measurements test or support them. The graph remains complete within the selected physics domains, while Previous and Next provide a curated route through the evidence.",
+      "narrative": "Follow a longer historical argument from anomalies and precision measurements to the theories they forced, then to decisive tests and discoveries. Motivation edges record historical pressure rather than deductive implication; verification edges record tests or evidential support rather than final proof.",
       "tags": [
         "Physics",
         "History",
@@ -125,21 +125,31 @@
       "nodeSequence": [
         "blackbody_ultraviolet_catastrophe",
         "photoelectric_effect_experiments",
-        "quantum_mechanics",
+        "balmer_hydrogen_spectrum_observations",
+        "thomson_cathode_ray_experiments",
+        "geiger_marsden_gold_foil_experiment",
+        "franck_hertz_experiment",
         "stern_gerlach_experiment",
+        "compton_scattering_experiment",
         "davisson_germer_experiment",
-        "epr_argument",
+        "single_particle_double_slit_experiments",
+        "lamb_retherford_experiment",
+        "continuous_beta_spectrum_problem",
+        "cowan_reines_neutrino_experiment",
+        "solar_neutrino_problem",
+        "super_k_atmospheric_neutrino_oscillation",
+        "sno_solar_neutrino_flavor_change",
+        "hulse_taylor_binary_pulsar",
+        "gw150914_detection",
         "bell_test_experiments",
-        "slac_deep_inelastic_scattering",
-        "standard_model",
-        "atlas_cms_higgs_discovery"
+        "fullerene_matter_wave_interference"
       ]
     },
     {
       "id": "from-sets-to-spaces",
       "title": "From sets to spaces",
       "summary": "Trace how bare collections acquire relations, distance, topology, measure, and analytic structure.",
-      "narrative": "This view follows one of mathematics’ central construction patterns: begin with a set, add structure or axioms, and study what becomes possible. It highlights canonical constructions and the induced structures that can be forgotten again.",
+      "narrative": "Start with sets, functions, relations, and indexed families; add topology to define continuity and convergence; strengthen through metric, normed, Banach, inner-product, and Hilbert structures. The route distinguishes added data from axioms and theorem-level consequences.",
       "tags": [
         "Mathematics",
         "Foundations",
@@ -152,12 +162,10 @@
         ],
         "domains": [
           "set-theory",
+          "foundation",
           "order",
           "topology",
-          "differential-geometry",
-          "analysis",
-          "measure",
-          "probability"
+          "analysis"
         ],
         "edgeTypes": [
           "add-data",
@@ -174,22 +182,31 @@
       },
       "nodeSequence": [
         "set",
+        "function",
         "binary_relation",
-        "partial_order",
+        "indexed_family",
         "topological_space",
+        "hausdorff_space",
+        "first_countable_space",
         "pseudometric_space",
         "metric_space",
-        "measurable_space",
-        "measure_space",
+        "complete_metric_space",
+        "topological_vector_space",
+        "seminormed_vector_space",
+        "normed_vector_space",
         "banach_space",
-        "hilbert_space"
+        "inner_product_space",
+        "hilbert_space",
+        "locally_convex_space",
+        "frechet_space",
+        "distribution_space"
       ]
     },
     {
       "id": "algebraic-structures",
       "title": "Algebraic structures",
       "summary": "Explore how operations and laws organize groups, rings, modules, algebras, representations, and their categorical relationships.",
-      "narrative": "The emphasis here is structural inheritance: which data are added, which axioms are imposed, and which constructions produce new algebraic objects. Construction diamonds remain visible where several compatible inputs are jointly required.",
+      "narrative": "Build algebraic structure in layers: operations produce magmas, associativity produces semigroups, identities and inverses produce monoids and groups, and compatibility between additive and multiplicative structures produces rings, modules, vector spaces, algebras, and Hopf-like structures.",
       "tags": [
         "Algebra",
         "Categories",
@@ -201,57 +218,10 @@
           "mathematics"
         ],
         "domains": [
-          "category-theory",
+          "foundation",
           "universal-algebra",
           "algebra",
-          "representation-theory",
-          "number-theory",
-          "homological-algebra"
-        ],
-        "edgeTypes": [
-          "add-data",
-          "impose-axiom",
-          "induced-forgotten",
-          "canonical-construction",
-          "combine-compatible"
-        ],
-        "crossFieldVisibility": "hidden",
-        "edgeLabels": true,
-        "junctions": true,
-        "edgeZoomActivation": true,
-        "layout": "atlas"
-      },
-      "nodeSequence": [
-        "magma",
-        "semigroup",
-        "monoid",
-        "group",
-        "abelian_group",
-        "ring",
-        "module",
-        "vector_space",
-        "group_representation"
-      ]
-    },
-    {
-      "id": "foundations-and-logic",
-      "title": "Foundations and logic",
-      "summary": "Survey the concepts used to formalize mathematical objects, proof, models, and foundational systems.",
-      "narrative": "This view concentrates on the infrastructure beneath ordinary mathematics: sets, logical languages, models, formal systems, and categorical foundations. It is a compact map of the choices that determine what counts as an object and a valid inference.",
-      "tags": [
-        "Logic",
-        "Set theory",
-        "Foundations"
-      ],
-      "settings": {
-        "fields": [
-          "mathematics"
-        ],
-        "domains": [
-          "set-theory",
-          "logic",
-          "category-theory",
-          "foundation"
+          "representation-theory"
         ],
         "edgeTypes": [
           "add-data",
@@ -268,20 +238,94 @@
       },
       "nodeSequence": [
         "set",
+        "magma",
+        "semigroup",
+        "monoid",
+        "group",
+        "abelian_group",
+        "commutative_monoid",
+        "semiring",
+        "ring",
+        "commutative_ring",
+        "field",
+        "module",
+        "vector_space",
+        "algebra_over_field",
+        "associative_algebra",
+        "coalgebra",
+        "bialgebra",
+        "hopf_algebra"
+      ]
+    },
+    {
+      "id": "foundations-and-logic",
+      "title": "Foundations and logic",
+      "summary": "Survey the concepts used to formalize mathematical objects, proof, models, and foundational systems.",
+      "narrative": "Follow syntax, theories, structures, models, formal proof systems, effective computation, and incompleteness. The Story separates semantic satisfaction from syntactic derivability and treats Gödel’s results with their actual hypotheses.",
+      "tags": [
+        "Logic",
+        "Set theory",
+        "Foundations"
+      ],
+      "settings": {
+        "fields": [
+          "mathematics"
+        ],
+        "domains": [
+          "logic",
+          "computability-theory",
+          "foundation",
+          "set-theory",
+          "number-theory"
+        ],
+        "edgeTypes": [
+          "add-data",
+          "impose-axiom",
+          "induced-forgotten",
+          "canonical-construction",
+          "quotient-construction",
+          "canonical-embedding",
+          "combine-compatible",
+          "representation-equivalence",
+          "theorem-implication",
+          "classification",
+          "mathematical-formulation",
+          "framework-specialization",
+          "describes-governs",
+          "historically-motivated"
+        ],
+        "crossFieldVisibility": "hidden",
+        "edgeLabels": true,
+        "junctions": true,
+        "edgeZoomActivation": true,
+        "layout": "atlas"
+      },
+      "nodeSequence": [
         "first_order_signature",
         "first_order_theory",
         "first_order_structure",
         "model_of_theory",
-        "category",
-        "cartesian_closed_category",
-        "elementary_topos"
+        "formal_proof_system",
+        "consistent_theory",
+        "syntactically_complete_theory",
+        "algorithm",
+        "turing_machine",
+        "computable_function",
+        "halting_problem",
+        "undecidable_problem",
+        "godel_numbering",
+        "first_incompleteness_theorem",
+        "second_incompleteness_theorem",
+        "zermelo_fraenkel_set_theory",
+        "axiom_of_choice",
+        "zfc_set_theory"
       ]
     },
     {
       "id": "geometry-of-gravity",
       "title": "The geometry of gravity",
       "summary": "Connect differential geometry to spacetime, gravitation, Einstein’s equations, and their classical limits and tests.",
-      "narrative": "General relativity did not merely borrow mathematical notation; it identified gravity with spacetime geometry. This view exposes the mathematical formulations, physical specializations, limiting relations, and experimental evidence surrounding that identification.",
+      "narrative": "Build the differential geometry used by general relativity: smooth and Lorentzian manifolds, tangent and tensor fields, metrics, connections, curvature, geodesics, stress–energy, and Einstein’s equation. Then follow exact solutions and strong-field observations to black holes and gravitational waves.",
       "tags": [
         "Geometry",
         "Relativity",
@@ -294,23 +338,37 @@
           "physics"
         ],
         "domains": [
-          "topology",
           "differential-geometry",
-          "analysis",
-          "physical-foundations",
-          "classical-mechanics",
           "relativity",
+          "cosmology",
           "experiments-observations"
         ],
         "edgeTypes": [
+          "add-data",
+          "impose-axiom",
+          "induced-forgotten",
+          "canonical-construction",
+          "quotient-construction",
+          "canonical-embedding",
+          "combine-compatible",
+          "representation-equivalence",
+          "theorem-implication",
+          "classification",
           "mathematical-formulation",
           "framework-specialization",
+          "quantization",
+          "theory-component",
           "describes-governs",
+          "composition",
+          "state-description",
+          "transformation-process",
           "mathematical-limit",
+          "effective-theory",
+          "emergence",
+          "couples-interacts",
+          "model-realization",
           "historically-motivated",
-          "experimentally-verified-by",
-          "canonical-construction",
-          "induced-forgotten"
+          "experimentally-verified-by"
         ],
         "crossFieldVisibility": "all",
         "edgeLabels": true,
@@ -319,16 +377,24 @@
         "layout": "atlas"
       },
       "nodeSequence": [
-        "topological_space",
         "smooth_manifold",
+        "tangent_bundle",
+        "tensor_field",
         "pseudo_riemannian_manifold",
         "lorentzian_manifold",
+        "levi_civita_connection",
         "riemann_curvature_tensor",
+        "ricci_tensor",
+        "scalar_curvature",
         "einstein_tensor",
+        "geodesic",
+        "stress_energy_tensor",
         "einstein_field_equation",
         "general_relativity",
-        "mercury_perihelion_anomaly",
-        "eddington_eclipse_observations",
+        "schwarzschild_spacetime",
+        "black_hole",
+        "event_horizon",
+        "hulse_taylor_binary_pulsar",
         "gw150914_detection"
       ]
     },
@@ -336,7 +402,7 @@
       "id": "quantum-revolution",
       "title": "The quantum revolution",
       "summary": "Move from the empirical crises of classical physics through quantum mechanics, quantum fields, and precision tests.",
-      "narrative": "The quantum framework emerged through a sequence of problems rather than a single deduction. This view combines the motivating experiments with the structural relations among quantum mechanics, field theory, atomic physics, and particle physics.",
+      "narrative": "Follow quantum theory from the failures of classical radiation and atomic models through wave–particle evidence, state-space structure, measurement, spin, relativistic quantum mechanics, quantum fields, entanglement, and modern experimental tests.",
       "tags": [
         "Quantum",
         "Experiments",
@@ -352,18 +418,27 @@
           "quantum-mechanics",
           "quantum-field-theory",
           "particle-physics",
-          "nuclear-physics",
           "atomic-molecular-physics",
           "experiments-observations"
         ],
         "edgeTypes": [
+          "mathematical-formulation",
           "framework-specialization",
           "quantization",
           "theory-component",
-          "model-realization",
+          "describes-governs",
+          "composition",
+          "classification",
           "state-description",
+          "transformation-process",
+          "mathematical-limit",
+          "effective-theory",
+          "emergence",
+          "couples-interacts",
+          "model-realization",
           "historically-motivated",
-          "experimentally-verified-by"
+          "experimentally-verified-by",
+          "theorem-implication"
         ],
         "crossFieldVisibility": "hidden",
         "edgeLabels": true,
@@ -374,20 +449,29 @@
       "nodeSequence": [
         "blackbody_ultraviolet_catastrophe",
         "photoelectric_effect_experiments",
+        "bohr_model",
         "quantum_mechanics",
-        "quantum_state",
+        "wavefunction",
         "schrodinger_equation",
+        "born_rule",
+        "quantum_measurement",
+        "stern_gerlach_experiment",
+        "spin",
+        "pauli_exclusion_principle",
         "dirac_equation",
         "quantum_field_theory",
+        "quantum_electrodynamics",
+        "quantum_entanglement",
+        "bell_theorem",
         "bell_test_experiments",
-        "standard_model"
+        "quantum_decoherence"
       ]
     },
     {
       "id": "standard-model-anatomy",
       "title": "Anatomy of the Standard Model",
       "summary": "Inspect the fields, particles, symmetries, interactions, and measurements assembled into the Standard Model.",
-      "narrative": "Treat the Standard Model as a structured system rather than a list of particles. Follow its gauge framework, matter and force components, interaction terms, classifications, effective descriptions, and decisive collider evidence.",
+      "narrative": "Read the Standard Model by layers: gauge group and chiral representations, gauge and matter fields, covariant derivatives and field strengths, QCD and electroweak sectors, Higgs symmetry breaking, Yukawa couplings, mass eigenstates, conserved and anomalous currents, and effective extensions.",
       "tags": [
         "Particle physics",
         "Gauge theory",
@@ -398,19 +482,28 @@
           "physics"
         ],
         "domains": [
-          "physical-foundations",
           "quantum-field-theory",
           "particle-physics",
           "experiments-observations"
         ],
         "edgeTypes": [
+          "mathematical-formulation",
           "framework-specialization",
+          "quantization",
           "theory-component",
+          "describes-governs",
           "composition",
           "classification",
-          "couples-interacts",
+          "state-description",
+          "transformation-process",
+          "mathematical-limit",
           "effective-theory",
-          "experimentally-verified-by"
+          "emergence",
+          "couples-interacts",
+          "model-realization",
+          "historically-motivated",
+          "experimentally-verified-by",
+          "theorem-implication"
         ],
         "crossFieldVisibility": "hidden",
         "edgeLabels": true,
@@ -420,21 +513,33 @@
       },
       "nodeSequence": [
         "standard_model_gauge_group",
+        "standard_model_chiral_multiplet",
+        "gauge_field",
+        "matter_field",
+        "gauge_covariant_derivative",
+        "gauge_field_strength",
         "quantum_chromodynamics",
         "electroweak_theory",
+        "higgs_doublet",
+        "standard_model_lagrangian",
+        "spontaneous_symmetry_breaking",
         "higgs_mechanism",
+        "electroweak_symmetry_breaking",
+        "yukawa_interaction",
+        "particle_mass",
+        "ckm_matrix",
+        "pmns_matrix",
+        "gauge_anomaly_cancellation",
         "standard_model",
-        "fermion_generation",
-        "lep_precision_electroweak_measurements",
-        "top_quark_discovery",
-        "atlas_cms_higgs_discovery"
+        "standard_model_effective_field_theory",
+        "low_energy_effective_field_theory"
       ]
     },
     {
       "id": "classical-to-relativistic",
       "title": "From classical to relativistic physics",
       "summary": "See how mechanics and electromagnetism are reorganized by spacetime symmetry and recovered as controlled limits.",
-      "narrative": "Relativity preserved much of classical physics while changing its organizing principles. This view emphasizes specialization, approximation, mathematical formulation, and the experiments that exposed the limits of pre-relativistic models.",
+      "narrative": "Compare Newtonian, Lagrangian, and Hamiltonian mechanics before introducing Galilean and Lorentz symmetry, Minkowski spacetime, relativistic momentum-energy, field covariance, and general-relativistic gravitation. Limit edges show precisely where classical theories reappear.",
       "tags": [
         "Mechanics",
         "Electromagnetism",
@@ -452,13 +557,24 @@
           "experiments-observations"
         ],
         "edgeTypes": [
+          "add-data",
+          "mathematical-formulation",
           "framework-specialization",
+          "quantization",
+          "theory-component",
           "describes-governs",
+          "composition",
+          "classification",
+          "state-description",
+          "transformation-process",
           "mathematical-limit",
           "effective-theory",
-          "mathematical-formulation",
+          "emergence",
+          "couples-interacts",
+          "model-realization",
           "historically-motivated",
-          "experimentally-verified-by"
+          "experimentally-verified-by",
+          "theorem-implication"
         ],
         "crossFieldVisibility": "hidden",
         "edgeLabels": true,
@@ -467,25 +583,32 @@
         "layout": "atlas"
       },
       "nodeSequence": [
-        "galileo_inclined_plane_experiments",
-        "classical_mechanics",
-        "oersted_compass_experiment",
-        "faraday_induction_experiments",
-        "classical_electromagnetism",
-        "fizeau_moving_water_experiment",
-        "michelson_morley_experiment",
+        "configuration_space",
+        "newtonian_mechanics",
+        "newton_laws",
+        "lagrangian",
+        "stationary_action_principle",
+        "lagrangian_mechanics",
+        "phase_space",
+        "hamiltonian",
+        "hamiltonian_mechanics",
         "special_relativity",
         "minkowski_spacetime",
+        "lorentz_symmetry",
+        "poincare_symmetry",
+        "four_vector",
+        "relativistic_particle_mechanics",
+        "classical_electromagnetism",
         "general_relativity",
-        "mercury_perihelion_anomaly",
-        "eddington_eclipse_observations"
+        "geodesic_motion",
+        "newtonian_gravitation"
       ]
     },
     {
       "id": "probability-measure-analysis",
       "title": "Probability, measure, and analysis",
       "summary": "Connect measurable spaces, integration, probability distributions, function spaces, and stochastic structure.",
-      "narrative": "Modern probability is built on measure theory and analysis. This view shows the shared carriers and constructions that connect measurable sets, integrals, distributions, random variables, and analytic spaces.",
+      "narrative": "Build probability on measurable spaces, measures, and probability measures; add measurable functions and random variables; then organize time-indexed information through filtrations, filtered probability spaces, stochastic processes, and Markov chains. Banach and Hilbert spaces show where analytic structure enters without implying that all probabilistic objects are Hilbert-space objects.",
       "tags": [
         "Probability",
         "Measure",
@@ -497,16 +620,25 @@
         ],
         "domains": [
           "set-theory",
-          "analysis",
+          "foundation",
           "measure",
-          "probability"
+          "probability",
+          "analysis",
+          "topology"
         ],
         "edgeTypes": [
           "add-data",
           "impose-axiom",
           "induced-forgotten",
           "canonical-construction",
-          "combine-compatible"
+          "quotient-construction",
+          "canonical-embedding",
+          "combine-compatible",
+          "representation-equivalence",
+          "theorem-implication",
+          "classification",
+          "mathematical-formulation",
+          "framework-specialization"
         ],
         "crossFieldVisibility": "hidden",
         "edgeLabels": true,
@@ -518,13 +650,1518 @@
         "set",
         "measurable_space",
         "measure_space",
+        "sigma_finite_measure_space",
         "probability_space",
+        "measurable_function",
         "random_variable",
         "filtration",
         "filtered_probability_space",
         "stochastic_process",
+        "markov_chain",
+        "standard_probability_space",
         "banach_space",
         "hilbert_space"
+      ]
+    },
+    {
+      "id": "scale-renormalization-effective-theory",
+      "title": "Scale, renormalization, and effective theory",
+      "summary": "See why physical laws are organized by resolution scale, with running couplings, coarse-graining, and effective descriptions connecting high- and low-energy regimes.",
+      "narrative": "Begin with physical scale and interacting quantum fields. Perturbation theory introduces regularization and renormalization; running couplings encode scale dependence; the renormalization group and Wilsonian effective action turn this into a flow through theory space. Effective field theory then explains decoupling and controlled low-energy expansions, illustrated by QED, QCD, Fermi theory, chiral and nuclear EFT, SMEFT, and LEFT.",
+      "tags": [
+        "Physics",
+        "Quantum field theory",
+        "Scale",
+        "Effective theory"
+      ],
+      "featured": true,
+      "settings": {
+        "fields": [
+          "physics"
+        ],
+        "domains": [
+          "physical-foundations",
+          "quantum-field-theory",
+          "particle-physics",
+          "nuclear-physics"
+        ],
+        "edgeTypes": [
+          "mathematical-formulation",
+          "framework-specialization",
+          "quantization",
+          "theory-component",
+          "describes-governs",
+          "composition",
+          "classification",
+          "state-description",
+          "transformation-process",
+          "mathematical-limit",
+          "effective-theory",
+          "emergence",
+          "couples-interacts",
+          "model-realization",
+          "historically-motivated",
+          "experimentally-verified-by",
+          "theorem-implication"
+        ],
+        "crossFieldVisibility": "hidden",
+        "edgeLabels": true,
+        "junctions": false,
+        "edgeZoomActivation": false,
+        "layout": "atlas"
+      },
+      "nodeSequence": [
+        "physical_scale",
+        "effective_description",
+        "quantum_field_theory",
+        "interacting_quantum_field",
+        "perturbative_qft",
+        "regularization",
+        "renormalization",
+        "running_coupling",
+        "renormalization_group",
+        "wilsonian_effective_action",
+        "effective_field_theory",
+        "quantum_electrodynamics",
+        "quantum_chromodynamics",
+        "asymptotic_freedom",
+        "low_energy_qcd",
+        "fermi_theory",
+        "four_fermion_interaction",
+        "chiral_perturbation_theory",
+        "nuclear_effective_field_theory",
+        "standard_model_effective_field_theory",
+        "low_energy_effective_field_theory"
+      ]
+    },
+    {
+      "id": "symmetry-representation-particles",
+      "title": "From symmetry to particle types",
+      "summary": "Follow the path from group actions to irreducible unitary representations, spinors, chirality, multiplets, and particle classifications.",
+      "narrative": "A symmetry becomes predictive only after specifying how it acts. Group actions linearize as representations; irreducible representations provide elementary building blocks; Lie groups and Lie algebras organize continuous symmetries. Lorentz, Poincaré, and spin-group representations then classify spin and chirality, while tensor products and Clebsch–Gordan coefficients explain composite angular momentum and gauge multiplets.",
+      "tags": [
+        "Mathematics",
+        "Physics",
+        "Symmetry",
+        "Representation theory"
+      ],
+      "featured": true,
+      "settings": {
+        "fields": [
+          "mathematics",
+          "physics"
+        ],
+        "domains": [
+          "algebra",
+          "representation-theory",
+          "differential-geometry",
+          "quantum-mechanics",
+          "quantum-field-theory",
+          "particle-physics"
+        ],
+        "edgeTypes": [
+          "add-data",
+          "impose-axiom",
+          "induced-forgotten",
+          "canonical-construction",
+          "quotient-construction",
+          "canonical-embedding",
+          "combine-compatible",
+          "representation-equivalence",
+          "theorem-implication",
+          "classification",
+          "mathematical-formulation",
+          "framework-specialization",
+          "quantization",
+          "theory-component",
+          "describes-governs",
+          "composition",
+          "state-description",
+          "transformation-process",
+          "mathematical-limit",
+          "effective-theory",
+          "emergence",
+          "couples-interacts",
+          "model-realization",
+          "historically-motivated",
+          "experimentally-verified-by"
+        ],
+        "crossFieldVisibility": "contextual",
+        "edgeLabels": true,
+        "junctions": false,
+        "edgeZoomActivation": false,
+        "layout": "atlas"
+      },
+      "nodeSequence": [
+        "group",
+        "group_action",
+        "vector_space",
+        "group_representation",
+        "irreducible_representation",
+        "lie_group",
+        "lie_algebra",
+        "lie_algebra_representation",
+        "unitary_representation",
+        "lorentz_group",
+        "poincare_group",
+        "spin_group",
+        "clifford_algebra",
+        "spinor_representation",
+        "spin",
+        "spin_half",
+        "chirality",
+        "fermion",
+        "boson",
+        "tensor_product_vector_space",
+        "clebsch_gordan_coefficient",
+        "standard_model_gauge_group"
+      ]
+    },
+    {
+      "id": "quantum-states-measurement-entanglement",
+      "title": "Quantum states, measurement, and entanglement",
+      "summary": "Trace the operational structure of quantum theory from states and observables through measurement, composite systems, Bell tests, and decoherence.",
+      "narrative": "Pure states, mixed states, wavefunctions, and density operators are related but not interchangeable descriptions. Observables and the Born rule connect states to probabilities; unitary evolution and superposition govern isolated dynamics. Tensor products introduce composite systems and entanglement, EPR sharpens the locality problem, Bell turns it into a theorem, experiments test the inequalities, and partial trace plus decoherence explain the emergence of reduced mixed states without by itself selecting an interpretation.",
+      "tags": [
+        "Physics",
+        "Quantum mechanics",
+        "Measurement",
+        "Entanglement"
+      ],
+      "featured": true,
+      "settings": {
+        "fields": [
+          "mathematics",
+          "physics"
+        ],
+        "domains": [
+          "analysis",
+          "physical-foundations",
+          "quantum-mechanics",
+          "experiments-observations"
+        ],
+        "edgeTypes": [
+          "mathematical-formulation",
+          "framework-specialization",
+          "quantization",
+          "theory-component",
+          "describes-governs",
+          "composition",
+          "classification",
+          "state-description",
+          "transformation-process",
+          "mathematical-limit",
+          "effective-theory",
+          "emergence",
+          "couples-interacts",
+          "model-realization",
+          "historically-motivated",
+          "experimentally-verified-by",
+          "theorem-implication"
+        ],
+        "crossFieldVisibility": "contextual",
+        "edgeLabels": true,
+        "junctions": false,
+        "edgeZoomActivation": false,
+        "layout": "atlas"
+      },
+      "nodeSequence": [
+        "quantum_system",
+        "quantum_state",
+        "pure_quantum_state",
+        "mixed_quantum_state",
+        "wavefunction",
+        "density_operator",
+        "quantum_observable",
+        "born_rule",
+        "quantum_measurement",
+        "unitary_time_evolution",
+        "quantum_superposition",
+        "tensor_product_hilbert_space",
+        "quantum_entanglement",
+        "epr_argument",
+        "bell_theorem",
+        "bell_test_experiments",
+        "partial_trace",
+        "quantum_decoherence",
+        "single_particle_double_slit_experiments",
+        "fullerene_matter_wave_interference",
+        "hong_ou_mandel_experiment",
+        "cavity_qed_decoherence_experiments",
+        "stern_gerlach_experiment"
+      ]
+    },
+    {
+      "id": "gauge-fields-as-geometry",
+      "title": "Gauge fields as geometry",
+      "summary": "Translate local gauge invariance into principal bundles, connections, curvature, Yang–Mills theory, and the gauge sectors of the Standard Model.",
+      "narrative": "The geometric language starts with smooth manifolds, Lie groups, fiber bundles, and principal bundles. A principal connection defines parallel transport and covariant differentiation; its curvature is the geometric counterpart of field strength. The physical branch identifies gauge fields with local connection data and develops Abelian and non-Abelian Yang–Mills theories, culminating in QED, QCD, electroweak theory, and the Standard Model gauge group.",
+      "tags": [
+        "Mathematics",
+        "Physics",
+        "Gauge theory",
+        "Differential geometry"
+      ],
+      "featured": true,
+      "settings": {
+        "fields": [
+          "mathematics",
+          "physics"
+        ],
+        "domains": [
+          "differential-geometry",
+          "representation-theory",
+          "quantum-field-theory",
+          "particle-physics",
+          "electromagnetism"
+        ],
+        "edgeTypes": [
+          "add-data",
+          "impose-axiom",
+          "induced-forgotten",
+          "canonical-construction",
+          "quotient-construction",
+          "canonical-embedding",
+          "combine-compatible",
+          "representation-equivalence",
+          "theorem-implication",
+          "classification",
+          "mathematical-formulation",
+          "framework-specialization",
+          "quantization",
+          "theory-component",
+          "describes-governs",
+          "composition",
+          "state-description",
+          "transformation-process",
+          "mathematical-limit",
+          "effective-theory",
+          "emergence",
+          "couples-interacts",
+          "model-realization",
+          "historically-motivated",
+          "experimentally-verified-by"
+        ],
+        "crossFieldVisibility": "contextual",
+        "edgeLabels": true,
+        "junctions": false,
+        "edgeZoomActivation": false,
+        "layout": "atlas"
+      },
+      "nodeSequence": [
+        "smooth_manifold",
+        "lie_group",
+        "lie_algebra",
+        "fiber_bundle",
+        "principal_bundle",
+        "principal_connection",
+        "curvature_form",
+        "gauge_symmetry",
+        "local_gauge_symmetry",
+        "gauge_field",
+        "gauge_covariant_derivative",
+        "gauge_field_strength",
+        "yang_mills_theory",
+        "abelian_gauge_theory",
+        "nonabelian_gauge_theory",
+        "quantum_electrodynamics",
+        "quantum_chromodynamics",
+        "electroweak_theory",
+        "standard_model_gauge_group"
+      ]
+    },
+    {
+      "id": "action-to-quantum-fields",
+      "title": "From action principles to quantum fields",
+      "summary": "Connect variational mechanics, Hamiltonian and symplectic structure, quantization, Fock space, perturbation theory, and scattering.",
+      "narrative": "The classical branch starts from configuration space, Lagrangians, action functionals, stationary action, and Euler–Lagrange equations. A parallel phase-space branch introduces symplectic and Poisson geometry and Hamiltonian evolution. Canonical quantization promotes suitable classical observables to operators and supplies canonical commutation relations, while path integrals use the action to sum over histories. Quantum mechanics leads to QFT; free and asymptotic particle sectors use Fock space and creation operators; perturbative expansions produce Feynman diagrams, amplitudes, and the $S$-matrix.",
+      "tags": [
+        "Mathematics",
+        "Physics",
+        "Mechanics",
+        "Quantum field theory"
+      ],
+      "settings": {
+        "fields": [
+          "mathematics",
+          "physics"
+        ],
+        "domains": [
+          "differential-geometry",
+          "analysis",
+          "classical-mechanics",
+          "quantum-mechanics",
+          "quantum-field-theory",
+          "particle-physics"
+        ],
+        "edgeTypes": [
+          "add-data",
+          "impose-axiom",
+          "induced-forgotten",
+          "canonical-construction",
+          "quotient-construction",
+          "canonical-embedding",
+          "combine-compatible",
+          "representation-equivalence",
+          "theorem-implication",
+          "classification",
+          "mathematical-formulation",
+          "framework-specialization",
+          "quantization",
+          "theory-component",
+          "describes-governs",
+          "composition",
+          "state-description",
+          "transformation-process",
+          "mathematical-limit",
+          "effective-theory",
+          "emergence",
+          "couples-interacts",
+          "model-realization",
+          "historically-motivated",
+          "experimentally-verified-by"
+        ],
+        "crossFieldVisibility": "contextual",
+        "edgeLabels": true,
+        "junctions": false,
+        "edgeZoomActivation": false,
+        "layout": "atlas"
+      },
+      "nodeSequence": [
+        "configuration_space",
+        "lagrangian",
+        "action_functional",
+        "stationary_action_principle",
+        "euler_lagrange_equation",
+        "lagrangian_mechanics",
+        "phase_space",
+        "symplectic_manifold",
+        "poisson_manifold",
+        "poisson_bracket",
+        "hamiltonian",
+        "hamiltonian_mechanics",
+        "canonical_quantization",
+        "canonical_commutation_relations",
+        "quantum_mechanics",
+        "schrodinger_equation",
+        "path_integral_quantization",
+        "quantum_field_theory",
+        "fock_space",
+        "creation_operator",
+        "annihilation_operator",
+        "perturbative_qft",
+        "feynman_diagram",
+        "scattering_amplitude",
+        "s_matrix"
+      ]
+    },
+    {
+      "id": "fields-to-ordinary-matter",
+      "title": "From quantum fields to ordinary matter",
+      "summary": "Follow the hierarchy from quantum fields and elementary excitations through hadrons, nuclei, atoms, and molecules.",
+      "narrative": "Matter is not built by a single relation. Quantum fields support particle sectors; quarks and gluons interact through QCD and hadronize into color-singlet hadrons; baryons and nucleons form nuclei through residual strong interactions; electrons and nuclei bind electromagnetically into atoms; atoms bind into molecules. The Story separates constitution, binding, effective interactions, and emergent stability.",
+      "tags": [
+        "Physics",
+        "Matter",
+        "Particles",
+        "Emergence"
+      ],
+      "settings": {
+        "fields": [
+          "physics"
+        ],
+        "domains": [
+          "quantum-field-theory",
+          "particle-physics",
+          "nuclear-physics",
+          "atomic-molecular-physics",
+          "electromagnetism"
+        ],
+        "edgeTypes": [
+          "mathematical-formulation",
+          "framework-specialization",
+          "quantization",
+          "theory-component",
+          "describes-governs",
+          "composition",
+          "classification",
+          "state-description",
+          "transformation-process",
+          "mathematical-limit",
+          "effective-theory",
+          "emergence",
+          "couples-interacts",
+          "model-realization",
+          "historically-motivated",
+          "experimentally-verified-by",
+          "theorem-implication"
+        ],
+        "crossFieldVisibility": "hidden",
+        "edgeLabels": true,
+        "junctions": false,
+        "edgeZoomActivation": false,
+        "layout": "atlas"
+      },
+      "nodeSequence": [
+        "quantum_field_theory",
+        "quantum_field",
+        "matter_field",
+        "gauge_field",
+        "elementary_particle",
+        "quark",
+        "lepton",
+        "gluon",
+        "photon",
+        "strong_interaction",
+        "hadronization",
+        "hadron",
+        "baryon",
+        "meson",
+        "nucleon",
+        "proton",
+        "neutron",
+        "nuclear_force",
+        "atomic_nucleus",
+        "nuclear_binding_energy",
+        "atom",
+        "electromagnetic_binding",
+        "molecule"
+      ]
+    },
+    {
+      "id": "hierarchy-of-topological-spaces",
+      "title": "The hierarchy of topological properties",
+      "summary": "Explore separation, countability, metric, compactness, local, connectedness, and zero-dimensionality properties as a branching implication lattice.",
+      "narrative": "Topological properties do not form one linear ladder. Separation axioms strengthen along one axis; countability conditions along another; metrics, completeness, and separability produce Polish spaces; compactness interacts strongly with Hausdorff and metric assumptions; local compactness and connectedness form additional branches. The selected theorem edges show valid implications without suggesting false converses.",
+      "tags": [
+        "Mathematics",
+        "Topology",
+        "Properties",
+        "Classification"
+      ],
+      "settings": {
+        "fields": [
+          "mathematics"
+        ],
+        "domains": [
+          "topology",
+          "algebraic-topology"
+        ],
+        "edgeTypes": [
+          "add-data",
+          "impose-axiom",
+          "induced-forgotten",
+          "canonical-construction",
+          "quotient-construction",
+          "canonical-embedding",
+          "combine-compatible",
+          "representation-equivalence",
+          "theorem-implication",
+          "classification",
+          "mathematical-formulation",
+          "framework-specialization"
+        ],
+        "crossFieldVisibility": "hidden",
+        "edgeLabels": true,
+        "junctions": false,
+        "edgeZoomActivation": false,
+        "layout": "atlas"
+      },
+      "nodeSequence": [
+        "topological_space",
+        "t0_space",
+        "t1_space",
+        "hausdorff_space",
+        "regular_space",
+        "normal_space",
+        "tychonoff_space",
+        "first_countable_space",
+        "second_countable_space",
+        "pseudometric_space",
+        "metric_space",
+        "complete_metric_space",
+        "separable_metric_space",
+        "polish_space",
+        "compact_space",
+        "compact_hausdorff_space",
+        "compact_metric_space",
+        "locally_compact_space",
+        "locally_compact_hausdorff_space",
+        "connected_space",
+        "path_connected_space",
+        "locally_connected_space",
+        "totally_disconnected_space",
+        "zero_dimensional_space"
+      ]
+    },
+    {
+      "id": "spaces-operators-spectra",
+      "title": "Spaces, operators, and spectra",
+      "summary": "Build Banach and Hilbert spaces, then develop bounded and unbounded operators, adjoints, spectra, spectral measures, and Fock-space constructions.",
+      "narrative": "Vector spaces acquire topology, seminorms, norms, completeness, and inner products. Operators must then be classified with attention to boundedness and domains. Adjoint, self-adjoint, unitary, positive, projection, and trace-class operators lead to spectra and spectral measures; spectral and Stone theorems connect operators with decompositions and continuous unitary evolution. Rigged and tensor-product Hilbert spaces, partial traces, distributions, and Fock spaces supply the analytic infrastructure of quantum theory.",
+      "tags": [
+        "Mathematics",
+        "Analysis",
+        "Operators",
+        "Quantum theory"
+      ],
+      "settings": {
+        "fields": [
+          "mathematics",
+          "physics"
+        ],
+        "domains": [
+          "algebra",
+          "analysis",
+          "quantum-mechanics",
+          "quantum-field-theory"
+        ],
+        "edgeTypes": [
+          "add-data",
+          "impose-axiom",
+          "induced-forgotten",
+          "canonical-construction",
+          "quotient-construction",
+          "canonical-embedding",
+          "combine-compatible",
+          "representation-equivalence",
+          "theorem-implication",
+          "classification",
+          "mathematical-formulation",
+          "framework-specialization",
+          "quantization",
+          "theory-component",
+          "describes-governs",
+          "composition",
+          "state-description",
+          "transformation-process",
+          "mathematical-limit",
+          "effective-theory",
+          "emergence",
+          "couples-interacts",
+          "model-realization",
+          "historically-motivated",
+          "experimentally-verified-by"
+        ],
+        "crossFieldVisibility": "contextual",
+        "edgeLabels": true,
+        "junctions": false,
+        "edgeZoomActivation": false,
+        "layout": "atlas"
+      },
+      "nodeSequence": [
+        "vector_space",
+        "topological_vector_space",
+        "seminormed_vector_space",
+        "normed_vector_space",
+        "banach_space",
+        "inner_product_space",
+        "hilbert_space",
+        "linear_operator",
+        "bounded_linear_operator",
+        "densely_defined_operator",
+        "adjoint_operator",
+        "self_adjoint_operator",
+        "unitary_operator",
+        "positive_operator",
+        "projection_operator",
+        "trace_class_operator",
+        "operator_spectrum",
+        "spectral_measure",
+        "spectral_theorem",
+        "stone_theorem",
+        "rigged_hilbert_space",
+        "tensor_product_hilbert_space",
+        "partial_trace",
+        "distribution_space",
+        "fock_space",
+        "symmetric_fock_space",
+        "antisymmetric_fock_space"
+      ]
+    },
+    {
+      "id": "local-to-global-geometry",
+      "title": "Local-to-global geometry: sheaves and schemes",
+      "summary": "See how local data, germs, localization, gluing, and affine spectra build schemes and their geometric refinements.",
+      "narrative": "Presheaves encode restriction; sheaves impose local identity and gluing. Stalks isolate germs at points. Ring-valued sheaves create ringed and locally ringed spaces; localization produces local coordinate rings; $\\operatorname{Spec}(R)$ packages prime ideals, topology, and a structure sheaf into an affine scheme. Schemes are spaces locally modeled on affine spectra, and additional hypotheses produce Noetherian, reduced, integral, regular, separated, projective, and variety-like geometries.",
+      "tags": [
+        "Mathematics",
+        "Algebraic geometry",
+        "Sheaves",
+        "Schemes"
+      ],
+      "featured": true,
+      "settings": {
+        "fields": [
+          "mathematics"
+        ],
+        "domains": [
+          "category-theory",
+          "algebra",
+          "algebraic-geometry",
+          "topology",
+          "homological-algebra"
+        ],
+        "edgeTypes": [
+          "add-data",
+          "impose-axiom",
+          "induced-forgotten",
+          "canonical-construction",
+          "quotient-construction",
+          "canonical-embedding",
+          "combine-compatible",
+          "representation-equivalence",
+          "theorem-implication",
+          "classification",
+          "mathematical-formulation",
+          "framework-specialization"
+        ],
+        "crossFieldVisibility": "hidden",
+        "edgeLabels": true,
+        "junctions": false,
+        "edgeZoomActivation": false,
+        "layout": "atlas"
+      },
+      "nodeSequence": [
+        "category",
+        "functor",
+        "site",
+        "presheaf",
+        "sheaf",
+        "sheaf_stalk",
+        "sheaf_of_rings",
+        "ringed_space",
+        "local_ring",
+        "locally_ringed_space",
+        "commutative_ring",
+        "ring_localization",
+        "prime_spectrum",
+        "affine_scheme",
+        "scheme",
+        "scheme_over_base",
+        "noetherian_scheme",
+        "reduced_scheme",
+        "integral_scheme",
+        "regular_scheme",
+        "separated_scheme",
+        "projective_scheme",
+        "algebraic_variety",
+        "algebraic_space",
+        "grothendieck_topos",
+        "grothendieck_abelian_category",
+        "derived_category"
+      ]
+    },
+    {
+      "id": "orders-lattices-logics",
+      "title": "From orders to logics and spaces",
+      "summary": "Develop preorders, lattices, Boolean and Heyting algebras, frames, locales, and Kripke semantics from binary relations.",
+      "narrative": "A preorder becomes a thin category, while antisymmetry yields a partial order. Meets and joins produce semilattices and lattices; bounds and distributivity lead toward Boolean and Heyting algebras. Complete Heyting algebras are frames, whose opposites are locales. Boolean and modal algebras support classical and modal semantics; Heyting algebras and Kripke frames organize intuitionistic logic.",
+      "tags": [
+        "Mathematics",
+        "Order theory",
+        "Logic",
+        "Locales"
+      ],
+      "settings": {
+        "fields": [
+          "mathematics"
+        ],
+        "domains": [
+          "order",
+          "logic",
+          "category-theory",
+          "topology",
+          "algebra"
+        ],
+        "edgeTypes": [
+          "add-data",
+          "impose-axiom",
+          "induced-forgotten",
+          "canonical-construction",
+          "quotient-construction",
+          "canonical-embedding",
+          "combine-compatible",
+          "representation-equivalence",
+          "theorem-implication",
+          "classification",
+          "mathematical-formulation",
+          "framework-specialization"
+        ],
+        "crossFieldVisibility": "hidden",
+        "edgeLabels": true,
+        "junctions": false,
+        "edgeZoomActivation": false,
+        "layout": "atlas"
+      },
+      "nodeSequence": [
+        "binary_relation",
+        "preorder",
+        "thin_category",
+        "partial_order",
+        "meet_semilattice",
+        "join_semilattice",
+        "lattice",
+        "bounded_lattice",
+        "distributive_lattice",
+        "bounded_distributive_lattice",
+        "boolean_algebra",
+        "complete_boolean_algebra",
+        "modal_algebra",
+        "modal_kripke_model",
+        "heyting_algebra",
+        "frame",
+        "locale",
+        "intuitionistic_kripke_model"
+      ]
+    },
+    {
+      "id": "manifolds-and-geometric-structure",
+      "title": "Manifolds and geometric structure",
+      "summary": "Build smooth manifolds and then layer tangent, cotangent, bundle, differential-form, connection, curvature, metric, symplectic, complex, and contact structures.",
+      "narrative": "Local Euclidean charts turn topological spaces into manifolds; smooth compatibility enables calculus. Tangent and cotangent bundles support vector fields, tensors, and differential forms. Connections differentiate geometric data, curvature measures noncommutativity of covariant differentiation, and geodesics encode distinguished motion. Metrics, symplectic forms, Poisson brackets, complex structures, Hermitian metrics, Kähler compatibility, contact forms, and Lorentzian signature produce major geometric families.",
+      "tags": [
+        "Mathematics",
+        "Differential geometry",
+        "Manifolds",
+        "Geometry"
+      ],
+      "settings": {
+        "fields": [
+          "mathematics"
+        ],
+        "domains": [
+          "topology",
+          "differential-geometry",
+          "algebraic-topology",
+          "analysis"
+        ],
+        "edgeTypes": [
+          "add-data",
+          "impose-axiom",
+          "induced-forgotten",
+          "canonical-construction",
+          "quotient-construction",
+          "canonical-embedding",
+          "combine-compatible",
+          "representation-equivalence",
+          "theorem-implication",
+          "classification",
+          "mathematical-formulation",
+          "framework-specialization"
+        ],
+        "crossFieldVisibility": "hidden",
+        "edgeLabels": true,
+        "junctions": false,
+        "edgeZoomActivation": false,
+        "layout": "atlas"
+      },
+      "nodeSequence": [
+        "topological_space",
+        "locally_euclidean_space",
+        "topological_manifold",
+        "smooth_manifold",
+        "tangent_bundle",
+        "cotangent_bundle",
+        "smooth_vector_bundle",
+        "tensor_bundle",
+        "differential_form",
+        "tensor_field",
+        "manifold_with_connection",
+        "riemann_curvature_tensor",
+        "geodesic",
+        "riemannian_manifold",
+        "pseudo_riemannian_manifold",
+        "symplectic_manifold",
+        "poisson_manifold",
+        "complex_manifold",
+        "hermitian_manifold",
+        "kahler_manifold",
+        "contact_manifold",
+        "lorentzian_manifold"
+      ]
+    },
+    {
+      "id": "local-arithmetic-p-adic-world",
+      "title": "Local arithmetic and the $p$-adic world",
+      "summary": "Pass from number fields and Dedekind domains to valuations, places, completions, local fields, valuation rings, residue fields, and $p$-adic fields.",
+      "narrative": "Global arithmetic becomes tractable by examining one place at a time. Valuations define arithmetic notions of size and divisibility; their valuation rings and residue fields record integral and reduced information. Completing a number field at an Archimedean or non-Archimedean place produces real, complex, or $p$-adic local fields. Discrete valuation rings and complete local rings supply the local algebra used throughout number theory and algebraic geometry.",
+      "tags": [
+        "Mathematics",
+        "Number theory",
+        "$p$-adic",
+        "Local fields"
+      ],
+      "settings": {
+        "fields": [
+          "mathematics"
+        ],
+        "domains": [
+          "algebra",
+          "number-theory",
+          "algebraic-geometry",
+          "topology",
+          "analysis"
+        ],
+        "edgeTypes": [
+          "add-data",
+          "impose-axiom",
+          "induced-forgotten",
+          "canonical-construction",
+          "quotient-construction",
+          "canonical-embedding",
+          "combine-compatible",
+          "representation-equivalence",
+          "theorem-implication",
+          "classification",
+          "mathematical-formulation",
+          "framework-specialization"
+        ],
+        "crossFieldVisibility": "hidden",
+        "edgeLabels": true,
+        "junctions": false,
+        "edgeZoomActivation": false,
+        "layout": "atlas"
+      },
+      "nodeSequence": [
+        "integers",
+        "integral_domain",
+        "number_field",
+        "ring_of_integers",
+        "dedekind_domain",
+        "field",
+        "valuation",
+        "valued_field",
+        "valuation_ring",
+        "local_ring",
+        "residue_field",
+        "place_of_number_field",
+        "completion_at_valuation",
+        "complete_valued_field",
+        "topological_field",
+        "local_field",
+        "discrete_valuation_ring",
+        "complete_local_ring",
+        "p_adic_field"
+      ]
+    },
+    {
+      "id": "atomic-structure-and-spectra",
+      "title": "The atom becomes calculable",
+      "summary": "Follow the historical and mathematical route from spectral regularities and nuclear atoms to orbitals, many-electron methods, precision structure, and transitions.",
+      "narrative": "Balmer and Rydberg exposed regular spectral structure before quantum mechanics. Rutherford concentrated positive charge in the nucleus; Bohr captured hydrogen’s gross spectrum; the Schrödinger equation replaced orbits with states and orbitals. Quantum numbers, exclusion, shells, and configurations organize many-electron atoms, while Hartree, Hartree–Fock, configuration interaction, coupled cluster, and density-functional theory provide computational frameworks with different approximation structures. Fine, hyperfine, Lamb, Stark, and Zeeman effects refine the spectrum.",
+      "tags": [
+        "Physics",
+        "Atomic physics",
+        "Spectroscopy",
+        "Quantum mechanics"
+      ],
+      "settings": {
+        "fields": [
+          "physics"
+        ],
+        "domains": [
+          "quantum-mechanics",
+          "nuclear-physics",
+          "atomic-molecular-physics",
+          "electromagnetism",
+          "experiments-observations"
+        ],
+        "edgeTypes": [
+          "mathematical-formulation",
+          "framework-specialization",
+          "quantization",
+          "theory-component",
+          "describes-governs",
+          "composition",
+          "classification",
+          "state-description",
+          "transformation-process",
+          "mathematical-limit",
+          "effective-theory",
+          "emergence",
+          "couples-interacts",
+          "model-realization",
+          "historically-motivated",
+          "experimentally-verified-by",
+          "theorem-implication"
+        ],
+        "crossFieldVisibility": "hidden",
+        "edgeLabels": true,
+        "junctions": false,
+        "edgeZoomActivation": false,
+        "layout": "atlas"
+      },
+      "nodeSequence": [
+        "balmer_hydrogen_spectrum_observations",
+        "rydberg_formula",
+        "geiger_marsden_gold_foil_experiment",
+        "rutherford_model",
+        "bohr_model",
+        "quantum_mechanics",
+        "schrodinger_equation",
+        "hydrogen_atom",
+        "atomic_orbital",
+        "quantum_number",
+        "principal_quantum_number",
+        "orbital_quantum_number",
+        "electron_shell",
+        "electron_subshell",
+        "electron_configuration",
+        "pauli_exclusion_principle",
+        "many_electron_atom",
+        "hartree_method",
+        "hartree_fock_method",
+        "configuration_interaction_method",
+        "coupled_cluster_method",
+        "density_functional_theory",
+        "atomic_energy_level",
+        "atomic_transition",
+        "selection_rule",
+        "fine_structure",
+        "hyperfine_structure",
+        "lamb_shift",
+        "stark_effect",
+        "zeeman_effect"
+      ]
+    },
+    {
+      "id": "nuclear-structure-and-decay",
+      "title": "The structure of the atomic nucleus",
+      "summary": "Trace nuclear discovery, forces, many-body models, binding, shell structure, isotopes, and radioactive decay.",
+      "narrative": "Radioactivity and scattering revealed a compact nucleus whose constituents were later identified as protons and neutrons. QCD underlies the strong interaction, but nuclei are governed at low energy by residual nuclear forces and effective theories. Binding energy and mass defect quantify composite stability; liquid-drop, mean-field, and shell models capture complementary collective and single-particle regimes. Nuclear states and selection rules organize alpha, beta, and gamma decay.",
+      "tags": [
+        "Physics",
+        "Nuclear physics",
+        "Decay",
+        "Many-body systems"
+      ],
+      "settings": {
+        "fields": [
+          "physics"
+        ],
+        "domains": [
+          "quantum-field-theory",
+          "particle-physics",
+          "nuclear-physics",
+          "atomic-molecular-physics",
+          "experiments-observations"
+        ],
+        "edgeTypes": [
+          "mathematical-formulation",
+          "framework-specialization",
+          "quantization",
+          "theory-component",
+          "describes-governs",
+          "composition",
+          "classification",
+          "state-description",
+          "transformation-process",
+          "mathematical-limit",
+          "effective-theory",
+          "emergence",
+          "couples-interacts",
+          "model-realization",
+          "historically-motivated",
+          "experimentally-verified-by",
+          "theorem-implication"
+        ],
+        "crossFieldVisibility": "hidden",
+        "edgeLabels": true,
+        "junctions": false,
+        "edgeZoomActivation": false,
+        "layout": "atlas"
+      },
+      "nodeSequence": [
+        "radioactive_decay",
+        "geiger_marsden_gold_foil_experiment",
+        "atomic_nucleus",
+        "proton",
+        "neutron",
+        "nucleon",
+        "strong_interaction",
+        "nuclear_force",
+        "nuclear_effective_field_theory",
+        "nuclear_many_body_system",
+        "nuclear_binding_energy",
+        "mass_defect",
+        "liquid_drop_model",
+        "nuclear_mean_field",
+        "nuclear_shell_model",
+        "nuclear_magic_number_systematics",
+        "nuclear_state",
+        "nuclide",
+        "isotope",
+        "alpha_decay",
+        "beta_decay",
+        "gamma_decay"
+      ]
+    },
+    {
+      "id": "neutrino-discovery-and-oscillation",
+      "title": "The neutrino changes identity",
+      "summary": "Follow the neutrino from the beta-spectrum problem through direct detection, flavor, helicity, solar and atmospheric anomalies, mixing, and nonzero mass.",
+      "narrative": "The continuous beta spectrum motivated an unseen neutral particle and a new weak-interaction account. Reactor experiments detected electron antineutrinos; accelerator and helicity experiments distinguished flavors and chiral behavior. Solar and atmospheric deficits became evidence for propagation between flavor and mass bases. The PMNS matrix and oscillation phases connect flavor states to mass eigenstates; Super-Kamiokande and SNO established flavor change and therefore physics beyond massless-neutrino Standard Model assumptions.",
+      "tags": [
+        "Physics",
+        "Particle physics",
+        "Neutrinos",
+        "Experiments"
+      ],
+      "featured": true,
+      "settings": {
+        "fields": [
+          "physics"
+        ],
+        "domains": [
+          "quantum-mechanics",
+          "particle-physics",
+          "nuclear-physics",
+          "experiments-observations"
+        ],
+        "edgeTypes": [
+          "mathematical-formulation",
+          "framework-specialization",
+          "quantization",
+          "theory-component",
+          "describes-governs",
+          "composition",
+          "classification",
+          "state-description",
+          "transformation-process",
+          "mathematical-limit",
+          "effective-theory",
+          "emergence",
+          "couples-interacts",
+          "model-realization",
+          "historically-motivated",
+          "experimentally-verified-by",
+          "theorem-implication"
+        ],
+        "crossFieldVisibility": "hidden",
+        "edgeLabels": true,
+        "junctions": false,
+        "edgeZoomActivation": false,
+        "layout": "atlas"
+      },
+      "nodeSequence": [
+        "continuous_beta_spectrum_problem",
+        "neutrino",
+        "weak_interaction",
+        "cowan_reines_neutrino_experiment",
+        "electron_neutrino",
+        "goldhaber_neutrino_helicity_experiment",
+        "brookhaven_muon_neutrino_experiment",
+        "muon_neutrino",
+        "solar_neutrino_problem",
+        "neutrino_flavor_state",
+        "neutrino_mass_eigenstate",
+        "pmns_matrix",
+        "neutrino_mixing",
+        "neutrino_oscillation",
+        "super_k_atmospheric_neutrino_oscillation",
+        "sno_solar_neutrino_flavor_change",
+        "neutrino_mass"
+      ]
+    },
+    {
+      "id": "architectures-of-categories",
+      "title": "Architectures of category theory",
+      "summary": "Explore the basic language of functors, natural transformations, universal constructions, and the major structural families of categories.",
+      "narrative": "Categories organize objects and transformations; functors transport structure and natural transformations compare transports. Limits, colimits, and adjunctions express universal constructions. From this common language branch cartesian and closed categories, monoidal and dagger categories, additive and abelian categories, exact and derived settings, and sheaf/topos architectures. The Story emphasizes that these are distinct enrichments and axiomatizations rather than a single linear hierarchy.",
+      "tags": [
+        "Mathematics",
+        "Category theory",
+        "Universal properties",
+        "Structures"
+      ],
+      "settings": {
+        "fields": [
+          "mathematics"
+        ],
+        "domains": [
+          "category-theory",
+          "homological-algebra",
+          "algebraic-geometry",
+          "algebra"
+        ],
+        "edgeTypes": [
+          "add-data",
+          "impose-axiom",
+          "induced-forgotten",
+          "canonical-construction",
+          "quotient-construction",
+          "canonical-embedding",
+          "combine-compatible",
+          "representation-equivalence",
+          "theorem-implication",
+          "classification",
+          "mathematical-formulation",
+          "framework-specialization"
+        ],
+        "crossFieldVisibility": "hidden",
+        "edgeLabels": true,
+        "junctions": false,
+        "edgeZoomActivation": false,
+        "layout": "atlas"
+      },
+      "nodeSequence": [
+        "category",
+        "functor",
+        "natural_transformation",
+        "categorical_limit",
+        "categorical_colimit",
+        "adjunction",
+        "cartesian_category",
+        "finitely_complete_category",
+        "cartesian_closed_category",
+        "monoidal_category",
+        "braided_monoidal_category",
+        "symmetric_monoidal_category",
+        "closed_monoidal_category",
+        "compact_closed_category",
+        "dagger_category",
+        "preadditive_category",
+        "additive_category",
+        "abelian_category",
+        "exact_category",
+        "triangulated_category",
+        "dg_category",
+        "derived_category",
+        "presheaf",
+        "site",
+        "sheaf",
+        "elementary_topos",
+        "grothendieck_topos"
+      ]
+    },
+    {
+      "id": "homotopy-homology-cohomology",
+      "title": "Homotopy, homology, and cohomology",
+      "summary": "Compare deformation-based and algebraic invariants of spaces, from loops and homotopy groups to chain complexes, homology, cohomology rings, and exact sequences.",
+      "narrative": "Homotopy treats continuous maps as equivalent when one deforms into another. Loop spaces produce the fundamental group and higher homotopy groups, while CW complexes and geometric realizations of simplicial sets provide workable models. Singular chains turn spaces into chain complexes; cycles modulo boundaries give homology. Dual cochains yield cohomology, whose cup product adds ring structure. Exact and long exact sequences transmit information across pairs, fibrations, and short exact sequences.",
+      "tags": [
+        "Mathematics",
+        "Algebraic topology",
+        "Homotopy",
+        "Cohomology"
+      ],
+      "featured": true,
+      "settings": {
+        "fields": [
+          "mathematics"
+        ],
+        "domains": [
+          "topology",
+          "algebraic-topology",
+          "homological-algebra",
+          "algebra",
+          "category-theory"
+        ],
+        "edgeTypes": [
+          "add-data",
+          "impose-axiom",
+          "induced-forgotten",
+          "canonical-construction",
+          "quotient-construction",
+          "canonical-embedding",
+          "combine-compatible",
+          "representation-equivalence",
+          "theorem-implication",
+          "classification",
+          "mathematical-formulation",
+          "framework-specialization"
+        ],
+        "crossFieldVisibility": "hidden",
+        "edgeLabels": true,
+        "junctions": false,
+        "edgeZoomActivation": false,
+        "layout": "atlas"
+      },
+      "nodeSequence": [
+        "topological_space",
+        "pointed_topological_space",
+        "homotopy",
+        "homotopy_equivalence",
+        "contractible_space",
+        "loop_space",
+        "fundamental_group",
+        "simply_connected_space",
+        "covering_space",
+        "higher_homotopy_group",
+        "cw_complex",
+        "simplicial_set",
+        "singular_chain_complex",
+        "chain_complex",
+        "homology_group",
+        "singular_cochain_complex",
+        "cochain_complex",
+        "cohomology_group",
+        "cohomology_ring",
+        "exact_sequence",
+        "long_exact_sequence",
+        "model_category"
+      ]
+    },
+    {
+      "id": "computability-and-incompleteness",
+      "title": "Computability and incompleteness",
+      "summary": "Follow the formalization of algorithms to universal machines, undecidability, arithmetized syntax, and Gödel’s limits on effective formal theories.",
+      "narrative": "Turing machines make mechanical procedure mathematically precise and define computable functions, decidable problems, and computably enumerable sets. Universality enables machines to process encoded machines; diagonalization proves the halting problem undecidable. Formal proof systems and Gödel numbering make syntax itself arithmetical. For consistent effective theories strong enough for arithmetic, the first theorem forces incompleteness and the second blocks an internal proof of consistency under the standard derivability conditions.",
+      "tags": [
+        "Mathematics",
+        "Computability",
+        "Logic",
+        "Incompleteness"
+      ],
+      "featured": true,
+      "settings": {
+        "fields": [
+          "mathematics"
+        ],
+        "domains": [
+          "computability-theory",
+          "logic",
+          "foundation",
+          "number-theory"
+        ],
+        "edgeTypes": [
+          "add-data",
+          "impose-axiom",
+          "induced-forgotten",
+          "canonical-construction",
+          "quotient-construction",
+          "canonical-embedding",
+          "combine-compatible",
+          "representation-equivalence",
+          "theorem-implication",
+          "classification",
+          "mathematical-formulation",
+          "framework-specialization",
+          "describes-governs",
+          "historically-motivated"
+        ],
+        "crossFieldVisibility": "hidden",
+        "edgeLabels": true,
+        "junctions": false,
+        "edgeZoomActivation": false,
+        "layout": "atlas"
+      },
+      "nodeSequence": [
+        "algorithm",
+        "decision_problem",
+        "turing_machine",
+        "computable_function",
+        "recursively_enumerable_set",
+        "universal_turing_machine",
+        "decidable_problem",
+        "undecidable_problem",
+        "halting_problem",
+        "church_turing_thesis",
+        "first_order_theory",
+        "formal_proof_system",
+        "consistent_theory",
+        "syntactically_complete_theory",
+        "natural_numbers",
+        "godel_numbering",
+        "hilbert_program",
+        "first_incompleteness_theorem",
+        "second_incompleteness_theorem"
+      ]
+    },
+    {
+      "id": "galois-theory-polynomials-symmetry",
+      "title": "Galois theory: polynomial equations and symmetry",
+      "summary": "See how field extensions, splitting fields, automorphism groups, and subgroup lattices encode polynomial solvability.",
+      "narrative": "A polynomial over a field may require adjoining roots. Algebraic, separable, and normal extensions isolate the conditions under which all embeddings and roots behave symmetrically; their conjunction is a Galois extension. Base-fixing field automorphisms form the Galois group. The fundamental theorem reverses inclusion between intermediate fields and subgroups, converting field questions into group structure. Solvable groups then characterize solvability by radicals under the standard hypotheses.",
+      "tags": [
+        "Mathematics",
+        "Algebra",
+        "Galois theory",
+        "Polynomials"
+      ],
+      "settings": {
+        "fields": [
+          "mathematics"
+        ],
+        "domains": [
+          "algebra",
+          "number-theory",
+          "representation-theory",
+          "algebraic-geometry"
+        ],
+        "edgeTypes": [
+          "add-data",
+          "impose-axiom",
+          "induced-forgotten",
+          "canonical-construction",
+          "quotient-construction",
+          "canonical-embedding",
+          "combine-compatible",
+          "representation-equivalence",
+          "theorem-implication",
+          "classification",
+          "mathematical-formulation",
+          "framework-specialization"
+        ],
+        "crossFieldVisibility": "hidden",
+        "edgeLabels": true,
+        "junctions": true,
+        "edgeZoomActivation": false,
+        "layout": "atlas"
+      },
+      "nodeSequence": [
+        "commutative_ring",
+        "polynomial_ring",
+        "field",
+        "field_extension",
+        "algebraic_extension",
+        "separable_extension",
+        "normal_extension",
+        "splitting_field",
+        "field_automorphism",
+        "galois_extension",
+        "galois_group",
+        "fixed_field",
+        "fundamental_theorem_galois_theory",
+        "solvable_group",
+        "solvability_by_radicals"
+      ]
+    },
+    {
+      "id": "black-holes-and-cosmology",
+      "title": "Black holes and cosmology",
+      "summary": "Extend general relativity from exact black-hole geometries and gravitational collapse to FLRW cosmology, the hot Big Bang, inflation, dark components, and $\\Lambda$CDM.",
+      "narrative": "The black-hole branch follows Einstein’s equation to Schwarzschild and Kerr spacetimes, collapse, horizons, binaries, gravitational-wave detection, and semiclassical Hawking radiation. The cosmology branch imposes large-scale homogeneity and isotropy, yielding FLRW geometry and Friedmann dynamics. Expansion supports the hot Big Bang; the cosmic microwave background tests it; inflation supplies an early accelerated phase; dark matter and dark energy enter the concordance $\\Lambda$CDM model.",
+      "tags": [
+        "Physics",
+        "Relativity",
+        "Black holes",
+        "Cosmology"
+      ],
+      "featured": true,
+      "settings": {
+        "fields": [
+          "physics"
+        ],
+        "domains": [
+          "relativity",
+          "cosmology",
+          "quantum-field-theory",
+          "particle-physics",
+          "nuclear-physics",
+          "experiments-observations"
+        ],
+        "edgeTypes": [
+          "combine-compatible",
+          "mathematical-formulation",
+          "framework-specialization",
+          "quantization",
+          "theory-component",
+          "describes-governs",
+          "composition",
+          "classification",
+          "state-description",
+          "transformation-process",
+          "mathematical-limit",
+          "effective-theory",
+          "emergence",
+          "couples-interacts",
+          "model-realization",
+          "historically-motivated",
+          "experimentally-verified-by",
+          "theorem-implication"
+        ],
+        "crossFieldVisibility": "hidden",
+        "edgeLabels": true,
+        "junctions": true,
+        "edgeZoomActivation": false,
+        "layout": "atlas"
+      },
+      "nodeSequence": [
+        "general_relativity",
+        "einstein_field_equation",
+        "schwarzschild_spacetime",
+        "kerr_spacetime",
+        "gravitational_collapse",
+        "black_hole",
+        "event_horizon",
+        "binary_black_hole",
+        "gw150914_detection",
+        "hawking_radiation",
+        "cosmological_principle",
+        "flrw_spacetime",
+        "friedmann_equations",
+        "expanding_universe",
+        "big_bang_model",
+        "cosmological_inflation",
+        "cosmic_microwave_background",
+        "dark_matter",
+        "dark_energy",
+        "lambda_cdm_model"
+      ]
+    },
+    {
+      "id": "local-global-principles",
+      "title": "Local–global principles in arithmetic",
+      "summary": "Compare global rational solutions with solutions over every real and $p$-adic completion, including both Hasse–Minkowski success and genuine failures.",
+      "narrative": "A number field has many places, each producing a local completion. A global rational point necessarily gives points in every completion, but the converse is a substantive theorem when true. Adeles collect all local fields at once. An everywhere locally soluble variety has a point over each completion. Quadratic forms satisfy the Hasse–Minkowski theorem, a clean local–global principle; other varieties can be everywhere locally soluble yet have no global point, showing why local evidence and global existence must be separated.",
+      "tags": [
+        "Mathematics",
+        "Number theory",
+        "Algebraic geometry",
+        "Local-global"
+      ],
+      "featured": true,
+      "settings": {
+        "fields": [
+          "mathematics"
+        ],
+        "domains": [
+          "number-theory",
+          "algebraic-geometry",
+          "algebra",
+          "topology",
+          "analysis"
+        ],
+        "edgeTypes": [
+          "add-data",
+          "impose-axiom",
+          "induced-forgotten",
+          "canonical-construction",
+          "quotient-construction",
+          "canonical-embedding",
+          "combine-compatible",
+          "representation-equivalence",
+          "theorem-implication",
+          "classification",
+          "mathematical-formulation",
+          "framework-specialization"
+        ],
+        "crossFieldVisibility": "hidden",
+        "edgeLabels": true,
+        "junctions": true,
+        "edgeZoomActivation": false,
+        "layout": "atlas"
+      },
+      "nodeSequence": [
+        "global_field",
+        "number_field",
+        "place_of_number_field",
+        "valuation",
+        "completion_at_valuation",
+        "local_field",
+        "p_adic_field",
+        "algebraic_variety",
+        "rational_point",
+        "local_point",
+        "adele_ring",
+        "everywhere_locally_soluble_variety",
+        "local_global_principle",
+        "quadratic_form",
+        "smooth_projective_quadric",
+        "hasse_minkowski_theorem",
+        "failure_hasse_principle"
       ]
     }
   ]

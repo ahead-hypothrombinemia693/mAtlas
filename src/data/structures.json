@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Atlas of Fundamental Concepts",
-    "version": "1.4.0",
+    "version": "1.5.0",
     "description": "A source-backed visual atlas connecting the mathematics of physical theories to foundational laws, spacetime, quantum mechanics, QFT, Standard Model fields and interactions, controlled reductions and effective theories, composite hadrons and nuclei, and precision atomic structure.",
     "direction": "Fields are stacked vertically. Within a field, smaller level values are more structurally primitive or less composite; larger values generally indicate specialization, composition, effective description, collective organization, or emergence. The order is ontological and structural, not pedagogical difficulty.",
     "scope": "Mathematics and a deeply sourced physics atlas from classical and relativistic foundations through quantum mechanics, QFT consistency and symmetry structure, complete Standard Model field and particle content, electroweak and low-energy EFT matching, QCD chiral and nuclear effective layers, and atomic composition, states, spectra, interactions, and precision corrections through atoms and ions.",
@@ -39,6 +39,7 @@
       "set-theory",
       "order",
       "logic",
+      "computability-theory",
       "category-theory",
       "combinatorics",
       "universal-algebra",
@@ -57,6 +58,7 @@
       "physical-foundations",
       "classical-mechanics",
       "relativity",
+      "cosmology",
       "electromagnetism",
       "quantum-mechanics",
       "quantum-field-theory",
@@ -123,6 +125,12 @@
       "label": "Logic",
       "color": "#6d28d9",
       "order": 2,
+      "field": "mathematics"
+    },
+    "computability-theory": {
+      "label": "Computability theory",
+      "color": "#4f46e5",
+      "order": 2.5,
       "field": "mathematics"
     },
     "category-theory": {
@@ -207,6 +215,12 @@
       "label": "Relativity & gravitation",
       "color": "#7c3aed",
       "order": 102,
+      "field": "physics"
+    },
+    "cosmology": {
+      "label": "Cosmology",
+      "color": "#6d28d9",
+      "order": 102.25,
       "field": "physics"
     },
     "quantum-mechanics": {
@@ -8237,6 +8251,180 @@
       "title": "Supercompact cardinal",
       "url": "https://en.wikipedia.org/wiki/Supercompact_cardinal",
       "kind": "encyclopedic reference"
+    },
+    "milne-fields-galois-theory": {
+      "label": "Milne — Fields and Galois Theory",
+      "title": "Fields and Galois Theory",
+      "url": "https://www.jmilne.org/math/CourseNotes/FT.pdf",
+      "kind": "course text"
+    },
+    "turing-computable-numbers": {
+      "label": "Turing — On Computable Numbers",
+      "title": "On Computable Numbers, with an Application to the Entscheidungsproblem",
+      "url": "https://doi.org/10.1112/plms/s2-42.1.230",
+      "kind": "original research paper"
+    },
+    "godel-incompleteness-paper": {
+      "label": "Gödel — Über formal unentscheidbare Sätze",
+      "title": "Über formal unentscheidbare Sätze der Principia Mathematica und verwandter Systeme I",
+      "url": "https://doi.org/10.1007/BF01700692",
+      "kind": "original research paper"
+    },
+    "openlogic-incompleteness": {
+      "label": "Open Logic Project — Incompleteness",
+      "title": "Incompleteness",
+      "url": "https://builds.openlogicproject.org/content/incompleteness/incompleteness.pdf",
+      "kind": "open textbook"
+    },
+    "nasa-black-holes": {
+      "label": "NASA Science — Black holes",
+      "title": "Black Holes",
+      "url": "https://science.nasa.gov/universe/black-holes/",
+      "kind": "NASA scientific reference"
+    },
+    "nasa-big-bang": {
+      "label": "NASA Science — The Big Bang",
+      "title": "The Big Bang",
+      "url": "https://science.nasa.gov/universe/the-big-bang/",
+      "kind": "NASA scientific reference"
+    },
+    "nasa-dark-matter": {
+      "label": "NASA Science — Dark matter",
+      "title": "Dark Matter",
+      "url": "https://science.nasa.gov/dark-matter/",
+      "kind": "NASA scientific reference"
+    },
+    "nasa-dark-energy": {
+      "label": "NASA Science — Dark energy",
+      "title": "What is Dark Energy?",
+      "url": "https://science.nasa.gov/dark-energy/",
+      "kind": "NASA scientific reference"
+    },
+    "einstein-online-black-holes": {
+      "label": "Einstein Online — Black holes",
+      "title": "Black holes & Co.",
+      "url": "https://www.einstein-online.info/en/blackHoles/",
+      "kind": "Max Planck Institute reference"
+    },
+    "ligo-gravitational-wave-science": {
+      "label": "LIGO Scientific Collaboration — Gravitational-wave science",
+      "title": "Gravitational-Wave Science",
+      "url": "https://ligo.org/gravitational-wave-science/",
+      "kind": "official collaboration reference"
+    },
+    "wp-physics-black-hole": {
+      "label": "Wikipedia — Black hole",
+      "title": "Black hole",
+      "url": "https://en.wikipedia.org/wiki/Black_hole",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-event-horizon": {
+      "label": "Wikipedia — Event horizon",
+      "title": "Event horizon",
+      "url": "https://en.wikipedia.org/wiki/Event_horizon",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-schwarzschild-spacetime": {
+      "label": "Wikipedia — Schwarzschild metric",
+      "title": "Schwarzschild metric",
+      "url": "https://en.wikipedia.org/wiki/Schwarzschild_metric",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-kerr-spacetime": {
+      "label": "Wikipedia — Kerr metric",
+      "title": "Kerr metric",
+      "url": "https://en.wikipedia.org/wiki/Kerr_metric",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-gravitational-collapse": {
+      "label": "Wikipedia — Gravitational collapse",
+      "title": "Gravitational collapse",
+      "url": "https://en.wikipedia.org/wiki/Gravitational_collapse",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-binary-black-hole": {
+      "label": "Wikipedia — Binary black hole",
+      "title": "Binary black hole",
+      "url": "https://en.wikipedia.org/wiki/Binary_black_hole",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-hawking-radiation": {
+      "label": "Wikipedia — Hawking radiation",
+      "title": "Hawking radiation",
+      "url": "https://en.wikipedia.org/wiki/Hawking_radiation",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-cosmological-principle": {
+      "label": "Wikipedia — Cosmological principle",
+      "title": "Cosmological principle",
+      "url": "https://en.wikipedia.org/wiki/Cosmological_principle",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-flrw-spacetime": {
+      "label": "Wikipedia — Friedmann–Lemaître–Robertson–Walker metric",
+      "title": "Friedmann–Lemaître–Robertson–Walker metric",
+      "url": "https://en.wikipedia.org/wiki/Friedmann%E2%80%93Lema%C3%AEtre%E2%80%93Robertson%E2%80%93Walker_metric",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-friedmann-equations": {
+      "label": "Wikipedia — Friedmann equations",
+      "title": "Friedmann equations",
+      "url": "https://en.wikipedia.org/wiki/Friedmann_equations",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-expanding-universe": {
+      "label": "Wikipedia — Expansion of the universe",
+      "title": "Expansion of the universe",
+      "url": "https://en.wikipedia.org/wiki/Expansion_of_the_universe",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-big-bang-model": {
+      "label": "Wikipedia — Big Bang",
+      "title": "Big Bang",
+      "url": "https://en.wikipedia.org/wiki/Big_Bang",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-cosmic-microwave-background": {
+      "label": "Wikipedia — Cosmic microwave background",
+      "title": "Cosmic microwave background",
+      "url": "https://en.wikipedia.org/wiki/Cosmic_microwave_background",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-cosmological-inflation": {
+      "label": "Wikipedia — Cosmic inflation",
+      "title": "Cosmic inflation",
+      "url": "https://en.wikipedia.org/wiki/Inflation_(cosmology)",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-dark-matter": {
+      "label": "Wikipedia — Dark matter",
+      "title": "Dark matter",
+      "url": "https://en.wikipedia.org/wiki/Dark_matter",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-dark-energy": {
+      "label": "Wikipedia — Dark energy",
+      "title": "Dark energy",
+      "url": "https://en.wikipedia.org/wiki/Dark_energy",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-lambda-cdm-model": {
+      "label": "Wikipedia — Lambda-CDM model",
+      "title": "Lambda-CDM model",
+      "url": "https://en.wikipedia.org/wiki/Lambda-CDM_model",
+      "kind": "encyclopedic reference"
+    },
+    "wp-physics-bell_theorem": {
+      "label": "Wikipedia — Bell’s theorem",
+      "title": "Bell’s theorem",
+      "url": "https://en.wikipedia.org/wiki/Bell%27s_theorem",
+      "kind": "encyclopedic reference"
+    },
+    "poonen-rational-points-varieties": {
+      "label": "Poonen — Rational Points on Varieties",
+      "title": "Rational Points on Varieties",
+      "url": "https://math.mit.edu/~poonen/papers/Qpoints.pdf",
+      "kind": "monograph"
     }
   },
   "nodes": [
@@ -32860,6 +33048,2603 @@
         "pdg-rpp"
       ],
       "status": "Observed / performed"
+    },
+    {
+      "id": "functor",
+      "label": "Functor",
+      "primaryDomain": "category-theory",
+      "domains": [
+        "category-theory"
+      ],
+      "level": 4,
+      "kind": "structure",
+      "summary": "A mapping between categories that sends objects to objects and morphisms to morphisms while preserving identities and composition.",
+      "carriers": [
+        "categories $\\mathcal C,\\mathcal D$"
+      ],
+      "data": [
+        "object assignment",
+        "morphism assignment"
+      ],
+      "axioms": [
+        "preserves identities",
+        "preserves composition"
+      ],
+      "induces": [
+        "Images of diagrams and morphisms"
+      ],
+      "notes": "",
+      "citations": [
+        "riehl-category-context"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "natural_transformation",
+      "label": "Natural transformation",
+      "primaryDomain": "category-theory",
+      "domains": [
+        "category-theory"
+      ],
+      "level": 5,
+      "kind": "structure",
+      "summary": "A morphism between functors whose components commute naturally with every morphism of the source category.",
+      "carriers": [
+        "functors $F,G:\\mathcal C\\to\\mathcal D$"
+      ],
+      "data": [
+        "component $\\eta_X:F(X)\\to G(X)$ for each object $X$"
+      ],
+      "axioms": [
+        "naturality squares commute"
+      ],
+      "induces": [
+        "Vertical and horizontal composition"
+      ],
+      "notes": "",
+      "citations": [
+        "riehl-category-context"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "adjunction",
+      "label": "Adjunction",
+      "primaryDomain": "category-theory",
+      "domains": [
+        "category-theory"
+      ],
+      "level": 6,
+      "kind": "structure",
+      "summary": "A pair of functors $F:\\mathcal C\\rightleftarrows\\mathcal D:G$ equipped with natural bijections $\\operatorname{Hom}(F X,Y)\\cong\\operatorname{Hom}(X,GY)$.",
+      "carriers": [
+        "categories and two functors"
+      ],
+      "data": [
+        "unit and counit, or natural hom-set bijection"
+      ],
+      "axioms": [
+        "triangle identities"
+      ],
+      "induces": [
+        "Monads, universal constructions, and preservation theorems"
+      ],
+      "notes": "",
+      "citations": [
+        "riehl-category-context"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "categorical_limit",
+      "label": "Categorical limit",
+      "primaryDomain": "category-theory",
+      "domains": [
+        "category-theory"
+      ],
+      "level": 5,
+      "kind": "structure",
+      "summary": "A universal cone to a diagram, simultaneously generalizing products, equalizers, pullbacks, and inverse limits.",
+      "carriers": [
+        "diagram $D:J\\to\\mathcal C$"
+      ],
+      "data": [
+        "cone with vertex $L$"
+      ],
+      "axioms": [
+        "terminal among cones"
+      ],
+      "induces": [
+        "Products, equalizers, and pullbacks"
+      ],
+      "notes": "",
+      "citations": [
+        "riehl-category-context"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "categorical_colimit",
+      "label": "Categorical colimit",
+      "primaryDomain": "category-theory",
+      "domains": [
+        "category-theory"
+      ],
+      "level": 5,
+      "kind": "structure",
+      "summary": "A universal cocone from a diagram, simultaneously generalizing coproducts, coequalizers, pushouts, and direct limits.",
+      "carriers": [
+        "diagram $D:J\\to\\mathcal C$"
+      ],
+      "data": [
+        "cocone with vertex $C$"
+      ],
+      "axioms": [
+        "initial among cocones"
+      ],
+      "induces": [
+        "Coproducts, coequalizers, and pushouts"
+      ],
+      "notes": "",
+      "citations": [
+        "riehl-category-context"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "ring_localization",
+      "label": "Localization of a commutative ring",
+      "primaryDomain": "algebraic-geometry",
+      "domains": [
+        "algebraic-geometry",
+        "algebra"
+      ],
+      "level": 9,
+      "kind": "structure",
+      "summary": "For a multiplicative subset $S\\subseteq R$, the ring $S^{-1}R$ obtained by formally inverting every element of $S$.",
+      "carriers": [
+        "commutative ring $R$",
+        "multiplicative subset $S$"
+      ],
+      "data": [
+        "fractions $r/s$ modulo the localization relation"
+      ],
+      "axioms": [
+        "elements of $S$ become units"
+      ],
+      "induces": [
+        "Local rings $R_{\\mathfrak p}$ and basic open coordinate rings"
+      ],
+      "notes": "",
+      "citations": [
+        "stacks-algebra-text"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "prime_spectrum",
+      "label": "Prime spectrum $\\operatorname{Spec}(R)$",
+      "primaryDomain": "algebraic-geometry",
+      "domains": [
+        "algebraic-geometry",
+        "topology",
+        "algebra"
+      ],
+      "level": 10,
+      "kind": "structure",
+      "summary": "The set of prime ideals of a commutative ring $R$, equipped with the Zariski topology and its structure sheaf.",
+      "carriers": [
+        "commutative ring $R$"
+      ],
+      "data": [
+        "prime ideals",
+        "Zariski topology",
+        "structure sheaf"
+      ],
+      "axioms": [],
+      "induces": [
+        "An affine scheme"
+      ],
+      "notes": "",
+      "citations": [
+        "stacks-schemes-text"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "sheaf_stalk",
+      "label": "Stalk of a sheaf",
+      "primaryDomain": "algebraic-geometry",
+      "domains": [
+        "algebraic-geometry",
+        "topology",
+        "category-theory"
+      ],
+      "level": 7,
+      "kind": "structure",
+      "summary": "The filtered colimit of sections over neighborhoods of a point, identifying sections that agree on some smaller neighborhood.",
+      "carriers": [
+        "sheaf $\\mathcal F$ on a space",
+        "point $x$"
+      ],
+      "data": [
+        "germs of local sections at $x$"
+      ],
+      "axioms": [],
+      "induces": [
+        "A local object $\\mathcal F_x$"
+      ],
+      "notes": "",
+      "citations": [
+        "stacks-schemes-text"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "bell_theorem",
+      "label": "Bell theorem",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "quantum-mechanics",
+      "domains": [
+        "quantum-mechanics",
+        "physical-foundations"
+      ],
+      "level": 9,
+      "kind": "structure",
+      "conceptType": "No-go theorem",
+      "summary": "Bell inequalities constrain correlations produced by local hidden-variable models, while quantum mechanics predicts and experiments observe violations under appropriate conditions.",
+      "citations": [
+        "wp-physics-bell_theorem",
+        "nist-quantum-theory",
+        "horodecki-entanglement-review"
+      ]
+    },
+    {
+      "id": "valuation",
+      "label": "Valuation",
+      "primaryDomain": "number-theory",
+      "domains": [
+        "number-theory",
+        "algebra"
+      ],
+      "level": 10,
+      "kind": "structure",
+      "summary": "A map $v$ from a field or integral domain to an ordered abelian group with $\\infty$ satisfying $v(xy)=v(x)+v(y)$ and $v(x+y)\\ge\\min(v(x),v(y))$.",
+      "carriers": [
+        "field or integral domain"
+      ],
+      "data": [
+        "ordered value group",
+        "valuation map"
+      ],
+      "axioms": [
+        "$v(0)=\\infty$",
+        "$v(xy)=v(x)+v(y)$",
+        "$v(x+y)\\ge\\min(v(x),v(y))$"
+      ],
+      "induces": [
+        "A valuation ring and topology"
+      ],
+      "notes": "Equivalent multiplicative conventions use a non-Archimedean absolute value; Archimedean absolute values are treated separately when discussing places of number fields.",
+      "citations": [
+        "milne-algebraic-number-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "completion_at_valuation",
+      "label": "Completion at a valuation",
+      "primaryDomain": "number-theory",
+      "domains": [
+        "number-theory",
+        "analysis",
+        "topology"
+      ],
+      "level": 12,
+      "kind": "structure",
+      "summary": "The complete valued field obtained by completing a field in the metric or uniformity induced by a valuation or absolute value.",
+      "carriers": [
+        "valued field"
+      ],
+      "data": [
+        "Cauchy-equivalence classes"
+      ],
+      "axioms": [
+        "completeness"
+      ],
+      "induces": [
+        "A local field in the locally compact cases"
+      ],
+      "notes": "",
+      "citations": [
+        "milne-algebraic-number-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "residue_field",
+      "label": "Residue field",
+      "primaryDomain": "number-theory",
+      "domains": [
+        "number-theory",
+        "algebraic-geometry",
+        "algebra"
+      ],
+      "level": 11,
+      "kind": "structure",
+      "summary": "For a local ring $(R,\\mathfrak m)$, the quotient field $R/\\mathfrak m$.",
+      "carriers": [
+        "local ring $(R,\\mathfrak m)$"
+      ],
+      "data": [
+        "quotient $R/\\mathfrak m$"
+      ],
+      "axioms": [],
+      "induces": [
+        "Reduction modulo the maximal ideal"
+      ],
+      "notes": "",
+      "citations": [
+        "stacks-algebra-text"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "place_of_number_field",
+      "label": "Place of a number field",
+      "primaryDomain": "number-theory",
+      "domains": [
+        "number-theory"
+      ],
+      "level": 12,
+      "kind": "structure",
+      "summary": "An equivalence class of absolute values on a number field, including Archimedean places and non-Archimedean places associated with prime ideals.",
+      "carriers": [
+        "number field $K$"
+      ],
+      "data": [
+        "equivalence class of absolute values"
+      ],
+      "axioms": [],
+      "induces": [
+        "A completion $K_v$"
+      ],
+      "notes": "",
+      "citations": [
+        "milne-algebraic-number-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "homotopy",
+      "label": "Homotopy",
+      "primaryDomain": "algebraic-topology",
+      "domains": [
+        "algebraic-topology",
+        "topology"
+      ],
+      "level": 4,
+      "kind": "structure",
+      "summary": "A continuous deformation between two continuous maps, represented by a map $H:X\\times[0,1]\\to Y$.",
+      "carriers": [
+        "spaces $X,Y$",
+        "maps $f,g:X\\to Y$"
+      ],
+      "data": [
+        "continuous family $H_t$"
+      ],
+      "axioms": [
+        "endpoint conditions $H_0=f$ and $H_1=g$"
+      ],
+      "induces": [
+        "An equivalence relation on maps with fixed domain and codomain"
+      ],
+      "notes": "",
+      "citations": [
+        "hatcher-algebraic-topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "homotopy_equivalence",
+      "label": "Homotopy equivalence",
+      "primaryDomain": "algebraic-topology",
+      "domains": [
+        "algebraic-topology",
+        "topology"
+      ],
+      "level": 5,
+      "kind": "structure",
+      "summary": "A pair of maps whose composites are homotopic to the corresponding identity maps.",
+      "carriers": [
+        "spaces $X,Y$"
+      ],
+      "data": [
+        "maps $f:X\\to Y$ and $g:Y\\to X$"
+      ],
+      "axioms": [
+        "$gf\\simeq\\mathrm{id}_X$ and $fg\\simeq\\mathrm{id}_Y$"
+      ],
+      "induces": [
+        "A common homotopy type"
+      ],
+      "notes": "",
+      "citations": [
+        "hatcher-algebraic-topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "loop_space",
+      "label": "Loop space $\\Omega X$",
+      "primaryDomain": "algebraic-topology",
+      "domains": [
+        "algebraic-topology",
+        "topology"
+      ],
+      "level": 5,
+      "kind": "structure",
+      "summary": "The space of based loops in a pointed space, with concatenation associative up to coherent homotopy.",
+      "carriers": [
+        "pointed space $(X,x_0)$"
+      ],
+      "data": [
+        "based continuous maps $S^1\\to X$"
+      ],
+      "axioms": [],
+      "induces": [
+        "Homotopy groups through path components and iteration"
+      ],
+      "notes": "",
+      "citations": [
+        "hatcher-algebraic-topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "fundamental_group",
+      "label": "Fundamental group $\\pi_1(X,x_0)$",
+      "primaryDomain": "algebraic-topology",
+      "domains": [
+        "algebraic-topology",
+        "algebra"
+      ],
+      "level": 6,
+      "kind": "structure",
+      "summary": "The group of based loops modulo based homotopy, with multiplication by concatenation.",
+      "carriers": [
+        "pointed topological space"
+      ],
+      "data": [
+        "based-loop homotopy classes"
+      ],
+      "axioms": [
+        "group laws induced by concatenation"
+      ],
+      "induces": [
+        "Covering-space classification under standard hypotheses"
+      ],
+      "notes": "",
+      "citations": [
+        "hatcher-algebraic-topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "higher_homotopy_group",
+      "label": "Higher homotopy group $\\pi_n(X,x_0)$",
+      "primaryDomain": "algebraic-topology",
+      "domains": [
+        "algebraic-topology",
+        "algebra"
+      ],
+      "level": 7,
+      "kind": "structure",
+      "summary": "For $n\\ge 2$, the group of based homotopy classes of maps $S^n\\to X$; these groups are abelian.",
+      "carriers": [
+        "pointed topological space",
+        "integer $n\\ge2$"
+      ],
+      "data": [
+        "based maps from $S^n$ modulo homotopy"
+      ],
+      "axioms": [],
+      "induces": [
+        "Higher-dimensional homotopy invariants"
+      ],
+      "notes": "",
+      "citations": [
+        "hatcher-algebraic-topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "singular_chain_complex",
+      "label": "Singular chain complex",
+      "primaryDomain": "algebraic-topology",
+      "domains": [
+        "algebraic-topology",
+        "homological-algebra"
+      ],
+      "level": 8,
+      "kind": "structure",
+      "summary": "The chain complex freely generated in degree $n$ by continuous maps from the standard $n$-simplex into a space, with alternating face boundary.",
+      "carriers": [
+        "topological space $X$"
+      ],
+      "data": [
+        "free abelian groups $C_n(X)$",
+        "boundary maps"
+      ],
+      "axioms": [
+        "$\\partial^2=0$"
+      ],
+      "induces": [
+        "Singular homology"
+      ],
+      "notes": "",
+      "citations": [
+        "hatcher-algebraic-topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "homology_group",
+      "label": "Homology group",
+      "primaryDomain": "algebraic-topology",
+      "domains": [
+        "algebraic-topology",
+        "homological-algebra",
+        "algebra"
+      ],
+      "level": 9,
+      "kind": "structure",
+      "summary": "The quotient $H_n=\\ker\\partial_n/\\operatorname{im}\\partial_{n+1}$, measuring cycles modulo boundaries in a chain complex.",
+      "carriers": [
+        "chain complex"
+      ],
+      "data": [
+        "cycles and boundaries"
+      ],
+      "axioms": [],
+      "induces": [
+        "Homotopy-invariant algebraic data for singular chains"
+      ],
+      "notes": "",
+      "citations": [
+        "hatcher-algebraic-topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "singular_cochain_complex",
+      "label": "Singular cochain complex",
+      "primaryDomain": "algebraic-topology",
+      "domains": [
+        "algebraic-topology",
+        "homological-algebra"
+      ],
+      "level": 8,
+      "kind": "structure",
+      "summary": "The cochain complex obtained by applying a coefficient-valued Hom functor to singular chains.",
+      "carriers": [
+        "singular chain complex",
+        "coefficient group or ring"
+      ],
+      "data": [
+        "cochains and coboundary"
+      ],
+      "axioms": [
+        "$\\delta^2=0$"
+      ],
+      "induces": [
+        "Singular cohomology"
+      ],
+      "notes": "",
+      "citations": [
+        "hatcher-algebraic-topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "cohomology_group",
+      "label": "Cohomology group",
+      "primaryDomain": "algebraic-topology",
+      "domains": [
+        "algebraic-topology",
+        "homological-algebra",
+        "algebra"
+      ],
+      "level": 9,
+      "kind": "structure",
+      "summary": "The quotient $H^n=\\ker\\delta^n/\\operatorname{im}\\delta^{n-1}$ of cocycles by coboundaries.",
+      "carriers": [
+        "cochain complex"
+      ],
+      "data": [
+        "cocycles and coboundaries"
+      ],
+      "axioms": [],
+      "induces": [
+        "Contravariant topological invariants"
+      ],
+      "notes": "",
+      "citations": [
+        "hatcher-algebraic-topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "cohomology_ring",
+      "label": "Cohomology ring",
+      "primaryDomain": "algebraic-topology",
+      "domains": [
+        "algebraic-topology",
+        "algebra"
+      ],
+      "level": 10,
+      "kind": "structure",
+      "summary": "The graded ring formed by cohomology groups with multiplication given by the cup product.",
+      "carriers": [
+        "space and coefficient ring"
+      ],
+      "data": [
+        "graded cohomology groups",
+        "cup product"
+      ],
+      "axioms": [
+        "graded associativity and unit"
+      ],
+      "induces": [
+        "A refinement of the additive cohomology groups"
+      ],
+      "notes": "",
+      "citations": [
+        "hatcher-algebraic-topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "exact_sequence",
+      "label": "Exact sequence",
+      "primaryDomain": "homological-algebra",
+      "domains": [
+        "homological-algebra",
+        "algebra"
+      ],
+      "level": 8,
+      "kind": "structure",
+      "summary": "A sequence of morphisms in which the image of each map equals the kernel of the next.",
+      "carriers": [
+        "objects and composable morphisms"
+      ],
+      "data": [],
+      "axioms": [
+        "exactness at each intermediate object"
+      ],
+      "induces": [
+        "Algebraic control of kernels, cokernels, and extensions"
+      ],
+      "notes": "",
+      "citations": [
+        "hatcher-algebraic-topology",
+        "stacks-derived-text"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "long_exact_sequence",
+      "label": "Long exact sequence",
+      "primaryDomain": "homological-algebra",
+      "domains": [
+        "homological-algebra",
+        "algebraic-topology"
+      ],
+      "level": 10,
+      "kind": "structure",
+      "summary": "An exact sequence extending through many degrees, commonly produced by a short exact sequence of complexes, a pair of spaces, or a fibration.",
+      "carriers": [
+        "graded groups or objects",
+        "connecting morphisms"
+      ],
+      "data": [
+        "graded objects and connecting morphisms"
+      ],
+      "axioms": [
+        "exactness at every term"
+      ],
+      "induces": [
+        "Relations across successive homological or cohomological degrees"
+      ],
+      "notes": "",
+      "citations": [
+        "hatcher-algebraic-topology"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "algorithm",
+      "label": "Algorithm",
+      "primaryDomain": "computability-theory",
+      "domains": [
+        "computability-theory",
+        "logic"
+      ],
+      "level": 1,
+      "kind": "structure",
+      "summary": "A finitely specified, mechanically executable procedure given by unambiguous rules for transforming inputs, producing outputs when it terminates.",
+      "carriers": [
+        "finite descriptions and inputs"
+      ],
+      "data": [
+        "effective transition rules"
+      ],
+      "axioms": [],
+      "induces": [
+        "A partial or total computed function"
+      ],
+      "notes": "",
+      "citations": [
+        "turing-computable-numbers"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "decision_problem",
+      "label": "Decision problem",
+      "primaryDomain": "computability-theory",
+      "domains": [
+        "computability-theory",
+        "logic"
+      ],
+      "level": 2,
+      "kind": "structure",
+      "summary": "A yes-or-no problem represented by a set of finite inputs whose membership is to be decided.",
+      "carriers": [
+        "set of encoded instances"
+      ],
+      "data": [
+        "yes/no predicate"
+      ],
+      "axioms": [],
+      "induces": [
+        "Decidability or undecidability classification"
+      ],
+      "notes": "",
+      "citations": [
+        "turing-computable-numbers"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "turing_machine",
+      "label": "Turing machine",
+      "primaryDomain": "computability-theory",
+      "domains": [
+        "computability-theory",
+        "logic"
+      ],
+      "level": 3,
+      "kind": "structure",
+      "summary": "A finite-state abstract machine with a read-write tape and transition rules, used to define effective computation.",
+      "carriers": [
+        "finite states",
+        "tape alphabet",
+        "tape"
+      ],
+      "data": [
+        "transition function"
+      ],
+      "axioms": [],
+      "induces": [
+        "A partial computable function"
+      ],
+      "notes": "",
+      "citations": [
+        "turing-computable-numbers"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "computable_function",
+      "label": "Computable function",
+      "primaryDomain": "computability-theory",
+      "domains": [
+        "computability-theory",
+        "logic"
+      ],
+      "level": 4,
+      "kind": "structure",
+      "summary": "A partial function computed by some Turing machine; a total computable function halts on every input in its domain type.",
+      "carriers": [
+        "encoded inputs and outputs"
+      ],
+      "data": [
+        "a machine computing the graph"
+      ],
+      "axioms": [],
+      "induces": [
+        "A formal counterpart of effective calculability"
+      ],
+      "notes": "",
+      "citations": [
+        "turing-computable-numbers"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "recursively_enumerable_set",
+      "label": "Computably enumerable set",
+      "primaryDomain": "computability-theory",
+      "domains": [
+        "computability-theory",
+        "logic"
+      ],
+      "level": 5,
+      "kind": "structure",
+      "summary": "A set whose members can be enumerated by a Turing machine, equivalently whose membership is semidecidable.",
+      "carriers": [
+        "finite strings or natural numbers"
+      ],
+      "data": [
+        "enumerator or recognizer"
+      ],
+      "axioms": [],
+      "induces": [
+        "A domain of a partial computable function"
+      ],
+      "notes": "",
+      "citations": [
+        "turing-computable-numbers"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "universal_turing_machine",
+      "label": "Universal Turing machine",
+      "primaryDomain": "computability-theory",
+      "domains": [
+        "computability-theory",
+        "logic"
+      ],
+      "level": 5,
+      "kind": "structure",
+      "summary": "A Turing machine that simulates any encoded Turing machine on encoded input.",
+      "carriers": [
+        "machine descriptions and inputs"
+      ],
+      "data": [
+        "universal simulation procedure"
+      ],
+      "axioms": [],
+      "induces": [
+        "Stored-program universality"
+      ],
+      "notes": "",
+      "citations": [
+        "turing-computable-numbers"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "decidable_problem",
+      "label": "Decidable problem",
+      "primaryDomain": "computability-theory",
+      "domains": [
+        "computability-theory",
+        "logic"
+      ],
+      "level": 5,
+      "kind": "structure",
+      "summary": "A decision problem whose characteristic function is total computable.",
+      "carriers": [
+        "decision problem"
+      ],
+      "data": [
+        "halting decider"
+      ],
+      "axioms": [],
+      "induces": [
+        "A computable yes/no classification"
+      ],
+      "notes": "",
+      "citations": [
+        "turing-computable-numbers"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "halting_problem",
+      "label": "Halting problem",
+      "primaryDomain": "computability-theory",
+      "domains": [
+        "computability-theory",
+        "logic"
+      ],
+      "level": 8,
+      "kind": "structure",
+      "summary": "The decision problem asking whether an encoded Turing machine eventually halts on an encoded input.",
+      "carriers": [
+        "machine-input pair"
+      ],
+      "data": [
+        "halting predicate"
+      ],
+      "axioms": [],
+      "induces": [
+        "A canonical undecidable problem"
+      ],
+      "notes": "",
+      "citations": [
+        "turing-computable-numbers"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "undecidable_problem",
+      "label": "Undecidable problem",
+      "primaryDomain": "computability-theory",
+      "domains": [
+        "computability-theory",
+        "logic"
+      ],
+      "level": 7,
+      "kind": "structure",
+      "summary": "A decision problem for which no algorithm halts on every input with the correct yes-or-no answer.",
+      "carriers": [
+        "decision problem"
+      ],
+      "data": [],
+      "axioms": [
+        "nonexistence of a total decider"
+      ],
+      "induces": [
+        "Limits of algorithmic solution"
+      ],
+      "notes": "",
+      "citations": [
+        "turing-computable-numbers"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "church_turing_thesis",
+      "label": "Church–Turing thesis",
+      "primaryDomain": "computability-theory",
+      "domains": [
+        "computability-theory",
+        "foundation"
+      ],
+      "level": 6,
+      "kind": "structure",
+      "summary": "The methodological thesis that every effectively calculable function is computable by a Turing machine, equivalently by other standard models of computation.",
+      "carriers": [
+        "informal notion of effective calculability"
+      ],
+      "data": [
+        "equivalence class of formal models"
+      ],
+      "axioms": [],
+      "induces": [
+        "A bridge from informal procedure to mathematical computability"
+      ],
+      "notes": "This is a thesis identifying an informal notion with a formal class, not a theorem proved from purely formal premises.",
+      "citations": [
+        "turing-computable-numbers"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "formal_proof_system",
+      "label": "Formal proof system",
+      "primaryDomain": "logic",
+      "domains": [
+        "logic",
+        "computability-theory",
+        "foundation"
+      ],
+      "level": 4,
+      "kind": "structure",
+      "summary": "A syntactically specified collection of formulas, axioms, and inference rules defining formal derivability.",
+      "carriers": [
+        "formal language"
+      ],
+      "data": [
+        "axioms",
+        "inference rules"
+      ],
+      "axioms": [
+        "proofs are finite; in the effective systems used for computability and incompleteness, proof checking is mechanical"
+      ],
+      "induces": [
+        "A theorem set"
+      ],
+      "notes": "",
+      "citations": [
+        "openlogic-incompleteness"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "consistent_theory",
+      "label": "Consistent formal theory",
+      "primaryDomain": "logic",
+      "domains": [
+        "logic",
+        "foundation",
+        "computability-theory"
+      ],
+      "level": 5,
+      "kind": "structure",
+      "summary": "A formal theory that does not derive a contradiction.",
+      "carriers": [
+        "formal theory"
+      ],
+      "data": [],
+      "axioms": [
+        "no sentence and its negation are both derivable"
+      ],
+      "induces": [
+        "Nontrivial deductive consequence"
+      ],
+      "notes": "",
+      "citations": [
+        "openlogic-incompleteness"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "syntactically_complete_theory",
+      "label": "Syntactically complete formal theory",
+      "primaryDomain": "logic",
+      "domains": [
+        "logic",
+        "foundation",
+        "computability-theory"
+      ],
+      "level": 5,
+      "kind": "structure",
+      "summary": "A formal theory that proves either each sentence or its negation.",
+      "carriers": [
+        "formal theory"
+      ],
+      "data": [],
+      "axioms": [
+        "for every sentence $\\varphi$, either $T\\vdash\\varphi$ or $T\\vdash\\neg\\varphi$"
+      ],
+      "induces": [
+        "No undecided sentence in the language"
+      ],
+      "notes": "",
+      "citations": [
+        "openlogic-incompleteness"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "godel_numbering",
+      "label": "Gödel numbering",
+      "primaryDomain": "computability-theory",
+      "domains": [
+        "computability-theory",
+        "logic",
+        "number-theory"
+      ],
+      "level": 7.25,
+      "kind": "structure",
+      "summary": "An effective coding of symbols, formulas, and finite proofs by natural numbers so that syntactic operations become arithmetically representable.",
+      "carriers": [
+        "formal syntax",
+        "natural numbers"
+      ],
+      "data": [
+        "effective encoding"
+      ],
+      "axioms": [],
+      "induces": [
+        "Arithmetization of syntax"
+      ],
+      "notes": "",
+      "citations": [
+        "godel-incompleteness-paper",
+        "openlogic-incompleteness"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "j_first_incompleteness",
+      "label": "consistent effective theory + arithmetic coding",
+      "primaryDomain": "logic",
+      "domains": [
+        "logic",
+        "computability-theory",
+        "foundation",
+        "number-theory"
+      ],
+      "level": 7.5,
+      "kind": "junction",
+      "summary": "Compatibility construction collecting the hypotheses of Gödel’s first incompleteness theorem.",
+      "carriers": [],
+      "data": [],
+      "axioms": [],
+      "induces": [],
+      "notes": "Consistency, effective axiomatization, sufficient arithmetic strength, and arithmetized syntax must concern the same theory.",
+      "citations": [
+        "openlogic-incompleteness",
+        "godel-incompleteness-paper"
+      ],
+      "combination": {
+        "inputs": [
+          "formal_proof_system",
+          "consistent_theory",
+          "natural_numbers",
+          "godel_numbering"
+        ],
+        "compatibility": "Use one effectively axiomatized consistent formal theory that represents enough elementary arithmetic on the natural numbers and supports the chosen Gödel coding.",
+        "output": "first_incompleteness_theorem"
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "first_incompleteness_theorem",
+      "label": "Gödel’s first incompleteness theorem",
+      "primaryDomain": "logic",
+      "domains": [
+        "logic",
+        "computability-theory",
+        "foundation"
+      ],
+      "level": 8,
+      "kind": "structure",
+      "summary": "Every consistent, effectively axiomatized formal theory strong enough to represent elementary arithmetic is syntactically incomplete.",
+      "carriers": [
+        "effective formal theory containing sufficient arithmetic"
+      ],
+      "data": [],
+      "axioms": [
+        "consistency or suitable soundness hypotheses, depending on formulation"
+      ],
+      "induces": [
+        "An undecidable sentence for the theory"
+      ],
+      "notes": "",
+      "citations": [
+        "godel-incompleteness-paper",
+        "openlogic-incompleteness"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "j_second_incompleteness",
+      "label": "consistent effective theory + internal provability",
+      "primaryDomain": "logic",
+      "domains": [
+        "logic",
+        "computability-theory",
+        "foundation",
+        "number-theory"
+      ],
+      "level": 8.5,
+      "kind": "junction",
+      "summary": "Compatibility construction collecting the hypotheses of Gödel’s second incompleteness theorem.",
+      "carriers": [],
+      "data": [],
+      "axioms": [],
+      "induces": [],
+      "notes": "The consistency statement and provability predicate must be the standard internal formalizations for the same sufficiently strong theory.",
+      "citations": [
+        "openlogic-incompleteness",
+        "godel-incompleteness-paper"
+      ],
+      "combination": {
+        "inputs": [
+          "formal_proof_system",
+          "consistent_theory",
+          "natural_numbers",
+          "godel_numbering"
+        ],
+        "compatibility": "Use one consistent effectively axiomatized theory strong enough for the standard arithmetization and derivability conditions, with its own proof predicate and consistency sentence.",
+        "output": "second_incompleteness_theorem"
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "second_incompleteness_theorem",
+      "label": "Gödel’s second incompleteness theorem",
+      "primaryDomain": "logic",
+      "domains": [
+        "logic",
+        "computability-theory",
+        "foundation"
+      ],
+      "level": 9,
+      "kind": "structure",
+      "summary": "A consistent, effectively axiomatized theory strong enough for the incompleteness machinery cannot prove its own suitably formalized consistency.",
+      "carriers": [
+        "effective sufficiently strong formal theory"
+      ],
+      "data": [],
+      "axioms": [
+        "standard derivability conditions"
+      ],
+      "induces": [
+        "Unprovability of the internal consistency statement"
+      ],
+      "notes": "",
+      "citations": [
+        "godel-incompleteness-paper",
+        "openlogic-incompleteness"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "hilbert_program",
+      "label": "Hilbert’s program",
+      "primaryDomain": "foundation",
+      "domains": [
+        "foundation",
+        "logic",
+        "computability-theory"
+      ],
+      "level": 3,
+      "kind": "structure",
+      "summary": "The program of formalizing broad parts of mathematics and proving their consistency by secure finitary methods.",
+      "carriers": [
+        "formalized mathematics"
+      ],
+      "data": [
+        "finitary metamathematical methods"
+      ],
+      "axioms": [],
+      "induces": [
+        "Consistency and completeness goals"
+      ],
+      "notes": "The incompleteness theorems constrain the original program; they do not eliminate formal axiomatic or proof-theoretic research.",
+      "citations": [
+        "openlogic-incompleteness"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "polynomial_ring",
+      "label": "Polynomial ring",
+      "primaryDomain": "algebra",
+      "domains": [
+        "algebra",
+        "algebraic-geometry"
+      ],
+      "level": 9,
+      "kind": "structure",
+      "summary": "The ring $R[x]$ of formal polynomials in an indeterminate over a coefficient ring $R$.",
+      "carriers": [
+        "coefficient ring $R$"
+      ],
+      "data": [
+        "finite coefficient sequences",
+        "formal indeterminate"
+      ],
+      "axioms": [],
+      "induces": [
+        "Evaluation maps, ideals, and quotient algebras"
+      ],
+      "notes": "",
+      "citations": [
+        "milne-fields-galois-theory",
+        "stacks-algebra-text"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "field_extension",
+      "label": "Field extension",
+      "primaryDomain": "algebra",
+      "domains": [
+        "algebra",
+        "number-theory"
+      ],
+      "level": 11,
+      "kind": "structure",
+      "summary": "An inclusion of fields $K\\subseteq L$, regarding $L$ as a vector space and algebra over $K$.",
+      "carriers": [
+        "fields $K\\subseteq L$"
+      ],
+      "data": [
+        "specified embedding of $K$ into $L$"
+      ],
+      "axioms": [],
+      "induces": [
+        "Degree, algebraic elements, and automorphisms"
+      ],
+      "notes": "",
+      "citations": [
+        "milne-fields-galois-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "algebraic_extension",
+      "label": "Algebraic field extension",
+      "primaryDomain": "algebra",
+      "domains": [
+        "algebra",
+        "number-theory"
+      ],
+      "level": 12,
+      "kind": "structure",
+      "summary": "A field extension in which every element satisfies a nonzero polynomial over the base field.",
+      "carriers": [
+        "field extension $L/K$"
+      ],
+      "data": [],
+      "axioms": [
+        "every element of $L$ is algebraic over $K$"
+      ],
+      "induces": [
+        "Minimal polynomials and finite subextensions"
+      ],
+      "notes": "",
+      "citations": [
+        "milne-fields-galois-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "separable_extension",
+      "label": "Separable field extension",
+      "primaryDomain": "algebra",
+      "domains": [
+        "algebra",
+        "number-theory"
+      ],
+      "level": 13,
+      "kind": "structure",
+      "summary": "An algebraic extension in which every element has a separable minimal polynomial over the base field.",
+      "carriers": [
+        "algebraic extension $L/K$"
+      ],
+      "data": [],
+      "axioms": [
+        "minimal polynomials have distinct roots in a splitting field"
+      ],
+      "induces": [
+        "Well-behaved embeddings into an algebraic closure"
+      ],
+      "notes": "",
+      "citations": [
+        "milne-fields-galois-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "normal_extension",
+      "label": "Normal field extension",
+      "primaryDomain": "algebra",
+      "domains": [
+        "algebra",
+        "number-theory"
+      ],
+      "level": 13,
+      "kind": "structure",
+      "summary": "An algebraic extension $L/K$ in which every irreducible polynomial over $K$ having one root in $L$ splits completely in $L$.",
+      "carriers": [
+        "algebraic extension $L/K$"
+      ],
+      "data": [],
+      "axioms": [
+        "stability under $K$-embeddings into an algebraic closure"
+      ],
+      "induces": [
+        "A splitting-field characterization"
+      ],
+      "notes": "",
+      "citations": [
+        "milne-fields-galois-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "splitting_field",
+      "label": "Splitting field",
+      "primaryDomain": "algebra",
+      "domains": [
+        "algebra",
+        "number-theory"
+      ],
+      "level": 13,
+      "kind": "structure",
+      "summary": "The smallest field extension over which a specified family of polynomials splits into linear factors.",
+      "carriers": [
+        "base field and polynomials"
+      ],
+      "data": [
+        "adjoined roots"
+      ],
+      "axioms": [
+        "generated by all roots"
+      ],
+      "induces": [
+        "A normal algebraic extension"
+      ],
+      "notes": "",
+      "citations": [
+        "milne-fields-galois-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "field_automorphism",
+      "label": "Field automorphism",
+      "primaryDomain": "algebra",
+      "domains": [
+        "algebra",
+        "representation-theory"
+      ],
+      "level": 12,
+      "kind": "structure",
+      "summary": "An isomorphism from a field to itself; relative automorphisms fix a specified base field pointwise.",
+      "carriers": [
+        "field $L$"
+      ],
+      "data": [
+        "bijective field homomorphism"
+      ],
+      "axioms": [],
+      "induces": [
+        "An element of an automorphism group; its iterates generate a cyclic subgroup"
+      ],
+      "notes": "",
+      "citations": [
+        "milne-fields-galois-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "galois_extension",
+      "label": "Galois extension",
+      "primaryDomain": "algebra",
+      "domains": [
+        "algebra",
+        "number-theory"
+      ],
+      "level": 14,
+      "kind": "structure",
+      "summary": "An algebraic extension that is both normal and separable.",
+      "carriers": [
+        "field extension $L/K$"
+      ],
+      "data": [],
+      "axioms": [
+        "normality",
+        "separability"
+      ],
+      "induces": [
+        "A Galois group controlling intermediate fields"
+      ],
+      "notes": "",
+      "citations": [
+        "milne-fields-galois-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "galois_group",
+      "label": "Galois group",
+      "primaryDomain": "algebra",
+      "domains": [
+        "algebra",
+        "representation-theory",
+        "number-theory"
+      ],
+      "level": 15,
+      "kind": "structure",
+      "summary": "The group $\\operatorname{Gal}(L/K)$ of field automorphisms of $L$ that fix $K$ pointwise.",
+      "carriers": [
+        "field extension $L/K$"
+      ],
+      "data": [
+        "$K$-automorphisms of $L$"
+      ],
+      "axioms": [],
+      "induces": [
+        "Actions on roots and intermediate fields"
+      ],
+      "notes": "",
+      "citations": [
+        "milne-fields-galois-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "fixed_field",
+      "label": "Fixed field",
+      "primaryDomain": "algebra",
+      "domains": [
+        "algebra",
+        "number-theory"
+      ],
+      "level": 15,
+      "kind": "structure",
+      "summary": "For a subgroup $H$ of field automorphisms of $L$, the subfield $L^H$ consisting of elements fixed by every member of $H$.",
+      "carriers": [
+        "field $L$",
+        "automorphism subgroup $H$"
+      ],
+      "data": [
+        "common fixed elements"
+      ],
+      "axioms": [],
+      "induces": [
+        "An intermediate field"
+      ],
+      "notes": "",
+      "citations": [
+        "milne-fields-galois-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "fundamental_theorem_galois_theory",
+      "label": "Fundamental theorem of Galois theory",
+      "primaryDomain": "algebra",
+      "domains": [
+        "algebra",
+        "number-theory"
+      ],
+      "level": 16,
+      "kind": "structure",
+      "summary": "For a finite Galois extension, intermediate fields correspond inclusion-reversingly to subgroups of the Galois group; normal subextensions correspond to normal subgroups.",
+      "carriers": [
+        "finite Galois extension"
+      ],
+      "data": [
+        "fixed-field and automorphism-group assignments"
+      ],
+      "axioms": [
+        "mutually inverse correspondence"
+      ],
+      "induces": [
+        "Degree-index relations and quotient Galois groups"
+      ],
+      "notes": "",
+      "citations": [
+        "milne-fields-galois-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "solvable_group",
+      "label": "Solvable group",
+      "primaryDomain": "algebra",
+      "domains": [
+        "algebra",
+        "representation-theory"
+      ],
+      "level": 8,
+      "kind": "structure",
+      "summary": "A group admitting a finite subnormal series whose successive quotient groups are abelian.",
+      "carriers": [
+        "group $G$"
+      ],
+      "data": [
+        "derived series or subnormal series"
+      ],
+      "axioms": [
+        "termination at the trivial group"
+      ],
+      "induces": [
+        "A criterion in solvability by radicals"
+      ],
+      "notes": "",
+      "citations": [
+        "milne-fields-galois-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "j_radical_solvability",
+      "label": "splitting field + its solvable Galois group",
+      "primaryDomain": "algebra",
+      "domains": [
+        "algebra",
+        "number-theory",
+        "representation-theory"
+      ],
+      "level": 16.5,
+      "kind": "junction",
+      "summary": "Compatibility construction expressing the Galois criterion for solvability by radicals.",
+      "carriers": [],
+      "data": [],
+      "axioms": [],
+      "induces": [],
+      "notes": "The solvable group supplied must be the Galois group of the chosen polynomial’s splitting field, not an unrelated group.",
+      "citations": [
+        "milne-fields-galois-theory"
+      ],
+      "combination": {
+        "inputs": [
+          "splitting_field",
+          "galois_group",
+          "solvable_group"
+        ],
+        "compatibility": "Use the splitting field of the chosen polynomial, take its Galois group over the base field, and require that same group to be solvable.",
+        "output": "solvability_by_radicals"
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "solvability_by_radicals",
+      "label": "Solvability by radicals",
+      "primaryDomain": "algebra",
+      "domains": [
+        "algebra",
+        "number-theory"
+      ],
+      "level": 17,
+      "kind": "structure",
+      "summary": "A polynomial equation is solvable by radicals when its roots can be obtained from coefficients using field operations and iterated extraction of roots.",
+      "carriers": [
+        "polynomial over a field"
+      ],
+      "data": [
+        "tower of radical extensions"
+      ],
+      "axioms": [],
+      "induces": [
+        "Equivalence with solvability of the Galois group under standard hypotheses"
+      ],
+      "notes": "",
+      "citations": [
+        "milne-fields-galois-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "black_hole",
+      "label": "Black hole",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "relativity",
+      "domains": [
+        "relativity",
+        "cosmology"
+      ],
+      "level": 8,
+      "kind": "structure",
+      "conceptType": "Relativistic object",
+      "summary": "A region of spacetime from which no future-directed causal signal can reach a specified exterior infinity; in asymptotically flat settings its boundary is the event horizon.",
+      "citations": [
+        "wp-physics-black-hole",
+        "nasa-black-holes",
+        "einstein-online-black-holes"
+      ]
+    },
+    {
+      "id": "event_horizon",
+      "label": "Event horizon",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "relativity",
+      "domains": [
+        "relativity",
+        "cosmology"
+      ],
+      "level": 8.5,
+      "kind": "structure",
+      "conceptType": "Causal boundary",
+      "summary": "A global null boundary separating events that can communicate with the exterior future from those that cannot.",
+      "citations": [
+        "wp-physics-event-horizon",
+        "nasa-black-holes",
+        "einstein-online-black-holes"
+      ]
+    },
+    {
+      "id": "schwarzschild_spacetime",
+      "label": "Schwarzschild spacetime",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "relativity",
+      "domains": [
+        "relativity"
+      ],
+      "level": 9,
+      "kind": "structure",
+      "conceptType": "Exact spacetime solution",
+      "summary": "The unique spherically symmetric vacuum solution of the Einstein equation, with a black-hole exterior characterized by mass in its asymptotically flat form.",
+      "citations": [
+        "wp-physics-schwarzschild-spacetime",
+        "einstein-online-black-holes",
+        "einstein-equation"
+      ]
+    },
+    {
+      "id": "kerr_spacetime",
+      "label": "Kerr spacetime",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "relativity",
+      "domains": [
+        "relativity"
+      ],
+      "level": 9,
+      "kind": "structure",
+      "conceptType": "Exact spacetime solution",
+      "summary": "A stationary, axisymmetric, asymptotically flat vacuum solution describing the exterior geometry of an uncharged rotating black hole.",
+      "citations": [
+        "wp-physics-kerr-spacetime",
+        "einstein-online-black-holes",
+        "einstein-equation"
+      ]
+    },
+    {
+      "id": "gravitational_collapse",
+      "label": "Gravitational collapse",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "relativity",
+      "domains": [
+        "relativity",
+        "cosmology"
+      ],
+      "level": 7,
+      "kind": "structure",
+      "conceptType": "Dynamical process",
+      "summary": "Contraction driven by self-gravity; sufficiently compact collapse can form trapped regions and a black hole, depending on matter and global conditions.",
+      "citations": [
+        "wp-physics-gravitational-collapse",
+        "nasa-black-holes",
+        "einstein-general-relativity"
+      ]
+    },
+    {
+      "id": "binary_black_hole",
+      "label": "Binary black-hole system",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "relativity",
+      "domains": [
+        "relativity",
+        "cosmology"
+      ],
+      "level": 9,
+      "kind": "structure",
+      "conceptType": "Astrophysical system",
+      "summary": "Two black holes in mutual orbit whose inspiral and merger can radiate strong gravitational waves.",
+      "citations": [
+        "wp-physics-binary-black-hole",
+        "ligo-gravitational-wave-science",
+        "nasa-black-holes"
+      ]
+    },
+    {
+      "id": "j_hawking_radiation",
+      "label": "black-hole background + quantum fields",
+      "primaryDomain": "relativity",
+      "domains": [
+        "relativity",
+        "quantum-field-theory",
+        "cosmology"
+      ],
+      "level": 9,
+      "kind": "junction",
+      "summary": "Compatibility construction for the semiclassical prediction of Hawking radiation.",
+      "carriers": [],
+      "data": [],
+      "axioms": [],
+      "induces": [],
+      "notes": "The result uses quantum fields on a classical black-hole background; backreaction and full quantum gravity are additional problems.",
+      "citations": [
+        "einstein-online-black-holes",
+        "wp-physics-hawking-radiation",
+        "tong-qft"
+      ],
+      "combination": {
+        "inputs": [
+          "black_hole",
+          "quantum_field_theory"
+        ],
+        "compatibility": "Place quantum fields in an appropriate state on a stationary or slowly varying classical black-hole spacetime and compare suitable asymptotic particle notions.",
+        "output": "hawking_radiation"
+      },
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ]
+    },
+    {
+      "id": "hawking_radiation",
+      "label": "Hawking radiation",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "relativity",
+      "domains": [
+        "relativity",
+        "quantum-field-theory",
+        "cosmology"
+      ],
+      "level": 10,
+      "kind": "structure",
+      "conceptType": "Semiclassical prediction",
+      "summary": "Quantum fields on a black-hole background predict approximately thermal radiation at infinity, with temperature set by surface gravity in the stationary case.",
+      "citations": [
+        "wp-physics-hawking-radiation",
+        "nasa-black-holes",
+        "tong-qft"
+      ]
+    },
+    {
+      "id": "cosmological_principle",
+      "label": "Cosmological principle",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "cosmology",
+      "domains": [
+        "cosmology",
+        "relativity"
+      ],
+      "level": 3,
+      "kind": "structure",
+      "conceptType": "Large-scale assumption",
+      "summary": "The idealization that the universe is statistically homogeneous and isotropic on sufficiently large spatial scales.",
+      "citations": [
+        "wp-physics-cosmological-principle",
+        "nasa-big-bang",
+        "einstein-general-relativity"
+      ]
+    },
+    {
+      "id": "flrw_spacetime",
+      "label": "FLRW spacetime",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "cosmology",
+      "domains": [
+        "cosmology",
+        "relativity"
+      ],
+      "level": 4,
+      "kind": "structure",
+      "conceptType": "Cosmological geometry",
+      "summary": "A homogeneous and isotropic spacetime geometry with a time-dependent scale factor and constant-curvature spatial slices.",
+      "citations": [
+        "wp-physics-flrw-spacetime",
+        "nasa-big-bang",
+        "einstein-equation"
+      ]
+    },
+    {
+      "id": "friedmann_equations",
+      "label": "Friedmann equations",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "cosmology",
+      "domains": [
+        "cosmology",
+        "relativity"
+      ],
+      "level": 5,
+      "kind": "structure",
+      "conceptType": "Cosmological field equations",
+      "summary": "The reduced Einstein equations governing the scale factor of an FLRW universe from its energy density, pressure, spatial curvature, and cosmological constant.",
+      "citations": [
+        "wp-physics-friedmann-equations",
+        "nasa-big-bang",
+        "einstein-equation"
+      ]
+    },
+    {
+      "id": "expanding_universe",
+      "label": "Expanding universe",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "cosmology",
+      "domains": [
+        "cosmology",
+        "relativity",
+        "experiments-observations"
+      ],
+      "level": 6,
+      "kind": "structure",
+      "conceptType": "Observed cosmic behavior",
+      "summary": "A universe whose cosmological scale factor increases over time; observationally inferred through redshift-distance relations and other cosmological data.",
+      "citations": [
+        "wp-physics-expanding-universe",
+        "nasa-big-bang",
+        "nasa-dark-energy"
+      ]
+    },
+    {
+      "id": "big_bang_model",
+      "label": "Hot Big Bang model",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "cosmology",
+      "domains": [
+        "cosmology",
+        "particle-physics",
+        "nuclear-physics"
+      ],
+      "level": 7,
+      "kind": "structure",
+      "conceptType": "Cosmological model",
+      "summary": "The model in which the observable universe evolved from an earlier hot, dense state under expansion, supported by cosmic expansion, primordial light-element abundances, and the cosmic microwave background.",
+      "citations": [
+        "wp-physics-big-bang-model",
+        "nasa-big-bang",
+        "nasa-dark-matter"
+      ]
+    },
+    {
+      "id": "cosmic_microwave_background",
+      "label": "Cosmic microwave background",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "cosmology",
+      "domains": [
+        "cosmology",
+        "experiments-observations"
+      ],
+      "level": 8,
+      "kind": "structure",
+      "conceptType": "Cosmological observation",
+      "summary": "Nearly thermal microwave radiation released when the primordial plasma became transparent, carrying anisotropy and polarization information about the early universe.",
+      "citations": [
+        "wp-physics-cosmic-microwave-background",
+        "nasa-big-bang",
+        "nasa-dark-matter"
+      ]
+    },
+    {
+      "id": "cosmological_inflation",
+      "label": "Cosmological inflation",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "cosmology",
+      "domains": [
+        "cosmology",
+        "quantum-field-theory"
+      ],
+      "level": 8,
+      "kind": "structure",
+      "conceptType": "Early-universe framework",
+      "summary": "A hypothesized period of accelerated expansion in the early universe that can generate nearly scale-invariant primordial perturbations and address horizon and flatness puzzles.",
+      "citations": [
+        "wp-physics-cosmological-inflation",
+        "nasa-big-bang",
+        "tong-qft"
+      ]
+    },
+    {
+      "id": "dark_matter",
+      "label": "Dark matter",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "cosmology",
+      "domains": [
+        "cosmology",
+        "particle-physics",
+        "experiments-observations"
+      ],
+      "level": 8,
+      "kind": "structure",
+      "conceptType": "Inferred matter component",
+      "summary": "Nonluminous gravitating matter inferred from galaxies, clusters, lensing, structure formation, and cosmological observations; its microscopic identity remains unknown.",
+      "citations": [
+        "wp-physics-dark-matter",
+        "nasa-dark-matter",
+        "nasa-big-bang"
+      ]
+    },
+    {
+      "id": "dark_energy",
+      "label": "Dark energy",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "cosmology",
+      "domains": [
+        "cosmology",
+        "relativity",
+        "experiments-observations"
+      ],
+      "level": 8,
+      "kind": "structure",
+      "conceptType": "Inferred cosmic component",
+      "summary": "The name for the component or modification responsible for the observed late-time accelerated expansion; a cosmological constant is the simplest current model.",
+      "citations": [
+        "wp-physics-dark-energy",
+        "nasa-dark-energy",
+        "nasa-big-bang"
+      ]
+    },
+    {
+      "id": "lambda_cdm_model",
+      "label": "$\\Lambda$CDM cosmological model",
+      "primaryField": "physics",
+      "fields": [
+        "physics"
+      ],
+      "primaryDomain": "cosmology",
+      "domains": [
+        "cosmology",
+        "relativity",
+        "particle-physics"
+      ],
+      "level": 9,
+      "kind": "structure",
+      "conceptType": "Standard cosmological model",
+      "summary": "The concordance model combining general relativity, a cosmological constant $\\Lambda$, cold dark matter, ordinary matter, radiation, and nearly adiabatic primordial perturbations.",
+      "citations": [
+        "wp-physics-lambda-cdm-model",
+        "nasa-big-bang",
+        "nasa-dark-matter",
+        "nasa-dark-energy"
+      ]
+    },
+    {
+      "id": "smooth_projective_quadric",
+      "label": "Smooth projective quadric",
+      "primaryDomain": "algebraic-geometry",
+      "domains": [
+        "algebraic-geometry",
+        "number-theory",
+        "algebra"
+      ],
+      "level": 14,
+      "kind": "structure",
+      "summary": "For a nondegenerate quadratic form $q$ of dimension at least three over a field of characteristic not two, the projective zero locus $q=0$ is a smooth projective quadric and a geometrically integral variety.",
+      "carriers": [
+        "vector space over a field",
+        "nondegenerate quadratic form"
+      ],
+      "data": [
+        "projective hypersurface $q=0$"
+      ],
+      "axioms": [
+        "dimension at least three",
+        "characteristic not two",
+        "nondegeneracy"
+      ],
+      "induces": [
+        "A rational-point problem equivalent to isotropy of $q$"
+      ],
+      "notes": "The dimension and nondegeneracy conditions avoid reducible or nonintegral low-dimensional zero loci. Over number fields the characteristic condition is automatic.",
+      "citations": [
+        "poonen-rational-points-varieties",
+        "milne-algebraic-number-theory",
+        "stacks-varieties"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "rational_point",
+      "label": "Rational point",
+      "primaryDomain": "algebraic-geometry",
+      "domains": [
+        "algebraic-geometry",
+        "number-theory"
+      ],
+      "level": 12,
+      "kind": "structure",
+      "summary": "For a scheme or variety $X$ over a field $K$, a $K$-rational point is a $K$-morphism $\\operatorname{Spec}(K)\\to X$; for affine varieties this is equivalent to a solution with coordinates in $K$.",
+      "carriers": [
+        "scheme or variety over $K$"
+      ],
+      "data": [
+        "$K$-valued point"
+      ],
+      "axioms": [],
+      "induces": [
+        "An arithmetic solution"
+      ],
+      "notes": "",
+      "citations": [
+        "milne-algebraic-number-theory",
+        "stacks-schemes-text",
+        "poonen-rational-points-varieties"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "local_point",
+      "label": "Local point",
+      "primaryDomain": "number-theory",
+      "domains": [
+        "number-theory",
+        "algebraic-geometry"
+      ],
+      "level": 15,
+      "kind": "structure",
+      "summary": "For a variety $X$ over a global field $K$ and a place $v$, a local point is a $K_v$-rational point of the base change $X_{K_v}$.",
+      "carriers": [
+        "variety over a global field",
+        "place $v$"
+      ],
+      "data": [
+        "$K_v$-valued point"
+      ],
+      "axioms": [],
+      "induces": [
+        "A local solvability condition"
+      ],
+      "notes": "",
+      "citations": [
+        "milne-algebraic-number-theory",
+        "poonen-rational-points-varieties"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "adele_ring",
+      "label": "Adele ring",
+      "primaryDomain": "number-theory",
+      "domains": [
+        "number-theory",
+        "topology",
+        "analysis"
+      ],
+      "level": 15,
+      "kind": "structure",
+      "summary": "The restricted product of all completions of a global field with respect to their valuation rings at almost all non-Archimedean places.",
+      "carriers": [
+        "global field and its places"
+      ],
+      "data": [
+        "restricted product of local fields"
+      ],
+      "axioms": [],
+      "induces": [
+        "A single topological ring encoding all places"
+      ],
+      "notes": "",
+      "citations": [
+        "milne-algebraic-number-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "everywhere_locally_soluble_variety",
+      "label": "Everywhere locally soluble variety",
+      "primaryDomain": "number-theory",
+      "domains": [
+        "number-theory",
+        "algebraic-geometry"
+      ],
+      "level": 16,
+      "kind": "structure",
+      "summary": "A variety $X$ over a global field $K$ such that $X(K_v)$ is nonempty for every place $v$ of $K$.",
+      "carriers": [
+        "variety over a global field"
+      ],
+      "data": [
+        "a local point over every completion"
+      ],
+      "axioms": [
+        "$X(K_v)\\ne\\varnothing$ for every place $v$"
+      ],
+      "induces": [
+        "The local-solubility premise in a Hasse-principle question"
+      ],
+      "notes": "Everywhere local solubility does not in general imply a global rational point.",
+      "citations": [
+        "poonen-rational-points-varieties",
+        "milne-algebraic-number-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "local_global_principle",
+      "label": "Local–global principle",
+      "primaryDomain": "number-theory",
+      "domains": [
+        "number-theory",
+        "algebraic-geometry"
+      ],
+      "level": 16,
+      "kind": "structure",
+      "summary": "A principle asserting, for a specified class of arithmetic objects, that a global solution exists exactly when solutions exist over every completion of the global field.",
+      "carriers": [
+        "global field",
+        "family of local completions"
+      ],
+      "data": [
+        "local solvability data"
+      ],
+      "axioms": [],
+      "induces": [
+        "A global solvability criterion"
+      ],
+      "notes": "This is a pattern, not a universal theorem: it holds for some classes and fails for others.",
+      "citations": [
+        "milne-algebraic-number-theory",
+        "poonen-rational-points-varieties"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "quadratic_form",
+      "label": "Quadratic form",
+      "primaryDomain": "algebra",
+      "domains": [
+        "algebra",
+        "number-theory",
+        "differential-geometry"
+      ],
+      "level": 12,
+      "kind": "structure",
+      "summary": "A homogeneous degree-two function associated, away from characteristic two subtleties, with a symmetric bilinear form.",
+      "carriers": [
+        "vector space over a field"
+      ],
+      "data": [
+        "quadratic map $q$"
+      ],
+      "axioms": [
+        "$q(av)=a^2q(v)$ and polarization law"
+      ],
+      "induces": [
+        "Quadratic varieties and orthogonal groups"
+      ],
+      "notes": "",
+      "citations": [
+        "milne-algebraic-number-theory"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "hasse_minkowski_theorem",
+      "label": "Hasse–Minkowski theorem",
+      "primaryDomain": "number-theory",
+      "domains": [
+        "number-theory",
+        "algebra"
+      ],
+      "level": 17,
+      "kind": "structure",
+      "summary": "A quadratic form over a number field represents zero nontrivially exactly when it does so over every completion of the field.",
+      "carriers": [
+        "quadratic form over a number field"
+      ],
+      "data": [
+        "local isotropy conditions"
+      ],
+      "axioms": [],
+      "induces": [
+        "A valid local–global principle for quadratic forms"
+      ],
+      "notes": "",
+      "citations": [
+        "milne-algebraic-number-theory",
+        "poonen-rational-points-varieties"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "failure_hasse_principle",
+      "label": "Variety violating the Hasse principle",
+      "primaryDomain": "number-theory",
+      "domains": [
+        "number-theory",
+        "algebraic-geometry"
+      ],
+      "level": 17,
+      "kind": "structure",
+      "summary": "A variety over a global field that has a point over every completion but has no rational point over the global field.",
+      "carriers": [
+        "variety over a global field"
+      ],
+      "data": [
+        "points over all completions"
+      ],
+      "axioms": [
+        "absence of a global rational point"
+      ],
+      "induces": [
+        "An obstruction to naive local–global inference"
+      ],
+      "notes": "",
+      "citations": [
+        "milne-algebraic-number-theory",
+        "poonen-rational-points-varieties"
+      ],
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "j_galois_extension",
+      "label": "normal + separable field extension",
+      "primaryDomain": "algebra",
+      "domains": [
+        "algebra",
+        "number-theory"
+      ],
+      "level": 13.5,
+      "kind": "junction",
+      "summary": "Compatibility construction producing a Galois extension.",
+      "carriers": [],
+      "data": [],
+      "axioms": [],
+      "induces": [],
+      "notes": "Both properties must hold for the same algebraic field extension.",
+      "citations": [
+        "milne-fields-galois-theory"
+      ],
+      "combination": {
+        "inputs": [
+          "normal_extension",
+          "separable_extension"
+        ],
+        "compatibility": "Require normality and separability for the same algebraic extension $L/K$.",
+        "output": "galois_extension"
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "j_local_point",
+      "label": "variety + completion + chosen local solution",
+      "primaryDomain": "number-theory",
+      "domains": [
+        "number-theory",
+        "algebraic-geometry"
+      ],
+      "level": 14.5,
+      "kind": "junction",
+      "summary": "Compatibility construction producing a local point.",
+      "carriers": [],
+      "data": [],
+      "axioms": [],
+      "induces": [],
+      "notes": "The variety must be defined over the global field whose place supplies the completion.",
+      "citations": [
+        "milne-algebraic-number-theory",
+        "stacks-schemes-text"
+      ],
+      "combination": {
+        "inputs": [
+          "algebraic_variety",
+          "completion_at_valuation"
+        ],
+        "compatibility": "Base-change the variety $X/K$ to the completion $K_v$ and choose a $K_v$-valued point of $X_{K_v}$.",
+        "output": "local_point"
+      },
+      "primaryField": "mathematics",
+      "fields": [
+        "mathematics"
+      ]
     }
   ],
   "edges": [
@@ -51571,6 +54356,1789 @@
         "wp-axiom-choice",
         "wp-beth-number",
         "sep-axiom-choice"
+      ]
+    },
+    {
+      "id": "story_category_to_functor_add_data",
+      "source": "category",
+      "target": "functor",
+      "type": "add-data",
+      "label": "map categories structure-preservingly",
+      "detail": "Choose a target category and specify object and morphism assignments that preserve identities and composition.",
+      "citations": [
+        "riehl-category-context"
+      ]
+    },
+    {
+      "id": "story_functor_to_natural_transformation_add_data",
+      "source": "functor",
+      "target": "natural_transformation",
+      "type": "add-data",
+      "label": "compare parallel functors",
+      "detail": "Choose a second parallel functor and supply component morphisms satisfying the naturality equations.",
+      "citations": [
+        "riehl-category-context"
+      ]
+    },
+    {
+      "id": "story_functor_to_adjunction_add_data",
+      "source": "functor",
+      "target": "adjunction",
+      "type": "add-data",
+      "label": "pair with an adjoint functor",
+      "detail": "An adjunction consists of a left and right adjoint functor together with equivalent unit/counit or hom-set data; a single functor need not possess an adjoint.",
+      "citations": [
+        "riehl-category-context"
+      ]
+    },
+    {
+      "id": "story_functor_to_presheaf_framework_specialization",
+      "source": "functor",
+      "target": "presheaf",
+      "type": "framework-specialization",
+      "label": "contravariant Set-valued functor",
+      "detail": "A presheaf is a functor from the opposite of a category to Set.",
+      "citations": [
+        "riehl-category-context"
+      ]
+    },
+    {
+      "id": "story_commutative_ring_to_ring_localization_canonical_construction",
+      "source": "commutative_ring",
+      "target": "ring_localization",
+      "type": "canonical-construction",
+      "label": "invert a multiplicative subset",
+      "detail": "Localization universally makes selected ring elements invertible.",
+      "citations": [
+        "stacks-algebra-text"
+      ]
+    },
+    {
+      "id": "story_ring_localization_to_local_ring_framework_specialization",
+      "source": "ring_localization",
+      "target": "local_ring",
+      "type": "framework-specialization",
+      "label": "localize at a prime",
+      "detail": "For a prime ideal $\\mathfrak p$, the localization $R_{\\mathfrak p}$ is a local ring.",
+      "citations": [
+        "stacks-algebra-text"
+      ]
+    },
+    {
+      "id": "story_commutative_ring_to_prime_spectrum_canonical_construction",
+      "source": "commutative_ring",
+      "target": "prime_spectrum",
+      "type": "canonical-construction",
+      "label": "form $\\operatorname{Spec}(R)$",
+      "detail": "Prime ideals with the Zariski topology and structure sheaf form the affine spectrum.",
+      "citations": [
+        "stacks-schemes-text"
+      ]
+    },
+    {
+      "id": "story_prime_spectrum_to_affine_scheme_representation_equivalence",
+      "source": "prime_spectrum",
+      "target": "affine_scheme",
+      "type": "representation-equivalence",
+      "label": "is an affine scheme",
+      "detail": "An affine scheme is precisely a locally ringed space isomorphic to $\\operatorname{Spec}(R)$ for some commutative ring.",
+      "citations": [
+        "stacks-schemes-text"
+      ]
+    },
+    {
+      "id": "story_sheaf_to_sheaf_stalk_canonical_construction",
+      "source": "sheaf",
+      "target": "sheaf_stalk",
+      "type": "canonical-construction",
+      "label": "take germs at a point",
+      "detail": "The stalk is the filtered colimit over neighborhoods of the point.",
+      "citations": [
+        "stacks-schemes-text"
+      ]
+    },
+    {
+      "id": "story_sheaf_of_rings_to_sheaf_stalk_canonical_construction",
+      "source": "sheaf_of_rings",
+      "target": "sheaf_stalk",
+      "type": "canonical-construction",
+      "label": "take the ring of germs at a point",
+      "detail": "At each chosen point, the stalk of a sheaf of rings is canonically a ring obtained from germs of local sections.",
+      "citations": [
+        "stacks-schemes-text"
+      ]
+    },
+    {
+      "id": "story_ring_localization_to_sheaf_stalk_representation_equivalence",
+      "source": "ring_localization",
+      "target": "sheaf_stalk",
+      "type": "representation-equivalence",
+      "label": "is canonically the corresponding affine stalk",
+      "detail": "For a prime $\\mathfrak p\\subset R$, the stalk of the structure sheaf on $\\operatorname{Spec}(R)$ at $\\mathfrak p$ is canonically isomorphic to the localization $R_{\\mathfrak p}$.",
+      "citations": [
+        "stacks-schemes-text"
+      ]
+    },
+    {
+      "id": "story_epr_argument_to_bell_theorem_historically_motivated",
+      "source": "epr_argument",
+      "target": "bell_theorem",
+      "type": "historically-motivated",
+      "label": "formalize local hidden-variable constraints",
+      "detail": "Bell converted the locality problem sharpened by EPR into experimentally testable inequalities.",
+      "citations": [
+        "wp-physics-bell_theorem",
+        "horodecki-entanglement-review"
+      ]
+    },
+    {
+      "id": "story_bell_theorem_to_bell_test_experiments_experimentally_verified_by",
+      "source": "bell_theorem",
+      "target": "bell_test_experiments",
+      "type": "experimentally-verified-by",
+      "label": "is tested through Bell-inequality experiments",
+      "detail": "Bell tests measure correlations and close specified loopholes to test local hidden-variable bounds. They test physical assumptions and observed violations; the mathematical inequality itself does not require experimental proof.",
+      "citations": [
+        "wp-physics-bell_theorem",
+        "nist-quantum-theory"
+      ]
+    },
+    {
+      "id": "story_valued_field_to_completion_at_valuation_canonical_construction",
+      "source": "valued_field",
+      "target": "completion_at_valuation",
+      "type": "canonical-construction",
+      "label": "complete in the valuation topology",
+      "detail": "Cauchy completion produces a complete valued field containing a dense image of the original field.",
+      "citations": [
+        "milne-algebraic-number-theory"
+      ]
+    },
+    {
+      "id": "story_completion_at_valuation_to_complete_valued_field_induced_forgotten",
+      "source": "completion_at_valuation",
+      "target": "complete_valued_field",
+      "type": "induced-forgotten",
+      "label": "yields a complete valued field",
+      "detail": "Completing a valued field produces a complete valued field into which the original field maps densely; the completion is unique up to unique isometric isomorphism over the original field.",
+      "citations": [
+        "milne-algebraic-number-theory"
+      ]
+    },
+    {
+      "id": "story_valuation_to_valuation_ring_canonical_construction",
+      "source": "valuation",
+      "target": "valuation_ring",
+      "type": "canonical-construction",
+      "label": "take nonnegative elements",
+      "detail": "For a valuation on a field, the elements of nonnegative valuation form its valuation ring; equivalent multiplicative conventions select the elements of value at most one.",
+      "citations": [
+        "milne-algebraic-number-theory"
+      ]
+    },
+    {
+      "id": "story_local_ring_to_residue_field_quotient_construction",
+      "source": "local_ring",
+      "target": "residue_field",
+      "type": "quotient-construction",
+      "label": "quotient by the maximal ideal",
+      "detail": "The unique maximal ideal of a local ring yields its residue field.",
+      "citations": [
+        "stacks-algebra-text"
+      ]
+    },
+    {
+      "id": "story_number_field_to_place_of_number_field_canonical_construction",
+      "source": "number_field",
+      "target": "place_of_number_field",
+      "type": "canonical-construction",
+      "label": "consider its places",
+      "detail": "A number field has Archimedean places from embeddings and non-Archimedean places associated with prime ideals, understood as equivalence classes of absolute values.",
+      "citations": [
+        "milne-algebraic-number-theory"
+      ]
+    },
+    {
+      "id": "story_place_of_number_field_to_completion_at_valuation_canonical_construction",
+      "source": "place_of_number_field",
+      "target": "completion_at_valuation",
+      "type": "canonical-construction",
+      "label": "complete at the place",
+      "detail": "Each place determines a completion of the number field.",
+      "citations": [
+        "milne-algebraic-number-theory"
+      ]
+    },
+    {
+      "id": "story_completion_at_valuation_to_p_adic_field_framework_specialization",
+      "source": "completion_at_valuation",
+      "target": "p_adic_field",
+      "type": "framework-specialization",
+      "label": "non-Archimedean finite extension",
+      "detail": "Completing a number field at a non-Archimedean place gives a finite extension of $\\mathbb Q_p$.",
+      "citations": [
+        "milne-algebraic-number-theory"
+      ]
+    },
+    {
+      "id": "story_topological_space_to_homotopy_add_data",
+      "source": "topological_space",
+      "target": "homotopy",
+      "type": "add-data",
+      "label": "deform maps continuously",
+      "detail": "A homotopy is a continuous one-parameter family of maps.",
+      "citations": [
+        "hatcher-algebraic-topology"
+      ]
+    },
+    {
+      "id": "story_homotopy_equivalence_to_homotopy_induced_forgotten",
+      "source": "homotopy_equivalence",
+      "target": "homotopy",
+      "type": "induced-forgotten",
+      "label": "is witnessed by homotopies",
+      "detail": "A homotopy equivalence consists of maps whose composites are homotopic to the relevant identity maps; retaining a witnessing deformation gives homotopy data.",
+      "citations": [
+        "hatcher-algebraic-topology"
+      ]
+    },
+    {
+      "id": "story_pointed_topological_space_to_loop_space_canonical_construction",
+      "source": "pointed_topological_space",
+      "target": "loop_space",
+      "type": "canonical-construction",
+      "label": "form based loops",
+      "detail": "The loop space consists of maps from the pointed circle preserving the basepoint.",
+      "citations": [
+        "hatcher-algebraic-topology"
+      ]
+    },
+    {
+      "id": "story_loop_space_to_fundamental_group_quotient_construction",
+      "source": "loop_space",
+      "target": "fundamental_group",
+      "type": "quotient-construction",
+      "label": "take path components",
+      "detail": "The path components of the based loop space form $\\pi_1$ under concatenation.",
+      "citations": [
+        "hatcher-algebraic-topology"
+      ]
+    },
+    {
+      "id": "story_fundamental_group_to_covering_space_theorem_implication",
+      "source": "fundamental_group",
+      "target": "covering_space",
+      "type": "theorem-implication",
+      "label": "classifies connected coverings under standard hypotheses",
+      "detail": "For a path-connected, locally path-connected, semilocally simply connected space, connected covering spaces correspond to conjugacy classes of subgroups of the fundamental group.",
+      "citations": [
+        "hatcher-algebraic-topology"
+      ]
+    },
+    {
+      "id": "story_loop_space_to_higher_homotopy_group_canonical_construction",
+      "source": "loop_space",
+      "target": "higher_homotopy_group",
+      "type": "canonical-construction",
+      "label": "iterate loops or map spheres",
+      "detail": "Higher homotopy groups are obtained from based maps of spheres, equivalently iterated loop spaces.",
+      "citations": [
+        "hatcher-algebraic-topology"
+      ]
+    },
+    {
+      "id": "story_topological_space_to_singular_chain_complex_canonical_construction",
+      "source": "topological_space",
+      "target": "singular_chain_complex",
+      "type": "canonical-construction",
+      "label": "take singular simplices",
+      "detail": "Continuous simplices and alternating face maps form the singular chain complex.",
+      "citations": [
+        "hatcher-algebraic-topology"
+      ]
+    },
+    {
+      "id": "story_chain_complex_to_singular_chain_complex_classification",
+      "source": "chain_complex",
+      "target": "singular_chain_complex",
+      "type": "classification",
+      "label": "has singular chains as a specialization",
+      "detail": "The singular chain complex of a topological space is a particular chain complex, freely generated by singular simplices with the alternating-face boundary.",
+      "citations": [
+        "hatcher-algebraic-topology"
+      ]
+    },
+    {
+      "id": "story_singular_chain_complex_to_homology_group_quotient_construction",
+      "source": "singular_chain_complex",
+      "target": "homology_group",
+      "type": "quotient-construction",
+      "label": "cycles modulo boundaries",
+      "detail": "Taking kernel modulo image in each degree gives singular homology.",
+      "citations": [
+        "hatcher-algebraic-topology"
+      ]
+    },
+    {
+      "id": "story_singular_chain_complex_to_singular_cochain_complex_canonical_construction",
+      "source": "singular_chain_complex",
+      "target": "singular_cochain_complex",
+      "type": "canonical-construction",
+      "label": "dualize with coefficients",
+      "detail": "Applying $\\operatorname{Hom}(-,A)$ produces singular cochains.",
+      "citations": [
+        "hatcher-algebraic-topology"
+      ]
+    },
+    {
+      "id": "story_cochain_complex_to_singular_cochain_complex_classification",
+      "source": "cochain_complex",
+      "target": "singular_cochain_complex",
+      "type": "classification",
+      "label": "has singular cochains as a specialization",
+      "detail": "The singular cochain complex with coefficients is a particular cochain complex obtained by applying Hom to singular chains.",
+      "citations": [
+        "hatcher-algebraic-topology"
+      ]
+    },
+    {
+      "id": "story_singular_cochain_complex_to_cohomology_group_quotient_construction",
+      "source": "singular_cochain_complex",
+      "target": "cohomology_group",
+      "type": "quotient-construction",
+      "label": "cocycles modulo coboundaries",
+      "detail": "Taking cochain cohomology yields $H^n(X;A)$.",
+      "citations": [
+        "hatcher-algebraic-topology"
+      ]
+    },
+    {
+      "id": "story_cohomology_group_to_cohomology_ring_add_data",
+      "source": "cohomology_group",
+      "target": "cohomology_ring",
+      "type": "add-data",
+      "label": "collect all degrees and add the cup product",
+      "detail": "With ring coefficients, collect the groups $H^n(X;R)$ over all degrees and equip their graded direct sum with the cup product.",
+      "citations": [
+        "hatcher-algebraic-topology"
+      ]
+    },
+    {
+      "id": "story_exact_sequence_to_long_exact_sequence_classification",
+      "source": "exact_sequence",
+      "target": "long_exact_sequence",
+      "type": "classification",
+      "label": "specializes to an exact sequence across degrees",
+      "detail": "A long exact sequence is an exact sequence indexed across successive degrees, usually linked by connecting homomorphisms.",
+      "citations": [
+        "hatcher-algebraic-topology"
+      ]
+    },
+    {
+      "id": "story_topological_pair_to_long_exact_sequence_canonical_construction",
+      "source": "topological_pair",
+      "target": "long_exact_sequence",
+      "type": "canonical-construction",
+      "label": "take relative homology or cohomology",
+      "detail": "A pair $(X,A)$ produces long exact sequences relating $A$, $X$, and $(X,A)$.",
+      "citations": [
+        "hatcher-algebraic-topology"
+      ]
+    },
+    {
+      "id": "story_homotopy_equivalence_to_homology_group_theorem_implication",
+      "source": "homotopy_equivalence",
+      "target": "homology_group",
+      "type": "theorem-implication",
+      "label": "induces isomorphisms",
+      "detail": "Homotopy-equivalent spaces have isomorphic singular homology groups.",
+      "citations": [
+        "hatcher-algebraic-topology"
+      ]
+    },
+    {
+      "id": "story_homotopy_equivalence_to_cohomology_group_theorem_implication",
+      "source": "homotopy_equivalence",
+      "target": "cohomology_group",
+      "type": "theorem-implication",
+      "label": "induces isomorphisms",
+      "detail": "Homotopy-equivalent spaces have isomorphic singular cohomology groups.",
+      "citations": [
+        "hatcher-algebraic-topology"
+      ]
+    },
+    {
+      "id": "story_simplicial_set_to_topological_space_canonical_construction",
+      "source": "simplicial_set",
+      "target": "topological_space",
+      "type": "canonical-construction",
+      "label": "take geometric realization",
+      "detail": "Geometric realization canonically constructs a topological space $|X|$ from a simplicial set $X$; together with the singular complex it relates the corresponding homotopy theories.",
+      "citations": [
+        "hatcher-algebraic-topology"
+      ]
+    },
+    {
+      "id": "story_algorithm_to_turing_machine_framework_specialization",
+      "source": "algorithm",
+      "target": "turing_machine",
+      "type": "framework-specialization",
+      "label": "formalizes as a Turing-machine procedure",
+      "detail": "A Turing machine is one precise mathematical model of a finitely specified mechanical procedure; identifying it with the full informal notion of algorithm invokes the Church–Turing thesis.",
+      "citations": [
+        "turing-computable-numbers"
+      ]
+    },
+    {
+      "id": "story_decision_problem_to_decidable_problem_classification",
+      "source": "decision_problem",
+      "target": "decidable_problem",
+      "type": "classification",
+      "label": "has a total decider",
+      "detail": "A decision problem is decidable when some algorithm halts with the correct answer on every input.",
+      "citations": [
+        "turing-computable-numbers"
+      ]
+    },
+    {
+      "id": "story_turing_machine_to_computable_function_canonical_construction",
+      "source": "turing_machine",
+      "target": "computable_function",
+      "type": "canonical-construction",
+      "label": "computes a partial function",
+      "detail": "Each deterministic Turing machine induces a partial function by its input-output behavior; machines that halt on every input compute total functions.",
+      "citations": [
+        "turing-computable-numbers"
+      ]
+    },
+    {
+      "id": "story_turing_machine_to_recursively_enumerable_set_canonical_construction",
+      "source": "turing_machine",
+      "target": "recursively_enumerable_set",
+      "type": "canonical-construction",
+      "label": "recognizes or enumerates a set",
+      "detail": "A Turing machine determines a computably enumerable set by accepting exactly its members, equivalently by enumerating them.",
+      "citations": [
+        "turing-computable-numbers"
+      ]
+    },
+    {
+      "id": "story_turing_machine_to_universal_turing_machine_framework_specialization",
+      "source": "turing_machine",
+      "target": "universal_turing_machine",
+      "type": "framework-specialization",
+      "label": "encode and simulate machines",
+      "detail": "A universal machine interprets encoded machines and their inputs.",
+      "citations": [
+        "turing-computable-numbers"
+      ]
+    },
+    {
+      "id": "story_universal_turing_machine_to_halting_problem_canonical_construction",
+      "source": "universal_turing_machine",
+      "target": "halting_problem",
+      "type": "canonical-construction",
+      "label": "poses termination of encoded simulations",
+      "detail": "Encoding machines and inputs permits the decision problem asking whether the universal simulation of a given machine on a given input eventually halts.",
+      "citations": [
+        "turing-computable-numbers"
+      ]
+    },
+    {
+      "id": "story_undecidable_problem_to_halting_problem_classification",
+      "source": "undecidable_problem",
+      "target": "halting_problem",
+      "type": "classification",
+      "label": "has the halting problem as a canonical example",
+      "detail": "The halting problem is a specific undecidable decision problem: no total algorithm correctly decides termination for every encoded machine-input pair.",
+      "citations": [
+        "turing-computable-numbers"
+      ]
+    },
+    {
+      "id": "story_first_order_theory_to_formal_proof_system_add_data",
+      "source": "first_order_theory",
+      "target": "formal_proof_system",
+      "type": "add-data",
+      "label": "specify effective derivations",
+      "detail": "A formal proof system fixes axioms and inference rules for a language.",
+      "citations": [
+        "openlogic-incompleteness"
+      ]
+    },
+    {
+      "id": "story_formal_proof_system_to_consistent_theory_impose_axiom",
+      "source": "formal_proof_system",
+      "target": "consistent_theory",
+      "type": "impose-axiom",
+      "label": "exclude contradictions",
+      "detail": "Consistency requires that contradiction is not derivable.",
+      "citations": [
+        "openlogic-incompleteness"
+      ]
+    },
+    {
+      "id": "story_formal_proof_system_to_syntactically_complete_theory_impose_axiom",
+      "source": "formal_proof_system",
+      "target": "syntactically_complete_theory",
+      "type": "impose-axiom",
+      "label": "decide every sentence syntactically",
+      "detail": "Syntactic completeness requires a proof of each sentence or its negation.",
+      "citations": [
+        "openlogic-incompleteness"
+      ]
+    },
+    {
+      "id": "story_natural_numbers_to_godel_numbering_add_data",
+      "source": "natural_numbers",
+      "target": "godel_numbering",
+      "type": "add-data",
+      "label": "choose an effective coding of syntax",
+      "detail": "Use natural numbers as codes and choose a computable encoding of symbols, formulas, and finite proofs; Gödel numberings are not unique.",
+      "citations": [
+        "godel-incompleteness-paper",
+        "openlogic-incompleteness"
+      ]
+    },
+    {
+      "id": "story_formal_proof_system_to_godel_numbering_add_data",
+      "source": "formal_proof_system",
+      "target": "godel_numbering",
+      "type": "add-data",
+      "label": "choose an effective arithmetical coding",
+      "detail": "For an effectively presented formal system, a Gödel numbering adds a computable encoding of symbols, formulas, and finite proofs by natural numbers.",
+      "citations": [
+        "godel-incompleteness-paper"
+      ]
+    },
+    {
+      "id": "story_hilbert_program_to_formal_proof_system_historically_motivated",
+      "source": "hilbert_program",
+      "target": "formal_proof_system",
+      "type": "historically-motivated",
+      "label": "formalize mathematics",
+      "detail": "Hilbert’s program motivated precise formal systems and metamathematical consistency proofs.",
+      "citations": [
+        "openlogic-incompleteness"
+      ]
+    },
+    {
+      "id": "story_commutative_ring_to_polynomial_ring_canonical_construction",
+      "source": "commutative_ring",
+      "target": "polynomial_ring",
+      "type": "canonical-construction",
+      "label": "adjoin an indeterminate",
+      "detail": "Form finite formal sums in a variable with coefficients in the ring.",
+      "citations": [
+        "milne-fields-galois-theory"
+      ]
+    },
+    {
+      "id": "story_field_to_field_extension_add_data",
+      "source": "field",
+      "target": "field_extension",
+      "type": "add-data",
+      "label": "specify a larger field",
+      "detail": "A field extension records an embedding of a base field into a larger field.",
+      "citations": [
+        "milne-fields-galois-theory"
+      ]
+    },
+    {
+      "id": "story_field_extension_to_algebraic_extension_impose_axiom",
+      "source": "field_extension",
+      "target": "algebraic_extension",
+      "type": "impose-axiom",
+      "label": "require algebraic elements",
+      "detail": "Every element of the larger field must satisfy a nonzero polynomial over the base.",
+      "citations": [
+        "milne-fields-galois-theory"
+      ]
+    },
+    {
+      "id": "story_algebraic_extension_to_separable_extension_impose_axiom",
+      "source": "algebraic_extension",
+      "target": "separable_extension",
+      "type": "impose-axiom",
+      "label": "require separability",
+      "detail": "Minimal polynomials must have distinct roots in a splitting field.",
+      "citations": [
+        "milne-fields-galois-theory"
+      ]
+    },
+    {
+      "id": "story_algebraic_extension_to_normal_extension_impose_axiom",
+      "source": "algebraic_extension",
+      "target": "normal_extension",
+      "type": "impose-axiom",
+      "label": "require normality",
+      "detail": "Irreducible polynomials with one root in the extension must split there.",
+      "citations": [
+        "milne-fields-galois-theory"
+      ]
+    },
+    {
+      "id": "story_polynomial_ring_to_splitting_field_add_data",
+      "source": "polynomial_ring",
+      "target": "splitting_field",
+      "type": "add-data",
+      "label": "choose polynomials and adjoin all roots",
+      "detail": "Choose a polynomial or family over the base field and a field generated by all of its roots. The resulting splitting field is unique up to base-field isomorphism, not as a literally canonical subfield without an ambient algebraic closure.",
+      "citations": [
+        "milne-fields-galois-theory"
+      ]
+    },
+    {
+      "id": "story_splitting_field_to_normal_extension_induced_forgotten",
+      "source": "splitting_field",
+      "target": "normal_extension",
+      "type": "induced-forgotten",
+      "label": "is a normal algebraic extension",
+      "detail": "A splitting field of a family of polynomials over the base field is algebraic and normal over that field; forgetting the chosen polynomials leaves the normal extension.",
+      "citations": [
+        "milne-fields-galois-theory"
+      ]
+    },
+    {
+      "id": "story_field_to_field_automorphism_add_data",
+      "source": "field",
+      "target": "field_automorphism",
+      "type": "add-data",
+      "label": "take invertible field maps",
+      "detail": "Field automorphisms form a group under composition.",
+      "citations": [
+        "milne-fields-galois-theory"
+      ]
+    },
+    {
+      "id": "story_galois_extension_to_galois_group_canonical_construction",
+      "source": "galois_extension",
+      "target": "galois_group",
+      "type": "canonical-construction",
+      "label": "take base-fixing automorphisms",
+      "detail": "The automorphisms of $L$ fixing $K$ form $\\operatorname{Gal}(L/K)$.",
+      "citations": [
+        "milne-fields-galois-theory"
+      ]
+    },
+    {
+      "id": "story_group_to_galois_group_framework_specialization",
+      "source": "group",
+      "target": "galois_group",
+      "type": "framework-specialization",
+      "label": "realized by field symmetries",
+      "detail": "A Galois group is a group, with composition as operation.",
+      "citations": [
+        "milne-fields-galois-theory"
+      ]
+    },
+    {
+      "id": "story_galois_group_to_fixed_field_canonical_construction",
+      "source": "galois_group",
+      "target": "fixed_field",
+      "type": "canonical-construction",
+      "label": "take common fixed elements",
+      "detail": "Each automorphism subgroup determines an intermediate fixed field.",
+      "citations": [
+        "milne-fields-galois-theory"
+      ]
+    },
+    {
+      "id": "story_galois_extension_to_fundamental_theorem_galois_theory_theorem_implication",
+      "source": "galois_extension",
+      "target": "fundamental_theorem_galois_theory",
+      "type": "theorem-implication",
+      "label": "subgroups correspond to subfields",
+      "detail": "Finite Galois extensions have an inclusion-reversing subgroup–intermediate-field correspondence.",
+      "citations": [
+        "milne-fields-galois-theory"
+      ]
+    },
+    {
+      "id": "story_einstein_field_equation_to_schwarzschild_spacetime_model_realization",
+      "source": "einstein_field_equation",
+      "target": "schwarzschild_spacetime",
+      "type": "model-realization",
+      "label": "solve in spherical vacuum symmetry",
+      "detail": "The Schwarzschild geometry solves the vacuum Einstein equation under spherical symmetry.",
+      "citations": [
+        "einstein-equation",
+        "einstein-online-black-holes"
+      ]
+    },
+    {
+      "id": "story_einstein_field_equation_to_kerr_spacetime_model_realization",
+      "source": "einstein_field_equation",
+      "target": "kerr_spacetime",
+      "type": "model-realization",
+      "label": "solve in stationary rotating vacuum",
+      "detail": "The Kerr geometry is a rotating vacuum solution of the Einstein equation.",
+      "citations": [
+        "einstein-equation",
+        "einstein-online-black-holes"
+      ]
+    },
+    {
+      "id": "story_black_hole_to_schwarzschild_spacetime_model_realization",
+      "source": "black_hole",
+      "target": "schwarzschild_spacetime",
+      "type": "model-realization",
+      "label": "has a static uncharged idealization",
+      "detail": "The Schwarzschild black-hole spacetime is the static, spherically symmetric, asymptotically flat vacuum model of an uncharged nonrotating black hole.",
+      "citations": [
+        "einstein-online-black-holes",
+        "nasa-black-holes"
+      ]
+    },
+    {
+      "id": "story_black_hole_to_kerr_spacetime_model_realization",
+      "source": "black_hole",
+      "target": "kerr_spacetime",
+      "type": "model-realization",
+      "label": "has a rotating uncharged idealization",
+      "detail": "The Kerr spacetime is the stationary, axisymmetric, asymptotically flat vacuum model used for an uncharged rotating black hole.",
+      "citations": [
+        "einstein-online-black-holes",
+        "nasa-black-holes"
+      ]
+    },
+    {
+      "id": "story_general_relativity_to_gravitational_collapse_describes_governs",
+      "source": "general_relativity",
+      "target": "gravitational_collapse",
+      "type": "describes-governs",
+      "label": "governs self-gravitating collapse",
+      "detail": "Einstein’s equation governs the dynamical geometry and matter involved in relativistic collapse.",
+      "citations": [
+        "einstein-general-relativity",
+        "nasa-black-holes"
+      ]
+    },
+    {
+      "id": "story_gravitational_collapse_to_black_hole_transformation_process",
+      "source": "gravitational_collapse",
+      "target": "black_hole",
+      "type": "transformation-process",
+      "label": "can form a black hole",
+      "detail": "Sufficiently compact collapse can produce a trapped black-hole region.",
+      "citations": [
+        "nasa-black-holes",
+        "einstein-online-black-holes"
+      ]
+    },
+    {
+      "id": "story_black_hole_to_event_horizon_state_description",
+      "source": "black_hole",
+      "target": "event_horizon",
+      "type": "state-description",
+      "label": "bounded by a causal horizon",
+      "detail": "In standard asymptotically predictable settings, the event horizon is the boundary of the black-hole region.",
+      "citations": [
+        "nasa-black-holes",
+        "einstein-online-black-holes"
+      ]
+    },
+    {
+      "id": "story_black_hole_to_binary_black_hole_composition",
+      "source": "black_hole",
+      "target": "binary_black_hole",
+      "type": "composition",
+      "label": "form a bound pair",
+      "detail": "Two black holes can form an inspiraling binary system.",
+      "citations": [
+        "ligo-gravitational-wave-science",
+        "nasa-black-holes"
+      ]
+    },
+    {
+      "id": "story_binary_black_hole_to_gw150914_detection_experimentally_verified_by",
+      "source": "binary_black_hole",
+      "target": "gw150914_detection",
+      "type": "experimentally-verified-by",
+      "label": "observed through merger waves",
+      "detail": "GW150914 matched a binary-black-hole inspiral, merger, and ringdown waveform.",
+      "citations": [
+        "ligo-gw150914",
+        "ligo-gravitational-wave-science"
+      ]
+    },
+    {
+      "id": "story_cosmological_principle_to_flrw_spacetime_model_realization",
+      "source": "cosmological_principle",
+      "target": "flrw_spacetime",
+      "type": "model-realization",
+      "label": "is realized by homogeneous and isotropic spacetime models",
+      "detail": "Exact spatial homogeneity and isotropy lead to the FLRW family of spacetime geometries; the empirical cosmological principle is an idealization applied only on sufficiently large scales.",
+      "citations": [
+        "nasa-big-bang",
+        "einstein-equation"
+      ]
+    },
+    {
+      "id": "story_general_relativity_to_flrw_spacetime_model_realization",
+      "source": "general_relativity",
+      "target": "flrw_spacetime",
+      "type": "model-realization",
+      "label": "cosmological spacetime ansatz",
+      "detail": "FLRW geometries model homogeneous and isotropic universes in general relativity.",
+      "citations": [
+        "einstein-general-relativity",
+        "nasa-big-bang"
+      ]
+    },
+    {
+      "id": "story_flrw_spacetime_to_friedmann_equations_mathematical_formulation",
+      "source": "flrw_spacetime",
+      "target": "friedmann_equations",
+      "type": "mathematical-formulation",
+      "label": "reduce Einstein’s equation",
+      "detail": "Substitution of the FLRW metric and homogeneous stress–energy into Einstein’s equation yields the Friedmann equations.",
+      "citations": [
+        "einstein-equation",
+        "nasa-big-bang"
+      ]
+    },
+    {
+      "id": "story_friedmann_equations_to_expanding_universe_describes_governs",
+      "source": "friedmann_equations",
+      "target": "expanding_universe",
+      "type": "describes-governs",
+      "label": "evolve the scale factor",
+      "detail": "Solutions with increasing scale factor describe cosmic expansion.",
+      "citations": [
+        "nasa-big-bang",
+        "nasa-dark-energy"
+      ]
+    },
+    {
+      "id": "story_expanding_universe_to_big_bang_model_historically_motivated",
+      "source": "expanding_universe",
+      "target": "big_bang_model",
+      "type": "historically-motivated",
+      "label": "extrapolate to a hot dense past",
+      "detail": "Expansion combined with thermal and nuclear evidence supports the hot Big Bang framework.",
+      "citations": [
+        "nasa-big-bang"
+      ]
+    },
+    {
+      "id": "story_big_bang_model_to_cosmic_microwave_background_experimentally_verified_by",
+      "source": "big_bang_model",
+      "target": "cosmic_microwave_background",
+      "type": "experimentally-verified-by",
+      "label": "predicts relic radiation",
+      "detail": "The hot Big Bang predicts a cooled relic photon background with an approximately blackbody spectrum.",
+      "citations": [
+        "nasa-big-bang"
+      ]
+    },
+    {
+      "id": "story_big_bang_model_to_cosmological_inflation_framework_specialization",
+      "source": "big_bang_model",
+      "target": "cosmological_inflation",
+      "type": "framework-specialization",
+      "label": "extends with an earlier accelerated phase",
+      "detail": "Inflationary cosmology augments the hot Big Bang history with a hypothesized earlier epoch of accelerated expansion and a mechanism for primordial perturbations.",
+      "citations": [
+        "nasa-big-bang",
+        "tong-qft"
+      ]
+    },
+    {
+      "id": "story_dark_matter_to_lambda_cdm_model_theory_component",
+      "source": "dark_matter",
+      "target": "lambda_cdm_model",
+      "type": "theory-component",
+      "label": "cold gravitating matter component",
+      "detail": "Cold dark matter supplies the dominant clustering matter component of $\\Lambda$CDM.",
+      "citations": [
+        "nasa-dark-matter",
+        "nasa-big-bang"
+      ]
+    },
+    {
+      "id": "story_dark_energy_to_lambda_cdm_model_theory_component",
+      "source": "dark_energy",
+      "target": "lambda_cdm_model",
+      "type": "theory-component",
+      "label": "modeled by $\\Lambda$",
+      "detail": "The standard cosmological model represents dark energy by a cosmological constant.",
+      "citations": [
+        "nasa-dark-energy",
+        "nasa-big-bang"
+      ]
+    },
+    {
+      "id": "story_lambda_cdm_model_to_cosmic_microwave_background_experimentally_verified_by",
+      "source": "lambda_cdm_model",
+      "target": "cosmic_microwave_background",
+      "type": "experimentally-verified-by",
+      "label": "is constrained by CMB anisotropies",
+      "detail": "The temperature and polarization spectra of the cosmic microwave background provide major quantitative tests and parameter constraints for ΛCDM.",
+      "citations": [
+        "nasa-big-bang"
+      ]
+    },
+    {
+      "id": "story_flrw_spacetime_to_lambda_cdm_model_mathematical_formulation",
+      "source": "flrw_spacetime",
+      "target": "lambda_cdm_model",
+      "type": "mathematical-formulation",
+      "label": "background geometry",
+      "detail": "The standard cosmological model uses a perturbed FLRW spacetime.",
+      "citations": [
+        "nasa-big-bang",
+        "einstein-equation"
+      ]
+    },
+    {
+      "id": "story_rational_point_to_local_point_canonical_embedding",
+      "source": "rational_point",
+      "target": "local_point",
+      "type": "canonical-embedding",
+      "label": "embed globally into every completion",
+      "detail": "A global $K$-point induces a $K_v$-point for every place $v$.",
+      "citations": [
+        "milne-algebraic-number-theory"
+      ]
+    },
+    {
+      "id": "story_global_field_to_adele_ring_canonical_construction",
+      "source": "global_field",
+      "target": "adele_ring",
+      "type": "canonical-construction",
+      "label": "restricted product of completions",
+      "detail": "The adeles combine all local completions with an integrality restriction at almost all finite places.",
+      "citations": [
+        "milne-algebraic-number-theory"
+      ]
+    },
+    {
+      "id": "story_quadratic_form_to_hasse_minkowski_theorem_theorem_implication",
+      "source": "quadratic_form",
+      "target": "hasse_minkowski_theorem",
+      "type": "theorem-implication",
+      "label": "local isotropy decides global isotropy",
+      "detail": "The Hasse–Minkowski theorem establishes a local–global principle for quadratic forms over number fields.",
+      "citations": [
+        "milne-algebraic-number-theory"
+      ]
+    },
+    {
+      "id": "story_local_global_principle_to_hasse_minkowski_theorem_framework_specialization",
+      "source": "local_global_principle",
+      "target": "hasse_minkowski_theorem",
+      "type": "framework-specialization",
+      "label": "valid for quadratic forms",
+      "detail": "Hasse–Minkowski is a paradigmatic positive local–global theorem.",
+      "citations": [
+        "milne-algebraic-number-theory"
+      ]
+    },
+    {
+      "id": "story_functor_to_categorical_limit_canonical_construction",
+      "source": "functor",
+      "target": "categorical_limit",
+      "type": "canonical-construction",
+      "label": "take a limit of a diagram",
+      "detail": "A diagram is a functor into a category; when a universal cone exists, its apex is the limit of that diagram.",
+      "citations": [
+        "riehl-category-context"
+      ]
+    },
+    {
+      "id": "story_functor_to_categorical_colimit_canonical_construction",
+      "source": "functor",
+      "target": "categorical_colimit",
+      "type": "canonical-construction",
+      "label": "take a colimit of a diagram",
+      "detail": "A diagram is a functor into a category; when a universal cocone exists, its apex is the colimit of that diagram.",
+      "citations": [
+        "riehl-category-context"
+      ]
+    },
+    {
+      "id": "story_cartesian_closed_category_to_adjunction_canonical_construction",
+      "source": "cartesian_closed_category",
+      "target": "adjunction",
+      "type": "canonical-construction",
+      "label": "product is left adjoint to exponentiation",
+      "detail": "In a cartesian closed category, for each object $A$ the functor $(-)\\times A$ is left adjoint to the exponential functor $(-)^A$.",
+      "citations": [
+        "wp-ccc",
+        "riehl-category-context"
+      ]
+    },
+    {
+      "id": "story_finitely_complete_category_to_categorical_limit_induced_forgotten",
+      "source": "finitely_complete_category",
+      "target": "categorical_limit",
+      "type": "induced-forgotten",
+      "label": "retains its finite limits",
+      "detail": "A finitely complete category has limits for every finite diagram; forgetting the ambient axiom leaves individual categorical limits.",
+      "citations": [
+        "nlab-finite-limits",
+        "riehl-category-context"
+      ]
+    },
+    {
+      "id": "story_cartesian_category_to_categorical_limit_induced_forgotten",
+      "source": "cartesian_category",
+      "target": "categorical_limit",
+      "type": "induced-forgotten",
+      "label": "retains finite products as limits",
+      "detail": "A cartesian category has finite products, which are limits of finite discrete diagrams, including a terminal object as the empty product.",
+      "citations": [
+        "wp-cartesian-category",
+        "riehl-category-context"
+      ]
+    },
+    {
+      "id": "story_locally_ringed_space_to_sheaf_stalk_induced_forgotten",
+      "source": "locally_ringed_space",
+      "target": "sheaf_stalk",
+      "type": "induced-forgotten",
+      "label": "has local-ring stalks",
+      "detail": "A locally ringed space is a ringed space whose structure-sheaf stalk at every point is a local ring; retaining one stalk forgets the global space.",
+      "citations": [
+        "stacks-locally-ringed",
+        "stacks-schemes-text"
+      ]
+    },
+    {
+      "id": "story_valued_field_to_valuation_induced_forgotten",
+      "source": "valued_field",
+      "target": "valuation",
+      "type": "induced-forgotten",
+      "label": "retains the chosen valuation",
+      "detail": "A valued field includes an underlying field together with its chosen valuation or absolute value; forgetting additional topological or completeness properties retains that valuation structure.",
+      "citations": [
+        "wp-valued-field",
+        "milne-algebraic-number-theory"
+      ]
+    },
+    {
+      "id": "story_galois_extension_to_separable_extension_induced_forgotten",
+      "source": "galois_extension",
+      "target": "separable_extension",
+      "type": "induced-forgotten",
+      "label": "is separable",
+      "detail": "A Galois extension is normal and separable; forgetting normality leaves a separable extension.",
+      "citations": [
+        "milne-fields-galois-theory"
+      ]
+    },
+    {
+      "id": "story_galois_extension_to_normal_extension_induced_forgotten",
+      "source": "galois_extension",
+      "target": "normal_extension",
+      "type": "induced-forgotten",
+      "label": "is normal",
+      "detail": "A Galois extension is normal and separable; forgetting separability leaves a normal extension.",
+      "citations": [
+        "milne-fields-galois-theory"
+      ]
+    },
+    {
+      "id": "story_homology_group_to_abelian_group_induced_forgotten",
+      "source": "homology_group",
+      "target": "abelian_group",
+      "type": "induced-forgotten",
+      "label": "is an abelian group",
+      "detail": "Homology groups are abelian groups under addition induced from the chain groups.",
+      "citations": [
+        "hatcher-algebraic-topology",
+        "wp-abelian",
+        "stacks-algebra-text"
+      ]
+    },
+    {
+      "id": "story_cohomology_group_to_abelian_group_induced_forgotten",
+      "source": "cohomology_group",
+      "target": "abelian_group",
+      "type": "induced-forgotten",
+      "label": "is an abelian group",
+      "detail": "Cohomology groups are abelian groups under addition induced from the cochain groups.",
+      "citations": [
+        "hatcher-algebraic-topology",
+        "wp-abelian",
+        "stacks-algebra-text"
+      ]
+    },
+    {
+      "id": "story_cohomology_ring_to_graded_object_induced_forgotten",
+      "source": "cohomology_ring",
+      "target": "graded_object",
+      "type": "induced-forgotten",
+      "label": "has an underlying graded object",
+      "detail": "The cup product equips the direct sum of cohomology groups with a graded ring structure; forgetting multiplication leaves a graded object.",
+      "citations": [
+        "hatcher-algebraic-topology",
+        "wp-graded-object",
+        "nlab-graded-object"
+      ]
+    },
+    {
+      "id": "story_fundamental_group_to_group_induced_forgotten",
+      "source": "fundamental_group",
+      "target": "group",
+      "type": "induced-forgotten",
+      "label": "is a group",
+      "detail": "Based loops modulo homotopy form a group under concatenation.",
+      "citations": [
+        "hatcher-algebraic-topology",
+        "wp-group",
+        "nlab-group"
+      ]
+    },
+    {
+      "id": "story_higher_homotopy_group_to_abelian_group_induced_forgotten",
+      "source": "higher_homotopy_group",
+      "target": "abelian_group",
+      "type": "induced-forgotten",
+      "label": "is abelian for n at least 2",
+      "detail": "For $n\\ge 2$, the $n$th homotopy group is abelian.",
+      "citations": [
+        "hatcher-algebraic-topology",
+        "wp-abelian",
+        "stacks-algebra-text"
+      ]
+    },
+    {
+      "id": "story_polynomial_ring_to_commutative_ring_induced_forgotten",
+      "source": "polynomial_ring",
+      "target": "commutative_ring",
+      "type": "induced-forgotten",
+      "label": "is a commutative ring",
+      "detail": "A polynomial ring over a commutative coefficient ring is itself commutative.",
+      "citations": [
+        "milne-fields-galois-theory",
+        "stacks-algebra-text",
+        "wp-comm-ring"
+      ]
+    },
+    {
+      "id": "story_residue_field_to_field_induced_forgotten",
+      "source": "residue_field",
+      "target": "field",
+      "type": "induced-forgotten",
+      "label": "is a field",
+      "detail": "The quotient of a local ring by its unique maximal ideal is a field.",
+      "citations": [
+        "stacks-algebra-text",
+        "wp-field",
+        "nlab-field"
+      ]
+    },
+    {
+      "id": "story_adele_ring_to_topological_ring_induced_forgotten",
+      "source": "adele_ring",
+      "target": "topological_ring",
+      "type": "induced-forgotten",
+      "label": "is a topological ring",
+      "detail": "The restricted-product topology makes the adeles a locally compact topological ring for a global field.",
+      "citations": [
+        "milne-algebraic-number-theory",
+        "stacks-top-ring",
+        "topology-without-tears"
+      ]
+    },
+    {
+      "id": "j_galois_extension__normal_extension",
+      "source": "normal_extension",
+      "target": "j_galois_extension",
+      "type": "combine-compatible",
+      "label": "normal extension",
+      "detail": "Supply normality of the algebraic extension as one jointly required input.",
+      "citations": [
+        "milne-fields-galois-theory"
+      ]
+    },
+    {
+      "id": "j_galois_extension__separable_extension",
+      "source": "separable_extension",
+      "target": "j_galois_extension",
+      "type": "combine-compatible",
+      "label": "separable extension",
+      "detail": "Supply separability of the same algebraic extension as the other jointly required input.",
+      "citations": [
+        "milne-fields-galois-theory"
+      ]
+    },
+    {
+      "id": "j_galois_extension__out",
+      "source": "j_galois_extension",
+      "target": "galois_extension",
+      "type": "combine-compatible",
+      "label": "impose both properties on one extension",
+      "detail": "An algebraic extension that is both normal and separable is Galois.",
+      "citations": [
+        "milne-fields-galois-theory"
+      ]
+    },
+    {
+      "id": "j_local_point__algebraic_variety",
+      "source": "algebraic_variety",
+      "target": "j_local_point",
+      "type": "combine-compatible",
+      "label": "global variety",
+      "detail": "Supply a variety $X$ over the relevant global field.",
+      "citations": [
+        "milne-algebraic-number-theory",
+        "stacks-schemes-text"
+      ]
+    },
+    {
+      "id": "j_local_point__completion_at_valuation",
+      "source": "completion_at_valuation",
+      "target": "j_local_point",
+      "type": "combine-compatible",
+      "label": "local completion",
+      "detail": "Supply the completion $K_v$ of the base field at the chosen place.",
+      "citations": [
+        "milne-algebraic-number-theory"
+      ]
+    },
+    {
+      "id": "j_local_point__out",
+      "source": "j_local_point",
+      "target": "local_point",
+      "type": "combine-compatible",
+      "label": "choose a point after base change",
+      "detail": "A $K_v$-valued point on the base-changed variety is a local point at $v$.",
+      "citations": [
+        "milne-algebraic-number-theory",
+        "stacks-schemes-text"
+      ]
+    },
+    {
+      "id": "story_quantum_mechanics_to_bell_theorem_theorem_implication",
+      "source": "quantum_mechanics",
+      "target": "bell_theorem",
+      "type": "theorem-implication",
+      "label": "predicts correlations incompatible with local hidden-variable bounds",
+      "detail": "Quantum mechanics permits entangled-state measurement correlations that violate Bell inequalities. Not every entangled state violates a Bell inequality, so entanglement alone is not the theorem premise.",
+      "citations": [
+        "nist-quantum-theory",
+        "horodecki-entanglement-review"
+      ]
+    },
+    {
+      "id": "story_prime_spectrum_to_topological_space_induced_forgotten",
+      "source": "prime_spectrum",
+      "target": "topological_space",
+      "type": "induced-forgotten",
+      "label": "retains the Zariski topology",
+      "detail": "Forgetting the structure sheaf and prime-ideal interpretation leaves the underlying Zariski topological space of $\\operatorname{Spec}(R)$.",
+      "citations": [
+        "stacks-schemes-text",
+        "stacks-topology"
+      ]
+    },
+    {
+      "id": "story_exact_category_to_exact_sequence_induced_forgotten",
+      "source": "exact_category",
+      "target": "exact_sequence",
+      "type": "induced-forgotten",
+      "label": "has distinguished exact sequences",
+      "detail": "An exact category comes with a specified class of kernel–cokernel pairs, called conflations; retaining one such pair gives an exact sequence in the chosen exact structure.",
+      "citations": [
+        "stacks-derived-text"
+      ]
+    },
+    {
+      "id": "story_algorithm_to_computable_function_representation_equivalence",
+      "source": "algorithm",
+      "target": "computable_function",
+      "type": "representation-equivalence",
+      "label": "corresponds to a computable input–output map under the Church–Turing thesis",
+      "detail": "A terminating or partial algorithm determines a partial function. The assertion that every effective algorithm is captured by Turing computability is the Church–Turing thesis, not a formal theorem.",
+      "citations": [
+        "turing-computable-numbers"
+      ]
+    },
+    {
+      "id": "story_algorithm_to_church_turing_thesis_historically_motivated",
+      "source": "algorithm",
+      "target": "church_turing_thesis",
+      "type": "historically-motivated",
+      "label": "motivated a precise account of effective procedure",
+      "detail": "Attempts to characterize the informal notion of an effective algorithm led to mutually equivalent formal models and the Church–Turing thesis.",
+      "citations": [
+        "turing-computable-numbers"
+      ]
+    },
+    {
+      "id": "story_field_extension_to_vector_space_induced_forgotten",
+      "source": "field_extension",
+      "target": "vector_space",
+      "type": "induced-forgotten",
+      "label": "is a vector space over the base field",
+      "detail": "For a field extension $L/K$, scalar multiplication by $K$ makes $L$ a vector space over $K$; its dimension is the extension degree.",
+      "citations": [
+        "milne-fields-galois-theory"
+      ]
+    },
+    {
+      "id": "story_fixed_field_to_field_induced_forgotten",
+      "source": "fixed_field",
+      "target": "field",
+      "type": "induced-forgotten",
+      "label": "is a subfield",
+      "detail": "Elements fixed by a group of field automorphisms are closed under the field operations and form a subfield.",
+      "citations": [
+        "milne-fields-galois-theory"
+      ]
+    },
+    {
+      "id": "story_solvable_group_to_group_induced_forgotten",
+      "source": "solvable_group",
+      "target": "group",
+      "type": "induced-forgotten",
+      "label": "is a group",
+      "detail": "Forgetting the terminating derived or subnormal series leaves the underlying group.",
+      "citations": [
+        "milne-fields-galois-theory"
+      ]
+    },
+    {
+      "id": "story_causal_structure_to_event_horizon_state_description",
+      "source": "causal_structure",
+      "target": "event_horizon",
+      "type": "state-description",
+      "label": "has a global causal boundary",
+      "detail": "An event horizon is defined globally from causal reachability relative to an exterior future; it is not determined from local curvature data alone.",
+      "citations": [
+        "einstein-online-black-holes",
+        "nasa-black-holes"
+      ]
+    },
+    {
+      "id": "story_lorentzian_manifold_to_schwarzschild_spacetime_mathematical_formulation",
+      "source": "lorentzian_manifold",
+      "target": "schwarzschild_spacetime",
+      "type": "mathematical-formulation",
+      "label": "supplies the spacetime metric structure",
+      "detail": "The Schwarzschild solution is a Lorentzian manifold with a metric satisfying the vacuum Einstein equation and spherical symmetry.",
+      "citations": [
+        "lee-smooth-manifolds",
+        "einstein-equation"
+      ]
+    },
+    {
+      "id": "story_lorentzian_manifold_to_kerr_spacetime_mathematical_formulation",
+      "source": "lorentzian_manifold",
+      "target": "kerr_spacetime",
+      "type": "mathematical-formulation",
+      "label": "supplies the spacetime metric structure",
+      "detail": "The Kerr solution is a Lorentzian manifold with a stationary, axisymmetric metric satisfying the vacuum Einstein equation.",
+      "citations": [
+        "lee-smooth-manifolds",
+        "einstein-equation"
+      ]
+    },
+    {
+      "id": "story_stress_energy_tensor_to_friedmann_equations_theory_component",
+      "source": "stress_energy_tensor",
+      "target": "friedmann_equations",
+      "type": "theory-component",
+      "label": "supplies cosmological energy density and pressure",
+      "detail": "For an FLRW geometry, the stress–energy tensor—usually modeled as a homogeneous isotropic fluid—provides the density and pressure terms in the Friedmann equations.",
+      "citations": [
+        "einstein-equation",
+        "nasa-big-bang"
+      ]
+    },
+    {
+      "id": "story_general_relativity_to_lambda_cdm_model_framework_specialization",
+      "source": "general_relativity",
+      "target": "lambda_cdm_model",
+      "type": "framework-specialization",
+      "label": "specializes to the concordance cosmological model",
+      "detail": "$\\Lambda$CDM applies general relativity to an FLRW background with a cosmological constant, cold dark matter, ordinary matter, radiation, and specified primordial perturbations.",
+      "citations": [
+        "einstein-general-relativity",
+        "nasa-big-bang",
+        "nasa-dark-matter"
+      ]
+    },
+    {
+      "id": "story_decision_problem_to_undecidable_problem_classification",
+      "source": "decision_problem",
+      "target": "undecidable_problem",
+      "type": "classification",
+      "label": "has undecidable instances as a subclass",
+      "detail": "An undecidable problem is a decision problem for which no total algorithm returns the correct yes-or-no answer on every encoded instance.",
+      "citations": [
+        "turing-computable-numbers"
+      ]
+    },
+    {
+      "id": "story_decidable_problem_to_recursively_enumerable_set_theorem_implication",
+      "source": "decidable_problem",
+      "target": "recursively_enumerable_set",
+      "type": "theorem-implication",
+      "label": "has a computably enumerable yes-language",
+      "detail": "If a decision problem is decidable, its set of yes-instances is computably enumerable; run the decider through an effective enumeration of inputs and output those accepted.",
+      "citations": [
+        "turing-computable-numbers"
+      ]
+    },
+    {
+      "id": "story_formal_proof_system_to_recursively_enumerable_set_canonical_construction",
+      "source": "formal_proof_system",
+      "target": "recursively_enumerable_set",
+      "type": "canonical-construction",
+      "label": "enumerate its formal theorems",
+      "detail": "For an effectively axiomatized proof system with mechanically checkable finite proofs, the Gödel numbers of its theorems form a computably enumerable set.",
+      "citations": [
+        "openlogic-incompleteness",
+        "turing-computable-numbers"
+      ]
+    },
+    {
+      "id": "story_algebraic_variety_to_everywhere_locally_soluble_variety_impose_axiom",
+      "source": "algebraic_variety",
+      "target": "everywhere_locally_soluble_variety",
+      "type": "impose-axiom",
+      "label": "require a point over every completion",
+      "detail": "Restrict to varieties $X/K$ satisfying $X(K_v)\\ne\\varnothing$ at every place $v$ of the global field.",
+      "citations": [
+        "poonen-rational-points-varieties",
+        "milne-algebraic-number-theory"
+      ]
+    },
+    {
+      "id": "story_everywhere_locally_soluble_variety_to_local_point_induced_forgotten",
+      "source": "everywhere_locally_soluble_variety",
+      "target": "local_point",
+      "type": "induced-forgotten",
+      "label": "retain a solution at one place",
+      "detail": "Choosing one place $v$ and forgetting the other local solutions leaves a $K_v$-rational point.",
+      "citations": [
+        "poonen-rational-points-varieties",
+        "milne-algebraic-number-theory"
+      ]
+    },
+    {
+      "id": "story_everywhere_locally_soluble_variety_to_failure_hasse_principle_impose_axiom",
+      "source": "everywhere_locally_soluble_variety",
+      "target": "failure_hasse_principle",
+      "type": "impose-axiom",
+      "label": "also require no global rational point",
+      "detail": "An everywhere locally soluble variety violates the Hasse principle precisely when $X(K)$ is empty.",
+      "citations": [
+        "poonen-rational-points-varieties"
+      ]
+    },
+    {
+      "id": "j_radical_solvability__galois_group",
+      "source": "galois_group",
+      "target": "j_radical_solvability",
+      "type": "combine-compatible",
+      "label": "its Galois group",
+      "detail": "Supply the Galois group of the splitting field of that same polynomial.",
+      "citations": [
+        "milne-fields-galois-theory"
+      ]
+    },
+    {
+      "id": "j_radical_solvability__solvable_group",
+      "source": "solvable_group",
+      "target": "j_radical_solvability",
+      "type": "combine-compatible",
+      "label": "the same group is solvable",
+      "detail": "Require the polynomial’s Galois group to have a terminating derived series.",
+      "citations": [
+        "milne-fields-galois-theory"
+      ]
+    },
+    {
+      "id": "j_radical_solvability__out",
+      "source": "j_radical_solvability",
+      "target": "solvability_by_radicals",
+      "type": "combine-compatible",
+      "label": "apply the Galois criterion",
+      "detail": "Under the standard separability qualifications (in particular over characteristic zero), a polynomial is solvable by radicals exactly when its Galois group is solvable.",
+      "citations": [
+        "milne-fields-galois-theory"
+      ]
+    },
+    {
+      "id": "j_first_incompleteness__formal_proof_system",
+      "source": "formal_proof_system",
+      "target": "j_first_incompleteness",
+      "type": "combine-compatible",
+      "label": "effective formal theory",
+      "detail": "Supply an effectively axiomatized proof system with mechanically checkable finite proofs.",
+      "citations": [
+        "openlogic-incompleteness",
+        "godel-incompleteness-paper"
+      ]
+    },
+    {
+      "id": "j_first_incompleteness__consistent_theory",
+      "source": "consistent_theory",
+      "target": "j_first_incompleteness",
+      "type": "combine-compatible",
+      "label": "the same theory is consistent",
+      "detail": "Require consistency of that same formal theory.",
+      "citations": [
+        "openlogic-incompleteness",
+        "godel-incompleteness-paper"
+      ]
+    },
+    {
+      "id": "j_first_incompleteness__natural_numbers",
+      "source": "natural_numbers",
+      "target": "j_first_incompleteness",
+      "type": "combine-compatible",
+      "label": "sufficient arithmetic",
+      "detail": "Require the theory to represent enough elementary arithmetic of the natural numbers.",
+      "citations": [
+        "openlogic-incompleteness",
+        "godel-incompleteness-paper"
+      ]
+    },
+    {
+      "id": "j_first_incompleteness__godel_numbering",
+      "source": "godel_numbering",
+      "target": "j_first_incompleteness",
+      "type": "combine-compatible",
+      "label": "arithmetized syntax",
+      "detail": "Use an effective coding of the theory’s formulas and proofs by natural numbers.",
+      "citations": [
+        "openlogic-incompleteness",
+        "godel-incompleteness-paper"
+      ]
+    },
+    {
+      "id": "j_first_incompleteness__out",
+      "source": "j_first_incompleteness",
+      "target": "first_incompleteness_theorem",
+      "type": "combine-compatible",
+      "label": "apply Gödel’s theorem",
+      "detail": "Under these joint hypotheses, the theory is syntactically incomplete.",
+      "citations": [
+        "openlogic-incompleteness",
+        "godel-incompleteness-paper"
+      ]
+    },
+    {
+      "id": "j_second_incompleteness__formal_proof_system",
+      "source": "formal_proof_system",
+      "target": "j_second_incompleteness",
+      "type": "combine-compatible",
+      "label": "effective formal theory",
+      "detail": "Supply an effectively axiomatized proof system with mechanically checkable finite proofs.",
+      "citations": [
+        "openlogic-incompleteness",
+        "godel-incompleteness-paper"
+      ]
+    },
+    {
+      "id": "j_second_incompleteness__consistent_theory",
+      "source": "consistent_theory",
+      "target": "j_second_incompleteness",
+      "type": "combine-compatible",
+      "label": "the same theory is consistent",
+      "detail": "Require consistency of that same formal theory.",
+      "citations": [
+        "openlogic-incompleteness",
+        "godel-incompleteness-paper"
+      ]
+    },
+    {
+      "id": "j_second_incompleteness__natural_numbers",
+      "source": "natural_numbers",
+      "target": "j_second_incompleteness",
+      "type": "combine-compatible",
+      "label": "sufficient arithmetic",
+      "detail": "Require the theory to represent enough elementary arithmetic of the natural numbers.",
+      "citations": [
+        "openlogic-incompleteness",
+        "godel-incompleteness-paper"
+      ]
+    },
+    {
+      "id": "j_second_incompleteness__godel_numbering",
+      "source": "godel_numbering",
+      "target": "j_second_incompleteness",
+      "type": "combine-compatible",
+      "label": "arithmetized syntax",
+      "detail": "Use an effective coding of the theory’s formulas and proofs by natural numbers.",
+      "citations": [
+        "openlogic-incompleteness",
+        "godel-incompleteness-paper"
+      ]
+    },
+    {
+      "id": "j_second_incompleteness__out",
+      "source": "j_second_incompleteness",
+      "target": "second_incompleteness_theorem",
+      "type": "combine-compatible",
+      "label": "apply Gödel’s theorem",
+      "detail": "Under these joint hypotheses, the theory cannot prove its own standard consistency statement.",
+      "citations": [
+        "openlogic-incompleteness",
+        "godel-incompleteness-paper"
+      ]
+    },
+    {
+      "id": "j_hawking_radiation__black_hole",
+      "source": "black_hole",
+      "target": "j_hawking_radiation",
+      "type": "combine-compatible",
+      "label": "classical black-hole background",
+      "detail": "Supply the causal horizon and stationary or adiabatically evolving black-hole geometry.",
+      "citations": [
+        "einstein-online-black-holes",
+        "nasa-black-holes"
+      ]
+    },
+    {
+      "id": "j_hawking_radiation__quantum_field_theory",
+      "source": "quantum_field_theory",
+      "target": "j_hawking_radiation",
+      "type": "combine-compatible",
+      "label": "quantum fields on that background",
+      "detail": "Quantize matter fields on the same classical curved spacetime with appropriate state and asymptotic conditions.",
+      "citations": [
+        "tong-qft",
+        "einstein-online-black-holes"
+      ]
+    },
+    {
+      "id": "j_hawking_radiation__out",
+      "source": "j_hawking_radiation",
+      "target": "hawking_radiation",
+      "type": "combine-compatible",
+      "label": "derive semiclassical emission",
+      "detail": "The combined semiclassical setting predicts an approximately thermal outgoing flux, with stationary temperature proportional to surface gravity.",
+      "citations": [
+        "einstein-online-black-holes",
+        "wp-physics-hawking-radiation"
+      ]
+    },
+    {
+      "id": "story_everywhere_locally_soluble_variety_to_rational_point_theorem_implication",
+      "source": "everywhere_locally_soluble_variety",
+      "target": "rational_point",
+      "type": "theorem-implication",
+      "label": "has a global point when the Hasse principle holds",
+      "detail": "For a class of varieties for which a valid local–global principle has been proved, everywhere local solubility implies a rational point. This implication is not valid for arbitrary varieties.",
+      "citations": [
+        "poonen-rational-points-varieties",
+        "milne-algebraic-number-theory"
+      ]
+    },
+    {
+      "id": "story_action_functional_to_path_integral_quantization_quantization",
+      "source": "action_functional",
+      "target": "path_integral_quantization",
+      "type": "quantization",
+      "label": "weight histories by the action",
+      "detail": "Path-integral quantization uses the classical action in a formal or regulated sum over histories, typically with phase $e^{iS/\\hbar}$; making the construction rigorous depends on the theory and signature.",
+      "citations": [
+        "wp-physics-path_integral_quantization",
+        "nlab-physics-path_integral_quantization"
+      ]
+    },
+    {
+      "id": "story_hamiltonian_mechanics_to_canonical_quantization_quantization",
+      "source": "hamiltonian_mechanics",
+      "target": "canonical_quantization",
+      "type": "quantization",
+      "label": "promote canonical variables to operators",
+      "detail": "Canonical quantization begins from Hamiltonian phase-space variables and replaces suitable Poisson brackets by operator commutators, subject to ordering, domain, and constraint ambiguities.",
+      "citations": [
+        "wp-physics-canonical_quantization",
+        "nlab-physics-canonical_quantization"
+      ]
+    },
+    {
+      "id": "story_canonical_quantization_to_canonical_commutation_relations_theory_component",
+      "source": "canonical_quantization",
+      "target": "canonical_commutation_relations",
+      "type": "theory-component",
+      "label": "imposes canonical operator brackets",
+      "detail": "For canonical coordinates and momenta, the quantization prescription yields the canonical commutation relations in representations where the operators and their domains are defined.",
+      "citations": [
+        "wp-physics-canonical_quantization",
+        "nlab-physics-canonical_quantization"
+      ]
+    },
+    {
+      "id": "story_quantum_mechanics_to_schrodinger_equation_theory_component",
+      "source": "quantum_mechanics",
+      "target": "schrodinger_equation",
+      "type": "theory-component",
+      "label": "Schrödinger-picture evolution law",
+      "detail": "In nonrelativistic quantum mechanics, the Schrödinger equation gives state evolution generated by the Hamiltonian in the Schrödinger picture.",
+      "citations": [
+        "wp-physics-schrodinger_equation",
+        "nlab-physics-schrodinger_equation",
+        "wp-physics-quantum_mechanics"
+      ]
+    },
+    {
+      "id": "story_quantum_field_theory_to_fock_space_state_description",
+      "source": "quantum_field_theory",
+      "target": "fock_space",
+      "type": "state-description",
+      "label": "uses particle-number sectors in free or asymptotic regimes",
+      "detail": "Free fields and asymptotic particle states are naturally represented in Fock space. Generic interacting QFT need not admit a global particle interpretation or a Fock representation unitarily equivalent to the free one.",
+      "citations": [
+        "tong-qft",
+        "wp-fock_space",
+        "nlab-fock_space"
+      ]
+    },
+    {
+      "id": "j_radical_solvability__splitting_field",
+      "source": "splitting_field",
+      "target": "j_radical_solvability",
+      "type": "combine-compatible",
+      "label": "chosen polynomial and splitting field",
+      "detail": "Supply the splitting field generated by the roots of the polynomial under study.",
+      "citations": [
+        "milne-fields-galois-theory"
+      ]
+    },
+    {
+      "id": "story_quadratic_form_to_smooth_projective_quadric_canonical_construction",
+      "source": "quadratic_form",
+      "target": "smooth_projective_quadric",
+      "type": "canonical-construction",
+      "label": "take the projective zero locus under regularity hypotheses",
+      "detail": "For a nondegenerate quadratic form of dimension at least three over a field of characteristic not two, the equation $q=0$ defines a smooth projective quadric.",
+      "citations": [
+        "poonen-rational-points-varieties",
+        "milne-algebraic-number-theory"
+      ]
+    },
+    {
+      "id": "story_algebraic_variety_to_smooth_projective_quadric_impose_axiom",
+      "source": "algebraic_variety",
+      "target": "smooth_projective_quadric",
+      "type": "impose-axiom",
+      "label": "specialize to a smooth projective degree-two hypersurface",
+      "detail": "A smooth projective quadric is an algebraic variety cut out by one nondegenerate homogeneous quadratic equation.",
+      "citations": [
+        "poonen-rational-points-varieties",
+        "stacks-varieties"
+      ]
+    },
+    {
+      "id": "story_smooth_projective_quadric_to_hasse_minkowski_theorem_theorem_implication",
+      "source": "smooth_projective_quadric",
+      "target": "hasse_minkowski_theorem",
+      "type": "theorem-implication",
+      "label": "has a rational point exactly when it has all local points",
+      "detail": "Over a number field, the Hasse–Minkowski theorem says that a smooth projective quadric has a rational point if and only if it has a point over every completion; this is the geometric form of local–global isotropy for the defining quadratic form.",
+      "citations": [
+        "poonen-rational-points-varieties",
+        "milne-algebraic-number-theory"
       ]
     }
   ],
