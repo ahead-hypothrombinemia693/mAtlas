@@ -18,6 +18,7 @@ const testFiles = [
   'test/directory-page.test.mjs',
   'test/seo-assets.test.mjs',
   'test/filter-panel.test.mjs',
+  'test/ui-rendering-architecture.test.mjs',
   'test/taxonomy-selection.test.mjs',
   'test/visibility-policy.test.mjs'
 ];

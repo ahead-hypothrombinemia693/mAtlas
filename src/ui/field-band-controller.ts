@@ -2,6 +2,7 @@ import type cytoscape from 'cytoscape';
 import { escapeHtml } from '../core/dom.js';
 import type { AppState } from '../types.js';
 import type { GraphModel } from '../model/graph-model.js';
+import { renderHtml } from './render.js';
 
 export interface FieldBandControllerOptions {
   cy: cytoscape.Core;
@@ -52,7 +53,7 @@ export class FieldBandController {
       band.style.width = `${box.w + 56}px`;
       band.style.height = `${box.h + 86}px`;
       band.style.setProperty('--field-color', field.color);
-      band.innerHTML = `<span>${escapeHtml(field.label)}</span>`;
+      renderHtml(band, `<span>${escapeHtml(field.label)}</span>`);
       container.appendChild(band);
     }
   }

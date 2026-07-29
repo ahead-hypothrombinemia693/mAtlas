@@ -4,6 +4,7 @@ import { hasInlineMathText, stripInlineMathText } from '../core/text.js';
 import type { AppState, GraphNode, LineStyle, Point } from '../types.js';
 import type { GraphModel } from '../model/graph-model.js';
 import type { MathRenderer } from './math-renderer.js';
+import { renderHtml } from './render.js';
 
 export class SvgExporter {
   private readonly context = document.createElement('canvas').getContext('2d');
@@ -244,7 +245,7 @@ ${localCss}`.replaceAll(']]>', ']]]]><![CDATA[>');
     label.style.fontSize = '9px';
     label.style.padding = '3px';
     label.style.borderWidth = '1px';
-    label.innerHTML = this.math.renderText(labelText);
+    renderHtml(label, this.math.renderText(labelText));
     document.body.appendChild(label);
     const bounds = label.getBoundingClientRect();
     label.remove();

@@ -5,6 +5,7 @@ import type { AtlasView, DetailSection, GraphNode, RelationGroup } from '../type
 import type { GraphModel } from '../model/graph-model.js';
 import { viewsContainingNode } from '../state/view-sequence.js';
 import type { MathRenderer } from './math-renderer.js';
+import { invalidateRender, renderHtml } from './render.js';
 
 interface DetailsControllerOptions {
   model: GraphModel;
@@ -30,7 +31,7 @@ export class DetailsController {
     const { model, cy } = this.options;
     const record = model.nodeRecord.get(id);
     if (!record) return;
-    byId('detailTitle').innerHTML = this.options.math.renderText(record.label);
+    renderHtml(byId('detailTitle'), this.options.math.renderText(record.label));
 
     let html = `<p class="math-rich concept-summary">${this.options.math.renderText(record.summary)}</p>${this.renderTaxonomyBadges(record)}${this.renderConceptMetadata(record)}${this.renderCitations(record.citations, record.label)}`;
     if (record.kind === 'junction' && record.combination) {
@@ -75,8 +76,8 @@ export class DetailsController {
     }
 
     html += this.renderViewsSection(id);
-    byId('detailBody').innerHTML = html;
-    byId('detailEditLink').innerHTML = this.renderHeaderActions(id, 'node');
+    renderHtml(byId('detailBody'), html);
+    renderHtml(byId('detailEditLink'), this.renderHeaderActions(id, 'node'));
     this.bindHeaderActions();
     this.bindRelationLinks();
     this.options.openPanel();
@@ -91,7 +92,7 @@ export class DetailsController {
     const target = model.nodeRecord.get(record.target);
     if (!type || !source || !target) return;
 
-    byId('detailEditLink').innerHTML = this.renderHeaderActions(id, 'edge');
+    renderHtml(byId('detailEditLink'), this.renderHeaderActions(id, 'edge'));
     this.bindHeaderActions();
 
     if (record.synthetic) {
@@ -99,8 +100,8 @@ export class DetailsController {
       const combination = junction?.combination;
       if (!combination) return;
       const title = `${source.label} → ${target.label}`;
-      byId('detailTitle').innerHTML = this.options.math.renderText(title);
-      byId('detailBody').innerHTML = `
+      renderHtml(byId('detailTitle'), this.options.math.renderText(title));
+      renderHtml(byId('detailBody'), `
         <p><span class="type-pill" style="background:${escapeHtml(type.color)}">${escapeHtml(type.label)}</span></p>
         <p>${this.nodeButton(source.id)} <strong>→</strong> ${this.nodeButton(target.id)}</p>
         <section class="detail-section compatibility-box">
@@ -110,15 +111,15 @@ export class DetailsController {
         </section>
         <section class="detail-section math-rich"><h3>Compatibility condition</h3><p>${this.options.math.renderText(combination.compatibility)}</p></section>
         <section class="detail-section math-rich"><h3>This branch</h3><p>${this.options.math.renderText(record.detail)}</p></section>
-        <section class="detail-section"><h3>Sources</h3>${this.renderCitations(record.citations, title)}</section>`;
+        <section class="detail-section"><h3>Sources</h3>${this.renderCitations(record.citations, title)}</section>`);
     } else {
-      byId('detailTitle').innerHTML = this.options.math.renderText(record.label);
-      byId('detailBody').innerHTML = `
+      renderHtml(byId('detailTitle'), this.options.math.renderText(record.label));
+      renderHtml(byId('detailBody'), `
         <p><span class="type-pill" style="background:${escapeHtml(type.color)}">${escapeHtml(type.label)}</span></p>
         <p>${this.nodeButton(source.id)} <strong>→</strong> ${this.nodeButton(target.id)}</p>
         <section class="detail-section math-rich"><h3>What changes</h3><p>${this.options.math.renderText(record.detail)}</p></section>
         <section class="detail-section math-rich"><h3>How to interpret this edge type</h3><p>${this.options.math.renderText(type.description)}</p></section>
-        <section class="detail-section"><h3>Sources</h3>${this.renderCitations(record.citations, record.label)}</section>`;
+        <section class="detail-section"><h3>Sources</h3>${this.renderCitations(record.citations, record.label)}</section>`);
     }
     this.bindRelationLinks();
     this.options.openPanel();
@@ -126,10 +127,10 @@ export class DetailsController {
 
   showEmpty(): void {
     byId('detailTitle').textContent = 'Select a concept';
-    byId('detailEditLink').innerHTML = '';
-    byId('detailBody').innerHTML = `
+    renderHtml(byId('detailEditLink'), '');
+    renderHtml(byId('detailBody'), `
       <p>Click any concept, construction junction, or annotated edge.</p>
-      <p class="muted">Construction junctions are diamonds. They show where multiple structures must coexist on the same carrier and satisfy compatibility conditions.</p>`;
+      <p class="muted">Construction junctions are diamonds. They show where multiple structures must coexist on the same carrier and satisfy compatibility conditions.</p>`);
   }
 
   private renderViewsSection(nodeId: string): string {
@@ -251,11 +252,12 @@ export class DetailsController {
       const permalink = this.options.permalinkUrl(itemId, itemKind);
       try {
         await navigator.clipboard.writeText(permalink);
+        invalidateRender(shareButton);
         shareButton.textContent = '✓';
       } catch {
         window.prompt('Copy permalink:', permalink);
       } finally {
-        window.setTimeout(() => { shareButton.innerHTML = originalHtml; }, 1200);
+        window.setTimeout(() => { renderHtml(shareButton, originalHtml); }, 1200);
       }
     });
   }

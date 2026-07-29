@@ -1,6 +1,7 @@
 import type cytoscape from 'cytoscape';
 import { byId } from '../core/dom.js';
 import type { AppState } from '../types.js';
+import { renderHtml } from './render.js';
 
 export type PanelName = 'filters' | 'details';
 
@@ -53,9 +54,9 @@ export class PanelController {
     detailsToggle.setAttribute('aria-pressed', String(state.detailsOpen));
     maximizeButton.setAttribute('aria-pressed', String(!state.filtersOpen && !state.detailsOpen));
     maximizeButton.classList.toggle('active', !state.filtersOpen && !state.detailsOpen);
-    maximizeButton.innerHTML = !state.filtersOpen && !state.detailsOpen
+    renderHtml(maximizeButton, !state.filtersOpen && !state.detailsOpen
       ? '<span class="material-icons" aria-hidden="true">fullscreen_exit</span>'
-      : '<span class="material-icons" aria-hidden="true">fullscreen</span>';
+      : '<span class="material-icons" aria-hidden="true">fullscreen</span>');
 
     const leftRail = byId<HTMLButtonElement>('filtersRailToggle');
     const rightRail = byId<HTMLButtonElement>('detailsRailToggle');

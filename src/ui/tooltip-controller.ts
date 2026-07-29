@@ -1,5 +1,6 @@
 import type cytoscape from 'cytoscape';
 import { byId } from '../core/dom.js';
+import { renderHtml } from './render.js';
 
 export type PointerEventLike = cytoscape.EventObject | MouseEvent;
 
@@ -8,7 +9,7 @@ export class TooltipController {
 
   show(html: string, event: PointerEventLike): void {
     const tooltip = byId(this.elementId);
-    tooltip.innerHTML = html;
+    renderHtml(tooltip, html);
     tooltip.hidden = false;
     this.position(event);
   }

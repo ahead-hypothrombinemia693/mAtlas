@@ -3,6 +3,7 @@ import { isCrossFieldVisibility, isLayoutName } from '../state/ui-state.js';
 import { selectExclusiveDomain, selectExclusiveEdgeType, selectExclusiveField } from '../state/taxonomy-selection.js';
 import type { GraphModel } from '../model/graph-model.js';
 import type { AppState, LayoutName } from '../types.js';
+import { renderHtml } from './render.js';
 
 export interface FilterControlsOptions {
   model: GraphModel;
@@ -46,10 +47,10 @@ export class FilterControls {
       const fieldLabel = document.createElement('label');
       fieldLabel.className = 'filter-item field-filter-item';
       fieldLabel.title = field.description;
-      fieldLabel.innerHTML = `
+      renderHtml(fieldLabel, `
         <input type="checkbox" data-field="${escapeHtml(fieldId)}" ${state.selectedFields.has(fieldId) ? 'checked' : ''}>
         <span class="swatch" style="background:${escapeHtml(field.color)}"></span>
-        <span><a href="${escapeHtml(this.options.fieldPageUrl(fieldId))}" class="filter-link filter-field-link" data-field-link="${escapeHtml(fieldId)}">${escapeHtml(field.label)}</a> <span class="filter-count">${memberCount}</span></span>`;
+        <span><a href="${escapeHtml(this.options.fieldPageUrl(fieldId))}" class="filter-link filter-field-link" data-field-link="${escapeHtml(fieldId)}">${escapeHtml(field.label)}</a> <span class="filter-count">${memberCount}</span></span>`);
       group.appendChild(fieldLabel);
 
       const domainList = document.createElement('div');
@@ -64,10 +65,10 @@ export class FilterControls {
         const label = document.createElement('label');
         label.className = 'filter-item domain-filter-item';
         label.title = `${domainMemberCount} concepts belong to this domain; ${primaryCount} use it as their primary layout domain.`;
-        label.innerHTML = `
+        renderHtml(label, `
           <input type="checkbox" data-domain="${escapeHtml(domainId)}" ${state.selectedDomains.has(domainId) ? 'checked' : ''}>
           <span class="swatch" style="background:${escapeHtml(domain.color)}"></span>
-          <span><a href="${escapeHtml(this.options.domainPageUrl(domainId))}" class="filter-link filter-domain-link" data-domain-link="${escapeHtml(domainId)}">${escapeHtml(domain.label)}</a> <span class="filter-count">${domainMemberCount}</span></span>`;
+          <span><a href="${escapeHtml(this.options.domainPageUrl(domainId))}" class="filter-link filter-domain-link" data-domain-link="${escapeHtml(domainId)}">${escapeHtml(domain.label)}</a> <span class="filter-count">${domainMemberCount}</span></span>`);
         domainList.appendChild(label);
       }
       group.appendChild(domainList);
@@ -75,7 +76,7 @@ export class FilterControls {
     }
 
     const edgeContainer = byId('edgeFilters');
-    edgeContainer.innerHTML = model.edgeTypeOrder
+    renderHtml(edgeContainer, model.edgeTypeOrder
       .filter((id) => model.data.edgeTypes[id]?.activeInDataset !== false)
       .map((id) => {
         const type = model.data.edgeTypes[id];
@@ -85,7 +86,7 @@ export class FilterControls {
           <span class="line-swatch ${escapeHtml(type.lineStyle ?? 'solid')}" style="border-color:${escapeHtml(type.color)}"></span>
           <span><a href="#" class="filter-link filter-edge-link" data-edge-link="${escapeHtml(id)}">${escapeHtml(type.label)}</a></span>
         </label>`;
-      }).join('');
+      }).join(''));
   }
 
   syncPreferences(): void {
@@ -342,11 +343,11 @@ export class FilterControls {
   }
 
   private buildDatalist(): void {
-    byId('conceptNames').innerHTML = this.options.model.data.nodes
+    renderHtml(byId('conceptNames'), this.options.model.data.nodes
       .filter((node) => node.kind === 'structure')
       .sort((left, right) => left.label.localeCompare(right.label))
       .map((node) => `<option value="${escapeHtml(node.label)}"></option>`)
-      .join('');
+      .join(''));
   }
 
   private setMembership(set: Set<string>, id: string, enabled: boolean): void {

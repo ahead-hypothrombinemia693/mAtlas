@@ -1,5 +1,6 @@
 import type cytoscape from 'cytoscape';
 import type { MathRenderer } from '../ui/math-renderer.js';
+import { renderHtml } from '../ui/render.js';
 
 type GraphElement = cytoscape.NodeSingular | cytoscape.EdgeSingular;
 
@@ -68,7 +69,7 @@ export class GraphMathLabelLayer {
       label.className = isNode
         ? `graph-math-label graph-math-node-label${isJunction ? ' junction' : ''}`
         : `graph-math-label graph-math-edge-label${isSynthetic ? ' synthetic' : ''}`;
-      label.innerHTML = this.math.renderText(element.data('label'));
+      renderHtml(label, this.math.renderText(element.data('label')));
 
       if (isNode) {
         label.style.width = `${isJunction ? 92 : 144}px`;

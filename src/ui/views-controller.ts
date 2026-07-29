@@ -3,6 +3,7 @@ import { moveSequenceIndex, sequenceIndexForNode } from '../state/view-sequence.
 import { resolveViewSurface } from './view-surface.js';
 import type { AtlasView, SelectionTarget } from '../types.js';
 import type { MathRenderer } from './math-renderer.js';
+import { renderHtml } from './render.js';
 
 const WELCOME_STORAGE_KEY = 'human-knowledge-atlas:views-welcome-dismissed:v1';
 
@@ -65,8 +66,8 @@ export class ViewsController {
       return;
     }
 
-    banner.innerHTML = this.renderActiveBanner(view);
-    detailsContext.innerHTML = this.renderMobileDetailsContext(view);
+    renderHtml(banner, this.renderActiveBanner(view));
+    renderHtml(detailsContext, this.renderMobileDetailsContext(view));
     this.buildDialog();
     this.syncPresentation();
   }
@@ -77,8 +78,8 @@ export class ViewsController {
     const nextIndex = view.nodeSequence.indexOf(target.id);
     if (nextIndex < 0 || nextIndex === this.sequenceIndex) return;
     this.sequenceIndex = nextIndex;
-    byId<HTMLElement>('viewBanner').innerHTML = this.renderActiveBanner(view);
-    byId<HTMLElement>('mobileViewContext').innerHTML = this.renderMobileDetailsContext(view);
+    renderHtml(byId<HTMLElement>('viewBanner'), this.renderActiveBanner(view));
+    renderHtml(byId<HTMLElement>('mobileViewContext'), this.renderMobileDetailsContext(view));
     this.syncPresentation();
   }
 
@@ -148,10 +149,10 @@ export class ViewsController {
     const active = this.options.activeView();
     const featured = this.options.views.filter((view) => view.featured);
     const other = this.options.views.filter((view) => !view.featured);
-    byId('viewsContent').innerHTML = `
+    renderHtml(byId('viewsContent'), `
       <p class="views-intro">Each view is a curated sequence through a named set of filters, relation types, and display choices. Previous and Next follow the suggested path; you can still explore any other concept without losing your place.</p>
       ${this.renderViewSection('Featured paths', featured, active)}
-      ${other.length ? this.renderViewSection('More views', other, active) : ''}`;
+      ${other.length ? this.renderViewSection('More views', other, active) : ''}`);
   }
 
   private renderViewSection(title: string, views: readonly AtlasView[], active: AtlasView | null): string {

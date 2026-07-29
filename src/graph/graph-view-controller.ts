@@ -4,6 +4,7 @@ import type { GraphModel } from '../model/graph-model.js';
 import type { AppState, GraphEdge, LayoutName } from '../types.js';
 import type { LabelSizer } from './label-sizer.js';
 import { classifyNodeVisibility, isCrossFieldEdgeAllowed, isWrongJunctionMode } from './visibility-policy.js';
+import { renderHtml } from '../ui/render.js';
 
 export interface GraphViewControllerOptions {
   cy: cytoscape.Core;
@@ -204,7 +205,7 @@ export class GraphViewController {
     const crossFieldText = crossFieldCount
       ? `<span class="status-item" title="Cross-field relations"><span class="material-icons">swap_horiz</span>${crossFieldCount}</span>`
       : '';
-    byId('status').innerHTML = `
+    renderHtml(byId('status'), `
       <a href="#" id="statusFiltersLink" class="status-item status-link" title="Show filters">
         <span class="material-icons">layers</span>
         <strong class="status-link-text">${state.selectedDomains.size} of ${model.domainOrder.length} domains</strong>
@@ -212,7 +213,7 @@ export class GraphViewController {
       <span class="status-item" title="Concepts"><span class="material-icons">auto_stories</span>${visibleNodes.length}</span>
       ${contextText}${junctionText}
       <span class="status-item" title="Relations"><span class="material-icons">call_split</span>${visibleEdges.length}</span>
-      ${crossFieldText}${suffix}`;
+      ${crossFieldText}${suffix}`);
   }
 
   updateEdgeZoomStyles(): void {

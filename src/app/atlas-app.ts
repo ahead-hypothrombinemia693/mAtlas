@@ -18,6 +18,7 @@ import { FilterControls } from '../ui/filter-controls.js';
 import { ViewsController } from '../ui/views-controller.js';
 import { LocationController } from './location-controller.js';
 import type { AppState, AtlasViewsData, GraphData, GraphNode, HistoryMode, LayoutName, SelectionTarget, UrlUiState } from '../types.js';
+import { renderHtml } from '../ui/render.js';
 
 function encodeUtf8Base64(value: string): string {
   const bytes = new TextEncoder().encode(value);
@@ -502,7 +503,7 @@ export async function startAtlasApp(): Promise<void> {
 
   function buildHelp(): void {
     const activeTypes = edgeTypeOrder.filter((id) => graphData.edgeTypes[id]?.activeInDataset !== false);
-    byId('helpContent').innerHTML = `
+    renderHtml(byId('helpContent'), `
       <p><strong>Vertical direction is meaningful:</strong> the graph begins with minimally structured carriers, especially <em>Set</em>, and generally moves downward as data or axioms are added. Horizontal placement only groups fields.</p>
       <p>Drag to pan · wheel/pinch to zoom · click an item to highlight its neighbors · click blank space to clear</p>
       <div class="edge-explainer">
@@ -525,7 +526,7 @@ export async function startAtlasApp(): Promise<void> {
       <h3>Citations</h3>
       <p>Source abbreviations on nodes are off initially to reduce clutter. Enable them under Display, or click any node or edge for citation links and source titles.</p>
       <h3>Keyboard</h3>
-      <p><strong>/</strong> focuses search, <strong>F</strong> fits the filtered graph, and <strong>Escape</strong> clears search or closes mobile panels.</p>`;
+      <p><strong>/</strong> focuses search, <strong>F</strong> fits the filtered graph, and <strong>Escape</strong> clears search or closes mobile panels.</p>`);
   }
 
   const svgExporter = new SvgExporter(cy, model, state, mathRenderer);
