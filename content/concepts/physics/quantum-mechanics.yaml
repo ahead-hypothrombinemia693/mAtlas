@@ -1002,7 +1002,6 @@ nodes:
     primaryDomain: quantum-mechanics
     domains:
       - quantum-mechanics
-      - physical-foundations
     level: 9
     kind: structure
     conceptType: No-go theorem
