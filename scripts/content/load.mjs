@@ -1,4 +1,4 @@
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
 import { parse as parseYaml } from 'yaml';
 import { contentManifestUrl, contentSourceDirectory, generatedContentSourceDirectory } from './paths.mjs';
 
@@ -65,6 +65,51 @@ function duplicateValues(values) {
   return duplicates;
 }
 
+function indexedListToMap(indexList, label) {
+  if (!Array.isArray(indexList) || indexList.length === 0) {
+    throw new Error(`${label} must be a non-empty sequence of objects with id fields.`);
+  }
+  const ids = indexList.map((entry) => entry?.id);
+  const duplicateIds = duplicateValues(ids.filter((id) => typeof id === 'string'));
+  if (duplicateIds.length) {
+    throw new Error(`${label} contains duplicate ids: ${duplicateIds.slice(0, 5).join(', ')}${duplicateIds.length > 5 ? ` (+${duplicateIds.length - 5} more)` : ''}.`);
+  }
+  const missingIdIndex = indexList.findIndex((entry) => !entry || typeof entry !== 'object' || Array.isArray(entry) || typeof entry.id !== 'string' || !entry.id);
+  if (missingIdIndex >= 0) {
+    throw new Error(`${label}[${missingIdIndex}] must be an object with a non-empty string id.`);
+  }
+  return {
+    ids: indexList.map((entry) => entry.id),
+    map: Object.fromEntries(indexList.map((entry) => {
+      const { id, ...rest } = entry;
+      return [id, rest];
+    }))
+  };
+}
+
+async function listConceptDomainFiles(indexUrl) {
+  const conceptsRootUrl = new URL('./', indexUrl);
+  const rootEntries = await readdir(conceptsRootUrl, { withFileTypes: true });
+  const domainFiles = [];
+  for (const entry of rootEntries) {
+    if (!entry.isDirectory()) continue;
+    const fieldId = entry.name;
+    const fieldDirUrl = new URL(`${fieldId}/`, conceptsRootUrl);
+    const fileEntries = await readdir(fieldDirUrl, { withFileTypes: true });
+    for (const fileEntry of fileEntries) {
+      if (!fileEntry.isFile()) continue;
+      if (!/\.ya?ml$/u.test(fileEntry.name)) continue;
+      const domainId = fileEntry.name.replace(/\.ya?ml$/u, '');
+      domainFiles.push({
+        file: `${fieldId}/${fileEntry.name}`,
+        fieldId,
+        domainId
+      });
+    }
+  }
+  return domainFiles;
+}
+
 async function writeIntermediateJson(fileName, value) {
   await mkdir(generatedContentSourceDirectory, { recursive: true });
   const fileUrl = new URL(fileName, generatedContentSourceDirectory);
@@ -76,22 +121,25 @@ async function writeIntermediateJson(fileName, value) {
 async function loadStructuredGraphFromYaml(indexUrl) {
   const indexBytes = await readFile(indexUrl);
   const index = parseYamlBytes(indexBytes, contentRelativeLabel(indexUrl));
-  const parts = index?.parts;
-  if (!parts || typeof parts !== 'object' || Array.isArray(parts)) {
-    throw new Error('content/concepts/index.yaml must define a "parts" mapping.');
+  if (!index || typeof index !== 'object' || Array.isArray(index)) {
+    throw new Error('content/concepts/index.yaml must be a YAML object.');
   }
-  const requiredKeys = ['meta', 'domains', 'fields', 'edgeTypes', 'sources'];
-  for (const key of requiredKeys) {
-    if (typeof parts[key] !== 'string') throw new Error(`content/concepts/index.yaml parts.${key} must be a YAML filename.`);
+  if (!index.meta || typeof index.meta !== 'object' || Array.isArray(index.meta)) {
+    throw new Error('content/concepts/index.yaml meta must be an object.');
   }
-  const entries = await Promise.all(requiredKeys.map(async (key) => {
-    const partUrl = localYamlPartUrl(indexUrl, parts[key], `content/concepts/index.yaml parts.${key}`);
-    const partBytes = await readFile(partUrl);
-    const value = parseYamlBytes(partBytes, contentRelativeLabel(partUrl));
-    return [key, value];
-  }));
-  const loadedParts = Object.fromEntries(entries);
-  const sourcePart = loadedParts.sources;
+  const fieldsList = indexedListToMap(index.fields, 'content/concepts/index.yaml fields');
+  const domainsList = indexedListToMap(index.domains, 'content/concepts/index.yaml domains');
+  const edgeTypesList = indexedListToMap(index.edgeTypes, 'content/concepts/index.yaml edgeTypes');
+  for (const [domainId, domain] of Object.entries(domainsList.map)) {
+    if (typeof domain?.field !== 'string' || !fieldsList.map[domain.field]) {
+      throw new Error(`content/concepts/index.yaml domains entry "${domainId}" must reference a known field id.`);
+    }
+  }
+  if (typeof index.sources !== 'string') {
+    throw new Error('content/concepts/index.yaml sources must be a YAML filename.');
+  }
+  const sourcesUrl = localYamlPartUrl(indexUrl, index.sources, 'content/concepts/index.yaml sources');
+  const sourcePart = parseYamlBytes(await readFile(sourcesUrl), contentRelativeLabel(sourcesUrl));
   if (!sourcePart || typeof sourcePart !== 'object' || Array.isArray(sourcePart)) {
     throw new Error('content/concepts/sources.yaml must be a YAML object with "citationLegend" and "sources".');
   }
@@ -101,45 +149,38 @@ async function loadStructuredGraphFromYaml(indexUrl) {
   if (!sourcePart.sources || typeof sourcePart.sources !== 'object' || Array.isArray(sourcePart.sources)) {
     throw new Error('content/concepts/sources.yaml sources must be an object.');
   }
-  if (!Array.isArray(index.conceptFiles) || index.conceptFiles.length === 0) {
-    throw new Error('content/concepts/index.yaml must define a non-empty "conceptFiles" sequence.');
+  const discoveredDomainFiles = await listConceptDomainFiles(indexUrl);
+  const discoveredDomainFileMap = new Map(discoveredDomainFiles.map((entry) => [`${entry.fieldId}/${entry.domainId}`, entry.file]));
+  const expectedDomainFileKeys = domainsList.ids.map((domainId) => {
+    const fieldId = domainsList.map[domainId].field;
+    return `${fieldId}/${domainId}`;
+  });
+  const missingDomainFiles = expectedDomainFileKeys.filter((key) => !discoveredDomainFileMap.has(key));
+  if (missingDomainFiles.length) {
+    throw new Error(`Missing concept domain files for domains defined in content/concepts/index.yaml: ${missingDomainFiles.slice(0, 5).map((key) => `${key}.yaml`).join(', ')}${missingDomainFiles.length > 5 ? ` (+${missingDomainFiles.length - 5} more)` : ''}.`);
   }
-  if (!index.order || typeof index.order !== 'object' || Array.isArray(index.order)) {
-    throw new Error('content/concepts/index.yaml must define an "order" object with nodes and edges lists.');
-  }
-  if (!Array.isArray(index.order.nodes) || !Array.isArray(index.order.edges)) {
-    throw new Error('content/concepts/index.yaml order.nodes and order.edges must both be sequences.');
-  }
-  const duplicateNodeOrderIds = duplicateValues(index.order.nodes);
-  const duplicateEdgeOrderIds = duplicateValues(index.order.edges);
-  if (duplicateNodeOrderIds.length) {
-    throw new Error(`content/concepts/index.yaml order.nodes contains duplicate ids: ${duplicateNodeOrderIds.slice(0, 5).join(', ')}${duplicateNodeOrderIds.length > 5 ? ` (+${duplicateNodeOrderIds.length - 5} more)` : ''}.`);
-  }
-  if (duplicateEdgeOrderIds.length) {
-    throw new Error(`content/concepts/index.yaml order.edges contains duplicate ids: ${duplicateEdgeOrderIds.slice(0, 5).join(', ')}${duplicateEdgeOrderIds.length > 5 ? ` (+${duplicateEdgeOrderIds.length - 5} more)` : ''}.`);
+  const expectedDomainFileKeySet = new Set(expectedDomainFileKeys);
+  const unexpectedDomainFiles = discoveredDomainFiles.filter((entry) => !expectedDomainFileKeySet.has(`${entry.fieldId}/${entry.domainId}`));
+  if (unexpectedDomainFiles.length) {
+    throw new Error(`Unexpected concept domain files not defined by content/concepts/index.yaml domains: ${unexpectedDomainFiles.slice(0, 5).map((entry) => entry.file).join(', ')}${unexpectedDomainFiles.length > 5 ? ` (+${unexpectedDomainFiles.length - 5} more)` : ''}.`);
   }
   const nodeMap = new Map();
   const edgeMap = new Map();
-  for (const [fileIndex, file] of index.conceptFiles.entries()) {
-    const conceptUrl = localYamlPartUrl(indexUrl, file, `content/concepts/index.yaml conceptFiles[${fileIndex}]`);
-    const pathMatch = file.match(/^([a-z0-9-]+)\/([a-z0-9-]+)\.ya?ml$/u);
-    if (!pathMatch) {
-      throw new Error(`content/concepts/index.yaml conceptFiles[${fileIndex}] must use <field-id>/<domain-id>.yaml format.`);
-    }
-    const [, expectedFieldId, expectedDomainId] = pathMatch;
-    const expectedFieldForDomain = loadedParts.domains?.[expectedDomainId]?.field;
-    if (expectedFieldForDomain !== expectedFieldId) {
-      throw new Error(`content/concepts/${file} does not match domains.yaml: domain "${expectedDomainId}" belongs to field "${expectedFieldForDomain ?? 'unknown'}".`);
-    }
+  const nodes = [];
+  const edges = [];
+  for (const domainId of domainsList.ids) {
+    const expectedFieldId = domainsList.map[domainId].field;
+    const file = discoveredDomainFileMap.get(`${expectedFieldId}/${domainId}`) ?? `${expectedFieldId}/${domainId}.yaml`;
+    const conceptUrl = localYamlPartUrl(indexUrl, file, `content/concepts/${file}`);
     const conceptBytes = await readFile(conceptUrl);
-    const conceptData = parseYamlBytes(conceptBytes, contentRelativeLabel(conceptUrl));
-    if (!conceptData || typeof conceptData !== 'object' || Array.isArray(conceptData)) {
+    const conceptData = parseYamlBytes(conceptBytes, contentRelativeLabel(conceptUrl)) ?? {};
+    if (typeof conceptData !== 'object' || Array.isArray(conceptData)) {
       throw new Error(`content/concepts/${file} must be a YAML object with "nodes" and "edges".`);
     }
-    const localNodes = conceptData.nodes;
-    const localEdges = conceptData.edges;
-    if (!Array.isArray(localNodes)) throw new Error(`content/concepts/${file} nodes must be a sequence.`);
-    if (!Array.isArray(localEdges)) throw new Error(`content/concepts/${file} edges must be a sequence.`);
+    const localNodes = conceptData.nodes ?? [];
+    const localEdges = conceptData.edges ?? [];
+    if (!Array.isArray(localNodes)) throw new Error(`content/concepts/${file} nodes must be a sequence when provided.`);
+    if (!Array.isArray(localEdges)) throw new Error(`content/concepts/${file} edges must be a sequence when provided.`);
     const localNodeIds = new Set();
     for (const [nodeIndex, node] of localNodes.entries()) {
       if (!node || typeof node !== 'object' || Array.isArray(node)) {
@@ -151,11 +192,12 @@ async function loadStructuredGraphFromYaml(indexUrl) {
       if (nodeMap.has(node.id)) {
         throw new Error(`Duplicate node id "${node.id}" in content/concepts/${file}; already defined in another concept file.`);
       }
-      if (node.primaryDomain !== expectedDomainId) {
-        throw new Error(`content/concepts/${file} node "${node.id}" primaryDomain must be "${expectedDomainId}" (found "${node.primaryDomain ?? 'undefined'}").`);
+      if (node.primaryDomain !== domainId) {
+        throw new Error(`content/concepts/${file} node "${node.id}" primaryDomain must be "${domainId}" (found "${node.primaryDomain ?? 'undefined'}").`);
       }
       localNodeIds.add(node.id);
       nodeMap.set(node.id, node);
+      nodes.push(node);
     }
     for (const [edgeIndex, edge] of localEdges.entries()) {
       if (!edge || typeof edge !== 'object' || Array.isArray(edge)) {
@@ -171,34 +213,21 @@ async function loadStructuredGraphFromYaml(indexUrl) {
         throw new Error(`content/concepts/${file} edge "${edge.id}" source "${edge.source ?? ''}" must reference a node in the same file.`);
       }
       edgeMap.set(edge.id, edge);
+      edges.push(edge);
     }
   }
-  const missingNodeIds = index.order.nodes.filter((id) => !nodeMap.has(id));
-  const missingEdgeIds = index.order.edges.filter((id) => !edgeMap.has(id));
-  if (missingNodeIds.length) {
-    throw new Error(`content/concepts/index.yaml order.nodes references unknown node ids: ${missingNodeIds.slice(0, 5).join(', ')}${missingNodeIds.length > 5 ? ` (+${missingNodeIds.length - 5} more)` : ''}.`);
-  }
-  if (missingEdgeIds.length) {
-    throw new Error(`content/concepts/index.yaml order.edges references unknown edge ids: ${missingEdgeIds.slice(0, 5).join(', ')}${missingEdgeIds.length > 5 ? ` (+${missingEdgeIds.length - 5} more)` : ''}.`);
-  }
-  const orderedNodeIdSet = new Set(index.order.nodes);
-  const orderedEdgeIdSet = new Set(index.order.edges);
-  const extraNodeIds = [...nodeMap.keys()].filter((id) => !orderedNodeIdSet.has(id));
-  const extraEdgeIds = [...edgeMap.keys()].filter((id) => !orderedEdgeIdSet.has(id));
-  if (extraNodeIds.length) {
-    throw new Error(`content/concepts/index.yaml order.nodes is missing ids present in concept files: ${extraNodeIds.slice(0, 5).join(', ')}${extraNodeIds.length > 5 ? ` (+${extraNodeIds.length - 5} more)` : ''}.`);
-  }
-  if (extraEdgeIds.length) {
-    throw new Error(`content/concepts/index.yaml order.edges is missing ids present in concept files: ${extraEdgeIds.slice(0, 5).join(', ')}${extraEdgeIds.length > 5 ? ` (+${extraEdgeIds.length - 5} more)` : ''}.`);
-  }
-  const nodes = index.order.nodes.map((id) => nodeMap.get(id));
-  const edges = index.order.edges.map((id) => edgeMap.get(id));
+  const meta = {
+    ...index.meta,
+    fieldOrder: fieldsList.ids,
+    domainOrder: domainsList.ids,
+    edgeTypeOrder: edgeTypesList.ids
+  };
   return {
-    meta: loadedParts.meta,
+    meta,
     citationLegend: sourcePart.citationLegend,
-    domains: loadedParts.domains,
-    fields: loadedParts.fields,
-    edgeTypes: loadedParts.edgeTypes,
+    domains: domainsList.map,
+    fields: fieldsList.map,
+    edgeTypes: edgeTypesList.map,
     sources: sourcePart.sources,
     nodes,
     edges

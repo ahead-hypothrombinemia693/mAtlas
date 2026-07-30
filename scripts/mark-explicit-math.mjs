@@ -1,24 +1,57 @@
-import { readFile, writeFile } from 'node:fs/promises';
+import { readFile, readdir, writeFile } from 'node:fs/promises';
 import { parse as parseYaml, stringify as stringifyYaml } from 'yaml';
 import { markExplicitMath } from './math-markup.mjs';
 
 const conceptsIndexUrl = new URL('../content/concepts/index.yaml', import.meta.url);
-const edgeTypesUrl = new URL('../content/concepts/edge-types.yaml', import.meta.url);
 const conceptsIndex = parseYaml(await readFile(conceptsIndexUrl, 'utf8'));
-const edgeTypes = parseYaml(await readFile(edgeTypesUrl, 'utf8'));
-if (!Array.isArray(conceptsIndex?.conceptFiles) || conceptsIndex.conceptFiles.length === 0) {
-  throw new Error('content/concepts/index.yaml must define a non-empty conceptFiles sequence.');
+if (!Array.isArray(conceptsIndex?.domains) || conceptsIndex.domains.length === 0) {
+  throw new Error('content/concepts/index.yaml must define a non-empty domains sequence.');
 }
-const conceptEntries = await Promise.all(conceptsIndex.conceptFiles.map(async (file) => {
+if (!Array.isArray(conceptsIndex?.edgeTypes) || conceptsIndex.edgeTypes.length === 0) {
+  throw new Error('content/concepts/index.yaml must define a non-empty edgeTypes sequence.');
+}
+const conceptsRootUrl = new URL('../content/concepts/', import.meta.url);
+const directoryEntries = await readdir(conceptsRootUrl, { withFileTypes: true });
+const discoveredFiles = new Map();
+for (const entry of directoryEntries) {
+  if (!entry.isDirectory()) continue;
+  const fieldId = entry.name;
+  const fieldDirUrl = new URL(`${fieldId}/`, conceptsRootUrl);
+  const fieldFiles = await readdir(fieldDirUrl, { withFileTypes: true });
+  for (const fileEntry of fieldFiles) {
+    if (!fileEntry.isFile() || !/\.ya?ml$/u.test(fileEntry.name)) continue;
+    discoveredFiles.set(`${fieldId}/${fileEntry.name.replace(/\.ya?ml$/u, '')}`, `${fieldId}/${fileEntry.name}`);
+  }
+}
+const conceptEntries = await Promise.all(conceptsIndex.domains.map(async (domain, domainIndex) => {
+  const fieldId = domain?.field;
+  const domainId = domain?.id;
+  if (typeof fieldId !== 'string' || typeof domainId !== 'string') {
+    throw new Error(`content/concepts/index.yaml domains[${domainIndex}] must include string id and field.`);
+  }
+  const file = discoveredFiles.get(`${fieldId}/${domainId}`) ?? `${fieldId}/${domainId}.yaml`;
   const url = new URL(file, conceptsIndexUrl);
   const data = parseYaml(await readFile(url, 'utf8'));
-  if (!data || typeof data !== 'object' || Array.isArray(data)) {
-    throw new Error(`content/concepts/${file} must be an object with nodes and edges arrays.`);
+  const normalizedData = data ?? {};
+  if (typeof normalizedData !== 'object' || Array.isArray(normalizedData)) {
+    throw new Error(`content/concepts/${file} must be an object with optional nodes and edges arrays.`);
   }
-  if (!Array.isArray(data.nodes) || !Array.isArray(data.edges)) {
-    throw new Error(`content/concepts/${file} must contain nodes and edges arrays.`);
+  if (normalizedData.nodes !== undefined && !Array.isArray(normalizedData.nodes)) {
+    throw new Error(`content/concepts/${file} nodes must be an array when provided.`);
   }
-  return { file, url, data };
+  if (normalizedData.edges !== undefined && !Array.isArray(normalizedData.edges)) {
+    throw new Error(`content/concepts/${file} edges must be an array when provided.`);
+  }
+  normalizedData.nodes ??= [];
+  normalizedData.edges ??= [];
+  return { file, url, data: normalizedData };
+}));
+const edgeTypes = Object.fromEntries(conceptsIndex.edgeTypes.map((edgeType, index) => {
+  if (!edgeType || typeof edgeType !== 'object' || Array.isArray(edgeType) || typeof edgeType.id !== 'string' || !edgeType.id) {
+    throw new Error(`content/concepts/index.yaml edgeTypes[${index}] must be an object with a non-empty string id.`);
+  }
+  const { id, ...rest } = edgeType;
+  return [id, rest];
 }));
 const changes = [];
 
@@ -59,8 +92,9 @@ for (const change of changes) {
 }
 
 if (process.argv.includes('--write')) {
+  conceptsIndex.edgeTypes = conceptsIndex.edgeTypes.map((entry) => ({ id: entry.id, ...edgeTypes[entry.id] }));
   await Promise.all([
-    writeFile(edgeTypesUrl, stringifyYaml(edgeTypes)),
+    writeFile(conceptsIndexUrl, stringifyYaml(conceptsIndex)),
     ...conceptEntries.map((concept) => writeFile(concept.url, stringifyYaml(concept.data)))
   ]);
   console.log(`Marked ${changes.length} field${changes.length === 1 ? '' : 's'} in content/concepts/*.yaml.`);
