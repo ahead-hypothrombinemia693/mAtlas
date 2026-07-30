@@ -240,7 +240,21 @@ export async function startAtlasApp(): Promise<void> {
     viewNodeUrl: (viewId, nodeId) => locationController.viewNodeUrl(viewId, nodeId),
     activateNode: (id) => { activateNode(id, { center: true, zoomIn: true, historyMode: 'push' }); },
     activateEdge: (id) => { activateEdge(id, { center: true, zoomIn: true, historyMode: 'push' }); },
-    openPanel: openDetailsPanel
+    openPanel: openDetailsPanel,
+    navigate: (href) => {
+      const url = new URL(href, window.location.href);
+      if (url.origin !== window.location.origin) {
+        window.location.assign(url.toString());
+        return;
+      }
+      try {
+        window.history.pushState({ selection: null, uiStateVersion: 1, viewId: locationController.activeView()?.id ?? null }, '', url.href);
+      } catch {
+        window.location.assign(url.toString());
+        return;
+      }
+      applyLocationState({ initial: false });
+    }
   });
 
   function showNodeDetails(id: string): void {

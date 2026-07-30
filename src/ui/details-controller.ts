@@ -22,6 +22,7 @@ interface DetailsControllerOptions {
   activateNode: (nodeId: string) => void;
   activateEdge: (edgeId: string) => void;
   openPanel: () => void;
+  navigate: (href: string) => void;
 }
 
 export class DetailsController {
@@ -80,6 +81,7 @@ export class DetailsController {
     renderHtml(byId('detailEditLink'), this.renderHeaderActions(id, 'node'));
     this.bindHeaderActions();
     this.bindRelationLinks();
+    this.bindTaxonomyLinks();
     this.options.openPanel();
   }
 
@@ -270,6 +272,19 @@ export class DetailsController {
         event.preventDefault();
         if (link.dataset.edgeId) this.options.activateEdge(link.dataset.edgeId);
         else if (link.dataset.nodeId) this.options.activateNode(link.dataset.nodeId);
+      });
+    });
+  }
+
+  private bindTaxonomyLinks(): void {
+    queryAll<HTMLAnchorElement>('.domain-badge').forEach((link) => {
+      link.addEventListener('click', (event) => {
+        const mouseEvent = event as MouseEvent;
+        if (mouseEvent.button !== 0 || mouseEvent.metaKey || mouseEvent.ctrlKey || mouseEvent.shiftKey || mouseEvent.altKey) return;
+        event.preventDefault();
+        const href = link.getAttribute('href');
+        if (!href) return;
+        this.options.navigate(href);
       });
     });
   }
