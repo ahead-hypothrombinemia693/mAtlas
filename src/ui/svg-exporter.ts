@@ -154,7 +154,7 @@ export class SvgExporter {
       const rightY = baseY - ux * 5;
       parts.push(`<path d="M ${end.x.toFixed(2)} ${end.y.toFixed(2)} L ${leftX.toFixed(2)} ${leftY.toFixed(2)} L ${rightX.toFixed(2)} ${rightY.toFixed(2)} Z" fill="${escapeHtml(color)}" opacity="${edgeOpacity}"/>`);
 
-      if (!this.state.showEdgeLabels || !this.preferences().showGraphEdgeLabels) return;
+      if (!this.state.showEdgeLabels) return;
       const labelX = 0.25 * start.x + 0.5 * control.x + 0.25 * end.x;
       const labelY = 0.25 * start.y + 0.5 * control.y + 0.25 * end.y;
       const angle = Math.atan2(end.y - start.y, end.x - start.x) * 180 / Math.PI;

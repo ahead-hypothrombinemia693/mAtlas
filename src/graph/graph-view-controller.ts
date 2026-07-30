@@ -92,7 +92,7 @@ export class GraphViewController {
         } else if (element.source().hasClass('dependency-faded') || element.target().hasClass('dependency-faded')) {
           element.addClass('dependency-context');
         }
-        element.toggleClass('edge-labels-off', !state.showEdgeLabels || !this.options.preferences().showGraphEdgeLabels);
+        element.toggleClass('edge-labels-off', !state.showEdgeLabels);
       });
 
       if (!this.options.preferences().dimPrerequisites) {

@@ -12,7 +12,6 @@ test('preferences have performance-conscious defaults and their own storage name
     motionBlur: false,
     formulaeInGraph: false,
     indicateOtherDomains: true,
-    showGraphEdgeLabels: true,
     hideEdgesWhileMoving: true,
     allowNodeMovement: false,
     dimPrerequisites: true,

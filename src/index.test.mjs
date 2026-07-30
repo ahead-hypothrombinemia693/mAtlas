@@ -36,6 +36,11 @@ test('the isolated-node display option is absent', () => {
 });
 
 
+test('edge annotations are the sole edge-label control', () => {
+  assert.match(html, /id="edgeLabelsToggle"[^>]*type="checkbox"/);
+  assert.doesNotMatch(html, /showGraphEdgeLabelsToggle|Show graph edge labels/);
+});
+
 test('prerequisite highlighting is an opt-in browser preference', () => {
   assert.match(html, /id="highlightPrerequisitesToggle"[^>]*type="checkbox"/);
   assert.doesNotMatch(html, /id="highlightPrerequisitesToggle"[^>]*checked/);

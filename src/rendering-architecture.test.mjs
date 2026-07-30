@@ -58,7 +58,8 @@ test('static export uses the npm-managed browser and domain markers stay consist
   assert.match(labelLayer, /graph-domain-markers/);
   assert.match(exporter, /<circle cx=/);
   assert.doesNotMatch(exporter, /katex|foreignObject|renderText|svgCssText/i);
-  assert.match(exporter, /preferences\(\)\.showGraphEdgeLabels/);
+  assert.match(exporter, /if \(!this\.state\.showEdgeLabels\) return/);
+  assert.doesNotMatch(exporter, /showGraphEdgeLabels/);
   assert.match(exporter, /preferences\(\)\.dimPrerequisites/);
   assert.match(exporter, /serializePrimaryDomain\(domainId: string\)/);
   assert.match(exporter, /record && !record\.synthetic && nodeIds\.has\(record\.source\) && nodeIds\.has\(record\.target\)/);

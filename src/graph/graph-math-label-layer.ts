@@ -160,7 +160,7 @@ export class GraphMathLabelLayer {
     for (const { element, label } of this.entries) {
       const hidden = !this.preferences.formulaeInGraph || element.hasClass('filter-hidden')
         || element.style('display') === 'none'
-        || (element.isEdge() && (element.hasClass('edge-labels-off') || !this.preferences.showGraphEdgeLabels));
+        || (element.isEdge() && element.hasClass('edge-labels-off'));
       if (hidden) {
         label.hidden = true;
         continue;
