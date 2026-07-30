@@ -2,7 +2,9 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { lightweightLatexToUnicode, replaceInlineLatexWithUnicode } from '../../.test-build/core/lightweight-math.js';
-import { lightweightLatexToUnicode as staticLightweightLatexToUnicode } from '../../scripts/lightweight-math.mjs';
+import { importTypeScriptModule } from '../../scripts/import-typescript-module.mjs';
+
+const buildLightweightMath = await importTypeScriptModule(new URL('./lightweight-math.ts', import.meta.url));
 
 test('converts common symbols, styled alphabets, operators, scripts, roots, and fractions', () => {
   assert.equal(lightweightLatexToUnicode('\\omega_n^2 \\approx \\frac{a}{b}'), '𝜔ₙ² ≈ (𝑎)/(𝑏)');
@@ -14,9 +16,9 @@ test('converts common symbols, styled alphabets, operators, scripts, roots, and 
   assert.equal(lightweightLatexToUnicode('\\sqrt[3]{x} \\mapsto \\aleph_0'), '√[3](𝑥) ↦ ℵ₀');
 });
 
-test('static view-page math cleanup matches the runtime lightweight renderer', () => {
+test('build scripts load the canonical TypeScript lightweight renderer', () => {
   for (const expression of ['\\omega_n^2 \\approx \\frac{a}{b}', '\\mathbb R^2', '\\operatorname{Spec}(R)', 'W^\\pm', '\\sqrt[3]{x} \\mapsto \\aleph_0']) {
-    assert.equal(staticLightweightLatexToUnicode(expression), lightweightLatexToUnicode(expression));
+    assert.equal(buildLightweightMath.lightweightLatexToUnicode(expression), lightweightLatexToUnicode(expression));
   }
 });
 

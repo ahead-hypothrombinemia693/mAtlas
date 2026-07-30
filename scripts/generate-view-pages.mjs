@@ -1,7 +1,11 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 import { escapeHtml, renderInlineMath } from './inline-math.mjs';
-import { replaceInlineLatexWithUnicode } from './lightweight-math.mjs';
+import { importTypeScriptModule } from './import-typescript-module.mjs';
 import { minifyHtml } from './minify-html.mjs';
+
+const { replaceInlineLatexWithUnicode } = await importTypeScriptModule(
+  new URL('../src/core/lightweight-math.ts', import.meta.url)
+);
 
 const SITE_ORIGIN = 'https://atlas.madvay.com';
 const appUrl = (pathname = '') => new URL(pathname, `${SITE_ORIGIN}/`).toString();
