@@ -6,6 +6,7 @@ import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { generateDirectoryPage, inlineSvgFragment, renderDirectoryPage } from './generate-directory-page.mjs';
 import { renderConceptIndexRedirect, renderScopePage } from './generate-concept-pages.mjs';
+import { minifyHtml } from './minify-html.mjs';
 
 const root = new URL('../', import.meta.url);
 const exportedSvg = '<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" role="img"><title id="atlas-title">Atlas</title><a href="https://atlas.madvay.com/concepts/finite_set/"><text>Finite set</text></a></svg>';
@@ -58,13 +59,13 @@ test('directory page is semantic, crawlable, root-relative, and exactly transclu
       lastModified: '2026-07-28'
     });
     const written = await readFile(new URL('directory/index.html', distUrl), 'utf8');
-    assert.equal(written, renderDirectoryPage({
+    assert.equal(written, minifyHtml(renderDirectoryPage({
       graphData,
       svg: exportedSvg,
       distUrl,
       graphDataPath: 'content/atlas.test.json',
       lastModified: '2026-07-28'
-    }));
+    })));
   } finally {
     await rm(directory, { recursive: true, force: true });
   }
