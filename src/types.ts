@@ -122,6 +122,8 @@ export interface AppState {
   excludedFields: Set<string>;
   excludedDomains: Set<string>;
   crossFieldVisibility: CrossFieldVisibility;
+  showPrimaryOnly: boolean;
+  hideIsolates: boolean;
   showEdgeLabels: boolean;
   showJunctions: boolean;
   edgeZoomActivation: boolean;
@@ -154,6 +156,8 @@ export interface UrlUiState {
   excludedFields?: string[];
   excludedDomains?: string[];
   crossFieldVisibility?: CrossFieldVisibility;
+  showPrimaryOnly?: boolean;
+  hideIsolates?: boolean;
   edgeLabels?: boolean;
   junctions?: boolean;
   edgeZoomActivation?: boolean;
@@ -173,6 +177,8 @@ export interface AtlasViewSettings {
   excludedFields?: string[];
   excludedDomains?: string[];
   crossFieldVisibility: CrossFieldVisibility;
+  showPrimaryOnly?: boolean;
+  hideIsolates?: boolean;
   edgeLabels: boolean;
   junctions: boolean;
   edgeZoomActivation: boolean;

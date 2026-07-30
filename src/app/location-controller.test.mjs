@@ -39,6 +39,8 @@ function matchingState() {
     selectedDomains: new Set(['experiments']),
     selectedEdgeTypes: new Set(['motivated', 'verified']),
     crossFieldVisibility: 'hidden',
+    showPrimaryOnly: false,
+    hideIsolates: false,
     showEdgeLabels: true,
     showJunctions: false,
     edgeZoomActivation: false,

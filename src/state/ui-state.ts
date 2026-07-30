@@ -30,6 +30,8 @@ export interface InitialStateDefaults {
   excludedFields?: string[] | undefined;
   excludedDomains?: string[] | undefined;
   crossFieldVisibility?: CrossFieldVisibility | undefined;
+  showPrimaryOnly?: boolean | undefined;
+  hideIsolates?: boolean | undefined;
   edgeLabels?: boolean | undefined;
   junctions?: boolean | undefined;
   edgeZoomActivation?: boolean | undefined;
@@ -68,6 +70,8 @@ export function parseUrlUiState(params: URLSearchParams, known: UiStateKnowledge
   const crossFieldValue = params.get('crossField');
   const edgeLabels = readUrlBoolean(params, 'edgeLabels');
   const junctions = readUrlBoolean(params, 'junctions');
+  const showPrimaryOnly = readUrlBoolean(params, 'showPrimaryOnly');
+  const hideIsolates = readUrlBoolean(params, 'hideIsolates');
   const edgeZoomActivation = readUrlBoolean(params, 'edgeZoomActivation');
   const hidePrerequisites = readUrlBoolean(params, 'hidePrereqs');
   const layoutValue = params.get('layout');
@@ -81,6 +85,8 @@ export function parseUrlUiState(params: URLSearchParams, known: UiStateKnowledge
   if (isCrossFieldVisibility(crossFieldValue)) result.crossFieldVisibility = crossFieldValue;
   if (edgeLabels !== undefined) result.edgeLabels = edgeLabels;
   if (junctions !== undefined) result.junctions = junctions;
+  if (showPrimaryOnly !== undefined) result.showPrimaryOnly = showPrimaryOnly;
+  if (hideIsolates !== undefined) result.hideIsolates = hideIsolates;
   if (edgeZoomActivation !== undefined) result.edgeZoomActivation = edgeZoomActivation;
   if (hidePrerequisites !== undefined) result.hidePrerequisites = hidePrerequisites;
   if (isLayoutName(normalizedLayout)) result.layout = normalizedLayout;
@@ -98,6 +104,8 @@ export function createInitialState(
     excludedFields: new Set(url.excludedFields ?? defaults.excludedFields ?? []),
     excludedDomains: new Set(url.excludedDomains ?? defaults.excludedDomains ?? []),
     crossFieldVisibility: url.crossFieldVisibility ?? defaults.crossFieldVisibility ?? 'all',
+    showPrimaryOnly: url.showPrimaryOnly ?? defaults.showPrimaryOnly ?? false,
+    hideIsolates: url.hideIsolates ?? defaults.hideIsolates ?? false,
     showEdgeLabels: url.edgeLabels ?? defaults.edgeLabels ?? true,
     showJunctions: url.junctions ?? defaults.junctions ?? true,
     edgeZoomActivation: url.edgeZoomActivation ?? defaults.edgeZoomActivation ?? true,
@@ -127,6 +135,8 @@ export function addUiStateToParams(
   writeIds('excludeFields', fieldOrder, state.excludedFields ?? new Set());
   writeIds('excludeDomains', domainOrder, state.excludedDomains ?? new Set());
   params.set('crossField', state.crossFieldVisibility);
+  params.set('showPrimaryOnly', state.showPrimaryOnly ? '1' : '0');
+  params.set('hideIsolates', state.hideIsolates ? '1' : '0');
   params.set('edgeLabels', state.showEdgeLabels ? '1' : '0');
   params.set('junctions', state.showJunctions ? '1' : '0');
   params.set('edgeZoomActivation', state.edgeZoomActivation ? '1' : '0');

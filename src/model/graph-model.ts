@@ -61,9 +61,12 @@ export class GraphModel {
       .filter((label): label is string => Boolean(label));
   }
 
-  nodeMatchesSelectedTaxonomy(node: GraphNode, state: Pick<AppState, 'selectedFields' | 'selectedDomains'>): boolean {
-    return this.nodeFieldIds(node).some((fieldId) => state.selectedFields.has(fieldId))
-      && this.nodeDomainIds(node).some((domainId) => state.selectedDomains.has(domainId));
+  nodeMatchesSelectedTaxonomy(node: GraphNode, state: Pick<AppState, 'selectedFields' | 'selectedDomains' | 'showPrimaryOnly'>): boolean {
+    const fieldMatch = this.nodeFieldIds(node).some((fieldId) => state.selectedFields.has(fieldId));
+    const domainMatch = state.showPrimaryOnly
+      ? state.selectedDomains.has(node.primaryDomain)
+      : this.nodeDomainIds(node).some((domainId) => state.selectedDomains.has(domainId));
+    return fieldMatch && domainMatch;
   }
 
   nodeExcludedByTaxonomy(
@@ -111,7 +114,7 @@ export class GraphModel {
   }
 
   requiredNodeIds(
-    state: Pick<AppState, 'selectedFields' | 'selectedDomains' | 'selectedEdgeTypes' | 'excludedFields' | 'excludedDomains'>,
+    state: Pick<AppState, 'selectedFields' | 'selectedDomains' | 'selectedEdgeTypes' | 'excludedFields' | 'excludedDomains' | 'showPrimaryOnly'>,
     edgeAllowed: (edge: GraphEdge) => boolean
   ): Set<string> {
     const roots = this.data.nodes

@@ -146,7 +146,9 @@ export function validate(context) {
     for (const key of ['fields', 'domains', 'edgeTypes']) requireStringArray(errors, view?.settings?.[key], `${path}.settings.${key}`, { nonEmpty: true, unique: true });
     for (const key of ['excludedFields', 'excludedDomains']) if (view?.settings?.[key] !== undefined) requireStringArray(errors, view.settings[key], `${path}.settings.${key}`, { unique: true });
     for (const key of ['crossFieldVisibility', 'layout']) requireString(errors, view?.settings?.[key], `${path}.settings.${key}`);
-    for (const key of ['edgeLabels', 'junctions', 'edgeZoomActivation']) requireBoolean(errors, view?.settings?.[key], `${path}.settings.${key}`);
+    for (const key of ['edgeLabels', 'junctions', 'edgeZoomActivation', 'showPrimaryOnly', 'hideIsolates']) {
+      if (view?.settings?.[key] !== undefined) requireBoolean(errors, view.settings[key], `${path}.settings.${key}`);
+    }
     if (view?.settings?.hidePrerequisites !== undefined) requireBoolean(errors, view.settings.hidePrerequisites, `${path}.settings.hidePrerequisites`);
   }
 

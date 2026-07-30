@@ -100,6 +100,8 @@ export class FilterControls {
     byId<HTMLInputElement>('edgeLabelsToggle').checked = state.showEdgeLabels;
     byId<HTMLInputElement>('junctionsToggle').checked = state.showJunctions;
     byId<HTMLInputElement>('hidePrerequisitesToggle').checked = state.hidePrerequisites;
+    byId<HTMLInputElement>('showPrimaryOnlyToggle').checked = state.showPrimaryOnly;
+    byId<HTMLInputElement>('hideIsolatesToggle').checked = state.hideIsolates;
     byId<HTMLInputElement>('edgeZoomToggle').checked = state.edgeZoomActivation;
     byId<HTMLSelectElement>('crossFieldSelect').value = state.crossFieldVisibility;
     byId<HTMLSelectElement>('layoutSelect').value = state.layout;
@@ -177,6 +179,14 @@ export class FilterControls {
       this.options.state.edgeZoomActivation = (event.currentTarget as HTMLInputElement).checked;
       this.commit(false);
       this.options.scheduleEdgeZoomStyles();
+    });
+    byId<HTMLInputElement>('showPrimaryOnlyToggle').addEventListener('change', (event) => {
+      this.options.state.showPrimaryOnly = (event.currentTarget as HTMLInputElement).checked;
+      this.commit(true);
+    });
+    byId<HTMLInputElement>('hideIsolatesToggle').addEventListener('change', (event) => {
+      this.options.state.hideIsolates = (event.currentTarget as HTMLInputElement).checked;
+      this.commit(false);
     });
     byId<HTMLInputElement>('junctionsToggle').addEventListener('change', (event) => {
       this.options.state.showJunctions = (event.currentTarget as HTMLInputElement).checked;

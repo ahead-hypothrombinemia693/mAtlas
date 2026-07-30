@@ -38,6 +38,8 @@ function appState() {
     excludedFields: new Set(['mathematics']),
     excludedDomains: new Set(['algebra']),
     crossFieldVisibility: 'hidden',
+    showPrimaryOnly: false,
+    hideIsolates: false,
     showEdgeLabels: true,
     showJunctions: false,
     edgeZoomActivation: false,

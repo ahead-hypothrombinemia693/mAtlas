@@ -14,12 +14,14 @@ const known = {
 };
 
 test('URL state parser accepts canonical values, exclusions, prerequisite mode, and migrates cose', () => {
-  const parsed = parseUrlUiState(new URLSearchParams('fields=math&domains=algebra&edges=built-from&excludeFields=physics&excludeDomains=mechanics&hidePrereqs=1&layout=cose&edgeLabels=0&junctions=true'), known);
+  const parsed = parseUrlUiState(new URLSearchParams('fields=math&domains=algebra&edges=built-from&excludeFields=physics&excludeDomains=mechanics&hidePrereqs=1&showPrimaryOnly=1&hideIsolates=true&layout=cose&edgeLabels=0&junctions=true'), known);
   assert.deepEqual(parsed.fields, ['math']);
   assert.deepEqual(parsed.domains, ['algebra']);
   assert.equal(parsed.layout, 'cose-bilkent');
   assert.equal(parsed.edgeLabels, false);
   assert.equal(parsed.junctions, true);
+  assert.equal(parsed.showPrimaryOnly, true);
+  assert.equal(parsed.hideIsolates, true);
   assert.deepEqual(parsed.excludedFields, ['physics']);
   assert.deepEqual(parsed.excludedDomains, ['mechanics']);
   assert.equal(parsed.hidePrerequisites, true);

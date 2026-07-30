@@ -52,6 +52,25 @@ export class GraphViewController {
       ? new Set<string>()
       : model.requiredNodeIds(state, (edge) => !model.isCrossFieldEdge(edge) || this.crossFieldEdgeAllowed(edge));
 
+    const edgeVisibleSet = new Set<string>();
+    cy.edges().forEach((element) => {
+      const record = model.edgeRecord.get(element.id());
+      if (!record) return;
+      const endpointsHidden = element.source().hasClass('filter-hidden') || element.target().hasClass('filter-hidden');
+      const wrongJunctionMode = isWrongJunctionMode(
+        record,
+        model.nodeRecord.get(record.source)?.kind,
+        model.nodeRecord.get(record.target)?.kind,
+        state.showJunctions
+      );
+      if (!state.selectedEdgeTypes.has(record.type)
+        || endpointsHidden
+        || wrongJunctionMode
+        || !this.crossFieldEdgeAllowed(record)) return;
+      edgeVisibleSet.add(record.source);
+      edgeVisibleSet.add(record.target);
+    });
+
     cy.batch(() => {
       cy.elements().removeClass('filter-hidden dependency-faded dependency-context prerequisite-undimmed cross-field-edge');
 
@@ -61,14 +80,26 @@ export class GraphViewController {
           element.addClass('filter-hidden');
           return;
         }
+        const nodeMatches = model.nodeMatchesSelectedTaxonomy(record, state) && !model.nodeExcludedByTaxonomy(record, state);
         const visibility = classifyNodeVisibility(
           record.kind,
-          model.nodeMatchesSelectedTaxonomy(record, state) && !model.nodeExcludedByTaxonomy(record, state),
+          nodeMatches,
           required.has(record.id),
           state.showJunctions
         );
-        if (visibility === 'hidden') element.addClass('filter-hidden');
-        else if (visibility === 'dependency-context') element.addClass('dependency-faded');
+        if (visibility === 'hidden') {
+          element.addClass('filter-hidden');
+        } else if (visibility === 'dependency-context') {
+          element.addClass('dependency-faded');
+        }
+        if (state.hideIsolates && visibility === 'visible') {
+          const recordKind = record.kind;
+          const isStructure = recordKind === 'structure';
+          const hasRelation = isStructure && edgeVisibleSet.has(record.id);
+          if (!hasRelation && !required.has(record.id)) {
+            element.addClass('filter-hidden');
+          }
+        }
       });
 
       cy.edges().forEach((element) => {
