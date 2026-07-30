@@ -49,7 +49,9 @@ export function readUrlIdList(params: URLSearchParams, name: string, knownIds: R
   if (!params.has(name)) return undefined;
   const raw = params.get(name) ?? '';
   const ids = raw ? raw.split(',').filter(Boolean) : [];
-  return isKnownIdArray(ids, knownIds) ? ids : undefined;
+  const uniqueIds = [...new Set(ids)];
+  const known = uniqueIds.filter((id) => knownIds.has(id));
+  return known.length > 0 ? known : undefined;
 }
 
 export function readUrlBoolean(params: URLSearchParams, name: string): boolean | undefined {

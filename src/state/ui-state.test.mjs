@@ -27,9 +27,9 @@ test('URL state parser accepts canonical values, exclusions, prerequisite mode, 
   assert.equal(parsed.hidePrerequisites, true);
 });
 
-test('URL state parser rejects duplicate and unknown ids', () => {
+test('URL state parser ignores duplicate and unknown ids', () => {
   const parsed = parseUrlUiState(new URLSearchParams('fields=math,math&domains=unknown'), known);
-  assert.equal(parsed.fields, undefined);
+  assert.deepEqual(parsed.fields, ['math']);
   assert.equal(parsed.domains, undefined);
 });
 
