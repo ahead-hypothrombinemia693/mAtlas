@@ -28,6 +28,7 @@ settings:
   edgeLabels: true
   junctions: false
   edgeZoomActivation: true
+  hideIsolates: true
   layout: atlas
 nodeSequence:
   - blackbody_ultraviolet_catastrophe
