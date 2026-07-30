@@ -224,7 +224,7 @@ export class LocationController {
   }
 
   githubEditUrl(itemId: string): string {
-    const textFragment = encodeURIComponent(`"id": "${itemId}"`);
+    const textFragment = encodeURIComponent(`id: ${itemId}`);
     const node = this.options.model.nodeRecord.get(itemId);
     if (node?.kind === 'structure' && typeof node.primaryDomain === 'string') {
       const fieldId = node.primaryField ?? this.options.model.fieldForDomain(node.primaryDomain);
