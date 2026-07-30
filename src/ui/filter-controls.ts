@@ -86,10 +86,11 @@ export class FilterControls {
       .map((id) => {
         const type = model.data.edgeTypes[id];
         if (!type) return '';
+        const edgeTypeCount = model.data.edges.filter((edge) => edge.type === id).length;
         return `<label class="filter-item" title="${escapeHtml(type.description)}">
           <input type="checkbox" data-edge-type="${escapeHtml(id)}" ${state.selectedEdgeTypes.has(id) ? 'checked' : ''}>
           <span class="line-swatch ${escapeHtml(type.lineStyle ?? 'solid')}" style="border-color:${escapeHtml(type.color)}"></span>
-          <span><a href="#" class="filter-link filter-edge-link" data-edge-link="${escapeHtml(id)}">${escapeHtml(type.label)}</a></span>
+          <span><a href="#" class="filter-link filter-edge-link" data-edge-link="${escapeHtml(id)}">${escapeHtml(type.label)}</a> <span class="filter-count">${edgeTypeCount}</span></span>
         </label>`;
       }).join(''));
   }
