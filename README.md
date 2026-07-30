@@ -1,5 +1,7 @@
 # Atlas of Fundamental Concepts (mAtlas)
 
+[![Deploy GitHub Pages](https://github.com/madvay/mAtlas/actions/workflows/pages.yml/badge.svg)](https://github.com/madvay/mAtlas/actions/workflows/pages.yml)
+
 An interactive, source-backed graph connecting concepts across fields of knowledge. The current release combines the existing mathematics atlas with an initial physics spine running from foundational physical concepts through classical mechanics, relativity, quantum mechanics, quantum field theory, the Standard Model, particles, nuclei, atoms, ions, and molecules.
 
 The atlas is one graph rather than a collection of isolated applications. Fields occupy vertically stacked, subtly bounded bands; domains form horizontal lanes within each field; and justified cross-field relations connect the bands.
