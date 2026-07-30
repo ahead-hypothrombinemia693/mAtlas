@@ -2,6 +2,7 @@ import type cytoscape from 'cytoscape';
 import type { AppState, GraphNode, LayoutName, Point } from '../types.js';
 import type { GraphModel } from '../model/graph-model.js';
 import { OrganicLayoutEngine } from './organic-layout.js';
+import { compactHierarchyPositions } from './compact-hierarchy-layout-core.js';
 
 interface LayoutManagerOptions {
   cy: cytoscape.Core;
@@ -54,22 +55,19 @@ export class LayoutManager {
       return;
     }
 
-    visible.layout({
-      name: 'breadthfirst',
-      directed: true,
-      circle: false,
-      roots: this.breadthFirstRoots(visible),
-      spacingFactor: 1.22,
-      avoidOverlap: true,
-      nodeDimensionsIncludeLabels: true,
-      padding: 60,
-      animate: false,
-      fit: false,
-      stop: () => {
-        if (fitAfter) cy.fit(visible, 58);
-        this.options.onLayoutSettled();
-      }
-    }).run();
+    const visibleNodeIds = new Set<string>();
+    visible.nodes().forEach((node) => {
+      visibleNodeIds.add(node.id());
+    });
+    const positions = compactHierarchyPositions(
+      this.options.model.data.nodes,
+      visibleNodeIds,
+      this.options.model.data.domains,
+      this.options.model.domainOrder
+    );
+    visible.nodes().positions((node) => positions[node.id()] ?? { x: 0, y: 0 });
+    if (fitAfter) cy.fit(visible, 58);
+    this.options.onLayoutSettled();
   }
 
   atlasPositions(): Record<string, Point> {
@@ -203,45 +201,4 @@ export class LayoutManager {
     return bases;
   }
 
-  private breadthFirstRoots(visible: cytoscape.CollectionReturnValue): string[] {
-    const { model, state } = this.options;
-    const selectedDomains = state.selectedDomains;
-
-    const visibleSelectedNodes = visible.nodes().filter((node) => {
-      const record = model.nodeRecord.get(node.id());
-      return Boolean(record && model.nodeDomainIds(record).some((domainId) => selectedDomains.has(domainId)));
-    });
-
-    const rootIds = new Set<string>();
-    visibleSelectedNodes.forEach((node) => {
-      rootIds.add(node.id());
-    });
-
-    const visibleEdgeIds = new Set<string>();
-    visible.edges().forEach((edge) => {
-      visibleEdgeIds.add(edge.id());
-    });
-
-    const transitiveRoots = model.transitivePrerequisiteNodeIds(
-      [...rootIds],
-      (edge) => visibleEdgeIds.has(edge.id)
-    );
-
-    const transitiveNodes = visible.nodes().filter((node) => transitiveRoots.has(node.id()));
-    if (transitiveNodes.empty()) return [];
-
-    let minLevel = Number.POSITIVE_INFINITY;
-    transitiveNodes.forEach((node) => {
-      const record = model.nodeRecord.get(node.id());
-      if (!record) return;
-      minLevel = Math.min(minLevel, record.level);
-    });
-
-    return transitiveNodes
-      .filter((node) => {
-        const record = model.nodeRecord.get(node.id());
-        return Boolean(record && record.level === minLevel);
-      })
-      .map((node) => node.id());
-  }
 }

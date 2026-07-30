@@ -6,6 +6,14 @@ import type { LabelSizer } from './label-sizer.js';
 import { isCrossFieldEdgeAllowed, resolveFilterVisibility } from './visibility-policy.js';
 import { renderHtml } from '../ui/render.js';
 
+function sameNodeIds(a: ReadonlySet<string>, b: ReadonlySet<string>): boolean {
+  if (a.size !== b.size) return false;
+  for (const id of a) {
+    if (!b.has(id)) return false;
+  }
+  return true;
+}
+
 export interface GraphViewControllerOptions {
   cy: cytoscape.Core;
   model: GraphModel;
@@ -21,6 +29,7 @@ export class GraphViewController {
   private lastLabelZoom: number | null = null;
   private edgeZoomStyleFrame = 0;
   private lastEdgeZoomActive: boolean | null = null;
+  private lastVisibleNodeIds: ReadonlySet<string> | null = null;
 
   constructor(private readonly options: GraphViewControllerOptions) {}
 
@@ -66,6 +75,13 @@ export class GraphViewController {
         edgeAllowed: (edge) => state.selectedEdgeTypes.has(edge.type) && this.crossFieldEdgeAllowed(edge)
       }
     );
+    const visibleNodeIds = new Set<string>();
+    for (const [nodeId, nodeVisibility] of visibility.nodeVisibility) {
+      if (nodeVisibility !== 'hidden') visibleNodeIds.add(nodeId);
+    }
+    const compactVisibilityChanged = this.lastVisibleNodeIds !== null
+      && !sameNodeIds(this.lastVisibleNodeIds, visibleNodeIds);
+    this.lastVisibleNodeIds = visibleNodeIds;
 
     cy.batch(() => {
       cy.elements().removeClass('filter-hidden dependency-faded dependency-context prerequisite-undimmed prerequisite-highlight cross-field-edge');
@@ -108,7 +124,9 @@ export class GraphViewController {
     this.options.updateFiltersToggleCount();
     this.lastEdgeZoomActive = null;
     this.updateEdgeZoomStyles();
-    if (relayout) this.options.runLayout(state.layout, true);
+    if (relayout || (state.layout === 'breadthfirst' && compactVisibilityChanged)) {
+      this.options.runLayout(state.layout, true);
+    }
   }
 
   visibleElements(): cytoscape.CollectionReturnValue {

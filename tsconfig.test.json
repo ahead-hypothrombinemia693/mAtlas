@@ -20,6 +20,7 @@
     "src/state/ui-state.ts",
     "src/state/view-state.ts",
     "src/state/view-sequence.ts",
+    "src/graph/compact-hierarchy-layout-core.ts",
     "src/graph/organic-layout-core.ts",
     "src/graph/create-graph.ts",
     "src/graph/graph-math-label-layer.ts",
