@@ -228,7 +228,7 @@ nodes:
   - computability-theory
   - logic
   - number-theory
-  level: 7.25
+  level: 8
   kind: structure
   summary: An effective coding of symbols, formulas, and finite proofs by natural numbers so that syntactic operations become arithmetically representable.
   carriers:

@@ -18,6 +18,14 @@ export function requireNumber(errors, value, path) {
   if (!Number.isFinite(value)) errors.push(`${path} must be a number.`);
 }
 
+export function requireInteger(errors, value, path) {
+  if (!Number.isFinite(value)) {
+    errors.push(`${path} must be a number.`);
+  } else if (!Number.isInteger(value)) {
+    errors.push(`${path} must be an integer.`);
+  }
+}
+
 export function requireStringArray(errors, value, path, { nonEmpty = false, unique = false } = {}) {
   if (!Array.isArray(value) || value.some((item) => typeof item !== 'string')) {
     errors.push(`${path} must be an array of strings.`);

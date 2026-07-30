@@ -672,7 +672,7 @@ nodes:
   domains:
   - relativity
   - cosmology
-  level: 8.5
+  level: 9
   kind: structure
   conceptType: Causal boundary
   summary: A global null boundary separating events that can communicate with the exterior future from those that cannot.

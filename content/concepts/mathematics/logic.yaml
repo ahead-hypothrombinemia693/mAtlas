@@ -295,7 +295,7 @@ nodes:
   - computability-theory
   - foundation
   - number-theory
-  level: 7.5
+  level: 8
   kind: junction
   summary: Compatibility construction collecting the hypotheses of Gödel’s first incompleteness theorem.
   carriers: []
@@ -349,7 +349,7 @@ nodes:
   - computability-theory
   - foundation
   - number-theory
-  level: 8.5
+  level: 9
   kind: junction
   summary: Compatibility construction collecting the hypotheses of Gödel’s second incompleteness theorem.
   carriers: []

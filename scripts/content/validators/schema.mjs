@@ -3,6 +3,7 @@ import {
   arrayOrEmpty,
   entriesOrEmpty,
   requireBoolean,
+  requireInteger,
   requireNumber,
   requireObject,
   requireString,
@@ -94,7 +95,7 @@ export function validate(context) {
     if (node?.primaryField !== undefined) requireString(errors, node.primaryField, `${path}.primaryField`);
     if (node?.fields !== undefined) requireStringArray(errors, node.fields, `${path}.fields`, { nonEmpty: true, unique: true });
     requireStringArray(errors, node?.domains, `${path}.domains`, { nonEmpty: true, unique: true });
-    requireNumber(errors, node?.level, `${path}.level`);
+    requireInteger(errors, node?.level, `${path}.level`);
     requireStringArray(errors, node?.citations, `${path}.citations`);
     if (node?.root !== undefined) requireBoolean(errors, node.root, `${path}.root`);
     for (const key of ['conceptType', 'scale', 'status']) if (node?.[key] !== undefined) requireString(errors, node[key], `${path}.${key}`);

@@ -1336,7 +1336,7 @@ nodes:
   - algebra
   - number-theory
   - representation-theory
-  level: 16.5
+  level: 17
   kind: junction
   summary: Compatibility construction expressing the Galois criterion for solvability by radicals.
   carriers: []
@@ -1408,7 +1408,7 @@ nodes:
   domains:
   - algebra
   - number-theory
-  level: 13.5
+  level: 14
   kind: junction
   summary: Compatibility construction producing a Galois extension.
   carriers: []
