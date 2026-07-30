@@ -1,1283 +1,1283 @@
 nodes:
-- id: peano_system
-  label: Peano system
-  primaryDomain: number-theory
-  domains:
-  - number-theory
-  - logic
-  - foundation
-  level: 3
-  kind: structure
-  summary: A set with zero and successor satisfying the second-order Peano axioms.
-  carriers:
-  - set $N$
-  data:
-  - distinguished $0$
-  - successor map
-  axioms:
-  - successor is injective
-  - $0$ is not a successor
-  - induction
-  induces: []
-  notes: ''
-  citations:
-  - wp-peano
-  - milne-algebraic-number-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-  conceptType: Axiomatic number system
-- kind: structure
-  primaryField: mathematics
-  fields:
-  - mathematics
-  id: natural_numbers
-  label: Natural numbers $\mathbb N$
-  primaryDomain: number-theory
-  domains:
-  - number-theory
-  - algebra
-  - order
-  - foundation
-  - set-theory
-  level: 7
-  conceptType: Number system
-  summary: The standard Peano system, realized here on the carrier $\omega$ with zero, successor, addition, multiplication, and order.
-  carriers:
-  - set $\omega$
-  data:
-  - $0$
-  - $S(n)=n\cup\{n\}$
-  - addition and multiplication by recursion
-  - usual well-order
-  axioms:
-  - Peano axioms
-  induces:
-  - commutative semiring structure
-  notes: The atlas distinguishes the abstract Peano structure from its selected von Neumann carrier $\omega$.
-  citations:
-  - nlab-natural-number
-  - wp-natural-number
-  - wp-peano
-- kind: structure
-  primaryField: mathematics
-  fields:
-  - mathematics
-  id: integer_difference_pairs
-  label: Difference pairs of natural numbers
-  primaryDomain: number-theory
-  domains:
-  - number-theory
-  - set-theory
-  - algebra
-  level: 8
-  conceptType: Quotient presentation
-  summary: Pairs $(a,b)\in\mathbb N^2$ representing formal differences $a-b$.
-  carriers:
-  - set $\mathbb N\times\mathbb N$
-  data:
-  - equivalence relation $(a,b)\sim(c,d)$ iff $a+d=b+c$
-  axioms: []
-  induces:
-  - quotient abelian group
-  notes: This is the Grothendieck group completion of the additive commutative monoid $\mathbb N$.
-  citations:
-  - wp-construction-integers
-  - nlab-integer
-- kind: structure
-  primaryField: mathematics
-  fields:
-  - mathematics
-  id: integers
-  label: Integers $\mathbb Z$
-  primaryDomain: number-theory
-  domains:
-  - number-theory
-  - algebra
-  - order
-  - set-theory
-  level: 10
-  conceptType: Number system
-  summary: The ordered commutative ring obtained from formal differences of natural numbers.
-  carriers:
-  - quotient $(\mathbb N\times\mathbb N)/\sim$
-  data:
-  - addition
-  - multiplication
-  - total order
-  axioms:
-  - integral-domain laws
-  induces:
-  - Euclidean-domain structure
-  notes: The map $n\mapsto[(n,0)]$ canonically embeds $\mathbb N$ into $\mathbb Z$; it need not be literal subset inclusion in the quotient realization.
-  citations:
-  - wp-construction-integers
-  - nlab-integer
-- kind: structure
-  primaryField: mathematics
-  fields:
-  - mathematics
-  id: rational_fraction_pairs
-  label: Integer fraction pairs
-  primaryDomain: number-theory
-  domains:
-  - number-theory
-  - set-theory
-  - algebra
-  level: 11
-  conceptType: Quotient presentation
-  summary: Pairs $(a,b)\in\mathbb Z\times(\mathbb Z\setminus\{0\})$ representing fractions $a/b$.
-  carriers:
-  - set $\mathbb Z\times(\mathbb Z\setminus\{0\})$
-  data:
-  - equivalence relation $(a,b)\sim(c,d)$ iff $ad=bc$
-  axioms: []
-  induces:
-  - field-of-fractions quotient
-  notes: ''
-  citations:
-  - wp-rational-number
-  - nlab-rational-number
-- kind: structure
-  primaryField: mathematics
-  fields:
-  - mathematics
-  id: rational_numbers
-  label: Rational numbers $\mathbb Q$
-  primaryDomain: number-theory
-  domains:
-  - number-theory
-  - algebra
-  - order
-  - set-theory
-  level: 13
-  conceptType: Number system
-  summary: The ordered field of fractions of $\mathbb Z$.
-  carriers:
-  - quotient of integer fraction pairs
-  data:
-  - field operations
-  - usual total order
-  axioms:
-  - ordered-field laws
-  induces:
-  - countable dense linear order without endpoints
-  notes: The map $z\mapsto[(z,1)]$ canonically embeds $\mathbb Z$ into $\mathbb Q$.
-  citations:
-  - wp-rational-number
-  - nlab-rational-number
-- id: integral_domain
-  label: Integral domain
-  primaryDomain: number-theory
-  domains:
-  - number-theory
-  - algebra
-  - algebraic-geometry
-  level: 9
-  kind: structure
-  summary: A nonzero commutative ring with no zero divisors.
-  carriers:
-  - set $R$
-  data:
-  - commutative ring structure
-  axioms:
-  - $1\ne 0$
-  - $ab=0$ implies $a=0$ or $b=0$
-  induces: []
-  notes: ''
-  citations:
-  - wp-integral-domain
-  - milne-algebraic-number-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: dedekind_domain
-  label: Dedekind domain
-  primaryDomain: number-theory
-  domains:
-  - number-theory
-  - algebra
-  level: 10
-  kind: structure
-  summary: A Noetherian, integrally closed integral domain of Krull dimension one.
-  carriers:
-  - integral domain $R$
-  data:
-  - ideal structure
-  axioms:
-  - Noetherian
-  - integrally closed
-  - dimension one
-  induces: []
-  notes: This atlas uses the dimension-one convention, excluding fields; some references allow dimension at most one and hence include fields.
-  citations:
-  - nlab-dedekind-domain
-  - stacks-dedekind
-  - milne-algebraic-number-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: gcd_domain
-  label: GCD domain
-  primaryDomain: number-theory
-  domains:
-  - number-theory
-  - algebra
-  level: 10
-  kind: structure
-  summary: An integral domain in which any two nonzero elements have a greatest common divisor.
-  carriers:
-  - integral domain $R$
-  data:
-  - divisibility relation
-  axioms:
-  - greatest common divisors exist up to units
-  induces: []
-  notes: ''
-  citations:
-  - wp-gcd-domain
-  - milne-algebraic-number-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: valuation_ring
-  label: Valuation ring
-  primaryDomain: number-theory
-  domains:
-  - number-theory
-  - algebraic-geometry
-  - algebra
-  level: 10
-  kind: structure
-  summary: An integral domain whose ideals are totally ordered by inclusion, equivalently a valuation subring of its fraction field.
-  carriers:
-  - integral domain $V$
-  data: []
-  axioms:
-  - for every fraction $x$, either $x$ or $x^{-1}$ lies in $V$
-  induces:
-  - local ring
-  notes: ''
-  citations:
-  - stacks-valuation-ring
-  - wp-valuation-ring
-  - nlab-valuation-ring
-  - milne-algebraic-number-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: finite_field
-  label: Finite field
-  primaryDomain: number-theory
-  domains:
-  - number-theory
-  - algebra
-  level: 11
-  kind: structure
-  summary: A field with finitely many elements.
-  carriers:
-  - finite set $F$
-  data:
-  - field operations
-  axioms:
-  - finite carrier
-  induces: []
-  notes: ''
-  citations:
-  - wp-finite-field
-  - milne-algebraic-number-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: number_field
-  label: Number field
-  primaryDomain: number-theory
-  domains:
-  - number-theory
-  - algebra
-  level: 11
-  kind: structure
-  summary: A finite field extension of the rational numbers.
-  carriers:
-  - field $K$
-  data:
-  - embedding of $\mathbb Q$ into $K$
-  axioms:
-  - $K$ is finite-dimensional as a vector space over $\mathbb Q$
-  induces: []
-  notes: ''
-  citations:
-  - nlab-number-field
-  - milne-algebraic-number-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: unique_factorization_domain
-  label: Unique factorization domain
-  primaryDomain: number-theory
-  domains:
-  - number-theory
-  - algebra
-  level: 11
-  kind: structure
-  summary: An integral domain in which nonzero nonunits factor uniquely into irreducibles up to units and order.
-  carriers:
-  - integral domain $R$
-  data:
-  - multiplication and divisibility
-  axioms:
-  - existence and uniqueness of irreducible factorization
-  induces: []
-  notes: ''
-  citations:
-  - wp-ufd
-  - milne-algebraic-number-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: valued_field
-  label: Valued field
-  primaryDomain: number-theory
-  domains:
-  - number-theory
-  - algebra
-  - topology
-  level: 11
-  kind: structure
-  summary: A field equipped with a Krull valuation or an absolute value.
-  carriers:
-  - field $K$
-  data:
-  - valuation into an ordered value group or absolute value
-  axioms:
-  - multiplicativity and ultrametric/triangle inequality in the chosen formulation
-  induces:
-  - a topology and uniformity
-  notes: A general Krull valuation takes values in an ordered abelian group and canonically induces a topology/uniformity. A real-valued metric is available for absolute values and rank-one valuations, not for every value group without additional choices.
-  citations:
-  - wp-valued-field
-  - milne-algebraic-number-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: global_field
-  label: Global field
-  primaryDomain: number-theory
-  domains:
-  - number-theory
-  - algebraic-geometry
-  level: 12
-  kind: structure
-  summary: A finite extension of $\mathbb Q$, or a finite extension of the one-variable rational function field $\mathbb F_q(t)$.
-  carriers:
-  - field $K$
-  data: []
-  axioms:
-  - number field or global function field
-  induces: []
-  notes: ''
-  citations:
-  - wp-global-field
-  - nlab-global-field
-  - milne-algebraic-number-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: principal_ideal_domain
-  label: Principal ideal domain
-  primaryDomain: number-theory
-  domains:
-  - number-theory
-  - algebra
-  level: 12
-  kind: structure
-  summary: An integral domain in which every ideal is generated by one element.
-  carriers:
-  - integral domain $R$
-  data:
-  - ideal structure inherited from $R$
-  axioms:
-  - every ideal is principal
-  induces: []
-  notes: ''
-  citations:
-  - wp-pid
-  - milne-algebraic-number-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: real_closed_field
-  label: Real closed field
-  primaryDomain: number-theory
-  domains:
-  - number-theory
-  - algebra
-  - logic
-  - order
-  level: 12
-  kind: structure
-  summary: An ordered field with no proper algebraic ordered extension, equivalently whose algebraic closure is obtained by adjoining $\sqrt{-1}$.
-  carriers:
-  - ordered field $R$
-  data: []
-  axioms:
-  - positive elements are squares
-  - odd-degree polynomials have roots
-  induces: []
-  notes: 'A real-closed field has a unique compatible ordering: its positive elements are exactly the nonzero squares.'
-  citations:
-  - wp-real-closed
-  - nlab-real-closed
-  - milne-algebraic-number-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: ring_of_integers
-  label: Ring of integers
-  primaryDomain: number-theory
-  domains:
-  - number-theory
-  - algebra
-  level: 12
-  kind: structure
-  summary: The integral closure of $\mathbb{Z}$ inside a number field.
-  carriers:
-  - subset $\mathcal O_K$ of a number field $K$
-  data:
-  - inherited addition and multiplication
-  axioms:
-  - elements satisfy a monic polynomial over $\mathbb{Z}$
-  induces:
-  - Dedekind-domain structure
-  notes: For a number field $K$, $\mathcal O_K$ is the integral closure of $\mathbb Z$ in $K$ and is a Dedekind domain.
-  citations:
-  - wp-ring-integers
-  - nlab-dedekind-domain
-  - milne-algebraic-number-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: complete_valued_field
-  label: Complete valued field
-  primaryDomain: number-theory
-  domains:
-  - number-theory
-  - analysis
-  - topology
-  level: 13
-  kind: structure
-  summary: A field complete for the uniformity induced by its valuation; in the absolute-value/rank-one case, complete for the associated metric.
-  carriers:
-  - valued field $K$
-  data: []
-  axioms:
-  - Cauchy completeness for the valuation uniformity
-  induces: []
-  notes: The metric wording is restricted to absolute values or rank-one valuations. General valued fields are naturally uniform spaces.
-  citations:
-  - wp-complete-valued
-  - nlab-complete-valued
-  - milne-algebraic-number-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: discrete_valuation_ring
-  label: Discrete valuation ring
-  primaryDomain: number-theory
-  domains:
-  - number-theory
-  - algebra
-  level: 13
-  kind: structure
-  summary: A nonfield local principal ideal domain, equivalently a Noetherian local domain of Krull dimension one whose maximal ideal is principal.
-  carriers:
-  - integral domain $R$
-  data: []
-  axioms:
-  - local PID
-  - not a field
-  - unique nonzero prime ideal (the maximal ideal)
-  induces:
-  - a normalized discrete valuation on its fraction field
-  notes: The explicit nonfield condition avoids collapsing the notion to a field under conventions that allow fields as PIDs.
-  citations:
-  - wp-dvr
-  - stacks-dvr-regular
-  - milne-algebraic-number-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: euclidean_domain
-  label: Euclidean domain
-  primaryDomain: number-theory
-  domains:
-  - number-theory
-  - algebra
-  level: 13
-  kind: structure
-  summary: An integral domain that admits a Euclidean function supporting division with strictly smaller remainder.
-  carriers:
-  - integral domain $R$
-  data: []
-  axioms:
-  - there exists a Euclidean function on nonzero elements satisfying the division-with-remainder condition
-  induces: []
-  notes: The Euclidean function is treated as an existence property, not as chosen structure; not every principal ideal domain is Euclidean.
-  citations:
-  - nlab-euclidean-domain
-  - milne-algebraic-number-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: local_field
-  label: Local field
-  primaryDomain: number-theory
-  domains:
-  - number-theory
-  - topology
-  - algebra
-  - analysis
-  level: 13
-  kind: structure
-  summary: A nondiscrete locally compact Hausdorff topological field.
-  carriers:
-  - field $K$
-  data:
-  - field operations
-  - topology
-  axioms:
-  - continuous operations
-  - locally compact
-  - Hausdorff
-  - nondiscrete
-  induces: []
-  notes: Under this broad definition, $\mathbb{R}$ and $\mathbb{C}$ are archimedean local fields. “Non-archimedean local field” excludes them and is often the intended arithmetic convention.
-  citations:
-  - nlab-local-field
-  - milne-algebraic-number-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: p_adic_field
-  label: $p$-adic field
-  primaryDomain: number-theory
-  domains:
-  - number-theory
-  - analysis
-  - topology
-  level: 14
-  kind: structure
-  summary: A finite extension of the $p$-adic numbers $\mathbb Q_p$.
-  carriers:
-  - complete valued field $K$
-  data: []
-  axioms:
-  - finite extension of $\mathbb Q_p$
-  induces: []
-  notes: ''
-  citations:
-  - wp-p-adic-field
-  - nlab-p-adic-field
-  - milne-algebraic-number-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: valuation
-  label: Valuation
-  primaryDomain: number-theory
-  domains:
-  - number-theory
-  - algebra
-  level: 10
-  kind: structure
-  summary: A map $v$ from a field or integral domain to an ordered abelian group with $\infty$ satisfying $v(xy)=v(x)+v(y)$ and $v(x+y)\ge\min(v(x),v(y))$.
-  carriers:
-  - field or integral domain
-  data:
-  - ordered value group
-  - valuation map
-  axioms:
-  - $v(0)=\infty$
-  - $v(xy)=v(x)+v(y)$
-  - $v(x+y)\ge\min(v(x),v(y))$
-  induces:
-  - A valuation ring and topology
-  notes: Equivalent multiplicative conventions use a non-Archimedean absolute value; Archimedean absolute values are treated separately when discussing places of number fields.
-  citations:
-  - milne-algebraic-number-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: completion_at_valuation
-  label: Completion at a valuation
-  primaryDomain: number-theory
-  domains:
-  - number-theory
-  - analysis
-  - topology
-  level: 12
-  kind: structure
-  summary: The complete valued field obtained by completing a field in the metric or uniformity induced by a valuation or absolute value.
-  carriers:
-  - valued field
-  data:
-  - Cauchy-equivalence classes
-  axioms:
-  - completeness
-  induces:
-  - A local field in the locally compact cases
-  notes: ''
-  citations:
-  - milne-algebraic-number-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: residue_field
-  label: Residue field
-  primaryDomain: number-theory
-  domains:
-  - number-theory
-  - algebraic-geometry
-  - algebra
-  level: 11
-  kind: structure
-  summary: For a local ring $(R,\mathfrak m)$, the quotient field $R/\mathfrak m$.
-  carriers:
-  - local ring $(R,\mathfrak m)$
-  data:
-  - quotient $R/\mathfrak m$
-  axioms: []
-  induces:
-  - Reduction modulo the maximal ideal
-  notes: ''
-  citations:
-  - stacks-algebra-text
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: place_of_number_field
-  label: Place of a number field
-  primaryDomain: number-theory
-  domains:
-  - number-theory
-  level: 12
-  kind: structure
-  summary: An equivalence class of absolute values on a number field, including Archimedean places and non-Archimedean places associated with prime ideals.
-  carriers:
-  - number field $K$
-  data:
-  - equivalence class of absolute values
-  axioms: []
-  induces:
-  - A completion $K_v$
-  notes: ''
-  citations:
-  - milne-algebraic-number-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: local_point
-  label: Local point
-  primaryDomain: number-theory
-  domains:
-  - number-theory
-  - algebraic-geometry
-  level: 15
-  kind: structure
-  summary: For a variety $X$ over a global field $K$ and a place $v$, a local point is a $K_v$-rational point of the base change $X_{K_v}$.
-  carriers:
-  - variety over a global field
-  - place $v$
-  data:
-  - $K_v$-valued point
-  axioms: []
-  induces:
-  - A local solvability condition
-  notes: ''
-  citations:
-  - milne-algebraic-number-theory
-  - poonen-rational-points-varieties
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: adele_ring
-  label: Adele ring
-  primaryDomain: number-theory
-  domains:
-  - number-theory
-  - topology
-  - analysis
-  level: 15
-  kind: structure
-  summary: The restricted product of all completions of a global field with respect to their valuation rings at almost all non-Archimedean places.
-  carriers:
-  - global field and its places
-  data:
-  - restricted product of local fields
-  axioms: []
-  induces:
-  - A single topological ring encoding all places
-  notes: ''
-  citations:
-  - milne-algebraic-number-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: everywhere_locally_soluble_variety
-  label: Everywhere locally soluble variety
-  primaryDomain: number-theory
-  domains:
-  - number-theory
-  - algebraic-geometry
-  level: 16
-  kind: structure
-  summary: A variety $X$ over a global field $K$ such that $X(K_v)$ is nonempty for every place $v$ of $K$.
-  carriers:
-  - variety over a global field
-  data:
-  - a local point over every completion
-  axioms:
-  - $X(K_v)\ne\varnothing$ for every place $v$
-  induces:
-  - The local-solubility premise in a Hasse-principle question
-  notes: Everywhere local solubility does not in general imply a global rational point.
-  citations:
-  - poonen-rational-points-varieties
-  - milne-algebraic-number-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: local_global_principle
-  label: Local–global principle
-  primaryDomain: number-theory
-  domains:
-  - number-theory
-  - algebraic-geometry
-  level: 16
-  kind: structure
-  summary: A principle asserting, for a specified class of arithmetic objects, that a global solution exists exactly when solutions exist over every completion of the global field.
-  carriers:
-  - global field
-  - family of local completions
-  data:
-  - local solvability data
-  axioms: []
-  induces:
-  - A global solvability criterion
-  notes: 'This is a pattern, not a universal theorem: it holds for some classes and fails for others.'
-  citations:
-  - milne-algebraic-number-theory
-  - poonen-rational-points-varieties
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: hasse_minkowski_theorem
-  label: Hasse–Minkowski theorem
-  primaryDomain: number-theory
-  domains:
-  - number-theory
-  - algebra
-  level: 17
-  kind: structure
-  summary: A quadratic form over a number field represents zero nontrivially exactly when it does so over every completion of the field.
-  carriers:
-  - quadratic form over a number field
-  data:
-  - local isotropy conditions
-  axioms: []
-  induces:
-  - A valid local–global principle for quadratic forms
-  notes: ''
-  citations:
-  - milne-algebraic-number-theory
-  - poonen-rational-points-varieties
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: failure_hasse_principle
-  label: Variety violating the Hasse principle
-  primaryDomain: number-theory
-  domains:
-  - number-theory
-  - algebraic-geometry
-  level: 17
-  kind: structure
-  summary: A variety over a global field that has a point over every completion but has no rational point over the global field.
-  carriers:
-  - variety over a global field
-  data:
-  - points over all completions
-  axioms:
-  - absence of a global rational point
-  induces:
-  - An obstruction to naive local–global inference
-  notes: ''
-  citations:
-  - milne-algebraic-number-theory
-  - poonen-rational-points-varieties
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: j_local_point
-  label: variety + completion + chosen local solution
-  primaryDomain: number-theory
-  domains:
-  - number-theory
-  - algebraic-geometry
-  level: 15
-  kind: junction
-  summary: Compatibility construction producing a local point.
-  carriers: []
-  data: []
-  axioms: []
-  induces: []
-  notes: The variety must be defined over the global field whose place supplies the completion.
-  citations:
-  - milne-algebraic-number-theory
-  - stacks-schemes-text
-  combination:
-    inputs:
-    - algebraic_variety
-    - completion_at_valuation
-    compatibility: Base-change the variety $X/K$ to the completion $K_v$ and choose a $K_v$-valued point of $X_{K_v}$.
-    output: local_point
-  primaryField: mathematics
-  fields:
-  - mathematics
+  - id: peano_system
+    label: Peano system
+    primaryDomain: number-theory
+    domains:
+      - number-theory
+      - logic
+      - foundation
+    level: 3
+    kind: structure
+    summary: A set with zero and successor satisfying the second-order Peano axioms.
+    carriers:
+      - set $N$
+    data:
+      - distinguished $0$
+      - successor map
+    axioms:
+      - successor is injective
+      - $0$ is not a successor
+      - induction
+    induces: []
+    notes: ''
+    citations:
+      - wp-peano
+      - milne-algebraic-number-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+    conceptType: Axiomatic number system
+  - kind: structure
+    primaryField: mathematics
+    fields:
+      - mathematics
+    id: natural_numbers
+    label: Natural numbers $\mathbb N$
+    primaryDomain: number-theory
+    domains:
+      - number-theory
+      - algebra
+      - order
+      - foundation
+      - set-theory
+    level: 7
+    conceptType: Number system
+    summary: The standard Peano system, realized here on the carrier $\omega$ with zero, successor, addition, multiplication, and order.
+    carriers:
+      - set $\omega$
+    data:
+      - $0$
+      - $S(n)=n\cup\{n\}$
+      - addition and multiplication by recursion
+      - usual well-order
+    axioms:
+      - Peano axioms
+    induces:
+      - commutative semiring structure
+    notes: The atlas distinguishes the abstract Peano structure from its selected von Neumann carrier $\omega$.
+    citations:
+      - nlab-natural-number
+      - wp-natural-number
+      - wp-peano
+  - kind: structure
+    primaryField: mathematics
+    fields:
+      - mathematics
+    id: integer_difference_pairs
+    label: Difference pairs of natural numbers
+    primaryDomain: number-theory
+    domains:
+      - number-theory
+      - set-theory
+      - algebra
+    level: 8
+    conceptType: Quotient presentation
+    summary: Pairs $(a,b)\in\mathbb N^2$ representing formal differences $a-b$.
+    carriers:
+      - set $\mathbb N\times\mathbb N$
+    data:
+      - equivalence relation $(a,b)\sim(c,d)$ iff $a+d=b+c$
+    axioms: []
+    induces:
+      - quotient abelian group
+    notes: This is the Grothendieck group completion of the additive commutative monoid $\mathbb N$.
+    citations:
+      - wp-construction-integers
+      - nlab-integer
+  - kind: structure
+    primaryField: mathematics
+    fields:
+      - mathematics
+    id: integers
+    label: Integers $\mathbb Z$
+    primaryDomain: number-theory
+    domains:
+      - number-theory
+      - algebra
+      - order
+      - set-theory
+    level: 10
+    conceptType: Number system
+    summary: The ordered commutative ring obtained from formal differences of natural numbers.
+    carriers:
+      - quotient $(\mathbb N\times\mathbb N)/\sim$
+    data:
+      - addition
+      - multiplication
+      - total order
+    axioms:
+      - integral-domain laws
+    induces:
+      - Euclidean-domain structure
+    notes: The map $n\mapsto[(n,0)]$ canonically embeds $\mathbb N$ into $\mathbb Z$; it need not be literal subset inclusion in the quotient realization.
+    citations:
+      - wp-construction-integers
+      - nlab-integer
+  - kind: structure
+    primaryField: mathematics
+    fields:
+      - mathematics
+    id: rational_fraction_pairs
+    label: Integer fraction pairs
+    primaryDomain: number-theory
+    domains:
+      - number-theory
+      - set-theory
+      - algebra
+    level: 11
+    conceptType: Quotient presentation
+    summary: Pairs $(a,b)\in\mathbb Z\times(\mathbb Z\setminus\{0\})$ representing fractions $a/b$.
+    carriers:
+      - set $\mathbb Z\times(\mathbb Z\setminus\{0\})$
+    data:
+      - equivalence relation $(a,b)\sim(c,d)$ iff $ad=bc$
+    axioms: []
+    induces:
+      - field-of-fractions quotient
+    notes: ''
+    citations:
+      - wp-rational-number
+      - nlab-rational-number
+  - kind: structure
+    primaryField: mathematics
+    fields:
+      - mathematics
+    id: rational_numbers
+    label: Rational numbers $\mathbb Q$
+    primaryDomain: number-theory
+    domains:
+      - number-theory
+      - algebra
+      - order
+      - set-theory
+    level: 13
+    conceptType: Number system
+    summary: The ordered field of fractions of $\mathbb Z$.
+    carriers:
+      - quotient of integer fraction pairs
+    data:
+      - field operations
+      - usual total order
+    axioms:
+      - ordered-field laws
+    induces:
+      - countable dense linear order without endpoints
+    notes: The map $z\mapsto[(z,1)]$ canonically embeds $\mathbb Z$ into $\mathbb Q$.
+    citations:
+      - wp-rational-number
+      - nlab-rational-number
+  - id: integral_domain
+    label: Integral domain
+    primaryDomain: number-theory
+    domains:
+      - number-theory
+      - algebra
+      - algebraic-geometry
+    level: 9
+    kind: structure
+    summary: A nonzero commutative ring with no zero divisors.
+    carriers:
+      - set $R$
+    data:
+      - commutative ring structure
+    axioms:
+      - $1\ne 0$
+      - $ab=0$ implies $a=0$ or $b=0$
+    induces: []
+    notes: ''
+    citations:
+      - wp-integral-domain
+      - milne-algebraic-number-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: dedekind_domain
+    label: Dedekind domain
+    primaryDomain: number-theory
+    domains:
+      - number-theory
+      - algebra
+    level: 10
+    kind: structure
+    summary: A Noetherian, integrally closed integral domain of Krull dimension one.
+    carriers:
+      - integral domain $R$
+    data:
+      - ideal structure
+    axioms:
+      - Noetherian
+      - integrally closed
+      - dimension one
+    induces: []
+    notes: This atlas uses the dimension-one convention, excluding fields; some references allow dimension at most one and hence include fields.
+    citations:
+      - nlab-dedekind-domain
+      - stacks-dedekind
+      - milne-algebraic-number-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: gcd_domain
+    label: GCD domain
+    primaryDomain: number-theory
+    domains:
+      - number-theory
+      - algebra
+    level: 10
+    kind: structure
+    summary: An integral domain in which any two nonzero elements have a greatest common divisor.
+    carriers:
+      - integral domain $R$
+    data:
+      - divisibility relation
+    axioms:
+      - greatest common divisors exist up to units
+    induces: []
+    notes: ''
+    citations:
+      - wp-gcd-domain
+      - milne-algebraic-number-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: valuation_ring
+    label: Valuation ring
+    primaryDomain: number-theory
+    domains:
+      - number-theory
+      - algebraic-geometry
+      - algebra
+    level: 10
+    kind: structure
+    summary: An integral domain whose ideals are totally ordered by inclusion, equivalently a valuation subring of its fraction field.
+    carriers:
+      - integral domain $V$
+    data: []
+    axioms:
+      - for every fraction $x$, either $x$ or $x^{-1}$ lies in $V$
+    induces:
+      - local ring
+    notes: ''
+    citations:
+      - stacks-valuation-ring
+      - wp-valuation-ring
+      - nlab-valuation-ring
+      - milne-algebraic-number-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: finite_field
+    label: Finite field
+    primaryDomain: number-theory
+    domains:
+      - number-theory
+      - algebra
+    level: 11
+    kind: structure
+    summary: A field with finitely many elements.
+    carriers:
+      - finite set $F$
+    data:
+      - field operations
+    axioms:
+      - finite carrier
+    induces: []
+    notes: ''
+    citations:
+      - wp-finite-field
+      - milne-algebraic-number-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: number_field
+    label: Number field
+    primaryDomain: number-theory
+    domains:
+      - number-theory
+      - algebra
+    level: 11
+    kind: structure
+    summary: A finite field extension of the rational numbers.
+    carriers:
+      - field $K$
+    data:
+      - embedding of $\mathbb Q$ into $K$
+    axioms:
+      - $K$ is finite-dimensional as a vector space over $\mathbb Q$
+    induces: []
+    notes: ''
+    citations:
+      - nlab-number-field
+      - milne-algebraic-number-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: unique_factorization_domain
+    label: Unique factorization domain
+    primaryDomain: number-theory
+    domains:
+      - number-theory
+      - algebra
+    level: 11
+    kind: structure
+    summary: An integral domain in which nonzero nonunits factor uniquely into irreducibles up to units and order.
+    carriers:
+      - integral domain $R$
+    data:
+      - multiplication and divisibility
+    axioms:
+      - existence and uniqueness of irreducible factorization
+    induces: []
+    notes: ''
+    citations:
+      - wp-ufd
+      - milne-algebraic-number-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: valued_field
+    label: Valued field
+    primaryDomain: number-theory
+    domains:
+      - number-theory
+      - algebra
+      - topology
+    level: 11
+    kind: structure
+    summary: A field equipped with a Krull valuation or an absolute value.
+    carriers:
+      - field $K$
+    data:
+      - valuation into an ordered value group or absolute value
+    axioms:
+      - multiplicativity and ultrametric/triangle inequality in the chosen formulation
+    induces:
+      - a topology and uniformity
+    notes: A general Krull valuation takes values in an ordered abelian group and canonically induces a topology/uniformity. A real-valued metric is available for absolute values and rank-one valuations, not for every value group without additional choices.
+    citations:
+      - wp-valued-field
+      - milne-algebraic-number-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: global_field
+    label: Global field
+    primaryDomain: number-theory
+    domains:
+      - number-theory
+      - algebraic-geometry
+    level: 12
+    kind: structure
+    summary: A finite extension of $\mathbb Q$, or a finite extension of the one-variable rational function field $\mathbb F_q(t)$.
+    carriers:
+      - field $K$
+    data: []
+    axioms:
+      - number field or global function field
+    induces: []
+    notes: ''
+    citations:
+      - wp-global-field
+      - nlab-global-field
+      - milne-algebraic-number-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: principal_ideal_domain
+    label: Principal ideal domain
+    primaryDomain: number-theory
+    domains:
+      - number-theory
+      - algebra
+    level: 12
+    kind: structure
+    summary: An integral domain in which every ideal is generated by one element.
+    carriers:
+      - integral domain $R$
+    data:
+      - ideal structure inherited from $R$
+    axioms:
+      - every ideal is principal
+    induces: []
+    notes: ''
+    citations:
+      - wp-pid
+      - milne-algebraic-number-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: real_closed_field
+    label: Real closed field
+    primaryDomain: number-theory
+    domains:
+      - number-theory
+      - algebra
+      - logic
+      - order
+    level: 12
+    kind: structure
+    summary: An ordered field with no proper algebraic ordered extension, equivalently whose algebraic closure is obtained by adjoining $\sqrt{-1}$.
+    carriers:
+      - ordered field $R$
+    data: []
+    axioms:
+      - positive elements are squares
+      - odd-degree polynomials have roots
+    induces: []
+    notes: 'A real-closed field has a unique compatible ordering: its positive elements are exactly the nonzero squares.'
+    citations:
+      - wp-real-closed
+      - nlab-real-closed
+      - milne-algebraic-number-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: ring_of_integers
+    label: Ring of integers
+    primaryDomain: number-theory
+    domains:
+      - number-theory
+      - algebra
+    level: 12
+    kind: structure
+    summary: The integral closure of $\mathbb{Z}$ inside a number field.
+    carriers:
+      - subset $\mathcal O_K$ of a number field $K$
+    data:
+      - inherited addition and multiplication
+    axioms:
+      - elements satisfy a monic polynomial over $\mathbb{Z}$
+    induces:
+      - Dedekind-domain structure
+    notes: For a number field $K$, $\mathcal O_K$ is the integral closure of $\mathbb Z$ in $K$ and is a Dedekind domain.
+    citations:
+      - wp-ring-integers
+      - nlab-dedekind-domain
+      - milne-algebraic-number-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: complete_valued_field
+    label: Complete valued field
+    primaryDomain: number-theory
+    domains:
+      - number-theory
+      - analysis
+      - topology
+    level: 13
+    kind: structure
+    summary: A field complete for the uniformity induced by its valuation; in the absolute-value/rank-one case, complete for the associated metric.
+    carriers:
+      - valued field $K$
+    data: []
+    axioms:
+      - Cauchy completeness for the valuation uniformity
+    induces: []
+    notes: The metric wording is restricted to absolute values or rank-one valuations. General valued fields are naturally uniform spaces.
+    citations:
+      - wp-complete-valued
+      - nlab-complete-valued
+      - milne-algebraic-number-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: discrete_valuation_ring
+    label: Discrete valuation ring
+    primaryDomain: number-theory
+    domains:
+      - number-theory
+      - algebra
+    level: 13
+    kind: structure
+    summary: A nonfield local principal ideal domain, equivalently a Noetherian local domain of Krull dimension one whose maximal ideal is principal.
+    carriers:
+      - integral domain $R$
+    data: []
+    axioms:
+      - local PID
+      - not a field
+      - unique nonzero prime ideal (the maximal ideal)
+    induces:
+      - a normalized discrete valuation on its fraction field
+    notes: The explicit nonfield condition avoids collapsing the notion to a field under conventions that allow fields as PIDs.
+    citations:
+      - wp-dvr
+      - stacks-dvr-regular
+      - milne-algebraic-number-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: euclidean_domain
+    label: Euclidean domain
+    primaryDomain: number-theory
+    domains:
+      - number-theory
+      - algebra
+    level: 13
+    kind: structure
+    summary: An integral domain that admits a Euclidean function supporting division with strictly smaller remainder.
+    carriers:
+      - integral domain $R$
+    data: []
+    axioms:
+      - there exists a Euclidean function on nonzero elements satisfying the division-with-remainder condition
+    induces: []
+    notes: The Euclidean function is treated as an existence property, not as chosen structure; not every principal ideal domain is Euclidean.
+    citations:
+      - nlab-euclidean-domain
+      - milne-algebraic-number-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: local_field
+    label: Local field
+    primaryDomain: number-theory
+    domains:
+      - number-theory
+      - topology
+      - algebra
+      - analysis
+    level: 13
+    kind: structure
+    summary: A nondiscrete locally compact Hausdorff topological field.
+    carriers:
+      - field $K$
+    data:
+      - field operations
+      - topology
+    axioms:
+      - continuous operations
+      - locally compact
+      - Hausdorff
+      - nondiscrete
+    induces: []
+    notes: Under this broad definition, $\mathbb{R}$ and $\mathbb{C}$ are archimedean local fields. “Non-archimedean local field” excludes them and is often the intended arithmetic convention.
+    citations:
+      - nlab-local-field
+      - milne-algebraic-number-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: p_adic_field
+    label: $p$-adic field
+    primaryDomain: number-theory
+    domains:
+      - number-theory
+      - analysis
+      - topology
+    level: 14
+    kind: structure
+    summary: A finite extension of the $p$-adic numbers $\mathbb Q_p$.
+    carriers:
+      - complete valued field $K$
+    data: []
+    axioms:
+      - finite extension of $\mathbb Q_p$
+    induces: []
+    notes: ''
+    citations:
+      - wp-p-adic-field
+      - nlab-p-adic-field
+      - milne-algebraic-number-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: valuation
+    label: Valuation
+    primaryDomain: number-theory
+    domains:
+      - number-theory
+      - algebra
+    level: 10
+    kind: structure
+    summary: A map $v$ from a field or integral domain to an ordered abelian group with $\infty$ satisfying $v(xy)=v(x)+v(y)$ and $v(x+y)\ge\min(v(x),v(y))$.
+    carriers:
+      - field or integral domain
+    data:
+      - ordered value group
+      - valuation map
+    axioms:
+      - $v(0)=\infty$
+      - $v(xy)=v(x)+v(y)$
+      - $v(x+y)\ge\min(v(x),v(y))$
+    induces:
+      - A valuation ring and topology
+    notes: Equivalent multiplicative conventions use a non-Archimedean absolute value; Archimedean absolute values are treated separately when discussing places of number fields.
+    citations:
+      - milne-algebraic-number-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: completion_at_valuation
+    label: Completion at a valuation
+    primaryDomain: number-theory
+    domains:
+      - number-theory
+      - analysis
+      - topology
+    level: 12
+    kind: structure
+    summary: The complete valued field obtained by completing a field in the metric or uniformity induced by a valuation or absolute value.
+    carriers:
+      - valued field
+    data:
+      - Cauchy-equivalence classes
+    axioms:
+      - completeness
+    induces:
+      - A local field in the locally compact cases
+    notes: ''
+    citations:
+      - milne-algebraic-number-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: residue_field
+    label: Residue field
+    primaryDomain: number-theory
+    domains:
+      - number-theory
+      - algebraic-geometry
+      - algebra
+    level: 11
+    kind: structure
+    summary: For a local ring $(R,\mathfrak m)$, the quotient field $R/\mathfrak m$.
+    carriers:
+      - local ring $(R,\mathfrak m)$
+    data:
+      - quotient $R/\mathfrak m$
+    axioms: []
+    induces:
+      - Reduction modulo the maximal ideal
+    notes: ''
+    citations:
+      - stacks-algebra-text
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: place_of_number_field
+    label: Place of a number field
+    primaryDomain: number-theory
+    domains:
+      - number-theory
+    level: 12
+    kind: structure
+    summary: An equivalence class of absolute values on a number field, including Archimedean places and non-Archimedean places associated with prime ideals.
+    carriers:
+      - number field $K$
+    data:
+      - equivalence class of absolute values
+    axioms: []
+    induces:
+      - A completion $K_v$
+    notes: ''
+    citations:
+      - milne-algebraic-number-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: local_point
+    label: Local point
+    primaryDomain: number-theory
+    domains:
+      - number-theory
+      - algebraic-geometry
+    level: 15
+    kind: structure
+    summary: For a variety $X$ over a global field $K$ and a place $v$, a local point is a $K_v$-rational point of the base change $X_{K_v}$.
+    carriers:
+      - variety over a global field
+      - place $v$
+    data:
+      - $K_v$-valued point
+    axioms: []
+    induces:
+      - A local solvability condition
+    notes: ''
+    citations:
+      - milne-algebraic-number-theory
+      - poonen-rational-points-varieties
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: adele_ring
+    label: Adele ring
+    primaryDomain: number-theory
+    domains:
+      - number-theory
+      - topology
+      - analysis
+    level: 15
+    kind: structure
+    summary: The restricted product of all completions of a global field with respect to their valuation rings at almost all non-Archimedean places.
+    carriers:
+      - global field and its places
+    data:
+      - restricted product of local fields
+    axioms: []
+    induces:
+      - A single topological ring encoding all places
+    notes: ''
+    citations:
+      - milne-algebraic-number-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: everywhere_locally_soluble_variety
+    label: Everywhere locally soluble variety
+    primaryDomain: number-theory
+    domains:
+      - number-theory
+      - algebraic-geometry
+    level: 16
+    kind: structure
+    summary: A variety $X$ over a global field $K$ such that $X(K_v)$ is nonempty for every place $v$ of $K$.
+    carriers:
+      - variety over a global field
+    data:
+      - a local point over every completion
+    axioms:
+      - $X(K_v)\ne\varnothing$ for every place $v$
+    induces:
+      - The local-solubility premise in a Hasse-principle question
+    notes: Everywhere local solubility does not in general imply a global rational point.
+    citations:
+      - poonen-rational-points-varieties
+      - milne-algebraic-number-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: local_global_principle
+    label: Local–global principle
+    primaryDomain: number-theory
+    domains:
+      - number-theory
+      - algebraic-geometry
+    level: 16
+    kind: structure
+    summary: A principle asserting, for a specified class of arithmetic objects, that a global solution exists exactly when solutions exist over every completion of the global field.
+    carriers:
+      - global field
+      - family of local completions
+    data:
+      - local solvability data
+    axioms: []
+    induces:
+      - A global solvability criterion
+    notes: 'This is a pattern, not a universal theorem: it holds for some classes and fails for others.'
+    citations:
+      - milne-algebraic-number-theory
+      - poonen-rational-points-varieties
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: hasse_minkowski_theorem
+    label: Hasse–Minkowski theorem
+    primaryDomain: number-theory
+    domains:
+      - number-theory
+      - algebra
+    level: 17
+    kind: structure
+    summary: A quadratic form over a number field represents zero nontrivially exactly when it does so over every completion of the field.
+    carriers:
+      - quadratic form over a number field
+    data:
+      - local isotropy conditions
+    axioms: []
+    induces:
+      - A valid local–global principle for quadratic forms
+    notes: ''
+    citations:
+      - milne-algebraic-number-theory
+      - poonen-rational-points-varieties
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: failure_hasse_principle
+    label: Variety violating the Hasse principle
+    primaryDomain: number-theory
+    domains:
+      - number-theory
+      - algebraic-geometry
+    level: 17
+    kind: structure
+    summary: A variety over a global field that has a point over every completion but has no rational point over the global field.
+    carriers:
+      - variety over a global field
+    data:
+      - points over all completions
+    axioms:
+      - absence of a global rational point
+    induces:
+      - An obstruction to naive local–global inference
+    notes: ''
+    citations:
+      - milne-algebraic-number-theory
+      - poonen-rational-points-varieties
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: j_local_point
+    label: variety + completion + chosen local solution
+    primaryDomain: number-theory
+    domains:
+      - number-theory
+      - algebraic-geometry
+    level: 15
+    kind: junction
+    summary: Compatibility construction producing a local point.
+    carriers: []
+    data: []
+    axioms: []
+    induces: []
+    notes: The variety must be defined over the global field whose place supplies the completion.
+    citations:
+      - milne-algebraic-number-theory
+      - stacks-schemes-text
+    combination:
+      inputs:
+        - algebraic_variety
+        - completion_at_valuation
+      compatibility: Base-change the variety $X/K$ to the completion $K_v$ and choose a $K_v$-valued point of $X_{K_v}$.
+      output: local_point
+    primaryField: mathematics
+    fields:
+      - mathematics
 edges:
-- id: euclidean_domain_to_pid
-  source: euclidean_domain
-  target: principal_ideal_domain
-  type: theorem-implication
-  label: is a PID
-  detail: The Euclidean algorithm implies every ideal is principal.
-  citations:
-  - nlab-euclidean-domain
-  - wp-pid
-  - milne-algebraic-number-theory
-- id: gcd_to_ufd
-  source: gcd_domain
-  target: unique_factorization_domain
-  type: impose-axiom
-  label: require atomic factorization
-  detail: Require existence of factorizations into irreducibles; uniqueness then has the UFD form.
-  citations:
-  - wp-ufd
-  - milne-algebraic-number-theory
-- id: integral_to_dedekind
-  source: integral_domain
-  target: dedekind_domain
-  type: impose-axiom
-  label: Noetherian + normal + dimension 1
-  detail: Require Noetherianity, integral closure, and Krull dimension one.
-  citations:
-  - nlab-dedekind-domain
-  - milne-algebraic-number-theory
-- id: integral_domain_to_euclidean_domain
-  source: integral_domain
-  target: euclidean_domain
-  type: impose-axiom
-  label: + Euclidean algorithm
-  detail: Require the existence of a Euclidean function satisfying division with smaller remainder.
-  citations:
-  - nlab-euclidean-domain
-  - wp-integral-domain
-  - milne-algebraic-number-theory
-- id: integral_to_gcd_domain
-  source: integral_domain
-  target: gcd_domain
-  type: impose-axiom
-  label: require gcds
-  detail: Require greatest common divisors for pairs of nonzero elements.
-  citations:
-  - wp-gcd-domain
-  - milne-algebraic-number-theory
-- id: e_domain_valuation
-  source: integral_domain
-  target: valuation_ring
-  type: impose-axiom
-  label: + total divisibility of fractions
-  detail: Require either $x$ or $x^{-1}$ to lie in the ring for every nonzero fraction $x$.
-  citations:
-  - stacks-valuation-ring
-  - wp-valuation-ring
-  - nlab-valuation-ring
-  - milne-algebraic-number-theory
-- id: e_local_padic
-  source: local_field
-  target: p_adic_field
-  type: impose-axiom
-  label: + characteristic $0$, residue characteristic $p$
-  detail: Restrict to finite extensions of $Q_{p}$.
-  citations:
-  - wp-p-adic-field
-  - nlab-p-adic-field
-  - milne-algebraic-number-theory
-- id: number_field_to_ring_integers
-  source: number_field
-  target: ring_of_integers
-  type: canonical-construction
-  label: take integral closure of ℤ
-  detail: Select the elements integral over $\mathbb{Z}$; they form the ring of integers.
-  citations:
-  - wp-ring-integers
-  - milne-algebraic-number-theory
-- id: pid_to_dvr
-  source: principal_ideal_domain
-  target: discrete_valuation_ring
-  type: impose-axiom
-  label: require local discrete valuation form
-  detail: Require the PID to be a nonfield local ring with a unique nonzero prime ideal (its maximal ideal).
-  citations:
-  - wp-dvr
-  - milne-algebraic-number-theory
-- id: ring_of_integers_to_dedekind
-  source: ring_of_integers
-  target: dedekind_domain
-  type: theorem-implication
-  label: is a Dedekind domain
-  detail: The ring of integers of a number field is a Dedekind domain.
-  citations:
-  - wp-ring-integers
-  - nlab-dedekind-domain
-  - stacks-dedekind
-  - milne-algebraic-number-theory
-- id: ufd_to_pid
-  source: unique_factorization_domain
-  target: principal_ideal_domain
-  type: impose-axiom
-  label: require principal ideals
-  detail: Require every ideal to have one generator.
-  citations:
-  - wp-pid
-  - milne-algebraic-number-theory
-- id: e_valuation_local
-  source: valuation_ring
-  target: local_ring
-  type: theorem-implication
-  label: canonically local
-  detail: Every valuation ring is a local domain.
-  citations:
-  - stacks-valuation-ring
-  - wp-valuation-ring
-  - nlab-valuation-ring
-  - stacks-local-ring
-  - wp-local-ring
-  - nlab-local-ring
-  - stacks-schemes-text
-- id: e_valued_complete
-  source: valued_field
-  target: complete_valued_field
-  type: impose-axiom
-  label: require valuation completeness
-  detail: Require completeness for the valuation-induced uniformity; for absolute values or rank-one valuations this is the familiar metric completeness condition.
-  citations:
-  - wp-complete-valued
-  - nlab-complete-valued
-  - milne-algebraic-number-theory
-- id: peano_system_to_natural_numbers
-  source: peano_system
-  target: natural_numbers
-  type: classification
-  label: standard Peano system
-  detail: $\mathbb N$ on carrier $\omega$ is the standard second-order Peano system.
-  citations:
-  - wp-peano
-  - nlab-natural-number
-- id: natural_numbers_to_integer_pairs
-  source: natural_numbers
-  target: integer_difference_pairs
-  type: canonical-construction
-  label: form formal differences
-  detail: Use $\mathbb N\times\mathbb N$ to represent differences before quotienting.
-  citations:
-  - wp-construction-integers
-  - nlab-integer
-  overview: true
-- id: integer_pairs_to_integers
-  source: integer_difference_pairs
-  target: integers
-  type: quotient-construction
-  label: identify equal differences
-  detail: Quotient by $(a,b)\sim(c,d)$ exactly when $a+d=b+c$; induced operations produce $\mathbb Z$.
-  citations:
-  - wp-construction-integers
-  - nlab-integer
-  overview: true
-- id: natural_numbers_into_integers
-  source: natural_numbers
-  target: integers
-  type: canonical-embedding
-  label: $n\mapsto[(n,0)]$
-  detail: The map $n\mapsto[(n,0)]$ is an injective semiring homomorphism into the nonnegative integers.
-  citations:
-  - wp-construction-integers
-  - nlab-integer
-  overview: true
-- id: integers_to_ordered_ring
-  source: integers
-  target: ordered_ring
-  type: induced-forgotten
-  label: forget the distinguished integer realization
-  detail: Forgetting the canonical origin of its elements leaves the usual ordered-ring structure.
-  citations:
-  - wp-construction-integers
-  - nlab-integer
-- id: integers_to_integral_domain
-  source: integers
-  target: integral_domain
-  type: induced-forgotten
-  label: forget order
-  detail: Forgetting the order leaves an integral domain.
-  citations:
-  - nlab-integer
-- id: integers_to_rational_pairs
-  source: integers
-  target: rational_fraction_pairs
-  type: canonical-construction
-  label: form nonzero-denominator fractions
-  detail: Use integer numerator–denominator pairs with nonzero denominator before quotienting.
-  citations:
-  - wp-rational-number
-  - nlab-rational-number
-  overview: true
-- id: rational_pairs_to_rationals
-  source: rational_fraction_pairs
-  target: rational_numbers
-  type: quotient-construction
-  label: identify equal fractions
-  detail: Quotient by $(a,b)\sim(c,d)$ exactly when $ad=bc$; induced operations produce the fraction field $\mathbb Q$.
-  citations:
-  - wp-rational-number
-  - nlab-rational-number
-  overview: true
-- id: integers_into_rationals
-  source: integers
-  target: rational_numbers
-  type: canonical-embedding
-  label: $z\mapsto z/1$
-  detail: The map $z\mapsto[(z,1)]$ embeds $\mathbb Z$ canonically into its field of fractions.
-  citations:
-  - wp-rational-number
-  - nlab-rational-number
-  overview: true
-- id: rational_numbers_to_ordered_field
-  source: rational_numbers
-  target: ordered_field
-  type: induced-forgotten
-  label: forget the distinguished rational realization
-  detail: Forgetting how elements were constructed leaves the usual ordered-field structure.
-  citations:
-  - wp-rational-number
-  - nlab-rational-number
-- id: rationals_to_dedekind_cuts
-  source: rational_numbers
-  target: dedekind_cut_reals
-  type: canonical-construction
-  label: form Dedekind cuts
-  detail: Construct an order-complete field from proper lower cuts of $\mathbb Q$.
-  citations:
-  - wp-construction-reals
-  - nlab-real-number
-  overview: true
-- id: rationals_to_cauchy_sequences
-  source: rational_numbers
-  target: rational_cauchy_sequences
-  type: canonical-construction
-  label: form Cauchy sequences
-  detail: Take rational Cauchy sequences in the absolute-value metric.
-  citations:
-  - wp-construction-reals
-  - nlab-real-number
-  overview: true
-- id: rational_numbers_into_reals
-  source: rational_numbers
-  target: real_numbers
-  type: canonical-embedding
-  label: constant cut / constant sequence
-  detail: Each rational has a canonical image in either completion, giving the standard embedding $\mathbb Q\hookrightarrow\mathbb R$.
-  citations:
-  - wp-construction-reals
-  - nlab-real-number
-  overview: true
-- id: natural_numbers_to_aleph_zero
-  source: natural_numbers
-  target: aleph_zero
-  type: theorem-implication
-  label: cardinality $\aleph_0$
-  detail: The carrier of $\mathbb N$ is countably infinite and has cardinality $\aleph_0$.
-  citations:
-  - wp-aleph-number
-  - nlab-natural-number
-- id: integers_to_aleph_zero
-  source: integers
-  target: aleph_zero
-  type: theorem-implication
-  label: countably infinite
-  detail: $\mathbb Z$ is countably infinite.
-  citations:
-  - nlab-integer
-  - wp-aleph-number
-- id: rational_numbers_to_aleph_zero
-  source: rational_numbers
-  target: aleph_zero
-  type: theorem-implication
-  label: countably infinite
-  detail: $\mathbb Q$ is countably infinite.
-  citations:
-  - nlab-rational-number
-  - wp-aleph-number
-- id: story_valued_field_to_completion_at_valuation_canonical_construction
-  source: valued_field
-  target: completion_at_valuation
-  type: canonical-construction
-  label: complete in the valuation topology
-  detail: Cauchy completion produces a complete valued field containing a dense image of the original field.
-  citations:
-  - milne-algebraic-number-theory
-- id: story_completion_at_valuation_to_complete_valued_field_induced_forgotten
-  source: completion_at_valuation
-  target: complete_valued_field
-  type: induced-forgotten
-  label: yields a complete valued field
-  detail: Completing a valued field produces a complete valued field into which the original field maps densely; the completion is unique up to unique isometric isomorphism over the original field.
-  citations:
-  - milne-algebraic-number-theory
-- id: story_valuation_to_valuation_ring_canonical_construction
-  source: valuation
-  target: valuation_ring
-  type: canonical-construction
-  label: take nonnegative elements
-  detail: For a valuation on a field, the elements of nonnegative valuation form its valuation ring; equivalent multiplicative conventions select the elements of value at most one.
-  citations:
-  - milne-algebraic-number-theory
-- id: story_number_field_to_place_of_number_field_canonical_construction
-  source: number_field
-  target: place_of_number_field
-  type: canonical-construction
-  label: consider its places
-  detail: A number field has Archimedean places from embeddings and non-Archimedean places associated with prime ideals, understood as equivalence classes of absolute values.
-  citations:
-  - milne-algebraic-number-theory
-- id: story_place_of_number_field_to_completion_at_valuation_canonical_construction
-  source: place_of_number_field
-  target: completion_at_valuation
-  type: canonical-construction
-  label: complete at the place
-  detail: Each place determines a completion of the number field.
-  citations:
-  - milne-algebraic-number-theory
-- id: story_completion_at_valuation_to_p_adic_field_framework_specialization
-  source: completion_at_valuation
-  target: p_adic_field
-  type: framework-specialization
-  label: non-Archimedean finite extension
-  detail: Completing a number field at a non-Archimedean place gives a finite extension of $\mathbb Q_p$.
-  citations:
-  - milne-algebraic-number-theory
-- id: story_natural_numbers_to_godel_numbering_add_data
-  source: natural_numbers
-  target: godel_numbering
-  type: add-data
-  label: choose an effective coding of syntax
-  detail: Use natural numbers as codes and choose a computable encoding of symbols, formulas, and finite proofs; Gödel numberings are not unique.
-  citations:
-  - godel-incompleteness-paper
-  - openlogic-incompleteness
-- id: story_global_field_to_adele_ring_canonical_construction
-  source: global_field
-  target: adele_ring
-  type: canonical-construction
-  label: restricted product of completions
-  detail: The adeles combine all local completions with an integrality restriction at almost all finite places.
-  citations:
-  - milne-algebraic-number-theory
-- id: story_local_global_principle_to_hasse_minkowski_theorem_framework_specialization
-  source: local_global_principle
-  target: hasse_minkowski_theorem
-  type: framework-specialization
-  label: valid for quadratic forms
-  detail: Hasse–Minkowski is a paradigmatic positive local–global theorem.
-  citations:
-  - milne-algebraic-number-theory
-- id: story_valued_field_to_valuation_induced_forgotten
-  source: valued_field
-  target: valuation
-  type: induced-forgotten
-  label: retains the chosen valuation
-  detail: A valued field includes an underlying field together with its chosen valuation or absolute value; forgetting additional topological or completeness properties retains that valuation structure.
-  citations:
-  - wp-valued-field
-  - milne-algebraic-number-theory
-- id: story_residue_field_to_field_induced_forgotten
-  source: residue_field
-  target: field
-  type: induced-forgotten
-  label: is a field
-  detail: The quotient of a local ring by its unique maximal ideal is a field.
-  citations:
-  - stacks-algebra-text
-  - wp-field
-  - nlab-field
-- id: story_adele_ring_to_topological_ring_induced_forgotten
-  source: adele_ring
-  target: topological_ring
-  type: induced-forgotten
-  label: is a topological ring
-  detail: The restricted-product topology makes the adeles a locally compact topological ring for a global field.
-  citations:
-  - milne-algebraic-number-theory
-  - stacks-top-ring
-  - topology-without-tears
-- id: j_local_point__completion_at_valuation
-  source: completion_at_valuation
-  target: j_local_point
-  type: combine-compatible
-  label: local completion
-  detail: Supply the completion $K_v$ of the base field at the chosen place.
-  citations:
-  - milne-algebraic-number-theory
-- id: j_local_point__out
-  source: j_local_point
-  target: local_point
-  type: combine-compatible
-  label: choose a point after base change
-  detail: A $K_v$-valued point on the base-changed variety is a local point at $v$.
-  citations:
-  - milne-algebraic-number-theory
-  - stacks-schemes-text
-- id: story_everywhere_locally_soluble_variety_to_local_point_induced_forgotten
-  source: everywhere_locally_soluble_variety
-  target: local_point
-  type: induced-forgotten
-  label: retain a solution at one place
-  detail: Choosing one place $v$ and forgetting the other local solutions leaves a $K_v$-rational point.
-  citations:
-  - poonen-rational-points-varieties
-  - milne-algebraic-number-theory
-- id: story_everywhere_locally_soluble_variety_to_failure_hasse_principle_impose_axiom
-  source: everywhere_locally_soluble_variety
-  target: failure_hasse_principle
-  type: impose-axiom
-  label: also require no global rational point
-  detail: An everywhere locally soluble variety violates the Hasse principle precisely when $X(K)$ is empty.
-  citations:
-  - poonen-rational-points-varieties
-- id: j_first_incompleteness__natural_numbers
-  source: natural_numbers
-  target: j_first_incompleteness
-  type: combine-compatible
-  label: sufficient arithmetic
-  detail: Require the theory to represent enough elementary arithmetic of the natural numbers.
-  citations:
-  - openlogic-incompleteness
-  - godel-incompleteness-paper
-- id: j_second_incompleteness__natural_numbers
-  source: natural_numbers
-  target: j_second_incompleteness
-  type: combine-compatible
-  label: sufficient arithmetic
-  detail: Require the theory to represent enough elementary arithmetic of the natural numbers.
-  citations:
-  - openlogic-incompleteness
-  - godel-incompleteness-paper
+  - id: euclidean_domain_to_pid
+    source: euclidean_domain
+    target: principal_ideal_domain
+    type: theorem-implication
+    label: is a PID
+    detail: The Euclidean algorithm implies every ideal is principal.
+    citations:
+      - nlab-euclidean-domain
+      - wp-pid
+      - milne-algebraic-number-theory
+  - id: gcd_to_ufd
+    source: gcd_domain
+    target: unique_factorization_domain
+    type: impose-axiom
+    label: require atomic factorization
+    detail: Require existence of factorizations into irreducibles; uniqueness then has the UFD form.
+    citations:
+      - wp-ufd
+      - milne-algebraic-number-theory
+  - id: integral_to_dedekind
+    source: integral_domain
+    target: dedekind_domain
+    type: impose-axiom
+    label: Noetherian + normal + dimension 1
+    detail: Require Noetherianity, integral closure, and Krull dimension one.
+    citations:
+      - nlab-dedekind-domain
+      - milne-algebraic-number-theory
+  - id: integral_domain_to_euclidean_domain
+    source: integral_domain
+    target: euclidean_domain
+    type: impose-axiom
+    label: + Euclidean algorithm
+    detail: Require the existence of a Euclidean function satisfying division with smaller remainder.
+    citations:
+      - nlab-euclidean-domain
+      - wp-integral-domain
+      - milne-algebraic-number-theory
+  - id: integral_to_gcd_domain
+    source: integral_domain
+    target: gcd_domain
+    type: impose-axiom
+    label: require gcds
+    detail: Require greatest common divisors for pairs of nonzero elements.
+    citations:
+      - wp-gcd-domain
+      - milne-algebraic-number-theory
+  - id: e_domain_valuation
+    source: integral_domain
+    target: valuation_ring
+    type: impose-axiom
+    label: + total divisibility of fractions
+    detail: Require either $x$ or $x^{-1}$ to lie in the ring for every nonzero fraction $x$.
+    citations:
+      - stacks-valuation-ring
+      - wp-valuation-ring
+      - nlab-valuation-ring
+      - milne-algebraic-number-theory
+  - id: e_local_padic
+    source: local_field
+    target: p_adic_field
+    type: impose-axiom
+    label: + characteristic $0$, residue characteristic $p$
+    detail: Restrict to finite extensions of $Q_{p}$.
+    citations:
+      - wp-p-adic-field
+      - nlab-p-adic-field
+      - milne-algebraic-number-theory
+  - id: number_field_to_ring_integers
+    source: number_field
+    target: ring_of_integers
+    type: canonical-construction
+    label: take integral closure of ℤ
+    detail: Select the elements integral over $\mathbb{Z}$; they form the ring of integers.
+    citations:
+      - wp-ring-integers
+      - milne-algebraic-number-theory
+  - id: pid_to_dvr
+    source: principal_ideal_domain
+    target: discrete_valuation_ring
+    type: impose-axiom
+    label: require local discrete valuation form
+    detail: Require the PID to be a nonfield local ring with a unique nonzero prime ideal (its maximal ideal).
+    citations:
+      - wp-dvr
+      - milne-algebraic-number-theory
+  - id: ring_of_integers_to_dedekind
+    source: ring_of_integers
+    target: dedekind_domain
+    type: theorem-implication
+    label: is a Dedekind domain
+    detail: The ring of integers of a number field is a Dedekind domain.
+    citations:
+      - wp-ring-integers
+      - nlab-dedekind-domain
+      - stacks-dedekind
+      - milne-algebraic-number-theory
+  - id: ufd_to_pid
+    source: unique_factorization_domain
+    target: principal_ideal_domain
+    type: impose-axiom
+    label: require principal ideals
+    detail: Require every ideal to have one generator.
+    citations:
+      - wp-pid
+      - milne-algebraic-number-theory
+  - id: e_valuation_local
+    source: valuation_ring
+    target: local_ring
+    type: theorem-implication
+    label: canonically local
+    detail: Every valuation ring is a local domain.
+    citations:
+      - stacks-valuation-ring
+      - wp-valuation-ring
+      - nlab-valuation-ring
+      - stacks-local-ring
+      - wp-local-ring
+      - nlab-local-ring
+      - stacks-schemes-text
+  - id: e_valued_complete
+    source: valued_field
+    target: complete_valued_field
+    type: impose-axiom
+    label: require valuation completeness
+    detail: Require completeness for the valuation-induced uniformity; for absolute values or rank-one valuations this is the familiar metric completeness condition.
+    citations:
+      - wp-complete-valued
+      - nlab-complete-valued
+      - milne-algebraic-number-theory
+  - id: peano_system_to_natural_numbers
+    source: peano_system
+    target: natural_numbers
+    type: classification
+    label: standard Peano system
+    detail: $\mathbb N$ on carrier $\omega$ is the standard second-order Peano system.
+    citations:
+      - wp-peano
+      - nlab-natural-number
+  - id: natural_numbers_to_integer_pairs
+    source: natural_numbers
+    target: integer_difference_pairs
+    type: canonical-construction
+    label: form formal differences
+    detail: Use $\mathbb N\times\mathbb N$ to represent differences before quotienting.
+    citations:
+      - wp-construction-integers
+      - nlab-integer
+    overview: true
+  - id: integer_pairs_to_integers
+    source: integer_difference_pairs
+    target: integers
+    type: quotient-construction
+    label: identify equal differences
+    detail: Quotient by $(a,b)\sim(c,d)$ exactly when $a+d=b+c$; induced operations produce $\mathbb Z$.
+    citations:
+      - wp-construction-integers
+      - nlab-integer
+    overview: true
+  - id: natural_numbers_into_integers
+    source: natural_numbers
+    target: integers
+    type: canonical-embedding
+    label: $n\mapsto[(n,0)]$
+    detail: The map $n\mapsto[(n,0)]$ is an injective semiring homomorphism into the nonnegative integers.
+    citations:
+      - wp-construction-integers
+      - nlab-integer
+    overview: true
+  - id: integers_to_ordered_ring
+    source: integers
+    target: ordered_ring
+    type: induced-forgotten
+    label: forget the distinguished integer realization
+    detail: Forgetting the canonical origin of its elements leaves the usual ordered-ring structure.
+    citations:
+      - wp-construction-integers
+      - nlab-integer
+  - id: integers_to_integral_domain
+    source: integers
+    target: integral_domain
+    type: induced-forgotten
+    label: forget order
+    detail: Forgetting the order leaves an integral domain.
+    citations:
+      - nlab-integer
+  - id: integers_to_rational_pairs
+    source: integers
+    target: rational_fraction_pairs
+    type: canonical-construction
+    label: form nonzero-denominator fractions
+    detail: Use integer numerator–denominator pairs with nonzero denominator before quotienting.
+    citations:
+      - wp-rational-number
+      - nlab-rational-number
+    overview: true
+  - id: rational_pairs_to_rationals
+    source: rational_fraction_pairs
+    target: rational_numbers
+    type: quotient-construction
+    label: identify equal fractions
+    detail: Quotient by $(a,b)\sim(c,d)$ exactly when $ad=bc$; induced operations produce the fraction field $\mathbb Q$.
+    citations:
+      - wp-rational-number
+      - nlab-rational-number
+    overview: true
+  - id: integers_into_rationals
+    source: integers
+    target: rational_numbers
+    type: canonical-embedding
+    label: $z\mapsto z/1$
+    detail: The map $z\mapsto[(z,1)]$ embeds $\mathbb Z$ canonically into its field of fractions.
+    citations:
+      - wp-rational-number
+      - nlab-rational-number
+    overview: true
+  - id: rational_numbers_to_ordered_field
+    source: rational_numbers
+    target: ordered_field
+    type: induced-forgotten
+    label: forget the distinguished rational realization
+    detail: Forgetting how elements were constructed leaves the usual ordered-field structure.
+    citations:
+      - wp-rational-number
+      - nlab-rational-number
+  - id: rationals_to_dedekind_cuts
+    source: rational_numbers
+    target: dedekind_cut_reals
+    type: canonical-construction
+    label: form Dedekind cuts
+    detail: Construct an order-complete field from proper lower cuts of $\mathbb Q$.
+    citations:
+      - wp-construction-reals
+      - nlab-real-number
+    overview: true
+  - id: rationals_to_cauchy_sequences
+    source: rational_numbers
+    target: rational_cauchy_sequences
+    type: canonical-construction
+    label: form Cauchy sequences
+    detail: Take rational Cauchy sequences in the absolute-value metric.
+    citations:
+      - wp-construction-reals
+      - nlab-real-number
+    overview: true
+  - id: rational_numbers_into_reals
+    source: rational_numbers
+    target: real_numbers
+    type: canonical-embedding
+    label: constant cut / constant sequence
+    detail: Each rational has a canonical image in either completion, giving the standard embedding $\mathbb Q\hookrightarrow\mathbb R$.
+    citations:
+      - wp-construction-reals
+      - nlab-real-number
+    overview: true
+  - id: natural_numbers_to_aleph_zero
+    source: natural_numbers
+    target: aleph_zero
+    type: theorem-implication
+    label: cardinality $\aleph_0$
+    detail: The carrier of $\mathbb N$ is countably infinite and has cardinality $\aleph_0$.
+    citations:
+      - wp-aleph-number
+      - nlab-natural-number
+  - id: integers_to_aleph_zero
+    source: integers
+    target: aleph_zero
+    type: theorem-implication
+    label: countably infinite
+    detail: $\mathbb Z$ is countably infinite.
+    citations:
+      - nlab-integer
+      - wp-aleph-number
+  - id: rational_numbers_to_aleph_zero
+    source: rational_numbers
+    target: aleph_zero
+    type: theorem-implication
+    label: countably infinite
+    detail: $\mathbb Q$ is countably infinite.
+    citations:
+      - nlab-rational-number
+      - wp-aleph-number
+  - id: story_valued_field_to_completion_at_valuation_canonical_construction
+    source: valued_field
+    target: completion_at_valuation
+    type: canonical-construction
+    label: complete in the valuation topology
+    detail: Cauchy completion produces a complete valued field containing a dense image of the original field.
+    citations:
+      - milne-algebraic-number-theory
+  - id: story_completion_at_valuation_to_complete_valued_field_induced_forgotten
+    source: completion_at_valuation
+    target: complete_valued_field
+    type: induced-forgotten
+    label: yields a complete valued field
+    detail: Completing a valued field produces a complete valued field into which the original field maps densely; the completion is unique up to unique isometric isomorphism over the original field.
+    citations:
+      - milne-algebraic-number-theory
+  - id: story_valuation_to_valuation_ring_canonical_construction
+    source: valuation
+    target: valuation_ring
+    type: canonical-construction
+    label: take nonnegative elements
+    detail: For a valuation on a field, the elements of nonnegative valuation form its valuation ring; equivalent multiplicative conventions select the elements of value at most one.
+    citations:
+      - milne-algebraic-number-theory
+  - id: story_number_field_to_place_of_number_field_canonical_construction
+    source: number_field
+    target: place_of_number_field
+    type: canonical-construction
+    label: consider its places
+    detail: A number field has Archimedean places from embeddings and non-Archimedean places associated with prime ideals, understood as equivalence classes of absolute values.
+    citations:
+      - milne-algebraic-number-theory
+  - id: story_place_of_number_field_to_completion_at_valuation_canonical_construction
+    source: place_of_number_field
+    target: completion_at_valuation
+    type: canonical-construction
+    label: complete at the place
+    detail: Each place determines a completion of the number field.
+    citations:
+      - milne-algebraic-number-theory
+  - id: story_completion_at_valuation_to_p_adic_field_framework_specialization
+    source: completion_at_valuation
+    target: p_adic_field
+    type: framework-specialization
+    label: non-Archimedean finite extension
+    detail: Completing a number field at a non-Archimedean place gives a finite extension of $\mathbb Q_p$.
+    citations:
+      - milne-algebraic-number-theory
+  - id: story_natural_numbers_to_godel_numbering_add_data
+    source: natural_numbers
+    target: godel_numbering
+    type: add-data
+    label: choose an effective coding of syntax
+    detail: Use natural numbers as codes and choose a computable encoding of symbols, formulas, and finite proofs; Gödel numberings are not unique.
+    citations:
+      - godel-incompleteness-paper
+      - openlogic-incompleteness
+  - id: story_global_field_to_adele_ring_canonical_construction
+    source: global_field
+    target: adele_ring
+    type: canonical-construction
+    label: restricted product of completions
+    detail: The adeles combine all local completions with an integrality restriction at almost all finite places.
+    citations:
+      - milne-algebraic-number-theory
+  - id: story_local_global_principle_to_hasse_minkowski_theorem_framework_specialization
+    source: local_global_principle
+    target: hasse_minkowski_theorem
+    type: framework-specialization
+    label: valid for quadratic forms
+    detail: Hasse–Minkowski is a paradigmatic positive local–global theorem.
+    citations:
+      - milne-algebraic-number-theory
+  - id: story_valued_field_to_valuation_induced_forgotten
+    source: valued_field
+    target: valuation
+    type: induced-forgotten
+    label: retains the chosen valuation
+    detail: A valued field includes an underlying field together with its chosen valuation or absolute value; forgetting additional topological or completeness properties retains that valuation structure.
+    citations:
+      - wp-valued-field
+      - milne-algebraic-number-theory
+  - id: story_residue_field_to_field_induced_forgotten
+    source: residue_field
+    target: field
+    type: induced-forgotten
+    label: is a field
+    detail: The quotient of a local ring by its unique maximal ideal is a field.
+    citations:
+      - stacks-algebra-text
+      - wp-field
+      - nlab-field
+  - id: story_adele_ring_to_topological_ring_induced_forgotten
+    source: adele_ring
+    target: topological_ring
+    type: induced-forgotten
+    label: is a topological ring
+    detail: The restricted-product topology makes the adeles a locally compact topological ring for a global field.
+    citations:
+      - milne-algebraic-number-theory
+      - stacks-top-ring
+      - topology-without-tears
+  - id: j_local_point__completion_at_valuation
+    source: completion_at_valuation
+    target: j_local_point
+    type: combine-compatible
+    label: local completion
+    detail: Supply the completion $K_v$ of the base field at the chosen place.
+    citations:
+      - milne-algebraic-number-theory
+  - id: j_local_point__out
+    source: j_local_point
+    target: local_point
+    type: combine-compatible
+    label: choose a point after base change
+    detail: A $K_v$-valued point on the base-changed variety is a local point at $v$.
+    citations:
+      - milne-algebraic-number-theory
+      - stacks-schemes-text
+  - id: story_everywhere_locally_soluble_variety_to_local_point_induced_forgotten
+    source: everywhere_locally_soluble_variety
+    target: local_point
+    type: induced-forgotten
+    label: retain a solution at one place
+    detail: Choosing one place $v$ and forgetting the other local solutions leaves a $K_v$-rational point.
+    citations:
+      - poonen-rational-points-varieties
+      - milne-algebraic-number-theory
+  - id: story_everywhere_locally_soluble_variety_to_failure_hasse_principle_impose_axiom
+    source: everywhere_locally_soluble_variety
+    target: failure_hasse_principle
+    type: impose-axiom
+    label: also require no global rational point
+    detail: An everywhere locally soluble variety violates the Hasse principle precisely when $X(K)$ is empty.
+    citations:
+      - poonen-rational-points-varieties
+  - id: j_first_incompleteness__natural_numbers
+    source: natural_numbers
+    target: j_first_incompleteness
+    type: combine-compatible
+    label: sufficient arithmetic
+    detail: Require the theory to represent enough elementary arithmetic of the natural numbers.
+    citations:
+      - openlogic-incompleteness
+      - godel-incompleteness-paper
+  - id: j_second_incompleteness__natural_numbers
+    source: natural_numbers
+    target: j_second_incompleteness
+    type: combine-compatible
+    label: sufficient arithmetic
+    detail: Require the theory to represent enough elementary arithmetic of the natural numbers.
+    citations:
+      - openlogic-incompleteness
+      - godel-incompleteness-paper

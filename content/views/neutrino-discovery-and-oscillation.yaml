@@ -1,16 +1,7 @@
 id: neutrino-discovery-and-oscillation
 title: The neutrino changes identity
-summary: Follow the neutrino from the beta-spectrum problem through direct
-  detection, flavor, helicity, solar and atmospheric anomalies, mixing, and
-  nonzero mass.
-narrative: The continuous beta spectrum motivated an unseen neutral particle and
-  a new weak-interaction account. Reactor experiments detected electron
-  antineutrinos; accelerator and helicity experiments distinguished flavors and
-  chiral behavior. Solar and atmospheric deficits became evidence for
-  propagation between flavor and mass bases. The PMNS matrix and oscillation
-  phases connect flavor states to mass eigenstates; Super-Kamiokande and SNO
-  established flavor change and therefore physics beyond massless-neutrino
-  Standard Model assumptions.
+summary: Follow the neutrino from the beta-spectrum problem through direct detection, flavor, helicity, solar and atmospheric anomalies, mixing, and nonzero mass.
+narrative: The continuous beta spectrum motivated an unseen neutral particle and a new weak-interaction account. Reactor experiments detected electron antineutrinos; accelerator and helicity experiments distinguished flavors and chiral behavior. Solar and atmospheric deficits became evidence for propagation between flavor and mass bases. The PMNS matrix and oscillation phases connect flavor states to mass eigenstates; Super-Kamiokande and SNO established flavor change and therefore physics beyond massless-neutrino Standard Model assumptions.
 tags:
   - Physics
   - Particle physics

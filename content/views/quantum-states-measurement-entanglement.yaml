@@ -1,16 +1,7 @@
 id: quantum-states-measurement-entanglement
 title: Quantum states, measurement, and entanglement
-summary: Trace the operational structure of quantum theory from states and
-  observables through measurement, composite systems, Bell tests, and
-  decoherence.
-narrative: Pure states, mixed states, wavefunctions, and density operators are
-  related but not interchangeable descriptions. Observables and the Born rule
-  connect states to probabilities; unitary evolution and superposition govern
-  isolated dynamics. Tensor products introduce composite systems and
-  entanglement, EPR sharpens the locality problem, Bell turns it into a theorem,
-  experiments test the inequalities, and partial trace plus decoherence explain
-  the emergence of reduced mixed states without by itself selecting an
-  interpretation.
+summary: Trace the operational structure of quantum theory from states and observables through measurement, composite systems, Bell tests, and decoherence.
+narrative: Pure states, mixed states, wavefunctions, and density operators are related but not interchangeable descriptions. Observables and the Born rule connect states to probabilities; unitary evolution and superposition govern isolated dynamics. Tensor products introduce composite systems and entanglement, EPR sharpens the locality problem, Bell turns it into a theorem, experiments test the inequalities, and partial trace plus decoherence explain the emergence of reduced mixed states without by itself selecting an interpretation.
 tags:
   - Physics
   - Quantum mechanics

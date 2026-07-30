@@ -1,16 +1,7 @@
 id: local-global-principles
 title: Local–global principles in arithmetic
-summary: Compare global rational solutions with solutions over every real and
-  $p$-adic completion, including both Hasse–Minkowski success and genuine
-  failures.
-narrative: A number field has many places, each producing a local completion. A
-  global rational point necessarily gives points in every completion, but the
-  converse is a substantive theorem when true. Adeles collect all local fields
-  at once. An everywhere locally soluble variety has a point over each
-  completion. Quadratic forms satisfy the Hasse–Minkowski theorem, a clean
-  local–global principle; other varieties can be everywhere locally soluble yet
-  have no global point, showing why local evidence and global existence must be
-  separated.
+summary: Compare global rational solutions with solutions over every real and $p$-adic completion, including both Hasse–Minkowski success and genuine failures.
+narrative: A number field has many places, each producing a local completion. A global rational point necessarily gives points in every completion, but the converse is a substantive theorem when true. Adeles collect all local fields at once. An everywhere locally soluble variety has a point over each completion. Quadratic forms satisfy the Hasse–Minkowski theorem, a clean local–global principle; other varieties can be everywhere locally soluble yet have no global point, showing why local evidence and global existence must be separated.
 tags:
   - Mathematics
   - Number theory

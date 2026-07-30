@@ -1,12 +1,7 @@
 id: geometry-of-gravity
 title: The geometry of gravity
-summary: Connect differential geometry to spacetime, gravitation, Einstein’s
-  equations, and their classical limits and tests.
-narrative: "Build the differential geometry used by general relativity: smooth
-  and Lorentzian manifolds, tangent and tensor fields, metrics, connections,
-  curvature, geodesics, stress–energy, and Einstein’s equation. Then follow
-  exact solutions and strong-field observations to black holes and gravitational
-  waves."
+summary: Connect differential geometry to spacetime, gravitation, Einstein’s equations, and their classical limits and tests.
+narrative: "Build the differential geometry used by general relativity: smooth and Lorentzian manifolds, tangent and tensor fields, metrics, connections, curvature, geodesics, stress–energy, and Einstein’s equation. Then follow exact solutions and strong-field observations to black holes and gravitational waves."
 tags:
   - Geometry
   - Relativity

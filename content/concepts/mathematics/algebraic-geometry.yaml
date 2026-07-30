@@ -1,1095 +1,1095 @@
 nodes:
-- id: j_sheaf
-  label: presheaf + site
-  primaryDomain: algebraic-geometry
-  domains:
-  - algebraic-geometry
-  - topology
-  - category-theory
-  level: 6
-  kind: junction
-  summary: Combine a presheaf with a covering structure on its domain and impose descent/gluing.
-  carriers: []
-  data: []
-  axioms: []
-  induces: []
-  notes: The presheaf and site must use the same domain category.
-  citations:
-  - stacks-sheaf
-  - stacks-sites
-  - wp-sheaf
-  - nlab-sheaf
-  - stacks-schemes-text
-  combination:
-    inputs:
-    - presheaf
-    - site
-    compatibility: The presheaf is defined on the site’s underlying category and satisfies the sheaf equalizer/gluing condition for every cover.
-    output: sheaf
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: sheaf
-  label: Sheaf
-  primaryDomain: algebraic-geometry
-  domains:
-  - algebraic-geometry
-  - topology
-  - category-theory
-  level: 6
-  kind: structure
-  summary: A presheaf on a site satisfying the local identity and unique gluing condition for every cover.
-  carriers:
-  - site $(C,J)$
-  - presheaf $F\colon C^{\mathrm{op}}\to\mathbf{Set}$
-  data: []
-  axioms:
-  - matching local sections glue uniquely for every cover
-  induces: []
-  notes: This node means a sheaf of sets on a site. Sheaves valued in groups, rings, modules, or other categories are modeled by the corresponding algebraic-object nodes.
-  citations:
-  - stacks-sheaf
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: sheaf_of_groups
-  label: Sheaf of groups
-  primaryDomain: algebraic-geometry
-  domains:
-  - algebraic-geometry
-  - topology
-  - algebra
-  level: 7
-  kind: structure
-  summary: A sheaf whose sections form groups and whose restriction maps are homomorphisms.
-  carriers:
-  - sheaf $F$
-  data:
-  - group structure on every $F(U)$
-  axioms:
-  - restriction maps are homomorphisms
-  induces: []
-  notes: ''
-  citations:
-  - stacks-abelian-sheaf
-  - wp-sheaf-groups
-  - stacks-schemes-text
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: sheaf_of_rings
-  label: Sheaf of rings
-  primaryDomain: algebraic-geometry
-  domains:
-  - algebraic-geometry
-  - topology
-  - algebra
-  level: 7
-  kind: structure
-  summary: A sheaf whose sections form rings and whose restrictions are ring homomorphisms.
-  carriers:
-  - sheaf $O$
-  data:
-  - ring structure on every $O(U)$
-  axioms:
-  - restriction maps are ring homomorphisms
-  induces: []
-  notes: ''
-  citations:
-  - stacks-sheaf-algebraic
-  - wp-sheaf-rings
-  - stacks-schemes-text
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: ringed_space
-  label: Ringed space
-  primaryDomain: algebraic-geometry
-  domains:
-  - algebraic-geometry
-  - topology
-  - algebra
-  level: 8
-  kind: structure
-  summary: A topological space equipped with a sheaf of rings.
-  carriers:
-  - topological space $X$
-  data:
-  - sheaf of rings $O_X$
-  axioms: []
-  induces: []
-  notes: ''
-  citations:
-  - stacks-ringed-space
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: j_ringed_space
-  label: space + sheaf of rings
-  primaryDomain: algebraic-geometry
-  domains:
-  - algebraic-geometry
-  - topology
-  - algebra
-  level: 8
-  kind: junction
-  summary: Compatibility construction producing Ringed space.
-  carriers: []
-  data: []
-  axioms: []
-  induces: []
-  notes: All incoming branches are jointly required.
-  citations:
-  - stacks-ringed-space
-  - nlab-ringed-space
-  - wp-ringed-space
-  - stacks-schemes-text
-  combination:
-    inputs:
-    - topological_space
-    - sheaf_of_rings
-    compatibility: Use the same topological space as the base of the sheaf of rings.
-    output: ringed_space
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: local_ring
-  label: Local ring
-  primaryDomain: algebraic-geometry
-  domains:
-  - algebraic-geometry
-  - algebra
-  - number-theory
-  level: 9
-  kind: structure
-  summary: A commutative ring with exactly one maximal ideal.
-  carriers:
-  - commutative ring $R$
-  data: []
-  axioms:
-  - unique maximal ideal
-  induces:
-  - residue field
-  notes: ''
-  citations:
-  - stacks-local-ring
-  - wp-local-ring
-  - nlab-local-ring
-  - stacks-schemes-text
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: locally_ringed_space
-  label: Locally ringed space
-  primaryDomain: algebraic-geometry
-  domains:
-  - algebraic-geometry
-  - topology
-  - algebra
-  level: 9
-  kind: structure
-  summary: A ringed space whose stalks are local rings.
-  carriers:
-  - ringed space $(X,O_X)$
-  data: []
-  axioms:
-  - every stalk $O_{X,x}$ is a local ring
-  induces: []
-  notes: ''
-  citations:
-  - stacks-locally-ringed
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: noetherian_ring
-  label: Noetherian ring
-  primaryDomain: algebraic-geometry
-  domains:
-  - algebraic-geometry
-  - algebra
-  - number-theory
-  level: 9
-  kind: structure
-  summary: A commutative ring satisfying the ascending chain condition on ideals.
-  carriers:
-  - commutative ring $R$
-  data: []
-  axioms:
-  - every ideal finitely generated
-  induces: []
-  notes: ''
-  citations:
-  - stacks-noetherian-ring
-  - wp-noetherian-ring
-  - nlab-noetherian-ring
-  - stacks-schemes-text
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: artinian_ring
-  label: Artinian ring
-  primaryDomain: algebraic-geometry
-  domains:
-  - algebraic-geometry
-  - algebra
-  level: 10
-  kind: structure
-  summary: A commutative ring satisfying the descending chain condition on ideals.
-  carriers:
-  - commutative ring $R$
-  data: []
-  axioms:
-  - descending chain condition on ideals
-  induces:
-  - Noetherian ring
-  notes: ''
-  citations:
-  - stacks-artinian-ring
-  - wp-artinian-ring
-  - stacks-schemes-text
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: j_regular_local
-  label: Noetherian + local regularity
-  primaryDomain: algebraic-geometry
-  domains:
-  - algebraic-geometry
-  - algebra
-  level: 10
-  kind: junction
-  summary: Compatibility construction producing Regular local ring.
-  carriers: []
-  data: []
-  axioms: []
-  induces: []
-  notes: All incoming branches are jointly required.
-  citations:
-  - stacks-dvr-regular
-  - wp-regular-local-ring
-  - stacks-schemes-text
-  combination:
-    inputs:
-    - local_ring
-    - noetherian_ring
-    compatibility: Use the same ring and require the embedding dimension to equal the Krull dimension.
-    output: regular_local_ring
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: scheme
-  label: Scheme
-  primaryDomain: algebraic-geometry
-  domains:
-  - algebraic-geometry
-  - topology
-  - algebra
-  level: 10
-  kind: structure
-  summary: A locally ringed space locally isomorphic to affine schemes.
-  carriers:
-  - locally ringed space $X$
-  data: []
-  axioms:
-  - affine open neighborhood at every point
-  induces: []
-  notes: ''
-  citations:
-  - stacks-scheme
-  - wp-scheme
-  - nlab-scheme
-  - stacks-schemes-text
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: affine_scheme
-  label: Affine scheme
-  primaryDomain: algebraic-geometry
-  domains:
-  - algebraic-geometry
-  - algebra
-  - topology
-  level: 11
-  kind: structure
-  summary: A locally ringed space isomorphic to $\operatorname{Spec}(R)$ for a commutative ring $R$.
-  carriers:
-  - locally ringed space $X$
-  data: []
-  axioms:
-  - $X\cong \operatorname{Spec} R$ for some commutative ring $R$
-  induces: []
-  notes: ''
-  citations:
-  - stacks-affine-scheme
-  - wp-affine-scheme
-  - nlab-affine-scheme
-  - stacks-schemes-text
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: regular_local_ring
-  label: Regular local ring
-  primaryDomain: algebraic-geometry
-  domains:
-  - algebraic-geometry
-  - algebra
-  level: 11
-  kind: structure
-  summary: A Noetherian local ring $(R,\mathfrak m)$ whose Krull dimension equals the dimension of its Zariski cotangent space $\mathfrak m/\mathfrak m^2$ over the residue field $R/\mathfrak m$.
-  carriers:
-  - Noetherian local ring $(R,\mathfrak m)$
-  data: []
-  axioms:
-  - $\dim R=\dim_{R/\mathfrak m}(\mathfrak m/\mathfrak m^2)$
-  induces: []
-  notes: ''
-  citations:
-  - stacks-regular-local-definition
-  - stacks-dvr-regular
-  - wp-regular-local-ring
-  - stacks-schemes-text
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: algebraic_space
-  label: Algebraic space
-  primaryDomain: algebraic-geometry
-  domains:
-  - algebraic-geometry
-  - category-theory
-  level: 12
-  kind: structure
-  summary: A sheaf of sets on the big fppf site over $S$ with representable diagonal and an étale surjective cover by a scheme.
-  carriers:
-  - base scheme $S$
-  - presheaf $F\colon(\mathrm{Sch}/S)_{\mathrm{fppf}}^{\mathrm{op}}\to\mathbf{Set}$
-  data: []
-  axioms:
-  - $F$ is a sheaf for the fppf topology
-  - the diagonal $F\to F\times F$ is representable by schemes
-  - there exists a scheme $U$ and a surjective étale morphism $h_U\to F$
-  induces: []
-  notes: The existence of an étale cover is a property; no atlas is selected as part of the algebraic-space structure. Equivalent étale-site formulations are standard.
-  citations:
-  - stacks-algebraic-space
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: complete_local_ring
-  label: Complete local ring
-  primaryDomain: algebraic-geometry
-  domains:
-  - algebraic-geometry
-  - algebra
-  - number-theory
-  level: 12
-  kind: structure
-  summary: A local ring complete and separated for its maximal-ideal-adic topology.
-  carriers:
-  - local ring $(R,\mathfrak m)$
-  data: []
-  axioms:
-  - $R\cong \varprojlim_n R/\mathfrak m^n$
-  induces: []
-  notes: ''
-  citations:
-  - wp-complete-ring
-  - nlab-complete-local-ring
-  - stacks-schemes-text
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: noetherian_scheme
-  label: Noetherian scheme
-  primaryDomain: algebraic-geometry
-  domains:
-  - algebraic-geometry
-  - topology
-  level: 12
-  kind: structure
-  summary: A quasi-compact locally Noetherian scheme.
-  carriers:
-  - scheme $X$
-  data: []
-  axioms:
-  - affine neighborhoods have Noetherian coordinate rings
-  - quasi-compact
-  induces: []
-  notes: ''
-  citations:
-  - stacks-noetherian-scheme
-  - wp-noetherian-scheme
-  - stacks-schemes-text
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: reduced_scheme
-  label: Reduced scheme
-  primaryDomain: algebraic-geometry
-  domains:
-  - algebraic-geometry
-  - algebra
-  level: 12
-  kind: structure
-  summary: A scheme whose local rings contain no nonzero nilpotents.
-  carriers:
-  - scheme $X$
-  data: []
-  axioms:
-  - all stalks are reduced rings
-  induces: []
-  notes: ''
-  citations:
-  - wp-reduced-scheme
-  - nlab-reduced-scheme
-  - stacks-schemes-text
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: j_variety
-  label: scheme over a field
-  primaryDomain: algebraic-geometry
-  domains:
-  - algebraic-geometry
-  - algebra
-  level: 12
-  kind: junction
-  summary: Compatibility construction producing Algebraic variety.
-  carriers: []
-  data: []
-  axioms: []
-  induces: []
-  notes: All incoming branches are jointly required.
-  citations:
-  - wp-variety
-  - nlab-variety
-  - stacks-varieties
-  - stacks-schemes-text
-  combination:
-    inputs:
-    - scheme
-    - field
-    compatibility: Equip $X$ with a finite-type structure morphism $X\to\operatorname{Spec}(k)$ and require $X$ to be integral and the morphism separated.
-    output: algebraic_variety
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: separated_scheme
-  label: Separated scheme
-  primaryDomain: algebraic-geometry
-  domains:
-  - algebraic-geometry
-  - topology
-  level: 12
-  kind: structure
-  summary: A scheme whose structure morphism $X\to \operatorname{Spec}(\mathbb{Z})$ is separated.
-  carriers:
-  - scheme $X$
-  data: []
-  axioms:
-  - relative diagonal $\Delta_{X/\operatorname{Spec}(\mathbb{Z})}\colon X\to X\times_{\operatorname{Spec}(\mathbb{Z})}X$ is a closed immersion
-  induces: []
-  notes: For an $S$-scheme $X\to S$, relative separatedness uses $\Delta_{X/S}\colon X\to X\times_S X$.
-  citations:
-  - stacks-separated-scheme
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: algebraic_variety
-  label: Algebraic variety
-  primaryDomain: algebraic-geometry
-  domains:
-  - algebraic-geometry
-  level: 13
-  kind: structure
-  summary: Under the adopted Stacks Project convention, an integral separated scheme of finite type over a field.
-  carriers:
-  - field $k$
-  - scheme $X$ with structure morphism $X\to \operatorname{Spec}(k)$
-  data:
-  - $k$-scheme structure
-  axioms:
-  - $X$ is integral
-  - $X\to \operatorname{Spec}(k)$ is separated
-  - $X\to \operatorname{Spec}(k)$ is of finite type
-  induces: []
-  notes: Terminology varies across authors; this atlas fixes the Stacks Project convention rather than mixing reduced, irreducible, or nonseparated variants.
-  citations:
-  - wp-variety
-  - nlab-variety
-  - stacks-varieties
-  - stacks-schemes-text
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: integral_scheme
-  label: Integral scheme
-  primaryDomain: algebraic-geometry
-  domains:
-  - algebraic-geometry
-  - algebra
-  level: 13
-  kind: structure
-  summary: A nonempty scheme that is reduced and irreducible.
-  carriers:
-  - scheme $X$
-  data: []
-  axioms:
-  - reduced
-  - irreducible
-  induces: []
-  notes: ''
-  citations:
-  - wp-integral-scheme
-  - nlab-integral-scheme
-  - stacks-schemes-text
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: regular_scheme
-  label: Regular scheme
-  primaryDomain: algebraic-geometry
-  domains:
-  - algebraic-geometry
-  - differential-geometry
-  level: 13
-  kind: structure
-  summary: A locally Noetherian scheme whose local rings are regular local rings.
-  carriers:
-  - scheme $X$
-  data: []
-  axioms:
-  - locally Noetherian
-  - every local ring $O_{X,x}$ is regular
-  induces: []
-  notes: Regularity is local Noetherianity plus regularity of every local ring. It does not imply quasi-compactness, so a regular scheme need not be a Noetherian scheme.
-  citations:
-  - stacks-regular-scheme
-  - wp-regular-scheme
-  - stacks-schemes-text
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: scheme_over_base
-  label: Scheme over a base
-  primaryDomain: algebraic-geometry
-  domains:
-  - algebraic-geometry
-  - category-theory
-  level: 13
-  kind: structure
-  summary: A scheme $X$ equipped with a specified morphism to a base scheme $S$.
-  carriers:
-  - scheme $X$
-  - base scheme $S$
-  data:
-  - structure morphism $X\to S$
-  axioms: []
-  induces: []
-  notes: This is the object-level notion of an $S$-scheme.
-  citations:
-  - stacks-scheme
-  - stacks-projective-morphisms
-  - stacks-schemes-text
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: projective_scheme
-  label: Projective scheme
-  primaryDomain: algebraic-geometry
-  domains:
-  - algebraic-geometry
-  level: 14
-  kind: structure
-  summary: A scheme $X$ over a base $S$ whose structure morphism $X\to S$ is projective.
-  carriers:
-  - scheme $X$
-  - base scheme $S$
-  data:
-  - structure morphism $X\to S$
-  axioms:
-  - $X$ admits an $S$-closed immersion into some projective space $\mathbf P^n_S$
-  induces: []
-  notes: The closed immersion is an existence witness, not chosen data of the projective scheme.
-  citations:
-  - wp-projective-scheme
-  - nlab-projective-scheme
-  - stacks-projective-morphisms
-  - stacks-schemes-text
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: ring_localization
-  label: Localization of a commutative ring
-  primaryDomain: algebraic-geometry
-  domains:
-  - algebraic-geometry
-  - algebra
-  level: 9
-  kind: structure
-  summary: For a multiplicative subset $S\subseteq R$, the ring $S^{-1}R$ obtained by formally inverting every element of $S$.
-  carriers:
-  - commutative ring $R$
-  - multiplicative subset $S$
-  data:
-  - fractions $r/s$ modulo the localization relation
-  axioms:
-  - elements of $S$ become units
-  induces:
-  - Local rings $R_{\mathfrak p}$ and basic open coordinate rings
-  notes: ''
-  citations:
-  - stacks-algebra-text
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: prime_spectrum
-  label: Prime spectrum $\operatorname{Spec}(R)$
-  primaryDomain: algebraic-geometry
-  domains:
-  - algebraic-geometry
-  - topology
-  - algebra
-  level: 10
-  kind: structure
-  summary: The set of prime ideals of a commutative ring $R$, equipped with the Zariski topology and its structure sheaf.
-  carriers:
-  - commutative ring $R$
-  data:
-  - prime ideals
-  - Zariski topology
-  - structure sheaf
-  axioms: []
-  induces:
-  - An affine scheme
-  notes: ''
-  citations:
-  - stacks-schemes-text
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: sheaf_stalk
-  label: Stalk of a sheaf
-  primaryDomain: algebraic-geometry
-  domains:
-  - algebraic-geometry
-  - topology
-  - category-theory
-  level: 7
-  kind: structure
-  summary: The filtered colimit of sections over neighborhoods of a point, identifying sections that agree on some smaller neighborhood.
-  carriers:
-  - sheaf $\mathcal F$ on a space
-  - point $x$
-  data:
-  - germs of local sections at $x$
-  axioms: []
-  induces:
-  - A local object $\mathcal F_x$
-  notes: ''
-  citations:
-  - stacks-schemes-text
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: smooth_projective_quadric
-  label: Smooth projective quadric
-  primaryDomain: algebraic-geometry
-  domains:
-  - algebraic-geometry
-  - number-theory
-  - algebra
-  level: 14
-  kind: structure
-  summary: For a nondegenerate quadratic form $q$ of dimension at least three over a field of characteristic not two, the projective zero locus $q=0$ is a smooth projective quadric and a geometrically integral variety.
-  carriers:
-  - vector space over a field
-  - nondegenerate quadratic form
-  data:
-  - projective hypersurface $q=0$
-  axioms:
-  - dimension at least three
-  - characteristic not two
-  - nondegeneracy
-  induces:
-  - A rational-point problem equivalent to isotropy of $q$
-  notes: The dimension and nondegeneracy conditions avoid reducible or nonintegral low-dimensional zero loci. Over number fields the characteristic condition is automatic.
-  citations:
-  - poonen-rational-points-varieties
-  - milne-algebraic-number-theory
-  - stacks-varieties
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: rational_point
-  label: Rational point
-  primaryDomain: algebraic-geometry
-  domains:
-  - algebraic-geometry
-  - number-theory
-  level: 12
-  kind: structure
-  summary: For a scheme or variety $X$ over a field $K$, a $K$-rational point is a $K$-morphism $\operatorname{Spec}(K)\to X$; for affine varieties this is equivalent to a solution with coordinates in $K$.
-  carriers:
-  - scheme or variety over $K$
-  data:
-  - $K$-valued point
-  axioms: []
-  induces:
-  - An arithmetic solution
-  notes: ''
-  citations:
-  - milne-algebraic-number-theory
-  - stacks-schemes-text
-  - poonen-rational-points-varieties
-  primaryField: mathematics
-  fields:
-  - mathematics
+  - id: j_sheaf
+    label: presheaf + site
+    primaryDomain: algebraic-geometry
+    domains:
+      - algebraic-geometry
+      - topology
+      - category-theory
+    level: 6
+    kind: junction
+    summary: Combine a presheaf with a covering structure on its domain and impose descent/gluing.
+    carriers: []
+    data: []
+    axioms: []
+    induces: []
+    notes: The presheaf and site must use the same domain category.
+    citations:
+      - stacks-sheaf
+      - stacks-sites
+      - wp-sheaf
+      - nlab-sheaf
+      - stacks-schemes-text
+    combination:
+      inputs:
+        - presheaf
+        - site
+      compatibility: The presheaf is defined on the site’s underlying category and satisfies the sheaf equalizer/gluing condition for every cover.
+      output: sheaf
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: sheaf
+    label: Sheaf
+    primaryDomain: algebraic-geometry
+    domains:
+      - algebraic-geometry
+      - topology
+      - category-theory
+    level: 6
+    kind: structure
+    summary: A presheaf on a site satisfying the local identity and unique gluing condition for every cover.
+    carriers:
+      - site $(C,J)$
+      - presheaf $F\colon C^{\mathrm{op}}\to\mathbf{Set}$
+    data: []
+    axioms:
+      - matching local sections glue uniquely for every cover
+    induces: []
+    notes: This node means a sheaf of sets on a site. Sheaves valued in groups, rings, modules, or other categories are modeled by the corresponding algebraic-object nodes.
+    citations:
+      - stacks-sheaf
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: sheaf_of_groups
+    label: Sheaf of groups
+    primaryDomain: algebraic-geometry
+    domains:
+      - algebraic-geometry
+      - topology
+      - algebra
+    level: 7
+    kind: structure
+    summary: A sheaf whose sections form groups and whose restriction maps are homomorphisms.
+    carriers:
+      - sheaf $F$
+    data:
+      - group structure on every $F(U)$
+    axioms:
+      - restriction maps are homomorphisms
+    induces: []
+    notes: ''
+    citations:
+      - stacks-abelian-sheaf
+      - wp-sheaf-groups
+      - stacks-schemes-text
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: sheaf_of_rings
+    label: Sheaf of rings
+    primaryDomain: algebraic-geometry
+    domains:
+      - algebraic-geometry
+      - topology
+      - algebra
+    level: 7
+    kind: structure
+    summary: A sheaf whose sections form rings and whose restrictions are ring homomorphisms.
+    carriers:
+      - sheaf $O$
+    data:
+      - ring structure on every $O(U)$
+    axioms:
+      - restriction maps are ring homomorphisms
+    induces: []
+    notes: ''
+    citations:
+      - stacks-sheaf-algebraic
+      - wp-sheaf-rings
+      - stacks-schemes-text
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: ringed_space
+    label: Ringed space
+    primaryDomain: algebraic-geometry
+    domains:
+      - algebraic-geometry
+      - topology
+      - algebra
+    level: 8
+    kind: structure
+    summary: A topological space equipped with a sheaf of rings.
+    carriers:
+      - topological space $X$
+    data:
+      - sheaf of rings $O_X$
+    axioms: []
+    induces: []
+    notes: ''
+    citations:
+      - stacks-ringed-space
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: j_ringed_space
+    label: space + sheaf of rings
+    primaryDomain: algebraic-geometry
+    domains:
+      - algebraic-geometry
+      - topology
+      - algebra
+    level: 8
+    kind: junction
+    summary: Compatibility construction producing Ringed space.
+    carriers: []
+    data: []
+    axioms: []
+    induces: []
+    notes: All incoming branches are jointly required.
+    citations:
+      - stacks-ringed-space
+      - nlab-ringed-space
+      - wp-ringed-space
+      - stacks-schemes-text
+    combination:
+      inputs:
+        - topological_space
+        - sheaf_of_rings
+      compatibility: Use the same topological space as the base of the sheaf of rings.
+      output: ringed_space
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: local_ring
+    label: Local ring
+    primaryDomain: algebraic-geometry
+    domains:
+      - algebraic-geometry
+      - algebra
+      - number-theory
+    level: 9
+    kind: structure
+    summary: A commutative ring with exactly one maximal ideal.
+    carriers:
+      - commutative ring $R$
+    data: []
+    axioms:
+      - unique maximal ideal
+    induces:
+      - residue field
+    notes: ''
+    citations:
+      - stacks-local-ring
+      - wp-local-ring
+      - nlab-local-ring
+      - stacks-schemes-text
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: locally_ringed_space
+    label: Locally ringed space
+    primaryDomain: algebraic-geometry
+    domains:
+      - algebraic-geometry
+      - topology
+      - algebra
+    level: 9
+    kind: structure
+    summary: A ringed space whose stalks are local rings.
+    carriers:
+      - ringed space $(X,O_X)$
+    data: []
+    axioms:
+      - every stalk $O_{X,x}$ is a local ring
+    induces: []
+    notes: ''
+    citations:
+      - stacks-locally-ringed
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: noetherian_ring
+    label: Noetherian ring
+    primaryDomain: algebraic-geometry
+    domains:
+      - algebraic-geometry
+      - algebra
+      - number-theory
+    level: 9
+    kind: structure
+    summary: A commutative ring satisfying the ascending chain condition on ideals.
+    carriers:
+      - commutative ring $R$
+    data: []
+    axioms:
+      - every ideal finitely generated
+    induces: []
+    notes: ''
+    citations:
+      - stacks-noetherian-ring
+      - wp-noetherian-ring
+      - nlab-noetherian-ring
+      - stacks-schemes-text
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: artinian_ring
+    label: Artinian ring
+    primaryDomain: algebraic-geometry
+    domains:
+      - algebraic-geometry
+      - algebra
+    level: 10
+    kind: structure
+    summary: A commutative ring satisfying the descending chain condition on ideals.
+    carriers:
+      - commutative ring $R$
+    data: []
+    axioms:
+      - descending chain condition on ideals
+    induces:
+      - Noetherian ring
+    notes: ''
+    citations:
+      - stacks-artinian-ring
+      - wp-artinian-ring
+      - stacks-schemes-text
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: j_regular_local
+    label: Noetherian + local regularity
+    primaryDomain: algebraic-geometry
+    domains:
+      - algebraic-geometry
+      - algebra
+    level: 10
+    kind: junction
+    summary: Compatibility construction producing Regular local ring.
+    carriers: []
+    data: []
+    axioms: []
+    induces: []
+    notes: All incoming branches are jointly required.
+    citations:
+      - stacks-dvr-regular
+      - wp-regular-local-ring
+      - stacks-schemes-text
+    combination:
+      inputs:
+        - local_ring
+        - noetherian_ring
+      compatibility: Use the same ring and require the embedding dimension to equal the Krull dimension.
+      output: regular_local_ring
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: scheme
+    label: Scheme
+    primaryDomain: algebraic-geometry
+    domains:
+      - algebraic-geometry
+      - topology
+      - algebra
+    level: 10
+    kind: structure
+    summary: A locally ringed space locally isomorphic to affine schemes.
+    carriers:
+      - locally ringed space $X$
+    data: []
+    axioms:
+      - affine open neighborhood at every point
+    induces: []
+    notes: ''
+    citations:
+      - stacks-scheme
+      - wp-scheme
+      - nlab-scheme
+      - stacks-schemes-text
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: affine_scheme
+    label: Affine scheme
+    primaryDomain: algebraic-geometry
+    domains:
+      - algebraic-geometry
+      - algebra
+      - topology
+    level: 11
+    kind: structure
+    summary: A locally ringed space isomorphic to $\operatorname{Spec}(R)$ for a commutative ring $R$.
+    carriers:
+      - locally ringed space $X$
+    data: []
+    axioms:
+      - $X\cong \operatorname{Spec} R$ for some commutative ring $R$
+    induces: []
+    notes: ''
+    citations:
+      - stacks-affine-scheme
+      - wp-affine-scheme
+      - nlab-affine-scheme
+      - stacks-schemes-text
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: regular_local_ring
+    label: Regular local ring
+    primaryDomain: algebraic-geometry
+    domains:
+      - algebraic-geometry
+      - algebra
+    level: 11
+    kind: structure
+    summary: A Noetherian local ring $(R,\mathfrak m)$ whose Krull dimension equals the dimension of its Zariski cotangent space $\mathfrak m/\mathfrak m^2$ over the residue field $R/\mathfrak m$.
+    carriers:
+      - Noetherian local ring $(R,\mathfrak m)$
+    data: []
+    axioms:
+      - $\dim R=\dim_{R/\mathfrak m}(\mathfrak m/\mathfrak m^2)$
+    induces: []
+    notes: ''
+    citations:
+      - stacks-regular-local-definition
+      - stacks-dvr-regular
+      - wp-regular-local-ring
+      - stacks-schemes-text
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: algebraic_space
+    label: Algebraic space
+    primaryDomain: algebraic-geometry
+    domains:
+      - algebraic-geometry
+      - category-theory
+    level: 12
+    kind: structure
+    summary: A sheaf of sets on the big fppf site over $S$ with representable diagonal and an étale surjective cover by a scheme.
+    carriers:
+      - base scheme $S$
+      - presheaf $F\colon(\mathrm{Sch}/S)_{\mathrm{fppf}}^{\mathrm{op}}\to\mathbf{Set}$
+    data: []
+    axioms:
+      - $F$ is a sheaf for the fppf topology
+      - the diagonal $F\to F\times F$ is representable by schemes
+      - there exists a scheme $U$ and a surjective étale morphism $h_U\to F$
+    induces: []
+    notes: The existence of an étale cover is a property; no atlas is selected as part of the algebraic-space structure. Equivalent étale-site formulations are standard.
+    citations:
+      - stacks-algebraic-space
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: complete_local_ring
+    label: Complete local ring
+    primaryDomain: algebraic-geometry
+    domains:
+      - algebraic-geometry
+      - algebra
+      - number-theory
+    level: 12
+    kind: structure
+    summary: A local ring complete and separated for its maximal-ideal-adic topology.
+    carriers:
+      - local ring $(R,\mathfrak m)$
+    data: []
+    axioms:
+      - $R\cong \varprojlim_n R/\mathfrak m^n$
+    induces: []
+    notes: ''
+    citations:
+      - wp-complete-ring
+      - nlab-complete-local-ring
+      - stacks-schemes-text
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: noetherian_scheme
+    label: Noetherian scheme
+    primaryDomain: algebraic-geometry
+    domains:
+      - algebraic-geometry
+      - topology
+    level: 12
+    kind: structure
+    summary: A quasi-compact locally Noetherian scheme.
+    carriers:
+      - scheme $X$
+    data: []
+    axioms:
+      - affine neighborhoods have Noetherian coordinate rings
+      - quasi-compact
+    induces: []
+    notes: ''
+    citations:
+      - stacks-noetherian-scheme
+      - wp-noetherian-scheme
+      - stacks-schemes-text
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: reduced_scheme
+    label: Reduced scheme
+    primaryDomain: algebraic-geometry
+    domains:
+      - algebraic-geometry
+      - algebra
+    level: 12
+    kind: structure
+    summary: A scheme whose local rings contain no nonzero nilpotents.
+    carriers:
+      - scheme $X$
+    data: []
+    axioms:
+      - all stalks are reduced rings
+    induces: []
+    notes: ''
+    citations:
+      - wp-reduced-scheme
+      - nlab-reduced-scheme
+      - stacks-schemes-text
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: j_variety
+    label: scheme over a field
+    primaryDomain: algebraic-geometry
+    domains:
+      - algebraic-geometry
+      - algebra
+    level: 12
+    kind: junction
+    summary: Compatibility construction producing Algebraic variety.
+    carriers: []
+    data: []
+    axioms: []
+    induces: []
+    notes: All incoming branches are jointly required.
+    citations:
+      - wp-variety
+      - nlab-variety
+      - stacks-varieties
+      - stacks-schemes-text
+    combination:
+      inputs:
+        - scheme
+        - field
+      compatibility: Equip $X$ with a finite-type structure morphism $X\to\operatorname{Spec}(k)$ and require $X$ to be integral and the morphism separated.
+      output: algebraic_variety
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: separated_scheme
+    label: Separated scheme
+    primaryDomain: algebraic-geometry
+    domains:
+      - algebraic-geometry
+      - topology
+    level: 12
+    kind: structure
+    summary: A scheme whose structure morphism $X\to \operatorname{Spec}(\mathbb{Z})$ is separated.
+    carriers:
+      - scheme $X$
+    data: []
+    axioms:
+      - relative diagonal $\Delta_{X/\operatorname{Spec}(\mathbb{Z})}\colon X\to X\times_{\operatorname{Spec}(\mathbb{Z})}X$ is a closed immersion
+    induces: []
+    notes: For an $S$-scheme $X\to S$, relative separatedness uses $\Delta_{X/S}\colon X\to X\times_S X$.
+    citations:
+      - stacks-separated-scheme
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: algebraic_variety
+    label: Algebraic variety
+    primaryDomain: algebraic-geometry
+    domains:
+      - algebraic-geometry
+    level: 13
+    kind: structure
+    summary: Under the adopted Stacks Project convention, an integral separated scheme of finite type over a field.
+    carriers:
+      - field $k$
+      - scheme $X$ with structure morphism $X\to \operatorname{Spec}(k)$
+    data:
+      - $k$-scheme structure
+    axioms:
+      - $X$ is integral
+      - $X\to \operatorname{Spec}(k)$ is separated
+      - $X\to \operatorname{Spec}(k)$ is of finite type
+    induces: []
+    notes: Terminology varies across authors; this atlas fixes the Stacks Project convention rather than mixing reduced, irreducible, or nonseparated variants.
+    citations:
+      - wp-variety
+      - nlab-variety
+      - stacks-varieties
+      - stacks-schemes-text
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: integral_scheme
+    label: Integral scheme
+    primaryDomain: algebraic-geometry
+    domains:
+      - algebraic-geometry
+      - algebra
+    level: 13
+    kind: structure
+    summary: A nonempty scheme that is reduced and irreducible.
+    carriers:
+      - scheme $X$
+    data: []
+    axioms:
+      - reduced
+      - irreducible
+    induces: []
+    notes: ''
+    citations:
+      - wp-integral-scheme
+      - nlab-integral-scheme
+      - stacks-schemes-text
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: regular_scheme
+    label: Regular scheme
+    primaryDomain: algebraic-geometry
+    domains:
+      - algebraic-geometry
+      - differential-geometry
+    level: 13
+    kind: structure
+    summary: A locally Noetherian scheme whose local rings are regular local rings.
+    carriers:
+      - scheme $X$
+    data: []
+    axioms:
+      - locally Noetherian
+      - every local ring $O_{X,x}$ is regular
+    induces: []
+    notes: Regularity is local Noetherianity plus regularity of every local ring. It does not imply quasi-compactness, so a regular scheme need not be a Noetherian scheme.
+    citations:
+      - stacks-regular-scheme
+      - wp-regular-scheme
+      - stacks-schemes-text
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: scheme_over_base
+    label: Scheme over a base
+    primaryDomain: algebraic-geometry
+    domains:
+      - algebraic-geometry
+      - category-theory
+    level: 13
+    kind: structure
+    summary: A scheme $X$ equipped with a specified morphism to a base scheme $S$.
+    carriers:
+      - scheme $X$
+      - base scheme $S$
+    data:
+      - structure morphism $X\to S$
+    axioms: []
+    induces: []
+    notes: This is the object-level notion of an $S$-scheme.
+    citations:
+      - stacks-scheme
+      - stacks-projective-morphisms
+      - stacks-schemes-text
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: projective_scheme
+    label: Projective scheme
+    primaryDomain: algebraic-geometry
+    domains:
+      - algebraic-geometry
+    level: 14
+    kind: structure
+    summary: A scheme $X$ over a base $S$ whose structure morphism $X\to S$ is projective.
+    carriers:
+      - scheme $X$
+      - base scheme $S$
+    data:
+      - structure morphism $X\to S$
+    axioms:
+      - $X$ admits an $S$-closed immersion into some projective space $\mathbf P^n_S$
+    induces: []
+    notes: The closed immersion is an existence witness, not chosen data of the projective scheme.
+    citations:
+      - wp-projective-scheme
+      - nlab-projective-scheme
+      - stacks-projective-morphisms
+      - stacks-schemes-text
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: ring_localization
+    label: Localization of a commutative ring
+    primaryDomain: algebraic-geometry
+    domains:
+      - algebraic-geometry
+      - algebra
+    level: 9
+    kind: structure
+    summary: For a multiplicative subset $S\subseteq R$, the ring $S^{-1}R$ obtained by formally inverting every element of $S$.
+    carriers:
+      - commutative ring $R$
+      - multiplicative subset $S$
+    data:
+      - fractions $r/s$ modulo the localization relation
+    axioms:
+      - elements of $S$ become units
+    induces:
+      - Local rings $R_{\mathfrak p}$ and basic open coordinate rings
+    notes: ''
+    citations:
+      - stacks-algebra-text
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: prime_spectrum
+    label: Prime spectrum $\operatorname{Spec}(R)$
+    primaryDomain: algebraic-geometry
+    domains:
+      - algebraic-geometry
+      - topology
+      - algebra
+    level: 10
+    kind: structure
+    summary: The set of prime ideals of a commutative ring $R$, equipped with the Zariski topology and its structure sheaf.
+    carriers:
+      - commutative ring $R$
+    data:
+      - prime ideals
+      - Zariski topology
+      - structure sheaf
+    axioms: []
+    induces:
+      - An affine scheme
+    notes: ''
+    citations:
+      - stacks-schemes-text
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: sheaf_stalk
+    label: Stalk of a sheaf
+    primaryDomain: algebraic-geometry
+    domains:
+      - algebraic-geometry
+      - topology
+      - category-theory
+    level: 7
+    kind: structure
+    summary: The filtered colimit of sections over neighborhoods of a point, identifying sections that agree on some smaller neighborhood.
+    carriers:
+      - sheaf $\mathcal F$ on a space
+      - point $x$
+    data:
+      - germs of local sections at $x$
+    axioms: []
+    induces:
+      - A local object $\mathcal F_x$
+    notes: ''
+    citations:
+      - stacks-schemes-text
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: smooth_projective_quadric
+    label: Smooth projective quadric
+    primaryDomain: algebraic-geometry
+    domains:
+      - algebraic-geometry
+      - number-theory
+      - algebra
+    level: 14
+    kind: structure
+    summary: For a nondegenerate quadratic form $q$ of dimension at least three over a field of characteristic not two, the projective zero locus $q=0$ is a smooth projective quadric and a geometrically integral variety.
+    carriers:
+      - vector space over a field
+      - nondegenerate quadratic form
+    data:
+      - projective hypersurface $q=0$
+    axioms:
+      - dimension at least three
+      - characteristic not two
+      - nondegeneracy
+    induces:
+      - A rational-point problem equivalent to isotropy of $q$
+    notes: The dimension and nondegeneracy conditions avoid reducible or nonintegral low-dimensional zero loci. Over number fields the characteristic condition is automatic.
+    citations:
+      - poonen-rational-points-varieties
+      - milne-algebraic-number-theory
+      - stacks-varieties
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: rational_point
+    label: Rational point
+    primaryDomain: algebraic-geometry
+    domains:
+      - algebraic-geometry
+      - number-theory
+    level: 12
+    kind: structure
+    summary: For a scheme or variety $X$ over a field $K$, a $K$-rational point is a $K$-morphism $\operatorname{Spec}(K)\to X$; for affine varieties this is equivalent to a solution with coordinates in $K$.
+    carriers:
+      - scheme or variety over $K$
+    data:
+      - $K$-valued point
+    axioms: []
+    induces:
+      - An arithmetic solution
+    notes: ''
+    citations:
+      - milne-algebraic-number-theory
+      - stacks-schemes-text
+      - poonen-rational-points-varieties
+    primaryField: mathematics
+    fields:
+      - mathematics
 edges:
-- id: e_artinian_noetherian
-  source: artinian_ring
-  target: noetherian_ring
-  type: theorem-implication
-  label: implies Noetherian
-  detail: Every commutative Artinian ring is Noetherian.
-  citations:
-  - stacks-artinian-ring
-  - wp-artinian-ring
-  - stacks-noetherian-ring
-  - wp-noetherian-ring
-  - nlab-noetherian-ring
-  - stacks-artin-noeth
-  - stacks-schemes-text
-- id: j_regular_local__out
-  source: j_regular_local
-  target: regular_local_ring
-  type: combine-compatible
-  label: impose compatibility
-  detail: Use the same ring and require the embedding dimension to equal the Krull dimension.
-  citations:
-  - stacks-dvr-regular
-  - wp-regular-local-ring
-  - stacks-schemes-text
-- id: j_ringed_space__out
-  source: j_ringed_space
-  target: ringed_space
-  type: combine-compatible
-  label: impose compatibility
-  detail: Use the same topological space as the base of the sheaf of rings.
-  citations:
-  - stacks-ringed-space
-  - nlab-ringed-space
-  - wp-ringed-space
-  - stacks-schemes-text
-- id: j_sheaf__out
-  source: j_sheaf
-  target: sheaf
-  type: combine-compatible
-  label: + unique compatible gluing
-  detail: Require matching local sections to glue uniquely over every cover.
-  citations:
-  - stacks-sheaf
-  - wp-sheaf
-  - nlab-sheaf
-  - stacks-schemes-text
-- id: j_variety__out
-  source: j_variety
-  target: algebraic_variety
-  type: combine-compatible
-  label: impose compatibility
-  detail: Require $X$ to be integral and require $X\to\operatorname{Spec}(k)$ to be separated and of finite type.
-  citations:
-  - wp-variety
-  - nlab-variety
-  - stacks-varieties
-  - stacks-schemes-text
-- id: e_local_complete
-  source: local_ring
-  target: complete_local_ring
-  type: impose-axiom
-  label: + $m$-adic completeness
-  detail: Require the canonical map $R\to \varprojlim R/m^{n}$ to be an isomorphism.
-  citations:
-  - wp-complete-ring
-  - nlab-complete-local-ring
-  - stacks-schemes-text
-- id: j_regular_local__local_ring
-  source: local_ring
-  target: j_regular_local
-  type: combine-compatible
-  label: local structure
-  detail: Supply the Local ring structure as one jointly required input.
-  citations:
-  - stacks-dvr-regular
-  - wp-regular-local-ring
-  - stacks-schemes-text
-- id: e_locally_scheme
-  source: locally_ringed_space
-  target: scheme
-  type: impose-axiom
-  label: + affine open cover
-  detail: Require every point to have an affine open neighborhood.
-  citations:
-  - stacks-scheme
-  - wp-scheme
-  - nlab-scheme
-  - stacks-schemes-text
-- id: j_regular_local__noetherian_ring
-  source: noetherian_ring
-  target: j_regular_local
-  type: combine-compatible
-  label: finite ideal condition
-  detail: Supply the Noetherian ring structure as one jointly required input.
-  citations:
-  - stacks-dvr-regular
-  - wp-regular-local-ring
-  - stacks-schemes-text
-- id: e_reduced_integral
-  source: reduced_scheme
-  target: integral_scheme
-  type: impose-axiom
-  label: + irreducibility and nonemptiness
-  detail: Require the reduced scheme to be nonempty and irreducible.
-  citations:
-  - wp-integral-scheme
-  - nlab-integral-scheme
-  - stacks-schemes-text
-- id: e_ringed_locally
-  source: ringed_space
-  target: locally_ringed_space
-  type: impose-axiom
-  label: + local stalks
-  detail: Require every stalk of the structure sheaf to be a local ring.
-  citations:
-  - stacks-locally-ringed
-  - nlab-locally-ringed
-  - stacks-schemes-text
-- id: scheme_to_affine_scheme
-  source: scheme
-  target: affine_scheme
-  type: impose-axiom
-  label: + globally affine
-  detail: Require the scheme to be isomorphic to $\operatorname{Spec}(R)$ for some commutative ring $R$.
-  citations:
-  - stacks-affine-scheme
-  - wp-affine-scheme
-  - nlab-affine-scheme
-  - stacks-schemes-text
-- id: j_variety__scheme
-  source: scheme
-  target: j_variety
-  type: combine-compatible
-  label: geometric object
-  detail: Supply the Scheme structure as one jointly required input.
-  citations:
-  - wp-variety
-  - nlab-variety
-  - stacks-schemes-text
-- id: e_scheme_noetherian
-  source: scheme
-  target: noetherian_scheme
-  type: impose-axiom
-  label: + local Noetherianity and quasi-compactness
-  detail: Require Noetherian affine neighborhoods and quasi-compactness.
-  citations:
-  - stacks-noetherian-scheme
-  - wp-noetherian-scheme
-  - stacks-schemes-text
-- id: e_scheme_reduced
-  source: scheme
-  target: reduced_scheme
-  type: impose-axiom
-  label: + reduced local rings
-  detail: Require no nonzero nilpotents in local rings.
-  citations:
-  - wp-reduced-scheme
-  - nlab-reduced-scheme
-  - stacks-schemes-text
-- id: e_scheme_regular
-  source: scheme
-  target: regular_scheme
-  type: impose-axiom
-  label: require local Noetherian regularity
-  detail: Require $X$ to be locally Noetherian and every local ring $\mathcal O_{X,x}$ to be a regular local ring; quasi-compactness is not required.
-  citations:
-  - stacks-regular-scheme
-  - wp-regular-scheme
-  - stacks-schemes-text
-- id: scheme_to_scheme_over_base
-  source: scheme
-  target: scheme_over_base
-  type: add-data
-  label: + base and structure morphism
-  detail: Choose a base scheme $S$ and a morphism $X\to S$.
-  citations:
-  - stacks-scheme
-  - stacks-projective-morphisms
-  - stacks-schemes-text
-- id: e_scheme_separated
-  source: scheme
-  target: separated_scheme
-  type: impose-axiom
-  label: + closed diagonal
-  detail: For the absolute node, require $\Delta_{X/\operatorname{Spec}(\mathbb{Z})}\colon X\to X\times_{\operatorname{Spec}(\mathbb{Z})}X$ to be a closed immersion; over a base $S$ use $\Delta_{X/S}$.
-  citations:
-  - stacks-separated-scheme
-- id: scheme_over_base_to_projective
-  source: scheme_over_base
-  target: projective_scheme
-  type: impose-axiom
-  label: + projectivity
-  detail: Require $X\to S$ to factor as a closed immersion into $\mathbf P^n_S$ followed by the projection to $S$, for some $n$.
-  citations:
-  - stacks-projective-morphisms
-  - wp-projective-scheme
-  - nlab-projective-scheme
-  - stacks-schemes-text
-- id: e_sheaf_algspace
-  source: sheaf
-  target: algebraic_space
-  type: impose-axiom
-  label: + representable diagonal and existence of étale cover
-  detail: Specialize to an fppf sheaf $F$ on $(\mathrm{Sch}/S)_{\mathrm{fppf}}$, require a representable diagonal, and require that some scheme $U$ admit a surjective étale morphism $h_U\to F$.
-  citations:
-  - stacks-algebraic-space
-- id: e_sheaf_groups
-  source: sheaf
-  target: sheaf_of_groups
-  type: add-data
-  label: + group structures
-  detail: Equip every section set with compatible group structure.
-  citations:
-  - stacks-abelian-sheaf
-  - wp-sheaf-groups
-  - stacks-schemes-text
-- id: e_sheaf_rings
-  source: sheaf
-  target: sheaf_of_rings
-  type: add-data
-  label: + ring structures
-  detail: Equip every section set with compatible ring structure.
-  citations:
-  - stacks-sheaf-algebraic
-  - wp-sheaf-rings
-  - stacks-schemes-text
-- id: j_ringed_space__sheaf_of_rings
-  source: sheaf_of_rings
-  target: j_ringed_space
-  type: combine-compatible
-  label: structure sheaf
-  detail: Supply the Sheaf of rings structure as one jointly required input.
-  citations:
-  - stacks-ringed-space
-  - nlab-ringed-space
-  - wp-ringed-space
-  - stacks-schemes-text
-- id: story_ring_localization_to_local_ring_framework_specialization
-  source: ring_localization
-  target: local_ring
-  type: framework-specialization
-  label: localize at a prime
-  detail: For a prime ideal $\mathfrak p$, the localization $R_{\mathfrak p}$ is a local ring.
-  citations:
-  - stacks-algebra-text
-- id: story_prime_spectrum_to_affine_scheme_representation_equivalence
-  source: prime_spectrum
-  target: affine_scheme
-  type: representation-equivalence
-  label: is an affine scheme
-  detail: An affine scheme is precisely a locally ringed space isomorphic to $\operatorname{Spec}(R)$ for some commutative ring.
-  citations:
-  - stacks-schemes-text
-- id: story_sheaf_to_sheaf_stalk_canonical_construction
-  source: sheaf
-  target: sheaf_stalk
-  type: canonical-construction
-  label: take germs at a point
-  detail: The stalk is the filtered colimit over neighborhoods of the point.
-  citations:
-  - stacks-schemes-text
-- id: story_sheaf_of_rings_to_sheaf_stalk_canonical_construction
-  source: sheaf_of_rings
-  target: sheaf_stalk
-  type: canonical-construction
-  label: take the ring of germs at a point
-  detail: At each chosen point, the stalk of a sheaf of rings is canonically a ring obtained from germs of local sections.
-  citations:
-  - stacks-schemes-text
-- id: story_ring_localization_to_sheaf_stalk_representation_equivalence
-  source: ring_localization
-  target: sheaf_stalk
-  type: representation-equivalence
-  label: is canonically the corresponding affine stalk
-  detail: For a prime $\mathfrak p\subset R$, the stalk of the structure sheaf on $\operatorname{Spec}(R)$ at $\mathfrak p$ is canonically isomorphic to the localization $R_{\mathfrak p}$.
-  citations:
-  - stacks-schemes-text
-- id: story_local_ring_to_residue_field_quotient_construction
-  source: local_ring
-  target: residue_field
-  type: quotient-construction
-  label: quotient by the maximal ideal
-  detail: For a local ring $(R,\mathfrak m)$, take representatives $r\in R$ and identify $r\sim s$ exactly when $r-s\in\mathfrak m$; the quotient $R/\mathfrak m$ is the residue field.
-  citations:
-  - stacks-algebra-text
-- id: story_rational_point_to_local_point_canonical_embedding
-  source: rational_point
-  target: local_point
-  type: canonical-embedding
-  label: embed globally into every completion
-  detail: A global $K$-point induces a $K_v$-point for every place $v$.
-  citations:
-  - milne-algebraic-number-theory
-- id: story_locally_ringed_space_to_sheaf_stalk_induced_forgotten
-  source: locally_ringed_space
-  target: sheaf_stalk
-  type: induced-forgotten
-  label: has local-ring stalks
-  detail: A locally ringed space is a ringed space whose structure-sheaf stalk at every point is a local ring; retaining one stalk forgets the global space.
-  citations:
-  - stacks-locally-ringed
-  - stacks-schemes-text
-- id: j_local_point__algebraic_variety
-  source: algebraic_variety
-  target: j_local_point
-  type: combine-compatible
-  label: global variety
-  detail: Supply a variety $X$ over the relevant global field.
-  citations:
-  - milne-algebraic-number-theory
-  - stacks-schemes-text
-- id: story_prime_spectrum_to_topological_space_induced_forgotten
-  source: prime_spectrum
-  target: topological_space
-  type: induced-forgotten
-  label: retains the Zariski topology
-  detail: Forgetting the structure sheaf and prime-ideal interpretation leaves the underlying Zariski topological space of $\operatorname{Spec}(R)$.
-  citations:
-  - stacks-schemes-text
-  - stacks-topology
-- id: story_algebraic_variety_to_everywhere_locally_soluble_variety_impose_axiom
-  source: algebraic_variety
-  target: everywhere_locally_soluble_variety
-  type: impose-axiom
-  label: require a point over every completion
-  detail: Restrict to varieties $X/K$ satisfying $X(K_v)\ne\varnothing$ at every place $v$ of the global field.
-  citations:
-  - poonen-rational-points-varieties
-  - milne-algebraic-number-theory
-- id: story_algebraic_variety_to_smooth_projective_quadric_impose_axiom
-  source: algebraic_variety
-  target: smooth_projective_quadric
-  type: impose-axiom
-  label: specialize to a smooth projective degree-two hypersurface
-  detail: A smooth projective quadric is an algebraic variety cut out by one nondegenerate homogeneous quadratic equation.
-  citations:
-  - poonen-rational-points-varieties
-  - stacks-varieties
-- id: story_smooth_projective_quadric_to_hasse_minkowski_theorem_theorem_implication
-  source: smooth_projective_quadric
-  target: hasse_minkowski_theorem
-  type: theorem-implication
-  label: has a rational point exactly when it has all local points
-  detail: Over a number field, the Hasse–Minkowski theorem says that a smooth projective quadric has a rational point if and only if it has a point over every completion; this is the geometric form of local–global isotropy for the defining quadratic form.
-  citations:
-  - poonen-rational-points-varieties
-  - milne-algebraic-number-theory
+  - id: e_artinian_noetherian
+    source: artinian_ring
+    target: noetherian_ring
+    type: theorem-implication
+    label: implies Noetherian
+    detail: Every commutative Artinian ring is Noetherian.
+    citations:
+      - stacks-artinian-ring
+      - wp-artinian-ring
+      - stacks-noetherian-ring
+      - wp-noetherian-ring
+      - nlab-noetherian-ring
+      - stacks-artin-noeth
+      - stacks-schemes-text
+  - id: j_regular_local__out
+    source: j_regular_local
+    target: regular_local_ring
+    type: combine-compatible
+    label: impose compatibility
+    detail: Use the same ring and require the embedding dimension to equal the Krull dimension.
+    citations:
+      - stacks-dvr-regular
+      - wp-regular-local-ring
+      - stacks-schemes-text
+  - id: j_ringed_space__out
+    source: j_ringed_space
+    target: ringed_space
+    type: combine-compatible
+    label: impose compatibility
+    detail: Use the same topological space as the base of the sheaf of rings.
+    citations:
+      - stacks-ringed-space
+      - nlab-ringed-space
+      - wp-ringed-space
+      - stacks-schemes-text
+  - id: j_sheaf__out
+    source: j_sheaf
+    target: sheaf
+    type: combine-compatible
+    label: + unique compatible gluing
+    detail: Require matching local sections to glue uniquely over every cover.
+    citations:
+      - stacks-sheaf
+      - wp-sheaf
+      - nlab-sheaf
+      - stacks-schemes-text
+  - id: j_variety__out
+    source: j_variety
+    target: algebraic_variety
+    type: combine-compatible
+    label: impose compatibility
+    detail: Require $X$ to be integral and require $X\to\operatorname{Spec}(k)$ to be separated and of finite type.
+    citations:
+      - wp-variety
+      - nlab-variety
+      - stacks-varieties
+      - stacks-schemes-text
+  - id: e_local_complete
+    source: local_ring
+    target: complete_local_ring
+    type: impose-axiom
+    label: + $m$-adic completeness
+    detail: Require the canonical map $R\to \varprojlim R/m^{n}$ to be an isomorphism.
+    citations:
+      - wp-complete-ring
+      - nlab-complete-local-ring
+      - stacks-schemes-text
+  - id: j_regular_local__local_ring
+    source: local_ring
+    target: j_regular_local
+    type: combine-compatible
+    label: local structure
+    detail: Supply the Local ring structure as one jointly required input.
+    citations:
+      - stacks-dvr-regular
+      - wp-regular-local-ring
+      - stacks-schemes-text
+  - id: e_locally_scheme
+    source: locally_ringed_space
+    target: scheme
+    type: impose-axiom
+    label: + affine open cover
+    detail: Require every point to have an affine open neighborhood.
+    citations:
+      - stacks-scheme
+      - wp-scheme
+      - nlab-scheme
+      - stacks-schemes-text
+  - id: j_regular_local__noetherian_ring
+    source: noetherian_ring
+    target: j_regular_local
+    type: combine-compatible
+    label: finite ideal condition
+    detail: Supply the Noetherian ring structure as one jointly required input.
+    citations:
+      - stacks-dvr-regular
+      - wp-regular-local-ring
+      - stacks-schemes-text
+  - id: e_reduced_integral
+    source: reduced_scheme
+    target: integral_scheme
+    type: impose-axiom
+    label: + irreducibility and nonemptiness
+    detail: Require the reduced scheme to be nonempty and irreducible.
+    citations:
+      - wp-integral-scheme
+      - nlab-integral-scheme
+      - stacks-schemes-text
+  - id: e_ringed_locally
+    source: ringed_space
+    target: locally_ringed_space
+    type: impose-axiom
+    label: + local stalks
+    detail: Require every stalk of the structure sheaf to be a local ring.
+    citations:
+      - stacks-locally-ringed
+      - nlab-locally-ringed
+      - stacks-schemes-text
+  - id: scheme_to_affine_scheme
+    source: scheme
+    target: affine_scheme
+    type: impose-axiom
+    label: + globally affine
+    detail: Require the scheme to be isomorphic to $\operatorname{Spec}(R)$ for some commutative ring $R$.
+    citations:
+      - stacks-affine-scheme
+      - wp-affine-scheme
+      - nlab-affine-scheme
+      - stacks-schemes-text
+  - id: j_variety__scheme
+    source: scheme
+    target: j_variety
+    type: combine-compatible
+    label: geometric object
+    detail: Supply the Scheme structure as one jointly required input.
+    citations:
+      - wp-variety
+      - nlab-variety
+      - stacks-schemes-text
+  - id: e_scheme_noetherian
+    source: scheme
+    target: noetherian_scheme
+    type: impose-axiom
+    label: + local Noetherianity and quasi-compactness
+    detail: Require Noetherian affine neighborhoods and quasi-compactness.
+    citations:
+      - stacks-noetherian-scheme
+      - wp-noetherian-scheme
+      - stacks-schemes-text
+  - id: e_scheme_reduced
+    source: scheme
+    target: reduced_scheme
+    type: impose-axiom
+    label: + reduced local rings
+    detail: Require no nonzero nilpotents in local rings.
+    citations:
+      - wp-reduced-scheme
+      - nlab-reduced-scheme
+      - stacks-schemes-text
+  - id: e_scheme_regular
+    source: scheme
+    target: regular_scheme
+    type: impose-axiom
+    label: require local Noetherian regularity
+    detail: Require $X$ to be locally Noetherian and every local ring $\mathcal O_{X,x}$ to be a regular local ring; quasi-compactness is not required.
+    citations:
+      - stacks-regular-scheme
+      - wp-regular-scheme
+      - stacks-schemes-text
+  - id: scheme_to_scheme_over_base
+    source: scheme
+    target: scheme_over_base
+    type: add-data
+    label: + base and structure morphism
+    detail: Choose a base scheme $S$ and a morphism $X\to S$.
+    citations:
+      - stacks-scheme
+      - stacks-projective-morphisms
+      - stacks-schemes-text
+  - id: e_scheme_separated
+    source: scheme
+    target: separated_scheme
+    type: impose-axiom
+    label: + closed diagonal
+    detail: For the absolute node, require $\Delta_{X/\operatorname{Spec}(\mathbb{Z})}\colon X\to X\times_{\operatorname{Spec}(\mathbb{Z})}X$ to be a closed immersion; over a base $S$ use $\Delta_{X/S}$.
+    citations:
+      - stacks-separated-scheme
+  - id: scheme_over_base_to_projective
+    source: scheme_over_base
+    target: projective_scheme
+    type: impose-axiom
+    label: + projectivity
+    detail: Require $X\to S$ to factor as a closed immersion into $\mathbf P^n_S$ followed by the projection to $S$, for some $n$.
+    citations:
+      - stacks-projective-morphisms
+      - wp-projective-scheme
+      - nlab-projective-scheme
+      - stacks-schemes-text
+  - id: e_sheaf_algspace
+    source: sheaf
+    target: algebraic_space
+    type: impose-axiom
+    label: + representable diagonal and existence of étale cover
+    detail: Specialize to an fppf sheaf $F$ on $(\mathrm{Sch}/S)_{\mathrm{fppf}}$, require a representable diagonal, and require that some scheme $U$ admit a surjective étale morphism $h_U\to F$.
+    citations:
+      - stacks-algebraic-space
+  - id: e_sheaf_groups
+    source: sheaf
+    target: sheaf_of_groups
+    type: add-data
+    label: + group structures
+    detail: Equip every section set with compatible group structure.
+    citations:
+      - stacks-abelian-sheaf
+      - wp-sheaf-groups
+      - stacks-schemes-text
+  - id: e_sheaf_rings
+    source: sheaf
+    target: sheaf_of_rings
+    type: add-data
+    label: + ring structures
+    detail: Equip every section set with compatible ring structure.
+    citations:
+      - stacks-sheaf-algebraic
+      - wp-sheaf-rings
+      - stacks-schemes-text
+  - id: j_ringed_space__sheaf_of_rings
+    source: sheaf_of_rings
+    target: j_ringed_space
+    type: combine-compatible
+    label: structure sheaf
+    detail: Supply the Sheaf of rings structure as one jointly required input.
+    citations:
+      - stacks-ringed-space
+      - nlab-ringed-space
+      - wp-ringed-space
+      - stacks-schemes-text
+  - id: story_ring_localization_to_local_ring_framework_specialization
+    source: ring_localization
+    target: local_ring
+    type: framework-specialization
+    label: localize at a prime
+    detail: For a prime ideal $\mathfrak p$, the localization $R_{\mathfrak p}$ is a local ring.
+    citations:
+      - stacks-algebra-text
+  - id: story_prime_spectrum_to_affine_scheme_representation_equivalence
+    source: prime_spectrum
+    target: affine_scheme
+    type: representation-equivalence
+    label: is an affine scheme
+    detail: An affine scheme is precisely a locally ringed space isomorphic to $\operatorname{Spec}(R)$ for some commutative ring.
+    citations:
+      - stacks-schemes-text
+  - id: story_sheaf_to_sheaf_stalk_canonical_construction
+    source: sheaf
+    target: sheaf_stalk
+    type: canonical-construction
+    label: take germs at a point
+    detail: The stalk is the filtered colimit over neighborhoods of the point.
+    citations:
+      - stacks-schemes-text
+  - id: story_sheaf_of_rings_to_sheaf_stalk_canonical_construction
+    source: sheaf_of_rings
+    target: sheaf_stalk
+    type: canonical-construction
+    label: take the ring of germs at a point
+    detail: At each chosen point, the stalk of a sheaf of rings is canonically a ring obtained from germs of local sections.
+    citations:
+      - stacks-schemes-text
+  - id: story_ring_localization_to_sheaf_stalk_representation_equivalence
+    source: ring_localization
+    target: sheaf_stalk
+    type: representation-equivalence
+    label: is canonically the corresponding affine stalk
+    detail: For a prime $\mathfrak p\subset R$, the stalk of the structure sheaf on $\operatorname{Spec}(R)$ at $\mathfrak p$ is canonically isomorphic to the localization $R_{\mathfrak p}$.
+    citations:
+      - stacks-schemes-text
+  - id: story_local_ring_to_residue_field_quotient_construction
+    source: local_ring
+    target: residue_field
+    type: quotient-construction
+    label: quotient by the maximal ideal
+    detail: For a local ring $(R,\mathfrak m)$, take representatives $r\in R$ and identify $r\sim s$ exactly when $r-s\in\mathfrak m$; the quotient $R/\mathfrak m$ is the residue field.
+    citations:
+      - stacks-algebra-text
+  - id: story_rational_point_to_local_point_canonical_embedding
+    source: rational_point
+    target: local_point
+    type: canonical-embedding
+    label: embed globally into every completion
+    detail: A global $K$-point induces a $K_v$-point for every place $v$.
+    citations:
+      - milne-algebraic-number-theory
+  - id: story_locally_ringed_space_to_sheaf_stalk_induced_forgotten
+    source: locally_ringed_space
+    target: sheaf_stalk
+    type: induced-forgotten
+    label: has local-ring stalks
+    detail: A locally ringed space is a ringed space whose structure-sheaf stalk at every point is a local ring; retaining one stalk forgets the global space.
+    citations:
+      - stacks-locally-ringed
+      - stacks-schemes-text
+  - id: j_local_point__algebraic_variety
+    source: algebraic_variety
+    target: j_local_point
+    type: combine-compatible
+    label: global variety
+    detail: Supply a variety $X$ over the relevant global field.
+    citations:
+      - milne-algebraic-number-theory
+      - stacks-schemes-text
+  - id: story_prime_spectrum_to_topological_space_induced_forgotten
+    source: prime_spectrum
+    target: topological_space
+    type: induced-forgotten
+    label: retains the Zariski topology
+    detail: Forgetting the structure sheaf and prime-ideal interpretation leaves the underlying Zariski topological space of $\operatorname{Spec}(R)$.
+    citations:
+      - stacks-schemes-text
+      - stacks-topology
+  - id: story_algebraic_variety_to_everywhere_locally_soluble_variety_impose_axiom
+    source: algebraic_variety
+    target: everywhere_locally_soluble_variety
+    type: impose-axiom
+    label: require a point over every completion
+    detail: Restrict to varieties $X/K$ satisfying $X(K_v)\ne\varnothing$ at every place $v$ of the global field.
+    citations:
+      - poonen-rational-points-varieties
+      - milne-algebraic-number-theory
+  - id: story_algebraic_variety_to_smooth_projective_quadric_impose_axiom
+    source: algebraic_variety
+    target: smooth_projective_quadric
+    type: impose-axiom
+    label: specialize to a smooth projective degree-two hypersurface
+    detail: A smooth projective quadric is an algebraic variety cut out by one nondegenerate homogeneous quadratic equation.
+    citations:
+      - poonen-rational-points-varieties
+      - stacks-varieties
+  - id: story_smooth_projective_quadric_to_hasse_minkowski_theorem_theorem_implication
+    source: smooth_projective_quadric
+    target: hasse_minkowski_theorem
+    type: theorem-implication
+    label: has a rational point exactly when it has all local points
+    detail: Over a number field, the Hasse–Minkowski theorem says that a smooth projective quadric has a rational point if and only if it has a point over every completion; this is the geometric form of local–global isotropy for the defining quadratic form.
+    citations:
+      - poonen-rational-points-varieties
+      - milne-algebraic-number-theory

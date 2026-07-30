@@ -1,13 +1,7 @@
 id: probability-measure-analysis
 title: Probability, measure, and analysis
-summary: Connect measurable spaces, integration, probability distributions,
-  function spaces, and stochastic structure.
-narrative: Build probability on measurable spaces, measures, and probability
-  measures; add measurable functions and random variables; then organize
-  time-indexed information through filtrations, filtered probability spaces,
-  stochastic processes, and Markov chains. Banach and Hilbert spaces show where
-  analytic structure enters without implying that all probabilistic objects are
-  Hilbert-space objects.
+summary: Connect measurable spaces, integration, probability distributions, function spaces, and stochastic structure.
+narrative: Build probability on measurable spaces, measures, and probability measures; add measurable functions and random variables; then organize time-indexed information through filtrations, filtered probability spaces, stochastic processes, and Markov chains. Banach and Hilbert spaces show where analytic structure enters without implying that all probabilistic objects are Hilbert-space objects.
 tags:
   - Probability
   - Measure

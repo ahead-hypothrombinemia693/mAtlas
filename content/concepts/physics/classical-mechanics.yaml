@@ -1,676 +1,676 @@
 nodes:
-- id: classical_field_theory
-  label: Classical field theory
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: classical-mechanics
-  domains:
-  - classical-mechanics
-  - relativity
-  level: 9
-  kind: structure
-  conceptType: Classical effective-theory family
-  summary: A theory in which continuously distributed fields obey classical equations of motion. A classical field theory may be formulated independently or arise as an effective, mean-field, or semiclassical description in an appropriate regime.
-  citations:
-  - wp-physics-classical_field_theory
-  - nlab-physics-classical_field_theory
-  - tong-qft
-  sections:
-  - title: Examples
-    items:
-    - Classical electromagnetism.
-    - Classical scalar and gauge fields.
-    - The metric field in general relativity.
-  - title: Relation to QFT
-    body: Quantizing an appropriate classical field theory is a principal route to a quantum field theory, while classical field equations can reappear as semiclassical or low-fluctuation limits.
-- id: action_functional
-  label: Action functional
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: classical-mechanics
-  domains:
-  - classical-mechanics
-  level: 10
-  kind: structure
-  conceptType: Dynamical functional
-  summary: A functional $S$ of a history or field configuration whose stationary points satisfy equations of motion.
-  citations:
-  - wp-physics-action_functional
-  - nlab-physics-action_functional
-  - cambridge-classical-dynamics
-  - tong-qft
-- id: classical_mechanics
-  label: Classical mechanics
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: classical-mechanics
-  domains:
-  - classical-mechanics
-  level: 10
-  kind: structure
-  conceptType: Effective theory family
-  summary: The classical theory family for motion and fields when quantum coherence, particle creation, relativistic effects, and strong-gravity effects are negligible at the required precision.
-  citations:
-  - wp-physics-classical_mechanics
-  - nlab-physics-classical_mechanics
-  - cambridge-classical-dynamics
-  sections:
-  - title: Regime
-    body: Accurate when relativistic and quantum corrections are negligible at the required precision.
-- id: configuration_space
-  label: Configuration space
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: classical-mechanics
-  domains:
-  - classical-mechanics
-  level: 10
-  kind: structure
-  conceptType: State-space structure
-  summary: The space of possible instantaneous configurations of a system before momenta are added.
-  citations:
-  - wp-physics-configuration_space
-  - nlab-physics-configuration_space
-  - cambridge-classical-dynamics
-- id: hamiltonian
-  label: Hamiltonian
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: classical-mechanics
-  domains:
-  - classical-mechanics
-  level: 10
-  kind: structure
-  conceptType: Dynamical generator
-  summary: A function on phase space that generates Hamiltonian time evolution; in quantum theory the Hamiltonian is normally a self-adjoint operator.
-  citations:
-  - wp-physics-hamiltonian_mechanics
-  - nlab-physics-hamiltonian
-  - cambridge-classical-dynamics
-  - tong-quantum
-- id: lagrangian
-  label: Lagrangian
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: classical-mechanics
-  domains:
-  - classical-mechanics
-  level: 10
-  kind: structure
-  conceptType: Dynamical function
-  summary: A function $L(q,\dot q,t)$ whose Euler–Lagrange equations determine classical trajectories.
-  citations:
-  - wp-physics-lagrangian_mechanics
-  - nlab-physics-lagrangian
-  - cambridge-classical-dynamics
-- id: lagrangian_density
-  label: Lagrangian density
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: classical-mechanics
-  domains:
-  - classical-mechanics
-  level: 10
-  kind: structure
-  conceptType: Field-theory functional density
-  summary: A local density whose spacetime integral gives the action for a classical or quantum field theory.
-  citations:
-  - wp-physics-lagrangian_density
-  - nlab-physics-lagrangian_density
-  - tong-qft
-- id: canonical_momentum
-  label: Canonical momentum
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: classical-mechanics
-  domains:
-  - classical-mechanics
-  level: 11
-  kind: structure
-  conceptType: Dynamical quantity
-  summary: The momentum $p_i=\partial L/\partial\dot q_i$ conjugate to a generalized coordinate.
-  citations:
-  - wp-physics-canonical_momentum
-  - cambridge-classical-dynamics
-- id: hamiltonian_mechanics
-  label: Hamiltonian mechanics
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: classical-mechanics
-  domains:
-  - classical-mechanics
-  level: 11
-  kind: structure
-  conceptType: Theory formulation
-  summary: A phase-space formulation of classical mechanics in which observables evolve under a Hamiltonian through Poisson brackets.
-  citations:
-  - wp-physics-hamiltonian_mechanics
-  - nlab-physics-hamiltonian_mechanics
-  - cambridge-classical-dynamics
-  - tong-quantum
-  sections:
-  - title: Core structure
-    body: States are points of phase space, commonly a symplectic manifold, and the Hamiltonian generates time evolution.
-- id: lagrangian_mechanics
-  label: Lagrangian mechanics
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: classical-mechanics
-  domains:
-  - classical-mechanics
-  level: 11
-  kind: structure
-  conceptType: Theory formulation
-  summary: A formulation of classical mechanics based on an action functional and the Euler–Lagrange equations.
-  citations:
-  - wp-physics-lagrangian_mechanics
-  - nlab-physics-lagrangian_mechanics
-  - cambridge-classical-dynamics
-  - tong-qft
-  sections:
-  - title: Core structure
-    body: A Lagrangian encodes dynamics; stationary action yields the equations of motion. The formalism extends naturally to fields.
-- id: phase_space
-  label: Phase space
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: classical-mechanics
-  domains:
-  - classical-mechanics
-  level: 11
-  kind: structure
-  conceptType: State-space structure
-  summary: A state space carrying positions and conjugate momenta, ordinarily a symplectic manifold in Hamiltonian mechanics.
-  citations:
-  - wp-physics-phase_space
-  - nlab-physics-phase_space
-  - cambridge-classical-dynamics
-- id: poisson_bracket
-  label: Poisson bracket
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: classical-mechanics
-  domains:
-  - classical-mechanics
-  level: 11
-  kind: structure
-  conceptType: Algebraic dynamical operation
-  summary: The antisymmetric bracket on classical observables that generates Hamiltonian evolution and satisfies the Jacobi and Leibniz identities.
-  citations:
-  - wp-physics-poisson_bracket
-  - nlab-physics-poisson_bracket
-  - cambridge-classical-dynamics
-- id: stationary_action_principle
-  label: Stationary-action principle
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: classical-mechanics
-  domains:
-  - classical-mechanics
-  level: 11
-  kind: structure
-  conceptType: Variational principle
-  summary: The physical history is a stationary point of the action under allowed variations; “stationary” need not mean globally least.
-  citations:
-  - wp-physics-stationary_action_principle
-  - nlab-physics-stationary_action_principle
-  - cambridge-classical-dynamics
-- id: euler_lagrange_equation
-  label: Euler–Lagrange equation
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: classical-mechanics
-  domains:
-  - classical-mechanics
-  level: 12
-  kind: structure
-  conceptType: Equation of motion
-  summary: The differential equation obtained by setting the first variation of an action to zero under fixed-boundary variations.
-  citations:
-  - wp-physics-euler_lagrange_equation
-  - nlab-physics-euler_lagrange_equation
-  - cambridge-classical-dynamics
-  - tong-qft
-- id: newtonian_mechanics
-  label: Newtonian mechanics
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: classical-mechanics
-  domains:
-  - classical-mechanics
-  level: 12
-  kind: structure
-  conceptType: Effective theory
-  summary: The nonrelativistic classical mechanics of particles and forces in Euclidean space with absolute time.
-  citations:
-  - wp-physics-newtonian_mechanics
-  - cambridge-classical-dynamics
-  - tong-relativity
-- id: classical_point_particle
-  label: Classical point particle
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: classical-mechanics
-  domains:
-  - classical-mechanics
-  level: 13
-  kind: structure
-  conceptType: Idealized system
-  summary: An idealized object with finitely many degrees of freedom and no resolved internal spatial structure.
-  citations:
-  - wp-physics-classical_point_particle
-  - cambridge-classical-dynamics
-- id: force
-  label: Force
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: classical-mechanics
-  domains:
-  - classical-mechanics
-  level: 6
-  kind: structure
-  conceptType: Dynamical quantity
-  summary: In Newtonian mechanics, the rate of change of momentum; in more general formulations interactions need not be represented by a fundamental force vector.
-  citations:
-  - wp-physics-force
-  - nlab-physics-force
-  - cambridge-classical-dynamics
-- id: linear_momentum
-  label: Linear momentum
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: classical-mechanics
-  domains:
-  - classical-mechanics
-  level: 5
-  kind: structure
-  conceptType: Physical quantity
-  summary: The conserved generator associated with spatial translations in translation-invariant systems; in Newtonian particle mechanics it is $\mathbf p=m\mathbf v$.
-  citations:
-  - wp-physics-linear_momentum
-  - nlab-physics-linear_momentum
-  - cambridge-classical-dynamics
-  - tong-relativity
-- id: newton_laws
-  label: Newton’s laws of motion
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: classical-mechanics
-  domains:
-  - classical-mechanics
-  level: 13
-  kind: structure
-  conceptType: Physical laws
-  summary: The inertial, dynamical, and action–reaction laws of Newtonian particle mechanics, valid in inertial frames within its nonrelativistic classical regime.
-  citations:
-  - wp-physics-newton_laws
-  - cambridge-classical-dynamics
-  - tong-relativity
-  sections:
-  - title: Scope
-    body: 'These laws are not fundamental across all regimes: relativistic, quantum, field-theoretic, dissipative, and constrained systems require more general formulations.'
-- id: galileo_inclined_plane_experiments
-  label: Galileo’s inclined-plane experiments
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: classical-mechanics
-  domains:
-  - classical-mechanics
-  - experiments-observations
-  level: 10
-  kind: structure
-  conceptType: Canonical experiment
-  summary: Galileo used inclined planes to slow free fall enough to measure approximately uniform acceleration and to replace Aristotelian motion with quantitative kinematics.
-  citations:
-  - wp-physics-galileo_inclined_plane_experiments
-  - museo-galileo-inclined-plane
-  status: Observed / performed
-  sections:
-  - title: Historical role
-    body: The experiments helped establish mathematical laws of accelerated motion that became inputs to Newtonian mechanics; they did not by themselves contain Newton’s later dynamical laws.
+  - id: classical_field_theory
+    label: Classical field theory
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: classical-mechanics
+    domains:
+      - classical-mechanics
+      - relativity
+    level: 9
+    kind: structure
+    conceptType: Classical effective-theory family
+    summary: A theory in which continuously distributed fields obey classical equations of motion. A classical field theory may be formulated independently or arise as an effective, mean-field, or semiclassical description in an appropriate regime.
+    citations:
+      - wp-physics-classical_field_theory
+      - nlab-physics-classical_field_theory
+      - tong-qft
+    sections:
+      - title: Examples
+        items:
+          - Classical electromagnetism.
+          - Classical scalar and gauge fields.
+          - The metric field in general relativity.
+      - title: Relation to QFT
+        body: Quantizing an appropriate classical field theory is a principal route to a quantum field theory, while classical field equations can reappear as semiclassical or low-fluctuation limits.
+  - id: action_functional
+    label: Action functional
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: classical-mechanics
+    domains:
+      - classical-mechanics
+    level: 10
+    kind: structure
+    conceptType: Dynamical functional
+    summary: A functional $S$ of a history or field configuration whose stationary points satisfy equations of motion.
+    citations:
+      - wp-physics-action_functional
+      - nlab-physics-action_functional
+      - cambridge-classical-dynamics
+      - tong-qft
+  - id: classical_mechanics
+    label: Classical mechanics
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: classical-mechanics
+    domains:
+      - classical-mechanics
+    level: 10
+    kind: structure
+    conceptType: Effective theory family
+    summary: The classical theory family for motion and fields when quantum coherence, particle creation, relativistic effects, and strong-gravity effects are negligible at the required precision.
+    citations:
+      - wp-physics-classical_mechanics
+      - nlab-physics-classical_mechanics
+      - cambridge-classical-dynamics
+    sections:
+      - title: Regime
+        body: Accurate when relativistic and quantum corrections are negligible at the required precision.
+  - id: configuration_space
+    label: Configuration space
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: classical-mechanics
+    domains:
+      - classical-mechanics
+    level: 10
+    kind: structure
+    conceptType: State-space structure
+    summary: The space of possible instantaneous configurations of a system before momenta are added.
+    citations:
+      - wp-physics-configuration_space
+      - nlab-physics-configuration_space
+      - cambridge-classical-dynamics
+  - id: hamiltonian
+    label: Hamiltonian
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: classical-mechanics
+    domains:
+      - classical-mechanics
+    level: 10
+    kind: structure
+    conceptType: Dynamical generator
+    summary: A function on phase space that generates Hamiltonian time evolution; in quantum theory the Hamiltonian is normally a self-adjoint operator.
+    citations:
+      - wp-physics-hamiltonian_mechanics
+      - nlab-physics-hamiltonian
+      - cambridge-classical-dynamics
+      - tong-quantum
+  - id: lagrangian
+    label: Lagrangian
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: classical-mechanics
+    domains:
+      - classical-mechanics
+    level: 10
+    kind: structure
+    conceptType: Dynamical function
+    summary: A function $L(q,\dot q,t)$ whose Euler–Lagrange equations determine classical trajectories.
+    citations:
+      - wp-physics-lagrangian_mechanics
+      - nlab-physics-lagrangian
+      - cambridge-classical-dynamics
+  - id: lagrangian_density
+    label: Lagrangian density
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: classical-mechanics
+    domains:
+      - classical-mechanics
+    level: 10
+    kind: structure
+    conceptType: Field-theory functional density
+    summary: A local density whose spacetime integral gives the action for a classical or quantum field theory.
+    citations:
+      - wp-physics-lagrangian_density
+      - nlab-physics-lagrangian_density
+      - tong-qft
+  - id: canonical_momentum
+    label: Canonical momentum
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: classical-mechanics
+    domains:
+      - classical-mechanics
+    level: 11
+    kind: structure
+    conceptType: Dynamical quantity
+    summary: The momentum $p_i=\partial L/\partial\dot q_i$ conjugate to a generalized coordinate.
+    citations:
+      - wp-physics-canonical_momentum
+      - cambridge-classical-dynamics
+  - id: hamiltonian_mechanics
+    label: Hamiltonian mechanics
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: classical-mechanics
+    domains:
+      - classical-mechanics
+    level: 11
+    kind: structure
+    conceptType: Theory formulation
+    summary: A phase-space formulation of classical mechanics in which observables evolve under a Hamiltonian through Poisson brackets.
+    citations:
+      - wp-physics-hamiltonian_mechanics
+      - nlab-physics-hamiltonian_mechanics
+      - cambridge-classical-dynamics
+      - tong-quantum
+    sections:
+      - title: Core structure
+        body: States are points of phase space, commonly a symplectic manifold, and the Hamiltonian generates time evolution.
+  - id: lagrangian_mechanics
+    label: Lagrangian mechanics
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: classical-mechanics
+    domains:
+      - classical-mechanics
+    level: 11
+    kind: structure
+    conceptType: Theory formulation
+    summary: A formulation of classical mechanics based on an action functional and the Euler–Lagrange equations.
+    citations:
+      - wp-physics-lagrangian_mechanics
+      - nlab-physics-lagrangian_mechanics
+      - cambridge-classical-dynamics
+      - tong-qft
+    sections:
+      - title: Core structure
+        body: A Lagrangian encodes dynamics; stationary action yields the equations of motion. The formalism extends naturally to fields.
+  - id: phase_space
+    label: Phase space
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: classical-mechanics
+    domains:
+      - classical-mechanics
+    level: 11
+    kind: structure
+    conceptType: State-space structure
+    summary: A state space carrying positions and conjugate momenta, ordinarily a symplectic manifold in Hamiltonian mechanics.
+    citations:
+      - wp-physics-phase_space
+      - nlab-physics-phase_space
+      - cambridge-classical-dynamics
+  - id: poisson_bracket
+    label: Poisson bracket
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: classical-mechanics
+    domains:
+      - classical-mechanics
+    level: 11
+    kind: structure
+    conceptType: Algebraic dynamical operation
+    summary: The antisymmetric bracket on classical observables that generates Hamiltonian evolution and satisfies the Jacobi and Leibniz identities.
+    citations:
+      - wp-physics-poisson_bracket
+      - nlab-physics-poisson_bracket
+      - cambridge-classical-dynamics
+  - id: stationary_action_principle
+    label: Stationary-action principle
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: classical-mechanics
+    domains:
+      - classical-mechanics
+    level: 11
+    kind: structure
+    conceptType: Variational principle
+    summary: The physical history is a stationary point of the action under allowed variations; “stationary” need not mean globally least.
+    citations:
+      - wp-physics-stationary_action_principle
+      - nlab-physics-stationary_action_principle
+      - cambridge-classical-dynamics
+  - id: euler_lagrange_equation
+    label: Euler–Lagrange equation
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: classical-mechanics
+    domains:
+      - classical-mechanics
+    level: 12
+    kind: structure
+    conceptType: Equation of motion
+    summary: The differential equation obtained by setting the first variation of an action to zero under fixed-boundary variations.
+    citations:
+      - wp-physics-euler_lagrange_equation
+      - nlab-physics-euler_lagrange_equation
+      - cambridge-classical-dynamics
+      - tong-qft
+  - id: newtonian_mechanics
+    label: Newtonian mechanics
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: classical-mechanics
+    domains:
+      - classical-mechanics
+    level: 12
+    kind: structure
+    conceptType: Effective theory
+    summary: The nonrelativistic classical mechanics of particles and forces in Euclidean space with absolute time.
+    citations:
+      - wp-physics-newtonian_mechanics
+      - cambridge-classical-dynamics
+      - tong-relativity
+  - id: classical_point_particle
+    label: Classical point particle
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: classical-mechanics
+    domains:
+      - classical-mechanics
+    level: 13
+    kind: structure
+    conceptType: Idealized system
+    summary: An idealized object with finitely many degrees of freedom and no resolved internal spatial structure.
+    citations:
+      - wp-physics-classical_point_particle
+      - cambridge-classical-dynamics
+  - id: force
+    label: Force
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: classical-mechanics
+    domains:
+      - classical-mechanics
+    level: 6
+    kind: structure
+    conceptType: Dynamical quantity
+    summary: In Newtonian mechanics, the rate of change of momentum; in more general formulations interactions need not be represented by a fundamental force vector.
+    citations:
+      - wp-physics-force
+      - nlab-physics-force
+      - cambridge-classical-dynamics
+  - id: linear_momentum
+    label: Linear momentum
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: classical-mechanics
+    domains:
+      - classical-mechanics
+    level: 5
+    kind: structure
+    conceptType: Physical quantity
+    summary: The conserved generator associated with spatial translations in translation-invariant systems; in Newtonian particle mechanics it is $\mathbf p=m\mathbf v$.
+    citations:
+      - wp-physics-linear_momentum
+      - nlab-physics-linear_momentum
+      - cambridge-classical-dynamics
+      - tong-relativity
+  - id: newton_laws
+    label: Newton’s laws of motion
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: classical-mechanics
+    domains:
+      - classical-mechanics
+    level: 13
+    kind: structure
+    conceptType: Physical laws
+    summary: The inertial, dynamical, and action–reaction laws of Newtonian particle mechanics, valid in inertial frames within its nonrelativistic classical regime.
+    citations:
+      - wp-physics-newton_laws
+      - cambridge-classical-dynamics
+      - tong-relativity
+    sections:
+      - title: Scope
+        body: 'These laws are not fundamental across all regimes: relativistic, quantum, field-theoretic, dissipative, and constrained systems require more general formulations.'
+  - id: galileo_inclined_plane_experiments
+    label: Galileo’s inclined-plane experiments
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: classical-mechanics
+    domains:
+      - classical-mechanics
+      - experiments-observations
+    level: 10
+    kind: structure
+    conceptType: Canonical experiment
+    summary: Galileo used inclined planes to slow free fall enough to measure approximately uniform acceleration and to replace Aristotelian motion with quantitative kinematics.
+    citations:
+      - wp-physics-galileo_inclined_plane_experiments
+      - museo-galileo-inclined-plane
+    status: Observed / performed
+    sections:
+      - title: Historical role
+        body: The experiments helped establish mathematical laws of accelerated motion that became inputs to Newtonian mechanics; they did not by themselves contain Newton’s later dynamical laws.
 edges:
-- id: action_to_stationary
-  source: action_functional
-  target: stationary_action_principle
-  type: theory-component
-  label: stationary-action rule
-  detail: Stationarity of the action supplies the variational dynamical principle.
-  citations:
-  - wp-physics-stationary_action_principle
-  - nlab-physics-stationary_action_principle
-  - wp-physics-action_functional
-  - nlab-physics-action_functional
-- id: classical_field_to_canonical_quant
-  source: classical_field_theory
-  target: canonical_quantization
-  type: quantization
-  label: canonical field quantization
-  detail: Canonical quantization promotes field variables and momenta to operators, when the constraint and gauge structure can be handled.
-  citations:
-  - wp-physics-canonical_quantization
-  - nlab-physics-canonical_quantization
-  - wp-physics-classical_field_theory
-  - nlab-physics-classical_field_theory
-- id: classical_field_to_em
-  source: classical_field_theory
-  target: classical_electromagnetism
-  type: framework-specialization
-  label: electromagnetic field theory
-  detail: Classical electromagnetism is a relativistic classical field theory.
-  citations:
-  - wp-physics-classical_electromagnetism
-  - nlab-physics-classical_electromagnetism
-  - wp-physics-classical_field_theory
-  - nlab-physics-classical_field_theory
-- id: classical_field_to_path_quant
-  source: classical_field_theory
-  target: path_integral_quantization
-  type: quantization
-  label: functional-integral quantization
-  detail: Path-integral methods construct quantum amplitudes from the classical action after gauge fixing and regularization as needed.
-  citations:
-  - wp-physics-path_integral_quantization
-  - nlab-physics-path_integral_quantization
-  - wp-physics-classical_field_theory
-  - nlab-physics-classical_field_theory
-- id: classical_field_to_qft
-  source: classical_field_theory
-  target: quantum_field_theory
-  type: quantization
-  label: field quantization
-  detail: Canonical or path-integral quantization of a classical field theory is a standard route to a QFT, although quantum consistency and renormalization can alter the admissible theory.
-  citations:
-  - cern-qft-intro
-  - wp-physics-quantum_field_theory
-  - nlab-physics-quantum_field_theory
-  - wp-physics-classical_field_theory
-  - nlab-physics-classical_field_theory
-- id: classical_mechanics_to_point
-  source: classical_mechanics
-  target: classical_point_particle
-  type: describes-governs
-  label: point-particle dynamics
-  detail: Classical mechanics describes ideal point particles and finite-dimensional systems.
-  citations:
-  - wp-physics-classical_point_particle
-  - wp-physics-classical_mechanics
-  - nlab-physics-classical_mechanics
-- id: classical_to_hamiltonian
-  source: classical_mechanics
-  target: hamiltonian_mechanics
-  type: framework-specialization
-  label: phase-space formulation
-  detail: Hamiltonian mechanics reformulates classical dynamics on phase space.
-  citations:
-  - cambridge-classical-dynamics
-  - cern-qft-intro
-  - wp-physics-hamiltonian_mechanics
-  - nlab-physics-hamiltonian_mechanics
-  - wp-physics-classical_mechanics
-- id: classical_to_lagrangian
-  source: classical_mechanics
-  target: lagrangian_mechanics
-  type: framework-specialization
-  label: action formulation
-  detail: Lagrangian mechanics reformulates classical dynamics using an action principle.
-  citations:
-  - cambridge-classical-dynamics
-  - cern-qft-intro
-  - wp-physics-lagrangian_mechanics
-  - nlab-physics-lagrangian_mechanics
-  - wp-physics-classical_mechanics
-- id: classical_to_newtonian
-  source: classical_mechanics
-  target: newtonian_mechanics
-  type: framework-specialization
-  label: Newtonian formulation
-  detail: Newtonian mechanics is a central nonrelativistic classical framework.
-  citations:
-  - wp-physics-newtonian_mechanics
-  - cambridge-classical-dynamics
-  - wp-physics-classical_mechanics
-  - nlab-physics-classical_mechanics
-- id: configuration_to_phase
-  source: configuration_space
-  target: phase_space
-  type: canonical-construction
-  label: form the cotangent phase space
-  detail: For a smooth configuration manifold $Q$, the standard phase space is the new manifold $T^*Q$ with its canonical symplectic form; it is not the same carrier with extra data.
-  citations:
-  - wp-physics-phase_space
-  - nlab-physics-phase_space
-  - wp-physics-configuration_space
-  - nlab-physics-configuration_space
-- id: hamiltonian_mechanics_uses_hamiltonian
-  source: hamiltonian
-  target: hamiltonian_mechanics
-  type: theory-component
-  label: Hamiltonian generator
-  detail: Hamiltonian mechanics formulates dynamics using a Hamiltonian on phase space.
-  citations:
-  - wp-physics-hamiltonian_mechanics
-  - nlab-physics-hamiltonian_mechanics
-  - nlab-physics-hamiltonian
-- id: hamiltonian_to_qevolution
-  source: hamiltonian
-  target: unitary_time_evolution
-  type: describes-governs
-  label: generator of time translation
-  detail: A self-adjoint Hamiltonian generates unitary time evolution.
-  citations:
-  - wp-physics-unitary_time_evolution
-  - nlab-physics-unitary_time_evolution
-  - wp-physics-hamiltonian_mechanics
-  - nlab-physics-hamiltonian
-- id: lagrangian_to_action
-  source: lagrangian
-  target: action_functional
-  type: canonical-construction
-  label: time integral
-  detail: For particle mechanics, $S=\int L\,dt$.
-  citations:
-  - wp-physics-lagrangian_mechanics
-  - nlab-physics-lagrangian
-  - wp-physics-action_functional
-  - nlab-physics-action_functional
-- id: lagrangian_to_canonical_momentum
-  source: lagrangian
-  target: canonical_momentum
-  type: canonical-construction
-  label: Legendre momentum
-  detail: Canonical momentum is obtained by differentiating the Lagrangian with respect to generalized velocity.
-  citations:
-  - wp-physics-lagrangian_mechanics
-  - nlab-physics-lagrangian
-  - cambridge-classical-dynamics
-  - wp-physics-canonical_momentum
-- id: lagrangian_mechanics_uses_lagrangian
-  source: lagrangian
-  target: lagrangian_mechanics
-  type: theory-component
-  label: Lagrangian formulation
-  detail: Lagrangian mechanics formulates dynamics using $L$ and stationary action.
-  citations:
-  - wp-physics-lagrangian_mechanics
-  - nlab-physics-lagrangian_mechanics
-  - nlab-physics-lagrangian
-- id: lagrangian_density_to_action
-  source: lagrangian_density
-  target: action_functional
-  type: canonical-construction
-  label: spacetime integral
-  detail: For a local field theory, $S=\int d^dx\,\mathcal L$.
-  citations:
-  - wp-physics-lagrangian_density
-  - nlab-physics-lagrangian_density
-  - wp-physics-action_functional
-  - nlab-physics-action_functional
-- id: lagrangian_to_classical_field
-  source: lagrangian_density
-  target: classical_field_theory
-  type: mathematical-formulation
-  label: Lagrangian field formulation
-  detail: A classical field theory admitting a local Lagrangian formulation uses a Lagrangian density whose spacetime action yields field Euler–Lagrange equations.
-  citations:
-  - cambridge-classical-dynamics
-  - cern-qft-intro
-  - wp-physics-classical_field_theory
-  - nlab-physics-classical_field_theory
-  - wp-physics-lagrangian_mechanics
-- id: phase_to_poisson
-  source: phase_space
-  target: poisson_bracket
-  type: canonical-construction
-  label: Poisson algebra of observables
-  detail: A symplectic or Poisson phase space supplies a Poisson bracket on observables.
-  citations:
-  - wp-physics-phase_space
-  - nlab-physics-phase_space
-  - cambridge-classical-dynamics
-  - wp-physics-poisson_bracket
-  - nlab-physics-poisson_bracket
-- id: poisson_to_hamiltonian_phys
-  source: poisson_bracket
-  target: hamiltonian_mechanics
-  type: theory-component
-  label: Hamiltonian evolution bracket
-  detail: Hamiltonian time evolution is generated by the Poisson bracket with the Hamiltonian.
-  citations:
-  - wp-physics-poisson_bracket
-  - nlab-physics-poisson_bracket
-  - cambridge-classical-dynamics
-  - wp-physics-hamiltonian_mechanics
-  - nlab-physics-hamiltonian_mechanics
-  - tong-quantum
-- id: stationary_to_eom
-  source: stationary_action_principle
-  target: equation_of_motion
-  type: theorem-implication
-  label: Euler–Lagrange equations
-  detail: Variation of the action yields equations of motion under appropriate boundary conditions.
-  citations:
-  - wp-physics-stationary_action_principle
-  - nlab-physics-stationary_action_principle
-  - wp-physics-equation_of_motion
-  - nlab-physics-equation_of_motion
-- id: stationary_to_euler
-  source: stationary_action_principle
-  target: euler_lagrange_equation
-  type: theorem-implication
-  label: Euler–Lagrange equation
-  detail: Stationarity of the action under admissible variations yields the Euler–Lagrange equations.
-  citations:
-  - wp-physics-stationary_action_principle
-  - nlab-physics-stationary_action_principle
-  - cambridge-classical-dynamics
-  - wp-physics-euler_lagrange_equation
-  - nlab-physics-euler_lagrange_equation
-  - tong-qft
-- id: force_to_newtonlaws
-  source: force
-  target: newton_laws
-  type: theory-component
-  label: net force
-  detail: The second law relates net force to momentum change, reducing to $\mathbf F=m\mathbf a$ at constant mass.
-  citations:
-  - wp-physics-force
-  - nlab-physics-force
-  - cambridge-classical-dynamics
-  - wp-physics-newton_laws
-  - tong-relativity
-- id: momentum_to_force
-  source: linear_momentum
-  target: force
-  type: canonical-construction
-  label: momentum-change rate
-  detail: In Newtonian mechanics force is $d\mathbf p/dt$; this definition does not make force fundamental in every formulation.
-  citations:
-  - wp-physics-linear_momentum
-  - nlab-physics-linear_momentum
-  - cambridge-classical-dynamics
-  - tong-relativity
-  - wp-physics-force
-  - nlab-physics-force
-- id: momentum_to_fourmomentum
-  source: linear_momentum
-  target: energy_momentum_four_vector
-  type: theory-component
-  label: spatial components
-  detail: Linear momentum supplies the spatial components of relativistic four-momentum.
-  citations:
-  - wp-physics-linear_momentum
-  - nlab-physics-linear_momentum
-  - cambridge-classical-dynamics
-  - tong-relativity
-  - wp-physics-energy_momentum_four_vector
-  - pdg-rpp
-- id: momentum_to_newtonlaws
-  source: linear_momentum
-  target: newton_laws
-  type: theory-component
-  label: momentum dynamics
-  detail: Newton’s second law is most generally written as a momentum-balance equation.
-  citations:
-  - wp-physics-linear_momentum
-  - nlab-physics-linear_momentum
-  - cambridge-classical-dynamics
-  - tong-relativity
-  - wp-physics-newton_laws
-- id: newtonian_to_newtonlaws
-  source: newton_laws
-  target: newtonian_mechanics
-  type: theory-component
-  label: Newtonian equations of motion
-  detail: Newton’s laws supply the standard particle-law formulation of Newtonian mechanics.
-  citations:
-  - wp-physics-newtonian_mechanics
-  - cambridge-classical-dynamics
-  - tong-relativity
-  - wp-physics-newton_laws
-- id: hist_galileo_inclined_plane_experiments_to_newtonian_mechanics
-  source: galileo_inclined_plane_experiments
-  target: newtonian_mechanics
-  type: historically-motivated
-  label: quantitative accelerated motion
-  detail: Galileo’s measured laws of falling and inertial motion formed part of the empirical and mathematical background from which Newtonian mechanics was constructed.
-  citations:
-  - wp-physics-galileo_inclined_plane_experiments
-  - museo-galileo-inclined-plane
-- id: story_action_functional_to_path_integral_quantization_quantization
-  source: action_functional
-  target: path_integral_quantization
-  type: quantization
-  label: weight histories by the action
-  detail: Path-integral quantization uses the classical action in a formal or regulated sum over histories, typically with phase $e^{iS/\hbar}$; making the construction rigorous depends on the theory and signature.
-  citations:
-  - wp-physics-path_integral_quantization
-  - nlab-physics-path_integral_quantization
-- id: story_hamiltonian_mechanics_to_canonical_quantization_quantization
-  source: hamiltonian_mechanics
-  target: canonical_quantization
-  type: quantization
-  label: promote canonical variables to operators
-  detail: Canonical quantization begins from Hamiltonian phase-space variables and replaces suitable Poisson brackets by operator commutators, subject to ordering, domain, and constraint ambiguities.
-  citations:
-  - wp-physics-canonical_quantization
-  - nlab-physics-canonical_quantization
+  - id: action_to_stationary
+    source: action_functional
+    target: stationary_action_principle
+    type: theory-component
+    label: stationary-action rule
+    detail: Stationarity of the action supplies the variational dynamical principle.
+    citations:
+      - wp-physics-stationary_action_principle
+      - nlab-physics-stationary_action_principle
+      - wp-physics-action_functional
+      - nlab-physics-action_functional
+  - id: classical_field_to_canonical_quant
+    source: classical_field_theory
+    target: canonical_quantization
+    type: quantization
+    label: canonical field quantization
+    detail: Canonical quantization promotes field variables and momenta to operators, when the constraint and gauge structure can be handled.
+    citations:
+      - wp-physics-canonical_quantization
+      - nlab-physics-canonical_quantization
+      - wp-physics-classical_field_theory
+      - nlab-physics-classical_field_theory
+  - id: classical_field_to_em
+    source: classical_field_theory
+    target: classical_electromagnetism
+    type: framework-specialization
+    label: electromagnetic field theory
+    detail: Classical electromagnetism is a relativistic classical field theory.
+    citations:
+      - wp-physics-classical_electromagnetism
+      - nlab-physics-classical_electromagnetism
+      - wp-physics-classical_field_theory
+      - nlab-physics-classical_field_theory
+  - id: classical_field_to_path_quant
+    source: classical_field_theory
+    target: path_integral_quantization
+    type: quantization
+    label: functional-integral quantization
+    detail: Path-integral methods construct quantum amplitudes from the classical action after gauge fixing and regularization as needed.
+    citations:
+      - wp-physics-path_integral_quantization
+      - nlab-physics-path_integral_quantization
+      - wp-physics-classical_field_theory
+      - nlab-physics-classical_field_theory
+  - id: classical_field_to_qft
+    source: classical_field_theory
+    target: quantum_field_theory
+    type: quantization
+    label: field quantization
+    detail: Canonical or path-integral quantization of a classical field theory is a standard route to a QFT, although quantum consistency and renormalization can alter the admissible theory.
+    citations:
+      - cern-qft-intro
+      - wp-physics-quantum_field_theory
+      - nlab-physics-quantum_field_theory
+      - wp-physics-classical_field_theory
+      - nlab-physics-classical_field_theory
+  - id: classical_mechanics_to_point
+    source: classical_mechanics
+    target: classical_point_particle
+    type: describes-governs
+    label: point-particle dynamics
+    detail: Classical mechanics describes ideal point particles and finite-dimensional systems.
+    citations:
+      - wp-physics-classical_point_particle
+      - wp-physics-classical_mechanics
+      - nlab-physics-classical_mechanics
+  - id: classical_to_hamiltonian
+    source: classical_mechanics
+    target: hamiltonian_mechanics
+    type: framework-specialization
+    label: phase-space formulation
+    detail: Hamiltonian mechanics reformulates classical dynamics on phase space.
+    citations:
+      - cambridge-classical-dynamics
+      - cern-qft-intro
+      - wp-physics-hamiltonian_mechanics
+      - nlab-physics-hamiltonian_mechanics
+      - wp-physics-classical_mechanics
+  - id: classical_to_lagrangian
+    source: classical_mechanics
+    target: lagrangian_mechanics
+    type: framework-specialization
+    label: action formulation
+    detail: Lagrangian mechanics reformulates classical dynamics using an action principle.
+    citations:
+      - cambridge-classical-dynamics
+      - cern-qft-intro
+      - wp-physics-lagrangian_mechanics
+      - nlab-physics-lagrangian_mechanics
+      - wp-physics-classical_mechanics
+  - id: classical_to_newtonian
+    source: classical_mechanics
+    target: newtonian_mechanics
+    type: framework-specialization
+    label: Newtonian formulation
+    detail: Newtonian mechanics is a central nonrelativistic classical framework.
+    citations:
+      - wp-physics-newtonian_mechanics
+      - cambridge-classical-dynamics
+      - wp-physics-classical_mechanics
+      - nlab-physics-classical_mechanics
+  - id: configuration_to_phase
+    source: configuration_space
+    target: phase_space
+    type: canonical-construction
+    label: form the cotangent phase space
+    detail: For a smooth configuration manifold $Q$, the standard phase space is the new manifold $T^*Q$ with its canonical symplectic form; it is not the same carrier with extra data.
+    citations:
+      - wp-physics-phase_space
+      - nlab-physics-phase_space
+      - wp-physics-configuration_space
+      - nlab-physics-configuration_space
+  - id: hamiltonian_mechanics_uses_hamiltonian
+    source: hamiltonian
+    target: hamiltonian_mechanics
+    type: theory-component
+    label: Hamiltonian generator
+    detail: Hamiltonian mechanics formulates dynamics using a Hamiltonian on phase space.
+    citations:
+      - wp-physics-hamiltonian_mechanics
+      - nlab-physics-hamiltonian_mechanics
+      - nlab-physics-hamiltonian
+  - id: hamiltonian_to_qevolution
+    source: hamiltonian
+    target: unitary_time_evolution
+    type: describes-governs
+    label: generator of time translation
+    detail: A self-adjoint Hamiltonian generates unitary time evolution.
+    citations:
+      - wp-physics-unitary_time_evolution
+      - nlab-physics-unitary_time_evolution
+      - wp-physics-hamiltonian_mechanics
+      - nlab-physics-hamiltonian
+  - id: lagrangian_to_action
+    source: lagrangian
+    target: action_functional
+    type: canonical-construction
+    label: time integral
+    detail: For particle mechanics, $S=\int L\,dt$.
+    citations:
+      - wp-physics-lagrangian_mechanics
+      - nlab-physics-lagrangian
+      - wp-physics-action_functional
+      - nlab-physics-action_functional
+  - id: lagrangian_to_canonical_momentum
+    source: lagrangian
+    target: canonical_momentum
+    type: canonical-construction
+    label: Legendre momentum
+    detail: Canonical momentum is obtained by differentiating the Lagrangian with respect to generalized velocity.
+    citations:
+      - wp-physics-lagrangian_mechanics
+      - nlab-physics-lagrangian
+      - cambridge-classical-dynamics
+      - wp-physics-canonical_momentum
+  - id: lagrangian_mechanics_uses_lagrangian
+    source: lagrangian
+    target: lagrangian_mechanics
+    type: theory-component
+    label: Lagrangian formulation
+    detail: Lagrangian mechanics formulates dynamics using $L$ and stationary action.
+    citations:
+      - wp-physics-lagrangian_mechanics
+      - nlab-physics-lagrangian_mechanics
+      - nlab-physics-lagrangian
+  - id: lagrangian_density_to_action
+    source: lagrangian_density
+    target: action_functional
+    type: canonical-construction
+    label: spacetime integral
+    detail: For a local field theory, $S=\int d^dx\,\mathcal L$.
+    citations:
+      - wp-physics-lagrangian_density
+      - nlab-physics-lagrangian_density
+      - wp-physics-action_functional
+      - nlab-physics-action_functional
+  - id: lagrangian_to_classical_field
+    source: lagrangian_density
+    target: classical_field_theory
+    type: mathematical-formulation
+    label: Lagrangian field formulation
+    detail: A classical field theory admitting a local Lagrangian formulation uses a Lagrangian density whose spacetime action yields field Euler–Lagrange equations.
+    citations:
+      - cambridge-classical-dynamics
+      - cern-qft-intro
+      - wp-physics-classical_field_theory
+      - nlab-physics-classical_field_theory
+      - wp-physics-lagrangian_mechanics
+  - id: phase_to_poisson
+    source: phase_space
+    target: poisson_bracket
+    type: canonical-construction
+    label: Poisson algebra of observables
+    detail: A symplectic or Poisson phase space supplies a Poisson bracket on observables.
+    citations:
+      - wp-physics-phase_space
+      - nlab-physics-phase_space
+      - cambridge-classical-dynamics
+      - wp-physics-poisson_bracket
+      - nlab-physics-poisson_bracket
+  - id: poisson_to_hamiltonian_phys
+    source: poisson_bracket
+    target: hamiltonian_mechanics
+    type: theory-component
+    label: Hamiltonian evolution bracket
+    detail: Hamiltonian time evolution is generated by the Poisson bracket with the Hamiltonian.
+    citations:
+      - wp-physics-poisson_bracket
+      - nlab-physics-poisson_bracket
+      - cambridge-classical-dynamics
+      - wp-physics-hamiltonian_mechanics
+      - nlab-physics-hamiltonian_mechanics
+      - tong-quantum
+  - id: stationary_to_eom
+    source: stationary_action_principle
+    target: equation_of_motion
+    type: theorem-implication
+    label: Euler–Lagrange equations
+    detail: Variation of the action yields equations of motion under appropriate boundary conditions.
+    citations:
+      - wp-physics-stationary_action_principle
+      - nlab-physics-stationary_action_principle
+      - wp-physics-equation_of_motion
+      - nlab-physics-equation_of_motion
+  - id: stationary_to_euler
+    source: stationary_action_principle
+    target: euler_lagrange_equation
+    type: theorem-implication
+    label: Euler–Lagrange equation
+    detail: Stationarity of the action under admissible variations yields the Euler–Lagrange equations.
+    citations:
+      - wp-physics-stationary_action_principle
+      - nlab-physics-stationary_action_principle
+      - cambridge-classical-dynamics
+      - wp-physics-euler_lagrange_equation
+      - nlab-physics-euler_lagrange_equation
+      - tong-qft
+  - id: force_to_newtonlaws
+    source: force
+    target: newton_laws
+    type: theory-component
+    label: net force
+    detail: The second law relates net force to momentum change, reducing to $\mathbf F=m\mathbf a$ at constant mass.
+    citations:
+      - wp-physics-force
+      - nlab-physics-force
+      - cambridge-classical-dynamics
+      - wp-physics-newton_laws
+      - tong-relativity
+  - id: momentum_to_force
+    source: linear_momentum
+    target: force
+    type: canonical-construction
+    label: momentum-change rate
+    detail: In Newtonian mechanics force is $d\mathbf p/dt$; this definition does not make force fundamental in every formulation.
+    citations:
+      - wp-physics-linear_momentum
+      - nlab-physics-linear_momentum
+      - cambridge-classical-dynamics
+      - tong-relativity
+      - wp-physics-force
+      - nlab-physics-force
+  - id: momentum_to_fourmomentum
+    source: linear_momentum
+    target: energy_momentum_four_vector
+    type: theory-component
+    label: spatial components
+    detail: Linear momentum supplies the spatial components of relativistic four-momentum.
+    citations:
+      - wp-physics-linear_momentum
+      - nlab-physics-linear_momentum
+      - cambridge-classical-dynamics
+      - tong-relativity
+      - wp-physics-energy_momentum_four_vector
+      - pdg-rpp
+  - id: momentum_to_newtonlaws
+    source: linear_momentum
+    target: newton_laws
+    type: theory-component
+    label: momentum dynamics
+    detail: Newton’s second law is most generally written as a momentum-balance equation.
+    citations:
+      - wp-physics-linear_momentum
+      - nlab-physics-linear_momentum
+      - cambridge-classical-dynamics
+      - tong-relativity
+      - wp-physics-newton_laws
+  - id: newtonian_to_newtonlaws
+    source: newton_laws
+    target: newtonian_mechanics
+    type: theory-component
+    label: Newtonian equations of motion
+    detail: Newton’s laws supply the standard particle-law formulation of Newtonian mechanics.
+    citations:
+      - wp-physics-newtonian_mechanics
+      - cambridge-classical-dynamics
+      - tong-relativity
+      - wp-physics-newton_laws
+  - id: hist_galileo_inclined_plane_experiments_to_newtonian_mechanics
+    source: galileo_inclined_plane_experiments
+    target: newtonian_mechanics
+    type: historically-motivated
+    label: quantitative accelerated motion
+    detail: Galileo’s measured laws of falling and inertial motion formed part of the empirical and mathematical background from which Newtonian mechanics was constructed.
+    citations:
+      - wp-physics-galileo_inclined_plane_experiments
+      - museo-galileo-inclined-plane
+  - id: story_action_functional_to_path_integral_quantization_quantization
+    source: action_functional
+    target: path_integral_quantization
+    type: quantization
+    label: weight histories by the action
+    detail: Path-integral quantization uses the classical action in a formal or regulated sum over histories, typically with phase $e^{iS/\hbar}$; making the construction rigorous depends on the theory and signature.
+    citations:
+      - wp-physics-path_integral_quantization
+      - nlab-physics-path_integral_quantization
+  - id: story_hamiltonian_mechanics_to_canonical_quantization_quantization
+    source: hamiltonian_mechanics
+    target: canonical_quantization
+    type: quantization
+    label: promote canonical variables to operators
+    detail: Canonical quantization begins from Hamiltonian phase-space variables and replaces suitable Poisson brackets by operator commutators, subject to ordering, domain, and constraint ambiguities.
+    citations:
+      - wp-physics-canonical_quantization
+      - nlab-physics-canonical_quantization

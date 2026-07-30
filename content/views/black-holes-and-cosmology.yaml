@@ -1,15 +1,7 @@
 id: black-holes-and-cosmology
 title: Black holes and cosmology
-summary: Extend general relativity from exact black-hole geometries and
-  gravitational collapse to FLRW cosmology, the hot Big Bang, inflation, dark
-  components, and $\Lambda$CDM.
-narrative: The black-hole branch follows Einstein’s equation to Schwarzschild
-  and Kerr spacetimes, collapse, horizons, binaries, gravitational-wave
-  detection, and semiclassical Hawking radiation. The cosmology branch imposes
-  large-scale homogeneity and isotropy, yielding FLRW geometry and Friedmann
-  dynamics. Expansion supports the hot Big Bang; the cosmic microwave background
-  tests it; inflation supplies an early accelerated phase; dark matter and dark
-  energy enter the concordance $\Lambda$CDM model.
+summary: Extend general relativity from exact black-hole geometries and gravitational collapse to FLRW cosmology, the hot Big Bang, inflation, dark components, and $\Lambda$CDM.
+narrative: The black-hole branch follows Einstein’s equation to Schwarzschild and Kerr spacetimes, collapse, horizons, binaries, gravitational-wave detection, and semiclassical Hawking radiation. The cosmology branch imposes large-scale homogeneity and isotropy, yielding FLRW geometry and Friedmann dynamics. Expansion supports the hot Big Bang; the cosmic microwave background tests it; inflation supplies an early accelerated phase; dark matter and dark energy enter the concordance $\Lambda$CDM model.
 tags:
   - Physics
   - Relativity

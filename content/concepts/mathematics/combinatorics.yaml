@@ -1,425 +1,425 @@
 nodes:
-- id: directed_graph
-  label: Quiver / directed multigraph
-  primaryDomain: combinatorics
-  domains:
-  - combinatorics
-  - category-theory
-  - foundation
-  level: 2
-  kind: structure
-  summary: A vertex set and an arrow set equipped with source and target maps; loops and parallel arrows are allowed.
-  carriers:
-  - vertex set $V$
-  - arrow set $A$
-  data:
-  - source and target maps $s,t:A\to V$
-  axioms: []
-  induces: []
-  notes: This is a quiver (also called a directed multigraph), not the simple-digraph convention in which an edge is merely an ordered pair of vertices.
-  citations:
-  - wp-directed-graph
-  - diestel-graph-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: undirected_graph
-  label: Undirected multigraph
-  primaryDomain: combinatorics
-  domains:
-  - combinatorics
-  - foundation
-  level: 2
-  kind: structure
-  summary: An undirected incidence graph with a vertex set and an edge set; loops and parallel edges are allowed.
-  carriers:
-  - vertex set $V$
-  - edge set $E$
-  data:
-  - endpoint map assigning to each edge an unordered pair of vertices, equivalently a two-element multiset in which the two entries may coincide
-  axioms: []
-  induces: []
-  notes: This atlas uses a broad incidence/multigraph convention. A simple graph is the loopless, no-parallel-edge specialization.
-  citations:
-  - wp-graph
-  - nlab-graph
-  - diestel-graph-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: directed_acyclic_graph
-  label: Directed acyclic graph
-  primaryDomain: combinatorics
-  domains:
-  - combinatorics
-  - category-theory
-  level: 3
-  kind: structure
-  summary: A directed graph with no directed cycle.
-  carriers:
-  - directed graph $G$
-  data: []
-  axioms:
-  - no directed cycle
-  induces:
-  - reachability partial order
-  notes: ''
-  citations:
-  - wp-dag
-  - diestel-graph-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: hypergraph
-  label: Hypergraph
-  primaryDomain: combinatorics
-  domains:
-  - combinatorics
-  - set-theory
-  level: 3
-  kind: structure
-  summary: A vertex set together with a family of arbitrary vertex subsets called hyperedges.
-  carriers:
-  - vertex set $V$
-  data:
-  - family $E\subseteq\mathcal P(V)$
-  axioms: []
-  induces: []
-  notes: ''
-  citations:
-  - wp-hypergraph
-  - nlab-hypergraph
-  - diestel-graph-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: simple_graph
-  label: Simple graph
-  primaryDomain: combinatorics
-  domains:
-  - combinatorics
-  level: 3
-  kind: structure
-  summary: An undirected graph with no loops or parallel edges.
-  carriers:
-  - vertex set $V$
-  data:
-  - edge set $E\subseteq\{\{u,v\}:u\ne v\}$
-  axioms:
-  - no loops
-  - no multiple edges
-  induces: []
-  notes: ''
-  citations:
-  - wp-simple-graph
-  - diestel-graph-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: abstract_simplicial_complex
-  label: Abstract simplicial complex
-  primaryDomain: combinatorics
-  domains:
-  - combinatorics
-  - algebraic-topology
-  - topology
-  level: 4
-  kind: structure
-  summary: A family of finite vertex subsets closed under taking subsets.
-  carriers:
-  - vertex set $V$
-  data:
-  - family $K$ of finite subsets
-  axioms:
-  - downward closed under inclusion
-  induces:
-  - geometric realization
-  notes: ''
-  citations:
-  - wp-simplicial-complex
-  - nlab-simplicial-complex
-  - diestel-graph-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: bipartite_graph
-  label: Bipartite graph
-  primaryDomain: combinatorics
-  domains:
-  - combinatorics
-  level: 4
-  kind: structure
-  summary: An undirected graph whose vertex set admits a partition into two parts such that every edge joins different parts.
-  carriers:
-  - graph $G$
-  data: []
-  axioms:
-  - there exists a bipartition $V=A\sqcup B$ with every edge crossing between $A$ and $B$
-  induces: []
-  notes: The bipartition is treated as an existence property, not as chosen coloring data.
-  citations:
-  - wp-bipartite
-  - diestel-graph-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: forest
-  label: Forest
-  primaryDomain: combinatorics
-  domains:
-  - combinatorics
-  level: 4
-  kind: structure
-  summary: An undirected graph with no cycles.
-  carriers:
-  - undirected graph $G$
-  data: []
-  axioms:
-  - acyclic
-  induces: []
-  notes: ''
-  citations:
-  - wp-forest-graph
-  - diestel-graph-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: matroid
-  label: Matroid
-  primaryDomain: combinatorics
-  domains:
-  - combinatorics
-  - order
-  level: 4
-  kind: structure
-  summary: A ground set with a family of independent subsets satisfying the matroid independence axioms.
-  carriers:
-  - ground set $E$
-  data:
-  - family of independent subsets
-  axioms:
-  - $\varnothing$ is independent
-  - hereditary property
-  - exchange/augmentation axiom
-  - for infinite matroids, the maximal-extension axiom (IM)
-  induces:
-  - lattice of flats
-  notes: For finite ground sets the usual hereditary and augmentation axioms suffice; infinite matroids require an additional maximality condition.
-  citations:
-  - wp-matroid
-  - nlab-matroid
-  - diestel-graph-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: planar_graph
-  label: Planar graph
-  primaryDomain: combinatorics
-  domains:
-  - combinatorics
-  - topology
-  level: 4
-  kind: structure
-  summary: A graph admitting an embedding in the plane without edge crossings.
-  carriers:
-  - graph $G$
-  data: []
-  axioms:
-  - admits a planar embedding
-  induces: []
-  notes: ''
-  citations:
-  - wp-planar
-  - diestel-graph-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: tournament
-  label: Tournament
-  primaryDomain: combinatorics
-  domains:
-  - combinatorics
-  - order
-  level: 4
-  kind: structure
-  summary: An orientation of a complete simple graph.
-  carriers:
-  - vertex set $V$
-  data:
-  - for each distinct pair, exactly one directed edge
-  axioms: []
-  induces: []
-  notes: Finite tournaments are most common in elementary graph theory, but the definition extends to infinite vertex sets.
-  citations:
-  - wp-tournament
-  - diestel-graph-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: weighted_graph
-  label: Weighted graph
-  primaryDomain: combinatorics
-  domains:
-  - combinatorics
-  - analysis
-  level: 4
-  kind: structure
-  summary: A graph equipped with numerical or algebraic weights on edges or vertices.
-  carriers:
-  - graph $G$
-  data:
-  - weight function
-  axioms: []
-  induces: []
-  notes: ''
-  citations:
-  - wp-weighted-graph
-  - diestel-graph-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: oriented_matroid
-  label: Oriented matroid
-  primaryDomain: combinatorics
-  domains:
-  - combinatorics
-  level: 5
-  kind: structure
-  summary: A matroid enriched with orientation data abstracting signs of vector configurations.
-  carriers:
-  - matroid $M$
-  data:
-  - signed circuits or chirotope
-  axioms:
-  - oriented matroid axioms
-  induces: []
-  notes: The standard finite oriented-matroid theory is intended here; infinite oriented matroids require additional axiomatic care.
-  citations:
-  - wp-oriented-matroid
-  - diestel-graph-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: tree
-  label: Tree
-  primaryDomain: combinatorics
-  domains:
-  - combinatorics
-  level: 5
-  kind: structure
-  summary: A connected acyclic undirected graph.
-  carriers:
-  - forest $G$
-  data: []
-  axioms:
-  - connected
-  induces: []
-  notes: ''
-  citations:
-  - wp-tree-graph
-  - diestel-graph-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
+  - id: directed_graph
+    label: Quiver / directed multigraph
+    primaryDomain: combinatorics
+    domains:
+      - combinatorics
+      - category-theory
+      - foundation
+    level: 2
+    kind: structure
+    summary: A vertex set and an arrow set equipped with source and target maps; loops and parallel arrows are allowed.
+    carriers:
+      - vertex set $V$
+      - arrow set $A$
+    data:
+      - source and target maps $s,t:A\to V$
+    axioms: []
+    induces: []
+    notes: This is a quiver (also called a directed multigraph), not the simple-digraph convention in which an edge is merely an ordered pair of vertices.
+    citations:
+      - wp-directed-graph
+      - diestel-graph-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: undirected_graph
+    label: Undirected multigraph
+    primaryDomain: combinatorics
+    domains:
+      - combinatorics
+      - foundation
+    level: 2
+    kind: structure
+    summary: An undirected incidence graph with a vertex set and an edge set; loops and parallel edges are allowed.
+    carriers:
+      - vertex set $V$
+      - edge set $E$
+    data:
+      - endpoint map assigning to each edge an unordered pair of vertices, equivalently a two-element multiset in which the two entries may coincide
+    axioms: []
+    induces: []
+    notes: This atlas uses a broad incidence/multigraph convention. A simple graph is the loopless, no-parallel-edge specialization.
+    citations:
+      - wp-graph
+      - nlab-graph
+      - diestel-graph-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: directed_acyclic_graph
+    label: Directed acyclic graph
+    primaryDomain: combinatorics
+    domains:
+      - combinatorics
+      - category-theory
+    level: 3
+    kind: structure
+    summary: A directed graph with no directed cycle.
+    carriers:
+      - directed graph $G$
+    data: []
+    axioms:
+      - no directed cycle
+    induces:
+      - reachability partial order
+    notes: ''
+    citations:
+      - wp-dag
+      - diestel-graph-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: hypergraph
+    label: Hypergraph
+    primaryDomain: combinatorics
+    domains:
+      - combinatorics
+      - set-theory
+    level: 3
+    kind: structure
+    summary: A vertex set together with a family of arbitrary vertex subsets called hyperedges.
+    carriers:
+      - vertex set $V$
+    data:
+      - family $E\subseteq\mathcal P(V)$
+    axioms: []
+    induces: []
+    notes: ''
+    citations:
+      - wp-hypergraph
+      - nlab-hypergraph
+      - diestel-graph-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: simple_graph
+    label: Simple graph
+    primaryDomain: combinatorics
+    domains:
+      - combinatorics
+    level: 3
+    kind: structure
+    summary: An undirected graph with no loops or parallel edges.
+    carriers:
+      - vertex set $V$
+    data:
+      - edge set $E\subseteq\{\{u,v\}:u\ne v\}$
+    axioms:
+      - no loops
+      - no multiple edges
+    induces: []
+    notes: ''
+    citations:
+      - wp-simple-graph
+      - diestel-graph-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: abstract_simplicial_complex
+    label: Abstract simplicial complex
+    primaryDomain: combinatorics
+    domains:
+      - combinatorics
+      - algebraic-topology
+      - topology
+    level: 4
+    kind: structure
+    summary: A family of finite vertex subsets closed under taking subsets.
+    carriers:
+      - vertex set $V$
+    data:
+      - family $K$ of finite subsets
+    axioms:
+      - downward closed under inclusion
+    induces:
+      - geometric realization
+    notes: ''
+    citations:
+      - wp-simplicial-complex
+      - nlab-simplicial-complex
+      - diestel-graph-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: bipartite_graph
+    label: Bipartite graph
+    primaryDomain: combinatorics
+    domains:
+      - combinatorics
+    level: 4
+    kind: structure
+    summary: An undirected graph whose vertex set admits a partition into two parts such that every edge joins different parts.
+    carriers:
+      - graph $G$
+    data: []
+    axioms:
+      - there exists a bipartition $V=A\sqcup B$ with every edge crossing between $A$ and $B$
+    induces: []
+    notes: The bipartition is treated as an existence property, not as chosen coloring data.
+    citations:
+      - wp-bipartite
+      - diestel-graph-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: forest
+    label: Forest
+    primaryDomain: combinatorics
+    domains:
+      - combinatorics
+    level: 4
+    kind: structure
+    summary: An undirected graph with no cycles.
+    carriers:
+      - undirected graph $G$
+    data: []
+    axioms:
+      - acyclic
+    induces: []
+    notes: ''
+    citations:
+      - wp-forest-graph
+      - diestel-graph-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: matroid
+    label: Matroid
+    primaryDomain: combinatorics
+    domains:
+      - combinatorics
+      - order
+    level: 4
+    kind: structure
+    summary: A ground set with a family of independent subsets satisfying the matroid independence axioms.
+    carriers:
+      - ground set $E$
+    data:
+      - family of independent subsets
+    axioms:
+      - $\varnothing$ is independent
+      - hereditary property
+      - exchange/augmentation axiom
+      - for infinite matroids, the maximal-extension axiom (IM)
+    induces:
+      - lattice of flats
+    notes: For finite ground sets the usual hereditary and augmentation axioms suffice; infinite matroids require an additional maximality condition.
+    citations:
+      - wp-matroid
+      - nlab-matroid
+      - diestel-graph-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: planar_graph
+    label: Planar graph
+    primaryDomain: combinatorics
+    domains:
+      - combinatorics
+      - topology
+    level: 4
+    kind: structure
+    summary: A graph admitting an embedding in the plane without edge crossings.
+    carriers:
+      - graph $G$
+    data: []
+    axioms:
+      - admits a planar embedding
+    induces: []
+    notes: ''
+    citations:
+      - wp-planar
+      - diestel-graph-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: tournament
+    label: Tournament
+    primaryDomain: combinatorics
+    domains:
+      - combinatorics
+      - order
+    level: 4
+    kind: structure
+    summary: An orientation of a complete simple graph.
+    carriers:
+      - vertex set $V$
+    data:
+      - for each distinct pair, exactly one directed edge
+    axioms: []
+    induces: []
+    notes: Finite tournaments are most common in elementary graph theory, but the definition extends to infinite vertex sets.
+    citations:
+      - wp-tournament
+      - diestel-graph-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: weighted_graph
+    label: Weighted graph
+    primaryDomain: combinatorics
+    domains:
+      - combinatorics
+      - analysis
+    level: 4
+    kind: structure
+    summary: A graph equipped with numerical or algebraic weights on edges or vertices.
+    carriers:
+      - graph $G$
+    data:
+      - weight function
+    axioms: []
+    induces: []
+    notes: ''
+    citations:
+      - wp-weighted-graph
+      - diestel-graph-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: oriented_matroid
+    label: Oriented matroid
+    primaryDomain: combinatorics
+    domains:
+      - combinatorics
+    level: 5
+    kind: structure
+    summary: A matroid enriched with orientation data abstracting signs of vector configurations.
+    carriers:
+      - matroid $M$
+    data:
+      - signed circuits or chirotope
+    axioms:
+      - oriented matroid axioms
+    induces: []
+    notes: The standard finite oriented-matroid theory is intended here; infinite oriented matroids require additional axiomatic care.
+    citations:
+      - wp-oriented-matroid
+      - diestel-graph-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: tree
+    label: Tree
+    primaryDomain: combinatorics
+    domains:
+      - combinatorics
+    level: 5
+    kind: structure
+    summary: A connected acyclic undirected graph.
+    carriers:
+      - forest $G$
+    data: []
+    axioms:
+      - connected
+    induces: []
+    notes: ''
+    citations:
+      - wp-tree-graph
+      - diestel-graph-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
 edges:
-- id: dag_to_partial_order
-  source: directed_acyclic_graph
-  target: partial_order
-  type: induced-forgotten
-  label: take reflexive reachability
-  detail: On a DAG, define $x\le y$ when $y$ is reachable from $x$; adding reflexivity yields a partial order.
-  citations:
-  - wp-dag
-  - wp-poset
-  - gierz-order
-- id: e_directed_dag
-  source: directed_graph
-  target: directed_acyclic_graph
-  type: impose-axiom
-  label: + acyclicity
-  detail: Require no directed cycle.
-  citations:
-  - wp-dag
-  - diestel-graph-theory
-- id: e_directed_tournament
-  source: directed_graph
-  target: tournament
-  type: impose-axiom
-  label: exactly one arrow per pair
-  detail: Require no loops and, for each pair of distinct vertices, exactly one of the two possible directed edges.
-  citations:
-  - wp-tournament
-  - diestel-graph-theory
-- id: e_forest_tree
-  source: forest
-  target: tree
-  type: impose-axiom
-  label: + connectedness
-  detail: Require the forest to be connected.
-  citations:
-  - wp-tree-graph
-  - diestel-graph-theory
-- id: e_hyper_simplicial
-  source: hypergraph
-  target: abstract_simplicial_complex
-  type: impose-axiom
-  label: + downward closure and finiteness
-  detail: Require every face subset to be a face and every face to be finite.
-  citations:
-  - wp-simplicial-complex
-  - nlab-simplicial-complex
-  - diestel-graph-theory
-- id: e_matroid_oriented
-  source: matroid
-  target: oriented_matroid
-  type: add-data
-  label: + orientation signs
-  detail: Add signed circuit or chirotope data satisfying oriented matroid axioms.
-  citations:
-  - wp-oriented-matroid
-  - diestel-graph-theory
-- id: e_undirected_bipartite
-  source: undirected_graph
-  target: bipartite_graph
-  type: impose-axiom
-  label: + bipartiteness
-  detail: Require the existence of a vertex bipartition with every edge crossing between the two parts.
-  citations:
-  - wp-bipartite
-  - diestel-graph-theory
-- id: e_undirected_forest
-  source: undirected_graph
-  target: forest
-  type: impose-axiom
-  label: + acyclicity
-  detail: Require no undirected cycles.
-  citations:
-  - wp-forest-graph
-  - diestel-graph-theory
-- id: e_undirected_planar
-  source: undirected_graph
-  target: planar_graph
-  type: impose-axiom
-  label: + planar embeddability
-  detail: Require the graph to admit an embedding in the plane with edges meeting only at common endpoints.
-  citations:
-  - wp-planar
-  - diestel-graph-theory
-- id: e_undirected_simple
-  source: undirected_graph
-  target: simple_graph
-  type: impose-axiom
-  label: + no loops or parallels
-  detail: Restrict the broad incidence graph to loopless graphs with at most one edge occurrence per unordered vertex pair.
-  citations:
-  - wp-simple-graph
-  - diestel-graph-theory
-- id: e_undirected_weighted
-  source: undirected_graph
-  target: weighted_graph
-  type: add-data
-  label: + weights
-  detail: Add a weight function on edges or vertices.
-  citations:
-  - wp-weighted-graph
-  - diestel-graph-theory
+  - id: dag_to_partial_order
+    source: directed_acyclic_graph
+    target: partial_order
+    type: induced-forgotten
+    label: take reflexive reachability
+    detail: On a DAG, define $x\le y$ when $y$ is reachable from $x$; adding reflexivity yields a partial order.
+    citations:
+      - wp-dag
+      - wp-poset
+      - gierz-order
+  - id: e_directed_dag
+    source: directed_graph
+    target: directed_acyclic_graph
+    type: impose-axiom
+    label: + acyclicity
+    detail: Require no directed cycle.
+    citations:
+      - wp-dag
+      - diestel-graph-theory
+  - id: e_directed_tournament
+    source: directed_graph
+    target: tournament
+    type: impose-axiom
+    label: exactly one arrow per pair
+    detail: Require no loops and, for each pair of distinct vertices, exactly one of the two possible directed edges.
+    citations:
+      - wp-tournament
+      - diestel-graph-theory
+  - id: e_forest_tree
+    source: forest
+    target: tree
+    type: impose-axiom
+    label: + connectedness
+    detail: Require the forest to be connected.
+    citations:
+      - wp-tree-graph
+      - diestel-graph-theory
+  - id: e_hyper_simplicial
+    source: hypergraph
+    target: abstract_simplicial_complex
+    type: impose-axiom
+    label: + downward closure and finiteness
+    detail: Require every face subset to be a face and every face to be finite.
+    citations:
+      - wp-simplicial-complex
+      - nlab-simplicial-complex
+      - diestel-graph-theory
+  - id: e_matroid_oriented
+    source: matroid
+    target: oriented_matroid
+    type: add-data
+    label: + orientation signs
+    detail: Add signed circuit or chirotope data satisfying oriented matroid axioms.
+    citations:
+      - wp-oriented-matroid
+      - diestel-graph-theory
+  - id: e_undirected_bipartite
+    source: undirected_graph
+    target: bipartite_graph
+    type: impose-axiom
+    label: + bipartiteness
+    detail: Require the existence of a vertex bipartition with every edge crossing between the two parts.
+    citations:
+      - wp-bipartite
+      - diestel-graph-theory
+  - id: e_undirected_forest
+    source: undirected_graph
+    target: forest
+    type: impose-axiom
+    label: + acyclicity
+    detail: Require no undirected cycles.
+    citations:
+      - wp-forest-graph
+      - diestel-graph-theory
+  - id: e_undirected_planar
+    source: undirected_graph
+    target: planar_graph
+    type: impose-axiom
+    label: + planar embeddability
+    detail: Require the graph to admit an embedding in the plane with edges meeting only at common endpoints.
+    citations:
+      - wp-planar
+      - diestel-graph-theory
+  - id: e_undirected_simple
+    source: undirected_graph
+    target: simple_graph
+    type: impose-axiom
+    label: + no loops or parallels
+    detail: Restrict the broad incidence graph to loopless graphs with at most one edge occurrence per unordered vertex pair.
+    citations:
+      - wp-simple-graph
+      - diestel-graph-theory
+  - id: e_undirected_weighted
+    source: undirected_graph
+    target: weighted_graph
+    type: add-data
+    label: + weights
+    detail: Add a weight function on edges or vertices.
+    citations:
+      - wp-weighted-graph
+      - diestel-graph-theory

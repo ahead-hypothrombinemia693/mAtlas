@@ -1,16 +1,7 @@
 id: action-to-quantum-fields
 title: From action principles to quantum fields
-summary: Connect variational mechanics, Hamiltonian and symplectic structure,
-  quantization, Fock space, perturbation theory, and scattering.
-narrative: The classical branch starts from configuration space, Lagrangians,
-  action functionals, stationary action, and Euler–Lagrange equations. A
-  parallel phase-space branch introduces symplectic and Poisson geometry and
-  Hamiltonian evolution. Canonical quantization promotes suitable classical
-  observables to operators and supplies canonical commutation relations, while
-  path integrals use the action to sum over histories. Quantum mechanics leads
-  to QFT; free and asymptotic particle sectors use Fock space and creation
-  operators; perturbative expansions produce Feynman diagrams, amplitudes, and
-  the $S$-matrix.
+summary: Connect variational mechanics, Hamiltonian and symplectic structure, quantization, Fock space, perturbation theory, and scattering.
+narrative: The classical branch starts from configuration space, Lagrangians, action functionals, stationary action, and Euler–Lagrange equations. A parallel phase-space branch introduces symplectic and Poisson geometry and Hamiltonian evolution. Canonical quantization promotes suitable classical observables to operators and supplies canonical commutation relations, while path integrals use the action to sum over histories. Quantum mechanics leads to QFT; free and asymptotic particle sectors use Fock space and creation operators; perturbative expansions produce Feynman diagrams, amplitudes, and the $S$-matrix.
 tags:
   - Mathematics
   - Physics

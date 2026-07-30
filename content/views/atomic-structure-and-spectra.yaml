@@ -1,16 +1,7 @@
 id: atomic-structure-and-spectra
 title: The atom becomes calculable
-summary: Follow the historical and mathematical route from spectral regularities
-  and nuclear atoms to orbitals, many-electron methods, precision structure, and
-  transitions.
-narrative: Balmer and Rydberg exposed regular spectral structure before quantum
-  mechanics. Rutherford concentrated positive charge in the nucleus; Bohr
-  captured hydrogen’s gross spectrum; the Schrödinger equation replaced orbits
-  with states and orbitals. Quantum numbers, exclusion, shells, and
-  configurations organize many-electron atoms, while Hartree, Hartree–Fock,
-  configuration interaction, coupled cluster, and density-functional theory
-  provide computational frameworks with different approximation structures.
-  Fine, hyperfine, Lamb, Stark, and Zeeman effects refine the spectrum.
+summary: Follow the historical and mathematical route from spectral regularities and nuclear atoms to orbitals, many-electron methods, precision structure, and transitions.
+narrative: Balmer and Rydberg exposed regular spectral structure before quantum mechanics. Rutherford concentrated positive charge in the nucleus; Bohr captured hydrogen’s gross spectrum; the Schrödinger equation replaced orbits with states and orbitals. Quantum numbers, exclusion, shells, and configurations organize many-electron atoms, while Hartree, Hartree–Fock, configuration interaction, coupled cluster, and density-functional theory provide computational frameworks with different approximation structures. Fine, hyperfine, Lamb, Stark, and Zeeman effects refine the spectrum.
 tags:
   - Physics
   - Atomic physics

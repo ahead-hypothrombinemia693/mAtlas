@@ -1,13 +1,7 @@
 id: fields-to-ordinary-matter
 title: From quantum fields to ordinary matter
-summary: Follow the hierarchy from quantum fields and elementary excitations
-  through hadrons, nuclei, atoms, and molecules.
-narrative: Matter is not built by a single relation. Quantum fields support
-  particle sectors; quarks and gluons interact through QCD and hadronize into
-  color-singlet hadrons; baryons and nucleons form nuclei through residual
-  strong interactions; electrons and nuclei bind electromagnetically into atoms;
-  atoms bind into molecules. The Story separates constitution, binding,
-  effective interactions, and emergent stability.
+summary: Follow the hierarchy from quantum fields and elementary excitations through hadrons, nuclei, atoms, and molecules.
+narrative: Matter is not built by a single relation. Quantum fields support particle sectors; quarks and gluons interact through QCD and hadronize into color-singlet hadrons; baryons and nucleons form nuclei through residual strong interactions; electrons and nuclei bind electromagnetically into atoms; atoms bind into molecules. The Story separates constitution, binding, effective interactions, and emergent stability.
 tags:
   - Physics
   - Matter

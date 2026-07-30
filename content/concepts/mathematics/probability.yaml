@@ -1,314 +1,314 @@
 nodes:
-- id: j_filtration
-  label: ordered family + ambient measurable space
-  primaryDomain: probability
-  domains:
-  - probability
-  - measure
-  - order
-  level: 4
-  kind: junction
-  summary: Combine an ordered indexed family with one ambient measurable space to form nested sub-$\sigma$-algebras.
-  carriers: []
-  data: []
-  axioms: []
-  induces: []
-  notes: The index order and common ambient $\sigma$-algebra are essential parts of the definition.
-  citations:
-  - wp-filtration-probability
-  - durrett-probability
-  combination:
-    inputs:
-    - indexed_family
-    - measurable_space
-    compatibility: Index by a preorder (usually time), make every family member a sub-$\sigma$-algebra of the same ambient $\sigma$-algebra, and require $\mathcal F_s\subseteq\mathcal F_t$ whenever $s\le t$.
-    output: filtration
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: j_random_variable
-  label: probability domain + measurable map
-  primaryDomain: probability
-  domains:
-  - probability
-  - measure
-  level: 4
-  kind: junction
-  summary: Combine a probability space with a measurable map having that space as domain.
-  carriers: []
-  data: []
-  axioms: []
-  induces: []
-  notes: All incoming branches are jointly required.
-  citations:
-  - wp-random-variable
-  - durrett-probability
-  combination:
-    inputs:
-    - probability_space
-    - measurable_function
-    compatibility: The measurable-function domain is the measurable space underlying the probability space; its codomain is the value space.
-    output: random_variable
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: filtration
-  label: Filtration
-  primaryDomain: probability
-  domains:
-  - probability
-  - measure
-  - order
-  level: 4
-  kind: structure
-  summary: An increasing indexed family of $\sigma$-algebras representing information over time.
-  carriers:
-  - measurable space $(\Omega,\mathcal F)$
-  - ordered index set $T$
-  data:
-  - $\sigma$-algebras $\mathcal F_t\subseteq\mathcal F$
-  axioms:
-  - $s\le t$ implies $\mathcal F_s\subseteq\mathcal F_t$
-  induces: []
-  notes: A filtration is a monotone family of sub-$\sigma$-algebras of one ambient measurable space, indexed by an ordered set.
-  citations:
-  - wp-filtration-probability
-  - durrett-probability
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: random_variable
-  label: Random variable
-  primaryDomain: probability
-  domains:
-  - probability
-  - measure
-  - analysis
-  level: 4
-  kind: structure
-  summary: A measurable function from a probability space to a measurable value space.
-  carriers:
-  - probability space $(\Omega,\mathcal F,\mathbb P)$
-  - measurable space $(S,\Sigma)$
-  data:
-  - measurable map $X\colon(\Omega,\mathcal F)\to(S,\Sigma)$
-  axioms: []
-  induces: []
-  notes: The probability space and value-space $\sigma$-algebra are part of the data. Traditionally the codomain is $\mathbb R$ or $\mathbb R^n$; for a general measurable codomain, “random element” is also common.
-  citations:
-  - wp-random-variable
-  - durrett-probability
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: filtered_probability_space
-  label: Filtered probability space
-  primaryDomain: probability
-  domains:
-  - probability
-  - measure
-  level: 5
-  kind: structure
-  summary: A probability space equipped with a filtration of sub-$\sigma$-algebras.
-  carriers:
-  - probability space $(\Omega,\mathcal F,\mathbb P)$
-  data:
-  - filtration $(\mathcal F_t)_{t\in T}$
-  axioms:
-  - $\mathcal F_t\subseteq\mathcal F$ for every $t\in T$
-  induces: []
-  notes: ''
-  citations:
-  - wp-filtered-probability
-  - durrett-probability
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: j_filtered_probability
-  label: probability + filtration
-  primaryDomain: probability
-  domains:
-  - probability
-  - measure
-  level: 5
-  kind: junction
-  summary: Compatibility construction producing Filtered probability space.
-  carriers: []
-  data: []
-  axioms: []
-  induces: []
-  notes: All incoming branches are jointly required.
-  citations:
-  - wp-filtered-probability
-  - durrett-probability
-  combination:
-    inputs:
-    - probability_space
-    - filtration
-    compatibility: Use a filtration of sub-$\sigma$-algebras of the probability space.
-    output: filtered_probability_space
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: standard_probability_space
-  label: Standard probability space
-  primaryDomain: probability
-  domains:
-  - probability
-  - measure
-  - topology
-  level: 5
-  kind: structure
-  summary: A probability space isomorphic modulo null sets to a standard Borel probability space.
-  carriers:
-  - probability space
-  data: []
-  axioms:
-  - standard Borel structure modulo completion
-  induces: []
-  notes: 'Convention-sensitive: common formulations classify completed probability spaces modulo null sets as a standard nonatomic part plus at most countably many atoms. A standard Borel probability space before completion is a related but distinct notion.'
-  citations:
-  - wp-standard-probability
-  - durrett-probability
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: j_stochastic_process
-  label: probability + indexed random variables
-  primaryDomain: probability
-  domains:
-  - probability
-  - measure
-  level: 6
-  kind: junction
-  summary: Combine an index set/family with random variables sharing one probability space.
-  carriers: []
-  data: []
-  axioms: []
-  induces: []
-  notes: All incoming branches are jointly required.
-  citations:
-  - wp-stochastic-process
-  - durrett-probability
-  combination:
-    inputs:
-    - indexed_family
-    - random_variable
-    compatibility: All random variables have the same probability-space domain and a common state space (or a specified family of state spaces), and the indexed family enumerates them.
-    output: stochastic_process
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: stochastic_process
-  label: Stochastic process
-  primaryDomain: probability
-  domains:
-  - probability
-  - measure
-  - analysis
-  level: 6
-  kind: structure
-  summary: An indexed family of random variables defined on a common probability space.
-  carriers:
-  - probability space $(\Omega,\mathcal F,\mathbb P)$
-  - index set $T$
-  - state space $S$
-  data:
-  - family $(X_t)_{t\in T}$ of random variables
-  axioms: []
-  induces: []
-  notes: All component random variables share a probability-space domain; state spaces may be common or indexed depending on convention.
-  citations:
-  - wp-stochastic-process
-  - durrett-probability
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: markov_chain
-  label: Markov chain
-  primaryDomain: probability
-  domains:
-  - probability
-  - combinatorics
-  - analysis
-  level: 7
-  kind: structure
-  summary: A discrete-time stochastic process with the Markov conditional-independence property.
-  carriers:
-  - stochastic process $(X_{n})$
-  data: []
-  axioms:
-  - future conditional law depends on the present state, not the full past
-  induces: []
-  notes: ''
-  citations:
-  - wp-markov-chain
-  - durrett-probability
-  primaryField: mathematics
-  fields:
-  - mathematics
+  - id: j_filtration
+    label: ordered family + ambient measurable space
+    primaryDomain: probability
+    domains:
+      - probability
+      - measure
+      - order
+    level: 4
+    kind: junction
+    summary: Combine an ordered indexed family with one ambient measurable space to form nested sub-$\sigma$-algebras.
+    carriers: []
+    data: []
+    axioms: []
+    induces: []
+    notes: The index order and common ambient $\sigma$-algebra are essential parts of the definition.
+    citations:
+      - wp-filtration-probability
+      - durrett-probability
+    combination:
+      inputs:
+        - indexed_family
+        - measurable_space
+      compatibility: Index by a preorder (usually time), make every family member a sub-$\sigma$-algebra of the same ambient $\sigma$-algebra, and require $\mathcal F_s\subseteq\mathcal F_t$ whenever $s\le t$.
+      output: filtration
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: j_random_variable
+    label: probability domain + measurable map
+    primaryDomain: probability
+    domains:
+      - probability
+      - measure
+    level: 4
+    kind: junction
+    summary: Combine a probability space with a measurable map having that space as domain.
+    carriers: []
+    data: []
+    axioms: []
+    induces: []
+    notes: All incoming branches are jointly required.
+    citations:
+      - wp-random-variable
+      - durrett-probability
+    combination:
+      inputs:
+        - probability_space
+        - measurable_function
+      compatibility: The measurable-function domain is the measurable space underlying the probability space; its codomain is the value space.
+      output: random_variable
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: filtration
+    label: Filtration
+    primaryDomain: probability
+    domains:
+      - probability
+      - measure
+      - order
+    level: 4
+    kind: structure
+    summary: An increasing indexed family of $\sigma$-algebras representing information over time.
+    carriers:
+      - measurable space $(\Omega,\mathcal F)$
+      - ordered index set $T$
+    data:
+      - $\sigma$-algebras $\mathcal F_t\subseteq\mathcal F$
+    axioms:
+      - $s\le t$ implies $\mathcal F_s\subseteq\mathcal F_t$
+    induces: []
+    notes: A filtration is a monotone family of sub-$\sigma$-algebras of one ambient measurable space, indexed by an ordered set.
+    citations:
+      - wp-filtration-probability
+      - durrett-probability
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: random_variable
+    label: Random variable
+    primaryDomain: probability
+    domains:
+      - probability
+      - measure
+      - analysis
+    level: 4
+    kind: structure
+    summary: A measurable function from a probability space to a measurable value space.
+    carriers:
+      - probability space $(\Omega,\mathcal F,\mathbb P)$
+      - measurable space $(S,\Sigma)$
+    data:
+      - measurable map $X\colon(\Omega,\mathcal F)\to(S,\Sigma)$
+    axioms: []
+    induces: []
+    notes: The probability space and value-space $\sigma$-algebra are part of the data. Traditionally the codomain is $\mathbb R$ or $\mathbb R^n$; for a general measurable codomain, “random element” is also common.
+    citations:
+      - wp-random-variable
+      - durrett-probability
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: filtered_probability_space
+    label: Filtered probability space
+    primaryDomain: probability
+    domains:
+      - probability
+      - measure
+    level: 5
+    kind: structure
+    summary: A probability space equipped with a filtration of sub-$\sigma$-algebras.
+    carriers:
+      - probability space $(\Omega,\mathcal F,\mathbb P)$
+    data:
+      - filtration $(\mathcal F_t)_{t\in T}$
+    axioms:
+      - $\mathcal F_t\subseteq\mathcal F$ for every $t\in T$
+    induces: []
+    notes: ''
+    citations:
+      - wp-filtered-probability
+      - durrett-probability
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: j_filtered_probability
+    label: probability + filtration
+    primaryDomain: probability
+    domains:
+      - probability
+      - measure
+    level: 5
+    kind: junction
+    summary: Compatibility construction producing Filtered probability space.
+    carriers: []
+    data: []
+    axioms: []
+    induces: []
+    notes: All incoming branches are jointly required.
+    citations:
+      - wp-filtered-probability
+      - durrett-probability
+    combination:
+      inputs:
+        - probability_space
+        - filtration
+      compatibility: Use a filtration of sub-$\sigma$-algebras of the probability space.
+      output: filtered_probability_space
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: standard_probability_space
+    label: Standard probability space
+    primaryDomain: probability
+    domains:
+      - probability
+      - measure
+      - topology
+    level: 5
+    kind: structure
+    summary: A probability space isomorphic modulo null sets to a standard Borel probability space.
+    carriers:
+      - probability space
+    data: []
+    axioms:
+      - standard Borel structure modulo completion
+    induces: []
+    notes: 'Convention-sensitive: common formulations classify completed probability spaces modulo null sets as a standard nonatomic part plus at most countably many atoms. A standard Borel probability space before completion is a related but distinct notion.'
+    citations:
+      - wp-standard-probability
+      - durrett-probability
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: j_stochastic_process
+    label: probability + indexed random variables
+    primaryDomain: probability
+    domains:
+      - probability
+      - measure
+    level: 6
+    kind: junction
+    summary: Combine an index set/family with random variables sharing one probability space.
+    carriers: []
+    data: []
+    axioms: []
+    induces: []
+    notes: All incoming branches are jointly required.
+    citations:
+      - wp-stochastic-process
+      - durrett-probability
+    combination:
+      inputs:
+        - indexed_family
+        - random_variable
+      compatibility: All random variables have the same probability-space domain and a common state space (or a specified family of state spaces), and the indexed family enumerates them.
+      output: stochastic_process
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: stochastic_process
+    label: Stochastic process
+    primaryDomain: probability
+    domains:
+      - probability
+      - measure
+      - analysis
+    level: 6
+    kind: structure
+    summary: An indexed family of random variables defined on a common probability space.
+    carriers:
+      - probability space $(\Omega,\mathcal F,\mathbb P)$
+      - index set $T$
+      - state space $S$
+    data:
+      - family $(X_t)_{t\in T}$ of random variables
+    axioms: []
+    induces: []
+    notes: All component random variables share a probability-space domain; state spaces may be common or indexed depending on convention.
+    citations:
+      - wp-stochastic-process
+      - durrett-probability
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: markov_chain
+    label: Markov chain
+    primaryDomain: probability
+    domains:
+      - probability
+      - combinatorics
+      - analysis
+    level: 7
+    kind: structure
+    summary: A discrete-time stochastic process with the Markov conditional-independence property.
+    carriers:
+      - stochastic process $(X_{n})$
+    data: []
+    axioms:
+      - future conditional law depends on the present state, not the full past
+    induces: []
+    notes: ''
+    citations:
+      - wp-markov-chain
+      - durrett-probability
+    primaryField: mathematics
+    fields:
+      - mathematics
 edges:
-- id: j_filtered_probability__filtration
-  source: filtration
-  target: j_filtered_probability
-  type: combine-compatible
-  label: information filtration
-  detail: Supply the Filtration structure as one jointly required input.
-  citations:
-  - wp-filtered-probability
-  - durrett-probability
-- id: j_filtered_probability__out
-  source: j_filtered_probability
-  target: filtered_probability_space
-  type: combine-compatible
-  label: impose compatibility
-  detail: Use a filtration of sub-$\sigma$-algebras of the probability space.
-  citations:
-  - wp-filtered-probability
-  - durrett-probability
-- id: j_filtration__out
-  source: j_filtration
-  target: filtration
-  type: combine-compatible
-  label: require nested sub-$\sigma$-algebras
-  detail: Require monotonicity $\mathcal F_s\subseteq\mathcal F_t$ for $s\le t$ within one ambient $\sigma$-algebra.
-  citations:
-  - wp-filtration-probability
-  - durrett-probability
-- id: j_random_variable__out
-  source: j_random_variable
-  target: random_variable
-  type: combine-compatible
-  label: identify the domain
-  detail: Identify the map domain with the probability space and retain the measurable codomain as the value space.
-  citations:
-  - wp-random-variable
-  - durrett-probability
-- id: j_stochastic_process__out
-  source: j_stochastic_process
-  target: stochastic_process
-  type: combine-compatible
-  label: impose compatibility
-  detail: Require every member of the indexed family to be a measurable function on the same probability space.
-  citations:
-  - wp-stochastic-process
-  - durrett-probability
-- id: j_stochastic_process__random_variable
-  source: random_variable
-  target: j_stochastic_process
-  type: combine-compatible
-  label: family members
-  detail: Supply measurable random variables on one common probability space.
-  citations:
-  - wp-stochastic-process
-  - wp-random-variable
-  - durrett-probability
-- id: e_process_markov
-  source: stochastic_process
-  target: markov_chain
-  type: impose-axiom
-  label: + Markov property
-  detail: Require discrete time (typically index set $\mathbb{N}$) and the Markov conditional-independence property.
-  citations:
-  - wp-markov-chain
-  - durrett-probability
+  - id: j_filtered_probability__filtration
+    source: filtration
+    target: j_filtered_probability
+    type: combine-compatible
+    label: information filtration
+    detail: Supply the Filtration structure as one jointly required input.
+    citations:
+      - wp-filtered-probability
+      - durrett-probability
+  - id: j_filtered_probability__out
+    source: j_filtered_probability
+    target: filtered_probability_space
+    type: combine-compatible
+    label: impose compatibility
+    detail: Use a filtration of sub-$\sigma$-algebras of the probability space.
+    citations:
+      - wp-filtered-probability
+      - durrett-probability
+  - id: j_filtration__out
+    source: j_filtration
+    target: filtration
+    type: combine-compatible
+    label: require nested sub-$\sigma$-algebras
+    detail: Require monotonicity $\mathcal F_s\subseteq\mathcal F_t$ for $s\le t$ within one ambient $\sigma$-algebra.
+    citations:
+      - wp-filtration-probability
+      - durrett-probability
+  - id: j_random_variable__out
+    source: j_random_variable
+    target: random_variable
+    type: combine-compatible
+    label: identify the domain
+    detail: Identify the map domain with the probability space and retain the measurable codomain as the value space.
+    citations:
+      - wp-random-variable
+      - durrett-probability
+  - id: j_stochastic_process__out
+    source: j_stochastic_process
+    target: stochastic_process
+    type: combine-compatible
+    label: impose compatibility
+    detail: Require every member of the indexed family to be a measurable function on the same probability space.
+    citations:
+      - wp-stochastic-process
+      - durrett-probability
+  - id: j_stochastic_process__random_variable
+    source: random_variable
+    target: j_stochastic_process
+    type: combine-compatible
+    label: family members
+    detail: Supply measurable random variables on one common probability space.
+    citations:
+      - wp-stochastic-process
+      - wp-random-variable
+      - durrett-probability
+  - id: e_process_markov
+    source: stochastic_process
+    target: markov_chain
+    type: impose-axiom
+    label: + Markov property
+    detail: Require discrete time (typically index set $\mathbb{N}$) and the Markov conditional-independence property.
+    citations:
+      - wp-markov-chain
+      - durrett-probability

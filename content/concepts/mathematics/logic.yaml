@@ -1,585 +1,585 @@
 nodes:
-- id: first_order_signature
-  label: First-order signature
-  primaryDomain: logic
-  domains:
-  - logic
-  - foundation
-  - universal-algebra
-  level: 1
-  kind: structure
-  summary: A vocabulary of function, relation, and constant symbols together with their arities.
-  carriers:
-  - sets of symbols
-  data:
-  - arity assignments
-  axioms: []
-  induces: []
-  notes: ''
-  citations:
-  - wp-signature-logic
-  - openlogic-model-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: first_order_theory
-  label: First-order theory
-  primaryDomain: logic
-  domains:
-  - logic
-  - foundation
-  level: 2
-  kind: structure
-  summary: A set of first-order sentences in a fixed signature.
-  carriers:
-  - first-order signature $L$
-  data:
-  - set $T$ of $L$-sentences
-  axioms: []
-  induces:
-  - class of models $\operatorname{Mod}(T)$
-  notes: A theory need not be deductively closed unless that convention is stated explicitly.
-  citations:
-  - wp-model-theory
-  - openlogic-model-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: modal_kripke_model
-  label: Modal Kripke model
-  primaryDomain: logic
-  domains:
-  - logic
-  - order
-  level: 2
-  kind: structure
-  summary: A binary-relation frame together with a valuation of propositional variables at worlds.
-  carriers:
-  - set of worlds $W$
-  data:
-  - accessibility relation $R$
-  - valuation $V$
-  axioms: []
-  induces: []
-  notes: The recursive forcing clauses define the semantics; they are not an additional frame axiom. Frame conditions such as reflexivity or transitivity correspond to particular modal logics.
-  citations:
-  - wp-kripke-semantics
-  - openlogic-model-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: j_first_order_structure
-  label: signature + carrier
-  primaryDomain: logic
-  domains:
-  - logic
-  - foundation
-  - algebra
-  level: 2
-  kind: junction
-  summary: Interpret a first-order signature on a nonempty carrier set.
-  carriers: []
-  data: []
-  axioms: []
-  induces: []
-  notes: 'Construction junction: it is a visual device, not a separate standard mathematical structure.'
-  citations:
-  - wp-structure-logic
-  - openlogic-model-theory
-  combination:
-    inputs:
-    - first_order_signature
-    - set
-    compatibility: Each symbol is assigned an operation, relation, or distinguished element of the specified arity on the carrier.
-    output: first_order_structure
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: first_order_structure
-  label: First-order structure
-  primaryDomain: logic
-  domains:
-  - logic
-  - foundation
-  - algebra
-  - universal-algebra
-  level: 3
-  kind: structure
-  summary: A nonempty carrier together with interpretations of every symbol in a first-order signature.
-  carriers:
-  - nonempty set $M$
-  data:
-  - interpretations of constants, functions, and relations
-  axioms:
-  - arities match the signature
-  induces: []
-  notes: The signature and carrier are separate inputs; interpretations are additional data on that pair.
-  citations:
-  - wp-structure-logic
-  - openlogic-model-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: intuitionistic_kripke_model
-  label: Propositional intuitionistic Kripke model
-  primaryDomain: logic
-  domains:
-  - logic
-  - order
-  level: 3
-  kind: structure
-  summary: A preorder of information states with a persistent valuation of propositional atoms.
-  carriers:
-  - preordered set $W$
-  data:
-  - monotone valuation of atomic propositions
-  axioms:
-  - truth persists upward along the preorder
-  induces: []
-  notes: The displayed data define the propositional semantics. First-order intuitionistic Kripke models additionally require domains and interpretations varying monotonically with worlds.
-  citations:
-  - wp-kripke-semantics
-  - openlogic-model-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: j_model_of_theory
-  label: theory + structure satisfying it
-  primaryDomain: logic
-  domains:
-  - logic
-  - foundation
-  level: 4
-  kind: junction
-  summary: Combine a first-order theory with a structure in the same signature and impose satisfaction.
-  carriers: []
-  data: []
-  axioms: []
-  induces: []
-  notes: All incoming branches are jointly required.
-  citations:
-  - wp-model-theory
-  - openlogic-model-theory
-  combination:
-    inputs:
-    - first_order_theory
-    - first_order_structure
-    compatibility: The theory and structure use the same signature $L$, and the structure satisfies every sentence in $T$.
-    output: model_of_theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: model_of_theory
-  label: Model of a theory
-  primaryDomain: logic
-  domains:
-  - logic
-  level: 4
-  kind: structure
-  summary: A first-order structure satisfying every sentence of a specified theory.
-  carriers:
-  - first-order theory $T$ in signature $L$
-  - $L$-structure $M$
-  data: []
-  axioms:
-  - $M$ satisfies every sentence of $T$
-  induces: []
-  notes: The theory and structure are independent inputs that must use the same signature.
-  citations:
-  - wp-model-theory
-  - openlogic-model-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: modal_algebra
-  label: Normal modal algebra
-  primaryDomain: logic
-  domains:
-  - logic
-  - order
-  - algebra
-  level: 11
-  kind: structure
-  summary: A Boolean algebra with a normal modal necessity operator.
-  carriers:
-  - Boolean algebra $B$
-  data:
-  - unary modal operator $\square$
-  axioms:
-  - $\square 1=1$
-  - $\square (a\wedge b)=\square a\wedge \square b$
-  induces: []
-  notes: Equivalently, the dual possibility operator preserves 0 and finite joins. Additional modal logics impose further equations.
-  citations:
-  - wp-modal-algebra
-  - openlogic-model-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: formal_proof_system
-  label: Formal proof system
-  primaryDomain: logic
-  domains:
-  - logic
-  - computability-theory
-  - foundation
-  level: 4
-  kind: structure
-  summary: A finitary, syntactically specified collection of formulas, axioms, and inference rules defining formal derivability.
-  carriers:
-  - formal language
-  data:
-  - axioms
-  - inference rules
-  axioms:
-  - proofs are finite; in the effective systems used for computability and incompleteness, proof checking is mechanical
-  induces:
-  - A theorem set
-  notes: ''
-  citations:
-  - openlogic-incompleteness
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: consistent_theory
-  label: Consistent formal theory
-  primaryDomain: logic
-  domains:
-  - logic
-  - foundation
-  - computability-theory
-  level: 5
-  kind: structure
-  summary: A formal theory that does not derive a contradiction.
-  carriers:
-  - formal theory
-  data: []
-  axioms:
-  - no sentence and its negation are both derivable
-  induces:
-  - Nontrivial deductive consequence
-  notes: ''
-  citations:
-  - openlogic-incompleteness
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: syntactically_complete_theory
-  label: Syntactically complete formal theory
-  primaryDomain: logic
-  domains:
-  - logic
-  - foundation
-  - computability-theory
-  level: 5
-  kind: structure
-  summary: A formal theory that proves either each sentence or its negation.
-  carriers:
-  - formal theory
-  data: []
-  axioms:
-  - for every sentence $\varphi$, either $T\vdash\varphi$ or $T\vdash\neg\varphi$
-  induces:
-  - No undecided sentence in the language
-  notes: ''
-  citations:
-  - openlogic-incompleteness
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: j_first_incompleteness
-  label: consistent effective theory + arithmetic coding
-  primaryDomain: logic
-  domains:
-  - logic
-  - computability-theory
-  - foundation
-  - number-theory
-  level: 8
-  kind: junction
-  summary: Compatibility construction collecting the hypotheses of Gödel’s first incompleteness theorem.
-  carriers: []
-  data: []
-  axioms: []
-  induces: []
-  notes: Consistency, effective axiomatization, sufficient arithmetic strength, and arithmetized syntax must concern the same theory.
-  citations:
-  - openlogic-incompleteness
-  - godel-incompleteness-paper
-  combination:
-    inputs:
-    - formal_proof_system
-    - consistent_theory
-    - natural_numbers
-    - godel_numbering
-    compatibility: Use one effectively axiomatized consistent formal theory that represents enough elementary arithmetic on the natural numbers and supports the chosen Gödel coding.
-    output: first_incompleteness_theorem
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: first_incompleteness_theorem
-  label: Gödel’s first incompleteness theorem
-  primaryDomain: logic
-  domains:
-  - logic
-  - computability-theory
-  - foundation
-  level: 8
-  kind: structure
-  summary: Every consistent, effectively axiomatized formal theory strong enough to represent elementary arithmetic is syntactically incomplete.
-  carriers:
-  - effective formal theory containing sufficient arithmetic
-  data: []
-  axioms:
-  - consistency or suitable soundness hypotheses, depending on formulation
-  induces:
-  - An undecidable sentence for the theory
-  notes: ''
-  citations:
-  - godel-incompleteness-paper
-  - openlogic-incompleteness
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: j_second_incompleteness
-  label: consistent effective theory + internal provability
-  primaryDomain: logic
-  domains:
-  - logic
-  - computability-theory
-  - foundation
-  - number-theory
-  level: 9
-  kind: junction
-  summary: Compatibility construction collecting the hypotheses of Gödel’s second incompleteness theorem.
-  carriers: []
-  data: []
-  axioms: []
-  induces: []
-  notes: The consistency statement and provability predicate must be the standard internal formalizations for the same sufficiently strong theory.
-  citations:
-  - openlogic-incompleteness
-  - godel-incompleteness-paper
-  combination:
-    inputs:
-    - formal_proof_system
-    - consistent_theory
-    - natural_numbers
-    - godel_numbering
-    compatibility: Use one consistent effectively axiomatized theory strong enough for the standard arithmetization and derivability conditions, with its own proof predicate and consistency sentence.
-    output: second_incompleteness_theorem
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: second_incompleteness_theorem
-  label: Gödel’s second incompleteness theorem
-  primaryDomain: logic
-  domains:
-  - logic
-  - computability-theory
-  - foundation
-  level: 9
-  kind: structure
-  summary: A consistent, effectively axiomatized theory strong enough for the incompleteness machinery cannot prove its own suitably formalized consistency.
-  carriers:
-  - effective sufficiently strong formal theory
-  data: []
-  axioms:
-  - standard derivability conditions
-  induces:
-  - Unprovability of the internal consistency statement
-  notes: ''
-  citations:
-  - godel-incompleteness-paper
-  - openlogic-incompleteness
-  primaryField: mathematics
-  fields:
-  - mathematics
+  - id: first_order_signature
+    label: First-order signature
+    primaryDomain: logic
+    domains:
+      - logic
+      - foundation
+      - universal-algebra
+    level: 1
+    kind: structure
+    summary: A vocabulary of function, relation, and constant symbols together with their arities.
+    carriers:
+      - sets of symbols
+    data:
+      - arity assignments
+    axioms: []
+    induces: []
+    notes: ''
+    citations:
+      - wp-signature-logic
+      - openlogic-model-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: first_order_theory
+    label: First-order theory
+    primaryDomain: logic
+    domains:
+      - logic
+      - foundation
+    level: 2
+    kind: structure
+    summary: A set of first-order sentences in a fixed signature.
+    carriers:
+      - first-order signature $L$
+    data:
+      - set $T$ of $L$-sentences
+    axioms: []
+    induces:
+      - class of models $\operatorname{Mod}(T)$
+    notes: A theory need not be deductively closed unless that convention is stated explicitly.
+    citations:
+      - wp-model-theory
+      - openlogic-model-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: modal_kripke_model
+    label: Modal Kripke model
+    primaryDomain: logic
+    domains:
+      - logic
+      - order
+    level: 2
+    kind: structure
+    summary: A binary-relation frame together with a valuation of propositional variables at worlds.
+    carriers:
+      - set of worlds $W$
+    data:
+      - accessibility relation $R$
+      - valuation $V$
+    axioms: []
+    induces: []
+    notes: The recursive forcing clauses define the semantics; they are not an additional frame axiom. Frame conditions such as reflexivity or transitivity correspond to particular modal logics.
+    citations:
+      - wp-kripke-semantics
+      - openlogic-model-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: j_first_order_structure
+    label: signature + carrier
+    primaryDomain: logic
+    domains:
+      - logic
+      - foundation
+      - algebra
+    level: 2
+    kind: junction
+    summary: Interpret a first-order signature on a nonempty carrier set.
+    carriers: []
+    data: []
+    axioms: []
+    induces: []
+    notes: 'Construction junction: it is a visual device, not a separate standard mathematical structure.'
+    citations:
+      - wp-structure-logic
+      - openlogic-model-theory
+    combination:
+      inputs:
+        - first_order_signature
+        - set
+      compatibility: Each symbol is assigned an operation, relation, or distinguished element of the specified arity on the carrier.
+      output: first_order_structure
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: first_order_structure
+    label: First-order structure
+    primaryDomain: logic
+    domains:
+      - logic
+      - foundation
+      - algebra
+      - universal-algebra
+    level: 3
+    kind: structure
+    summary: A nonempty carrier together with interpretations of every symbol in a first-order signature.
+    carriers:
+      - nonempty set $M$
+    data:
+      - interpretations of constants, functions, and relations
+    axioms:
+      - arities match the signature
+    induces: []
+    notes: The signature and carrier are separate inputs; interpretations are additional data on that pair.
+    citations:
+      - wp-structure-logic
+      - openlogic-model-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: intuitionistic_kripke_model
+    label: Propositional intuitionistic Kripke model
+    primaryDomain: logic
+    domains:
+      - logic
+      - order
+    level: 3
+    kind: structure
+    summary: A preorder of information states with a persistent valuation of propositional atoms.
+    carriers:
+      - preordered set $W$
+    data:
+      - monotone valuation of atomic propositions
+    axioms:
+      - truth persists upward along the preorder
+    induces: []
+    notes: The displayed data define the propositional semantics. First-order intuitionistic Kripke models additionally require domains and interpretations varying monotonically with worlds.
+    citations:
+      - wp-kripke-semantics
+      - openlogic-model-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: j_model_of_theory
+    label: theory + structure satisfying it
+    primaryDomain: logic
+    domains:
+      - logic
+      - foundation
+    level: 4
+    kind: junction
+    summary: Combine a first-order theory with a structure in the same signature and impose satisfaction.
+    carriers: []
+    data: []
+    axioms: []
+    induces: []
+    notes: All incoming branches are jointly required.
+    citations:
+      - wp-model-theory
+      - openlogic-model-theory
+    combination:
+      inputs:
+        - first_order_theory
+        - first_order_structure
+      compatibility: The theory and structure use the same signature $L$, and the structure satisfies every sentence in $T$.
+      output: model_of_theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: model_of_theory
+    label: Model of a theory
+    primaryDomain: logic
+    domains:
+      - logic
+    level: 4
+    kind: structure
+    summary: A first-order structure satisfying every sentence of a specified theory.
+    carriers:
+      - first-order theory $T$ in signature $L$
+      - $L$-structure $M$
+    data: []
+    axioms:
+      - $M$ satisfies every sentence of $T$
+    induces: []
+    notes: The theory and structure are independent inputs that must use the same signature.
+    citations:
+      - wp-model-theory
+      - openlogic-model-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: modal_algebra
+    label: Normal modal algebra
+    primaryDomain: logic
+    domains:
+      - logic
+      - order
+      - algebra
+    level: 11
+    kind: structure
+    summary: A Boolean algebra with a normal modal necessity operator.
+    carriers:
+      - Boolean algebra $B$
+    data:
+      - unary modal operator $\square$
+    axioms:
+      - $\square 1=1$
+      - $\square (a\wedge b)=\square a\wedge \square b$
+    induces: []
+    notes: Equivalently, the dual possibility operator preserves 0 and finite joins. Additional modal logics impose further equations.
+    citations:
+      - wp-modal-algebra
+      - openlogic-model-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: formal_proof_system
+    label: Formal proof system
+    primaryDomain: logic
+    domains:
+      - logic
+      - computability-theory
+      - foundation
+    level: 4
+    kind: structure
+    summary: A finitary, syntactically specified collection of formulas, axioms, and inference rules defining formal derivability.
+    carriers:
+      - formal language
+    data:
+      - axioms
+      - inference rules
+    axioms:
+      - proofs are finite; in the effective systems used for computability and incompleteness, proof checking is mechanical
+    induces:
+      - A theorem set
+    notes: ''
+    citations:
+      - openlogic-incompleteness
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: consistent_theory
+    label: Consistent formal theory
+    primaryDomain: logic
+    domains:
+      - logic
+      - foundation
+      - computability-theory
+    level: 5
+    kind: structure
+    summary: A formal theory that does not derive a contradiction.
+    carriers:
+      - formal theory
+    data: []
+    axioms:
+      - no sentence and its negation are both derivable
+    induces:
+      - Nontrivial deductive consequence
+    notes: ''
+    citations:
+      - openlogic-incompleteness
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: syntactically_complete_theory
+    label: Syntactically complete formal theory
+    primaryDomain: logic
+    domains:
+      - logic
+      - foundation
+      - computability-theory
+    level: 5
+    kind: structure
+    summary: A formal theory that proves either each sentence or its negation.
+    carriers:
+      - formal theory
+    data: []
+    axioms:
+      - for every sentence $\varphi$, either $T\vdash\varphi$ or $T\vdash\neg\varphi$
+    induces:
+      - No undecided sentence in the language
+    notes: ''
+    citations:
+      - openlogic-incompleteness
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: j_first_incompleteness
+    label: consistent effective theory + arithmetic coding
+    primaryDomain: logic
+    domains:
+      - logic
+      - computability-theory
+      - foundation
+      - number-theory
+    level: 8
+    kind: junction
+    summary: Compatibility construction collecting the hypotheses of Gödel’s first incompleteness theorem.
+    carriers: []
+    data: []
+    axioms: []
+    induces: []
+    notes: Consistency, effective axiomatization, sufficient arithmetic strength, and arithmetized syntax must concern the same theory.
+    citations:
+      - openlogic-incompleteness
+      - godel-incompleteness-paper
+    combination:
+      inputs:
+        - formal_proof_system
+        - consistent_theory
+        - natural_numbers
+        - godel_numbering
+      compatibility: Use one effectively axiomatized consistent formal theory that represents enough elementary arithmetic on the natural numbers and supports the chosen Gödel coding.
+      output: first_incompleteness_theorem
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: first_incompleteness_theorem
+    label: Gödel’s first incompleteness theorem
+    primaryDomain: logic
+    domains:
+      - logic
+      - computability-theory
+      - foundation
+    level: 8
+    kind: structure
+    summary: Every consistent, effectively axiomatized formal theory strong enough to represent elementary arithmetic is syntactically incomplete.
+    carriers:
+      - effective formal theory containing sufficient arithmetic
+    data: []
+    axioms:
+      - consistency or suitable soundness hypotheses, depending on formulation
+    induces:
+      - An undecidable sentence for the theory
+    notes: ''
+    citations:
+      - godel-incompleteness-paper
+      - openlogic-incompleteness
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: j_second_incompleteness
+    label: consistent effective theory + internal provability
+    primaryDomain: logic
+    domains:
+      - logic
+      - computability-theory
+      - foundation
+      - number-theory
+    level: 9
+    kind: junction
+    summary: Compatibility construction collecting the hypotheses of Gödel’s second incompleteness theorem.
+    carriers: []
+    data: []
+    axioms: []
+    induces: []
+    notes: The consistency statement and provability predicate must be the standard internal formalizations for the same sufficiently strong theory.
+    citations:
+      - openlogic-incompleteness
+      - godel-incompleteness-paper
+    combination:
+      inputs:
+        - formal_proof_system
+        - consistent_theory
+        - natural_numbers
+        - godel_numbering
+      compatibility: Use one consistent effectively axiomatized theory strong enough for the standard arithmetization and derivability conditions, with its own proof predicate and consistency sentence.
+      output: second_incompleteness_theorem
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: second_incompleteness_theorem
+    label: Gödel’s second incompleteness theorem
+    primaryDomain: logic
+    domains:
+      - logic
+      - computability-theory
+      - foundation
+    level: 9
+    kind: structure
+    summary: A consistent, effectively axiomatized theory strong enough for the incompleteness machinery cannot prove its own suitably formalized consistency.
+    carriers:
+      - effective sufficiently strong formal theory
+    data: []
+    axioms:
+      - standard derivability conditions
+    induces:
+      - Unprovability of the internal consistency statement
+    notes: ''
+    citations:
+      - godel-incompleteness-paper
+      - openlogic-incompleteness
+    primaryField: mathematics
+    fields:
+      - mathematics
 edges:
-- id: e_signature_algebraic
-  source: first_order_signature
-  target: algebraic_signature
-  type: impose-axiom
-  label: operation symbols only
-  detail: Restrict a first-order signature to function symbols and constants.
-  citations:
-  - wp-signature-logic
-  - nlab-algebraic-theory
-  - burris-universal-algebra
-- id: e_signature_theory
-  source: first_order_signature
-  target: first_order_theory
-  type: add-data
-  label: choose a set of sentences
-  detail: Choose a set $T$ of sentences formed in the fixed signature $L$.
-  citations:
-  - wp-model-theory
-  - openlogic-model-theory
-- id: signature_to_j_structure
-  source: first_order_signature
-  target: j_first_order_structure
-  type: combine-compatible
-  label: supply signature
-  detail: Use the specified vocabulary and arities.
-  citations:
-  - wp-structure-logic
-  - openlogic-model-theory
-- id: j_model_of_theory__structure
-  source: first_order_structure
-  target: j_model_of_theory
-  type: combine-compatible
-  label: candidate structure
-  detail: Supply a structure $M$ in the same signature.
-  citations:
-  - wp-model-theory
-  - openlogic-model-theory
-- id: e_fostruct_universal
-  source: first_order_structure
-  target: universal_algebra
-  type: representation-equivalence
-  label: specialize to an algebraic signature
-  detail: A first-order structure whose signature has only function symbols (including constants as nullary operations) is exactly an $\Omega$-algebra.
-  citations:
-  - wp-universal-algebra
-  - nlab-universal-algebra
-  - burris-universal-algebra
-- id: j_model_of_theory__theory
-  source: first_order_theory
-  target: j_model_of_theory
-  type: combine-compatible
-  label: theory
-  detail: Supply the set of sentences $T$.
-  citations:
-  - wp-model-theory
-  - openlogic-model-theory
-- id: j_structure_to_structure
-  source: j_first_order_structure
-  target: first_order_structure
-  type: combine-compatible
-  label: interpret every symbol
-  detail: Assign operations, relations, and constants of the prescribed arities.
-  citations:
-  - wp-structure-logic
-  - openlogic-model-theory
-- id: j_model_of_theory__out
-  source: j_model_of_theory
-  target: model_of_theory
-  type: combine-compatible
-  label: impose satisfaction
-  detail: Require $M\models\varphi$ for every $\varphi\in T$.
-  citations:
-  - wp-model-theory
-  - openlogic-model-theory
-- id: first_order_theory_to_zf
-  source: first_order_theory
-  target: zermelo_fraenkel_set_theory
-  type: classification
-  label: ZF theory
-  detail: ZF is a first-order theory in the language with membership as its only nonlogical relation.
-  citations:
-  - wp-zf
-  - openlogic-set-theory
-- id: first_order_theory_to_zfc
-  source: first_order_theory
-  target: zfc_set_theory
-  type: classification
-  label: ZFC theory
-  detail: ZFC is a first-order theory in the language of membership, presented by finitely many axioms together with axiom schemas.
-  citations:
-  - wp-zf
-  - sep-set-theory
-- id: story_first_order_theory_to_formal_proof_system_add_data
-  source: first_order_theory
-  target: formal_proof_system
-  type: add-data
-  label: specify effective derivations
-  detail: A formal proof system fixes axioms and inference rules for a language.
-  citations:
-  - openlogic-incompleteness
-- id: story_formal_proof_system_to_consistent_theory_impose_axiom
-  source: formal_proof_system
-  target: consistent_theory
-  type: impose-axiom
-  label: exclude contradictions
-  detail: Consistency requires that contradiction is not derivable.
-  citations:
-  - openlogic-incompleteness
-- id: story_formal_proof_system_to_syntactically_complete_theory_impose_axiom
-  source: formal_proof_system
-  target: syntactically_complete_theory
-  type: impose-axiom
-  label: decide every sentence syntactically
-  detail: Syntactic completeness requires a proof of each sentence or its negation.
-  citations:
-  - openlogic-incompleteness
-- id: story_formal_proof_system_to_godel_numbering_add_data
-  source: formal_proof_system
-  target: godel_numbering
-  type: add-data
-  label: choose an effective arithmetical coding
-  detail: For an effectively presented formal system, a Gödel numbering adds a computable encoding of symbols, formulas, and finite proofs by natural numbers.
-  citations:
-  - godel-incompleteness-paper
-- id: story_formal_proof_system_to_recursively_enumerable_set_canonical_construction
-  source: formal_proof_system
-  target: recursively_enumerable_set
-  type: canonical-construction
-  label: enumerate its formal theorems
-  detail: For an effectively axiomatized proof system with mechanically checkable finite proofs, the Gödel numbers of its theorems form a computably enumerable set.
-  citations:
-  - openlogic-incompleteness
-  - turing-computable-numbers
-- id: j_first_incompleteness__formal_proof_system
-  source: formal_proof_system
-  target: j_first_incompleteness
-  type: combine-compatible
-  label: effective formal theory
-  detail: Supply an effectively axiomatized proof system with mechanically checkable finite proofs.
-  citations:
-  - openlogic-incompleteness
-  - godel-incompleteness-paper
-- id: j_first_incompleteness__consistent_theory
-  source: consistent_theory
-  target: j_first_incompleteness
-  type: combine-compatible
-  label: the same theory is consistent
-  detail: Require consistency of that same formal theory.
-  citations:
-  - openlogic-incompleteness
-  - godel-incompleteness-paper
-- id: j_first_incompleteness__out
-  source: j_first_incompleteness
-  target: first_incompleteness_theorem
-  type: combine-compatible
-  label: apply Gödel’s theorem
-  detail: Under these joint hypotheses, the theory is syntactically incomplete.
-  citations:
-  - openlogic-incompleteness
-  - godel-incompleteness-paper
-- id: j_second_incompleteness__formal_proof_system
-  source: formal_proof_system
-  target: j_second_incompleteness
-  type: combine-compatible
-  label: effective formal theory
-  detail: Supply an effectively axiomatized proof system with mechanically checkable finite proofs.
-  citations:
-  - openlogic-incompleteness
-  - godel-incompleteness-paper
-- id: j_second_incompleteness__consistent_theory
-  source: consistent_theory
-  target: j_second_incompleteness
-  type: combine-compatible
-  label: the same theory is consistent
-  detail: Require consistency of that same formal theory.
-  citations:
-  - openlogic-incompleteness
-  - godel-incompleteness-paper
-- id: j_second_incompleteness__out
-  source: j_second_incompleteness
-  target: second_incompleteness_theorem
-  type: combine-compatible
-  label: apply Gödel’s theorem
-  detail: Under these joint hypotheses, the theory cannot prove its own standard consistency statement.
-  citations:
-  - openlogic-incompleteness
-  - godel-incompleteness-paper
+  - id: e_signature_algebraic
+    source: first_order_signature
+    target: algebraic_signature
+    type: impose-axiom
+    label: operation symbols only
+    detail: Restrict a first-order signature to function symbols and constants.
+    citations:
+      - wp-signature-logic
+      - nlab-algebraic-theory
+      - burris-universal-algebra
+  - id: e_signature_theory
+    source: first_order_signature
+    target: first_order_theory
+    type: add-data
+    label: choose a set of sentences
+    detail: Choose a set $T$ of sentences formed in the fixed signature $L$.
+    citations:
+      - wp-model-theory
+      - openlogic-model-theory
+  - id: signature_to_j_structure
+    source: first_order_signature
+    target: j_first_order_structure
+    type: combine-compatible
+    label: supply signature
+    detail: Use the specified vocabulary and arities.
+    citations:
+      - wp-structure-logic
+      - openlogic-model-theory
+  - id: j_model_of_theory__structure
+    source: first_order_structure
+    target: j_model_of_theory
+    type: combine-compatible
+    label: candidate structure
+    detail: Supply a structure $M$ in the same signature.
+    citations:
+      - wp-model-theory
+      - openlogic-model-theory
+  - id: e_fostruct_universal
+    source: first_order_structure
+    target: universal_algebra
+    type: representation-equivalence
+    label: specialize to an algebraic signature
+    detail: A first-order structure whose signature has only function symbols (including constants as nullary operations) is exactly an $\Omega$-algebra.
+    citations:
+      - wp-universal-algebra
+      - nlab-universal-algebra
+      - burris-universal-algebra
+  - id: j_model_of_theory__theory
+    source: first_order_theory
+    target: j_model_of_theory
+    type: combine-compatible
+    label: theory
+    detail: Supply the set of sentences $T$.
+    citations:
+      - wp-model-theory
+      - openlogic-model-theory
+  - id: j_structure_to_structure
+    source: j_first_order_structure
+    target: first_order_structure
+    type: combine-compatible
+    label: interpret every symbol
+    detail: Assign operations, relations, and constants of the prescribed arities.
+    citations:
+      - wp-structure-logic
+      - openlogic-model-theory
+  - id: j_model_of_theory__out
+    source: j_model_of_theory
+    target: model_of_theory
+    type: combine-compatible
+    label: impose satisfaction
+    detail: Require $M\models\varphi$ for every $\varphi\in T$.
+    citations:
+      - wp-model-theory
+      - openlogic-model-theory
+  - id: first_order_theory_to_zf
+    source: first_order_theory
+    target: zermelo_fraenkel_set_theory
+    type: classification
+    label: ZF theory
+    detail: ZF is a first-order theory in the language with membership as its only nonlogical relation.
+    citations:
+      - wp-zf
+      - openlogic-set-theory
+  - id: first_order_theory_to_zfc
+    source: first_order_theory
+    target: zfc_set_theory
+    type: classification
+    label: ZFC theory
+    detail: ZFC is a first-order theory in the language of membership, presented by finitely many axioms together with axiom schemas.
+    citations:
+      - wp-zf
+      - sep-set-theory
+  - id: story_first_order_theory_to_formal_proof_system_add_data
+    source: first_order_theory
+    target: formal_proof_system
+    type: add-data
+    label: specify effective derivations
+    detail: A formal proof system fixes axioms and inference rules for a language.
+    citations:
+      - openlogic-incompleteness
+  - id: story_formal_proof_system_to_consistent_theory_impose_axiom
+    source: formal_proof_system
+    target: consistent_theory
+    type: impose-axiom
+    label: exclude contradictions
+    detail: Consistency requires that contradiction is not derivable.
+    citations:
+      - openlogic-incompleteness
+  - id: story_formal_proof_system_to_syntactically_complete_theory_impose_axiom
+    source: formal_proof_system
+    target: syntactically_complete_theory
+    type: impose-axiom
+    label: decide every sentence syntactically
+    detail: Syntactic completeness requires a proof of each sentence or its negation.
+    citations:
+      - openlogic-incompleteness
+  - id: story_formal_proof_system_to_godel_numbering_add_data
+    source: formal_proof_system
+    target: godel_numbering
+    type: add-data
+    label: choose an effective arithmetical coding
+    detail: For an effectively presented formal system, a Gödel numbering adds a computable encoding of symbols, formulas, and finite proofs by natural numbers.
+    citations:
+      - godel-incompleteness-paper
+  - id: story_formal_proof_system_to_recursively_enumerable_set_canonical_construction
+    source: formal_proof_system
+    target: recursively_enumerable_set
+    type: canonical-construction
+    label: enumerate its formal theorems
+    detail: For an effectively axiomatized proof system with mechanically checkable finite proofs, the Gödel numbers of its theorems form a computably enumerable set.
+    citations:
+      - openlogic-incompleteness
+      - turing-computable-numbers
+  - id: j_first_incompleteness__formal_proof_system
+    source: formal_proof_system
+    target: j_first_incompleteness
+    type: combine-compatible
+    label: effective formal theory
+    detail: Supply an effectively axiomatized proof system with mechanically checkable finite proofs.
+    citations:
+      - openlogic-incompleteness
+      - godel-incompleteness-paper
+  - id: j_first_incompleteness__consistent_theory
+    source: consistent_theory
+    target: j_first_incompleteness
+    type: combine-compatible
+    label: the same theory is consistent
+    detail: Require consistency of that same formal theory.
+    citations:
+      - openlogic-incompleteness
+      - godel-incompleteness-paper
+  - id: j_first_incompleteness__out
+    source: j_first_incompleteness
+    target: first_incompleteness_theorem
+    type: combine-compatible
+    label: apply Gödel’s theorem
+    detail: Under these joint hypotheses, the theory is syntactically incomplete.
+    citations:
+      - openlogic-incompleteness
+      - godel-incompleteness-paper
+  - id: j_second_incompleteness__formal_proof_system
+    source: formal_proof_system
+    target: j_second_incompleteness
+    type: combine-compatible
+    label: effective formal theory
+    detail: Supply an effectively axiomatized proof system with mechanically checkable finite proofs.
+    citations:
+      - openlogic-incompleteness
+      - godel-incompleteness-paper
+  - id: j_second_incompleteness__consistent_theory
+    source: consistent_theory
+    target: j_second_incompleteness
+    type: combine-compatible
+    label: the same theory is consistent
+    detail: Require consistency of that same formal theory.
+    citations:
+      - openlogic-incompleteness
+      - godel-incompleteness-paper
+  - id: j_second_incompleteness__out
+    source: j_second_incompleteness
+    target: second_incompleteness_theorem
+    type: combine-compatible
+    label: apply Gödel’s theorem
+    detail: Under these joint hypotheses, the theory cannot prove its own standard consistency statement.
+    citations:
+      - openlogic-incompleteness
+      - godel-incompleteness-paper

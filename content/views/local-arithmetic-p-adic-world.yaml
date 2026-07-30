@@ -1,15 +1,7 @@
 id: local-arithmetic-p-adic-world
 title: Local arithmetic and the $p$-adic world
-summary: Pass from number fields and Dedekind domains to valuations, places,
-  completions, local fields, valuation rings, residue fields, and $p$-adic
-  fields.
-narrative: Global arithmetic becomes tractable by examining one place at a time.
-  Valuations define arithmetic notions of size and divisibility; their valuation
-  rings and residue fields record integral and reduced information. Completing a
-  number field at an Archimedean or non-Archimedean place produces real,
-  complex, or $p$-adic local fields. Discrete valuation rings and complete local
-  rings supply the local algebra used throughout number theory and algebraic
-  geometry.
+summary: Pass from number fields and Dedekind domains to valuations, places, completions, local fields, valuation rings, residue fields, and $p$-adic fields.
+narrative: Global arithmetic becomes tractable by examining one place at a time. Valuations define arithmetic notions of size and divisibility; their valuation rings and residue fields record integral and reduced information. Completing a number field at an Archimedean or non-Archimedean place produces real, complex, or $p$-adic local fields. Discrete valuation rings and complete local rings supply the local algebra used throughout number theory and algebraic geometry.
 tags:
   - Mathematics
   - Number theory

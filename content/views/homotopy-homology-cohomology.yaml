@@ -1,15 +1,7 @@
 id: homotopy-homology-cohomology
 title: Homotopy, homology, and cohomology
-summary: Compare deformation-based and algebraic invariants of spaces, from
-  loops and homotopy groups to chain complexes, homology, cohomology rings, and
-  exact sequences.
-narrative: Homotopy treats continuous maps as equivalent when one deforms into
-  another. Loop spaces produce the fundamental group and higher homotopy groups,
-  while CW complexes and geometric realizations of simplicial sets provide
-  workable models. Singular chains turn spaces into chain complexes; cycles
-  modulo boundaries give homology. Dual cochains yield cohomology, whose cup
-  product adds ring structure. Exact and long exact sequences transmit
-  information across pairs, fibrations, and short exact sequences.
+summary: Compare deformation-based and algebraic invariants of spaces, from loops and homotopy groups to chain complexes, homology, cohomology rings, and exact sequences.
+narrative: Homotopy treats continuous maps as equivalent when one deforms into another. Loop spaces produce the fundamental group and higher homotopy groups, while CW complexes and geometric realizations of simplicial sets provide workable models. Singular chains turn spaces into chain complexes; cycles modulo boundaries give homology. Dual cochains yield cohomology, whose cup product adds ring structure. Exact and long exact sequences transmit information across pairs, fibrations, and short exact sequences.
 tags:
   - Mathematics
   - Algebraic topology

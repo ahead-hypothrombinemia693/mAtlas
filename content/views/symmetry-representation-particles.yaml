@@ -1,13 +1,7 @@
 id: symmetry-representation-particles
 title: From symmetry to particle types
-summary: Follow the path from group actions to irreducible unitary
-  representations, spinors, chirality, multiplets, and particle classifications.
-narrative: A symmetry becomes predictive only after specifying how it acts.
-  Group actions linearize as representations; irreducible representations
-  provide elementary building blocks; Lie groups and Lie algebras organize
-  continuous symmetries. Lorentz, Poincaré, and spin-group representations then
-  classify spin and chirality, while tensor products and Clebsch–Gordan
-  coefficients explain composite angular momentum and gauge multiplets.
+summary: Follow the path from group actions to irreducible unitary representations, spinors, chirality, multiplets, and particle classifications.
+narrative: A symmetry becomes predictive only after specifying how it acts. Group actions linearize as representations; irreducible representations provide elementary building blocks; Lie groups and Lie algebras organize continuous symmetries. Lorentz, Poincaré, and spin-group representations then classify spin and chirality, while tensor products and Clebsch–Gordan coefficients explain composite angular momentum and gauge multiplets.
 tags:
   - Mathematics
   - Physics

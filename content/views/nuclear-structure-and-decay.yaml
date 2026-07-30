@@ -1,14 +1,7 @@
 id: nuclear-structure-and-decay
 title: The structure of the atomic nucleus
-summary: Trace nuclear discovery, forces, many-body models, binding, shell
-  structure, isotopes, and radioactive decay.
-narrative: Radioactivity and scattering revealed a compact nucleus whose
-  constituents were later identified as protons and neutrons. QCD underlies the
-  strong interaction, but nuclei are governed at low energy by residual nuclear
-  forces and effective theories. Binding energy and mass defect quantify
-  composite stability; liquid-drop, mean-field, and shell models capture
-  complementary collective and single-particle regimes. Nuclear states and
-  selection rules organize alpha, beta, and gamma decay.
+summary: Trace nuclear discovery, forces, many-body models, binding, shell structure, isotopes, and radioactive decay.
+narrative: Radioactivity and scattering revealed a compact nucleus whose constituents were later identified as protons and neutrons. QCD underlies the strong interaction, but nuclei are governed at low energy by residual nuclear forces and effective theories. Binding energy and mass defect quantify composite stability; liquid-drop, mean-field, and shell models capture complementary collective and single-particle regimes. Nuclear states and selection rules organize alpha, beta, and gamma decay.
 tags:
   - Physics
   - Nuclear physics

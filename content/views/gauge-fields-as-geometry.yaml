@@ -1,14 +1,7 @@
 id: gauge-fields-as-geometry
 title: Gauge fields as geometry
-summary: Translate local gauge invariance into principal bundles, connections,
-  curvature, Yang–Mills theory, and the gauge sectors of the Standard Model.
-narrative: The geometric language starts with smooth manifolds, Lie groups,
-  fiber bundles, and principal bundles. A principal connection defines parallel
-  transport and covariant differentiation; its curvature is the geometric
-  counterpart of field strength. The physical branch identifies gauge fields
-  with local connection data and develops Abelian and non-Abelian Yang–Mills
-  theories, culminating in QED, QCD, electroweak theory, and the Standard Model
-  gauge group.
+summary: Translate local gauge invariance into principal bundles, connections, curvature, Yang–Mills theory, and the gauge sectors of the Standard Model.
+narrative: The geometric language starts with smooth manifolds, Lie groups, fiber bundles, and principal bundles. A principal connection defines parallel transport and covariant differentiation; its curvature is the geometric counterpart of field strength. The physical branch identifies gauge fields with local connection data and develops Abelian and non-Abelian Yang–Mills theories, culminating in QED, QCD, electroweak theory, and the Standard Model gauge group.
 tags:
   - Mathematics
   - Physics

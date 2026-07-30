@@ -1,2638 +1,2638 @@
 nodes:
-- id: magma
-  label: Magma
-  level: 1
-  kind: structure
-  summary: A set with a closed binary operation.
-  carriers:
-  - set $M$
-  data:
-  - binary operation $M \times M \to M$
-  axioms: []
-  induces: []
-  notes: ''
-  citations:
-  - wp-magma
-  - stacks-algebra-text
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - universal-algebra
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: semigroup
-  label: Semigroup
-  level: 2
-  kind: structure
-  summary: An associative magma.
-  carriers:
-  - set $S$
-  data:
-  - binary operation
-  axioms:
-  - associativity
-  induces: []
-  notes: ''
-  citations:
-  - wp-semigroup
-  - nlab-semigroup
-  - stacks-algebra-text
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - universal-algebra
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: monoid
-  label: Monoid
-  level: 3
-  kind: structure
-  summary: A semigroup with an identity element.
-  carriers:
-  - set $M$
-  data:
-  - binary operation
-  - identity element $e$
-  axioms:
-  - associativity
-  - $e\cdot x = x = x\cdot e$
-  induces: []
-  notes: The identity, if it exists in a semigroup, is unique; monoidhood is therefore an existence property rather than freely chosen additional data.
-  citations:
-  - wp-monoid
-  - nlab-monoid
-  - stacks-algebra-text
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - universal-algebra
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: commutative_monoid
-  label: Commutative monoid
-  level: 4
-  kind: structure
-  summary: A monoid whose operation is commutative.
-  carriers:
-  - set $M$
-  data:
-  - binary operation
-  - identity
-  axioms:
-  - monoid axioms
-  - $x\cdot y = y\cdot x$
-  induces: []
-  notes: ''
-  citations:
-  - wp-comm-monoid
-  - stacks-algebra-text
-  primaryDomain: algebra
-  domains:
-  - algebra
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: group
-  label: Group
-  level: 4
-  kind: structure
-  summary: A monoid in which every element has an inverse.
-  carriers:
-  - set $G$
-  data:
-  - binary operation
-  - identity
-  - inverse for each element
-  axioms:
-  - associativity
-  - identity laws
-  - inverse laws
-  induces: []
-  notes: ''
-  citations:
-  - wp-group
-  - nlab-group
-  - stacks-algebra-text
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - universal-algebra
-  - representation-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: abelian_group
-  label: Abelian group
-  level: 5
-  kind: structure
-  summary: A group with commutative multiplication, usually written additively.
-  carriers:
-  - set $A$
-  data:
-  - group operation
-  axioms:
-  - group axioms
-  - commutativity
-  induces: []
-  notes: ''
-  citations:
-  - wp-abelian
-  - stacks-algebra-text
-  primaryDomain: algebra
-  domains:
-  - algebra
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: j_semiring
-  label: two compatible monoids
-  level: 5
-  kind: junction
-  summary: Use one commutative monoid as addition and another monoid as multiplication on the same carrier.
-  carriers: []
-  data: []
-  axioms: []
-  induces: []
-  notes: 'Construction junction: it is a visual device, not a separate standard mathematical structure.'
-  citations:
-  - wp-semiring
-  - nlab-semiring
-  - stacks-algebra-text
-  combination:
-    inputs:
-    - commutative_monoid
-    - monoid
-    compatibility: The two operations share a carrier; multiplication distributes over addition, and zero is absorbing.
-    output: semiring
-  primaryDomain: algebra
-  domains:
-  - algebra
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: semiring
-  label: Semiring
-  level: 6
-  kind: structure
-  summary: A ring-like structure without requiring additive inverses.
-  carriers:
-  - set $R$
-  data:
-  - addition +
-  - multiplication $\cdot$
-  - '0'
-  - '1'
-  axioms:
-  - $(R,+,0)$ is a commutative monoid
-  - $(R,\cdot,1)$ monoid
-  - distributivity
-  - 0 absorbing
-  induces: []
-  notes: 'Convention: semirings here are unital and have an absorbing zero. Some literature drops one or both requirements.'
-  citations:
-  - wp-semiring
-  - nlab-semiring
-  - stacks-algebra-text
-  primaryDomain: algebra
-  domains:
-  - algebra
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: ring
-  label: Ring
-  level: 7
-  kind: structure
-  summary: A unital semiring whose additive commutative monoid is an abelian group.
-  carriers:
-  - set $R$
-  data:
-  - addition
-  - multiplication
-  - '0'
-  - '1'
-  axioms:
-  - additive inverses
-  - semiring axioms
-  induces: []
-  notes: This atlas uses the convention that rings have a multiplicative identity and ring homomorphisms preserve it.
-  citations:
-  - wp-ring
-  - nlab-ring
-  - stacks-algebra-text
-  primaryDomain: algebra
-  domains:
-  - algebra
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: commutative_ring
-  label: Commutative ring
-  level: 8
-  kind: structure
-  summary: A ring with commutative multiplication.
-  carriers:
-  - set $R$
-  data:
-  - ring operations
-  axioms:
-  - ring axioms
-  - ab $=$ ba
-  induces: []
-  notes: ''
-  citations:
-  - wp-comm-ring
-  - stacks-comm-algebra
-  - stacks-algebra-text
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - algebraic-geometry
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: division_ring
-  label: Division ring
-  level: 8
-  kind: structure
-  summary: A nonzero ring in which every nonzero element is multiplicatively invertible.
-  carriers:
-  - set $D$
-  data:
-  - ring operations
-  axioms:
-  - $1 \ne 0$
-  - each nonzero element has a multiplicative inverse
-  induces: []
-  notes: ''
-  citations:
-  - wp-division-ring
-  - stacks-algebra-text
-  primaryDomain: algebra
-  domains:
-  - algebra
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: j_module
-  label: ring action on an abelian group
-  level: 8
-  kind: junction
-  summary: Combine a scalar ring with an additive abelian group.
-  carriers: []
-  data: []
-  axioms: []
-  induces: []
-  notes: 'Construction junction: it is a visual device, not a separate standard mathematical structure.'
-  citations:
-  - wp-module
-  - nlab-module
-  - stacks-algebra-text
-  combination:
-    inputs:
-    - ring
-    - abelian_group
-    compatibility: Add scalar multiplication $R \times M \to M$ satisfying distributivity, associativity of scalar action, and the unit law.
-    output: module
-  primaryDomain: algebra
-  domains:
-  - algebra
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: module
-  label: Module over a ring
-  level: 9
-  kind: structure
-  summary: An abelian group acted on linearly by a ring.
-  carriers:
-  - scalar ring $R$
-  - carrier set $M$
-  data:
-  - abelian-group addition on $M$
-  - scalar multiplication $R \times M \to M$
-  axioms:
-  - module axioms
-  induces: []
-  notes: 'Convention: modules are left modules unless explicitly stated otherwise. Right modules reverse the scalar-action convention.'
-  citations:
-  - wp-module
-  - nlab-module
-  - stacks-modules
-  - stacks-algebra-text
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - representation-theory
-  - homological-algebra
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: field
-  label: Field
-  level: 10
-  kind: structure
-  summary: A commutative ring in which every nonzero element has a multiplicative inverse.
-  carriers:
-  - set $F$
-  data:
-  - addition
-  - multiplication
-  - '0'
-  - '1'
-  axioms:
-  - commutative-ring axioms
-  - $1\ne 0$
-  - every nonzero element has a multiplicative inverse
-  induces: []
-  notes: The inverse of each nonzero element is unique. The convention excludes the zero ring.
-  citations:
-  - wp-field
-  - nlab-field
-  - stacks-algebra-text
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - algebraic-geometry
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: affine_space
-  label: Affine space
-  primaryField: mathematics
-  fields:
-  - mathematics
-  primaryDomain: algebra
-  domains:
-  - algebra
-  level: 13
-  kind: structure
-  conceptType: Geometric algebraic structure
-  summary: A set with a free transitive action of a vector space, retaining displacement vectors without a preferred origin.
-  citations:
-  - wp-affine_space
-  - nlab-affine_space
-  - tong-relativity
-  carriers:
-  - set $A$
-  - translation vector space $V$
-  data:
-  - free transitive action $A\times V\to A$
-  axioms:
-  - for every $a,b\in A$ there is a unique $v\in V$ with $a+v=b$
-  induces:
-  - difference vectors $b-a$
-  - translations
-  notes: No origin is distinguished; choosing one identifies $A$ noncanonically with $V$.
-- id: algebraically_closed_field
-  label: Algebraically closed field
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - algebraic-geometry
-  - logic
-  level: 11
-  kind: structure
-  summary: A field in which every nonconstant polynomial has a root.
-  carriers:
-  - field $K$
-  data: []
-  axioms:
-  - every nonconstant polynomial in $K[x]$ splits
-  induces: []
-  notes: ''
-  citations:
-  - wp-algebraically-closed
-  - nlab-algebraically-closed
-  - stacks-algebra-text
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: j_vector
-  label: field action on an abelian group
-  level: 11
-  kind: junction
-  summary: Specialize scalar multiplication to scalars from a field.
-  carriers: []
-  data: []
-  axioms: []
-  induces: []
-  notes: 'Construction junction: it is a visual device, not a separate standard mathematical structure.'
-  citations:
-  - wp-vector
-  - nlab-vector
-  - stacks-algebra-text
-  combination:
-    inputs:
-    - field
-    - abelian_group
-    compatibility: Add $F \times V \to V$ satisfying the vector-space axioms.
-    output: vector_space
-  primaryDomain: algebra
-  domains:
-  - algebra
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: perfect_field
-  label: Perfect field
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - number-theory
-  - algebraic-geometry
-  level: 11
-  kind: structure
-  summary: A field whose algebraic extensions are separable.
-  carriers:
-  - field $K$
-  data: []
-  axioms:
-  - every algebraic extension is separable
-  induces: []
-  notes: ''
-  citations:
-  - wp-perfect-field
-  - stacks-algebra-text
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: vector_space
-  label: Vector space
-  level: 12
-  kind: structure
-  summary: An abelian group with scalar multiplication by a field.
-  carriers:
-  - scalar field $F$
-  - carrier set $V$
-  data:
-  - vector addition
-  - scalar multiplication
-  axioms:
-  - vector-space axioms
-  induces: []
-  notes: ''
-  citations:
-  - wp-vector
-  - nlab-vector
-  - stacks-algebra-text
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - representation-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: complex_vector_space
-  label: Complex vector space
-  primaryField: mathematics
-  fields:
-  - mathematics
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - analysis
-  level: 13
-  kind: structure
-  conceptType: Algebraic structure
-  summary: A vector space whose scalar field is $\mathbb C$.
-  citations:
-  - wp-complex_vector_space
-  - nlab-complex_vector_space
-  carriers:
-  - set $V$
-  - scalar field $\mathbb C$
-  data:
-  - vector addition
-  - complex scalar multiplication
-  axioms:
-  - vector-space axioms over $\mathbb C$
-  induces:
-  - underlying real vector space
-  - complex-linear maps
-  notes: ''
-- id: dual_vector_space
-  label: Dual vector space
-  primaryField: mathematics
-  fields:
-  - mathematics
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - analysis
-  level: 13
-  kind: structure
-  conceptType: Algebraic construction
-  summary: The vector space of linear functionals from a vector space to its scalar field.
-  citations:
-  - wp-dual_vector_space
-  - nlab-dual_vector_space
-  carriers:
-  - vector space $V$
-  data:
-  - linear functionals $V\to F$
-  axioms:
-  - pointwise vector-space operations
-  induces:
-  - evaluation pairing $V^*\times V\to F$
-  notes: For infinite-dimensional topological vector spaces, the continuous dual depends on the topology and can differ from the algebraic dual.
-- id: lie_algebra
-  label: Lie algebra
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - differential-geometry
-  - representation-theory
-  level: 13
-  kind: structure
-  summary: A vector space with an alternating bilinear bracket satisfying the Jacobi identity.
-  carriers:
-  - vector space $\mathfrak{g}$
-  data:
-  - bilinear bracket $[-,-]$
-  axioms:
-  - 'alternating bracket: $[x,x]=0$ for every $x$'
-  - Jacobi identity
-  induces: []
-  notes: The alternating axiom implies antisymmetry over every field. The converse needs characteristic different from 2, so antisymmetry is not used as an unrestricted substitute.
-  citations:
-  - sage-lie-algebra
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: symplectic_vector_space
-  label: Symplectic vector space
-  primaryField: mathematics
-  fields:
-  - mathematics
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - differential-geometry
-  level: 13
-  kind: structure
-  conceptType: Bilinear structure
-  summary: A vector space with a nondegenerate alternating bilinear form.
-  citations:
-  - wp-symplectic_vector_space
-  - nlab-symplectic_vector_space
-  carriers:
-  - vector space $V$
-  data:
-  - bilinear form $\omega:V\times V\to F$
-  axioms:
-  - $\omega$ is alternating
-  - $\omega$ is nondegenerate
-  induces:
-  - canonical identification $V\to V^*$ via $v\mapsto\omega(v,-)$
-  notes: Finite-dimensional symplectic vector spaces have even dimension.
-- id: algebra_over_field
-  label: Algebra over a field
-  level: 14
-  kind: structure
-  summary: A vector space equipped with a bilinear multiplication, not necessarily associative or unital.
-  carriers:
-  - field $F$
-  - carrier $A$
-  data:
-  - vector-space operations
-  - bilinear multiplication $A\times A\to A$
-  axioms:
-  - bilinearity
-  induces: []
-  notes: Associativity, a multiplicative identity, commutativity, Lie identities, and similar laws define more specialized kinds of algebra.
-  citations:
-  - wp-algebra-field
-  - stacks-algebra-text
-  primaryDomain: algebra
-  domains:
-  - algebra
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: associative_algebra
-  label: Associative algebra
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - universal-algebra
-  level: 14
-  kind: structure
-  summary: An algebra over a commutative base ring or field whose multiplication is associative.
-  carriers:
-  - module or vector space $A$
-  data:
-  - bilinear multiplication
-  axioms:
-  - associativity
-  induces: []
-  notes: ''
-  citations:
-  - wp-associative-algebra
-  - nlab-associative-algebra
-  - stacks-algebra-text
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: tensor_product_vector_space
-  label: Tensor-product vector space
-  primaryField: mathematics
-  fields:
-  - mathematics
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - representation-theory
-  level: 14
-  kind: structure
-  conceptType: Universal construction
-  summary: A vector space $V\otimes W$ representing bilinear maps out of $V\times W$ by linear maps.
-  citations:
-  - wp-tensor_product_vector_space
-  - nlab-tensor_product_vector_space
-  carriers:
-  - vector spaces $V,W$
-  data:
-  - vector space $V\otimes W$
-  - bilinear map $V\times W\to V\otimes W$
-  axioms:
-  - universal property for bilinear maps
-  induces:
-  - multilinear constructions
-  - tensor products of linear maps
-  notes: The construction is canonical up to unique isomorphism, not equality of a particular concrete realization.
-- id: coalgebra
-  label: Coalgebra
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - category-theory
-  level: 15
-  kind: structure
-  summary: Over a fixed commutative base ring $k$, a $k$-module with coassociative comultiplication and counit.
-  carriers:
-  - commutative base ring $k$
-  - $k$-module $C$
-  data:
-  - $k$-linear comultiplication $C\to C\otimes _{k}C$
-  - $k$-linear counit $C\to k$
-  axioms:
-  - coassociativity
-  - counit laws
-  induces: []
-  notes: ''
-  citations:
-  - wp-coalgebra
-  - nlab-coalgebra
-  - stacks-algebra-text
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: exterior_algebra
-  label: Exterior algebra
-  primaryField: mathematics
-  fields:
-  - mathematics
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - differential-geometry
-  level: 15
-  kind: structure
-  conceptType: Graded algebra
-  summary: The graded algebra $\Lambda V$ generated by a vector space $V$ subject to the alternating relations $v\wedge v=0$.
-  citations:
-  - wp-exterior_algebra
-  - nlab-exterior_algebra
-  carriers:
-  - vector space $V$
-  data:
-  - graded algebra $\Lambda V$
-  - canonical map $V\to\Lambda^1V$
-  axioms:
-  - $v\wedge v=0$ for every $v$
-  - universal property for alternating algebra maps
-  induces:
-  - exterior powers $\Lambda^kV$
-  - wedge product
-  notes: In characteristic not equal to 2, the alternating relation implies graded anticommutativity for degree-one generators; the alternating formulation is characteristic-independent.
-- id: unital_associative_algebra
-  label: Unital associative algebra
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - universal-algebra
-  level: 15
-  kind: structure
-  summary: An associative algebra with a multiplicative identity compatible with the base scalar action.
-  carriers:
-  - associative algebra $A$
-  data:
-  - unit 1
-  axioms:
-  - two-sided identity
-  induces: []
-  notes: A multiplicative identity, if it exists, is unique; unitality is an existence condition on the associative multiplication.
-  citations:
-  - wp-associative-algebra
-  - nlab-associative-algebra
-  - stacks-algebra-text
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: star_algebra
-  label: '*-algebra'
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - analysis
-  level: 16
-  kind: structure
-  summary: A complex associative algebra equipped with a conjugate-linear involutive anti-automorphism.
-  carriers:
-  - complex associative algebra $A$
-  data:
-  - map $a\mapsto a^*$
-  axioms:
-  - $(a+b)^*=a^*+b^*$
-  - $(\lambda a)^*=\overline{\lambda}a^*$
-  - $(ab)^*=b^*a^*$
-  - $(a^*)^*=a$
-  induces: []
-  notes: The scalar involution here is complex conjugation.
-  citations:
-  - mathlib-star-module
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: j_bialgebra
-  label: algebra + coalgebra compatibility
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - category-theory
-  level: 16
-  kind: junction
-  summary: Compatibility construction producing Bialgebra.
-  carriers: []
-  data: []
-  axioms: []
-  induces: []
-  notes: All incoming branches are jointly required.
-  citations:
-  - wp-bialgebra
-  - nlab-bialgebra
-  - stacks-algebra-text
-  combination:
-    inputs:
-    - unital_associative_algebra
-    - coalgebra
-    compatibility: Use the same module or vector space and require comultiplication and counit to be algebra homomorphisms (equivalently multiplication and unit are coalgebra homomorphisms).
-    output: bialgebra
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: clifford_algebra
-  label: Clifford algebra
-  primaryField: mathematics
-  fields:
-  - mathematics
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - representation-theory
-  - differential-geometry
-  level: 16
-  kind: structure
-  conceptType: Associative algebra
-  summary: An associative algebra generated by a quadratic space with $v^2=Q(v)1$.
-  citations:
-  - wp-clifford_algebra
-  - nlab-clifford_algebra
-  carriers:
-  - vector space $V$
-  - scalar field $F$
-  data:
-  - quadratic form $Q$
-  - unital associative algebra $\mathrm{Cl}(V,Q)$
-  - map $V\to\mathrm{Cl}(V,Q)$
-  axioms:
-  - $v^2=Q(v)1$
-  - universal property
-  induces:
-  - spin and pin groups
-  - Clifford modules
-  notes: Sign conventions for $Q$ and the Clifford relation vary across mathematics and physics.
-- id: commutative_algebra
-  label: Commutative unital algebra over a field
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - algebraic-geometry
-  level: 16
-  kind: structure
-  summary: A unital associative algebra over a fixed field whose multiplication is commutative.
-  carriers:
-  - unital associative algebra $A$
-  data: []
-  axioms:
-  - $ab=ba$
-  induces: []
-  notes: “Commutative algebra” also names the subject. This node denotes an individual commutative unital algebra over the scalar field inherited from the algebra branch.
-  citations:
-  - wp-associative-algebra
-  - nlab-associative-algebra
-  - wp-commutative-algebra
-  - stacks-algebra-text
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: grassmann_algebra
-  label: Grassmann algebra
-  primaryField: mathematics
-  fields:
-  - mathematics
-  primaryDomain: algebra
-  domains:
-  - algebra
-  level: 16
-  kind: structure
-  conceptType: Graded algebra
-  summary: The exterior algebra of a vector space, especially when its generators are interpreted as anticommuting Grassmann variables.
-  citations:
-  - wp-grassmann_algebra
-  - nlab-grassmann_algebra
-  - tong-qft
-  carriers:
-  - vector space $V$
-  data:
-  - exterior algebra $\Lambda V$ viewed with Grassmann generators
-  axioms:
-  - $v\wedge v=0$
-  induces:
-  - Grassmann-even and Grassmann-odd subspaces
-  notes: This is the exterior algebra under terminology common in physics; it is not a second distinct algebraic construction.
-- id: bialgebra
-  label: Bialgebra
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - category-theory
-  level: 17
-  kind: structure
-  summary: Over a fixed commutative base ring, a compatible unital associative algebra and counital coassociative coalgebra.
-  carriers:
-  - commutative base ring $k$
-  - $k$-module $B$
-  data:
-  - algebra structure
-  - coalgebra structure
-  axioms:
-  - comultiplication and counit are algebra maps
-  induces: []
-  notes: Compatibility may equivalently be stated by requiring multiplication and unit to be coalgebra maps, or comultiplication and counit to be algebra maps.
-  citations:
-  - wp-bialgebra
-  - nlab-bialgebra
-  - stacks-algebra-text
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: gamma_matrices
-  label: Gamma matrices
-  primaryField: mathematics
-  fields:
-  - mathematics
-  primaryDomain: algebra
-  domains:
-  - algebra
-  level: 17
-  kind: structure
-  conceptType: Clifford representation
-  summary: Matrices or endomorphisms satisfying the Clifford relation $\{\gamma^\mu,\gamma^\nu\}=2g^{\mu\nu}I$, used to realize spinor representations.
-  citations:
-  - wp-gamma_matrices
-  - nlab-gamma_matrices
-  - tong-qft
-  carriers:
-  - spinor vector space $S$
-  data:
-  - endomorphisms $\gamma^\mu$ of $S$
-  - metric coefficients $g^{\mu\nu}$
-  axioms:
-  - $\gamma^\mu\gamma^\nu+\gamma^\nu\gamma^\mu=2g^{\mu\nu}I$
-  induces:
-  - representation of the relevant Clifford algebra
-  - Dirac operator after coupling to derivatives
-  notes: Matrix size, reality conditions, and sign conventions depend on dimension, signature, and representation.
-- id: hopf_algebra
-  label: Hopf algebra
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - category-theory
-  - representation-theory
-  level: 18
-  kind: structure
-  summary: A bialgebra equipped with an antipode.
-  carriers:
-  - bialgebra $H$
-  data:
-  - antipode $S:H\to H$
-  axioms:
-  - convolution inverse laws
-  induces: []
-  notes: For a fixed bialgebra structure, an antipode is unique if it exists; Hopf algebra status is therefore an existence property, not a free choice of extra map.
-  citations:
-  - wp-hopf-algebra
-  - nlab-hopf-algebra
-  - stacks-algebra-text
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: slater_determinant
-  label: Slater determinant
-  primaryField: mathematics
-  fields:
-  - mathematics
-  primaryDomain: algebra
-  domains:
-  - algebra
-  level: 24
-  kind: structure
-  conceptType: Antisymmetric tensor construction
-  summary: The determinant or exterior product of one-particle spin-orbitals representing a single antisymmetric fermion configuration.
-  citations:
-  - wp-slater_determinant
-  - nlab-slater_determinant
-  - nist-atomic-spectroscopy
-  carriers:
-  - one-particle orbitals $\phi_1,\ldots,\phi_N$
-  data:
-  - antisymmetrized tensor product or determinant
-  axioms:
-  - changes sign under odd particle permutations
-  - vanishes when two orbitals coincide
-  induces:
-  - one-body density matrix for the determinant
-  - fermionic exchange structure
-  notes: A single Slater determinant captures antisymmetry and exchange but not general many-body correlation.
-- id: operator_commutator
-  label: Operator commutator
-  primaryField: mathematics
-  fields:
-  - mathematics
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - analysis
-  level: 21
-  kind: structure
-  conceptType: Bilinear operation
-  summary: For operators $A$ and $B$ with a common meaningful domain, the commutator is $[A,B]=AB-BA$; domain issues are essential for unbounded operators.
-  citations:
-  - wp-operator-commutator
-  - nlab-operator-commutator
-  carriers:
-  - operators $A,B$ with compatible products
-  data:
-  - operator $[A,B]=AB-BA$ on a common domain
-  axioms:
-  - defined only where both compositions make sense
-  induces:
-  - Lie-algebra structure in bounded/algebraic settings
-  - uncertainty relations
-  notes: For unbounded operators, domain questions are essential.
-- id: operator_anticommutator
-  label: Operator anticommutator
-  primaryField: mathematics
-  fields:
-  - mathematics
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - analysis
-  level: 21
-  kind: structure
-  conceptType: Bilinear operation
-  summary: For operators $A$ and $B$ with defined products, the anticommutator is $\{A,B\}=AB+BA$.
-  citations:
-  - wp-operator-anticommutator
-  - nlab-operator-anticommutator
-  carriers:
-  - operators $A,B$ with compatible products
-  data:
-  - operator $\{A,B\}=AB+BA$ on a common domain
-  axioms:
-  - defined only where both compositions make sense
-  induces:
-  - Clifford and fermionic canonical anticommutation relations
-  notes: For unbounded operators, domain questions are essential.
-- id: direct_sum_vector_space
-  label: Direct sum of vector spaces
-  primaryField: mathematics
-  fields:
-  - mathematics
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - analysis
-  level: 14
-  kind: structure
-  conceptType: Coproduct / sum construction
-  summary: The direct sum $\bigoplus_i V_i$ consists of tuples with finite support in the algebraic case; Hilbert direct sums complete square-summable families under the natural inner product.
-  citations:
-  - wp-direct-sum-vector-space
-  - nlab-direct-sum-vector-space
-  carriers:
-  - family of vector spaces $(V_i)_{i\in I}$
-  data:
-  - finite-support tuples $(v_i)$
-  axioms:
-  - componentwise operations
-  - only finitely many nonzero components in the algebraic direct sum
-  induces:
-  - canonical injections and projections
-  notes: The Hilbert direct sum is a different completed construction using square-summable families.
-- id: polynomial_ring
-  label: Polynomial ring
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - algebraic-geometry
-  level: 9
-  kind: structure
-  summary: The ring $R[x]$ of formal polynomials in an indeterminate over a coefficient ring $R$.
-  carriers:
-  - coefficient ring $R$
-  data:
-  - finite coefficient sequences
-  - formal indeterminate
-  axioms: []
-  induces:
-  - Evaluation maps, ideals, and quotient algebras
-  notes: ''
-  citations:
-  - milne-fields-galois-theory
-  - stacks-algebra-text
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: field_extension
-  label: Field extension
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - number-theory
-  level: 11
-  kind: structure
-  summary: An inclusion of fields $K\subseteq L$, regarding $L$ as a vector space and algebra over $K$.
-  carriers:
-  - fields $K\subseteq L$
-  data:
-  - specified embedding of $K$ into $L$
-  axioms: []
-  induces:
-  - Degree, algebraic elements, and automorphisms
-  notes: ''
-  citations:
-  - milne-fields-galois-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: algebraic_extension
-  label: Algebraic field extension
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - number-theory
-  level: 12
-  kind: structure
-  summary: A field extension in which every element satisfies a nonzero polynomial over the base field.
-  carriers:
-  - field extension $L/K$
-  data: []
-  axioms:
-  - every element of $L$ is algebraic over $K$
-  induces:
-  - Minimal polynomials and finite subextensions
-  notes: ''
-  citations:
-  - milne-fields-galois-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: separable_extension
-  label: Separable field extension
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - number-theory
-  level: 13
-  kind: structure
-  summary: An algebraic extension in which every element has a separable minimal polynomial over the base field.
-  carriers:
-  - algebraic extension $L/K$
-  data: []
-  axioms:
-  - minimal polynomials have distinct roots in a splitting field
-  induces:
-  - Well-behaved embeddings into an algebraic closure
-  notes: ''
-  citations:
-  - milne-fields-galois-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: normal_extension
-  label: Normal field extension
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - number-theory
-  level: 13
-  kind: structure
-  summary: An algebraic extension $L/K$ in which every irreducible polynomial over $K$ having one root in $L$ splits completely in $L$.
-  carriers:
-  - algebraic extension $L/K$
-  data: []
-  axioms:
-  - stability under $K$-embeddings into an algebraic closure
-  induces:
-  - A splitting-field characterization
-  notes: ''
-  citations:
-  - milne-fields-galois-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: splitting_field
-  label: Splitting field
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - number-theory
-  level: 13
-  kind: structure
-  summary: The smallest field extension over which a specified family of polynomials splits into linear factors.
-  carriers:
-  - base field and polynomials
-  data:
-  - adjoined roots
-  axioms:
-  - generated by all roots
-  induces:
-  - A normal algebraic extension
-  notes: ''
-  citations:
-  - milne-fields-galois-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: field_automorphism
-  label: Field automorphism
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - representation-theory
-  level: 12
-  kind: structure
-  summary: An isomorphism from a field to itself; relative automorphisms fix a specified base field pointwise.
-  carriers:
-  - field $L$
-  data:
-  - bijective field homomorphism
-  axioms: []
-  induces:
-  - An element of an automorphism group; its iterates generate a cyclic subgroup
-  notes: ''
-  citations:
-  - milne-fields-galois-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: galois_extension
-  label: Galois extension
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - number-theory
-  level: 14
-  kind: structure
-  summary: An algebraic extension that is both normal and separable.
-  carriers:
-  - field extension $L/K$
-  data: []
-  axioms:
-  - normality
-  - separability
-  induces:
-  - A Galois group controlling intermediate fields
-  notes: ''
-  citations:
-  - milne-fields-galois-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: galois_group
-  label: Galois group
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - representation-theory
-  - number-theory
-  level: 15
-  kind: structure
-  summary: The group $\operatorname{Gal}(L/K)$ of field automorphisms of $L$ that fix $K$ pointwise.
-  carriers:
-  - field extension $L/K$
-  data:
-  - $K$-automorphisms of $L$
-  axioms: []
-  induces:
-  - Actions on roots and intermediate fields
-  notes: ''
-  citations:
-  - milne-fields-galois-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: fixed_field
-  label: Fixed field
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - number-theory
-  level: 15
-  kind: structure
-  summary: For a subgroup $H$ of field automorphisms of $L$, the subfield $L^H$ consisting of elements fixed by every member of $H$.
-  carriers:
-  - field $L$
-  - automorphism subgroup $H$
-  data:
-  - common fixed elements
-  axioms: []
-  induces:
-  - An intermediate field
-  notes: ''
-  citations:
-  - milne-fields-galois-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: fundamental_theorem_galois_theory
-  label: Fundamental theorem of Galois theory
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - number-theory
-  level: 16
-  kind: structure
-  summary: For a finite Galois extension, intermediate fields correspond inclusion-reversingly to subgroups of the Galois group; normal subextensions correspond to normal subgroups.
-  carriers:
-  - finite Galois extension
-  data:
-  - fixed-field and automorphism-group assignments
-  axioms:
-  - mutually inverse correspondence
-  induces:
-  - Degree-index relations and quotient Galois groups
-  notes: ''
-  citations:
-  - milne-fields-galois-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: solvable_group
-  label: Solvable group
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - representation-theory
-  level: 8
-  kind: structure
-  summary: A group admitting a finite subnormal series whose successive quotient groups are abelian.
-  carriers:
-  - group $G$
-  data:
-  - derived series or subnormal series
-  axioms:
-  - termination at the trivial group
-  induces:
-  - A criterion in solvability by radicals
-  notes: ''
-  citations:
-  - milne-fields-galois-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: j_radical_solvability
-  label: splitting field + its solvable Galois group
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - number-theory
-  - representation-theory
-  level: 17
-  kind: junction
-  summary: Compatibility construction expressing the Galois criterion for solvability by radicals.
-  carriers: []
-  data: []
-  axioms: []
-  induces: []
-  notes: The solvable group supplied must be the Galois group of the chosen polynomial’s splitting field, not an unrelated group.
-  citations:
-  - milne-fields-galois-theory
-  combination:
-    inputs:
-    - splitting_field
-    - galois_group
-    - solvable_group
-    compatibility: Use the splitting field of the chosen polynomial, take its Galois group over the base field, and require that same group to be solvable.
-    output: solvability_by_radicals
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: solvability_by_radicals
-  label: Solvability by radicals
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - number-theory
-  level: 17
-  kind: structure
-  summary: A polynomial equation is solvable by radicals when its roots can be obtained from coefficients using field operations and iterated extraction of roots.
-  carriers:
-  - polynomial over a field
-  data:
-  - tower of radical extensions
-  axioms: []
-  induces:
-  - Equivalence with solvability of the Galois group under standard hypotheses
-  notes: ''
-  citations:
-  - milne-fields-galois-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: quadratic_form
-  label: Quadratic form
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - number-theory
-  - differential-geometry
-  level: 12
-  kind: structure
-  summary: A homogeneous degree-two function associated, away from characteristic two subtleties, with a symmetric bilinear form.
-  carriers:
-  - vector space over a field
-  data:
-  - quadratic map $q$
-  axioms:
-  - $q(av)=a^2q(v)$ and polarization law
-  induces:
-  - Quadratic varieties and orthogonal groups
-  notes: ''
-  citations:
-  - milne-algebraic-number-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: j_galois_extension
-  label: normal + separable field extension
-  primaryDomain: algebra
-  domains:
-  - algebra
-  - number-theory
-  level: 14
-  kind: junction
-  summary: Compatibility construction producing a Galois extension.
-  carriers: []
-  data: []
-  axioms: []
-  induces: []
-  notes: Both properties must hold for the same algebraic field extension.
-  citations:
-  - milne-fields-galois-theory
-  combination:
-    inputs:
-    - normal_extension
-    - separable_extension
-    compatibility: Require normality and separability for the same algebraic extension $L/K$.
-    output: galois_extension
-  primaryField: mathematics
-  fields:
-  - mathematics
+  - id: magma
+    label: Magma
+    level: 1
+    kind: structure
+    summary: A set with a closed binary operation.
+    carriers:
+      - set $M$
+    data:
+      - binary operation $M \times M \to M$
+    axioms: []
+    induces: []
+    notes: ''
+    citations:
+      - wp-magma
+      - stacks-algebra-text
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - universal-algebra
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: semigroup
+    label: Semigroup
+    level: 2
+    kind: structure
+    summary: An associative magma.
+    carriers:
+      - set $S$
+    data:
+      - binary operation
+    axioms:
+      - associativity
+    induces: []
+    notes: ''
+    citations:
+      - wp-semigroup
+      - nlab-semigroup
+      - stacks-algebra-text
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - universal-algebra
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: monoid
+    label: Monoid
+    level: 3
+    kind: structure
+    summary: A semigroup with an identity element.
+    carriers:
+      - set $M$
+    data:
+      - binary operation
+      - identity element $e$
+    axioms:
+      - associativity
+      - $e\cdot x = x = x\cdot e$
+    induces: []
+    notes: The identity, if it exists in a semigroup, is unique; monoidhood is therefore an existence property rather than freely chosen additional data.
+    citations:
+      - wp-monoid
+      - nlab-monoid
+      - stacks-algebra-text
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - universal-algebra
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: commutative_monoid
+    label: Commutative monoid
+    level: 4
+    kind: structure
+    summary: A monoid whose operation is commutative.
+    carriers:
+      - set $M$
+    data:
+      - binary operation
+      - identity
+    axioms:
+      - monoid axioms
+      - $x\cdot y = y\cdot x$
+    induces: []
+    notes: ''
+    citations:
+      - wp-comm-monoid
+      - stacks-algebra-text
+    primaryDomain: algebra
+    domains:
+      - algebra
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: group
+    label: Group
+    level: 4
+    kind: structure
+    summary: A monoid in which every element has an inverse.
+    carriers:
+      - set $G$
+    data:
+      - binary operation
+      - identity
+      - inverse for each element
+    axioms:
+      - associativity
+      - identity laws
+      - inverse laws
+    induces: []
+    notes: ''
+    citations:
+      - wp-group
+      - nlab-group
+      - stacks-algebra-text
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - universal-algebra
+      - representation-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: abelian_group
+    label: Abelian group
+    level: 5
+    kind: structure
+    summary: A group with commutative multiplication, usually written additively.
+    carriers:
+      - set $A$
+    data:
+      - group operation
+    axioms:
+      - group axioms
+      - commutativity
+    induces: []
+    notes: ''
+    citations:
+      - wp-abelian
+      - stacks-algebra-text
+    primaryDomain: algebra
+    domains:
+      - algebra
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: j_semiring
+    label: two compatible monoids
+    level: 5
+    kind: junction
+    summary: Use one commutative monoid as addition and another monoid as multiplication on the same carrier.
+    carriers: []
+    data: []
+    axioms: []
+    induces: []
+    notes: 'Construction junction: it is a visual device, not a separate standard mathematical structure.'
+    citations:
+      - wp-semiring
+      - nlab-semiring
+      - stacks-algebra-text
+    combination:
+      inputs:
+        - commutative_monoid
+        - monoid
+      compatibility: The two operations share a carrier; multiplication distributes over addition, and zero is absorbing.
+      output: semiring
+    primaryDomain: algebra
+    domains:
+      - algebra
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: semiring
+    label: Semiring
+    level: 6
+    kind: structure
+    summary: A ring-like structure without requiring additive inverses.
+    carriers:
+      - set $R$
+    data:
+      - addition +
+      - multiplication $\cdot$
+      - '0'
+      - '1'
+    axioms:
+      - $(R,+,0)$ is a commutative monoid
+      - $(R,\cdot,1)$ monoid
+      - distributivity
+      - 0 absorbing
+    induces: []
+    notes: 'Convention: semirings here are unital and have an absorbing zero. Some literature drops one or both requirements.'
+    citations:
+      - wp-semiring
+      - nlab-semiring
+      - stacks-algebra-text
+    primaryDomain: algebra
+    domains:
+      - algebra
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: ring
+    label: Ring
+    level: 7
+    kind: structure
+    summary: A unital semiring whose additive commutative monoid is an abelian group.
+    carriers:
+      - set $R$
+    data:
+      - addition
+      - multiplication
+      - '0'
+      - '1'
+    axioms:
+      - additive inverses
+      - semiring axioms
+    induces: []
+    notes: This atlas uses the convention that rings have a multiplicative identity and ring homomorphisms preserve it.
+    citations:
+      - wp-ring
+      - nlab-ring
+      - stacks-algebra-text
+    primaryDomain: algebra
+    domains:
+      - algebra
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: commutative_ring
+    label: Commutative ring
+    level: 8
+    kind: structure
+    summary: A ring with commutative multiplication.
+    carriers:
+      - set $R$
+    data:
+      - ring operations
+    axioms:
+      - ring axioms
+      - ab $=$ ba
+    induces: []
+    notes: ''
+    citations:
+      - wp-comm-ring
+      - stacks-comm-algebra
+      - stacks-algebra-text
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - algebraic-geometry
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: division_ring
+    label: Division ring
+    level: 8
+    kind: structure
+    summary: A nonzero ring in which every nonzero element is multiplicatively invertible.
+    carriers:
+      - set $D$
+    data:
+      - ring operations
+    axioms:
+      - $1 \ne 0$
+      - each nonzero element has a multiplicative inverse
+    induces: []
+    notes: ''
+    citations:
+      - wp-division-ring
+      - stacks-algebra-text
+    primaryDomain: algebra
+    domains:
+      - algebra
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: j_module
+    label: ring action on an abelian group
+    level: 8
+    kind: junction
+    summary: Combine a scalar ring with an additive abelian group.
+    carriers: []
+    data: []
+    axioms: []
+    induces: []
+    notes: 'Construction junction: it is a visual device, not a separate standard mathematical structure.'
+    citations:
+      - wp-module
+      - nlab-module
+      - stacks-algebra-text
+    combination:
+      inputs:
+        - ring
+        - abelian_group
+      compatibility: Add scalar multiplication $R \times M \to M$ satisfying distributivity, associativity of scalar action, and the unit law.
+      output: module
+    primaryDomain: algebra
+    domains:
+      - algebra
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: module
+    label: Module over a ring
+    level: 9
+    kind: structure
+    summary: An abelian group acted on linearly by a ring.
+    carriers:
+      - scalar ring $R$
+      - carrier set $M$
+    data:
+      - abelian-group addition on $M$
+      - scalar multiplication $R \times M \to M$
+    axioms:
+      - module axioms
+    induces: []
+    notes: 'Convention: modules are left modules unless explicitly stated otherwise. Right modules reverse the scalar-action convention.'
+    citations:
+      - wp-module
+      - nlab-module
+      - stacks-modules
+      - stacks-algebra-text
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - representation-theory
+      - homological-algebra
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: field
+    label: Field
+    level: 10
+    kind: structure
+    summary: A commutative ring in which every nonzero element has a multiplicative inverse.
+    carriers:
+      - set $F$
+    data:
+      - addition
+      - multiplication
+      - '0'
+      - '1'
+    axioms:
+      - commutative-ring axioms
+      - $1\ne 0$
+      - every nonzero element has a multiplicative inverse
+    induces: []
+    notes: The inverse of each nonzero element is unique. The convention excludes the zero ring.
+    citations:
+      - wp-field
+      - nlab-field
+      - stacks-algebra-text
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - algebraic-geometry
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: affine_space
+    label: Affine space
+    primaryField: mathematics
+    fields:
+      - mathematics
+    primaryDomain: algebra
+    domains:
+      - algebra
+    level: 13
+    kind: structure
+    conceptType: Geometric algebraic structure
+    summary: A set with a free transitive action of a vector space, retaining displacement vectors without a preferred origin.
+    citations:
+      - wp-affine_space
+      - nlab-affine_space
+      - tong-relativity
+    carriers:
+      - set $A$
+      - translation vector space $V$
+    data:
+      - free transitive action $A\times V\to A$
+    axioms:
+      - for every $a,b\in A$ there is a unique $v\in V$ with $a+v=b$
+    induces:
+      - difference vectors $b-a$
+      - translations
+    notes: No origin is distinguished; choosing one identifies $A$ noncanonically with $V$.
+  - id: algebraically_closed_field
+    label: Algebraically closed field
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - algebraic-geometry
+      - logic
+    level: 11
+    kind: structure
+    summary: A field in which every nonconstant polynomial has a root.
+    carriers:
+      - field $K$
+    data: []
+    axioms:
+      - every nonconstant polynomial in $K[x]$ splits
+    induces: []
+    notes: ''
+    citations:
+      - wp-algebraically-closed
+      - nlab-algebraically-closed
+      - stacks-algebra-text
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: j_vector
+    label: field action on an abelian group
+    level: 11
+    kind: junction
+    summary: Specialize scalar multiplication to scalars from a field.
+    carriers: []
+    data: []
+    axioms: []
+    induces: []
+    notes: 'Construction junction: it is a visual device, not a separate standard mathematical structure.'
+    citations:
+      - wp-vector
+      - nlab-vector
+      - stacks-algebra-text
+    combination:
+      inputs:
+        - field
+        - abelian_group
+      compatibility: Add $F \times V \to V$ satisfying the vector-space axioms.
+      output: vector_space
+    primaryDomain: algebra
+    domains:
+      - algebra
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: perfect_field
+    label: Perfect field
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - number-theory
+      - algebraic-geometry
+    level: 11
+    kind: structure
+    summary: A field whose algebraic extensions are separable.
+    carriers:
+      - field $K$
+    data: []
+    axioms:
+      - every algebraic extension is separable
+    induces: []
+    notes: ''
+    citations:
+      - wp-perfect-field
+      - stacks-algebra-text
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: vector_space
+    label: Vector space
+    level: 12
+    kind: structure
+    summary: An abelian group with scalar multiplication by a field.
+    carriers:
+      - scalar field $F$
+      - carrier set $V$
+    data:
+      - vector addition
+      - scalar multiplication
+    axioms:
+      - vector-space axioms
+    induces: []
+    notes: ''
+    citations:
+      - wp-vector
+      - nlab-vector
+      - stacks-algebra-text
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - representation-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: complex_vector_space
+    label: Complex vector space
+    primaryField: mathematics
+    fields:
+      - mathematics
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - analysis
+    level: 13
+    kind: structure
+    conceptType: Algebraic structure
+    summary: A vector space whose scalar field is $\mathbb C$.
+    citations:
+      - wp-complex_vector_space
+      - nlab-complex_vector_space
+    carriers:
+      - set $V$
+      - scalar field $\mathbb C$
+    data:
+      - vector addition
+      - complex scalar multiplication
+    axioms:
+      - vector-space axioms over $\mathbb C$
+    induces:
+      - underlying real vector space
+      - complex-linear maps
+    notes: ''
+  - id: dual_vector_space
+    label: Dual vector space
+    primaryField: mathematics
+    fields:
+      - mathematics
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - analysis
+    level: 13
+    kind: structure
+    conceptType: Algebraic construction
+    summary: The vector space of linear functionals from a vector space to its scalar field.
+    citations:
+      - wp-dual_vector_space
+      - nlab-dual_vector_space
+    carriers:
+      - vector space $V$
+    data:
+      - linear functionals $V\to F$
+    axioms:
+      - pointwise vector-space operations
+    induces:
+      - evaluation pairing $V^*\times V\to F$
+    notes: For infinite-dimensional topological vector spaces, the continuous dual depends on the topology and can differ from the algebraic dual.
+  - id: lie_algebra
+    label: Lie algebra
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - differential-geometry
+      - representation-theory
+    level: 13
+    kind: structure
+    summary: A vector space with an alternating bilinear bracket satisfying the Jacobi identity.
+    carriers:
+      - vector space $\mathfrak{g}$
+    data:
+      - bilinear bracket $[-,-]$
+    axioms:
+      - 'alternating bracket: $[x,x]=0$ for every $x$'
+      - Jacobi identity
+    induces: []
+    notes: The alternating axiom implies antisymmetry over every field. The converse needs characteristic different from 2, so antisymmetry is not used as an unrestricted substitute.
+    citations:
+      - sage-lie-algebra
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: symplectic_vector_space
+    label: Symplectic vector space
+    primaryField: mathematics
+    fields:
+      - mathematics
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - differential-geometry
+    level: 13
+    kind: structure
+    conceptType: Bilinear structure
+    summary: A vector space with a nondegenerate alternating bilinear form.
+    citations:
+      - wp-symplectic_vector_space
+      - nlab-symplectic_vector_space
+    carriers:
+      - vector space $V$
+    data:
+      - bilinear form $\omega:V\times V\to F$
+    axioms:
+      - $\omega$ is alternating
+      - $\omega$ is nondegenerate
+    induces:
+      - canonical identification $V\to V^*$ via $v\mapsto\omega(v,-)$
+    notes: Finite-dimensional symplectic vector spaces have even dimension.
+  - id: algebra_over_field
+    label: Algebra over a field
+    level: 14
+    kind: structure
+    summary: A vector space equipped with a bilinear multiplication, not necessarily associative or unital.
+    carriers:
+      - field $F$
+      - carrier $A$
+    data:
+      - vector-space operations
+      - bilinear multiplication $A\times A\to A$
+    axioms:
+      - bilinearity
+    induces: []
+    notes: Associativity, a multiplicative identity, commutativity, Lie identities, and similar laws define more specialized kinds of algebra.
+    citations:
+      - wp-algebra-field
+      - stacks-algebra-text
+    primaryDomain: algebra
+    domains:
+      - algebra
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: associative_algebra
+    label: Associative algebra
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - universal-algebra
+    level: 14
+    kind: structure
+    summary: An algebra over a commutative base ring or field whose multiplication is associative.
+    carriers:
+      - module or vector space $A$
+    data:
+      - bilinear multiplication
+    axioms:
+      - associativity
+    induces: []
+    notes: ''
+    citations:
+      - wp-associative-algebra
+      - nlab-associative-algebra
+      - stacks-algebra-text
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: tensor_product_vector_space
+    label: Tensor-product vector space
+    primaryField: mathematics
+    fields:
+      - mathematics
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - representation-theory
+    level: 14
+    kind: structure
+    conceptType: Universal construction
+    summary: A vector space $V\otimes W$ representing bilinear maps out of $V\times W$ by linear maps.
+    citations:
+      - wp-tensor_product_vector_space
+      - nlab-tensor_product_vector_space
+    carriers:
+      - vector spaces $V,W$
+    data:
+      - vector space $V\otimes W$
+      - bilinear map $V\times W\to V\otimes W$
+    axioms:
+      - universal property for bilinear maps
+    induces:
+      - multilinear constructions
+      - tensor products of linear maps
+    notes: The construction is canonical up to unique isomorphism, not equality of a particular concrete realization.
+  - id: coalgebra
+    label: Coalgebra
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - category-theory
+    level: 15
+    kind: structure
+    summary: Over a fixed commutative base ring $k$, a $k$-module with coassociative comultiplication and counit.
+    carriers:
+      - commutative base ring $k$
+      - $k$-module $C$
+    data:
+      - $k$-linear comultiplication $C\to C\otimes _{k}C$
+      - $k$-linear counit $C\to k$
+    axioms:
+      - coassociativity
+      - counit laws
+    induces: []
+    notes: ''
+    citations:
+      - wp-coalgebra
+      - nlab-coalgebra
+      - stacks-algebra-text
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: exterior_algebra
+    label: Exterior algebra
+    primaryField: mathematics
+    fields:
+      - mathematics
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - differential-geometry
+    level: 15
+    kind: structure
+    conceptType: Graded algebra
+    summary: The graded algebra $\Lambda V$ generated by a vector space $V$ subject to the alternating relations $v\wedge v=0$.
+    citations:
+      - wp-exterior_algebra
+      - nlab-exterior_algebra
+    carriers:
+      - vector space $V$
+    data:
+      - graded algebra $\Lambda V$
+      - canonical map $V\to\Lambda^1V$
+    axioms:
+      - $v\wedge v=0$ for every $v$
+      - universal property for alternating algebra maps
+    induces:
+      - exterior powers $\Lambda^kV$
+      - wedge product
+    notes: In characteristic not equal to 2, the alternating relation implies graded anticommutativity for degree-one generators; the alternating formulation is characteristic-independent.
+  - id: unital_associative_algebra
+    label: Unital associative algebra
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - universal-algebra
+    level: 15
+    kind: structure
+    summary: An associative algebra with a multiplicative identity compatible with the base scalar action.
+    carriers:
+      - associative algebra $A$
+    data:
+      - unit 1
+    axioms:
+      - two-sided identity
+    induces: []
+    notes: A multiplicative identity, if it exists, is unique; unitality is an existence condition on the associative multiplication.
+    citations:
+      - wp-associative-algebra
+      - nlab-associative-algebra
+      - stacks-algebra-text
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: star_algebra
+    label: '*-algebra'
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - analysis
+    level: 16
+    kind: structure
+    summary: A complex associative algebra equipped with a conjugate-linear involutive anti-automorphism.
+    carriers:
+      - complex associative algebra $A$
+    data:
+      - map $a\mapsto a^*$
+    axioms:
+      - $(a+b)^*=a^*+b^*$
+      - $(\lambda a)^*=\overline{\lambda}a^*$
+      - $(ab)^*=b^*a^*$
+      - $(a^*)^*=a$
+    induces: []
+    notes: The scalar involution here is complex conjugation.
+    citations:
+      - mathlib-star-module
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: j_bialgebra
+    label: algebra + coalgebra compatibility
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - category-theory
+    level: 16
+    kind: junction
+    summary: Compatibility construction producing Bialgebra.
+    carriers: []
+    data: []
+    axioms: []
+    induces: []
+    notes: All incoming branches are jointly required.
+    citations:
+      - wp-bialgebra
+      - nlab-bialgebra
+      - stacks-algebra-text
+    combination:
+      inputs:
+        - unital_associative_algebra
+        - coalgebra
+      compatibility: Use the same module or vector space and require comultiplication and counit to be algebra homomorphisms (equivalently multiplication and unit are coalgebra homomorphisms).
+      output: bialgebra
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: clifford_algebra
+    label: Clifford algebra
+    primaryField: mathematics
+    fields:
+      - mathematics
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - representation-theory
+      - differential-geometry
+    level: 16
+    kind: structure
+    conceptType: Associative algebra
+    summary: An associative algebra generated by a quadratic space with $v^2=Q(v)1$.
+    citations:
+      - wp-clifford_algebra
+      - nlab-clifford_algebra
+    carriers:
+      - vector space $V$
+      - scalar field $F$
+    data:
+      - quadratic form $Q$
+      - unital associative algebra $\mathrm{Cl}(V,Q)$
+      - map $V\to\mathrm{Cl}(V,Q)$
+    axioms:
+      - $v^2=Q(v)1$
+      - universal property
+    induces:
+      - spin and pin groups
+      - Clifford modules
+    notes: Sign conventions for $Q$ and the Clifford relation vary across mathematics and physics.
+  - id: commutative_algebra
+    label: Commutative unital algebra over a field
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - algebraic-geometry
+    level: 16
+    kind: structure
+    summary: A unital associative algebra over a fixed field whose multiplication is commutative.
+    carriers:
+      - unital associative algebra $A$
+    data: []
+    axioms:
+      - $ab=ba$
+    induces: []
+    notes: “Commutative algebra” also names the subject. This node denotes an individual commutative unital algebra over the scalar field inherited from the algebra branch.
+    citations:
+      - wp-associative-algebra
+      - nlab-associative-algebra
+      - wp-commutative-algebra
+      - stacks-algebra-text
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: grassmann_algebra
+    label: Grassmann algebra
+    primaryField: mathematics
+    fields:
+      - mathematics
+    primaryDomain: algebra
+    domains:
+      - algebra
+    level: 16
+    kind: structure
+    conceptType: Graded algebra
+    summary: The exterior algebra of a vector space, especially when its generators are interpreted as anticommuting Grassmann variables.
+    citations:
+      - wp-grassmann_algebra
+      - nlab-grassmann_algebra
+      - tong-qft
+    carriers:
+      - vector space $V$
+    data:
+      - exterior algebra $\Lambda V$ viewed with Grassmann generators
+    axioms:
+      - $v\wedge v=0$
+    induces:
+      - Grassmann-even and Grassmann-odd subspaces
+    notes: This is the exterior algebra under terminology common in physics; it is not a second distinct algebraic construction.
+  - id: bialgebra
+    label: Bialgebra
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - category-theory
+    level: 17
+    kind: structure
+    summary: Over a fixed commutative base ring, a compatible unital associative algebra and counital coassociative coalgebra.
+    carriers:
+      - commutative base ring $k$
+      - $k$-module $B$
+    data:
+      - algebra structure
+      - coalgebra structure
+    axioms:
+      - comultiplication and counit are algebra maps
+    induces: []
+    notes: Compatibility may equivalently be stated by requiring multiplication and unit to be coalgebra maps, or comultiplication and counit to be algebra maps.
+    citations:
+      - wp-bialgebra
+      - nlab-bialgebra
+      - stacks-algebra-text
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: gamma_matrices
+    label: Gamma matrices
+    primaryField: mathematics
+    fields:
+      - mathematics
+    primaryDomain: algebra
+    domains:
+      - algebra
+    level: 17
+    kind: structure
+    conceptType: Clifford representation
+    summary: Matrices or endomorphisms satisfying the Clifford relation $\{\gamma^\mu,\gamma^\nu\}=2g^{\mu\nu}I$, used to realize spinor representations.
+    citations:
+      - wp-gamma_matrices
+      - nlab-gamma_matrices
+      - tong-qft
+    carriers:
+      - spinor vector space $S$
+    data:
+      - endomorphisms $\gamma^\mu$ of $S$
+      - metric coefficients $g^{\mu\nu}$
+    axioms:
+      - $\gamma^\mu\gamma^\nu+\gamma^\nu\gamma^\mu=2g^{\mu\nu}I$
+    induces:
+      - representation of the relevant Clifford algebra
+      - Dirac operator after coupling to derivatives
+    notes: Matrix size, reality conditions, and sign conventions depend on dimension, signature, and representation.
+  - id: hopf_algebra
+    label: Hopf algebra
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - category-theory
+      - representation-theory
+    level: 18
+    kind: structure
+    summary: A bialgebra equipped with an antipode.
+    carriers:
+      - bialgebra $H$
+    data:
+      - antipode $S:H\to H$
+    axioms:
+      - convolution inverse laws
+    induces: []
+    notes: For a fixed bialgebra structure, an antipode is unique if it exists; Hopf algebra status is therefore an existence property, not a free choice of extra map.
+    citations:
+      - wp-hopf-algebra
+      - nlab-hopf-algebra
+      - stacks-algebra-text
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: slater_determinant
+    label: Slater determinant
+    primaryField: mathematics
+    fields:
+      - mathematics
+    primaryDomain: algebra
+    domains:
+      - algebra
+    level: 24
+    kind: structure
+    conceptType: Antisymmetric tensor construction
+    summary: The determinant or exterior product of one-particle spin-orbitals representing a single antisymmetric fermion configuration.
+    citations:
+      - wp-slater_determinant
+      - nlab-slater_determinant
+      - nist-atomic-spectroscopy
+    carriers:
+      - one-particle orbitals $\phi_1,\ldots,\phi_N$
+    data:
+      - antisymmetrized tensor product or determinant
+    axioms:
+      - changes sign under odd particle permutations
+      - vanishes when two orbitals coincide
+    induces:
+      - one-body density matrix for the determinant
+      - fermionic exchange structure
+    notes: A single Slater determinant captures antisymmetry and exchange but not general many-body correlation.
+  - id: operator_commutator
+    label: Operator commutator
+    primaryField: mathematics
+    fields:
+      - mathematics
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - analysis
+    level: 21
+    kind: structure
+    conceptType: Bilinear operation
+    summary: For operators $A$ and $B$ with a common meaningful domain, the commutator is $[A,B]=AB-BA$; domain issues are essential for unbounded operators.
+    citations:
+      - wp-operator-commutator
+      - nlab-operator-commutator
+    carriers:
+      - operators $A,B$ with compatible products
+    data:
+      - operator $[A,B]=AB-BA$ on a common domain
+    axioms:
+      - defined only where both compositions make sense
+    induces:
+      - Lie-algebra structure in bounded/algebraic settings
+      - uncertainty relations
+    notes: For unbounded operators, domain questions are essential.
+  - id: operator_anticommutator
+    label: Operator anticommutator
+    primaryField: mathematics
+    fields:
+      - mathematics
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - analysis
+    level: 21
+    kind: structure
+    conceptType: Bilinear operation
+    summary: For operators $A$ and $B$ with defined products, the anticommutator is $\{A,B\}=AB+BA$.
+    citations:
+      - wp-operator-anticommutator
+      - nlab-operator-anticommutator
+    carriers:
+      - operators $A,B$ with compatible products
+    data:
+      - operator $\{A,B\}=AB+BA$ on a common domain
+    axioms:
+      - defined only where both compositions make sense
+    induces:
+      - Clifford and fermionic canonical anticommutation relations
+    notes: For unbounded operators, domain questions are essential.
+  - id: direct_sum_vector_space
+    label: Direct sum of vector spaces
+    primaryField: mathematics
+    fields:
+      - mathematics
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - analysis
+    level: 14
+    kind: structure
+    conceptType: Coproduct / sum construction
+    summary: The direct sum $\bigoplus_i V_i$ consists of tuples with finite support in the algebraic case; Hilbert direct sums complete square-summable families under the natural inner product.
+    citations:
+      - wp-direct-sum-vector-space
+      - nlab-direct-sum-vector-space
+    carriers:
+      - family of vector spaces $(V_i)_{i\in I}$
+    data:
+      - finite-support tuples $(v_i)$
+    axioms:
+      - componentwise operations
+      - only finitely many nonzero components in the algebraic direct sum
+    induces:
+      - canonical injections and projections
+    notes: The Hilbert direct sum is a different completed construction using square-summable families.
+  - id: polynomial_ring
+    label: Polynomial ring
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - algebraic-geometry
+    level: 9
+    kind: structure
+    summary: The ring $R[x]$ of formal polynomials in an indeterminate over a coefficient ring $R$.
+    carriers:
+      - coefficient ring $R$
+    data:
+      - finite coefficient sequences
+      - formal indeterminate
+    axioms: []
+    induces:
+      - Evaluation maps, ideals, and quotient algebras
+    notes: ''
+    citations:
+      - milne-fields-galois-theory
+      - stacks-algebra-text
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: field_extension
+    label: Field extension
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - number-theory
+    level: 11
+    kind: structure
+    summary: An inclusion of fields $K\subseteq L$, regarding $L$ as a vector space and algebra over $K$.
+    carriers:
+      - fields $K\subseteq L$
+    data:
+      - specified embedding of $K$ into $L$
+    axioms: []
+    induces:
+      - Degree, algebraic elements, and automorphisms
+    notes: ''
+    citations:
+      - milne-fields-galois-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: algebraic_extension
+    label: Algebraic field extension
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - number-theory
+    level: 12
+    kind: structure
+    summary: A field extension in which every element satisfies a nonzero polynomial over the base field.
+    carriers:
+      - field extension $L/K$
+    data: []
+    axioms:
+      - every element of $L$ is algebraic over $K$
+    induces:
+      - Minimal polynomials and finite subextensions
+    notes: ''
+    citations:
+      - milne-fields-galois-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: separable_extension
+    label: Separable field extension
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - number-theory
+    level: 13
+    kind: structure
+    summary: An algebraic extension in which every element has a separable minimal polynomial over the base field.
+    carriers:
+      - algebraic extension $L/K$
+    data: []
+    axioms:
+      - minimal polynomials have distinct roots in a splitting field
+    induces:
+      - Well-behaved embeddings into an algebraic closure
+    notes: ''
+    citations:
+      - milne-fields-galois-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: normal_extension
+    label: Normal field extension
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - number-theory
+    level: 13
+    kind: structure
+    summary: An algebraic extension $L/K$ in which every irreducible polynomial over $K$ having one root in $L$ splits completely in $L$.
+    carriers:
+      - algebraic extension $L/K$
+    data: []
+    axioms:
+      - stability under $K$-embeddings into an algebraic closure
+    induces:
+      - A splitting-field characterization
+    notes: ''
+    citations:
+      - milne-fields-galois-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: splitting_field
+    label: Splitting field
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - number-theory
+    level: 13
+    kind: structure
+    summary: The smallest field extension over which a specified family of polynomials splits into linear factors.
+    carriers:
+      - base field and polynomials
+    data:
+      - adjoined roots
+    axioms:
+      - generated by all roots
+    induces:
+      - A normal algebraic extension
+    notes: ''
+    citations:
+      - milne-fields-galois-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: field_automorphism
+    label: Field automorphism
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - representation-theory
+    level: 12
+    kind: structure
+    summary: An isomorphism from a field to itself; relative automorphisms fix a specified base field pointwise.
+    carriers:
+      - field $L$
+    data:
+      - bijective field homomorphism
+    axioms: []
+    induces:
+      - An element of an automorphism group; its iterates generate a cyclic subgroup
+    notes: ''
+    citations:
+      - milne-fields-galois-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: galois_extension
+    label: Galois extension
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - number-theory
+    level: 14
+    kind: structure
+    summary: An algebraic extension that is both normal and separable.
+    carriers:
+      - field extension $L/K$
+    data: []
+    axioms:
+      - normality
+      - separability
+    induces:
+      - A Galois group controlling intermediate fields
+    notes: ''
+    citations:
+      - milne-fields-galois-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: galois_group
+    label: Galois group
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - representation-theory
+      - number-theory
+    level: 15
+    kind: structure
+    summary: The group $\operatorname{Gal}(L/K)$ of field automorphisms of $L$ that fix $K$ pointwise.
+    carriers:
+      - field extension $L/K$
+    data:
+      - $K$-automorphisms of $L$
+    axioms: []
+    induces:
+      - Actions on roots and intermediate fields
+    notes: ''
+    citations:
+      - milne-fields-galois-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: fixed_field
+    label: Fixed field
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - number-theory
+    level: 15
+    kind: structure
+    summary: For a subgroup $H$ of field automorphisms of $L$, the subfield $L^H$ consisting of elements fixed by every member of $H$.
+    carriers:
+      - field $L$
+      - automorphism subgroup $H$
+    data:
+      - common fixed elements
+    axioms: []
+    induces:
+      - An intermediate field
+    notes: ''
+    citations:
+      - milne-fields-galois-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: fundamental_theorem_galois_theory
+    label: Fundamental theorem of Galois theory
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - number-theory
+    level: 16
+    kind: structure
+    summary: For a finite Galois extension, intermediate fields correspond inclusion-reversingly to subgroups of the Galois group; normal subextensions correspond to normal subgroups.
+    carriers:
+      - finite Galois extension
+    data:
+      - fixed-field and automorphism-group assignments
+    axioms:
+      - mutually inverse correspondence
+    induces:
+      - Degree-index relations and quotient Galois groups
+    notes: ''
+    citations:
+      - milne-fields-galois-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: solvable_group
+    label: Solvable group
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - representation-theory
+    level: 8
+    kind: structure
+    summary: A group admitting a finite subnormal series whose successive quotient groups are abelian.
+    carriers:
+      - group $G$
+    data:
+      - derived series or subnormal series
+    axioms:
+      - termination at the trivial group
+    induces:
+      - A criterion in solvability by radicals
+    notes: ''
+    citations:
+      - milne-fields-galois-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: j_radical_solvability
+    label: splitting field + its solvable Galois group
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - number-theory
+      - representation-theory
+    level: 17
+    kind: junction
+    summary: Compatibility construction expressing the Galois criterion for solvability by radicals.
+    carriers: []
+    data: []
+    axioms: []
+    induces: []
+    notes: The solvable group supplied must be the Galois group of the chosen polynomial’s splitting field, not an unrelated group.
+    citations:
+      - milne-fields-galois-theory
+    combination:
+      inputs:
+        - splitting_field
+        - galois_group
+        - solvable_group
+      compatibility: Use the splitting field of the chosen polynomial, take its Galois group over the base field, and require that same group to be solvable.
+      output: solvability_by_radicals
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: solvability_by_radicals
+    label: Solvability by radicals
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - number-theory
+    level: 17
+    kind: structure
+    summary: A polynomial equation is solvable by radicals when its roots can be obtained from coefficients using field operations and iterated extraction of roots.
+    carriers:
+      - polynomial over a field
+    data:
+      - tower of radical extensions
+    axioms: []
+    induces:
+      - Equivalence with solvability of the Galois group under standard hypotheses
+    notes: ''
+    citations:
+      - milne-fields-galois-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: quadratic_form
+    label: Quadratic form
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - number-theory
+      - differential-geometry
+    level: 12
+    kind: structure
+    summary: A homogeneous degree-two function associated, away from characteristic two subtleties, with a symmetric bilinear form.
+    carriers:
+      - vector space over a field
+    data:
+      - quadratic map $q$
+    axioms:
+      - $q(av)=a^2q(v)$ and polarization law
+    induces:
+      - Quadratic varieties and orthogonal groups
+    notes: ''
+    citations:
+      - milne-algebraic-number-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: j_galois_extension
+    label: normal + separable field extension
+    primaryDomain: algebra
+    domains:
+      - algebra
+      - number-theory
+    level: 14
+    kind: junction
+    summary: Compatibility construction producing a Galois extension.
+    carriers: []
+    data: []
+    axioms: []
+    induces: []
+    notes: Both properties must hold for the same algebraic field extension.
+    citations:
+      - milne-fields-galois-theory
+    combination:
+      inputs:
+        - normal_extension
+        - separable_extension
+      compatibility: Require normality and separability for the same algebraic extension $L/K$.
+      output: galois_extension
+    primaryField: mathematics
+    fields:
+      - mathematics
 edges:
-- id: abelian_group_to_commutative_monoid
-  source: abelian_group
-  target: commutative_monoid
-  type: induced-forgotten
-  label: forget additive inverses
-  detail: Retain the commutative associative operation and identity.
-  citations:
-  - wp-abelian
-  - wp-comm-monoid
-  - stacks-algebra-text
-- id: e_ab_jmodule
-  source: abelian_group
-  target: j_module
-  type: combine-compatible
-  label: additive carrier $M$
-  detail: Supply the additive abelian group.
-  citations:
-  - wp-module
-  - stacks-algebra-text
-- id: e_ab_jvector
-  source: abelian_group
-  target: j_vector
-  type: combine-compatible
-  label: additive carrier $V$
-  detail: Supply the additive abelian group.
-  citations:
-  - wp-vector
-  - stacks-algebra-text
-- id: affine_to_minkowski
-  source: affine_space
-  target: minkowski_spacetime
-  type: mathematical-formulation
-  label: affine spacetime structure
-  detail: Minkowski spacetime is an affine space modeled on a Lorentzian vector space, not canonically a vector space with preferred origin.
-  citations:
-  - wp-affine_space
-  - nlab-affine_space
-  - tong-relativity
-  - wp-physics-minkowski_spacetime
-  - nlab-physics-minkowski_spacetime
-  - einstein-spacetime
-- id: e_alg_assoc
-  source: algebra_over_field
-  target: associative_algebra
-  type: impose-axiom
-  label: + associativity
-  detail: Require $(ab)c=a(bc)$.
-  citations:
-  - wp-associative-algebra
-  - nlab-associative-algebra
-  - stacks-algebra-text
-- id: math_algebra_over_field_to_clifford_algebra
-  source: vector_space
-  target: clifford_algebra
-  type: canonical-construction
-  label: form the Clifford algebra
-  detail: A vector space together with a quadratic form $Q$ canonically determines a new algebra, the quotient of its tensor algebra by the relations $v\otimes v=Q(v)1$. This changes the carrier rather than merely adding data to the vector space.
-  citations:
-  - wp-clifford_algebra
-  - nlab-clifford_algebra
-- id: e_assoc_jba
-  source: associative_algebra
-  target: j_banach_algebra
-  type: combine-compatible
-  label: associative multiplication
-  detail: Supply an associative algebra over the same normed field $K$, on the same carrier, addition, and scalar action as the Banach space.
-  citations:
-  - mathlib-normed-algebra
-  - mathlib-normed-ring
-- id: e_assoc_star
-  source: associative_algebra
-  target: star_algebra
-  type: add-data
-  label: + involution
-  detail: Over a scalar field with involution, add a semilinear involutive anti-automorphism.
-  citations:
-  - wp-star-algebra
-  - nlab-star-algebra
-  - stacks-algebra-text
-- id: e_assoc_unital
-  source: associative_algebra
-  target: unital_associative_algebra
-  type: impose-axiom
-  label: require a unit
-  detail: Select associative algebras whose multiplication has a two-sided identity; it is unique.
-  citations:
-  - wp-associative-algebra
-  - nlab-associative-algebra
-  - stacks-algebra-text
-- id: e_bialgebra_hopf
-  source: bialgebra
-  target: hopf_algebra
-  type: impose-axiom
-  label: require an antipode
-  detail: Select bialgebras for which a convolution inverse of the identity exists; the antipode is then unique.
-  citations:
-  - wp-hopf-algebra
-  - nlab-hopf-algebra
-  - stacks-algebra-text
-- id: clifford_to_dirac
-  source: clifford_algebra
-  target: dirac_equation
-  type: mathematical-formulation
-  label: gamma-matrix algebra
-  detail: Dirac gamma matrices represent a spacetime Clifford algebra.
-  citations:
-  - wp-physics-dirac_equation
-  - nlab-physics-dirac_equation
-  - wp-clifford_algebra
-  - nlab-clifford_algebra
-  overview: true
-- id: gamma_from_clifford
-  source: clifford_algebra
-  target: gamma_matrices
-  type: model-realization
-  label: choose a matrix representation
-  detail: A chosen representation of the relevant Clifford algebra sends its generators to gamma matrices. The abstract Clifford algebra does not canonically select a particular matrix realization.
-  citations:
-  - wp-clifford_algebra
-  - nlab-clifford_algebra
-  - wp-gamma_matrices
-  - nlab-gamma_matrices
-  - tong-qft
-- id: math_clifford_algebra_to_spin_group
-  source: clifford_algebra
-  target: spin_group
-  type: canonical-construction
-  label: spin double cover
-  detail: The spin group is constructed from invertible elements of a Clifford algebra; in Euclidean signature $\mathrm{Spin}(n)\to SO(n)$ is a double cover, with signature-dependent variants in the indefinite case.
-  citations:
-  - wp-spin_group
-  - nlab-spin_group
-- id: j_bialgebra__coalgebra
-  source: coalgebra
-  target: j_bialgebra
-  type: combine-compatible
-  label: coalgebra structure
-  detail: Supply the Coalgebra structure as one jointly required input.
-  citations:
-  - wp-bialgebra
-  - nlab-bialgebra
-  - stacks-algebra-text
-- id: e_commmon_jsemi
-  source: commutative_monoid
-  target: j_semiring
-  type: combine-compatible
-  label: use as addition
-  detail: Supply the additive commutative monoid.
-  citations:
-  - wp-semiring
-  - stacks-algebra-text
-- id: e_comm_affine
-  source: commutative_ring
-  target: affine_scheme
-  type: representation-equivalence
-  label: Spec, contravariantly
-  detail: The functor $\operatorname{Spec}$ gives an anti-equivalence between commutative rings and affine schemes; morphisms reverse direction.
-  citations:
-  - stacks-affine-scheme
-  - wp-affine-scheme
-  - nlab-affine-scheme
-  - stacks-schemes-text
-- id: e_comm_artinian
-  source: commutative_ring
-  target: artinian_ring
-  type: impose-axiom
-  label: + DCC on ideals
-  detail: Require descending chains of ideals to stabilize.
-  citations:
-  - stacks-artinian-ring
-  - wp-artinian-ring
-  - stacks-schemes-text
-- id: e_commutative_ring_field
-  source: commutative_ring
-  target: field
-  type: impose-axiom
-  label: require nonzero inverses
-  detail: Require $1\ne 0$ and every nonzero element to be invertible; inverse elements are unique.
-  citations:
-  - wp-field
-  - nlab-field
-  - stacks-algebra-text
-- id: comm_ring_to_integral_domain
-  source: commutative_ring
-  target: integral_domain
-  type: impose-axiom
-  label: exclude zero divisors
-  detail: Require $1\ne 0$ and require a product to vanish only when one factor vanishes.
-  citations:
-  - wp-integral-domain
-  - milne-algebraic-number-theory
-- id: e_comm_local
-  source: commutative_ring
-  target: local_ring
-  type: impose-axiom
-  label: + unique maximal ideal
-  detail: Require exactly one maximal ideal.
-  citations:
-  - stacks-local-ring
-  - wp-local-ring
-  - nlab-local-ring
-  - stacks-schemes-text
-- id: e_comm_noetherian
-  source: commutative_ring
-  target: noetherian_ring
-  type: impose-axiom
-  label: + ACC on ideals
-  detail: Require every ideal to be finitely generated.
-  citations:
-  - stacks-noetherian-ring
-  - wp-noetherian-ring
-  - nlab-noetherian-ring
-  - stacks-schemes-text
-- id: complexvs_to_qm
-  source: complex_vector_space
-  target: quantum_mechanics
-  type: mathematical-formulation
-  label: state spaces and amplitudes
-  detail: Quantum mechanics is ordinarily formulated over complex vector spaces.
-  citations:
-  - wp-physics-quantum_mechanics
-  - nlab-physics-quantum_mechanics
-  - wp-complex_vector_space
-  - nlab-complex_vector_space
-  overview: true
-- id: slater_from_exterior
-  source: exterior_algebra
-  target: slater_determinant
-  type: canonical-construction
-  label: antisymmetric exterior product
-  detail: A Slater determinant is the exterior product of occupied one-particle spin-orbitals.
-  citations:
-  - wp-exterior_algebra
-  - nlab-exterior_algebra
-  - wp-slater_determinant
-  - nlab-slater_determinant
-  - nist-atomic-spectroscopy
-- id: e_field_algclosed
-  source: field
-  target: algebraically_closed_field
-  type: impose-axiom
-  label: + all polynomial roots
-  detail: Require every nonconstant polynomial to have a root.
-  citations:
-  - wp-algebraically-closed
-  - nlab-algebraically-closed
-  - stacks-algebra-text
-- id: e_field_commutative_ring
-  source: field
-  target: commutative_ring
-  type: induced-forgotten
-  label: forget inversion property
-  detail: Retain the commutative-ring operations and forget the nonzero-invertibility axiom.
-  citations:
-  - wp-field
-  - nlab-field
-  - stacks-algebra-text
-- id: e_field_division_ring
-  source: field
-  target: division_ring
-  type: induced-forgotten
-  label: forget commutativity as a requirement
-  detail: Every field is in particular a division ring; retain the same operations while viewing commutativity as extra.
-  citations:
-  - wp-field
-  - nlab-field
-  - stacks-algebra-text
-- id: field_to_finite_field
-  source: field
-  target: finite_field
-  type: impose-axiom
-  label: require finite carrier
-  detail: Restrict to fields with finitely many elements.
-  citations:
-  - wp-finite-field
-  - milne-algebraic-number-theory
-- id: e_field_global
-  source: field
-  target: global_field
-  type: impose-axiom
-  label: + global arithmetic form
-  detail: Require a finite extension of $Q$ or $F_q(t)$.
-  citations:
-  - wp-global-field
-  - nlab-global-field
-  - milne-algebraic-number-theory
-- id: field_to_j_ordered_field
-  source: field
-  target: j_ordered_field
-  type: combine-compatible
-  label: supply field
-  detail: Use the field structure on the common carrier.
-  citations:
-  - wp-ordered-field
-  - gierz-order
-- id: e_field_jtf
-  source: field
-  target: j_top_field
-  type: combine-compatible
-  label: field structure
-  detail: Supply field operations.
-  citations:
-  - wp-top-field
-  - topology-without-tears
-- id: j_variety__field
-  source: field
-  target: j_variety
-  type: combine-compatible
-  label: base field
-  detail: Supply the Field structure as one jointly required input.
-  citations:
-  - wp-variety
-  - nlab-variety
-  - stacks-schemes-text
-- id: e_field_jvector
-  source: field
-  target: j_vector
-  type: combine-compatible
-  label: scalar field $F$
-  detail: Supply the scalar field.
-  citations:
-  - wp-vector
-  - stacks-algebra-text
-- id: field_to_number_field
-  source: field
-  target: number_field
-  type: impose-axiom
-  label: + finite degree over ℚ
-  detail: Require characteristic zero and finite dimension over the canonically embedded prime field $\mathbb{Q}$.
-  citations:
-  - nlab-number-field
-  - milne-algebraic-number-theory
-- id: e_field_perfect
-  source: field
-  target: perfect_field
-  type: impose-axiom
-  label: + separability
-  detail: Require every algebraic extension to be separable.
-  citations:
-  - wp-perfect-field
-  - stacks-algebra-text
-- id: field_to_valued_field
-  source: field
-  target: valued_field
-  type: add-data
-  label: add valuation
-  detail: Equip the field with a valuation or absolute value.
-  citations:
-  - wp-valued-field
-  - milne-algebraic-number-theory
-- id: gamma_to_dirac
-  source: gamma_matrices
-  target: dirac_equation
-  type: mathematical-formulation
-  label: Clifford matrices
-  detail: Gamma matrices realize the Clifford algebra in the Dirac operator.
-  citations:
-  - wp-gamma_matrices
-  - nlab-gamma_matrices
-  - tong-qft
-  - wp-physics-dirac_equation
-  - nlab-physics-dirac_equation
-  - pdg-rpp
-- id: grassmann_to_fermionfield
-  source: grassmann_algebra
-  target: fermionic_field
-  type: mathematical-formulation
-  label: anticommuting field variables
-  detail: Grassmann variables encode fermionic signs in path-integral and algebraic formulations.
-  citations:
-  - wp-grassmann_algebra
-  - nlab-grassmann_algebra
-  - tong-qft
-  - wp-physics-fermionic_field
-  - nlab-physics-fermionic_field
-- id: e_group_abelian
-  source: group
-  target: abelian_group
-  type: impose-axiom
-  label: + commutativity
-  detail: Require $xy=yx$.
-  citations:
-  - wp-abelian
-  - stacks-algebra-text
-- id: e_group_one_object_groupoid
-  source: group
-  target: groupoid
-  type: representation-equivalence
-  label: view as a one-object groupoid
-  detail: 'A group is precisely a groupoid with one object: group elements are the invertible endomorphisms.'
-  citations:
-  - wp-group
-  - wp-groupoid
-  - riehl-category-context
-- id: j_group_action__group
-  source: group
-  target: j_group_action
-  type: combine-compatible
-  label: acting group
-  detail: Supply the Group structure as one jointly required input.
-  citations:
-  - wp-group-action
-  - nlab-group-action
-  - etingof-representation-theory
-- id: j_group_rep__group
-  source: group
-  target: j_group_rep
-  type: combine-compatible
-  label: acting group
-  detail: Supply the Group structure as one jointly required input.
-  citations:
-  - wp-group-representation
-  - nlab-representation
-  - etingof-representation-theory
-- id: j_lgroup__group
-  source: group
-  target: j_lgroup
-  type: combine-compatible
-  label: group law
-  detail: Supply the Group structure as one jointly required input.
-  citations:
-  - wp-lattice-ordered-group
-  - gierz-order
-- id: group_to_j_lie
-  source: group
-  target: j_lie_group
-  type: combine-compatible
-  label: group law
-  detail: Supply the group structure on the same carrier as the smooth manifold.
-  citations:
-  - nlab-lie-group
-  - wp-group
-  - lee-smooth-manifolds
-- id: group_to_j_ordered_group
-  source: group
-  target: j_ordered_group
-  type: combine-compatible
-  label: supply group
-  detail: Use the group operations on the common carrier.
-  citations:
-  - wp-ordered-group
-  - gierz-order
-- id: e_group_jtg
-  source: group
-  target: j_top_group
-  type: combine-compatible
-  label: group structure
-  detail: Supply the group operations.
-  citations:
-  - wp-top-group
-  - topology-without-tears
-- id: j_bialgebra__out
-  source: j_bialgebra
-  target: bialgebra
-  type: combine-compatible
-  label: impose compatibility
-  detail: Require comultiplication and counit to respect multiplication and unit.
-  citations:
-  - wp-bialgebra
-  - nlab-bialgebra
-  - stacks-algebra-text
-- id: e_jmodule_module
-  source: j_module
-  target: module
-  type: combine-compatible
-  label: + scalar action
-  detail: Add compatible scalar multiplication.
-  citations:
-  - wp-module
-  - nlab-module
-  - stacks-algebra-text
-- id: e_jsemi_semiring
-  source: j_semiring
-  target: semiring
-  type: combine-compatible
-  label: + distributivity, absorbing 0
-  detail: Impose compatibility between the two operations.
-  citations:
-  - wp-semiring
-  - nlab-semiring
-  - stacks-algebra-text
-- id: e_jvector_vector
-  source: j_vector
-  target: vector_space
-  type: combine-compatible
-  label: + scalar multiplication
-  detail: Add compatible field action.
-  citations:
-  - wp-vector
-  - nlab-vector
-  - stacks-algebra-text
-- id: math_lie_algebra_to_gauge
-  source: lie_algebra
-  target: gauge_field_theory
-  type: mathematical-formulation
-  label: infinitesimal gauge algebra
-  detail: The Lie algebra supplies gauge generators, structure constants, and the local form of gauge-field interactions.
-  citations:
-  - cern-qft-intro
-  - pdg-qcd
-  - wp-physics-gauge_field_theory
-  - nlab-physics-gauge_field_theory
-  - sage-lie-algebra
-- id: j_lie_rep__lie_algebra
-  source: lie_algebra
-  target: j_lie_rep
-  type: combine-compatible
-  label: acting Lie algebra
-  detail: Supply a Lie algebra $\mathfrak{g}$ over the same field $k$ as the vector-space input.
-  citations:
-  - mathlib-lie-module
-- id: liealg_to_noether
-  source: lie_algebra
-  target: noether_current
-  type: mathematical-formulation
-  label: infinitesimal generators
-  detail: Infinitesimal symmetry generators lie in a Lie algebra and enter Noether currents.
-  citations:
-  - wp-physics-noether_current
-  - nlab-physics-noether_current
-  - sage-lie-algebra
-  overview: true
-- id: e_magma_quasigroup
-  source: magma
-  target: quasigroup
-  type: impose-axiom
-  label: + unique left/right division
-  detail: Require each equation $ax=b$ and $ya=b$ to have a unique solution.
-  citations:
-  - wp-quasigroup
-  - nlab-quasigroup
-  - burris-universal-algebra
-- id: e_magma_rack
-  source: magma
-  target: rack
-  type: impose-axiom
-  label: + bijective translations and self-distributivity
-  detail: Require bijective right translations and right self-distributivity.
-  citations:
-  - wp-rack
-  - nlab-rack
-  - burris-universal-algebra
-- id: e_magma_semigroup
-  source: magma
-  target: semigroup
-  type: impose-axiom
-  label: + associativity
-  detail: Require $(xy)z=x(yz)$.
-  citations:
-  - wp-semigroup
-  - stacks-algebra-text
-- id: e_monoid_comm
-  source: monoid
-  target: commutative_monoid
-  type: impose-axiom
-  label: + commutativity
-  detail: Require $xy=yx$.
-  citations:
-  - wp-comm-monoid
-  - stacks-algebra-text
-- id: e_monoid_group
-  source: monoid
-  target: group
-  type: impose-axiom
-  label: + inverses
-  detail: Require every element to have a two-sided inverse.
-  citations:
-  - wp-group
-  - nlab-group
-  - stacks-algebra-text
-- id: j_residuated__monoid
-  source: monoid
-  target: j_residuated
-  type: combine-compatible
-  label: multiplication
-  detail: Supply the Monoid structure as one jointly required input.
-  citations:
-  - wp-residuated-lattice
-  - gierz-order
-- id: e_monoid_jsemi
-  source: monoid
-  target: j_semiring
-  type: combine-compatible
-  label: use as multiplication
-  detail: Supply the multiplicative monoid.
-  citations:
-  - wp-semiring
-  - stacks-algebra-text
-- id: j_top_monoid__monoid
-  source: monoid
-  target: j_top_monoid
-  type: combine-compatible
-  label: monoid law
-  detail: Supply the Monoid structure as one jointly required input.
-  citations:
-  - wp-topological-semigroup
-  - nlab-topological-monoid
-  - topology-without-tears
-- id: e_monoid_one_object_category
-  source: monoid
-  target: small_category
-  type: representation-equivalence
-  label: view as a one-object category
-  detail: 'A monoid is precisely a category with one object: monoid elements are endomorphisms and multiplication is composition.'
-  citations:
-  - wp-monoid
-  - wp-category
-  - nlab-category
-  - riehl-category-context
-- id: e_ring_comm
-  source: ring
-  target: commutative_ring
-  type: impose-axiom
-  label: + $ab=ba$
-  detail: Require multiplication to commute.
-  citations:
-  - wp-comm-ring
-  - stacks-algebra-text
-- id: e_ring_div
-  source: ring
-  target: division_ring
-  type: impose-axiom
-  label: + nonzero inverses
-  detail: Require each nonzero element to be multiplicatively invertible.
-  citations:
-  - wp-division-ring
-  - stacks-algebra-text
-- id: e_ring_jmodule
-  source: ring
-  target: j_module
-  type: combine-compatible
-  label: scalar ring $R$
-  detail: Supply the scalar ring.
-  citations:
-  - wp-module
-  - stacks-algebra-text
-- id: ring_to_j_ordered_ring
-  source: ring
-  target: j_ordered_ring
-  type: combine-compatible
-  label: supply ring
-  detail: Use the ring operations on the common carrier.
-  citations:
-  - wp-ordered-ring
-  - gierz-order
-- id: e_ring_jtr
-  source: ring
-  target: j_top_ring
-  type: combine-compatible
-  label: ring structure
-  detail: Supply ring operations.
-  citations:
-  - stacks-top-ring
-  - topology-without-tears
-- id: j_top_semigroup__semigroup
-  source: semigroup
-  target: j_top_semigroup
-  type: combine-compatible
-  label: semigroup law
-  detail: Supply the Semigroup structure as one jointly required input.
-  citations:
-  - wp-topological-semigroup
-  - nlab-topological-monoid
-  - topology-without-tears
-- id: e_semigroup_monoid
-  source: semigroup
-  target: monoid
-  type: impose-axiom
-  label: require an identity
-  detail: Select semigroups in which a two-sided identity exists; it is then unique.
-  citations:
-  - wp-monoid
-  - stacks-algebra-text
-- id: e_semiring_ring
-  source: semiring
-  target: ring
-  type: impose-axiom
-  label: + additive inverses
-  detail: Require the additive commutative monoid to be an abelian group.
-  citations:
-  - wp-ring
-  - nlab-ring
-  - stacks-algebra-text
-- id: slater_to_csf
-  source: slater_determinant
-  target: configuration_state_function
-  type: canonical-construction
-  label: symmetry-adapted determinant combination
-  detail: Configuration-state functions are symmetry-adapted combinations of Slater determinants.
-  citations:
-  - wp-slater_determinant
-  - nlab-slater_determinant
-  - nist-atomic-spectroscopy
-  - wp-physics-configuration_state_function
-  - nist-atomic-states
-- id: slater_to_manybody
-  source: slater_determinant
-  target: many_body_quantum_mechanics
-  type: mathematical-formulation
-  label: antisymmetric fermion ansatz
-  detail: A Slater determinant is the basic single-configuration antisymmetric state for identical fermions.
-  citations:
-  - wp-slater_determinant
-  - nlab-slater_determinant
-  - nist-atomic-spectroscopy
-  - wp-physics-many_body_quantum_mechanics
-  - nlab-physics-many_body_quantum_mechanics
-  - tong-quantum
-- id: j_cstar__star_algebra
-  source: star_algebra
-  target: j_cstar
-  type: combine-compatible
-  label: involution
-  detail: Supply the conjugate-linear involutive anti-automorphism on the same complex algebra carrier used by the Banach-algebra input.
-  citations:
-  - mathlib-cstar-classes
-- id: tensorproduct_to_compositeqm
-  source: tensor_product_vector_space
-  target: many_body_quantum_mechanics
-  type: mathematical-formulation
-  label: composite-system state space
-  detail: The state space of distinguishable composite quantum systems is modeled by a tensor product, with constraints for identical particles.
-  citations:
-  - wp-physics-many_body_quantum_mechanics
-  - nlab-physics-many_body_quantum_mechanics
-  - wp-tensor_product_vector_space
-  - nlab-tensor_product_vector_space
-  overview: true
-- id: e_unital_commalg
-  source: unital_associative_algebra
-  target: commutative_algebra
-  type: impose-axiom
-  label: + commutativity
-  detail: Require multiplication to commute.
-  citations:
-  - wp-associative-algebra
-  - nlab-associative-algebra
-  - wp-commutative-algebra
-  - stacks-algebra-text
-- id: j_bialgebra__unital_associative_algebra
-  source: unital_associative_algebra
-  target: j_bialgebra
-  type: combine-compatible
-  label: unital algebra structure
-  detail: Supply multiplication and unit on the common carrier.
-  citations:
-  - wp-bialgebra
-  - nlab-bialgebra
-  - stacks-algebra-text
-- id: affine_space_from_vector
-  source: vector_space
-  target: affine_space
-  type: induced-forgotten
-  label: forget the chosen origin
-  detail: Forgetting the distinguished zero of a vector space while retaining its translation action yields an affine space; abstractly, an affine space is a torsor for a vector space.
-  citations:
-  - wp-vector
-  - nlab-vector
-  - stacks-algebra-text
-  - wp-affine_space
-  - nlab-affine_space
-  - tong-relativity
-- id: vector_space_to_algebra
-  source: vector_space
-  target: algebra_over_field
-  type: add-data
-  label: + bilinear multiplication
-  detail: Choose a bilinear map $A\times A\to A$; do not yet require associativity or a unit.
-  citations:
-  - wp-algebra-field
-  - stacks-algebra-text
-- id: e_vector_coalgebra
-  source: vector_space
-  target: coalgebra
-  type: add-data
-  label: + comultiplication and counit
-  detail: Add coassociative comultiplication and a counit.
-  citations:
-  - wp-coalgebra
-  - nlab-coalgebra
-  - stacks-algebra-text
-- id: math_vector_space_to_complex_vector_space
-  source: vector_space
-  target: complex_vector_space
-  type: framework-specialization
-  label: complex scalars
-  detail: A complex vector space is a vector space over $\mathbb C$.
-  citations:
-  - wp-complex_vector_space
-  - nlab-complex_vector_space
-- id: math_vector_space_to_dual_vector_space
-  source: vector_space
-  target: dual_vector_space
-  type: canonical-construction
-  label: linear dual
-  detail: The algebraic dual is canonically constructed as the vector space of linear functionals.
-  citations:
-  - wp-dual_vector_space
-  - nlab-dual_vector_space
-- id: math_vector_space_to_exterior_algebra
-  source: vector_space
-  target: exterior_algebra
-  type: canonical-construction
-  label: exterior algebra
-  detail: The exterior algebra is the quotient of the tensor algebra by the two-sided ideal generated by all $v\otimes v$.
-  citations:
-  - wp-exterior_algebra
-  - nlab-exterior_algebra
-- id: grassmann_from_vector
-  source: exterior_algebra
-  target: grassmann_algebra
-  type: representation-equivalence
-  label: same algebra; Grassmann terminology
-  detail: “Grassmann algebra” is standard terminology for the exterior algebra, especially in fermionic and path-integral applications.
-  citations:
-  - wp-vector
-  - nlab-vector
-  - stacks-algebra-text
-  - wp-grassmann_algebra
-  - nlab-grassmann_algebra
-  - tong-qft
-- id: vector_space_to_inner_product
-  source: vector_space
-  target: inner_product_space
-  type: add-data
-  label: + inner product
-  detail: For a real or complex vector space, choose a positive-definite symmetric bilinear form (real) or Hermitian sesquilinear form (complex).
-  citations:
-  - wp-inner-product
-  - nlab-inner-product-space
-  - princeton-functional-analysis
-- id: j_group_rep__vector_space
-  source: vector_space
-  target: j_group_rep
-  type: combine-compatible
-  label: linear carrier
-  detail: Supply the Vector space structure as one jointly required input.
-  citations:
-  - wp-group-representation
-  - nlab-representation
-  - etingof-representation-theory
-- id: j_lie_rep__vector_space
-  source: vector_space
-  target: j_lie_rep
-  type: combine-compatible
-  label: linear carrier
-  detail: Supply a $k$-vector space $V$ over the same field $k$ as the Lie-algebra input.
-  citations:
-  - mathlib-lie-module
-- id: e_vector_jtvs
-  source: vector_space
-  target: j_tvs
-  type: combine-compatible
-  label: vector structure
-  detail: Supply the vector-space operations.
-  citations:
-  - wp-top-vector
-  - princeton-functional-analysis
-- id: vector_to_lie_algebra
-  source: vector_space
-  target: lie_algebra
-  type: add-data
-  label: add Lie bracket
-  detail: Add an alternating bilinear bracket satisfying Jacobi.
-  citations:
-  - wp-lie-algebra
-  - stacks-algebra-text
-- id: math_vector_space_to_linear_operator
-  source: vector_space
-  target: linear_operator
-  type: add-data
-  label: choose a linear endomorphism
-  detail: 'A linear operator is additional data: a chosen linear map from a vector space to itself, or more generally between specified vector spaces.'
-  citations:
-  - wp-linear_operator
-  - nlab-linear_operator
-- id: e_vector_seminorm
-  source: vector_space
-  target: seminormed_vector_space
-  type: add-data
-  label: + real-valued absolute value and seminorm
-  detail: Equip the scalar field with a real-valued absolute value $|\cdot|$ and choose $p\colon V\to[0,\infty)$ with $p(x+y)\le p(x)+p(y)$ and $p(\lambda x)=|\lambda|p(x)$.
-  citations:
-  - mathlib-seminorm
-  - mathlib-normed-module
-- id: math_vector_space_to_symplectic_vector_space
-  source: vector_space
-  target: symplectic_vector_space
-  type: add-data
-  label: symplectic form
-  detail: A symplectic vector space adds a nondegenerate alternating bilinear form.
-  citations:
-  - wp-symplectic_vector_space
-  - nlab-symplectic_vector_space
-- id: math_vector_space_to_tensor_product_vector_space
-  source: vector_space
-  target: tensor_product_vector_space
-  type: canonical-construction
-  label: tensor product
-  detail: The tensor product is characterized by its universal property for bilinear maps.
-  citations:
-  - wp-tensor_product_vector_space
-  - nlab-tensor_product_vector_space
-- id: complexvs_to_superposition
-  source: complex_vector_space
-  target: quantum_superposition
-  type: mathematical-formulation
-  label: linear combinations
-  detail: The linear structure of complex state spaces supplies the formal superposition operation.
-  citations:
-  - wp-complex_vector_space
-  - nlab-complex_vector_space
-  - wp-physics-quantum_superposition
-  - nlab-physics-quantum_superposition
-  - nist-quantum-theory
-  - tong-quantum
-- id: vectorspace_to_directsum
-  source: vector_space
-  target: direct_sum_vector_space
-  type: canonical-construction
-  label: indexed direct sum
-  detail: An indexed family of vector spaces has a direct sum characterized by finitely supported components and the coproduct universal property.
-  citations:
-  - wp-direct-sum-vector-space
-  - nlab-direct-sum-vector-space
-- id: directsum_to_fock
-  source: direct_sum_vector_space
-  target: fock_space
-  type: mathematical-formulation
-  label: graded direct-sum structure
-  detail: Fock space is a Hilbert direct sum of zero-, one-, and many-particle tensor-power sectors.
-  citations:
-  - wp-direct-sum-vector-space
-  - nlab-direct-sum-vector-space
-  - wp-fock_space
-  - nlab-fock_space
-- id: commutator_to_ccr
-  source: operator_commutator
-  target: canonical_commutation_relations
-  type: mathematical-formulation
-  label: canonical operator bracket
-  detail: Canonical commutation relations are equations for operator commutators, such as $[Q_i,P_j]=i\hbar\delta_{ij}$.
-  citations:
-  - wp-operator-commutator
-  - nlab-operator-commutator
-  - tong-quantum
-- id: anticommutator_to_fermionfield
-  source: operator_anticommutator
-  target: fermionic_field
-  type: mathematical-formulation
-  label: canonical anticommutation algebra
-  detail: Fermionic creation, annihilation, and field operators satisfy canonical anticommutation rather than commutation relations.
-  citations:
-  - wp-operator-anticommutator
-  - nlab-operator-anticommutator
-  - tong-qft
-- id: semiring_to_natural_numbers
-  source: semiring
-  target: natural_numbers
-  type: classification
-  label: initial arithmetic semiring
-  detail: With its usual operations, $\mathbb N$ is a commutative semiring and is initial among semirings in the standard unital convention.
-  citations:
-  - nlab-natural-number
-- id: field_to_rational_numbers
-  source: field
-  target: rational_numbers
-  type: classification
-  label: prime ordered field
-  detail: The rational numbers form the characteristic-zero prime field, equipped here with their canonical order.
-  citations:
-  - wp-rational-number
-  - nlab-rational-number
-- id: story_commutative_ring_to_ring_localization_canonical_construction
-  source: commutative_ring
-  target: ring_localization
-  type: canonical-construction
-  label: invert a multiplicative subset
-  detail: Localization universally makes selected ring elements invertible.
-  citations:
-  - stacks-algebra-text
-- id: story_commutative_ring_to_prime_spectrum_canonical_construction
-  source: commutative_ring
-  target: prime_spectrum
-  type: canonical-construction
-  label: form $\operatorname{Spec}(R)$
-  detail: Prime ideals with the Zariski topology and structure sheaf form the affine spectrum.
-  citations:
-  - stacks-schemes-text
-- id: story_commutative_ring_to_polynomial_ring_canonical_construction
-  source: commutative_ring
-  target: polynomial_ring
-  type: canonical-construction
-  label: adjoin an indeterminate
-  detail: Form finite formal sums in a variable with coefficients in the ring.
-  citations:
-  - milne-fields-galois-theory
-- id: story_field_to_field_extension_add_data
-  source: field
-  target: field_extension
-  type: add-data
-  label: specify a larger field
-  detail: A field extension records an embedding of a base field into a larger field.
-  citations:
-  - milne-fields-galois-theory
-- id: story_field_extension_to_algebraic_extension_impose_axiom
-  source: field_extension
-  target: algebraic_extension
-  type: impose-axiom
-  label: require algebraic elements
-  detail: Every element of the larger field must satisfy a nonzero polynomial over the base.
-  citations:
-  - milne-fields-galois-theory
-- id: story_algebraic_extension_to_separable_extension_impose_axiom
-  source: algebraic_extension
-  target: separable_extension
-  type: impose-axiom
-  label: require separability
-  detail: Minimal polynomials must have distinct roots in a splitting field.
-  citations:
-  - milne-fields-galois-theory
-- id: story_algebraic_extension_to_normal_extension_impose_axiom
-  source: algebraic_extension
-  target: normal_extension
-  type: impose-axiom
-  label: require normality
-  detail: Irreducible polynomials with one root in the extension must split there.
-  citations:
-  - milne-fields-galois-theory
-- id: story_polynomial_ring_to_splitting_field_add_data
-  source: polynomial_ring
-  target: splitting_field
-  type: add-data
-  label: choose polynomials and adjoin all roots
-  detail: Choose a polynomial or family over the base field and a field generated by all of its roots. The resulting splitting field is unique up to base-field isomorphism, not as a literally canonical subfield without an ambient algebraic closure.
-  citations:
-  - milne-fields-galois-theory
-- id: story_splitting_field_to_normal_extension_induced_forgotten
-  source: splitting_field
-  target: normal_extension
-  type: induced-forgotten
-  label: is a normal algebraic extension
-  detail: A splitting field of a family of polynomials over the base field is algebraic and normal over that field; forgetting the chosen polynomials leaves the normal extension.
-  citations:
-  - milne-fields-galois-theory
-- id: story_field_to_field_automorphism_add_data
-  source: field
-  target: field_automorphism
-  type: add-data
-  label: take invertible field maps
-  detail: Field automorphisms form a group under composition.
-  citations:
-  - milne-fields-galois-theory
-- id: story_galois_extension_to_galois_group_canonical_construction
-  source: galois_extension
-  target: galois_group
-  type: canonical-construction
-  label: take base-fixing automorphisms
-  detail: The automorphisms of $L$ fixing $K$ form $\operatorname{Gal}(L/K)$.
-  citations:
-  - milne-fields-galois-theory
-- id: story_group_to_galois_group_framework_specialization
-  source: group
-  target: galois_group
-  type: framework-specialization
-  label: realized by field symmetries
-  detail: A Galois group is a group, with composition as operation.
-  citations:
-  - milne-fields-galois-theory
-- id: story_galois_group_to_fixed_field_canonical_construction
-  source: galois_group
-  target: fixed_field
-  type: canonical-construction
-  label: take common fixed elements
-  detail: Each automorphism subgroup determines an intermediate fixed field.
-  citations:
-  - milne-fields-galois-theory
-- id: story_galois_extension_to_fundamental_theorem_galois_theory_theorem_implication
-  source: galois_extension
-  target: fundamental_theorem_galois_theory
-  type: theorem-implication
-  label: subgroups correspond to subfields
-  detail: Finite Galois extensions have an inclusion-reversing subgroup–intermediate-field correspondence.
-  citations:
-  - milne-fields-galois-theory
-- id: story_quadratic_form_to_hasse_minkowski_theorem_theorem_implication
-  source: quadratic_form
-  target: hasse_minkowski_theorem
-  type: theorem-implication
-  label: local isotropy decides global isotropy
-  detail: The Hasse–Minkowski theorem establishes a local–global principle for quadratic forms over number fields.
-  citations:
-  - milne-algebraic-number-theory
-- id: story_galois_extension_to_separable_extension_induced_forgotten
-  source: galois_extension
-  target: separable_extension
-  type: induced-forgotten
-  label: is separable
-  detail: A Galois extension is normal and separable; forgetting normality leaves a separable extension.
-  citations:
-  - milne-fields-galois-theory
-- id: story_galois_extension_to_normal_extension_induced_forgotten
-  source: galois_extension
-  target: normal_extension
-  type: induced-forgotten
-  label: is normal
-  detail: A Galois extension is normal and separable; forgetting separability leaves a normal extension.
-  citations:
-  - milne-fields-galois-theory
-- id: story_polynomial_ring_to_commutative_ring_induced_forgotten
-  source: polynomial_ring
-  target: commutative_ring
-  type: induced-forgotten
-  label: is a commutative ring
-  detail: A polynomial ring over a commutative coefficient ring is itself commutative.
-  citations:
-  - milne-fields-galois-theory
-  - stacks-algebra-text
-  - wp-comm-ring
-- id: j_galois_extension__normal_extension
-  source: normal_extension
-  target: j_galois_extension
-  type: combine-compatible
-  label: normal extension
-  detail: Supply normality of the algebraic extension as one jointly required input.
-  citations:
-  - milne-fields-galois-theory
-- id: j_galois_extension__separable_extension
-  source: separable_extension
-  target: j_galois_extension
-  type: combine-compatible
-  label: separable extension
-  detail: Supply separability of the same algebraic extension as the other jointly required input.
-  citations:
-  - milne-fields-galois-theory
-- id: j_galois_extension__out
-  source: j_galois_extension
-  target: galois_extension
-  type: combine-compatible
-  label: impose both properties on one extension
-  detail: An algebraic extension that is both normal and separable is Galois.
-  citations:
-  - milne-fields-galois-theory
-- id: story_field_extension_to_vector_space_induced_forgotten
-  source: field_extension
-  target: vector_space
-  type: induced-forgotten
-  label: is a vector space over the base field
-  detail: For a field extension $L/K$, scalar multiplication by $K$ makes $L$ a vector space over $K$; its dimension is the extension degree.
-  citations:
-  - milne-fields-galois-theory
-- id: story_fixed_field_to_field_induced_forgotten
-  source: fixed_field
-  target: field
-  type: induced-forgotten
-  label: is a subfield
-  detail: Elements fixed by a group of field automorphisms are closed under the field operations and form a subfield.
-  citations:
-  - milne-fields-galois-theory
-- id: story_solvable_group_to_group_induced_forgotten
-  source: solvable_group
-  target: group
-  type: induced-forgotten
-  label: is a group
-  detail: Forgetting the terminating derived or subnormal series leaves the underlying group.
-  citations:
-  - milne-fields-galois-theory
-- id: j_radical_solvability__galois_group
-  source: galois_group
-  target: j_radical_solvability
-  type: combine-compatible
-  label: its Galois group
-  detail: Supply the Galois group of the splitting field of that same polynomial.
-  citations:
-  - milne-fields-galois-theory
-- id: j_radical_solvability__solvable_group
-  source: solvable_group
-  target: j_radical_solvability
-  type: combine-compatible
-  label: the same group is solvable
-  detail: Require the polynomial’s Galois group to have a terminating derived series.
-  citations:
-  - milne-fields-galois-theory
-- id: j_radical_solvability__out
-  source: j_radical_solvability
-  target: solvability_by_radicals
-  type: combine-compatible
-  label: apply the Galois criterion
-  detail: Under the standard separability qualifications (in particular over characteristic zero), a polynomial is solvable by radicals exactly when its Galois group is solvable.
-  citations:
-  - milne-fields-galois-theory
-- id: j_radical_solvability__splitting_field
-  source: splitting_field
-  target: j_radical_solvability
-  type: combine-compatible
-  label: chosen polynomial and splitting field
-  detail: Supply the splitting field generated by the roots of the polynomial under study.
-  citations:
-  - milne-fields-galois-theory
-- id: story_quadratic_form_to_smooth_projective_quadric_canonical_construction
-  source: quadratic_form
-  target: smooth_projective_quadric
-  type: canonical-construction
-  label: take the projective zero locus under regularity hypotheses
-  detail: For a nondegenerate quadratic form of dimension at least three over a field of characteristic not two, the equation $q=0$ defines a smooth projective quadric.
-  citations:
-  - poonen-rational-points-varieties
-  - milne-algebraic-number-theory
+  - id: abelian_group_to_commutative_monoid
+    source: abelian_group
+    target: commutative_monoid
+    type: induced-forgotten
+    label: forget additive inverses
+    detail: Retain the commutative associative operation and identity.
+    citations:
+      - wp-abelian
+      - wp-comm-monoid
+      - stacks-algebra-text
+  - id: e_ab_jmodule
+    source: abelian_group
+    target: j_module
+    type: combine-compatible
+    label: additive carrier $M$
+    detail: Supply the additive abelian group.
+    citations:
+      - wp-module
+      - stacks-algebra-text
+  - id: e_ab_jvector
+    source: abelian_group
+    target: j_vector
+    type: combine-compatible
+    label: additive carrier $V$
+    detail: Supply the additive abelian group.
+    citations:
+      - wp-vector
+      - stacks-algebra-text
+  - id: affine_to_minkowski
+    source: affine_space
+    target: minkowski_spacetime
+    type: mathematical-formulation
+    label: affine spacetime structure
+    detail: Minkowski spacetime is an affine space modeled on a Lorentzian vector space, not canonically a vector space with preferred origin.
+    citations:
+      - wp-affine_space
+      - nlab-affine_space
+      - tong-relativity
+      - wp-physics-minkowski_spacetime
+      - nlab-physics-minkowski_spacetime
+      - einstein-spacetime
+  - id: e_alg_assoc
+    source: algebra_over_field
+    target: associative_algebra
+    type: impose-axiom
+    label: + associativity
+    detail: Require $(ab)c=a(bc)$.
+    citations:
+      - wp-associative-algebra
+      - nlab-associative-algebra
+      - stacks-algebra-text
+  - id: math_algebra_over_field_to_clifford_algebra
+    source: vector_space
+    target: clifford_algebra
+    type: canonical-construction
+    label: form the Clifford algebra
+    detail: A vector space together with a quadratic form $Q$ canonically determines a new algebra, the quotient of its tensor algebra by the relations $v\otimes v=Q(v)1$. This changes the carrier rather than merely adding data to the vector space.
+    citations:
+      - wp-clifford_algebra
+      - nlab-clifford_algebra
+  - id: e_assoc_jba
+    source: associative_algebra
+    target: j_banach_algebra
+    type: combine-compatible
+    label: associative multiplication
+    detail: Supply an associative algebra over the same normed field $K$, on the same carrier, addition, and scalar action as the Banach space.
+    citations:
+      - mathlib-normed-algebra
+      - mathlib-normed-ring
+  - id: e_assoc_star
+    source: associative_algebra
+    target: star_algebra
+    type: add-data
+    label: + involution
+    detail: Over a scalar field with involution, add a semilinear involutive anti-automorphism.
+    citations:
+      - wp-star-algebra
+      - nlab-star-algebra
+      - stacks-algebra-text
+  - id: e_assoc_unital
+    source: associative_algebra
+    target: unital_associative_algebra
+    type: impose-axiom
+    label: require a unit
+    detail: Select associative algebras whose multiplication has a two-sided identity; it is unique.
+    citations:
+      - wp-associative-algebra
+      - nlab-associative-algebra
+      - stacks-algebra-text
+  - id: e_bialgebra_hopf
+    source: bialgebra
+    target: hopf_algebra
+    type: impose-axiom
+    label: require an antipode
+    detail: Select bialgebras for which a convolution inverse of the identity exists; the antipode is then unique.
+    citations:
+      - wp-hopf-algebra
+      - nlab-hopf-algebra
+      - stacks-algebra-text
+  - id: clifford_to_dirac
+    source: clifford_algebra
+    target: dirac_equation
+    type: mathematical-formulation
+    label: gamma-matrix algebra
+    detail: Dirac gamma matrices represent a spacetime Clifford algebra.
+    citations:
+      - wp-physics-dirac_equation
+      - nlab-physics-dirac_equation
+      - wp-clifford_algebra
+      - nlab-clifford_algebra
+    overview: true
+  - id: gamma_from_clifford
+    source: clifford_algebra
+    target: gamma_matrices
+    type: model-realization
+    label: choose a matrix representation
+    detail: A chosen representation of the relevant Clifford algebra sends its generators to gamma matrices. The abstract Clifford algebra does not canonically select a particular matrix realization.
+    citations:
+      - wp-clifford_algebra
+      - nlab-clifford_algebra
+      - wp-gamma_matrices
+      - nlab-gamma_matrices
+      - tong-qft
+  - id: math_clifford_algebra_to_spin_group
+    source: clifford_algebra
+    target: spin_group
+    type: canonical-construction
+    label: spin double cover
+    detail: The spin group is constructed from invertible elements of a Clifford algebra; in Euclidean signature $\mathrm{Spin}(n)\to SO(n)$ is a double cover, with signature-dependent variants in the indefinite case.
+    citations:
+      - wp-spin_group
+      - nlab-spin_group
+  - id: j_bialgebra__coalgebra
+    source: coalgebra
+    target: j_bialgebra
+    type: combine-compatible
+    label: coalgebra structure
+    detail: Supply the Coalgebra structure as one jointly required input.
+    citations:
+      - wp-bialgebra
+      - nlab-bialgebra
+      - stacks-algebra-text
+  - id: e_commmon_jsemi
+    source: commutative_monoid
+    target: j_semiring
+    type: combine-compatible
+    label: use as addition
+    detail: Supply the additive commutative monoid.
+    citations:
+      - wp-semiring
+      - stacks-algebra-text
+  - id: e_comm_affine
+    source: commutative_ring
+    target: affine_scheme
+    type: representation-equivalence
+    label: Spec, contravariantly
+    detail: The functor $\operatorname{Spec}$ gives an anti-equivalence between commutative rings and affine schemes; morphisms reverse direction.
+    citations:
+      - stacks-affine-scheme
+      - wp-affine-scheme
+      - nlab-affine-scheme
+      - stacks-schemes-text
+  - id: e_comm_artinian
+    source: commutative_ring
+    target: artinian_ring
+    type: impose-axiom
+    label: + DCC on ideals
+    detail: Require descending chains of ideals to stabilize.
+    citations:
+      - stacks-artinian-ring
+      - wp-artinian-ring
+      - stacks-schemes-text
+  - id: e_commutative_ring_field
+    source: commutative_ring
+    target: field
+    type: impose-axiom
+    label: require nonzero inverses
+    detail: Require $1\ne 0$ and every nonzero element to be invertible; inverse elements are unique.
+    citations:
+      - wp-field
+      - nlab-field
+      - stacks-algebra-text
+  - id: comm_ring_to_integral_domain
+    source: commutative_ring
+    target: integral_domain
+    type: impose-axiom
+    label: exclude zero divisors
+    detail: Require $1\ne 0$ and require a product to vanish only when one factor vanishes.
+    citations:
+      - wp-integral-domain
+      - milne-algebraic-number-theory
+  - id: e_comm_local
+    source: commutative_ring
+    target: local_ring
+    type: impose-axiom
+    label: + unique maximal ideal
+    detail: Require exactly one maximal ideal.
+    citations:
+      - stacks-local-ring
+      - wp-local-ring
+      - nlab-local-ring
+      - stacks-schemes-text
+  - id: e_comm_noetherian
+    source: commutative_ring
+    target: noetherian_ring
+    type: impose-axiom
+    label: + ACC on ideals
+    detail: Require every ideal to be finitely generated.
+    citations:
+      - stacks-noetherian-ring
+      - wp-noetherian-ring
+      - nlab-noetherian-ring
+      - stacks-schemes-text
+  - id: complexvs_to_qm
+    source: complex_vector_space
+    target: quantum_mechanics
+    type: mathematical-formulation
+    label: state spaces and amplitudes
+    detail: Quantum mechanics is ordinarily formulated over complex vector spaces.
+    citations:
+      - wp-physics-quantum_mechanics
+      - nlab-physics-quantum_mechanics
+      - wp-complex_vector_space
+      - nlab-complex_vector_space
+    overview: true
+  - id: slater_from_exterior
+    source: exterior_algebra
+    target: slater_determinant
+    type: canonical-construction
+    label: antisymmetric exterior product
+    detail: A Slater determinant is the exterior product of occupied one-particle spin-orbitals.
+    citations:
+      - wp-exterior_algebra
+      - nlab-exterior_algebra
+      - wp-slater_determinant
+      - nlab-slater_determinant
+      - nist-atomic-spectroscopy
+  - id: e_field_algclosed
+    source: field
+    target: algebraically_closed_field
+    type: impose-axiom
+    label: + all polynomial roots
+    detail: Require every nonconstant polynomial to have a root.
+    citations:
+      - wp-algebraically-closed
+      - nlab-algebraically-closed
+      - stacks-algebra-text
+  - id: e_field_commutative_ring
+    source: field
+    target: commutative_ring
+    type: induced-forgotten
+    label: forget inversion property
+    detail: Retain the commutative-ring operations and forget the nonzero-invertibility axiom.
+    citations:
+      - wp-field
+      - nlab-field
+      - stacks-algebra-text
+  - id: e_field_division_ring
+    source: field
+    target: division_ring
+    type: induced-forgotten
+    label: forget commutativity as a requirement
+    detail: Every field is in particular a division ring; retain the same operations while viewing commutativity as extra.
+    citations:
+      - wp-field
+      - nlab-field
+      - stacks-algebra-text
+  - id: field_to_finite_field
+    source: field
+    target: finite_field
+    type: impose-axiom
+    label: require finite carrier
+    detail: Restrict to fields with finitely many elements.
+    citations:
+      - wp-finite-field
+      - milne-algebraic-number-theory
+  - id: e_field_global
+    source: field
+    target: global_field
+    type: impose-axiom
+    label: + global arithmetic form
+    detail: Require a finite extension of $Q$ or $F_q(t)$.
+    citations:
+      - wp-global-field
+      - nlab-global-field
+      - milne-algebraic-number-theory
+  - id: field_to_j_ordered_field
+    source: field
+    target: j_ordered_field
+    type: combine-compatible
+    label: supply field
+    detail: Use the field structure on the common carrier.
+    citations:
+      - wp-ordered-field
+      - gierz-order
+  - id: e_field_jtf
+    source: field
+    target: j_top_field
+    type: combine-compatible
+    label: field structure
+    detail: Supply field operations.
+    citations:
+      - wp-top-field
+      - topology-without-tears
+  - id: j_variety__field
+    source: field
+    target: j_variety
+    type: combine-compatible
+    label: base field
+    detail: Supply the Field structure as one jointly required input.
+    citations:
+      - wp-variety
+      - nlab-variety
+      - stacks-schemes-text
+  - id: e_field_jvector
+    source: field
+    target: j_vector
+    type: combine-compatible
+    label: scalar field $F$
+    detail: Supply the scalar field.
+    citations:
+      - wp-vector
+      - stacks-algebra-text
+  - id: field_to_number_field
+    source: field
+    target: number_field
+    type: impose-axiom
+    label: + finite degree over ℚ
+    detail: Require characteristic zero and finite dimension over the canonically embedded prime field $\mathbb{Q}$.
+    citations:
+      - nlab-number-field
+      - milne-algebraic-number-theory
+  - id: e_field_perfect
+    source: field
+    target: perfect_field
+    type: impose-axiom
+    label: + separability
+    detail: Require every algebraic extension to be separable.
+    citations:
+      - wp-perfect-field
+      - stacks-algebra-text
+  - id: field_to_valued_field
+    source: field
+    target: valued_field
+    type: add-data
+    label: add valuation
+    detail: Equip the field with a valuation or absolute value.
+    citations:
+      - wp-valued-field
+      - milne-algebraic-number-theory
+  - id: gamma_to_dirac
+    source: gamma_matrices
+    target: dirac_equation
+    type: mathematical-formulation
+    label: Clifford matrices
+    detail: Gamma matrices realize the Clifford algebra in the Dirac operator.
+    citations:
+      - wp-gamma_matrices
+      - nlab-gamma_matrices
+      - tong-qft
+      - wp-physics-dirac_equation
+      - nlab-physics-dirac_equation
+      - pdg-rpp
+  - id: grassmann_to_fermionfield
+    source: grassmann_algebra
+    target: fermionic_field
+    type: mathematical-formulation
+    label: anticommuting field variables
+    detail: Grassmann variables encode fermionic signs in path-integral and algebraic formulations.
+    citations:
+      - wp-grassmann_algebra
+      - nlab-grassmann_algebra
+      - tong-qft
+      - wp-physics-fermionic_field
+      - nlab-physics-fermionic_field
+  - id: e_group_abelian
+    source: group
+    target: abelian_group
+    type: impose-axiom
+    label: + commutativity
+    detail: Require $xy=yx$.
+    citations:
+      - wp-abelian
+      - stacks-algebra-text
+  - id: e_group_one_object_groupoid
+    source: group
+    target: groupoid
+    type: representation-equivalence
+    label: view as a one-object groupoid
+    detail: 'A group is precisely a groupoid with one object: group elements are the invertible endomorphisms.'
+    citations:
+      - wp-group
+      - wp-groupoid
+      - riehl-category-context
+  - id: j_group_action__group
+    source: group
+    target: j_group_action
+    type: combine-compatible
+    label: acting group
+    detail: Supply the Group structure as one jointly required input.
+    citations:
+      - wp-group-action
+      - nlab-group-action
+      - etingof-representation-theory
+  - id: j_group_rep__group
+    source: group
+    target: j_group_rep
+    type: combine-compatible
+    label: acting group
+    detail: Supply the Group structure as one jointly required input.
+    citations:
+      - wp-group-representation
+      - nlab-representation
+      - etingof-representation-theory
+  - id: j_lgroup__group
+    source: group
+    target: j_lgroup
+    type: combine-compatible
+    label: group law
+    detail: Supply the Group structure as one jointly required input.
+    citations:
+      - wp-lattice-ordered-group
+      - gierz-order
+  - id: group_to_j_lie
+    source: group
+    target: j_lie_group
+    type: combine-compatible
+    label: group law
+    detail: Supply the group structure on the same carrier as the smooth manifold.
+    citations:
+      - nlab-lie-group
+      - wp-group
+      - lee-smooth-manifolds
+  - id: group_to_j_ordered_group
+    source: group
+    target: j_ordered_group
+    type: combine-compatible
+    label: supply group
+    detail: Use the group operations on the common carrier.
+    citations:
+      - wp-ordered-group
+      - gierz-order
+  - id: e_group_jtg
+    source: group
+    target: j_top_group
+    type: combine-compatible
+    label: group structure
+    detail: Supply the group operations.
+    citations:
+      - wp-top-group
+      - topology-without-tears
+  - id: j_bialgebra__out
+    source: j_bialgebra
+    target: bialgebra
+    type: combine-compatible
+    label: impose compatibility
+    detail: Require comultiplication and counit to respect multiplication and unit.
+    citations:
+      - wp-bialgebra
+      - nlab-bialgebra
+      - stacks-algebra-text
+  - id: e_jmodule_module
+    source: j_module
+    target: module
+    type: combine-compatible
+    label: + scalar action
+    detail: Add compatible scalar multiplication.
+    citations:
+      - wp-module
+      - nlab-module
+      - stacks-algebra-text
+  - id: e_jsemi_semiring
+    source: j_semiring
+    target: semiring
+    type: combine-compatible
+    label: + distributivity, absorbing 0
+    detail: Impose compatibility between the two operations.
+    citations:
+      - wp-semiring
+      - nlab-semiring
+      - stacks-algebra-text
+  - id: e_jvector_vector
+    source: j_vector
+    target: vector_space
+    type: combine-compatible
+    label: + scalar multiplication
+    detail: Add compatible field action.
+    citations:
+      - wp-vector
+      - nlab-vector
+      - stacks-algebra-text
+  - id: math_lie_algebra_to_gauge
+    source: lie_algebra
+    target: gauge_field_theory
+    type: mathematical-formulation
+    label: infinitesimal gauge algebra
+    detail: The Lie algebra supplies gauge generators, structure constants, and the local form of gauge-field interactions.
+    citations:
+      - cern-qft-intro
+      - pdg-qcd
+      - wp-physics-gauge_field_theory
+      - nlab-physics-gauge_field_theory
+      - sage-lie-algebra
+  - id: j_lie_rep__lie_algebra
+    source: lie_algebra
+    target: j_lie_rep
+    type: combine-compatible
+    label: acting Lie algebra
+    detail: Supply a Lie algebra $\mathfrak{g}$ over the same field $k$ as the vector-space input.
+    citations:
+      - mathlib-lie-module
+  - id: liealg_to_noether
+    source: lie_algebra
+    target: noether_current
+    type: mathematical-formulation
+    label: infinitesimal generators
+    detail: Infinitesimal symmetry generators lie in a Lie algebra and enter Noether currents.
+    citations:
+      - wp-physics-noether_current
+      - nlab-physics-noether_current
+      - sage-lie-algebra
+    overview: true
+  - id: e_magma_quasigroup
+    source: magma
+    target: quasigroup
+    type: impose-axiom
+    label: + unique left/right division
+    detail: Require each equation $ax=b$ and $ya=b$ to have a unique solution.
+    citations:
+      - wp-quasigroup
+      - nlab-quasigroup
+      - burris-universal-algebra
+  - id: e_magma_rack
+    source: magma
+    target: rack
+    type: impose-axiom
+    label: + bijective translations and self-distributivity
+    detail: Require bijective right translations and right self-distributivity.
+    citations:
+      - wp-rack
+      - nlab-rack
+      - burris-universal-algebra
+  - id: e_magma_semigroup
+    source: magma
+    target: semigroup
+    type: impose-axiom
+    label: + associativity
+    detail: Require $(xy)z=x(yz)$.
+    citations:
+      - wp-semigroup
+      - stacks-algebra-text
+  - id: e_monoid_comm
+    source: monoid
+    target: commutative_monoid
+    type: impose-axiom
+    label: + commutativity
+    detail: Require $xy=yx$.
+    citations:
+      - wp-comm-monoid
+      - stacks-algebra-text
+  - id: e_monoid_group
+    source: monoid
+    target: group
+    type: impose-axiom
+    label: + inverses
+    detail: Require every element to have a two-sided inverse.
+    citations:
+      - wp-group
+      - nlab-group
+      - stacks-algebra-text
+  - id: j_residuated__monoid
+    source: monoid
+    target: j_residuated
+    type: combine-compatible
+    label: multiplication
+    detail: Supply the Monoid structure as one jointly required input.
+    citations:
+      - wp-residuated-lattice
+      - gierz-order
+  - id: e_monoid_jsemi
+    source: monoid
+    target: j_semiring
+    type: combine-compatible
+    label: use as multiplication
+    detail: Supply the multiplicative monoid.
+    citations:
+      - wp-semiring
+      - stacks-algebra-text
+  - id: j_top_monoid__monoid
+    source: monoid
+    target: j_top_monoid
+    type: combine-compatible
+    label: monoid law
+    detail: Supply the Monoid structure as one jointly required input.
+    citations:
+      - wp-topological-semigroup
+      - nlab-topological-monoid
+      - topology-without-tears
+  - id: e_monoid_one_object_category
+    source: monoid
+    target: small_category
+    type: representation-equivalence
+    label: view as a one-object category
+    detail: 'A monoid is precisely a category with one object: monoid elements are endomorphisms and multiplication is composition.'
+    citations:
+      - wp-monoid
+      - wp-category
+      - nlab-category
+      - riehl-category-context
+  - id: e_ring_comm
+    source: ring
+    target: commutative_ring
+    type: impose-axiom
+    label: + $ab=ba$
+    detail: Require multiplication to commute.
+    citations:
+      - wp-comm-ring
+      - stacks-algebra-text
+  - id: e_ring_div
+    source: ring
+    target: division_ring
+    type: impose-axiom
+    label: + nonzero inverses
+    detail: Require each nonzero element to be multiplicatively invertible.
+    citations:
+      - wp-division-ring
+      - stacks-algebra-text
+  - id: e_ring_jmodule
+    source: ring
+    target: j_module
+    type: combine-compatible
+    label: scalar ring $R$
+    detail: Supply the scalar ring.
+    citations:
+      - wp-module
+      - stacks-algebra-text
+  - id: ring_to_j_ordered_ring
+    source: ring
+    target: j_ordered_ring
+    type: combine-compatible
+    label: supply ring
+    detail: Use the ring operations on the common carrier.
+    citations:
+      - wp-ordered-ring
+      - gierz-order
+  - id: e_ring_jtr
+    source: ring
+    target: j_top_ring
+    type: combine-compatible
+    label: ring structure
+    detail: Supply ring operations.
+    citations:
+      - stacks-top-ring
+      - topology-without-tears
+  - id: j_top_semigroup__semigroup
+    source: semigroup
+    target: j_top_semigroup
+    type: combine-compatible
+    label: semigroup law
+    detail: Supply the Semigroup structure as one jointly required input.
+    citations:
+      - wp-topological-semigroup
+      - nlab-topological-monoid
+      - topology-without-tears
+  - id: e_semigroup_monoid
+    source: semigroup
+    target: monoid
+    type: impose-axiom
+    label: require an identity
+    detail: Select semigroups in which a two-sided identity exists; it is then unique.
+    citations:
+      - wp-monoid
+      - stacks-algebra-text
+  - id: e_semiring_ring
+    source: semiring
+    target: ring
+    type: impose-axiom
+    label: + additive inverses
+    detail: Require the additive commutative monoid to be an abelian group.
+    citations:
+      - wp-ring
+      - nlab-ring
+      - stacks-algebra-text
+  - id: slater_to_csf
+    source: slater_determinant
+    target: configuration_state_function
+    type: canonical-construction
+    label: symmetry-adapted determinant combination
+    detail: Configuration-state functions are symmetry-adapted combinations of Slater determinants.
+    citations:
+      - wp-slater_determinant
+      - nlab-slater_determinant
+      - nist-atomic-spectroscopy
+      - wp-physics-configuration_state_function
+      - nist-atomic-states
+  - id: slater_to_manybody
+    source: slater_determinant
+    target: many_body_quantum_mechanics
+    type: mathematical-formulation
+    label: antisymmetric fermion ansatz
+    detail: A Slater determinant is the basic single-configuration antisymmetric state for identical fermions.
+    citations:
+      - wp-slater_determinant
+      - nlab-slater_determinant
+      - nist-atomic-spectroscopy
+      - wp-physics-many_body_quantum_mechanics
+      - nlab-physics-many_body_quantum_mechanics
+      - tong-quantum
+  - id: j_cstar__star_algebra
+    source: star_algebra
+    target: j_cstar
+    type: combine-compatible
+    label: involution
+    detail: Supply the conjugate-linear involutive anti-automorphism on the same complex algebra carrier used by the Banach-algebra input.
+    citations:
+      - mathlib-cstar-classes
+  - id: tensorproduct_to_compositeqm
+    source: tensor_product_vector_space
+    target: many_body_quantum_mechanics
+    type: mathematical-formulation
+    label: composite-system state space
+    detail: The state space of distinguishable composite quantum systems is modeled by a tensor product, with constraints for identical particles.
+    citations:
+      - wp-physics-many_body_quantum_mechanics
+      - nlab-physics-many_body_quantum_mechanics
+      - wp-tensor_product_vector_space
+      - nlab-tensor_product_vector_space
+    overview: true
+  - id: e_unital_commalg
+    source: unital_associative_algebra
+    target: commutative_algebra
+    type: impose-axiom
+    label: + commutativity
+    detail: Require multiplication to commute.
+    citations:
+      - wp-associative-algebra
+      - nlab-associative-algebra
+      - wp-commutative-algebra
+      - stacks-algebra-text
+  - id: j_bialgebra__unital_associative_algebra
+    source: unital_associative_algebra
+    target: j_bialgebra
+    type: combine-compatible
+    label: unital algebra structure
+    detail: Supply multiplication and unit on the common carrier.
+    citations:
+      - wp-bialgebra
+      - nlab-bialgebra
+      - stacks-algebra-text
+  - id: affine_space_from_vector
+    source: vector_space
+    target: affine_space
+    type: induced-forgotten
+    label: forget the chosen origin
+    detail: Forgetting the distinguished zero of a vector space while retaining its translation action yields an affine space; abstractly, an affine space is a torsor for a vector space.
+    citations:
+      - wp-vector
+      - nlab-vector
+      - stacks-algebra-text
+      - wp-affine_space
+      - nlab-affine_space
+      - tong-relativity
+  - id: vector_space_to_algebra
+    source: vector_space
+    target: algebra_over_field
+    type: add-data
+    label: + bilinear multiplication
+    detail: Choose a bilinear map $A\times A\to A$; do not yet require associativity or a unit.
+    citations:
+      - wp-algebra-field
+      - stacks-algebra-text
+  - id: e_vector_coalgebra
+    source: vector_space
+    target: coalgebra
+    type: add-data
+    label: + comultiplication and counit
+    detail: Add coassociative comultiplication and a counit.
+    citations:
+      - wp-coalgebra
+      - nlab-coalgebra
+      - stacks-algebra-text
+  - id: math_vector_space_to_complex_vector_space
+    source: vector_space
+    target: complex_vector_space
+    type: framework-specialization
+    label: complex scalars
+    detail: A complex vector space is a vector space over $\mathbb C$.
+    citations:
+      - wp-complex_vector_space
+      - nlab-complex_vector_space
+  - id: math_vector_space_to_dual_vector_space
+    source: vector_space
+    target: dual_vector_space
+    type: canonical-construction
+    label: linear dual
+    detail: The algebraic dual is canonically constructed as the vector space of linear functionals.
+    citations:
+      - wp-dual_vector_space
+      - nlab-dual_vector_space
+  - id: math_vector_space_to_exterior_algebra
+    source: vector_space
+    target: exterior_algebra
+    type: canonical-construction
+    label: exterior algebra
+    detail: The exterior algebra is the quotient of the tensor algebra by the two-sided ideal generated by all $v\otimes v$.
+    citations:
+      - wp-exterior_algebra
+      - nlab-exterior_algebra
+  - id: grassmann_from_vector
+    source: exterior_algebra
+    target: grassmann_algebra
+    type: representation-equivalence
+    label: same algebra; Grassmann terminology
+    detail: “Grassmann algebra” is standard terminology for the exterior algebra, especially in fermionic and path-integral applications.
+    citations:
+      - wp-vector
+      - nlab-vector
+      - stacks-algebra-text
+      - wp-grassmann_algebra
+      - nlab-grassmann_algebra
+      - tong-qft
+  - id: vector_space_to_inner_product
+    source: vector_space
+    target: inner_product_space
+    type: add-data
+    label: + inner product
+    detail: For a real or complex vector space, choose a positive-definite symmetric bilinear form (real) or Hermitian sesquilinear form (complex).
+    citations:
+      - wp-inner-product
+      - nlab-inner-product-space
+      - princeton-functional-analysis
+  - id: j_group_rep__vector_space
+    source: vector_space
+    target: j_group_rep
+    type: combine-compatible
+    label: linear carrier
+    detail: Supply the Vector space structure as one jointly required input.
+    citations:
+      - wp-group-representation
+      - nlab-representation
+      - etingof-representation-theory
+  - id: j_lie_rep__vector_space
+    source: vector_space
+    target: j_lie_rep
+    type: combine-compatible
+    label: linear carrier
+    detail: Supply a $k$-vector space $V$ over the same field $k$ as the Lie-algebra input.
+    citations:
+      - mathlib-lie-module
+  - id: e_vector_jtvs
+    source: vector_space
+    target: j_tvs
+    type: combine-compatible
+    label: vector structure
+    detail: Supply the vector-space operations.
+    citations:
+      - wp-top-vector
+      - princeton-functional-analysis
+  - id: vector_to_lie_algebra
+    source: vector_space
+    target: lie_algebra
+    type: add-data
+    label: add Lie bracket
+    detail: Add an alternating bilinear bracket satisfying Jacobi.
+    citations:
+      - wp-lie-algebra
+      - stacks-algebra-text
+  - id: math_vector_space_to_linear_operator
+    source: vector_space
+    target: linear_operator
+    type: add-data
+    label: choose a linear endomorphism
+    detail: 'A linear operator is additional data: a chosen linear map from a vector space to itself, or more generally between specified vector spaces.'
+    citations:
+      - wp-linear_operator
+      - nlab-linear_operator
+  - id: e_vector_seminorm
+    source: vector_space
+    target: seminormed_vector_space
+    type: add-data
+    label: + real-valued absolute value and seminorm
+    detail: Equip the scalar field with a real-valued absolute value $|\cdot|$ and choose $p\colon V\to[0,\infty)$ with $p(x+y)\le p(x)+p(y)$ and $p(\lambda x)=|\lambda|p(x)$.
+    citations:
+      - mathlib-seminorm
+      - mathlib-normed-module
+  - id: math_vector_space_to_symplectic_vector_space
+    source: vector_space
+    target: symplectic_vector_space
+    type: add-data
+    label: symplectic form
+    detail: A symplectic vector space adds a nondegenerate alternating bilinear form.
+    citations:
+      - wp-symplectic_vector_space
+      - nlab-symplectic_vector_space
+  - id: math_vector_space_to_tensor_product_vector_space
+    source: vector_space
+    target: tensor_product_vector_space
+    type: canonical-construction
+    label: tensor product
+    detail: The tensor product is characterized by its universal property for bilinear maps.
+    citations:
+      - wp-tensor_product_vector_space
+      - nlab-tensor_product_vector_space
+  - id: complexvs_to_superposition
+    source: complex_vector_space
+    target: quantum_superposition
+    type: mathematical-formulation
+    label: linear combinations
+    detail: The linear structure of complex state spaces supplies the formal superposition operation.
+    citations:
+      - wp-complex_vector_space
+      - nlab-complex_vector_space
+      - wp-physics-quantum_superposition
+      - nlab-physics-quantum_superposition
+      - nist-quantum-theory
+      - tong-quantum
+  - id: vectorspace_to_directsum
+    source: vector_space
+    target: direct_sum_vector_space
+    type: canonical-construction
+    label: indexed direct sum
+    detail: An indexed family of vector spaces has a direct sum characterized by finitely supported components and the coproduct universal property.
+    citations:
+      - wp-direct-sum-vector-space
+      - nlab-direct-sum-vector-space
+  - id: directsum_to_fock
+    source: direct_sum_vector_space
+    target: fock_space
+    type: mathematical-formulation
+    label: graded direct-sum structure
+    detail: Fock space is a Hilbert direct sum of zero-, one-, and many-particle tensor-power sectors.
+    citations:
+      - wp-direct-sum-vector-space
+      - nlab-direct-sum-vector-space
+      - wp-fock_space
+      - nlab-fock_space
+  - id: commutator_to_ccr
+    source: operator_commutator
+    target: canonical_commutation_relations
+    type: mathematical-formulation
+    label: canonical operator bracket
+    detail: Canonical commutation relations are equations for operator commutators, such as $[Q_i,P_j]=i\hbar\delta_{ij}$.
+    citations:
+      - wp-operator-commutator
+      - nlab-operator-commutator
+      - tong-quantum
+  - id: anticommutator_to_fermionfield
+    source: operator_anticommutator
+    target: fermionic_field
+    type: mathematical-formulation
+    label: canonical anticommutation algebra
+    detail: Fermionic creation, annihilation, and field operators satisfy canonical anticommutation rather than commutation relations.
+    citations:
+      - wp-operator-anticommutator
+      - nlab-operator-anticommutator
+      - tong-qft
+  - id: semiring_to_natural_numbers
+    source: semiring
+    target: natural_numbers
+    type: classification
+    label: initial arithmetic semiring
+    detail: With its usual operations, $\mathbb N$ is a commutative semiring and is initial among semirings in the standard unital convention.
+    citations:
+      - nlab-natural-number
+  - id: field_to_rational_numbers
+    source: field
+    target: rational_numbers
+    type: classification
+    label: prime ordered field
+    detail: The rational numbers form the characteristic-zero prime field, equipped here with their canonical order.
+    citations:
+      - wp-rational-number
+      - nlab-rational-number
+  - id: story_commutative_ring_to_ring_localization_canonical_construction
+    source: commutative_ring
+    target: ring_localization
+    type: canonical-construction
+    label: invert a multiplicative subset
+    detail: Localization universally makes selected ring elements invertible.
+    citations:
+      - stacks-algebra-text
+  - id: story_commutative_ring_to_prime_spectrum_canonical_construction
+    source: commutative_ring
+    target: prime_spectrum
+    type: canonical-construction
+    label: form $\operatorname{Spec}(R)$
+    detail: Prime ideals with the Zariski topology and structure sheaf form the affine spectrum.
+    citations:
+      - stacks-schemes-text
+  - id: story_commutative_ring_to_polynomial_ring_canonical_construction
+    source: commutative_ring
+    target: polynomial_ring
+    type: canonical-construction
+    label: adjoin an indeterminate
+    detail: Form finite formal sums in a variable with coefficients in the ring.
+    citations:
+      - milne-fields-galois-theory
+  - id: story_field_to_field_extension_add_data
+    source: field
+    target: field_extension
+    type: add-data
+    label: specify a larger field
+    detail: A field extension records an embedding of a base field into a larger field.
+    citations:
+      - milne-fields-galois-theory
+  - id: story_field_extension_to_algebraic_extension_impose_axiom
+    source: field_extension
+    target: algebraic_extension
+    type: impose-axiom
+    label: require algebraic elements
+    detail: Every element of the larger field must satisfy a nonzero polynomial over the base.
+    citations:
+      - milne-fields-galois-theory
+  - id: story_algebraic_extension_to_separable_extension_impose_axiom
+    source: algebraic_extension
+    target: separable_extension
+    type: impose-axiom
+    label: require separability
+    detail: Minimal polynomials must have distinct roots in a splitting field.
+    citations:
+      - milne-fields-galois-theory
+  - id: story_algebraic_extension_to_normal_extension_impose_axiom
+    source: algebraic_extension
+    target: normal_extension
+    type: impose-axiom
+    label: require normality
+    detail: Irreducible polynomials with one root in the extension must split there.
+    citations:
+      - milne-fields-galois-theory
+  - id: story_polynomial_ring_to_splitting_field_add_data
+    source: polynomial_ring
+    target: splitting_field
+    type: add-data
+    label: choose polynomials and adjoin all roots
+    detail: Choose a polynomial or family over the base field and a field generated by all of its roots. The resulting splitting field is unique up to base-field isomorphism, not as a literally canonical subfield without an ambient algebraic closure.
+    citations:
+      - milne-fields-galois-theory
+  - id: story_splitting_field_to_normal_extension_induced_forgotten
+    source: splitting_field
+    target: normal_extension
+    type: induced-forgotten
+    label: is a normal algebraic extension
+    detail: A splitting field of a family of polynomials over the base field is algebraic and normal over that field; forgetting the chosen polynomials leaves the normal extension.
+    citations:
+      - milne-fields-galois-theory
+  - id: story_field_to_field_automorphism_add_data
+    source: field
+    target: field_automorphism
+    type: add-data
+    label: take invertible field maps
+    detail: Field automorphisms form a group under composition.
+    citations:
+      - milne-fields-galois-theory
+  - id: story_galois_extension_to_galois_group_canonical_construction
+    source: galois_extension
+    target: galois_group
+    type: canonical-construction
+    label: take base-fixing automorphisms
+    detail: The automorphisms of $L$ fixing $K$ form $\operatorname{Gal}(L/K)$.
+    citations:
+      - milne-fields-galois-theory
+  - id: story_group_to_galois_group_framework_specialization
+    source: group
+    target: galois_group
+    type: framework-specialization
+    label: realized by field symmetries
+    detail: A Galois group is a group, with composition as operation.
+    citations:
+      - milne-fields-galois-theory
+  - id: story_galois_group_to_fixed_field_canonical_construction
+    source: galois_group
+    target: fixed_field
+    type: canonical-construction
+    label: take common fixed elements
+    detail: Each automorphism subgroup determines an intermediate fixed field.
+    citations:
+      - milne-fields-galois-theory
+  - id: story_galois_extension_to_fundamental_theorem_galois_theory_theorem_implication
+    source: galois_extension
+    target: fundamental_theorem_galois_theory
+    type: theorem-implication
+    label: subgroups correspond to subfields
+    detail: Finite Galois extensions have an inclusion-reversing subgroup–intermediate-field correspondence.
+    citations:
+      - milne-fields-galois-theory
+  - id: story_quadratic_form_to_hasse_minkowski_theorem_theorem_implication
+    source: quadratic_form
+    target: hasse_minkowski_theorem
+    type: theorem-implication
+    label: local isotropy decides global isotropy
+    detail: The Hasse–Minkowski theorem establishes a local–global principle for quadratic forms over number fields.
+    citations:
+      - milne-algebraic-number-theory
+  - id: story_galois_extension_to_separable_extension_induced_forgotten
+    source: galois_extension
+    target: separable_extension
+    type: induced-forgotten
+    label: is separable
+    detail: A Galois extension is normal and separable; forgetting normality leaves a separable extension.
+    citations:
+      - milne-fields-galois-theory
+  - id: story_galois_extension_to_normal_extension_induced_forgotten
+    source: galois_extension
+    target: normal_extension
+    type: induced-forgotten
+    label: is normal
+    detail: A Galois extension is normal and separable; forgetting separability leaves a normal extension.
+    citations:
+      - milne-fields-galois-theory
+  - id: story_polynomial_ring_to_commutative_ring_induced_forgotten
+    source: polynomial_ring
+    target: commutative_ring
+    type: induced-forgotten
+    label: is a commutative ring
+    detail: A polynomial ring over a commutative coefficient ring is itself commutative.
+    citations:
+      - milne-fields-galois-theory
+      - stacks-algebra-text
+      - wp-comm-ring
+  - id: j_galois_extension__normal_extension
+    source: normal_extension
+    target: j_galois_extension
+    type: combine-compatible
+    label: normal extension
+    detail: Supply normality of the algebraic extension as one jointly required input.
+    citations:
+      - milne-fields-galois-theory
+  - id: j_galois_extension__separable_extension
+    source: separable_extension
+    target: j_galois_extension
+    type: combine-compatible
+    label: separable extension
+    detail: Supply separability of the same algebraic extension as the other jointly required input.
+    citations:
+      - milne-fields-galois-theory
+  - id: j_galois_extension__out
+    source: j_galois_extension
+    target: galois_extension
+    type: combine-compatible
+    label: impose both properties on one extension
+    detail: An algebraic extension that is both normal and separable is Galois.
+    citations:
+      - milne-fields-galois-theory
+  - id: story_field_extension_to_vector_space_induced_forgotten
+    source: field_extension
+    target: vector_space
+    type: induced-forgotten
+    label: is a vector space over the base field
+    detail: For a field extension $L/K$, scalar multiplication by $K$ makes $L$ a vector space over $K$; its dimension is the extension degree.
+    citations:
+      - milne-fields-galois-theory
+  - id: story_fixed_field_to_field_induced_forgotten
+    source: fixed_field
+    target: field
+    type: induced-forgotten
+    label: is a subfield
+    detail: Elements fixed by a group of field automorphisms are closed under the field operations and form a subfield.
+    citations:
+      - milne-fields-galois-theory
+  - id: story_solvable_group_to_group_induced_forgotten
+    source: solvable_group
+    target: group
+    type: induced-forgotten
+    label: is a group
+    detail: Forgetting the terminating derived or subnormal series leaves the underlying group.
+    citations:
+      - milne-fields-galois-theory
+  - id: j_radical_solvability__galois_group
+    source: galois_group
+    target: j_radical_solvability
+    type: combine-compatible
+    label: its Galois group
+    detail: Supply the Galois group of the splitting field of that same polynomial.
+    citations:
+      - milne-fields-galois-theory
+  - id: j_radical_solvability__solvable_group
+    source: solvable_group
+    target: j_radical_solvability
+    type: combine-compatible
+    label: the same group is solvable
+    detail: Require the polynomial’s Galois group to have a terminating derived series.
+    citations:
+      - milne-fields-galois-theory
+  - id: j_radical_solvability__out
+    source: j_radical_solvability
+    target: solvability_by_radicals
+    type: combine-compatible
+    label: apply the Galois criterion
+    detail: Under the standard separability qualifications (in particular over characteristic zero), a polynomial is solvable by radicals exactly when its Galois group is solvable.
+    citations:
+      - milne-fields-galois-theory
+  - id: j_radical_solvability__splitting_field
+    source: splitting_field
+    target: j_radical_solvability
+    type: combine-compatible
+    label: chosen polynomial and splitting field
+    detail: Supply the splitting field generated by the roots of the polynomial under study.
+    citations:
+      - milne-fields-galois-theory
+  - id: story_quadratic_form_to_smooth_projective_quadric_canonical_construction
+    source: quadratic_form
+    target: smooth_projective_quadric
+    type: canonical-construction
+    label: take the projective zero locus under regularity hypotheses
+    detail: For a nondegenerate quadratic form of dimension at least three over a field of characteristic not two, the equation $q=0$ defines a smooth projective quadric.
+    citations:
+      - poonen-rational-points-varieties
+      - milne-algebraic-number-theory

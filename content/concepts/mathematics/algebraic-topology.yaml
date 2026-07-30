@@ -1,712 +1,712 @@
 nodes:
-- id: j_pointed_top
-  label: topology + basepoint
-  primaryDomain: algebraic-topology
-  domains:
-  - algebraic-topology
-  - topology
-  level: 2
-  kind: junction
-  summary: Compatibility construction producing Pointed topological space.
-  carriers: []
-  data: []
-  axioms: []
-  induces: []
-  notes: All incoming branches are jointly required.
-  citations:
-  - wp-pointed-space
-  - nlab-pointed-space
-  - hatcher-algebraic-topology
-  combination:
-    inputs:
-    - topological_space
-    - pointed_set
-    compatibility: Use the same carrier set, topology, and distinguished point.
-    output: pointed_topological_space
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: pointed_topological_space
-  label: Pointed topological space
-  primaryDomain: algebraic-topology
-  domains:
-  - algebraic-topology
-  - topology
-  - foundation
-  level: 3
-  kind: structure
-  summary: A topological space with a distinguished basepoint.
-  carriers:
-  - topological space $X$
-  data:
-  - basepoint $x_{0}$
-  axioms: []
-  induces: []
-  notes: ''
-  citations:
-  - wp-pointed-space
-  - nlab-pointed-space
-  - hatcher-algebraic-topology
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: topological_pair
-  label: Topological pair
-  primaryDomain: algebraic-topology
-  domains:
-  - algebraic-topology
-  - topology
-  level: 3
-  kind: structure
-  summary: A topological space $X$ with a specified subspace $A\subseteq X$.
-  carriers:
-  - topological space $X$
-  data:
-  - distinguished subspace $A$
-  axioms: []
-  induces: []
-  notes: ''
-  citations:
-  - wp-topological-pair
-  - hatcher-algebraic-topology
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: path_connected_space
-  label: Path-connected space
-  primaryDomain: algebraic-topology
-  domains:
-  - algebraic-topology
-  - topology
-  level: 4
-  kind: structure
-  summary: A space in which every two points can be joined by a continuous path.
-  carriers:
-  - topological space $X$
-  data: []
-  axioms:
-  - a path exists between every pair of points
-  induces:
-  - connectedness
-  notes: ''
-  citations:
-  - wp-path-connected
-  - nlab-path-connected
-  - hatcher-algebraic-topology
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: compactly_generated_space
-  label: Compactly generated space
-  primaryDomain: algebraic-topology
-  domains:
-  - algebraic-topology
-  - topology
-  - category-theory
-  level: 5
-  kind: structure
-  summary: A space whose topology is detected by maps from compact Hausdorff spaces.
-  carriers:
-  - topological space $X$
-  data: []
-  axioms:
-  - $k$-space final-topology condition
-  induces: []
-  notes: 'Convention-sensitive: some authors mean $k$-space; others reserve “compactly generated” for compactly generated weak Hausdorff spaces. This node uses the $k$-space condition only.'
-  citations:
-  - wp-compactly-generated
-  - nlab-compactly-generated
-  - hatcher-algebraic-topology
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: contractible_space
-  label: Contractible space
-  primaryDomain: algebraic-topology
-  domains:
-  - algebraic-topology
-  - topology
-  level: 5
-  kind: structure
-  summary: A space homotopy equivalent to a point.
-  carriers:
-  - topological space $X$
-  data: []
-  axioms:
-  - the identity map is homotopic to a constant map
-  induces:
-  - path-connectedness
-  - trivial homotopy groups
-  notes: Contractibility is an existence property. A chosen contraction would be additional pointed homotopy data, not part of the ordinary notion.
-  citations:
-  - wp-contractible
-  - nlab-contractible
-  - hatcher-algebraic-topology
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: h_space
-  label: $H$-space
-  primaryDomain: algebraic-topology
-  domains:
-  - algebraic-topology
-  - topology
-  - algebra
-  level: 5
-  kind: structure
-  summary: A pointed space with multiplication and unit laws holding up to homotopy.
-  carriers:
-  - pointed topological space $X$
-  data:
-  - continuous multiplication $X\times X\to X$
-  axioms:
-  - left and right unit up to homotopy
-  induces: []
-  notes: ''
-  citations:
-  - wp-h-space
-  - nlab-h-space
-  - hatcher-algebraic-topology
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: simply_connected_space
-  label: Simply connected space
-  primaryDomain: algebraic-topology
-  domains:
-  - algebraic-topology
-  - topology
-  level: 5
-  kind: structure
-  summary: A path-connected space with trivial fundamental group.
-  carriers:
-  - path-connected space $X$
-  data: []
-  axioms:
-  - every loop contracts
-  induces: []
-  notes: ''
-  citations:
-  - wp-simply-connected
-  - nlab-simply-connected
-  - hatcher-algebraic-topology
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: covering_space
-  label: Covering space
-  primaryDomain: algebraic-topology
-  domains:
-  - algebraic-topology
-  - topology
-  level: 6
-  kind: structure
-  summary: A map $p\colon E\to B$ such that every point of $B$ has an open neighborhood $U$ for which $p^{-1}(U)$ is a disjoint union of open sheets, each mapped homeomorphically onto $U$ by $p$.
-  carriers:
-  - spaces $E$ and $B$
-  data:
-  - continuous surjection $p\colon E\to B$
-  axioms:
-  - evenly covered neighborhoods
-  induces: []
-  notes: A covering is a map $p\colon E\to B$ together with topologies on both $E$ and $B$ satisfying the evenly-covered-neighborhood condition; it is not structure on one topological space alone.
-  citations:
-  - wp-covering-space
-  - nlab-covering-space
-  - hatcher-algebraic-topology
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: cw_complex
-  label: CW complex
-  primaryDomain: algebraic-topology
-  domains:
-  - algebraic-topology
-  - topology
-  - combinatorics
-  level: 6
-  kind: structure
-  summary: A space constructed inductively by attaching cells along their boundaries.
-  carriers:
-  - topological space $X$
-  data:
-  - cell decomposition and attaching maps
-  axioms:
-  - closure-finite weak topology
-  induces: []
-  notes: ''
-  citations:
-  - wp-cw-complex
-  - nlab-cw-complex
-  - hatcher-algebraic-topology
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: simplicial_set
-  label: Simplicial set
-  primaryDomain: algebraic-topology
-  domains:
-  - algebraic-topology
-  - category-theory
-  - combinatorics
-  level: 7
-  kind: structure
-  summary: A contravariant functor from the simplex category $\Delta$ to sets.
-  carriers:
-  - sets $X_{n}$ for $n\ge 0$
-  data:
-  - face and degeneracy maps
-  axioms:
-  - simplicial identities
-  induces:
-  - geometric realization
-  notes: Precisely a simplicial object in Set.
-  citations:
-  - wp-simplicial-set
-  - nlab-simplicial-set
-  - hatcher-algebraic-topology
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: homotopy
-  label: Homotopy
-  primaryDomain: algebraic-topology
-  domains:
-  - algebraic-topology
-  - topology
-  level: 4
-  kind: structure
-  summary: A continuous deformation between two continuous maps, represented by a map $H:X\times[0,1]\to Y$.
-  carriers:
-  - spaces $X,Y$
-  - maps $f,g:X\to Y$
-  data:
-  - continuous family $H_t$
-  axioms:
-  - endpoint conditions $H_0=f$ and $H_1=g$
-  induces:
-  - An equivalence relation on maps with fixed domain and codomain
-  notes: ''
-  citations:
-  - hatcher-algebraic-topology
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: homotopy_equivalence
-  label: Homotopy equivalence
-  primaryDomain: algebraic-topology
-  domains:
-  - algebraic-topology
-  - topology
-  level: 5
-  kind: structure
-  summary: A pair of maps whose composites are homotopic to the corresponding identity maps.
-  carriers:
-  - spaces $X,Y$
-  data:
-  - maps $f:X\to Y$ and $g:Y\to X$
-  axioms:
-  - $gf\simeq\mathrm{id}_X$ and $fg\simeq\mathrm{id}_Y$
-  induces:
-  - A common homotopy type
-  notes: ''
-  citations:
-  - hatcher-algebraic-topology
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: loop_space
-  label: Loop space $\Omega X$
-  primaryDomain: algebraic-topology
-  domains:
-  - algebraic-topology
-  - topology
-  level: 5
-  kind: structure
-  summary: The space of based loops in a pointed space, with concatenation associative up to coherent homotopy.
-  carriers:
-  - pointed space $(X,x_0)$
-  data:
-  - based continuous maps $S^1\to X$
-  axioms: []
-  induces:
-  - Homotopy groups through path components and iteration
-  notes: ''
-  citations:
-  - hatcher-algebraic-topology
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: fundamental_group
-  label: Fundamental group $\pi_1(X,x_0)$
-  primaryDomain: algebraic-topology
-  domains:
-  - algebraic-topology
-  - algebra
-  level: 6
-  kind: structure
-  summary: The group of based loops modulo based homotopy, with multiplication by concatenation.
-  carriers:
-  - pointed topological space
-  data:
-  - based-loop homotopy classes
-  axioms:
-  - group laws induced by concatenation
-  induces:
-  - Covering-space classification under standard hypotheses
-  notes: ''
-  citations:
-  - hatcher-algebraic-topology
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: higher_homotopy_group
-  label: Higher homotopy group $\pi_n(X,x_0)$
-  primaryDomain: algebraic-topology
-  domains:
-  - algebraic-topology
-  - algebra
-  level: 7
-  kind: structure
-  summary: For $n\ge 2$, the group of based homotopy classes of maps $S^n\to X$; these groups are abelian.
-  carriers:
-  - pointed topological space
-  - integer $n\ge2$
-  data:
-  - based maps from $S^n$ modulo homotopy
-  axioms: []
-  induces:
-  - Higher-dimensional homotopy invariants
-  notes: ''
-  citations:
-  - hatcher-algebraic-topology
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: singular_chain_complex
-  label: Singular chain complex
-  primaryDomain: algebraic-topology
-  domains:
-  - algebraic-topology
-  - homological-algebra
-  level: 8
-  kind: structure
-  summary: The chain complex freely generated in degree $n$ by continuous maps from the standard $n$-simplex into a space, with alternating face boundary.
-  carriers:
-  - topological space $X$
-  data:
-  - free abelian groups $C_n(X)$
-  - boundary maps
-  axioms:
-  - $\partial^2=0$
-  induces:
-  - Singular homology
-  notes: ''
-  citations:
-  - hatcher-algebraic-topology
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: homology_group
-  label: Homology group
-  primaryDomain: algebraic-topology
-  domains:
-  - algebraic-topology
-  - homological-algebra
-  - algebra
-  level: 9
-  kind: structure
-  summary: The quotient $H_n=\ker\partial_n/\operatorname{im}\partial_{n+1}$, measuring cycles modulo boundaries in a chain complex.
-  carriers:
-  - chain complex
-  data:
-  - cycles and boundaries
-  axioms: []
-  induces:
-  - Homotopy-invariant algebraic data for singular chains
-  notes: ''
-  citations:
-  - hatcher-algebraic-topology
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: singular_cochain_complex
-  label: Singular cochain complex
-  primaryDomain: algebraic-topology
-  domains:
-  - algebraic-topology
-  - homological-algebra
-  level: 8
-  kind: structure
-  summary: The cochain complex obtained by applying a coefficient-valued Hom functor to singular chains.
-  carriers:
-  - singular chain complex
-  - coefficient group or ring
-  data:
-  - cochains and coboundary
-  axioms:
-  - $\delta^2=0$
-  induces:
-  - Singular cohomology
-  notes: ''
-  citations:
-  - hatcher-algebraic-topology
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: cohomology_group
-  label: Cohomology group
-  primaryDomain: algebraic-topology
-  domains:
-  - algebraic-topology
-  - homological-algebra
-  - algebra
-  level: 9
-  kind: structure
-  summary: The quotient $H^n=\ker\delta^n/\operatorname{im}\delta^{n-1}$ of cocycles by coboundaries.
-  carriers:
-  - cochain complex
-  data:
-  - cocycles and coboundaries
-  axioms: []
-  induces:
-  - Contravariant topological invariants
-  notes: ''
-  citations:
-  - hatcher-algebraic-topology
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: cohomology_ring
-  label: Cohomology ring
-  primaryDomain: algebraic-topology
-  domains:
-  - algebraic-topology
-  - algebra
-  level: 10
-  kind: structure
-  summary: The graded ring formed by cohomology groups with multiplication given by the cup product.
-  carriers:
-  - space and coefficient ring
-  data:
-  - graded cohomology groups
-  - cup product
-  axioms:
-  - graded associativity and unit
-  induces:
-  - A refinement of the additive cohomology groups
-  notes: ''
-  citations:
-  - hatcher-algebraic-topology
-  primaryField: mathematics
-  fields:
-  - mathematics
+  - id: j_pointed_top
+    label: topology + basepoint
+    primaryDomain: algebraic-topology
+    domains:
+      - algebraic-topology
+      - topology
+    level: 2
+    kind: junction
+    summary: Compatibility construction producing Pointed topological space.
+    carriers: []
+    data: []
+    axioms: []
+    induces: []
+    notes: All incoming branches are jointly required.
+    citations:
+      - wp-pointed-space
+      - nlab-pointed-space
+      - hatcher-algebraic-topology
+    combination:
+      inputs:
+        - topological_space
+        - pointed_set
+      compatibility: Use the same carrier set, topology, and distinguished point.
+      output: pointed_topological_space
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: pointed_topological_space
+    label: Pointed topological space
+    primaryDomain: algebraic-topology
+    domains:
+      - algebraic-topology
+      - topology
+      - foundation
+    level: 3
+    kind: structure
+    summary: A topological space with a distinguished basepoint.
+    carriers:
+      - topological space $X$
+    data:
+      - basepoint $x_{0}$
+    axioms: []
+    induces: []
+    notes: ''
+    citations:
+      - wp-pointed-space
+      - nlab-pointed-space
+      - hatcher-algebraic-topology
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: topological_pair
+    label: Topological pair
+    primaryDomain: algebraic-topology
+    domains:
+      - algebraic-topology
+      - topology
+    level: 3
+    kind: structure
+    summary: A topological space $X$ with a specified subspace $A\subseteq X$.
+    carriers:
+      - topological space $X$
+    data:
+      - distinguished subspace $A$
+    axioms: []
+    induces: []
+    notes: ''
+    citations:
+      - wp-topological-pair
+      - hatcher-algebraic-topology
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: path_connected_space
+    label: Path-connected space
+    primaryDomain: algebraic-topology
+    domains:
+      - algebraic-topology
+      - topology
+    level: 4
+    kind: structure
+    summary: A space in which every two points can be joined by a continuous path.
+    carriers:
+      - topological space $X$
+    data: []
+    axioms:
+      - a path exists between every pair of points
+    induces:
+      - connectedness
+    notes: ''
+    citations:
+      - wp-path-connected
+      - nlab-path-connected
+      - hatcher-algebraic-topology
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: compactly_generated_space
+    label: Compactly generated space
+    primaryDomain: algebraic-topology
+    domains:
+      - algebraic-topology
+      - topology
+      - category-theory
+    level: 5
+    kind: structure
+    summary: A space whose topology is detected by maps from compact Hausdorff spaces.
+    carriers:
+      - topological space $X$
+    data: []
+    axioms:
+      - $k$-space final-topology condition
+    induces: []
+    notes: 'Convention-sensitive: some authors mean $k$-space; others reserve “compactly generated” for compactly generated weak Hausdorff spaces. This node uses the $k$-space condition only.'
+    citations:
+      - wp-compactly-generated
+      - nlab-compactly-generated
+      - hatcher-algebraic-topology
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: contractible_space
+    label: Contractible space
+    primaryDomain: algebraic-topology
+    domains:
+      - algebraic-topology
+      - topology
+    level: 5
+    kind: structure
+    summary: A space homotopy equivalent to a point.
+    carriers:
+      - topological space $X$
+    data: []
+    axioms:
+      - the identity map is homotopic to a constant map
+    induces:
+      - path-connectedness
+      - trivial homotopy groups
+    notes: Contractibility is an existence property. A chosen contraction would be additional pointed homotopy data, not part of the ordinary notion.
+    citations:
+      - wp-contractible
+      - nlab-contractible
+      - hatcher-algebraic-topology
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: h_space
+    label: $H$-space
+    primaryDomain: algebraic-topology
+    domains:
+      - algebraic-topology
+      - topology
+      - algebra
+    level: 5
+    kind: structure
+    summary: A pointed space with multiplication and unit laws holding up to homotopy.
+    carriers:
+      - pointed topological space $X$
+    data:
+      - continuous multiplication $X\times X\to X$
+    axioms:
+      - left and right unit up to homotopy
+    induces: []
+    notes: ''
+    citations:
+      - wp-h-space
+      - nlab-h-space
+      - hatcher-algebraic-topology
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: simply_connected_space
+    label: Simply connected space
+    primaryDomain: algebraic-topology
+    domains:
+      - algebraic-topology
+      - topology
+    level: 5
+    kind: structure
+    summary: A path-connected space with trivial fundamental group.
+    carriers:
+      - path-connected space $X$
+    data: []
+    axioms:
+      - every loop contracts
+    induces: []
+    notes: ''
+    citations:
+      - wp-simply-connected
+      - nlab-simply-connected
+      - hatcher-algebraic-topology
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: covering_space
+    label: Covering space
+    primaryDomain: algebraic-topology
+    domains:
+      - algebraic-topology
+      - topology
+    level: 6
+    kind: structure
+    summary: A map $p\colon E\to B$ such that every point of $B$ has an open neighborhood $U$ for which $p^{-1}(U)$ is a disjoint union of open sheets, each mapped homeomorphically onto $U$ by $p$.
+    carriers:
+      - spaces $E$ and $B$
+    data:
+      - continuous surjection $p\colon E\to B$
+    axioms:
+      - evenly covered neighborhoods
+    induces: []
+    notes: A covering is a map $p\colon E\to B$ together with topologies on both $E$ and $B$ satisfying the evenly-covered-neighborhood condition; it is not structure on one topological space alone.
+    citations:
+      - wp-covering-space
+      - nlab-covering-space
+      - hatcher-algebraic-topology
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: cw_complex
+    label: CW complex
+    primaryDomain: algebraic-topology
+    domains:
+      - algebraic-topology
+      - topology
+      - combinatorics
+    level: 6
+    kind: structure
+    summary: A space constructed inductively by attaching cells along their boundaries.
+    carriers:
+      - topological space $X$
+    data:
+      - cell decomposition and attaching maps
+    axioms:
+      - closure-finite weak topology
+    induces: []
+    notes: ''
+    citations:
+      - wp-cw-complex
+      - nlab-cw-complex
+      - hatcher-algebraic-topology
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: simplicial_set
+    label: Simplicial set
+    primaryDomain: algebraic-topology
+    domains:
+      - algebraic-topology
+      - category-theory
+      - combinatorics
+    level: 7
+    kind: structure
+    summary: A contravariant functor from the simplex category $\Delta$ to sets.
+    carriers:
+      - sets $X_{n}$ for $n\ge 0$
+    data:
+      - face and degeneracy maps
+    axioms:
+      - simplicial identities
+    induces:
+      - geometric realization
+    notes: Precisely a simplicial object in Set.
+    citations:
+      - wp-simplicial-set
+      - nlab-simplicial-set
+      - hatcher-algebraic-topology
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: homotopy
+    label: Homotopy
+    primaryDomain: algebraic-topology
+    domains:
+      - algebraic-topology
+      - topology
+    level: 4
+    kind: structure
+    summary: A continuous deformation between two continuous maps, represented by a map $H:X\times[0,1]\to Y$.
+    carriers:
+      - spaces $X,Y$
+      - maps $f,g:X\to Y$
+    data:
+      - continuous family $H_t$
+    axioms:
+      - endpoint conditions $H_0=f$ and $H_1=g$
+    induces:
+      - An equivalence relation on maps with fixed domain and codomain
+    notes: ''
+    citations:
+      - hatcher-algebraic-topology
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: homotopy_equivalence
+    label: Homotopy equivalence
+    primaryDomain: algebraic-topology
+    domains:
+      - algebraic-topology
+      - topology
+    level: 5
+    kind: structure
+    summary: A pair of maps whose composites are homotopic to the corresponding identity maps.
+    carriers:
+      - spaces $X,Y$
+    data:
+      - maps $f:X\to Y$ and $g:Y\to X$
+    axioms:
+      - $gf\simeq\mathrm{id}_X$ and $fg\simeq\mathrm{id}_Y$
+    induces:
+      - A common homotopy type
+    notes: ''
+    citations:
+      - hatcher-algebraic-topology
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: loop_space
+    label: Loop space $\Omega X$
+    primaryDomain: algebraic-topology
+    domains:
+      - algebraic-topology
+      - topology
+    level: 5
+    kind: structure
+    summary: The space of based loops in a pointed space, with concatenation associative up to coherent homotopy.
+    carriers:
+      - pointed space $(X,x_0)$
+    data:
+      - based continuous maps $S^1\to X$
+    axioms: []
+    induces:
+      - Homotopy groups through path components and iteration
+    notes: ''
+    citations:
+      - hatcher-algebraic-topology
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: fundamental_group
+    label: Fundamental group $\pi_1(X,x_0)$
+    primaryDomain: algebraic-topology
+    domains:
+      - algebraic-topology
+      - algebra
+    level: 6
+    kind: structure
+    summary: The group of based loops modulo based homotopy, with multiplication by concatenation.
+    carriers:
+      - pointed topological space
+    data:
+      - based-loop homotopy classes
+    axioms:
+      - group laws induced by concatenation
+    induces:
+      - Covering-space classification under standard hypotheses
+    notes: ''
+    citations:
+      - hatcher-algebraic-topology
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: higher_homotopy_group
+    label: Higher homotopy group $\pi_n(X,x_0)$
+    primaryDomain: algebraic-topology
+    domains:
+      - algebraic-topology
+      - algebra
+    level: 7
+    kind: structure
+    summary: For $n\ge 2$, the group of based homotopy classes of maps $S^n\to X$; these groups are abelian.
+    carriers:
+      - pointed topological space
+      - integer $n\ge2$
+    data:
+      - based maps from $S^n$ modulo homotopy
+    axioms: []
+    induces:
+      - Higher-dimensional homotopy invariants
+    notes: ''
+    citations:
+      - hatcher-algebraic-topology
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: singular_chain_complex
+    label: Singular chain complex
+    primaryDomain: algebraic-topology
+    domains:
+      - algebraic-topology
+      - homological-algebra
+    level: 8
+    kind: structure
+    summary: The chain complex freely generated in degree $n$ by continuous maps from the standard $n$-simplex into a space, with alternating face boundary.
+    carriers:
+      - topological space $X$
+    data:
+      - free abelian groups $C_n(X)$
+      - boundary maps
+    axioms:
+      - $\partial^2=0$
+    induces:
+      - Singular homology
+    notes: ''
+    citations:
+      - hatcher-algebraic-topology
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: homology_group
+    label: Homology group
+    primaryDomain: algebraic-topology
+    domains:
+      - algebraic-topology
+      - homological-algebra
+      - algebra
+    level: 9
+    kind: structure
+    summary: The quotient $H_n=\ker\partial_n/\operatorname{im}\partial_{n+1}$, measuring cycles modulo boundaries in a chain complex.
+    carriers:
+      - chain complex
+    data:
+      - cycles and boundaries
+    axioms: []
+    induces:
+      - Homotopy-invariant algebraic data for singular chains
+    notes: ''
+    citations:
+      - hatcher-algebraic-topology
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: singular_cochain_complex
+    label: Singular cochain complex
+    primaryDomain: algebraic-topology
+    domains:
+      - algebraic-topology
+      - homological-algebra
+    level: 8
+    kind: structure
+    summary: The cochain complex obtained by applying a coefficient-valued Hom functor to singular chains.
+    carriers:
+      - singular chain complex
+      - coefficient group or ring
+    data:
+      - cochains and coboundary
+    axioms:
+      - $\delta^2=0$
+    induces:
+      - Singular cohomology
+    notes: ''
+    citations:
+      - hatcher-algebraic-topology
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: cohomology_group
+    label: Cohomology group
+    primaryDomain: algebraic-topology
+    domains:
+      - algebraic-topology
+      - homological-algebra
+      - algebra
+    level: 9
+    kind: structure
+    summary: The quotient $H^n=\ker\delta^n/\operatorname{im}\delta^{n-1}$ of cocycles by coboundaries.
+    carriers:
+      - cochain complex
+    data:
+      - cocycles and coboundaries
+    axioms: []
+    induces:
+      - Contravariant topological invariants
+    notes: ''
+    citations:
+      - hatcher-algebraic-topology
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: cohomology_ring
+    label: Cohomology ring
+    primaryDomain: algebraic-topology
+    domains:
+      - algebraic-topology
+      - algebra
+    level: 10
+    kind: structure
+    summary: The graded ring formed by cohomology groups with multiplication given by the cup product.
+    carriers:
+      - space and coefficient ring
+    data:
+      - graded cohomology groups
+      - cup product
+    axioms:
+      - graded associativity and unit
+    induces:
+      - A refinement of the additive cohomology groups
+    notes: ''
+    citations:
+      - hatcher-algebraic-topology
+    primaryField: mathematics
+    fields:
+      - mathematics
 edges:
-- id: e_contract_path
-  source: contractible_space
-  target: path_connected_space
-  type: theorem-implication
-  label: implies path-connected
-  detail: Every nonempty contractible space is path-connected.
-  citations:
-  - wp-contractible
-  - nlab-contractible
-  - wp-path-connected
-  - nlab-path-connected
-  - hatcher-algebraic-topology
-- id: j_pointed_top__out
-  source: j_pointed_top
-  target: pointed_topological_space
-  type: combine-compatible
-  label: impose compatibility
-  detail: Use the same carrier set, topology, and distinguished point.
-  citations:
-  - wp-pointed-space
-  - nlab-pointed-space
-  - hatcher-algebraic-topology
-- id: path_connected_to_connected
-  source: path_connected_space
-  target: connected_space
-  type: theorem-implication
-  label: implies connectedness
-  detail: Every path-connected space is connected.
-  citations:
-  - wp-path-connected
-  - nlab-path-connected
-  - wp-connected-space
-  - nlab-connected-space
-  - topology-without-tears
-- id: e_path_simply
-  source: path_connected_space
-  target: simply_connected_space
-  type: impose-axiom
-  label: + contract every loop
-  detail: Require trivial fundamental group.
-  citations:
-  - wp-simply-connected
-  - nlab-simply-connected
-  - hatcher-algebraic-topology
-- id: e_pointed_hspace
-  source: pointed_topological_space
-  target: h_space
-  type: add-data
-  label: + multiplication up to unit homotopy
-  detail: Add continuous multiplication with homotopy unit laws.
-  citations:
-  - wp-h-space
-  - nlab-h-space
-  - hatcher-algebraic-topology
-- id: story_homotopy_equivalence_to_homotopy_induced_forgotten
-  source: homotopy_equivalence
-  target: homotopy
-  type: induced-forgotten
-  label: is witnessed by homotopies
-  detail: A homotopy equivalence consists of maps whose composites are homotopic to the relevant identity maps; retaining a witnessing deformation gives homotopy data.
-  citations:
-  - hatcher-algebraic-topology
-- id: story_pointed_topological_space_to_loop_space_canonical_construction
-  source: pointed_topological_space
-  target: loop_space
-  type: canonical-construction
-  label: form based loops
-  detail: The loop space consists of maps from the pointed circle preserving the basepoint.
-  citations:
-  - hatcher-algebraic-topology
-- id: story_loop_space_to_fundamental_group_quotient_construction
-  source: loop_space
-  target: fundamental_group
-  type: quotient-construction
-  label: take path components
-  detail: Take based loops as representatives and identify two loops exactly when they are homotopic through based loops. The quotient set of based-homotopy classes is $\pi_1$, with multiplication induced by concatenation.
-  citations:
-  - hatcher-algebraic-topology
-- id: story_fundamental_group_to_covering_space_theorem_implication
-  source: fundamental_group
-  target: covering_space
-  type: theorem-implication
-  label: classifies connected coverings under standard hypotheses
-  detail: For a path-connected, locally path-connected, semilocally simply connected space, connected covering spaces correspond to conjugacy classes of subgroups of the fundamental group.
-  citations:
-  - hatcher-algebraic-topology
-- id: story_loop_space_to_higher_homotopy_group_canonical_construction
-  source: loop_space
-  target: higher_homotopy_group
-  type: canonical-construction
-  label: iterate loops or map spheres
-  detail: Higher homotopy groups are obtained from based maps of spheres, equivalently iterated loop spaces.
-  citations:
-  - hatcher-algebraic-topology
-- id: story_singular_chain_complex_to_homology_group_quotient_construction
-  source: singular_chain_complex
-  target: homology_group
-  type: quotient-construction
-  label: cycles modulo boundaries
-  detail: In degree $n$, representatives are cycles $z\in Z_n=\ker\partial_n$; identify $z\sim z'$ exactly when $z-z'\in B_n=\operatorname{im}\partial_{n+1}$. The quotient is $H_n=Z_n/B_n$.
-  citations:
-  - hatcher-algebraic-topology
-- id: story_singular_chain_complex_to_singular_cochain_complex_canonical_construction
-  source: singular_chain_complex
-  target: singular_cochain_complex
-  type: canonical-construction
-  label: dualize with coefficients
-  detail: Applying $\operatorname{Hom}(-,A)$ produces singular cochains.
-  citations:
-  - hatcher-algebraic-topology
-- id: story_singular_cochain_complex_to_cohomology_group_quotient_construction
-  source: singular_cochain_complex
-  target: cohomology_group
-  type: quotient-construction
-  label: cocycles modulo coboundaries
-  detail: In degree $n$, representatives are cocycles $\alpha\in Z^n=\ker\delta^n$; identify $\alpha\sim\alpha'$ exactly when $\alpha-\alpha'\in B^n=\operatorname{im}\delta^{n-1}$. The quotient is $H^n(X;A)=Z^n/B^n$.
-  citations:
-  - hatcher-algebraic-topology
-- id: story_cohomology_group_to_cohomology_ring_add_data
-  source: cohomology_group
-  target: cohomology_ring
-  type: add-data
-  label: collect all degrees and add the cup product
-  detail: With ring coefficients, collect the groups $H^n(X;R)$ over all degrees and equip their graded direct sum with the cup product.
-  citations:
-  - hatcher-algebraic-topology
-- id: story_topological_pair_to_long_exact_sequence_canonical_construction
-  source: topological_pair
-  target: long_exact_sequence
-  type: canonical-construction
-  label: take relative homology or cohomology
-  detail: A pair $(X,A)$ produces long exact sequences relating $A$, $X$, and $(X,A)$.
-  citations:
-  - hatcher-algebraic-topology
-- id: story_homotopy_equivalence_to_homology_group_theorem_implication
-  source: homotopy_equivalence
-  target: homology_group
-  type: theorem-implication
-  label: induces isomorphisms
-  detail: Homotopy-equivalent spaces have isomorphic singular homology groups.
-  citations:
-  - hatcher-algebraic-topology
-- id: story_homotopy_equivalence_to_cohomology_group_theorem_implication
-  source: homotopy_equivalence
-  target: cohomology_group
-  type: theorem-implication
-  label: induces isomorphisms
-  detail: Homotopy-equivalent spaces have isomorphic singular cohomology groups.
-  citations:
-  - hatcher-algebraic-topology
-- id: story_simplicial_set_to_topological_space_canonical_construction
-  source: simplicial_set
-  target: topological_space
-  type: canonical-construction
-  label: take geometric realization
-  detail: Geometric realization canonically constructs a topological space $|X|$ from a simplicial set $X$; together with the singular complex it relates the corresponding homotopy theories.
-  citations:
-  - hatcher-algebraic-topology
-- id: story_homology_group_to_abelian_group_induced_forgotten
-  source: homology_group
-  target: abelian_group
-  type: induced-forgotten
-  label: is an abelian group
-  detail: Homology groups are abelian groups under addition induced from the chain groups.
-  citations:
-  - hatcher-algebraic-topology
-  - wp-abelian
-  - stacks-algebra-text
-- id: story_cohomology_group_to_abelian_group_induced_forgotten
-  source: cohomology_group
-  target: abelian_group
-  type: induced-forgotten
-  label: is an abelian group
-  detail: Cohomology groups are abelian groups under addition induced from the cochain groups.
-  citations:
-  - hatcher-algebraic-topology
-  - wp-abelian
-  - stacks-algebra-text
-- id: story_cohomology_ring_to_graded_object_induced_forgotten
-  source: cohomology_ring
-  target: graded_object
-  type: induced-forgotten
-  label: has an underlying graded object
-  detail: The cup product equips the direct sum of cohomology groups with a graded ring structure; forgetting multiplication leaves a graded object.
-  citations:
-  - hatcher-algebraic-topology
-  - wp-graded-object
-  - nlab-graded-object
-- id: story_fundamental_group_to_group_induced_forgotten
-  source: fundamental_group
-  target: group
-  type: induced-forgotten
-  label: is a group
-  detail: Based loops modulo homotopy form a group under concatenation.
-  citations:
-  - hatcher-algebraic-topology
-  - wp-group
-  - nlab-group
-- id: story_higher_homotopy_group_to_abelian_group_induced_forgotten
-  source: higher_homotopy_group
-  target: abelian_group
-  type: induced-forgotten
-  label: is abelian for $n\ge2$
-  detail: The homotopy group $\pi_n$ is abelian for every $n\ge2$.
-  citations:
-  - hatcher-algebraic-topology
-  - wp-abelian
-  - stacks-algebra-text
+  - id: e_contract_path
+    source: contractible_space
+    target: path_connected_space
+    type: theorem-implication
+    label: implies path-connected
+    detail: Every nonempty contractible space is path-connected.
+    citations:
+      - wp-contractible
+      - nlab-contractible
+      - wp-path-connected
+      - nlab-path-connected
+      - hatcher-algebraic-topology
+  - id: j_pointed_top__out
+    source: j_pointed_top
+    target: pointed_topological_space
+    type: combine-compatible
+    label: impose compatibility
+    detail: Use the same carrier set, topology, and distinguished point.
+    citations:
+      - wp-pointed-space
+      - nlab-pointed-space
+      - hatcher-algebraic-topology
+  - id: path_connected_to_connected
+    source: path_connected_space
+    target: connected_space
+    type: theorem-implication
+    label: implies connectedness
+    detail: Every path-connected space is connected.
+    citations:
+      - wp-path-connected
+      - nlab-path-connected
+      - wp-connected-space
+      - nlab-connected-space
+      - topology-without-tears
+  - id: e_path_simply
+    source: path_connected_space
+    target: simply_connected_space
+    type: impose-axiom
+    label: + contract every loop
+    detail: Require trivial fundamental group.
+    citations:
+      - wp-simply-connected
+      - nlab-simply-connected
+      - hatcher-algebraic-topology
+  - id: e_pointed_hspace
+    source: pointed_topological_space
+    target: h_space
+    type: add-data
+    label: + multiplication up to unit homotopy
+    detail: Add continuous multiplication with homotopy unit laws.
+    citations:
+      - wp-h-space
+      - nlab-h-space
+      - hatcher-algebraic-topology
+  - id: story_homotopy_equivalence_to_homotopy_induced_forgotten
+    source: homotopy_equivalence
+    target: homotopy
+    type: induced-forgotten
+    label: is witnessed by homotopies
+    detail: A homotopy equivalence consists of maps whose composites are homotopic to the relevant identity maps; retaining a witnessing deformation gives homotopy data.
+    citations:
+      - hatcher-algebraic-topology
+  - id: story_pointed_topological_space_to_loop_space_canonical_construction
+    source: pointed_topological_space
+    target: loop_space
+    type: canonical-construction
+    label: form based loops
+    detail: The loop space consists of maps from the pointed circle preserving the basepoint.
+    citations:
+      - hatcher-algebraic-topology
+  - id: story_loop_space_to_fundamental_group_quotient_construction
+    source: loop_space
+    target: fundamental_group
+    type: quotient-construction
+    label: take path components
+    detail: Take based loops as representatives and identify two loops exactly when they are homotopic through based loops. The quotient set of based-homotopy classes is $\pi_1$, with multiplication induced by concatenation.
+    citations:
+      - hatcher-algebraic-topology
+  - id: story_fundamental_group_to_covering_space_theorem_implication
+    source: fundamental_group
+    target: covering_space
+    type: theorem-implication
+    label: classifies connected coverings under standard hypotheses
+    detail: For a path-connected, locally path-connected, semilocally simply connected space, connected covering spaces correspond to conjugacy classes of subgroups of the fundamental group.
+    citations:
+      - hatcher-algebraic-topology
+  - id: story_loop_space_to_higher_homotopy_group_canonical_construction
+    source: loop_space
+    target: higher_homotopy_group
+    type: canonical-construction
+    label: iterate loops or map spheres
+    detail: Higher homotopy groups are obtained from based maps of spheres, equivalently iterated loop spaces.
+    citations:
+      - hatcher-algebraic-topology
+  - id: story_singular_chain_complex_to_homology_group_quotient_construction
+    source: singular_chain_complex
+    target: homology_group
+    type: quotient-construction
+    label: cycles modulo boundaries
+    detail: In degree $n$, representatives are cycles $z\in Z_n=\ker\partial_n$; identify $z\sim z'$ exactly when $z-z'\in B_n=\operatorname{im}\partial_{n+1}$. The quotient is $H_n=Z_n/B_n$.
+    citations:
+      - hatcher-algebraic-topology
+  - id: story_singular_chain_complex_to_singular_cochain_complex_canonical_construction
+    source: singular_chain_complex
+    target: singular_cochain_complex
+    type: canonical-construction
+    label: dualize with coefficients
+    detail: Applying $\operatorname{Hom}(-,A)$ produces singular cochains.
+    citations:
+      - hatcher-algebraic-topology
+  - id: story_singular_cochain_complex_to_cohomology_group_quotient_construction
+    source: singular_cochain_complex
+    target: cohomology_group
+    type: quotient-construction
+    label: cocycles modulo coboundaries
+    detail: In degree $n$, representatives are cocycles $\alpha\in Z^n=\ker\delta^n$; identify $\alpha\sim\alpha'$ exactly when $\alpha-\alpha'\in B^n=\operatorname{im}\delta^{n-1}$. The quotient is $H^n(X;A)=Z^n/B^n$.
+    citations:
+      - hatcher-algebraic-topology
+  - id: story_cohomology_group_to_cohomology_ring_add_data
+    source: cohomology_group
+    target: cohomology_ring
+    type: add-data
+    label: collect all degrees and add the cup product
+    detail: With ring coefficients, collect the groups $H^n(X;R)$ over all degrees and equip their graded direct sum with the cup product.
+    citations:
+      - hatcher-algebraic-topology
+  - id: story_topological_pair_to_long_exact_sequence_canonical_construction
+    source: topological_pair
+    target: long_exact_sequence
+    type: canonical-construction
+    label: take relative homology or cohomology
+    detail: A pair $(X,A)$ produces long exact sequences relating $A$, $X$, and $(X,A)$.
+    citations:
+      - hatcher-algebraic-topology
+  - id: story_homotopy_equivalence_to_homology_group_theorem_implication
+    source: homotopy_equivalence
+    target: homology_group
+    type: theorem-implication
+    label: induces isomorphisms
+    detail: Homotopy-equivalent spaces have isomorphic singular homology groups.
+    citations:
+      - hatcher-algebraic-topology
+  - id: story_homotopy_equivalence_to_cohomology_group_theorem_implication
+    source: homotopy_equivalence
+    target: cohomology_group
+    type: theorem-implication
+    label: induces isomorphisms
+    detail: Homotopy-equivalent spaces have isomorphic singular cohomology groups.
+    citations:
+      - hatcher-algebraic-topology
+  - id: story_simplicial_set_to_topological_space_canonical_construction
+    source: simplicial_set
+    target: topological_space
+    type: canonical-construction
+    label: take geometric realization
+    detail: Geometric realization canonically constructs a topological space $|X|$ from a simplicial set $X$; together with the singular complex it relates the corresponding homotopy theories.
+    citations:
+      - hatcher-algebraic-topology
+  - id: story_homology_group_to_abelian_group_induced_forgotten
+    source: homology_group
+    target: abelian_group
+    type: induced-forgotten
+    label: is an abelian group
+    detail: Homology groups are abelian groups under addition induced from the chain groups.
+    citations:
+      - hatcher-algebraic-topology
+      - wp-abelian
+      - stacks-algebra-text
+  - id: story_cohomology_group_to_abelian_group_induced_forgotten
+    source: cohomology_group
+    target: abelian_group
+    type: induced-forgotten
+    label: is an abelian group
+    detail: Cohomology groups are abelian groups under addition induced from the cochain groups.
+    citations:
+      - hatcher-algebraic-topology
+      - wp-abelian
+      - stacks-algebra-text
+  - id: story_cohomology_ring_to_graded_object_induced_forgotten
+    source: cohomology_ring
+    target: graded_object
+    type: induced-forgotten
+    label: has an underlying graded object
+    detail: The cup product equips the direct sum of cohomology groups with a graded ring structure; forgetting multiplication leaves a graded object.
+    citations:
+      - hatcher-algebraic-topology
+      - wp-graded-object
+      - nlab-graded-object
+  - id: story_fundamental_group_to_group_induced_forgotten
+    source: fundamental_group
+    target: group
+    type: induced-forgotten
+    label: is a group
+    detail: Based loops modulo homotopy form a group under concatenation.
+    citations:
+      - hatcher-algebraic-topology
+      - wp-group
+      - nlab-group
+  - id: story_higher_homotopy_group_to_abelian_group_induced_forgotten
+    source: higher_homotopy_group
+    target: abelian_group
+    type: induced-forgotten
+    label: is abelian for $n\ge2$
+    detail: The homotopy group $\pi_n$ is abelian for every $n\ge2$.
+    citations:
+      - hatcher-algebraic-topology
+      - wp-abelian
+      - stacks-algebra-text

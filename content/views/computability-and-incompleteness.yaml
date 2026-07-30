@@ -1,16 +1,7 @@
 id: computability-and-incompleteness
 title: Computability and incompleteness
-summary: Follow the formalization of algorithms to universal machines,
-  undecidability, arithmetized syntax, and Gödel’s limits on effective formal
-  theories.
-narrative: Turing machines make mechanical procedure mathematically precise and
-  define computable functions, decidable problems, and computably enumerable
-  sets. Universality enables machines to process encoded machines;
-  diagonalization proves the halting problem undecidable. Formal proof systems
-  and Gödel numbering make syntax itself arithmetical. For consistent effective
-  theories strong enough for arithmetic, the first theorem forces incompleteness
-  and the second blocks an internal proof of consistency under the standard
-  derivability conditions.
+summary: Follow the formalization of algorithms to universal machines, undecidability, arithmetized syntax, and Gödel’s limits on effective formal theories.
+narrative: Turing machines make mechanical procedure mathematically precise and define computable functions, decidable problems, and computably enumerable sets. Universality enables machines to process encoded machines; diagonalization proves the halting problem undecidable. Formal proof systems and Gödel numbering make syntax itself arithmetical. For consistent effective theories strong enough for arithmetic, the first theorem forces incompleteness and the second blocks an internal proof of consistency under the standard derivability conditions.
 tags:
   - Mathematics
   - Computability

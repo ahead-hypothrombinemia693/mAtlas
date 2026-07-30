@@ -1,11 +1,7 @@
 id: algebraic-structures
 title: Algebraic structures
-summary: Explore how operations and laws organize groups, rings, modules,
-  algebras, representations, and their categorical relationships.
-narrative: "Build algebraic structure in layers: operations produce magmas,
-  associativity produces semigroups, identities and inverses produce monoids and
-  groups, and compatibility between additive and multiplicative structures
-  produces rings, modules, vector spaces, algebras, and Hopf-like structures."
+summary: Explore how operations and laws organize groups, rings, modules, algebras, representations, and their categorical relationships.
+narrative: "Build algebraic structure in layers: operations produce magmas, associativity produces semigroups, identities and inverses produce monoids and groups, and compatibility between additive and multiplicative structures produces rings, modules, vector spaces, algebras, and Hopf-like structures."
 tags:
   - Algebra
   - Categories

@@ -1,14 +1,7 @@
 id: architectures-of-categories
 title: Architectures of category theory
-summary: Explore the basic language of functors, natural transformations,
-  universal constructions, and the major structural families of categories.
-narrative: Categories organize objects and transformations; functors transport
-  structure and natural transformations compare transports. Limits, colimits,
-  and adjunctions express universal constructions. From this common language
-  branch cartesian and closed categories, monoidal and dagger categories,
-  additive and abelian categories, exact and derived settings, and sheaf/topos
-  architectures. The Story emphasizes that these are distinct enrichments and
-  axiomatizations rather than a single linear hierarchy.
+summary: Explore the basic language of functors, natural transformations, universal constructions, and the major structural families of categories.
+narrative: Categories organize objects and transformations; functors transport structure and natural transformations compare transports. Limits, colimits, and adjunctions express universal constructions. From this common language branch cartesian and closed categories, monoidal and dagger categories, additive and abelian categories, exact and derived settings, and sheaf/topos architectures. The Story emphasizes that these are distinct enrichments and axiomatizations rather than a single linear hierarchy.
 tags:
   - Mathematics
   - Category theory

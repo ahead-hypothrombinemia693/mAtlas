@@ -1,15 +1,7 @@
 id: spaces-operators-spectra
 title: Spaces, operators, and spectra
-summary: Build Banach and Hilbert spaces, then develop bounded and unbounded
-  operators, adjoints, spectra, spectral measures, and Fock-space constructions.
-narrative: Vector spaces acquire topology, seminorms, norms, completeness, and
-  inner products. Operators must then be classified with attention to
-  boundedness and domains. Adjoint, self-adjoint, unitary, positive, projection,
-  and trace-class operators lead to spectra and spectral measures; spectral and
-  Stone theorems connect operators with decompositions and continuous unitary
-  evolution. Rigged and tensor-product Hilbert spaces, partial traces,
-  distributions, and Fock spaces supply the analytic infrastructure of quantum
-  theory.
+summary: Build Banach and Hilbert spaces, then develop bounded and unbounded operators, adjoints, spectra, spectral measures, and Fock-space constructions.
+narrative: Vector spaces acquire topology, seminorms, norms, completeness, and inner products. Operators must then be classified with attention to boundedness and domains. Adjoint, self-adjoint, unitary, positive, projection, and trace-class operators lead to spectra and spectral measures; spectral and Stone theorems connect operators with decompositions and continuous unitary evolution. Rigged and tensor-product Hilbert spaces, partial traces, distributions, and Fock spaces supply the analytic infrastructure of quantum theory.
 tags:
   - Mathematics
   - Analysis

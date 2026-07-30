@@ -1,12 +1,7 @@
 id: standard-model-anatomy
 title: Anatomy of the Standard Model
-summary: Inspect the fields, particles, symmetries, interactions, and
-  measurements assembled into the Standard Model.
-narrative: "Read the Standard Model by layers: gauge group and chiral
-  representations, gauge and matter fields, covariant derivatives and field
-  strengths, QCD and electroweak sectors, Higgs symmetry breaking, Yukawa
-  couplings, mass eigenstates, conserved and anomalous currents, and effective
-  extensions."
+summary: Inspect the fields, particles, symmetries, interactions, and measurements assembled into the Standard Model.
+narrative: "Read the Standard Model by layers: gauge group and chiral representations, gauge and matter fields, covariant derivatives and field strengths, QCD and electroweak sectors, Higgs symmetry breaking, Yukawa couplings, mass eigenstates, conserved and anomalous currents, and effective extensions."
 tags:
   - Particle physics
   - Gauge theory

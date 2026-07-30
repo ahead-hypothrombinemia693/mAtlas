@@ -1,1302 +1,1302 @@
 nodes:
-- id: category
-  label: Category
-  primaryDomain: category-theory
-  domains:
-  - category-theory
-  - foundation
-  level: 3
-  kind: structure
-  summary: A collection of objects and morphisms with identities and associative composition; size is controlled by an ambient set-theoretic convention.
-  carriers:
-  - collection or class of objects
-  - collection or class of morphisms
-  data:
-  - source and target
-  - identity morphisms
-  - composition of composable morphisms
-  axioms:
-  - associativity
-  - left and right identity laws
-  induces:
-  - underlying directed graph or class-graph
-  notes: “Category” does not by itself mean small. A separate Small category node records the set-sized case.
-  citations:
-  - wp-category
-  - nlab-category
-  - stacks-categories
-  - riehl-category-context
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: cartesian_category
-  label: Cartesian category
-  primaryDomain: category-theory
-  domains:
-  - category-theory
-  - logic
-  level: 4
-  kind: structure
-  summary: A category with chosen finite products.
-  carriers:
-  - category $C$
-  data:
-  - terminal object
-  - binary products
-  axioms:
-  - product universal properties
-  induces: []
-  notes: ''
-  citations:
-  - wp-cartesian-category
-  - riehl-category-context
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: finitely_complete_category
-  label: Finitely complete category
-  primaryDomain: category-theory
-  domains:
-  - category-theory
-  - logic
-  level: 4
-  kind: structure
-  summary: A category admitting all finite limits.
-  carriers:
-  - category $C$
-  data:
-  - finite limiting cones
-  axioms:
-  - every finite diagram has a limit
-  induces: []
-  notes: ''
-  citations:
-  - nlab-finite-limits
-  - riehl-category-context
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: groupoid
-  label: Groupoid
-  primaryDomain: category-theory
-  domains:
-  - category-theory
-  - algebra
-  level: 4
-  kind: structure
-  summary: A category in which every morphism is invertible.
-  carriers:
-  - category $C$
-  data:
-  - category structure
-  axioms:
-  - every morphism has an inverse
-  induces: []
-  notes: ''
-  citations:
-  - wp-groupoid
-  - riehl-category-context
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: monoidal_category
-  label: Monoidal category
-  primaryDomain: category-theory
-  domains:
-  - category-theory
-  - algebra
-  level: 4
-  kind: structure
-  summary: A category with a tensor product, unit object, and coherent associativity and unit isomorphisms.
-  carriers:
-  - category $C$
-  data:
-  - tensor bifunctor
-  - unit object
-  - associator and unitors
-  axioms:
-  - pentagon and triangle coherence
-  induces: []
-  notes: ''
-  citations:
-  - nlab-monoidal-category
-  - riehl-category-context
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: preadditive_category
-  label: Preadditive category
-  primaryDomain: category-theory
-  domains:
-  - category-theory
-  - algebra
-  - homological-algebra
-  level: 4
-  kind: structure
-  summary: A category whose hom-sets are abelian groups and whose composition is bilinear.
-  carriers:
-  - category $C$
-  data:
-  - abelian-group structure on each hom-set
-  axioms:
-  - bilinear composition
-  induces: []
-  notes: ''
-  citations:
-  - wp-preadditive-category
-  - riehl-category-context
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: small_category
-  label: Small category
-  primaryDomain: category-theory
-  domains:
-  - category-theory
-  - foundation
-  level: 4
-  kind: structure
-  summary: A category whose objects and morphisms form sets.
-  carriers:
-  - category $C$
-  data: []
-  axioms:
-  - objects and morphisms form sets
-  induces: []
-  notes: Smallness is relative to the ambient universe or foundational convention.
-  citations:
-  - wp-category
-  - nlab-category
-  - stacks-categories
-  - riehl-category-context
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: thin_category
-  label: Thin category
-  primaryDomain: category-theory
-  domains:
-  - category-theory
-  - order
-  level: 4
-  kind: structure
-  summary: A category with at most one morphism between any ordered pair of objects.
-  carriers:
-  - category $C$
-  data:
-  - category structure
-  axioms:
-  - each hom-set has at most one element
-  induces:
-  - A preorder on objects
-  notes: ''
-  citations:
-  - wp-thin-category
-  - riehl-category-context
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: additive_category
-  label: Additive category
-  primaryDomain: category-theory
-  domains:
-  - category-theory
-  - algebra
-  - homological-algebra
-  level: 5
-  kind: structure
-  summary: A preadditive category with finite biproducts.
-  carriers:
-  - preadditive category $C$
-  data:
-  - zero object
-  - finite biproducts
-  axioms:
-  - biproduct universal properties
-  induces: []
-  notes: ''
-  citations:
-  - wp-additive-category
-  - riehl-category-context
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: braided_monoidal_category
-  label: Braided monoidal category
-  primaryDomain: category-theory
-  domains:
-  - category-theory
-  - algebra
-  level: 5
-  kind: structure
-  summary: A monoidal category with a coherent braiding exchanging tensor factors.
-  carriers:
-  - monoidal category $C$
-  data:
-  - braiding natural isomorphism
-  axioms:
-  - hexagon coherence
-  induces: []
-  notes: ''
-  citations:
-  - wp-braided-category
-  - riehl-category-context
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: cartesian_closed_category
-  label: Cartesian closed category
-  primaryDomain: category-theory
-  domains:
-  - category-theory
-  - logic
-  level: 5
-  kind: structure
-  summary: A cartesian category in which product with each object has a right adjoint.
-  carriers:
-  - cartesian category $C$
-  data:
-  - exponential objects
-  axioms:
-  - $\operatorname{hom}(X\times A,B) \cong \operatorname{hom}(X,B^A)$ naturally
-  induces: []
-  notes: ''
-  citations:
-  - wp-ccc
-  - riehl-category-context
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: j_cosimplicial_object
-  label: category + cosimplicial diagram data
-  primaryDomain: category-theory
-  domains:
-  - category-theory
-  - homological-algebra
-  level: 5
-  kind: junction
-  summary: Combine an ambient category with a degree-indexed family and compatible coface/codegeneracy morphisms.
-  carriers: []
-  data: []
-  axioms: []
-  induces: []
-  notes: All incoming branches are jointly required.
-  citations:
-  - stacks-simplicial-objects
-  - nlab-simplicial-object
-  - wp-cosimplicial-object
-  - riehl-category-context
-  combination:
-    inputs:
-    - category
-    - indexed_family
-    compatibility: Every $X^{n}$ is an object of the same category $C$; add coface and codegeneracy morphisms in $C$ satisfying the cosimplicial identities.
-    output: cosimplicial_object
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: j_simplicial_object
-  label: category + simplicial diagram data
-  primaryDomain: category-theory
-  domains:
-  - category-theory
-  - homological-algebra
-  - algebraic-topology
-  level: 5
-  kind: junction
-  summary: Combine an ambient category with a degree-indexed family and compatible face/degeneracy morphisms.
-  carriers: []
-  data: []
-  axioms: []
-  induces: []
-  notes: All incoming branches are jointly required.
-  citations:
-  - stacks-simplicial-objects
-  - nlab-simplicial-object
-  - riehl-category-context
-  combination:
-    inputs:
-    - category
-    - indexed_family
-    compatibility: Every $X_{n}$ is an object of the same category $C$; add face and degeneracy morphisms in $C$ satisfying the simplicial identities.
-    output: simplicial_object
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: dagger_category
-  label: Dagger category
-  primaryDomain: category-theory
-  domains:
-  - category-theory
-  - logic
-  level: 5
-  kind: structure
-  summary: A category with an identity-on-objects involutive contravariant endofunctor.
-  carriers:
-  - category $C$
-  data:
-  - dagger $f\mapsto f^\dagger$
-  axioms:
-  - $(f^\dagger)^\dagger=f$
-  - $(g\circ f)^\dagger=f^\dagger\circ g^\dagger$
-  induces: []
-  notes: ''
-  citations:
-  - wp-dagger-category
-  - nlab-dagger-category
-  - riehl-category-context
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: j_enriched_category
-  label: objects + monoidal base
-  primaryDomain: category-theory
-  domains:
-  - category-theory
-  level: 5
-  kind: junction
-  summary: Supply an object collection and a monoidal category in which hom-objects, composition, and units will live.
-  carriers: []
-  data: []
-  axioms: []
-  induces: []
-  notes: 'Construction junction: an enriched category is not generally an ordinary category with extra data.'
-  citations:
-  - wp-enriched-category
-  - nlab-enriched-category
-  - riehl-category-context
-  combination:
-    inputs:
-    - set
-    - monoidal_category
-    compatibility: Choose a hom-object in the monoidal base for each ordered object pair, together with enriched composition and units satisfying enriched associativity and unit laws.
-    output: enriched_category
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: presheaf
-  label: Presheaf
-  primaryDomain: category-theory
-  domains:
-  - category-theory
-  - algebraic-geometry
-  - topology
-  level: 5
-  kind: structure
-  summary: A Set-valued contravariant functor on a small category.
-  carriers:
-  - small category $C$
-  data:
-  - functor $F\colon C^{\mathrm{op}}\to\mathbf{Set}$
-  axioms: []
-  induces: []
-  notes: This atlas uses the standard $\mathbf{Set}$-valued meaning so that the sheaf and sheaf-of-algebraic-objects branches are type-correct. Functors $C^{\mathrm{op}}\to D$ for a general category $D$ are $D$-valued presheaves.
-  citations:
-  - stacks-presheaf
-  - wp-presheaf
-  - nlab-presheaf
-  - riehl-category-context
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: site
-  label: Site
-  primaryDomain: category-theory
-  domains:
-  - category-theory
-  - algebraic-geometry
-  - logic
-  level: 5
-  kind: structure
-  summary: A category equipped with a Grothendieck topology or a pretopology of covering families.
-  carriers:
-  - small category $C$
-  data:
-  - covering sieves or covering families
-  axioms:
-  - identity/maximal coverings
-  - pullback stability
-  - transitivity or local character
-  induces:
-  - category of sheaves
-  notes: This atlas uses sites small relative to the ambient universe. Large-site conventions require explicit universe management.
-  citations:
-  - stacks-sites
-  - stacks-groth-topology
-  - wp-site
-  - nlab-site
-  - riehl-category-context
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: abelian_category
-  label: Abelian category
-  primaryDomain: category-theory
-  domains:
-  - category-theory
-  - algebra
-  - homological-algebra
-  level: 6
-  kind: structure
-  summary: An additive category with kernels and cokernels in which monomorphisms and epimorphisms are normal.
-  carriers:
-  - additive category $C$
-  data:
-  - kernels
-  - cokernels
-  axioms:
-  - every monomorphism is a kernel
-  - every epimorphism is a cokernel
-  induces: []
-  notes: ''
-  citations:
-  - nlab-abelian-category
-  - stacks-abelian-category
-  - riehl-category-context
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: closed_monoidal_category
-  label: Closed monoidal category
-  primaryDomain: category-theory
-  domains:
-  - category-theory
-  - logic
-  level: 6
-  kind: structure
-  summary: A monoidal category in which tensoring has internal-hom right adjoints.
-  carriers:
-  - monoidal category $C$
-  data:
-  - internal $\operatorname{hom}$ objects
-  axioms:
-  - tensor–hom adjunction
-  induces: []
-  notes: ''
-  citations:
-  - wp-closed-monoidal
-  - nlab-closed-monoidal
-  - riehl-category-context
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: cosimplicial_object
-  label: Cosimplicial object
-  primaryDomain: category-theory
-  domains:
-  - category-theory
-  - homological-algebra
-  level: 6
-  kind: structure
-  summary: A covariant functor from the simplex category $\Delta$ to a category.
-  carriers:
-  - category $C$
-  - objects $X^{n}$ of $C$ for $n\ge 0$
-  data:
-  - coface and codegeneracy morphisms
-  axioms:
-  - cosimplicial identities
-  induces: []
-  notes: Equivalently, a functor $\Delta\to C$. The ambient category is part of the specification.
-  citations:
-  - stacks-simplicial-objects
-  - nlab-simplicial-object
-  - wp-cosimplicial-object
-  - riehl-category-context
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: enriched_category
-  label: Enriched category
-  primaryDomain: category-theory
-  domains:
-  - category-theory
-  level: 6
-  kind: structure
-  summary: A collection of objects whose homs are objects of a monoidal category, with enriched composition and units.
-  carriers:
-  - object collection
-  - monoidal base $V$
-  data:
-  - hom-objects in $V$
-  - enriched composition
-  - enriched units
-  axioms:
-  - enriched associativity and unit laws
-  induces: []
-  notes: An underlying ordinary category exists only when the enriching base supplies an appropriate way to extract hom-sets.
-  citations:
-  - wp-enriched-category
-  - nlab-enriched-category
-  - riehl-category-context
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: j_elementary_topos
-  label: finite limits + exponentials
-  primaryDomain: category-theory
-  domains:
-  - category-theory
-  - logic
-  level: 6
-  kind: junction
-  summary: Combine finite-limit and cartesian-closed structure, then add a subobject classifier.
-  carriers: []
-  data: []
-  axioms: []
-  induces: []
-  notes: 'Construction junction: it is a visual device, not a separate standard mathematical structure.'
-  citations:
-  - nlab-topos
-  - riehl-category-context
-  combination:
-    inputs:
-    - finitely_complete_category
-    - cartesian_closed_category
-    compatibility: The finite products used by the closed structure agree with those from finite limits; a subobject classifier is also supplied.
-    output: elementary_topos
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: simplicial_object
-  label: Simplicial object
-  primaryDomain: category-theory
-  domains:
-  - category-theory
-  - homological-algebra
-  - algebraic-topology
-  level: 6
-  kind: structure
-  summary: A contravariant functor from the simplex category $\Delta$ to a category.
-  carriers:
-  - category $C$
-  - objects $X_{n}$ of $C$ for $n\ge 0$
-  data:
-  - face and degeneracy morphisms
-  axioms:
-  - simplicial identities
-  induces: []
-  notes: Equivalently, a functor $\Delta^{\mathrm{op}}\to C$. The ambient category is part of the specification.
-  citations:
-  - stacks-simplicial-objects
-  - nlab-simplicial-object
-  - riehl-category-context
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: symmetric_monoidal_category
-  label: Symmetric monoidal category
-  primaryDomain: category-theory
-  domains:
-  - category-theory
-  - algebra
-  level: 6
-  kind: structure
-  summary: A braided monoidal category whose braiding is its own inverse.
-  carriers:
-  - braided monoidal category $C$
-  data:
-  - braiding
-  axioms:
-  - symmetry condition
-  induces: []
-  notes: ''
-  citations:
-  - wp-symmetric-category
-  - riehl-category-context
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: elementary_topos
-  label: Elementary topos
-  primaryDomain: category-theory
-  domains:
-  - category-theory
-  - logic
-  level: 7
-  kind: structure
-  summary: A finitely complete cartesian closed category with a subobject classifier.
-  carriers:
-  - category $E$
-  data:
-  - finite limits
-  - exponentials
-  - subobject classifier
-  axioms:
-  - the defining universal properties
-  induces:
-  - An internal higher-order intuitionistic logic
-  notes: ''
-  citations:
-  - nlab-topos
-  - stacks-topos
-  - riehl-category-context
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: compact_closed_category
-  label: Compact closed category
-  primaryDomain: category-theory
-  domains:
-  - category-theory
-  - logic
-  level: 8
-  kind: structure
-  summary: A symmetric monoidal category in which every object is equipped with a dual and evaluation/coevaluation satisfying the snake identities.
-  carriers:
-  - symmetric monoidal category $C$
-  data:
-  - duals, evaluation, coevaluation
-  axioms:
-  - snake identities
-  induces: []
-  notes: Compact closure canonically determines duals and internal homs; for example, $[A,B]=A^*\otimes B$.
-  citations:
-  - wp-compact-closed
-  - nlab-compact-closed
-  - riehl-category-context
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: grothendieck_topos
-  label: Grothendieck topos
-  primaryDomain: category-theory
-  domains:
-  - category-theory
-  - algebraic-geometry
-  - logic
-  level: 8
-  kind: structure
-  summary: A category equivalent to the category of sheaves on a site.
-  carriers:
-  - category $E$
-  data: []
-  axioms:
-  - $E$ is equivalent to $\operatorname{Sh}(C,J)$ for some small site $(C,J)$
-  induces: []
-  notes: A site presents a Grothendieck topos, but is not itself the carrier of the topos; different sites can present equivalent topoi.
-  citations:
-  - stacks-topos
-  - wp-groth-topos
-  - nlab-topos
-  - riehl-category-context
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: functor
-  label: Functor
-  primaryDomain: category-theory
-  domains:
-  - category-theory
-  level: 4
-  kind: structure
-  summary: A mapping between categories that sends objects to objects and morphisms to morphisms while preserving identities and composition.
-  carriers:
-  - categories $\mathcal C,\mathcal D$
-  data:
-  - object assignment
-  - morphism assignment
-  axioms:
-  - preserves identities
-  - preserves composition
-  induces:
-  - Images of diagrams and morphisms
-  notes: ''
-  citations:
-  - riehl-category-context
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: natural_transformation
-  label: Natural transformation
-  primaryDomain: category-theory
-  domains:
-  - category-theory
-  level: 5
-  kind: structure
-  summary: A morphism between functors whose components commute naturally with every morphism of the source category.
-  carriers:
-  - functors $F,G:\mathcal C\to\mathcal D$
-  data:
-  - component $\eta_X:F(X)\to G(X)$ for each object $X$
-  axioms:
-  - naturality squares commute
-  induces:
-  - Vertical and horizontal composition
-  notes: ''
-  citations:
-  - riehl-category-context
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: adjunction
-  label: Adjunction
-  primaryDomain: category-theory
-  domains:
-  - category-theory
-  level: 6
-  kind: structure
-  summary: A pair of functors $F:\mathcal C\rightleftarrows\mathcal D:G$ equipped with natural bijections $\operatorname{Hom}(F X,Y)\cong\operatorname{Hom}(X,GY)$.
-  carriers:
-  - categories and two functors
-  data:
-  - unit and counit, or natural hom-set bijection
-  axioms:
-  - triangle identities
-  induces:
-  - Monads, universal constructions, and preservation theorems
-  notes: ''
-  citations:
-  - riehl-category-context
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: categorical_limit
-  label: Categorical limit
-  primaryDomain: category-theory
-  domains:
-  - category-theory
-  level: 5
-  kind: structure
-  summary: A universal cone to a diagram, simultaneously generalizing products, equalizers, pullbacks, and inverse limits.
-  carriers:
-  - diagram $D:J\to\mathcal C$
-  data:
-  - cone with vertex $L$
-  axioms:
-  - terminal among cones
-  induces:
-  - Products, equalizers, and pullbacks
-  notes: ''
-  citations:
-  - riehl-category-context
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: categorical_colimit
-  label: Categorical colimit
-  primaryDomain: category-theory
-  domains:
-  - category-theory
-  level: 5
-  kind: structure
-  summary: A universal cocone from a diagram, simultaneously generalizing coproducts, coequalizers, pushouts, and direct limits.
-  carriers:
-  - diagram $D:J\to\mathcal C$
-  data:
-  - cocone with vertex $C$
-  axioms:
-  - initial among cocones
-  induces:
-  - Coproducts, coequalizers, and pushouts
-  notes: ''
-  citations:
-  - riehl-category-context
-  primaryField: mathematics
-  fields:
-  - mathematics
+  - id: category
+    label: Category
+    primaryDomain: category-theory
+    domains:
+      - category-theory
+      - foundation
+    level: 3
+    kind: structure
+    summary: A collection of objects and morphisms with identities and associative composition; size is controlled by an ambient set-theoretic convention.
+    carriers:
+      - collection or class of objects
+      - collection or class of morphisms
+    data:
+      - source and target
+      - identity morphisms
+      - composition of composable morphisms
+    axioms:
+      - associativity
+      - left and right identity laws
+    induces:
+      - underlying directed graph or class-graph
+    notes: “Category” does not by itself mean small. A separate Small category node records the set-sized case.
+    citations:
+      - wp-category
+      - nlab-category
+      - stacks-categories
+      - riehl-category-context
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: cartesian_category
+    label: Cartesian category
+    primaryDomain: category-theory
+    domains:
+      - category-theory
+      - logic
+    level: 4
+    kind: structure
+    summary: A category with chosen finite products.
+    carriers:
+      - category $C$
+    data:
+      - terminal object
+      - binary products
+    axioms:
+      - product universal properties
+    induces: []
+    notes: ''
+    citations:
+      - wp-cartesian-category
+      - riehl-category-context
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: finitely_complete_category
+    label: Finitely complete category
+    primaryDomain: category-theory
+    domains:
+      - category-theory
+      - logic
+    level: 4
+    kind: structure
+    summary: A category admitting all finite limits.
+    carriers:
+      - category $C$
+    data:
+      - finite limiting cones
+    axioms:
+      - every finite diagram has a limit
+    induces: []
+    notes: ''
+    citations:
+      - nlab-finite-limits
+      - riehl-category-context
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: groupoid
+    label: Groupoid
+    primaryDomain: category-theory
+    domains:
+      - category-theory
+      - algebra
+    level: 4
+    kind: structure
+    summary: A category in which every morphism is invertible.
+    carriers:
+      - category $C$
+    data:
+      - category structure
+    axioms:
+      - every morphism has an inverse
+    induces: []
+    notes: ''
+    citations:
+      - wp-groupoid
+      - riehl-category-context
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: monoidal_category
+    label: Monoidal category
+    primaryDomain: category-theory
+    domains:
+      - category-theory
+      - algebra
+    level: 4
+    kind: structure
+    summary: A category with a tensor product, unit object, and coherent associativity and unit isomorphisms.
+    carriers:
+      - category $C$
+    data:
+      - tensor bifunctor
+      - unit object
+      - associator and unitors
+    axioms:
+      - pentagon and triangle coherence
+    induces: []
+    notes: ''
+    citations:
+      - nlab-monoidal-category
+      - riehl-category-context
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: preadditive_category
+    label: Preadditive category
+    primaryDomain: category-theory
+    domains:
+      - category-theory
+      - algebra
+      - homological-algebra
+    level: 4
+    kind: structure
+    summary: A category whose hom-sets are abelian groups and whose composition is bilinear.
+    carriers:
+      - category $C$
+    data:
+      - abelian-group structure on each hom-set
+    axioms:
+      - bilinear composition
+    induces: []
+    notes: ''
+    citations:
+      - wp-preadditive-category
+      - riehl-category-context
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: small_category
+    label: Small category
+    primaryDomain: category-theory
+    domains:
+      - category-theory
+      - foundation
+    level: 4
+    kind: structure
+    summary: A category whose objects and morphisms form sets.
+    carriers:
+      - category $C$
+    data: []
+    axioms:
+      - objects and morphisms form sets
+    induces: []
+    notes: Smallness is relative to the ambient universe or foundational convention.
+    citations:
+      - wp-category
+      - nlab-category
+      - stacks-categories
+      - riehl-category-context
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: thin_category
+    label: Thin category
+    primaryDomain: category-theory
+    domains:
+      - category-theory
+      - order
+    level: 4
+    kind: structure
+    summary: A category with at most one morphism between any ordered pair of objects.
+    carriers:
+      - category $C$
+    data:
+      - category structure
+    axioms:
+      - each hom-set has at most one element
+    induces:
+      - A preorder on objects
+    notes: ''
+    citations:
+      - wp-thin-category
+      - riehl-category-context
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: additive_category
+    label: Additive category
+    primaryDomain: category-theory
+    domains:
+      - category-theory
+      - algebra
+      - homological-algebra
+    level: 5
+    kind: structure
+    summary: A preadditive category with finite biproducts.
+    carriers:
+      - preadditive category $C$
+    data:
+      - zero object
+      - finite biproducts
+    axioms:
+      - biproduct universal properties
+    induces: []
+    notes: ''
+    citations:
+      - wp-additive-category
+      - riehl-category-context
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: braided_monoidal_category
+    label: Braided monoidal category
+    primaryDomain: category-theory
+    domains:
+      - category-theory
+      - algebra
+    level: 5
+    kind: structure
+    summary: A monoidal category with a coherent braiding exchanging tensor factors.
+    carriers:
+      - monoidal category $C$
+    data:
+      - braiding natural isomorphism
+    axioms:
+      - hexagon coherence
+    induces: []
+    notes: ''
+    citations:
+      - wp-braided-category
+      - riehl-category-context
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: cartesian_closed_category
+    label: Cartesian closed category
+    primaryDomain: category-theory
+    domains:
+      - category-theory
+      - logic
+    level: 5
+    kind: structure
+    summary: A cartesian category in which product with each object has a right adjoint.
+    carriers:
+      - cartesian category $C$
+    data:
+      - exponential objects
+    axioms:
+      - $\operatorname{hom}(X\times A,B) \cong \operatorname{hom}(X,B^A)$ naturally
+    induces: []
+    notes: ''
+    citations:
+      - wp-ccc
+      - riehl-category-context
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: j_cosimplicial_object
+    label: category + cosimplicial diagram data
+    primaryDomain: category-theory
+    domains:
+      - category-theory
+      - homological-algebra
+    level: 5
+    kind: junction
+    summary: Combine an ambient category with a degree-indexed family and compatible coface/codegeneracy morphisms.
+    carriers: []
+    data: []
+    axioms: []
+    induces: []
+    notes: All incoming branches are jointly required.
+    citations:
+      - stacks-simplicial-objects
+      - nlab-simplicial-object
+      - wp-cosimplicial-object
+      - riehl-category-context
+    combination:
+      inputs:
+        - category
+        - indexed_family
+      compatibility: Every $X^{n}$ is an object of the same category $C$; add coface and codegeneracy morphisms in $C$ satisfying the cosimplicial identities.
+      output: cosimplicial_object
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: j_simplicial_object
+    label: category + simplicial diagram data
+    primaryDomain: category-theory
+    domains:
+      - category-theory
+      - homological-algebra
+      - algebraic-topology
+    level: 5
+    kind: junction
+    summary: Combine an ambient category with a degree-indexed family and compatible face/degeneracy morphisms.
+    carriers: []
+    data: []
+    axioms: []
+    induces: []
+    notes: All incoming branches are jointly required.
+    citations:
+      - stacks-simplicial-objects
+      - nlab-simplicial-object
+      - riehl-category-context
+    combination:
+      inputs:
+        - category
+        - indexed_family
+      compatibility: Every $X_{n}$ is an object of the same category $C$; add face and degeneracy morphisms in $C$ satisfying the simplicial identities.
+      output: simplicial_object
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: dagger_category
+    label: Dagger category
+    primaryDomain: category-theory
+    domains:
+      - category-theory
+      - logic
+    level: 5
+    kind: structure
+    summary: A category with an identity-on-objects involutive contravariant endofunctor.
+    carriers:
+      - category $C$
+    data:
+      - dagger $f\mapsto f^\dagger$
+    axioms:
+      - $(f^\dagger)^\dagger=f$
+      - $(g\circ f)^\dagger=f^\dagger\circ g^\dagger$
+    induces: []
+    notes: ''
+    citations:
+      - wp-dagger-category
+      - nlab-dagger-category
+      - riehl-category-context
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: j_enriched_category
+    label: objects + monoidal base
+    primaryDomain: category-theory
+    domains:
+      - category-theory
+    level: 5
+    kind: junction
+    summary: Supply an object collection and a monoidal category in which hom-objects, composition, and units will live.
+    carriers: []
+    data: []
+    axioms: []
+    induces: []
+    notes: 'Construction junction: an enriched category is not generally an ordinary category with extra data.'
+    citations:
+      - wp-enriched-category
+      - nlab-enriched-category
+      - riehl-category-context
+    combination:
+      inputs:
+        - set
+        - monoidal_category
+      compatibility: Choose a hom-object in the monoidal base for each ordered object pair, together with enriched composition and units satisfying enriched associativity and unit laws.
+      output: enriched_category
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: presheaf
+    label: Presheaf
+    primaryDomain: category-theory
+    domains:
+      - category-theory
+      - algebraic-geometry
+      - topology
+    level: 5
+    kind: structure
+    summary: A Set-valued contravariant functor on a small category.
+    carriers:
+      - small category $C$
+    data:
+      - functor $F\colon C^{\mathrm{op}}\to\mathbf{Set}$
+    axioms: []
+    induces: []
+    notes: This atlas uses the standard $\mathbf{Set}$-valued meaning so that the sheaf and sheaf-of-algebraic-objects branches are type-correct. Functors $C^{\mathrm{op}}\to D$ for a general category $D$ are $D$-valued presheaves.
+    citations:
+      - stacks-presheaf
+      - wp-presheaf
+      - nlab-presheaf
+      - riehl-category-context
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: site
+    label: Site
+    primaryDomain: category-theory
+    domains:
+      - category-theory
+      - algebraic-geometry
+      - logic
+    level: 5
+    kind: structure
+    summary: A category equipped with a Grothendieck topology or a pretopology of covering families.
+    carriers:
+      - small category $C$
+    data:
+      - covering sieves or covering families
+    axioms:
+      - identity/maximal coverings
+      - pullback stability
+      - transitivity or local character
+    induces:
+      - category of sheaves
+    notes: This atlas uses sites small relative to the ambient universe. Large-site conventions require explicit universe management.
+    citations:
+      - stacks-sites
+      - stacks-groth-topology
+      - wp-site
+      - nlab-site
+      - riehl-category-context
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: abelian_category
+    label: Abelian category
+    primaryDomain: category-theory
+    domains:
+      - category-theory
+      - algebra
+      - homological-algebra
+    level: 6
+    kind: structure
+    summary: An additive category with kernels and cokernels in which monomorphisms and epimorphisms are normal.
+    carriers:
+      - additive category $C$
+    data:
+      - kernels
+      - cokernels
+    axioms:
+      - every monomorphism is a kernel
+      - every epimorphism is a cokernel
+    induces: []
+    notes: ''
+    citations:
+      - nlab-abelian-category
+      - stacks-abelian-category
+      - riehl-category-context
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: closed_monoidal_category
+    label: Closed monoidal category
+    primaryDomain: category-theory
+    domains:
+      - category-theory
+      - logic
+    level: 6
+    kind: structure
+    summary: A monoidal category in which tensoring has internal-hom right adjoints.
+    carriers:
+      - monoidal category $C$
+    data:
+      - internal $\operatorname{hom}$ objects
+    axioms:
+      - tensor–hom adjunction
+    induces: []
+    notes: ''
+    citations:
+      - wp-closed-monoidal
+      - nlab-closed-monoidal
+      - riehl-category-context
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: cosimplicial_object
+    label: Cosimplicial object
+    primaryDomain: category-theory
+    domains:
+      - category-theory
+      - homological-algebra
+    level: 6
+    kind: structure
+    summary: A covariant functor from the simplex category $\Delta$ to a category.
+    carriers:
+      - category $C$
+      - objects $X^{n}$ of $C$ for $n\ge 0$
+    data:
+      - coface and codegeneracy morphisms
+    axioms:
+      - cosimplicial identities
+    induces: []
+    notes: Equivalently, a functor $\Delta\to C$. The ambient category is part of the specification.
+    citations:
+      - stacks-simplicial-objects
+      - nlab-simplicial-object
+      - wp-cosimplicial-object
+      - riehl-category-context
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: enriched_category
+    label: Enriched category
+    primaryDomain: category-theory
+    domains:
+      - category-theory
+    level: 6
+    kind: structure
+    summary: A collection of objects whose homs are objects of a monoidal category, with enriched composition and units.
+    carriers:
+      - object collection
+      - monoidal base $V$
+    data:
+      - hom-objects in $V$
+      - enriched composition
+      - enriched units
+    axioms:
+      - enriched associativity and unit laws
+    induces: []
+    notes: An underlying ordinary category exists only when the enriching base supplies an appropriate way to extract hom-sets.
+    citations:
+      - wp-enriched-category
+      - nlab-enriched-category
+      - riehl-category-context
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: j_elementary_topos
+    label: finite limits + exponentials
+    primaryDomain: category-theory
+    domains:
+      - category-theory
+      - logic
+    level: 6
+    kind: junction
+    summary: Combine finite-limit and cartesian-closed structure, then add a subobject classifier.
+    carriers: []
+    data: []
+    axioms: []
+    induces: []
+    notes: 'Construction junction: it is a visual device, not a separate standard mathematical structure.'
+    citations:
+      - nlab-topos
+      - riehl-category-context
+    combination:
+      inputs:
+        - finitely_complete_category
+        - cartesian_closed_category
+      compatibility: The finite products used by the closed structure agree with those from finite limits; a subobject classifier is also supplied.
+      output: elementary_topos
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: simplicial_object
+    label: Simplicial object
+    primaryDomain: category-theory
+    domains:
+      - category-theory
+      - homological-algebra
+      - algebraic-topology
+    level: 6
+    kind: structure
+    summary: A contravariant functor from the simplex category $\Delta$ to a category.
+    carriers:
+      - category $C$
+      - objects $X_{n}$ of $C$ for $n\ge 0$
+    data:
+      - face and degeneracy morphisms
+    axioms:
+      - simplicial identities
+    induces: []
+    notes: Equivalently, a functor $\Delta^{\mathrm{op}}\to C$. The ambient category is part of the specification.
+    citations:
+      - stacks-simplicial-objects
+      - nlab-simplicial-object
+      - riehl-category-context
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: symmetric_monoidal_category
+    label: Symmetric monoidal category
+    primaryDomain: category-theory
+    domains:
+      - category-theory
+      - algebra
+    level: 6
+    kind: structure
+    summary: A braided monoidal category whose braiding is its own inverse.
+    carriers:
+      - braided monoidal category $C$
+    data:
+      - braiding
+    axioms:
+      - symmetry condition
+    induces: []
+    notes: ''
+    citations:
+      - wp-symmetric-category
+      - riehl-category-context
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: elementary_topos
+    label: Elementary topos
+    primaryDomain: category-theory
+    domains:
+      - category-theory
+      - logic
+    level: 7
+    kind: structure
+    summary: A finitely complete cartesian closed category with a subobject classifier.
+    carriers:
+      - category $E$
+    data:
+      - finite limits
+      - exponentials
+      - subobject classifier
+    axioms:
+      - the defining universal properties
+    induces:
+      - An internal higher-order intuitionistic logic
+    notes: ''
+    citations:
+      - nlab-topos
+      - stacks-topos
+      - riehl-category-context
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: compact_closed_category
+    label: Compact closed category
+    primaryDomain: category-theory
+    domains:
+      - category-theory
+      - logic
+    level: 8
+    kind: structure
+    summary: A symmetric monoidal category in which every object is equipped with a dual and evaluation/coevaluation satisfying the snake identities.
+    carriers:
+      - symmetric monoidal category $C$
+    data:
+      - duals, evaluation, coevaluation
+    axioms:
+      - snake identities
+    induces: []
+    notes: Compact closure canonically determines duals and internal homs; for example, $[A,B]=A^*\otimes B$.
+    citations:
+      - wp-compact-closed
+      - nlab-compact-closed
+      - riehl-category-context
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: grothendieck_topos
+    label: Grothendieck topos
+    primaryDomain: category-theory
+    domains:
+      - category-theory
+      - algebraic-geometry
+      - logic
+    level: 8
+    kind: structure
+    summary: A category equivalent to the category of sheaves on a site.
+    carriers:
+      - category $E$
+    data: []
+    axioms:
+      - $E$ is equivalent to $\operatorname{Sh}(C,J)$ for some small site $(C,J)$
+    induces: []
+    notes: A site presents a Grothendieck topos, but is not itself the carrier of the topos; different sites can present equivalent topoi.
+    citations:
+      - stacks-topos
+      - wp-groth-topos
+      - nlab-topos
+      - riehl-category-context
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: functor
+    label: Functor
+    primaryDomain: category-theory
+    domains:
+      - category-theory
+    level: 4
+    kind: structure
+    summary: A mapping between categories that sends objects to objects and morphisms to morphisms while preserving identities and composition.
+    carriers:
+      - categories $\mathcal C,\mathcal D$
+    data:
+      - object assignment
+      - morphism assignment
+    axioms:
+      - preserves identities
+      - preserves composition
+    induces:
+      - Images of diagrams and morphisms
+    notes: ''
+    citations:
+      - riehl-category-context
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: natural_transformation
+    label: Natural transformation
+    primaryDomain: category-theory
+    domains:
+      - category-theory
+    level: 5
+    kind: structure
+    summary: A morphism between functors whose components commute naturally with every morphism of the source category.
+    carriers:
+      - functors $F,G:\mathcal C\to\mathcal D$
+    data:
+      - component $\eta_X:F(X)\to G(X)$ for each object $X$
+    axioms:
+      - naturality squares commute
+    induces:
+      - Vertical and horizontal composition
+    notes: ''
+    citations:
+      - riehl-category-context
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: adjunction
+    label: Adjunction
+    primaryDomain: category-theory
+    domains:
+      - category-theory
+    level: 6
+    kind: structure
+    summary: A pair of functors $F:\mathcal C\rightleftarrows\mathcal D:G$ equipped with natural bijections $\operatorname{Hom}(F X,Y)\cong\operatorname{Hom}(X,GY)$.
+    carriers:
+      - categories and two functors
+    data:
+      - unit and counit, or natural hom-set bijection
+    axioms:
+      - triangle identities
+    induces:
+      - Monads, universal constructions, and preservation theorems
+    notes: ''
+    citations:
+      - riehl-category-context
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: categorical_limit
+    label: Categorical limit
+    primaryDomain: category-theory
+    domains:
+      - category-theory
+    level: 5
+    kind: structure
+    summary: A universal cone to a diagram, simultaneously generalizing products, equalizers, pullbacks, and inverse limits.
+    carriers:
+      - diagram $D:J\to\mathcal C$
+    data:
+      - cone with vertex $L$
+    axioms:
+      - terminal among cones
+    induces:
+      - Products, equalizers, and pullbacks
+    notes: ''
+    citations:
+      - riehl-category-context
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: categorical_colimit
+    label: Categorical colimit
+    primaryDomain: category-theory
+    domains:
+      - category-theory
+    level: 5
+    kind: structure
+    summary: A universal cocone from a diagram, simultaneously generalizing coproducts, coequalizers, pushouts, and direct limits.
+    carriers:
+      - diagram $D:J\to\mathcal C$
+    data:
+      - cocone with vertex $C$
+    axioms:
+      - initial among cocones
+    induces:
+      - Coproducts, coequalizers, and pushouts
+    notes: ''
+    citations:
+      - riehl-category-context
+    primaryField: mathematics
+    fields:
+      - mathematics
 edges:
-- id: abelian_category_to_derived_category
-  source: abelian_category
-  target: derived_category
-  type: canonical-construction
-  label: form $D(A)$
-  detail: Form complexes in $A$, pass to the homotopy category $K(A)$, and localize at quasi-isomorphisms. The result is a new category, not an equivalent presentation of $A$.
-  citations:
-  - stacks-derived-category
-  - stacks-derived-modules
-  - wp-derived-category
-  - nlab-derived-category
-  - stacks-derived-text
-- id: abelian_to_exact_category
-  source: abelian_category
-  target: exact_category
-  type: induced-forgotten
-  label: take all short exact sequences
-  detail: Every abelian category has a canonical Quillen exact structure consisting of all short exact sequences.
-  citations:
-  - nlab-abelian-category
-  - stacks-abelian-category
-  - wp-exact-category
-  - nlab-exact-category
-  - stacks-derived-text
-- id: e_abelian_groth
-  source: abelian_category
-  target: grothendieck_abelian_category
-  type: impose-axiom
-  label: + AB5 and generator
-  detail: Require exact filtered colimits, small coproducts, and a generator.
-  citations:
-  - wp-grothendieck-category
-  - nlab-grothendieck-category
-  - stacks-derived-text
-- id: additive_to_abelian
-  source: additive_category
-  target: abelian_category
-  type: impose-axiom
-  label: require exact kernel/cokernel behavior
-  detail: Require kernels and cokernels and normality of monomorphisms and epimorphisms.
-  citations:
-  - nlab-abelian-category
-  - stacks-abelian-category
-  - riehl-category-context
-- id: e_additive_exact
-  source: additive_category
-  target: exact_category
-  type: add-data
-  label: + conflations
-  detail: Choose a class of kernel–cokernel pairs satisfying exact-category axioms.
-  citations:
-  - wp-exact-category
-  - nlab-exact-category
-  - stacks-derived-text
-- id: e_additive_triang
-  source: additive_category
-  target: triangulated_category
-  type: add-data
-  label: + shift and distinguished triangles
-  detail: Add triangulated structure satisfying TR1–TR4.
-  citations:
-  - stacks-triangulated
-  - wp-triangulated
-  - nlab-triangulated
-  - stacks-derived-text
-- id: braided_to_symmetric
-  source: braided_monoidal_category
-  target: symmetric_monoidal_category
-  type: impose-axiom
-  label: impose symmetry
-  detail: Require double braiding to be the identity.
-  citations:
-  - wp-symmetric-category
-  - riehl-category-context
-- id: cartesian_to_closed
-  source: cartesian_category
-  target: cartesian_closed_category
-  type: add-data
-  label: add exponentials
-  detail: Add internal $\operatorname{hom}$ objects right-adjoint to product.
-  citations:
-  - wp-ccc
-  - riehl-category-context
-- id: ccc_to_j_topos
-  source: cartesian_closed_category
-  target: j_elementary_topos
-  type: combine-compatible
-  label: supply exponentials
-  detail: Use the cartesian-closed structure.
-  citations:
-  - nlab-topos
-  - riehl-category-context
-- id: category_to_cartesian
-  source: category
-  target: cartesian_category
-  type: add-data
-  label: add finite products
-  detail: Choose a terminal object and binary products satisfying their universal properties.
-  citations:
-  - wp-cartesian-category
-  - riehl-category-context
-- id: e_category_dagger
-  source: category
-  target: dagger_category
-  type: add-data
-  label: + dagger involution
-  detail: Add an involutive identity-on-objects contravariant endofunctor.
-  citations:
-  - wp-dagger-category
-  - nlab-dagger-category
-  - riehl-category-context
-- id: category_to_finitely_complete
-  source: category
-  target: finitely_complete_category
-  type: impose-axiom
-  label: require finite limits
-  detail: Require every finite diagram to have a limit.
-  citations:
-  - nlab-finite-limits
-  - riehl-category-context
-- id: category_to_groupoid
-  source: category
-  target: groupoid
-  type: impose-axiom
-  label: require invertible arrows
-  detail: Require every morphism to have a two-sided inverse.
-  citations:
-  - wp-groupoid
-  - riehl-category-context
-- id: j_cosimplicial_object__category
-  source: category
-  target: j_cosimplicial_object
-  type: combine-compatible
-  label: ambient category
-  detail: Supply the category in which the diagram takes values.
-  citations:
-  - stacks-simplicial-objects
-  - nlab-simplicial-object
-  - wp-cosimplicial-object
-  - riehl-category-context
-- id: j_simplicial_object__category
-  source: category
-  target: j_simplicial_object
-  type: combine-compatible
-  label: ambient category
-  detail: Supply the category in which the diagram takes values.
-  citations:
-  - stacks-simplicial-objects
-  - nlab-simplicial-object
-  - riehl-category-context
-- id: e_category_model
-  source: category
-  target: model_category
-  type: add-data
-  label: + weak equivalences, fibrations, cofibrations
-  detail: Add three morphism classes satisfying Quillen model-category axioms.
-  citations:
-  - wp-model-category
-  - nlab-model-category
-  - stacks-derived-text
-  - hovey-model-categories
-- id: category_to_monoidal
-  source: category
-  target: monoidal_category
-  type: add-data
-  label: add tensor and unit
-  detail: Add a tensor bifunctor, unit object, associator, and unitors satisfying coherence.
-  citations:
-  - nlab-monoidal-category
-  - riehl-category-context
-- id: category_to_preadditive
-  source: category
-  target: preadditive_category
-  type: add-data
-  label: add abelian hom-groups
-  detail: Give each hom-set an abelian-group structure and make composition bilinear.
-  citations:
-  - wp-preadditive-category
-  - riehl-category-context
-- id: category_to_small_category
-  source: category
-  target: small_category
-  type: impose-axiom
-  label: + set-sized objects and arrows
-  detail: Require the collections of objects and morphisms to be sets.
-  citations:
-  - wp-category
-  - nlab-category
-  - stacks-categories
-  - riehl-category-context
-- id: category_to_thin
-  source: category
-  target: thin_category
-  type: impose-axiom
-  label: at most one arrow
-  detail: Require each hom-set to have at most one element.
-  citations:
-  - wp-thin-category
-  - riehl-category-context
-- id: e_compact_closed_closed
-  source: compact_closed_category
-  target: closed_monoidal_category
-  type: induced-forgotten
-  label: induce internal homs
-  detail: Compact closure canonically supplies internal homs, for example $[A,B]=A^*\otimes B$, and hence a closed monoidal structure.
-  citations:
-  - wp-compact-closed
-  - nlab-compact-closed
-  - wp-closed-monoidal
-  - nlab-closed-monoidal
-  - riehl-category-context
-- id: e_enriched_dgcat
-  source: enriched_category
-  target: dg_category
-  type: impose-axiom
-  label: specialize enrichment to chain complexes
-  detail: Require the enriching monoidal category to be chain complexes over a specified commutative base ring, with the chosen grading/sign convention.
-  citations:
-  - wp-dg-category
-  - nlab-dg-category
-  - stacks-derived-text
-- id: finitely_complete_to_cartesian
-  source: finitely_complete_category
-  target: cartesian_category
-  type: induced-forgotten
-  label: retain finite products
-  detail: Finite limits include a terminal object and binary products, yielding cartesian structure.
-  citations:
-  - nlab-finite-limits
-  - wp-cartesian-category
-  - riehl-category-context
-- id: finite_complete_to_j_topos
-  source: finitely_complete_category
-  target: j_elementary_topos
-  type: combine-compatible
-  label: supply finite limits
-  detail: Use the finite-limit structure.
-  citations:
-  - nlab-topos
-  - riehl-category-context
-- id: grothendieck_topos_to_elementary_topos_reduct
-  source: grothendieck_topos
-  target: elementary_topos
-  type: induced-forgotten
-  label: retain elementary-topos structure
-  detail: A Grothendieck topos has finite limits, exponentials, and a subobject classifier.
-  citations:
-  - stacks-topos
-  - wp-groth-topos
-  - nlab-topos
-  - riehl-category-context
-- id: j_lie_groupoid__groupoid
-  source: groupoid
-  target: j_lie_groupoid
-  type: combine-compatible
-  label: categorical invertibility
-  detail: Supply the Groupoid structure as one jointly required input.
-  citations:
-  - wp-lie-groupoid
-  - nlab-lie-groupoid
-  - lee-smooth-manifolds
-- id: j_cosimplicial_object__out
-  source: j_cosimplicial_object
-  target: cosimplicial_object
-  type: combine-compatible
-  label: impose cosimplicial identities
-  detail: Every $X^{n}$ is an object of the same category $C$; add coface and codegeneracy morphisms in $C$ satisfying the cosimplicial identities.
-  citations:
-  - stacks-simplicial-objects
-  - nlab-simplicial-object
-  - wp-cosimplicial-object
-  - riehl-category-context
-- id: j_topos_to_topos
-  source: j_elementary_topos
-  target: elementary_topos
-  type: combine-compatible
-  label: add subobject classifier
-  detail: Add a subobject classifier compatible with the finite limits and exponentials.
-  citations:
-  - nlab-topos
-  - riehl-category-context
-- id: j_enriched_category__out
-  source: j_enriched_category
-  target: enriched_category
-  type: combine-compatible
-  label: + enriched homs and composition
-  detail: Choose hom-objects, composition morphisms, and unit morphisms satisfying the enriched category axioms.
-  citations:
-  - wp-enriched-category
-  - nlab-enriched-category
-  - riehl-category-context
-- id: j_simplicial_object__out
-  source: j_simplicial_object
-  target: simplicial_object
-  type: combine-compatible
-  label: impose simplicial identities
-  detail: Every $X_{n}$ is an object of the same category $C$; add face and degeneracy morphisms in $C$ satisfying the simplicial identities.
-  citations:
-  - stacks-simplicial-objects
-  - nlab-simplicial-object
-  - riehl-category-context
-- id: monoidal_to_braided
-  source: monoidal_category
-  target: braided_monoidal_category
-  type: add-data
-  label: add braiding
-  detail: Add a natural exchange isomorphism satisfying the hexagon laws.
-  citations:
-  - wp-braided-category
-  - riehl-category-context
-- id: e_monoidal_closed
-  source: monoidal_category
-  target: closed_monoidal_category
-  type: add-data
-  label: + internal homs
-  detail: Choose internal $\operatorname{hom}$ objects giving tensor–hom adjunctions.
-  citations:
-  - wp-closed-monoidal
-  - nlab-closed-monoidal
-  - riehl-category-context
-- id: j_enriched_category__monoidal
-  source: monoidal_category
-  target: j_enriched_category
-  type: combine-compatible
-  label: enriching monoidal category
-  detail: Supply the monoidal category in which hom-objects and composition live.
-  citations:
-  - wp-enriched-category
-  - nlab-enriched-category
-  - riehl-category-context
-- id: preadditive_to_additive
-  source: preadditive_category
-  target: additive_category
-  type: add-data
-  label: add finite biproducts
-  detail: Add a zero object and finite biproducts.
-  citations:
-  - wp-additive-category
-  - riehl-category-context
-- id: j_sheaf__presheaf
-  source: presheaf
-  target: j_sheaf
-  type: combine-compatible
-  label: presheaf data
-  detail: Supply the contravariant functor to which the sheaf condition will be applied.
-  citations:
-  - stacks-presheaf
-  - stacks-sheaf
-  - wp-sheaf
-  - nlab-sheaf
-  - stacks-schemes-text
-- id: e_simpobj_simpset
-  source: simplicial_object
-  target: simplicial_set
-  type: representation-equivalence
-  label: specialize the target to Set
-  detail: A simplicial object in Set is precisely a simplicial set; this changes the ambient target category rather than imposing an internal axiom.
-  citations:
-  - wp-simplicial-set
-  - nlab-simplicial-set
-  - hatcher-algebraic-topology
-- id: e_site_topos
-  source: site
-  target: grothendieck_topos
-  type: canonical-construction
-  label: form the sheaf topos
-  detail: Form $\operatorname{Sh}(C,J)$, the category of sheaves of sets on the site. This is a canonical construction from a site, not an equivalence between the site and the resulting topos.
-  citations:
-  - stacks-topos
-  - wp-groth-topos
-  - nlab-topos
-  - riehl-category-context
-- id: j_sheaf__site
-  source: site
-  target: j_sheaf
-  type: combine-compatible
-  label: covering structure
-  detail: Supply the covers on the presheaf’s domain category.
-  citations:
-  - stacks-sites
-  - stacks-sheaf
-  - wp-site
-  - nlab-site
-  - stacks-schemes-text
-- id: small_category_to_directed_graph
-  source: small_category
-  target: directed_graph
-  type: induced-forgotten
-  label: forget identities and composition to a quiver
-  detail: Retain objects as vertices, morphisms as arrows, and the source/target maps. Parallel arrows and loops remain.
-  citations:
-  - wp-category
-  - nlab-category
-  - stacks-categories
-  - wp-directed-graph
-  - diestel-graph-theory
-- id: e_category_presheaf
-  source: small_category
-  target: presheaf
-  type: add-data
-  label: choose a Set-valued contravariant functor
-  detail: Choose a functor $C^{\mathrm{op}}\to\mathbf{Set}$ on the small category $C$.
-  citations:
-  - stacks-presheaf
-  - wp-presheaf
-  - nlab-presheaf
-  - riehl-category-context
-- id: category_to_site
-  source: small_category
-  target: site
-  type: add-data
-  label: + Grothendieck covering structure
-  detail: Choose covering sieves or covering families on the small category satisfying the Grothendieck-topology axioms.
-  citations:
-  - stacks-sites
-  - stacks-groth-topology
-  - wp-site
-  - nlab-site
-  - riehl-category-context
-- id: e_symmetric_compact_closed
-  source: symmetric_monoidal_category
-  target: compact_closed_category
-  type: add-data
-  label: choose duals and duality maps
-  detail: Equip every object with a chosen dual, evaluation, and coevaluation satisfying the snake identities.
-  citations:
-  - wp-compact-closed
-  - nlab-compact-closed
-  - riehl-category-context
-- id: story_category_to_functor_add_data
-  source: category
-  target: functor
-  type: add-data
-  label: map categories structure-preservingly
-  detail: Choose a target category and specify object and morphism assignments that preserve identities and composition.
-  citations:
-  - riehl-category-context
-- id: story_functor_to_natural_transformation_add_data
-  source: functor
-  target: natural_transformation
-  type: add-data
-  label: compare parallel functors
-  detail: Choose a second parallel functor and supply component morphisms satisfying the naturality equations.
-  citations:
-  - riehl-category-context
-- id: story_functor_to_adjunction_add_data
-  source: functor
-  target: adjunction
-  type: add-data
-  label: pair with an adjoint functor
-  detail: An adjunction consists of a left and right adjoint functor together with equivalent unit/counit or hom-set data; a single functor need not possess an adjoint.
-  citations:
-  - riehl-category-context
-- id: story_functor_to_presheaf_framework_specialization
-  source: functor
-  target: presheaf
-  type: framework-specialization
-  label: contravariant Set-valued functor
-  detail: A presheaf is a functor from the opposite of a category to Set.
-  citations:
-  - riehl-category-context
-- id: story_functor_to_categorical_limit_canonical_construction
-  source: functor
-  target: categorical_limit
-  type: canonical-construction
-  label: take a limit of a diagram
-  detail: A diagram is a functor into a category; when a universal cone exists, its apex is the limit of that diagram.
-  citations:
-  - riehl-category-context
-- id: story_functor_to_categorical_colimit_canonical_construction
-  source: functor
-  target: categorical_colimit
-  type: canonical-construction
-  label: take a colimit of a diagram
-  detail: A diagram is a functor into a category; when a universal cocone exists, its apex is the colimit of that diagram.
-  citations:
-  - riehl-category-context
-- id: story_cartesian_closed_category_to_adjunction_canonical_construction
-  source: cartesian_closed_category
-  target: adjunction
-  type: canonical-construction
-  label: product is left adjoint to exponentiation
-  detail: In a cartesian closed category, for each object $A$ the functor $(-)\times A$ is left adjoint to the exponential functor $(-)^A$.
-  citations:
-  - wp-ccc
-  - riehl-category-context
-- id: story_finitely_complete_category_to_categorical_limit_induced_forgotten
-  source: finitely_complete_category
-  target: categorical_limit
-  type: induced-forgotten
-  label: retains its finite limits
-  detail: A finitely complete category has limits for every finite diagram; forgetting the ambient axiom leaves individual categorical limits.
-  citations:
-  - nlab-finite-limits
-  - riehl-category-context
-- id: story_cartesian_category_to_categorical_limit_induced_forgotten
-  source: cartesian_category
-  target: categorical_limit
-  type: induced-forgotten
-  label: retains finite products as limits
-  detail: A cartesian category has finite products, which are limits of finite discrete diagrams, including a terminal object as the empty product.
-  citations:
-  - wp-cartesian-category
-  - riehl-category-context
+  - id: abelian_category_to_derived_category
+    source: abelian_category
+    target: derived_category
+    type: canonical-construction
+    label: form $D(A)$
+    detail: Form complexes in $A$, pass to the homotopy category $K(A)$, and localize at quasi-isomorphisms. The result is a new category, not an equivalent presentation of $A$.
+    citations:
+      - stacks-derived-category
+      - stacks-derived-modules
+      - wp-derived-category
+      - nlab-derived-category
+      - stacks-derived-text
+  - id: abelian_to_exact_category
+    source: abelian_category
+    target: exact_category
+    type: induced-forgotten
+    label: take all short exact sequences
+    detail: Every abelian category has a canonical Quillen exact structure consisting of all short exact sequences.
+    citations:
+      - nlab-abelian-category
+      - stacks-abelian-category
+      - wp-exact-category
+      - nlab-exact-category
+      - stacks-derived-text
+  - id: e_abelian_groth
+    source: abelian_category
+    target: grothendieck_abelian_category
+    type: impose-axiom
+    label: + AB5 and generator
+    detail: Require exact filtered colimits, small coproducts, and a generator.
+    citations:
+      - wp-grothendieck-category
+      - nlab-grothendieck-category
+      - stacks-derived-text
+  - id: additive_to_abelian
+    source: additive_category
+    target: abelian_category
+    type: impose-axiom
+    label: require exact kernel/cokernel behavior
+    detail: Require kernels and cokernels and normality of monomorphisms and epimorphisms.
+    citations:
+      - nlab-abelian-category
+      - stacks-abelian-category
+      - riehl-category-context
+  - id: e_additive_exact
+    source: additive_category
+    target: exact_category
+    type: add-data
+    label: + conflations
+    detail: Choose a class of kernel–cokernel pairs satisfying exact-category axioms.
+    citations:
+      - wp-exact-category
+      - nlab-exact-category
+      - stacks-derived-text
+  - id: e_additive_triang
+    source: additive_category
+    target: triangulated_category
+    type: add-data
+    label: + shift and distinguished triangles
+    detail: Add triangulated structure satisfying TR1–TR4.
+    citations:
+      - stacks-triangulated
+      - wp-triangulated
+      - nlab-triangulated
+      - stacks-derived-text
+  - id: braided_to_symmetric
+    source: braided_monoidal_category
+    target: symmetric_monoidal_category
+    type: impose-axiom
+    label: impose symmetry
+    detail: Require double braiding to be the identity.
+    citations:
+      - wp-symmetric-category
+      - riehl-category-context
+  - id: cartesian_to_closed
+    source: cartesian_category
+    target: cartesian_closed_category
+    type: add-data
+    label: add exponentials
+    detail: Add internal $\operatorname{hom}$ objects right-adjoint to product.
+    citations:
+      - wp-ccc
+      - riehl-category-context
+  - id: ccc_to_j_topos
+    source: cartesian_closed_category
+    target: j_elementary_topos
+    type: combine-compatible
+    label: supply exponentials
+    detail: Use the cartesian-closed structure.
+    citations:
+      - nlab-topos
+      - riehl-category-context
+  - id: category_to_cartesian
+    source: category
+    target: cartesian_category
+    type: add-data
+    label: add finite products
+    detail: Choose a terminal object and binary products satisfying their universal properties.
+    citations:
+      - wp-cartesian-category
+      - riehl-category-context
+  - id: e_category_dagger
+    source: category
+    target: dagger_category
+    type: add-data
+    label: + dagger involution
+    detail: Add an involutive identity-on-objects contravariant endofunctor.
+    citations:
+      - wp-dagger-category
+      - nlab-dagger-category
+      - riehl-category-context
+  - id: category_to_finitely_complete
+    source: category
+    target: finitely_complete_category
+    type: impose-axiom
+    label: require finite limits
+    detail: Require every finite diagram to have a limit.
+    citations:
+      - nlab-finite-limits
+      - riehl-category-context
+  - id: category_to_groupoid
+    source: category
+    target: groupoid
+    type: impose-axiom
+    label: require invertible arrows
+    detail: Require every morphism to have a two-sided inverse.
+    citations:
+      - wp-groupoid
+      - riehl-category-context
+  - id: j_cosimplicial_object__category
+    source: category
+    target: j_cosimplicial_object
+    type: combine-compatible
+    label: ambient category
+    detail: Supply the category in which the diagram takes values.
+    citations:
+      - stacks-simplicial-objects
+      - nlab-simplicial-object
+      - wp-cosimplicial-object
+      - riehl-category-context
+  - id: j_simplicial_object__category
+    source: category
+    target: j_simplicial_object
+    type: combine-compatible
+    label: ambient category
+    detail: Supply the category in which the diagram takes values.
+    citations:
+      - stacks-simplicial-objects
+      - nlab-simplicial-object
+      - riehl-category-context
+  - id: e_category_model
+    source: category
+    target: model_category
+    type: add-data
+    label: + weak equivalences, fibrations, cofibrations
+    detail: Add three morphism classes satisfying Quillen model-category axioms.
+    citations:
+      - wp-model-category
+      - nlab-model-category
+      - stacks-derived-text
+      - hovey-model-categories
+  - id: category_to_monoidal
+    source: category
+    target: monoidal_category
+    type: add-data
+    label: add tensor and unit
+    detail: Add a tensor bifunctor, unit object, associator, and unitors satisfying coherence.
+    citations:
+      - nlab-monoidal-category
+      - riehl-category-context
+  - id: category_to_preadditive
+    source: category
+    target: preadditive_category
+    type: add-data
+    label: add abelian hom-groups
+    detail: Give each hom-set an abelian-group structure and make composition bilinear.
+    citations:
+      - wp-preadditive-category
+      - riehl-category-context
+  - id: category_to_small_category
+    source: category
+    target: small_category
+    type: impose-axiom
+    label: + set-sized objects and arrows
+    detail: Require the collections of objects and morphisms to be sets.
+    citations:
+      - wp-category
+      - nlab-category
+      - stacks-categories
+      - riehl-category-context
+  - id: category_to_thin
+    source: category
+    target: thin_category
+    type: impose-axiom
+    label: at most one arrow
+    detail: Require each hom-set to have at most one element.
+    citations:
+      - wp-thin-category
+      - riehl-category-context
+  - id: e_compact_closed_closed
+    source: compact_closed_category
+    target: closed_monoidal_category
+    type: induced-forgotten
+    label: induce internal homs
+    detail: Compact closure canonically supplies internal homs, for example $[A,B]=A^*\otimes B$, and hence a closed monoidal structure.
+    citations:
+      - wp-compact-closed
+      - nlab-compact-closed
+      - wp-closed-monoidal
+      - nlab-closed-monoidal
+      - riehl-category-context
+  - id: e_enriched_dgcat
+    source: enriched_category
+    target: dg_category
+    type: impose-axiom
+    label: specialize enrichment to chain complexes
+    detail: Require the enriching monoidal category to be chain complexes over a specified commutative base ring, with the chosen grading/sign convention.
+    citations:
+      - wp-dg-category
+      - nlab-dg-category
+      - stacks-derived-text
+  - id: finitely_complete_to_cartesian
+    source: finitely_complete_category
+    target: cartesian_category
+    type: induced-forgotten
+    label: retain finite products
+    detail: Finite limits include a terminal object and binary products, yielding cartesian structure.
+    citations:
+      - nlab-finite-limits
+      - wp-cartesian-category
+      - riehl-category-context
+  - id: finite_complete_to_j_topos
+    source: finitely_complete_category
+    target: j_elementary_topos
+    type: combine-compatible
+    label: supply finite limits
+    detail: Use the finite-limit structure.
+    citations:
+      - nlab-topos
+      - riehl-category-context
+  - id: grothendieck_topos_to_elementary_topos_reduct
+    source: grothendieck_topos
+    target: elementary_topos
+    type: induced-forgotten
+    label: retain elementary-topos structure
+    detail: A Grothendieck topos has finite limits, exponentials, and a subobject classifier.
+    citations:
+      - stacks-topos
+      - wp-groth-topos
+      - nlab-topos
+      - riehl-category-context
+  - id: j_lie_groupoid__groupoid
+    source: groupoid
+    target: j_lie_groupoid
+    type: combine-compatible
+    label: categorical invertibility
+    detail: Supply the Groupoid structure as one jointly required input.
+    citations:
+      - wp-lie-groupoid
+      - nlab-lie-groupoid
+      - lee-smooth-manifolds
+  - id: j_cosimplicial_object__out
+    source: j_cosimplicial_object
+    target: cosimplicial_object
+    type: combine-compatible
+    label: impose cosimplicial identities
+    detail: Every $X^{n}$ is an object of the same category $C$; add coface and codegeneracy morphisms in $C$ satisfying the cosimplicial identities.
+    citations:
+      - stacks-simplicial-objects
+      - nlab-simplicial-object
+      - wp-cosimplicial-object
+      - riehl-category-context
+  - id: j_topos_to_topos
+    source: j_elementary_topos
+    target: elementary_topos
+    type: combine-compatible
+    label: add subobject classifier
+    detail: Add a subobject classifier compatible with the finite limits and exponentials.
+    citations:
+      - nlab-topos
+      - riehl-category-context
+  - id: j_enriched_category__out
+    source: j_enriched_category
+    target: enriched_category
+    type: combine-compatible
+    label: + enriched homs and composition
+    detail: Choose hom-objects, composition morphisms, and unit morphisms satisfying the enriched category axioms.
+    citations:
+      - wp-enriched-category
+      - nlab-enriched-category
+      - riehl-category-context
+  - id: j_simplicial_object__out
+    source: j_simplicial_object
+    target: simplicial_object
+    type: combine-compatible
+    label: impose simplicial identities
+    detail: Every $X_{n}$ is an object of the same category $C$; add face and degeneracy morphisms in $C$ satisfying the simplicial identities.
+    citations:
+      - stacks-simplicial-objects
+      - nlab-simplicial-object
+      - riehl-category-context
+  - id: monoidal_to_braided
+    source: monoidal_category
+    target: braided_monoidal_category
+    type: add-data
+    label: add braiding
+    detail: Add a natural exchange isomorphism satisfying the hexagon laws.
+    citations:
+      - wp-braided-category
+      - riehl-category-context
+  - id: e_monoidal_closed
+    source: monoidal_category
+    target: closed_monoidal_category
+    type: add-data
+    label: + internal homs
+    detail: Choose internal $\operatorname{hom}$ objects giving tensor–hom adjunctions.
+    citations:
+      - wp-closed-monoidal
+      - nlab-closed-monoidal
+      - riehl-category-context
+  - id: j_enriched_category__monoidal
+    source: monoidal_category
+    target: j_enriched_category
+    type: combine-compatible
+    label: enriching monoidal category
+    detail: Supply the monoidal category in which hom-objects and composition live.
+    citations:
+      - wp-enriched-category
+      - nlab-enriched-category
+      - riehl-category-context
+  - id: preadditive_to_additive
+    source: preadditive_category
+    target: additive_category
+    type: add-data
+    label: add finite biproducts
+    detail: Add a zero object and finite biproducts.
+    citations:
+      - wp-additive-category
+      - riehl-category-context
+  - id: j_sheaf__presheaf
+    source: presheaf
+    target: j_sheaf
+    type: combine-compatible
+    label: presheaf data
+    detail: Supply the contravariant functor to which the sheaf condition will be applied.
+    citations:
+      - stacks-presheaf
+      - stacks-sheaf
+      - wp-sheaf
+      - nlab-sheaf
+      - stacks-schemes-text
+  - id: e_simpobj_simpset
+    source: simplicial_object
+    target: simplicial_set
+    type: representation-equivalence
+    label: specialize the target to Set
+    detail: A simplicial object in Set is precisely a simplicial set; this changes the ambient target category rather than imposing an internal axiom.
+    citations:
+      - wp-simplicial-set
+      - nlab-simplicial-set
+      - hatcher-algebraic-topology
+  - id: e_site_topos
+    source: site
+    target: grothendieck_topos
+    type: canonical-construction
+    label: form the sheaf topos
+    detail: Form $\operatorname{Sh}(C,J)$, the category of sheaves of sets on the site. This is a canonical construction from a site, not an equivalence between the site and the resulting topos.
+    citations:
+      - stacks-topos
+      - wp-groth-topos
+      - nlab-topos
+      - riehl-category-context
+  - id: j_sheaf__site
+    source: site
+    target: j_sheaf
+    type: combine-compatible
+    label: covering structure
+    detail: Supply the covers on the presheaf’s domain category.
+    citations:
+      - stacks-sites
+      - stacks-sheaf
+      - wp-site
+      - nlab-site
+      - stacks-schemes-text
+  - id: small_category_to_directed_graph
+    source: small_category
+    target: directed_graph
+    type: induced-forgotten
+    label: forget identities and composition to a quiver
+    detail: Retain objects as vertices, morphisms as arrows, and the source/target maps. Parallel arrows and loops remain.
+    citations:
+      - wp-category
+      - nlab-category
+      - stacks-categories
+      - wp-directed-graph
+      - diestel-graph-theory
+  - id: e_category_presheaf
+    source: small_category
+    target: presheaf
+    type: add-data
+    label: choose a Set-valued contravariant functor
+    detail: Choose a functor $C^{\mathrm{op}}\to\mathbf{Set}$ on the small category $C$.
+    citations:
+      - stacks-presheaf
+      - wp-presheaf
+      - nlab-presheaf
+      - riehl-category-context
+  - id: category_to_site
+    source: small_category
+    target: site
+    type: add-data
+    label: + Grothendieck covering structure
+    detail: Choose covering sieves or covering families on the small category satisfying the Grothendieck-topology axioms.
+    citations:
+      - stacks-sites
+      - stacks-groth-topology
+      - wp-site
+      - nlab-site
+      - riehl-category-context
+  - id: e_symmetric_compact_closed
+    source: symmetric_monoidal_category
+    target: compact_closed_category
+    type: add-data
+    label: choose duals and duality maps
+    detail: Equip every object with a chosen dual, evaluation, and coevaluation satisfying the snake identities.
+    citations:
+      - wp-compact-closed
+      - nlab-compact-closed
+      - riehl-category-context
+  - id: story_category_to_functor_add_data
+    source: category
+    target: functor
+    type: add-data
+    label: map categories structure-preservingly
+    detail: Choose a target category and specify object and morphism assignments that preserve identities and composition.
+    citations:
+      - riehl-category-context
+  - id: story_functor_to_natural_transformation_add_data
+    source: functor
+    target: natural_transformation
+    type: add-data
+    label: compare parallel functors
+    detail: Choose a second parallel functor and supply component morphisms satisfying the naturality equations.
+    citations:
+      - riehl-category-context
+  - id: story_functor_to_adjunction_add_data
+    source: functor
+    target: adjunction
+    type: add-data
+    label: pair with an adjoint functor
+    detail: An adjunction consists of a left and right adjoint functor together with equivalent unit/counit or hom-set data; a single functor need not possess an adjoint.
+    citations:
+      - riehl-category-context
+  - id: story_functor_to_presheaf_framework_specialization
+    source: functor
+    target: presheaf
+    type: framework-specialization
+    label: contravariant Set-valued functor
+    detail: A presheaf is a functor from the opposite of a category to Set.
+    citations:
+      - riehl-category-context
+  - id: story_functor_to_categorical_limit_canonical_construction
+    source: functor
+    target: categorical_limit
+    type: canonical-construction
+    label: take a limit of a diagram
+    detail: A diagram is a functor into a category; when a universal cone exists, its apex is the limit of that diagram.
+    citations:
+      - riehl-category-context
+  - id: story_functor_to_categorical_colimit_canonical_construction
+    source: functor
+    target: categorical_colimit
+    type: canonical-construction
+    label: take a colimit of a diagram
+    detail: A diagram is a functor into a category; when a universal cocone exists, its apex is the colimit of that diagram.
+    citations:
+      - riehl-category-context
+  - id: story_cartesian_closed_category_to_adjunction_canonical_construction
+    source: cartesian_closed_category
+    target: adjunction
+    type: canonical-construction
+    label: product is left adjoint to exponentiation
+    detail: In a cartesian closed category, for each object $A$ the functor $(-)\times A$ is left adjoint to the exponential functor $(-)^A$.
+    citations:
+      - wp-ccc
+      - riehl-category-context
+  - id: story_finitely_complete_category_to_categorical_limit_induced_forgotten
+    source: finitely_complete_category
+    target: categorical_limit
+    type: induced-forgotten
+    label: retains its finite limits
+    detail: A finitely complete category has limits for every finite diagram; forgetting the ambient axiom leaves individual categorical limits.
+    citations:
+      - nlab-finite-limits
+      - riehl-category-context
+  - id: story_cartesian_category_to_categorical_limit_induced_forgotten
+    source: cartesian_category
+    target: categorical_limit
+    type: induced-forgotten
+    label: retains finite products as limits
+    detail: A cartesian category has finite products, which are limits of finite discrete diagrams, including a terminal object as the empty product.
+    citations:
+      - wp-cartesian-category
+      - riehl-category-context

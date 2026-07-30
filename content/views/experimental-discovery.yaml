@@ -1,12 +1,7 @@
 id: experimental-discovery
 title: Experimental discovery
-summary: Follow the experiments, observations, and anomalies that forced physics
-  to change—and the later tests that decided whether the new theories survived.
-narrative: Follow a longer historical argument from anomalies and precision
-  measurements to the theories they forced, then to decisive tests and
-  discoveries. Motivation edges record historical pressure rather than deductive
-  implication; verification edges record tests or evidential support rather than
-  final proof.
+summary: Follow the experiments, observations, and anomalies that forced physics to change—and the later tests that decided whether the new theories survived.
+narrative: Follow a longer historical argument from anomalies and precision measurements to the theories they forced, then to decisive tests and discoveries. Motivation edges record historical pressure rather than deductive implication; verification edges record tests or evidential support rather than final proof.
 tags:
   - Physics
   - History

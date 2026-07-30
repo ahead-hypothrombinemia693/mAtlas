@@ -1,11 +1,7 @@
 id: from-sets-to-spaces
 title: From sets to spaces
-summary: Trace how bare collections acquire relations, distance, topology,
-  measure, and analytic structure.
-narrative: Start with sets, functions, relations, and indexed families; add
-  topology to define continuity and convergence; strengthen through metric,
-  normed, Banach, inner-product, and Hilbert structures. The route distinguishes
-  added data from axioms and theorem-level consequences.
+summary: Trace how bare collections acquire relations, distance, topology, measure, and analytic structure.
+narrative: Start with sets, functions, relations, and indexed families; add topology to define continuity and convergence; strengthen through metric, normed, Banach, inner-product, and Hilbert structures. The route distinguishes added data from axioms and theorem-level consequences.
 tags:
   - Mathematics
   - Foundations

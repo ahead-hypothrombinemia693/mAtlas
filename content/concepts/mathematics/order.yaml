@@ -1,1285 +1,1285 @@
 nodes:
-- id: binary_relation
-  label: Binary relation
-  level: 1
-  kind: structure
-  summary: A relation from one set to another, represented by a subset of their Cartesian product.
-  carriers:
-  - source set $X$
-  - target set $Y$
-  data:
-  - subset $R \subseteq X \times Y$
-  axioms: []
-  induces: []
-  notes: Order, equivalence, accessibility, and well-foundedness use the endorelation specialization $X=Y$.
-  citations:
-  - wp-relation
-  - gierz-order
-  primaryDomain: order
-  domains:
-  - order
-  - logic
-  - set-theory
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: equivalence_relation
-  label: Equivalence relation
-  level: 2
-  kind: structure
-  summary: A relation that partitions a set into equivalence classes.
-  carriers:
-  - set $X$
-  data:
-  - binary relation $\sim$
-  axioms:
-  - reflexive
-  - symmetric
-  - transitive
-  induces:
-  - quotient set $X/\sim$
-  notes: ''
-  citations:
-  - wp-equivalence
-  - gierz-order
-  primaryDomain: order
-  domains:
-  - order
-  - logic
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: preorder
-  label: Preorder
-  level: 2
-  kind: structure
-  summary: A reflexive and transitive binary relation.
-  carriers:
-  - set $X$
-  data:
-  - binary relation $\le$
-  axioms:
-  - reflexive
-  - transitive
-  induces: []
-  notes: ''
-  citations:
-  - wp-preorder
-  - gierz-order
-  primaryDomain: order
-  domains:
-  - order
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: partial_order
-  label: Partial order / poset
-  level: 3
-  kind: structure
-  summary: A preorder in which mutual comparability forces equality.
-  carriers:
-  - set $X$
-  data:
-  - binary relation $\le$
-  axioms:
-  - reflexive
-  - transitive
-  - antisymmetric
-  induces: []
-  notes: ''
-  citations:
-  - wp-poset
-  - gierz-order
-  primaryDomain: order
-  domains:
-  - order
-  - combinatorics
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: bounded_poset
-  label: Bounded poset
-  primaryDomain: order
-  domains:
-  - order
-  level: 4
-  kind: structure
-  summary: A poset with a least element and a greatest element.
-  carriers:
-  - set $P$
-  data:
-  - partial order
-  - bottom $\bot$
-  - top $\top$
-  axioms:
-  - $\bot\le x\le\top$ for every $x$
-  induces: []
-  notes: Least and greatest elements, when they exist, are unique; boundedness is an existence property.
-  citations:
-  - wp-bounded-poset
-  - gierz-order
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: directed_set
-  label: Directed set
-  primaryDomain: order
-  domains:
-  - order
-  - topology
-  - analysis
-  level: 4
-  kind: structure
-  summary: A nonempty preorder in which every pair has a common upper bound.
-  carriers:
-  - set $D$
-  data:
-  - preorder
-  axioms:
-  - nonempty carrier
-  - for any $x,y$ there is $z$ with $x\le z$ and $y\le z$
-  induces: []
-  notes: ''
-  citations:
-  - wp-directed-set
-  - gierz-order
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: join_semilattice
-  label: Join-semilattice
-  primaryDomain: order
-  domains:
-  - order
-  - algebra
-  level: 4
-  kind: structure
-  summary: A poset in which every pair has a least upper bound.
-  carriers:
-  - set $L$
-  data:
-  - partial order; equivalently, a binary join operation
-  axioms:
-  - every pair has a join
-  induces: []
-  notes: ''
-  citations:
-  - wp-semilattice
-  - gierz-order
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: meet_semilattice
-  label: Meet-semilattice
-  primaryDomain: order
-  domains:
-  - order
-  - algebra
-  level: 4
-  kind: structure
-  summary: A poset in which every pair has a greatest lower bound.
-  carriers:
-  - set $L$
-  data:
-  - partial order; equivalently, a binary meet operation
-  axioms:
-  - every pair has a meet
-  induces: []
-  notes: ''
-  citations:
-  - wp-semilattice
-  - gierz-order
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: total_order
-  label: Total order
-  level: 4
-  kind: structure
-  summary: A partial order in which every pair is comparable.
-  carriers:
-  - set $X$
-  data:
-  - binary relation $\le$
-  axioms:
-  - partial-order axioms
-  - 'totality: $x \le y$ or $y \le x$'
-  induces: []
-  notes: ''
-  citations:
-  - wp-total-order
-  - gierz-order
-  primaryDomain: order
-  domains:
-  - order
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: j_ordered_group
-  label: group + total order
-  primaryDomain: order
-  domains:
-  - order
-  - algebra
-  level: 5
-  kind: junction
-  summary: Put a compatible total order on a group.
-  carriers: []
-  data: []
-  axioms: []
-  induces: []
-  notes: 'Construction junction: it is a visual device, not a separate standard mathematical structure.'
-  citations:
-  - wp-ordered-group
-  - gierz-order
-  combination:
-    inputs:
-    - group
-    - total_order
-    compatibility: The order is invariant under translation by group elements.
-    output: ordered_group
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: j_lattice
-  label: meet + join
-  primaryDomain: order
-  domains:
-  - order
-  - algebra
-  level: 5
-  kind: junction
-  summary: Combine compatible meet- and join-semilattice structure on one order.
-  carriers: []
-  data: []
-  axioms: []
-  induces: []
-  notes: 'Construction junction: it is a visual device, not a separate standard mathematical structure.'
-  citations:
-  - nlab-lattice
-  - gierz-order
-  combination:
-    inputs:
-    - meet_semilattice
-    - join_semilattice
-    compatibility: The meet and join are computed with respect to the same partial order.
-    output: lattice
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: well_order
-  label: Well-order
-  primaryDomain: order
-  domains:
-  - order
-  - logic
-  - number-theory
-  level: 5
-  kind: structure
-  summary: A total order in which every nonempty subset has a least element.
-  carriers:
-  - set $W$
-  data:
-  - total order
-  axioms:
-  - well-ordering property
-  induces: []
-  notes: ''
-  citations:
-  - wp-well-order
-  - gierz-order
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: dcpo
-  label: Directed-complete partial order
-  primaryDomain: order
-  domains:
-  - order
-  - logic
-  level: 6
-  kind: structure
-  summary: A poset in which every directed subset has a supremum.
-  carriers:
-  - poset $P$
-  data: []
-  axioms:
-  - every directed subset has a least upper bound
-  induces: []
-  notes: ''
-  citations:
-  - wp-dcpo
-  - nlab-dcpo
-  - gierz-order
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: lattice
-  label: Lattice
-  primaryDomain: order
-  domains:
-  - order
-  - algebra
-  level: 6
-  kind: structure
-  summary: A poset in which every pair has both a meet and a join.
-  carriers:
-  - set $L$
-  data:
-  - partial order; binary meet and join
-  axioms:
-  - meet and join are the greatest lower and least upper bounds
-  induces: []
-  notes: ''
-  citations:
-  - nlab-lattice
-  - gierz-order
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: ordered_group
-  label: Totally ordered group
-  primaryDomain: order
-  domains:
-  - order
-  - algebra
-  level: 6
-  kind: structure
-  summary: A group equipped with a translation-invariant total order.
-  carriers:
-  - set $G$
-  data:
-  - group structure
-  - total order
-  axioms:
-  - $a\le b$ implies $xay\le xby$ for all $x,y$ (equivalently, left and right translations preserve order)
-  induces: []
-  notes: “Ordered group” can mean a partially ordered group in some literature. This node specifically means a totally ordered group.
-  citations:
-  - wp-ordered-group
-  - gierz-order
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: bounded_lattice
-  label: Bounded lattice
-  primaryDomain: order
-  domains:
-  - order
-  - algebra
-  level: 7
-  kind: structure
-  summary: A lattice with a least and a greatest element.
-  carriers:
-  - set $L$
-  data:
-  - lattice structure
-  - bottom $\bot$
-  - top $\top$
-  axioms:
-  - $\bot$ and $\top$ bound every element
-  induces: []
-  notes: ''
-  citations:
-  - wp-bounded-lattice
-  - gierz-order
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: distributive_lattice
-  label: Distributive lattice
-  primaryDomain: order
-  domains:
-  - order
-  - algebra
-  level: 7
-  kind: structure
-  summary: A lattice whose meet and join distribute over one another.
-  carriers:
-  - set $L$
-  data:
-  - lattice structure
-  axioms:
-  - both distributive laws
-  induces: []
-  notes: ''
-  citations:
-  - wp-distributive-lattice
-  - gierz-order
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: j_lgroup
-  label: group + lattice order
-  primaryDomain: order
-  domains:
-  - order
-  - algebra
-  level: 7
-  kind: junction
-  summary: Compatibility construction producing Lattice-ordered group.
-  carriers: []
-  data: []
-  axioms: []
-  induces: []
-  notes: All incoming branches are jointly required.
-  citations:
-  - wp-lattice-ordered-group
-  - gierz-order
-  combination:
-    inputs:
-    - group
-    - lattice
-    compatibility: Require left and right translations to preserve the lattice order.
-    output: lattice_ordered_group
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: j_residuated
-  label: lattice + monoid with residuals
-  primaryDomain: order
-  domains:
-  - order
-  - logic
-  - algebra
-  level: 7
-  kind: junction
-  summary: Compatibility construction producing Residuated lattice.
-  carriers: []
-  data: []
-  axioms: []
-  induces: []
-  notes: All incoming branches are jointly required.
-  citations:
-  - wp-residuated-lattice
-  - gierz-order
-  combination:
-    inputs:
-    - lattice
-    - monoid
-    compatibility: Require monoid multiplication to be monotone and admit left and right residuals with respect to the order.
-    output: residuated_lattice
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: cpo
-  label: Pointed CPO
-  primaryDomain: order
-  domains:
-  - order
-  - logic
-  level: 7
-  kind: structure
-  summary: A directed-complete partial order with a least element.
-  carriers:
-  - dcpo $P$
-  data:
-  - least element $\bot$
-  axioms:
-  - $\bot\le x$ for every $x$
-  induces: []
-  notes: 'Terminology varies: some authors use CPO for a dcpo without requiring a least element; this atlas uses “pointed CPO”. The least element is unique if it exists.'
-  citations:
-  - wp-cpo
-  - nlab-cpo
-  - gierz-order
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: j_bounded_distributive
-  label: bounded + distributive
-  primaryDomain: order
-  domains:
-  - order
-  - algebra
-  - logic
-  level: 8
-  kind: junction
-  summary: Combine bounds with distributive lattice laws.
-  carriers: []
-  data: []
-  axioms: []
-  induces: []
-  notes: 'Construction junction: it is a visual device, not a separate standard mathematical structure.'
-  citations:
-  - wp-distributive-lattice
-  - wp-bounded-lattice
-  - gierz-order
-  combination:
-    inputs:
-    - bounded_lattice
-    - distributive_lattice
-    compatibility: The bounds, meet, and join belong to the same lattice structure.
-    output: bounded_distributive_lattice
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: complete_lattice
-  label: Complete lattice
-  primaryDomain: order
-  domains:
-  - order
-  level: 8
-  kind: structure
-  summary: A poset in which every subset has both a supremum and an infimum.
-  carriers:
-  - set $L$
-  data:
-  - partial order
-  axioms:
-  - all joins and meets exist
-  induces: []
-  notes: ''
-  citations:
-  - wp-complete-lattice
-  - gierz-order
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: lattice_ordered_group
-  label: Lattice-ordered group
-  primaryDomain: order
-  domains:
-  - order
-  - algebra
-  level: 8
-  kind: structure
-  summary: A group with a lattice order invariant under translations.
-  carriers:
-  - group $G$
-  - lattice order $\le$
-  data: []
-  axioms:
-  - multiplication preserves order
-  induces: []
-  notes: Every totally ordered group is lattice-ordered, but not conversely.
-  citations:
-  - wp-lattice-ordered-group
-  - gierz-order
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: residuated_lattice
-  label: Residuated lattice
-  primaryDomain: order
-  domains:
-  - order
-  - logic
-  - algebra
-  level: 8
-  kind: structure
-  summary: A lattice-ordered monoid whose multiplication has residuals.
-  carriers:
-  - lattice $L$
-  - monoid structure
-  data:
-  - left and right residual operations
-  axioms:
-  - residuation equivalences
-  induces: []
-  notes: ''
-  citations:
-  - wp-residuated-lattice
-  - gierz-order
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: j_ordered_ring
-  label: ring + total order
-  primaryDomain: order
-  domains:
-  - order
-  - algebra
-  - number-theory
-  level: 8
-  kind: junction
-  summary: Put a compatible total order on a ring.
-  carriers: []
-  data: []
-  axioms: []
-  induces: []
-  notes: 'Construction junction: it is a visual device, not a separate standard mathematical structure.'
-  citations:
-  - wp-ordered-ring
-  - gierz-order
-  combination:
-    inputs:
-    - ring
-    - total_order
-    compatibility: Addition preserves order and products of nonnegative elements are nonnegative.
-    output: ordered_ring
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: bounded_distributive_lattice
-  label: Bounded distributive lattice
-  primaryDomain: order
-  domains:
-  - order
-  - algebra
-  - logic
-  level: 9
-  kind: structure
-  summary: A distributive lattice equipped with bottom and top.
-  carriers:
-  - set $L$
-  data:
-  - meet
-  - join
-  - bottom
-  - top
-  axioms:
-  - bounded-lattice laws
-  - distributive laws
-  induces: []
-  notes: ''
-  citations:
-  - wp-distributive-lattice
-  - gierz-order
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: frame
-  label: Frame / complete Heyting algebra
-  primaryDomain: order
-  domains:
-  - order
-  - logic
-  - topology
-  - category-theory
-  level: 9
-  kind: structure
-  summary: A complete lattice in which finite meets distribute over arbitrary joins.
-  carriers:
-  - complete lattice $L$
-  data: []
-  axioms:
-  - $a\wedge\bigvee S=\bigvee\{a\wedge s:s\in S\}$
-  induces:
-  - Heyting implication
-  notes: ''
-  citations:
-  - wp-frame-order
-  - nlab-frame
-  - gierz-order
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: ordered_ring
-  label: Ordered ring
-  primaryDomain: order
-  domains:
-  - order
-  - algebra
-  - number-theory
-  level: 9
-  kind: structure
-  summary: A ring whose total order is compatible with addition and multiplication.
-  carriers:
-  - set $R$
-  data:
-  - ring structure
-  - total order
-  axioms:
-  - translation invariance
-  - nonnegative products are nonnegative
-  induces: []
-  notes: ''
-  citations:
-  - wp-ordered-ring
-  - gierz-order
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: boolean_algebra
-  label: Boolean algebra
-  primaryDomain: order
-  domains:
-  - order
-  - logic
-  - algebra
-  level: 10
-  kind: structure
-  summary: A bounded distributive lattice in which every element has a complement.
-  carriers:
-  - set $B$
-  data:
-  - meet
-  - join
-  - complement
-  - '0'
-  - '1'
-  axioms:
-  - bounded distributive laws
-  - complement laws
-  induces: []
-  notes: ''
-  citations:
-  - wp-boolean-algebra
-  - gierz-order
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: heyting_algebra
-  label: Heyting algebra
-  primaryDomain: order
-  domains:
-  - order
-  - logic
-  - algebra
-  level: 10
-  kind: structure
-  summary: A bounded lattice with an implication operation right-adjoint to meet.
-  carriers:
-  - set $H$
-  data:
-  - meet
-  - join
-  - implication
-  - '0'
-  - '1'
-  axioms:
-  - $a\wedge b \le c$ exactly when $a \le (b\to c)$
-  induces: []
-  notes: ''
-  citations:
-  - wp-heyting-algebra
-  - gierz-order
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: complete_boolean_algebra
-  label: Complete Boolean algebra
-  primaryDomain: order
-  domains:
-  - order
-  - logic
-  - algebra
-  level: 11
-  kind: structure
-  summary: A Boolean algebra that is complete as a lattice.
-  carriers:
-  - set $B$
-  data:
-  - Boolean-algebra operations
-  axioms:
-  - arbitrary joins and meets exist
-  induces: []
-  notes: ''
-  citations:
-  - wp-boolean-algebra
-  - wp-complete-lattice
-  - gierz-order
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: j_ordered_field
-  label: field + total order
-  primaryDomain: order
-  domains:
-  - order
-  - algebra
-  - number-theory
-  level: 11
-  kind: junction
-  summary: Put a compatible total order on a field.
-  carriers: []
-  data: []
-  axioms: []
-  induces: []
-  notes: 'Construction junction: it is a visual device, not a separate standard mathematical structure.'
-  citations:
-  - wp-ordered-field
-  - gierz-order
-  combination:
-    inputs:
-    - field
-    - total_order
-    compatibility: The field operations preserve the ordered-ring laws.
-    output: ordered_field
-  primaryField: mathematics
-  fields:
-  - mathematics
-- id: ordered_field
-  label: Ordered field
-  primaryDomain: order
-  domains:
-  - order
-  - algebra
-  - number-theory
-  level: 12
-  kind: structure
-  summary: A field equipped with an order making it an ordered ring.
-  carriers:
-  - set $F$
-  data:
-  - field structure
-  - total order
-  axioms:
-  - ordered-ring compatibility
-  induces: []
-  notes: ''
-  citations:
-  - wp-ordered-field
-  - gierz-order
-  primaryField: mathematics
-  fields:
-  - mathematics
+  - id: binary_relation
+    label: Binary relation
+    level: 1
+    kind: structure
+    summary: A relation from one set to another, represented by a subset of their Cartesian product.
+    carriers:
+      - source set $X$
+      - target set $Y$
+    data:
+      - subset $R \subseteq X \times Y$
+    axioms: []
+    induces: []
+    notes: Order, equivalence, accessibility, and well-foundedness use the endorelation specialization $X=Y$.
+    citations:
+      - wp-relation
+      - gierz-order
+    primaryDomain: order
+    domains:
+      - order
+      - logic
+      - set-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: equivalence_relation
+    label: Equivalence relation
+    level: 2
+    kind: structure
+    summary: A relation that partitions a set into equivalence classes.
+    carriers:
+      - set $X$
+    data:
+      - binary relation $\sim$
+    axioms:
+      - reflexive
+      - symmetric
+      - transitive
+    induces:
+      - quotient set $X/\sim$
+    notes: ''
+    citations:
+      - wp-equivalence
+      - gierz-order
+    primaryDomain: order
+    domains:
+      - order
+      - logic
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: preorder
+    label: Preorder
+    level: 2
+    kind: structure
+    summary: A reflexive and transitive binary relation.
+    carriers:
+      - set $X$
+    data:
+      - binary relation $\le$
+    axioms:
+      - reflexive
+      - transitive
+    induces: []
+    notes: ''
+    citations:
+      - wp-preorder
+      - gierz-order
+    primaryDomain: order
+    domains:
+      - order
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: partial_order
+    label: Partial order / poset
+    level: 3
+    kind: structure
+    summary: A preorder in which mutual comparability forces equality.
+    carriers:
+      - set $X$
+    data:
+      - binary relation $\le$
+    axioms:
+      - reflexive
+      - transitive
+      - antisymmetric
+    induces: []
+    notes: ''
+    citations:
+      - wp-poset
+      - gierz-order
+    primaryDomain: order
+    domains:
+      - order
+      - combinatorics
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: bounded_poset
+    label: Bounded poset
+    primaryDomain: order
+    domains:
+      - order
+    level: 4
+    kind: structure
+    summary: A poset with a least element and a greatest element.
+    carriers:
+      - set $P$
+    data:
+      - partial order
+      - bottom $\bot$
+      - top $\top$
+    axioms:
+      - $\bot\le x\le\top$ for every $x$
+    induces: []
+    notes: Least and greatest elements, when they exist, are unique; boundedness is an existence property.
+    citations:
+      - wp-bounded-poset
+      - gierz-order
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: directed_set
+    label: Directed set
+    primaryDomain: order
+    domains:
+      - order
+      - topology
+      - analysis
+    level: 4
+    kind: structure
+    summary: A nonempty preorder in which every pair has a common upper bound.
+    carriers:
+      - set $D$
+    data:
+      - preorder
+    axioms:
+      - nonempty carrier
+      - for any $x,y$ there is $z$ with $x\le z$ and $y\le z$
+    induces: []
+    notes: ''
+    citations:
+      - wp-directed-set
+      - gierz-order
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: join_semilattice
+    label: Join-semilattice
+    primaryDomain: order
+    domains:
+      - order
+      - algebra
+    level: 4
+    kind: structure
+    summary: A poset in which every pair has a least upper bound.
+    carriers:
+      - set $L$
+    data:
+      - partial order; equivalently, a binary join operation
+    axioms:
+      - every pair has a join
+    induces: []
+    notes: ''
+    citations:
+      - wp-semilattice
+      - gierz-order
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: meet_semilattice
+    label: Meet-semilattice
+    primaryDomain: order
+    domains:
+      - order
+      - algebra
+    level: 4
+    kind: structure
+    summary: A poset in which every pair has a greatest lower bound.
+    carriers:
+      - set $L$
+    data:
+      - partial order; equivalently, a binary meet operation
+    axioms:
+      - every pair has a meet
+    induces: []
+    notes: ''
+    citations:
+      - wp-semilattice
+      - gierz-order
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: total_order
+    label: Total order
+    level: 4
+    kind: structure
+    summary: A partial order in which every pair is comparable.
+    carriers:
+      - set $X$
+    data:
+      - binary relation $\le$
+    axioms:
+      - partial-order axioms
+      - 'totality: $x \le y$ or $y \le x$'
+    induces: []
+    notes: ''
+    citations:
+      - wp-total-order
+      - gierz-order
+    primaryDomain: order
+    domains:
+      - order
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: j_ordered_group
+    label: group + total order
+    primaryDomain: order
+    domains:
+      - order
+      - algebra
+    level: 5
+    kind: junction
+    summary: Put a compatible total order on a group.
+    carriers: []
+    data: []
+    axioms: []
+    induces: []
+    notes: 'Construction junction: it is a visual device, not a separate standard mathematical structure.'
+    citations:
+      - wp-ordered-group
+      - gierz-order
+    combination:
+      inputs:
+        - group
+        - total_order
+      compatibility: The order is invariant under translation by group elements.
+      output: ordered_group
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: j_lattice
+    label: meet + join
+    primaryDomain: order
+    domains:
+      - order
+      - algebra
+    level: 5
+    kind: junction
+    summary: Combine compatible meet- and join-semilattice structure on one order.
+    carriers: []
+    data: []
+    axioms: []
+    induces: []
+    notes: 'Construction junction: it is a visual device, not a separate standard mathematical structure.'
+    citations:
+      - nlab-lattice
+      - gierz-order
+    combination:
+      inputs:
+        - meet_semilattice
+        - join_semilattice
+      compatibility: The meet and join are computed with respect to the same partial order.
+      output: lattice
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: well_order
+    label: Well-order
+    primaryDomain: order
+    domains:
+      - order
+      - logic
+      - number-theory
+    level: 5
+    kind: structure
+    summary: A total order in which every nonempty subset has a least element.
+    carriers:
+      - set $W$
+    data:
+      - total order
+    axioms:
+      - well-ordering property
+    induces: []
+    notes: ''
+    citations:
+      - wp-well-order
+      - gierz-order
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: dcpo
+    label: Directed-complete partial order
+    primaryDomain: order
+    domains:
+      - order
+      - logic
+    level: 6
+    kind: structure
+    summary: A poset in which every directed subset has a supremum.
+    carriers:
+      - poset $P$
+    data: []
+    axioms:
+      - every directed subset has a least upper bound
+    induces: []
+    notes: ''
+    citations:
+      - wp-dcpo
+      - nlab-dcpo
+      - gierz-order
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: lattice
+    label: Lattice
+    primaryDomain: order
+    domains:
+      - order
+      - algebra
+    level: 6
+    kind: structure
+    summary: A poset in which every pair has both a meet and a join.
+    carriers:
+      - set $L$
+    data:
+      - partial order; binary meet and join
+    axioms:
+      - meet and join are the greatest lower and least upper bounds
+    induces: []
+    notes: ''
+    citations:
+      - nlab-lattice
+      - gierz-order
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: ordered_group
+    label: Totally ordered group
+    primaryDomain: order
+    domains:
+      - order
+      - algebra
+    level: 6
+    kind: structure
+    summary: A group equipped with a translation-invariant total order.
+    carriers:
+      - set $G$
+    data:
+      - group structure
+      - total order
+    axioms:
+      - $a\le b$ implies $xay\le xby$ for all $x,y$ (equivalently, left and right translations preserve order)
+    induces: []
+    notes: “Ordered group” can mean a partially ordered group in some literature. This node specifically means a totally ordered group.
+    citations:
+      - wp-ordered-group
+      - gierz-order
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: bounded_lattice
+    label: Bounded lattice
+    primaryDomain: order
+    domains:
+      - order
+      - algebra
+    level: 7
+    kind: structure
+    summary: A lattice with a least and a greatest element.
+    carriers:
+      - set $L$
+    data:
+      - lattice structure
+      - bottom $\bot$
+      - top $\top$
+    axioms:
+      - $\bot$ and $\top$ bound every element
+    induces: []
+    notes: ''
+    citations:
+      - wp-bounded-lattice
+      - gierz-order
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: distributive_lattice
+    label: Distributive lattice
+    primaryDomain: order
+    domains:
+      - order
+      - algebra
+    level: 7
+    kind: structure
+    summary: A lattice whose meet and join distribute over one another.
+    carriers:
+      - set $L$
+    data:
+      - lattice structure
+    axioms:
+      - both distributive laws
+    induces: []
+    notes: ''
+    citations:
+      - wp-distributive-lattice
+      - gierz-order
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: j_lgroup
+    label: group + lattice order
+    primaryDomain: order
+    domains:
+      - order
+      - algebra
+    level: 7
+    kind: junction
+    summary: Compatibility construction producing Lattice-ordered group.
+    carriers: []
+    data: []
+    axioms: []
+    induces: []
+    notes: All incoming branches are jointly required.
+    citations:
+      - wp-lattice-ordered-group
+      - gierz-order
+    combination:
+      inputs:
+        - group
+        - lattice
+      compatibility: Require left and right translations to preserve the lattice order.
+      output: lattice_ordered_group
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: j_residuated
+    label: lattice + monoid with residuals
+    primaryDomain: order
+    domains:
+      - order
+      - logic
+      - algebra
+    level: 7
+    kind: junction
+    summary: Compatibility construction producing Residuated lattice.
+    carriers: []
+    data: []
+    axioms: []
+    induces: []
+    notes: All incoming branches are jointly required.
+    citations:
+      - wp-residuated-lattice
+      - gierz-order
+    combination:
+      inputs:
+        - lattice
+        - monoid
+      compatibility: Require monoid multiplication to be monotone and admit left and right residuals with respect to the order.
+      output: residuated_lattice
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: cpo
+    label: Pointed CPO
+    primaryDomain: order
+    domains:
+      - order
+      - logic
+    level: 7
+    kind: structure
+    summary: A directed-complete partial order with a least element.
+    carriers:
+      - dcpo $P$
+    data:
+      - least element $\bot$
+    axioms:
+      - $\bot\le x$ for every $x$
+    induces: []
+    notes: 'Terminology varies: some authors use CPO for a dcpo without requiring a least element; this atlas uses “pointed CPO”. The least element is unique if it exists.'
+    citations:
+      - wp-cpo
+      - nlab-cpo
+      - gierz-order
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: j_bounded_distributive
+    label: bounded + distributive
+    primaryDomain: order
+    domains:
+      - order
+      - algebra
+      - logic
+    level: 8
+    kind: junction
+    summary: Combine bounds with distributive lattice laws.
+    carriers: []
+    data: []
+    axioms: []
+    induces: []
+    notes: 'Construction junction: it is a visual device, not a separate standard mathematical structure.'
+    citations:
+      - wp-distributive-lattice
+      - wp-bounded-lattice
+      - gierz-order
+    combination:
+      inputs:
+        - bounded_lattice
+        - distributive_lattice
+      compatibility: The bounds, meet, and join belong to the same lattice structure.
+      output: bounded_distributive_lattice
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: complete_lattice
+    label: Complete lattice
+    primaryDomain: order
+    domains:
+      - order
+    level: 8
+    kind: structure
+    summary: A poset in which every subset has both a supremum and an infimum.
+    carriers:
+      - set $L$
+    data:
+      - partial order
+    axioms:
+      - all joins and meets exist
+    induces: []
+    notes: ''
+    citations:
+      - wp-complete-lattice
+      - gierz-order
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: lattice_ordered_group
+    label: Lattice-ordered group
+    primaryDomain: order
+    domains:
+      - order
+      - algebra
+    level: 8
+    kind: structure
+    summary: A group with a lattice order invariant under translations.
+    carriers:
+      - group $G$
+      - lattice order $\le$
+    data: []
+    axioms:
+      - multiplication preserves order
+    induces: []
+    notes: Every totally ordered group is lattice-ordered, but not conversely.
+    citations:
+      - wp-lattice-ordered-group
+      - gierz-order
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: residuated_lattice
+    label: Residuated lattice
+    primaryDomain: order
+    domains:
+      - order
+      - logic
+      - algebra
+    level: 8
+    kind: structure
+    summary: A lattice-ordered monoid whose multiplication has residuals.
+    carriers:
+      - lattice $L$
+      - monoid structure
+    data:
+      - left and right residual operations
+    axioms:
+      - residuation equivalences
+    induces: []
+    notes: ''
+    citations:
+      - wp-residuated-lattice
+      - gierz-order
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: j_ordered_ring
+    label: ring + total order
+    primaryDomain: order
+    domains:
+      - order
+      - algebra
+      - number-theory
+    level: 8
+    kind: junction
+    summary: Put a compatible total order on a ring.
+    carriers: []
+    data: []
+    axioms: []
+    induces: []
+    notes: 'Construction junction: it is a visual device, not a separate standard mathematical structure.'
+    citations:
+      - wp-ordered-ring
+      - gierz-order
+    combination:
+      inputs:
+        - ring
+        - total_order
+      compatibility: Addition preserves order and products of nonnegative elements are nonnegative.
+      output: ordered_ring
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: bounded_distributive_lattice
+    label: Bounded distributive lattice
+    primaryDomain: order
+    domains:
+      - order
+      - algebra
+      - logic
+    level: 9
+    kind: structure
+    summary: A distributive lattice equipped with bottom and top.
+    carriers:
+      - set $L$
+    data:
+      - meet
+      - join
+      - bottom
+      - top
+    axioms:
+      - bounded-lattice laws
+      - distributive laws
+    induces: []
+    notes: ''
+    citations:
+      - wp-distributive-lattice
+      - gierz-order
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: frame
+    label: Frame / complete Heyting algebra
+    primaryDomain: order
+    domains:
+      - order
+      - logic
+      - topology
+      - category-theory
+    level: 9
+    kind: structure
+    summary: A complete lattice in which finite meets distribute over arbitrary joins.
+    carriers:
+      - complete lattice $L$
+    data: []
+    axioms:
+      - $a\wedge\bigvee S=\bigvee\{a\wedge s:s\in S\}$
+    induces:
+      - Heyting implication
+    notes: ''
+    citations:
+      - wp-frame-order
+      - nlab-frame
+      - gierz-order
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: ordered_ring
+    label: Ordered ring
+    primaryDomain: order
+    domains:
+      - order
+      - algebra
+      - number-theory
+    level: 9
+    kind: structure
+    summary: A ring whose total order is compatible with addition and multiplication.
+    carriers:
+      - set $R$
+    data:
+      - ring structure
+      - total order
+    axioms:
+      - translation invariance
+      - nonnegative products are nonnegative
+    induces: []
+    notes: ''
+    citations:
+      - wp-ordered-ring
+      - gierz-order
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: boolean_algebra
+    label: Boolean algebra
+    primaryDomain: order
+    domains:
+      - order
+      - logic
+      - algebra
+    level: 10
+    kind: structure
+    summary: A bounded distributive lattice in which every element has a complement.
+    carriers:
+      - set $B$
+    data:
+      - meet
+      - join
+      - complement
+      - '0'
+      - '1'
+    axioms:
+      - bounded distributive laws
+      - complement laws
+    induces: []
+    notes: ''
+    citations:
+      - wp-boolean-algebra
+      - gierz-order
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: heyting_algebra
+    label: Heyting algebra
+    primaryDomain: order
+    domains:
+      - order
+      - logic
+      - algebra
+    level: 10
+    kind: structure
+    summary: A bounded lattice with an implication operation right-adjoint to meet.
+    carriers:
+      - set $H$
+    data:
+      - meet
+      - join
+      - implication
+      - '0'
+      - '1'
+    axioms:
+      - $a\wedge b \le c$ exactly when $a \le (b\to c)$
+    induces: []
+    notes: ''
+    citations:
+      - wp-heyting-algebra
+      - gierz-order
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: complete_boolean_algebra
+    label: Complete Boolean algebra
+    primaryDomain: order
+    domains:
+      - order
+      - logic
+      - algebra
+    level: 11
+    kind: structure
+    summary: A Boolean algebra that is complete as a lattice.
+    carriers:
+      - set $B$
+    data:
+      - Boolean-algebra operations
+    axioms:
+      - arbitrary joins and meets exist
+    induces: []
+    notes: ''
+    citations:
+      - wp-boolean-algebra
+      - wp-complete-lattice
+      - gierz-order
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: j_ordered_field
+    label: field + total order
+    primaryDomain: order
+    domains:
+      - order
+      - algebra
+      - number-theory
+    level: 11
+    kind: junction
+    summary: Put a compatible total order on a field.
+    carriers: []
+    data: []
+    axioms: []
+    induces: []
+    notes: 'Construction junction: it is a visual device, not a separate standard mathematical structure.'
+    citations:
+      - wp-ordered-field
+      - gierz-order
+    combination:
+      inputs:
+        - field
+        - total_order
+      compatibility: The field operations preserve the ordered-ring laws.
+      output: ordered_field
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: ordered_field
+    label: Ordered field
+    primaryDomain: order
+    domains:
+      - order
+      - algebra
+      - number-theory
+    level: 12
+    kind: structure
+    summary: A field equipped with an order making it an ordered ring.
+    carriers:
+      - set $F$
+    data:
+      - field structure
+      - total order
+    axioms:
+      - ordered-ring compatibility
+    induces: []
+    notes: ''
+    citations:
+      - wp-ordered-field
+      - gierz-order
+    primaryField: mathematics
+    fields:
+      - mathematics
 edges:
-- id: e_rel_equiv
-  source: binary_relation
-  target: equivalence_relation
-  type: impose-axiom
-  label: + reflexive, symmetric, transitive
-  detail: First specialize to an endorelation $X=Y$; restrict to equivalence relations.
-  citations:
-  - wp-equivalence
-  - gierz-order
-- id: e_relation_function
-  source: binary_relation
-  target: function
-  type: impose-axiom
-  label: + total and single-valued
-  detail: Specialize to a relation $R\subseteq X\times Y$ that is total and single-valued in $X$; this is exactly a function $X\to Y$.
-  citations:
-  - wp-function
-  - nlab-function
-  - openlogic-set-theory
-- id: relation_to_modal_kripke
-  source: binary_relation
-  target: modal_kripke_model
-  type: add-data
-  label: add propositional valuation
-  detail: Specialize to an endorelation on worlds, treat it as accessibility, and assign atomic propositions to worlds.
-  citations:
-  - wp-kripke-semantics
-  - openlogic-model-theory
-- id: e_rel_preorder
-  source: binary_relation
-  target: preorder
-  type: impose-axiom
-  label: + reflexive, transitive
-  detail: First specialize to an endorelation $X=Y$; restrict to reflexive and transitive relations.
-  citations:
-  - wp-preorder
-  - gierz-order
-- id: e_relation_well_founded
-  source: binary_relation
-  target: well_founded_relation
-  type: impose-axiom
-  label: + well-foundedness
-  detail: First specialize to an endorelation $X=Y$; require every nonempty subset to have a minimal element.
-  citations:
-  - wp-well-founded
-  - nlab-well-founded
-  - openlogic-set-theory
-- id: boolean_to_complete_boolean
-  source: boolean_algebra
-  target: complete_boolean_algebra
-  type: impose-axiom
-  label: require completeness
-  detail: Require arbitrary joins and meets.
-  citations:
-  - wp-complete-lattice
-  - gierz-order
-- id: boolean_to_modal
-  source: boolean_algebra
-  target: modal_algebra
-  type: add-data
-  label: add modal operator
-  detail: Add a normal unary operator interpreting necessity.
-  citations:
-  - wp-modal-algebra
-  - openlogic-model-theory
-- id: bounded_distributive_to_boolean
-  source: bounded_distributive_lattice
-  target: boolean_algebra
-  type: impose-axiom
-  label: + complements exist
-  detail: Require every element to have a complement; distributivity makes it unique.
-  citations:
-  - wp-boolean-algebra
-  - gierz-order
-- id: bounded_distributive_to_heyting
-  source: bounded_distributive_lattice
-  target: heyting_algebra
-  type: impose-axiom
-  label: + relative pseudocomplements exist
-  detail: Require every meet map $a\wedge -$ to have a right adjoint $a\to -$.
-  citations:
-  - wp-heyting-algebra
-  - gierz-order
-- id: bounded_lattice_to_bounded_poset
-  source: bounded_lattice
-  target: bounded_poset
-  type: induced-forgotten
-  label: forget meet and join operations
-  detail: Retain the partial order with its least and greatest elements.
-  citations:
-  - wp-bounded-lattice
-  - wp-bounded-poset
-  - gierz-order
-- id: bounded_to_j_bounded_distributive
-  source: bounded_lattice
-  target: j_bounded_distributive
-  type: combine-compatible
-  label: supply bounds
-  detail: Use the bounded-lattice structure.
-  citations:
-  - wp-bounded-lattice
-  - gierz-order
-- id: complete_boolean_to_complete_lattice
-  source: complete_boolean_algebra
-  target: complete_lattice
-  type: induced-forgotten
-  label: forget Boolean operations
-  detail: Retain the underlying complete lattice of a complete Boolean algebra.
-  citations:
-  - wp-complete-lattice
-  - wp-boolean-algebra
-  - gierz-order
-- id: complete_lattice_to_bounded_lattice
-  source: complete_lattice
-  target: bounded_lattice
-  type: theorem-implication
-  label: has top and bottom
-  detail: The supremum and infimum of the empty subset give the least and greatest elements.
-  citations:
-  - wp-complete-lattice
-  - wp-bounded-lattice
-  - gierz-order
-- id: e_complete_frame
-  source: complete_lattice
-  target: frame
-  type: impose-axiom
-  label: + infinite distributivity
-  detail: Require finite meets to distribute over arbitrary joins.
-  citations:
-  - wp-frame-order
-  - nlab-frame
-  - gierz-order
-- id: e_dcpo_cpo
-  source: dcpo
-  target: cpo
-  type: impose-axiom
-  label: require a least element
-  detail: Select dcpos having a least element; it is unique.
-  citations:
-  - wp-cpo
-  - nlab-cpo
-  - gierz-order
-- id: distributive_to_j_bounded_distributive
-  source: distributive_lattice
-  target: j_bounded_distributive
-  type: combine-compatible
-  label: supply distributivity
-  detail: Use the distributive-lattice structure.
-  citations:
-  - wp-distributive-lattice
-  - gierz-order
-- id: frame_to_heyting
-  source: frame
-  target: heyting_algebra
-  type: induced-forgotten
-  label: retain finite Heyting operations
-  detail: A frame canonically has Heyting implication given by the right adjoint to finite meet.
-  citations:
-  - wp-frame-order
-  - nlab-frame
-  - wp-heyting-algebra
-  - gierz-order
-- id: e_frame_locale
-  source: frame
-  target: locale
-  type: representation-equivalence
-  label: take opposite category viewpoint
-  detail: Regard the frame as the lattice of opens of a point-free space.
-  citations:
-  - wp-locale
-  - nlab-locale
-  - topology-without-tears
-- id: j_bounded_distributive_to_output
-  source: j_bounded_distributive
-  target: bounded_distributive_lattice
-  type: combine-compatible
-  label: same lattice carries both
-  detail: The bounds and distributive operations coexist on one lattice.
-  citations:
-  - wp-distributive-lattice
-  - gierz-order
-- id: j_lattice_to_lattice
-  source: j_lattice
-  target: lattice
-  type: combine-compatible
-  label: same order supports both
-  detail: The compatible meet and join operations make a lattice.
-  citations:
-  - nlab-lattice
-  - gierz-order
-- id: j_lgroup__out
-  source: j_lgroup
-  target: lattice_ordered_group
-  type: combine-compatible
-  label: impose compatibility
-  detail: Require left and right translations to preserve the lattice order.
-  citations:
-  - wp-lattice-ordered-group
-  - gierz-order
-- id: j_ordered_field_to_output
-  source: j_ordered_field
-  target: ordered_field
-  type: combine-compatible
-  label: require field-order compatibility
-  detail: Require the order to make the field an ordered ring.
-  citations:
-  - wp-ordered-field
-  - gierz-order
-- id: j_ordered_group_to_output
-  source: j_ordered_group
-  target: ordered_group
-  type: combine-compatible
-  label: require translation invariance
-  detail: Require the order to be invariant under the group action by translation.
-  citations:
-  - wp-ordered-group
-  - gierz-order
-- id: j_ordered_ring_to_output
-  source: j_ordered_ring
-  target: ordered_ring
-  type: combine-compatible
-  label: require ordered-ring laws
-  detail: Require addition and multiplication to respect the order.
-  citations:
-  - wp-ordered-ring
-  - gierz-order
-- id: j_residuated__out
-  source: j_residuated
-  target: residuated_lattice
-  type: combine-compatible
-  label: impose compatibility
-  detail: Require monoid multiplication to be monotone and admit left and right residuals with respect to the order.
-  citations:
-  - wp-residuated-lattice
-  - gierz-order
-- id: join_to_j_lattice
-  source: join_semilattice
-  target: j_lattice
-  type: combine-compatible
-  label: supply join structure
-  detail: Use the join-semilattice structure on the common carrier and order.
-  citations:
-  - nlab-lattice
-  - gierz-order
-- id: lattice_to_bounded
-  source: lattice
-  target: bounded_lattice
-  type: impose-axiom
-  label: + least and greatest elements
-  detail: Require the lattice to have a least element and a greatest element.
-  citations:
-  - wp-bounded-lattice
-  - gierz-order
-- id: lattice_to_complete
-  source: lattice
-  target: complete_lattice
-  type: impose-axiom
-  label: require arbitrary meets and joins
-  detail: Require every subset to have an infimum and supremum.
-  citations:
-  - wp-complete-lattice
-  - gierz-order
-- id: lattice_to_distributive
-  source: lattice
-  target: distributive_lattice
-  type: impose-axiom
-  label: impose distributivity
-  detail: Require meet and join to distribute over each other.
-  citations:
-  - wp-distributive-lattice
-  - gierz-order
-- id: j_lgroup__lattice
-  source: lattice
-  target: j_lgroup
-  type: combine-compatible
-  label: lattice order
-  detail: Supply the Lattice structure as one jointly required input.
-  citations:
-  - wp-lattice-ordered-group
-  - gierz-order
-- id: j_residuated__lattice
-  source: lattice
-  target: j_residuated
-  type: combine-compatible
-  label: lattice order
-  detail: Supply the Lattice structure as one jointly required input.
-  citations:
-  - wp-residuated-lattice
-  - gierz-order
-- id: lattice_to_join_semilattice
-  source: lattice
-  target: join_semilattice
-  type: induced-forgotten
-  label: forget meets
-  detail: Retain only the join-semilattice structure.
-  citations:
-  - nlab-lattice
-  - wp-semilattice
-  - gierz-order
-- id: lattice_to_meet_semilattice
-  source: lattice
-  target: meet_semilattice
-  type: induced-forgotten
-  label: forget joins
-  detail: Retain only the meet-semilattice structure.
-  citations:
-  - nlab-lattice
-  - wp-semilattice
-  - gierz-order
-- id: meet_to_j_lattice
-  source: meet_semilattice
-  target: j_lattice
-  type: combine-compatible
-  label: supply meet structure
-  detail: Use the meet-semilattice structure on the common carrier and order.
-  citations:
-  - nlab-lattice
-  - gierz-order
-- id: e_ordered_realclosed
-  source: ordered_field
-  target: real_closed_field
-  type: impose-axiom
-  label: + real closedness
-  detail: Require the ordered field to have no proper algebraic ordered extension.
-  citations:
-  - wp-real-closed
-  - nlab-real-closed
-  - milne-algebraic-number-theory
-- id: poset_to_bounded_poset
-  source: partial_order
-  target: bounded_poset
-  type: impose-axiom
-  label: require least and greatest elements
-  detail: Select posets in which bottom and top exist; each is unique.
-  citations:
-  - wp-bounded-poset
-  - gierz-order
-- id: e_poset_dcpo
-  source: partial_order
-  target: dcpo
-  type: impose-axiom
-  label: + directed suprema
-  detail: Require every directed subset to have a supremum.
-  citations:
-  - wp-dcpo
-  - nlab-dcpo
-  - gierz-order
-- id: poset_to_join_semilattice
-  source: partial_order
-  target: join_semilattice
-  type: impose-axiom
-  label: require binary joins
-  detail: Require every pair to have a least upper bound.
-  citations:
-  - wp-semilattice
-  - gierz-order
-- id: poset_to_meet_semilattice
-  source: partial_order
-  target: meet_semilattice
-  type: impose-axiom
-  label: require binary meets
-  detail: Require every pair to have a greatest lower bound.
-  citations:
-  - wp-semilattice
-  - gierz-order
-- id: e_poset_total
-  source: partial_order
-  target: total_order
-  type: impose-axiom
-  label: + totality
-  detail: Require each pair to be comparable.
-  citations:
-  - wp-total-order
-  - gierz-order
-- id: preorder_to_directed
-  source: preorder
-  target: directed_set
-  type: impose-axiom
-  label: require common upper bounds
-  detail: Require the carrier to be nonempty and every pair to have a common upper bound.
-  citations:
-  - wp-directed-set
-  - gierz-order
-- id: preorder_to_intuitionistic_kripke
-  source: preorder
-  target: intuitionistic_kripke_model
-  type: add-data
-  label: add persistent valuation
-  detail: Add a valuation monotone along the information preorder.
-  citations:
-  - wp-kripke-semantics
-  - openlogic-model-theory
-- id: e_pre_poset
-  source: preorder
-  target: partial_order
-  type: impose-axiom
-  label: + antisymmetry
-  detail: Require $x\le y$ and $y\le x$ to imply $x=y$.
-  citations:
-  - wp-poset
-  - gierz-order
-- id: preorder_to_thin_category
-  source: preorder
-  target: thin_category
-  type: representation-equivalence
-  label: view as a thin category
-  detail: Use elements as objects and a unique morphism $x\to y$ exactly when $x\le y$; thin categories conversely determine preorders on their objects.
-  citations:
-  - wp-preorder
-  - wp-thin-category
-  - riehl-category-context
-- id: total_to_j_ordered_field
-  source: total_order
-  target: j_ordered_field
-  type: combine-compatible
-  label: supply total order
-  detail: Use the total order on the common carrier.
-  citations:
-  - wp-ordered-field
-  - gierz-order
-- id: total_to_j_ordered_group
-  source: total_order
-  target: j_ordered_group
-  type: combine-compatible
-  label: supply total order
-  detail: Use the total order on the common carrier.
-  citations:
-  - wp-ordered-group
-  - gierz-order
-- id: total_to_j_ordered_ring
-  source: total_order
-  target: j_ordered_ring
-  type: combine-compatible
-  label: supply total order
-  detail: Use the total order on the common carrier.
-  citations:
-  - wp-ordered-ring
-  - gierz-order
-- id: total_order_to_well_order
-  source: total_order
-  target: well_order
-  type: impose-axiom
-  label: require least elements
-  detail: Require every nonempty subset to have a least element.
-  citations:
-  - wp-well-order
-  - gierz-order
-- id: e_wellorder_ordinal
-  source: well_order
-  target: ordinal
-  type: canonical-construction
-  label: take ordinal order type
-  detail: Every well-ordered set is uniquely order-isomorphic to one ordinal. This changes to a canonical representative rather than enriching the original carrier.
-  citations:
-  - wp-ordinal
-  - nlab-ordinal
-  - openlogic-set-theory
+  - id: e_rel_equiv
+    source: binary_relation
+    target: equivalence_relation
+    type: impose-axiom
+    label: + reflexive, symmetric, transitive
+    detail: First specialize to an endorelation $X=Y$; restrict to equivalence relations.
+    citations:
+      - wp-equivalence
+      - gierz-order
+  - id: e_relation_function
+    source: binary_relation
+    target: function
+    type: impose-axiom
+    label: + total and single-valued
+    detail: Specialize to a relation $R\subseteq X\times Y$ that is total and single-valued in $X$; this is exactly a function $X\to Y$.
+    citations:
+      - wp-function
+      - nlab-function
+      - openlogic-set-theory
+  - id: relation_to_modal_kripke
+    source: binary_relation
+    target: modal_kripke_model
+    type: add-data
+    label: add propositional valuation
+    detail: Specialize to an endorelation on worlds, treat it as accessibility, and assign atomic propositions to worlds.
+    citations:
+      - wp-kripke-semantics
+      - openlogic-model-theory
+  - id: e_rel_preorder
+    source: binary_relation
+    target: preorder
+    type: impose-axiom
+    label: + reflexive, transitive
+    detail: First specialize to an endorelation $X=Y$; restrict to reflexive and transitive relations.
+    citations:
+      - wp-preorder
+      - gierz-order
+  - id: e_relation_well_founded
+    source: binary_relation
+    target: well_founded_relation
+    type: impose-axiom
+    label: + well-foundedness
+    detail: First specialize to an endorelation $X=Y$; require every nonempty subset to have a minimal element.
+    citations:
+      - wp-well-founded
+      - nlab-well-founded
+      - openlogic-set-theory
+  - id: boolean_to_complete_boolean
+    source: boolean_algebra
+    target: complete_boolean_algebra
+    type: impose-axiom
+    label: require completeness
+    detail: Require arbitrary joins and meets.
+    citations:
+      - wp-complete-lattice
+      - gierz-order
+  - id: boolean_to_modal
+    source: boolean_algebra
+    target: modal_algebra
+    type: add-data
+    label: add modal operator
+    detail: Add a normal unary operator interpreting necessity.
+    citations:
+      - wp-modal-algebra
+      - openlogic-model-theory
+  - id: bounded_distributive_to_boolean
+    source: bounded_distributive_lattice
+    target: boolean_algebra
+    type: impose-axiom
+    label: + complements exist
+    detail: Require every element to have a complement; distributivity makes it unique.
+    citations:
+      - wp-boolean-algebra
+      - gierz-order
+  - id: bounded_distributive_to_heyting
+    source: bounded_distributive_lattice
+    target: heyting_algebra
+    type: impose-axiom
+    label: + relative pseudocomplements exist
+    detail: Require every meet map $a\wedge -$ to have a right adjoint $a\to -$.
+    citations:
+      - wp-heyting-algebra
+      - gierz-order
+  - id: bounded_lattice_to_bounded_poset
+    source: bounded_lattice
+    target: bounded_poset
+    type: induced-forgotten
+    label: forget meet and join operations
+    detail: Retain the partial order with its least and greatest elements.
+    citations:
+      - wp-bounded-lattice
+      - wp-bounded-poset
+      - gierz-order
+  - id: bounded_to_j_bounded_distributive
+    source: bounded_lattice
+    target: j_bounded_distributive
+    type: combine-compatible
+    label: supply bounds
+    detail: Use the bounded-lattice structure.
+    citations:
+      - wp-bounded-lattice
+      - gierz-order
+  - id: complete_boolean_to_complete_lattice
+    source: complete_boolean_algebra
+    target: complete_lattice
+    type: induced-forgotten
+    label: forget Boolean operations
+    detail: Retain the underlying complete lattice of a complete Boolean algebra.
+    citations:
+      - wp-complete-lattice
+      - wp-boolean-algebra
+      - gierz-order
+  - id: complete_lattice_to_bounded_lattice
+    source: complete_lattice
+    target: bounded_lattice
+    type: theorem-implication
+    label: has top and bottom
+    detail: The supremum and infimum of the empty subset give the least and greatest elements.
+    citations:
+      - wp-complete-lattice
+      - wp-bounded-lattice
+      - gierz-order
+  - id: e_complete_frame
+    source: complete_lattice
+    target: frame
+    type: impose-axiom
+    label: + infinite distributivity
+    detail: Require finite meets to distribute over arbitrary joins.
+    citations:
+      - wp-frame-order
+      - nlab-frame
+      - gierz-order
+  - id: e_dcpo_cpo
+    source: dcpo
+    target: cpo
+    type: impose-axiom
+    label: require a least element
+    detail: Select dcpos having a least element; it is unique.
+    citations:
+      - wp-cpo
+      - nlab-cpo
+      - gierz-order
+  - id: distributive_to_j_bounded_distributive
+    source: distributive_lattice
+    target: j_bounded_distributive
+    type: combine-compatible
+    label: supply distributivity
+    detail: Use the distributive-lattice structure.
+    citations:
+      - wp-distributive-lattice
+      - gierz-order
+  - id: frame_to_heyting
+    source: frame
+    target: heyting_algebra
+    type: induced-forgotten
+    label: retain finite Heyting operations
+    detail: A frame canonically has Heyting implication given by the right adjoint to finite meet.
+    citations:
+      - wp-frame-order
+      - nlab-frame
+      - wp-heyting-algebra
+      - gierz-order
+  - id: e_frame_locale
+    source: frame
+    target: locale
+    type: representation-equivalence
+    label: take opposite category viewpoint
+    detail: Regard the frame as the lattice of opens of a point-free space.
+    citations:
+      - wp-locale
+      - nlab-locale
+      - topology-without-tears
+  - id: j_bounded_distributive_to_output
+    source: j_bounded_distributive
+    target: bounded_distributive_lattice
+    type: combine-compatible
+    label: same lattice carries both
+    detail: The bounds and distributive operations coexist on one lattice.
+    citations:
+      - wp-distributive-lattice
+      - gierz-order
+  - id: j_lattice_to_lattice
+    source: j_lattice
+    target: lattice
+    type: combine-compatible
+    label: same order supports both
+    detail: The compatible meet and join operations make a lattice.
+    citations:
+      - nlab-lattice
+      - gierz-order
+  - id: j_lgroup__out
+    source: j_lgroup
+    target: lattice_ordered_group
+    type: combine-compatible
+    label: impose compatibility
+    detail: Require left and right translations to preserve the lattice order.
+    citations:
+      - wp-lattice-ordered-group
+      - gierz-order
+  - id: j_ordered_field_to_output
+    source: j_ordered_field
+    target: ordered_field
+    type: combine-compatible
+    label: require field-order compatibility
+    detail: Require the order to make the field an ordered ring.
+    citations:
+      - wp-ordered-field
+      - gierz-order
+  - id: j_ordered_group_to_output
+    source: j_ordered_group
+    target: ordered_group
+    type: combine-compatible
+    label: require translation invariance
+    detail: Require the order to be invariant under the group action by translation.
+    citations:
+      - wp-ordered-group
+      - gierz-order
+  - id: j_ordered_ring_to_output
+    source: j_ordered_ring
+    target: ordered_ring
+    type: combine-compatible
+    label: require ordered-ring laws
+    detail: Require addition and multiplication to respect the order.
+    citations:
+      - wp-ordered-ring
+      - gierz-order
+  - id: j_residuated__out
+    source: j_residuated
+    target: residuated_lattice
+    type: combine-compatible
+    label: impose compatibility
+    detail: Require monoid multiplication to be monotone and admit left and right residuals with respect to the order.
+    citations:
+      - wp-residuated-lattice
+      - gierz-order
+  - id: join_to_j_lattice
+    source: join_semilattice
+    target: j_lattice
+    type: combine-compatible
+    label: supply join structure
+    detail: Use the join-semilattice structure on the common carrier and order.
+    citations:
+      - nlab-lattice
+      - gierz-order
+  - id: lattice_to_bounded
+    source: lattice
+    target: bounded_lattice
+    type: impose-axiom
+    label: + least and greatest elements
+    detail: Require the lattice to have a least element and a greatest element.
+    citations:
+      - wp-bounded-lattice
+      - gierz-order
+  - id: lattice_to_complete
+    source: lattice
+    target: complete_lattice
+    type: impose-axiom
+    label: require arbitrary meets and joins
+    detail: Require every subset to have an infimum and supremum.
+    citations:
+      - wp-complete-lattice
+      - gierz-order
+  - id: lattice_to_distributive
+    source: lattice
+    target: distributive_lattice
+    type: impose-axiom
+    label: impose distributivity
+    detail: Require meet and join to distribute over each other.
+    citations:
+      - wp-distributive-lattice
+      - gierz-order
+  - id: j_lgroup__lattice
+    source: lattice
+    target: j_lgroup
+    type: combine-compatible
+    label: lattice order
+    detail: Supply the Lattice structure as one jointly required input.
+    citations:
+      - wp-lattice-ordered-group
+      - gierz-order
+  - id: j_residuated__lattice
+    source: lattice
+    target: j_residuated
+    type: combine-compatible
+    label: lattice order
+    detail: Supply the Lattice structure as one jointly required input.
+    citations:
+      - wp-residuated-lattice
+      - gierz-order
+  - id: lattice_to_join_semilattice
+    source: lattice
+    target: join_semilattice
+    type: induced-forgotten
+    label: forget meets
+    detail: Retain only the join-semilattice structure.
+    citations:
+      - nlab-lattice
+      - wp-semilattice
+      - gierz-order
+  - id: lattice_to_meet_semilattice
+    source: lattice
+    target: meet_semilattice
+    type: induced-forgotten
+    label: forget joins
+    detail: Retain only the meet-semilattice structure.
+    citations:
+      - nlab-lattice
+      - wp-semilattice
+      - gierz-order
+  - id: meet_to_j_lattice
+    source: meet_semilattice
+    target: j_lattice
+    type: combine-compatible
+    label: supply meet structure
+    detail: Use the meet-semilattice structure on the common carrier and order.
+    citations:
+      - nlab-lattice
+      - gierz-order
+  - id: e_ordered_realclosed
+    source: ordered_field
+    target: real_closed_field
+    type: impose-axiom
+    label: + real closedness
+    detail: Require the ordered field to have no proper algebraic ordered extension.
+    citations:
+      - wp-real-closed
+      - nlab-real-closed
+      - milne-algebraic-number-theory
+  - id: poset_to_bounded_poset
+    source: partial_order
+    target: bounded_poset
+    type: impose-axiom
+    label: require least and greatest elements
+    detail: Select posets in which bottom and top exist; each is unique.
+    citations:
+      - wp-bounded-poset
+      - gierz-order
+  - id: e_poset_dcpo
+    source: partial_order
+    target: dcpo
+    type: impose-axiom
+    label: + directed suprema
+    detail: Require every directed subset to have a supremum.
+    citations:
+      - wp-dcpo
+      - nlab-dcpo
+      - gierz-order
+  - id: poset_to_join_semilattice
+    source: partial_order
+    target: join_semilattice
+    type: impose-axiom
+    label: require binary joins
+    detail: Require every pair to have a least upper bound.
+    citations:
+      - wp-semilattice
+      - gierz-order
+  - id: poset_to_meet_semilattice
+    source: partial_order
+    target: meet_semilattice
+    type: impose-axiom
+    label: require binary meets
+    detail: Require every pair to have a greatest lower bound.
+    citations:
+      - wp-semilattice
+      - gierz-order
+  - id: e_poset_total
+    source: partial_order
+    target: total_order
+    type: impose-axiom
+    label: + totality
+    detail: Require each pair to be comparable.
+    citations:
+      - wp-total-order
+      - gierz-order
+  - id: preorder_to_directed
+    source: preorder
+    target: directed_set
+    type: impose-axiom
+    label: require common upper bounds
+    detail: Require the carrier to be nonempty and every pair to have a common upper bound.
+    citations:
+      - wp-directed-set
+      - gierz-order
+  - id: preorder_to_intuitionistic_kripke
+    source: preorder
+    target: intuitionistic_kripke_model
+    type: add-data
+    label: add persistent valuation
+    detail: Add a valuation monotone along the information preorder.
+    citations:
+      - wp-kripke-semantics
+      - openlogic-model-theory
+  - id: e_pre_poset
+    source: preorder
+    target: partial_order
+    type: impose-axiom
+    label: + antisymmetry
+    detail: Require $x\le y$ and $y\le x$ to imply $x=y$.
+    citations:
+      - wp-poset
+      - gierz-order
+  - id: preorder_to_thin_category
+    source: preorder
+    target: thin_category
+    type: representation-equivalence
+    label: view as a thin category
+    detail: Use elements as objects and a unique morphism $x\to y$ exactly when $x\le y$; thin categories conversely determine preorders on their objects.
+    citations:
+      - wp-preorder
+      - wp-thin-category
+      - riehl-category-context
+  - id: total_to_j_ordered_field
+    source: total_order
+    target: j_ordered_field
+    type: combine-compatible
+    label: supply total order
+    detail: Use the total order on the common carrier.
+    citations:
+      - wp-ordered-field
+      - gierz-order
+  - id: total_to_j_ordered_group
+    source: total_order
+    target: j_ordered_group
+    type: combine-compatible
+    label: supply total order
+    detail: Use the total order on the common carrier.
+    citations:
+      - wp-ordered-group
+      - gierz-order
+  - id: total_to_j_ordered_ring
+    source: total_order
+    target: j_ordered_ring
+    type: combine-compatible
+    label: supply total order
+    detail: Use the total order on the common carrier.
+    citations:
+      - wp-ordered-ring
+      - gierz-order
+  - id: total_order_to_well_order
+    source: total_order
+    target: well_order
+    type: impose-axiom
+    label: require least elements
+    detail: Require every nonempty subset to have a least element.
+    citations:
+      - wp-well-order
+      - gierz-order
+  - id: e_wellorder_ordinal
+    source: well_order
+    target: ordinal
+    type: canonical-construction
+    label: take ordinal order type
+    detail: Every well-ordered set is uniquely order-isomorphic to one ordinal. This changes to a canonical representative rather than enriching the original carrier.
+    citations:
+      - wp-ordinal
+      - nlab-ordinal
+      - openlogic-set-theory

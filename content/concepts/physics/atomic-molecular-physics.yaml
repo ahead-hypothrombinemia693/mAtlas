@@ -1,2140 +1,2140 @@
 nodes:
-- id: nonrelativistic_qed
-  label: Nonrelativistic QED
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 18
-  kind: structure
-  conceptType: Low-energy effective field theory
-  summary: An effective field theory for nonrelativistic charged particles coupled to photons, organized in powers of velocity, $1/m$, and the fine-structure constant.
-  citations:
-  - wp-physics-nonrelativistic_qed
-  - burgess-eft
-  - penco-eft
-- id: atomic_hamiltonian
-  label: Atomic Hamiltonian
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 23
-  kind: structure
-  conceptType: Many-body Hamiltonian
-  summary: The Hamiltonian describing nuclear and electronic kinetic energy plus electromagnetic interactions, with relativistic, finite-size, recoil, and QED refinements as required.
-  citations:
-  - wp-physics-atomic_hamiltonian
-  - nlab-physics-atomic_hamiltonian
-  - nist-atomic-spectroscopy
-  - nist-atomic-wavefunctions
-- id: electromagnetic_binding
-  label: Electromagnetic atomic binding
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 23
-  kind: structure
-  conceptType: Binding mechanism
-  summary: The binding of electrons to a positively charged nucleus through the electromagnetic interaction, modified by quantum statistics, relativity, nuclear structure, and QED.
-  citations:
-  - wp-physics-electromagnetic_interaction
-  - nist-atomic-spectroscopy
-  - tong-em
-- id: electron_electron_coulomb_interaction
-  label: Electron–electron Coulomb interaction
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 24
-  kind: structure
-  conceptType: Many-body interaction
-  summary: The repulsive pair interaction among atomic electrons, responsible for much of many-electron structure and correlation.
-  citations:
-  - wp-physics-electron_electron_coulomb_interaction
-  - nist-atomic-spectroscopy
-  - nist-atomic-wavefunctions
-- id: electron_nucleus_coulomb_interaction
-  label: Electron–nucleus Coulomb interaction
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 24
-  kind: structure
-  conceptType: Binding interaction
-  summary: The attractive Coulomb interaction between negatively charged electrons and the positive nuclear charge distribution.
-  citations:
-  - wp-physics-electron_nucleus_coulomb_interaction
-  - nist-atomic-spectroscopy
-  - tong-quantum
-- id: nonrelativistic_coulomb_hamiltonian
-  label: Nonrelativistic Coulomb Hamiltonian
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 24
-  kind: structure
-  conceptType: Effective Hamiltonian
-  summary: The Schrödinger many-body Hamiltonian with kinetic energies and instantaneous Coulomb interactions among nuclei and electrons.
-  citations:
-  - wp-physics-atomic_hamiltonian
-  - nist-atomic-spectroscopy
-  - tong-quantum
-- id: center_of_mass_separation
-  label: Center-of-mass separation
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 25
-  kind: structure
-  conceptType: Exact or approximate reduction
-  summary: Separation of overall translational motion from internal atomic motion; exact for isolated nonrelativistic systems with translation-invariant interactions.
-  citations:
-  - wp-physics-center_of_mass_separation
-  - nist-atomic-spectroscopy
-- id: relativistic_atomic_structure
-  label: Relativistic atomic structure
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 25
-  kind: structure
-  conceptType: Relativistic effective framework
-  summary: Atomic structure based on Dirac electrons and relativistic electromagnetic interactions, increasingly important for high nuclear charge and precision.
-  citations:
-  - wp-physics-relativistic_atomic_structure
-  - nist-atomic-spectroscopy
-  - nist-codata
-- id: dirac_coulomb_hamiltonian
-  label: Dirac–Coulomb Hamiltonian
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 26
-  kind: structure
-  conceptType: Relativistic many-electron Hamiltonian
-  summary: A many-electron Hamiltonian using one-electron Dirac operators and instantaneous Coulomb interactions, usually in the no-pair approximation.
-  citations:
-  - wp-physics-relativistic_atomic_structure
-  - nist-atomic-spectroscopy
-- id: infinite_nuclear_mass_approximation
-  label: Infinite-nuclear-mass approximation
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 26
-  kind: structure
-  conceptType: Controlled approximation
-  summary: An approximation fixing the nucleus at the origin and neglecting recoil, controlled by the electron-to-nucleus mass ratio.
-  citations:
-  - wp-physics-infinite_nuclear_mass_approximation
-  - nist-atomic-spectroscopy
-  - nist-codata
-- id: reduced_mass_approximation
-  label: Reduced-mass treatment
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 26
-  kind: structure
-  conceptType: Finite-mass correction
-  summary: The exact two-body reduction or leading finite-nuclear-mass treatment replacing electron mass by electron–nucleus reduced mass.
-  citations:
-  - wp-physics-reduced_mass_approximation
-  - nist-hydrogen
-  - nist-codata
-- id: atomic_qed_corrections
-  label: Atomic QED corrections
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 27
-  kind: structure
-  conceptType: Precision correction framework
-  summary: Radiative and vacuum effects from QED added to bound-state energies and transition amplitudes, including self-energy and vacuum polarization.
-  citations:
-  - wp-physics-quantum_electrodynamics
-  - nist-hydrogen
-  - nobel-qed
-- id: breit_interaction
-  label: Breit interaction
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 27
-  kind: structure
-  conceptType: Relativistic correction
-  summary: The leading frequency-independent transverse-photon correction to the instantaneous Coulomb interaction between electrons.
-  citations:
-  - wp-physics-breit_interaction
-  - nist-atomic-spectroscopy
-- id: chemical_element
-  label: Chemical element
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 27
-  kind: structure
-  conceptType: Classification by nuclear charge
-  summary: The class of atoms and ions with the same proton number $Z$.
-  citations:
-  - wp-physics-chemical_element
-  - iupac-atom
-  - iupac-nuclide
-- id: nuclear_recoil
-  label: Nuclear recoil correction
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 27
-  kind: structure
-  conceptType: Finite-mass correction
-  summary: Corrections caused by nuclear motion, including reduced-mass and mass-polarization terms.
-  citations:
-  - wp-physics-nuclear_recoil
-  - nist-atomic-spectroscopy
-  - nist-hydrogen
-- id: atom
-  label: Atom
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 28
-  kind: structure
-  conceptType: Composite system
-  summary: An electrically neutral system consisting of a nucleus and bound electrons, identified chemically by the proton number of its nucleus.
-  citations:
-  - wp-physics-atom
-  - nlab-physics-atom
-  - iupac-atom
-  - nist-atomic-spectroscopy
-  scale: Ångström
-- id: electron_self_energy
-  label: Bound-electron self-energy
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 28
-  kind: structure
-  conceptType: QED radiative correction
-  summary: The radiative correction to an electron propagator or bound-electron energy arising from virtual electron–photon interactions, after regularization and renormalization.
-  citations:
-  - wp-physics-electron_self_energy
-  - nist-hydrogen
-  - nobel-qed
-- id: one_electron_atom
-  label: One-electron atomic system
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 28
-  kind: structure
-  conceptType: Atomic system class
-  summary: An atom or ion with a single bound electron. In the nonrelativistic point-nucleus Coulomb model, center-of-mass separation reduces the exact two-body problem to a one-body equation with the electron–nucleus reduced mass; finite-size, relativistic, and QED effects are corrections.
-  citations:
-  - wp-physics-one_electron_atom
-  - nist-hydrogen
-  - nist-atomic-states
-- id: vacuum_polarization
-  label: Vacuum polarization
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 28
-  kind: structure
-  conceptType: QED radiative correction
-  summary: A radiative correction in which charged-field loops modify the photon propagator and therefore the effective electromagnetic response, producing effects such as the Uehling potential.
-  citations:
-  - wp-physics-vacuum_polarization
-  - nist-hydrogen
-  - nobel-qed
-- id: darwin_term
-  label: Darwin term
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 29
-  kind: structure
-  conceptType: Relativistic correction
-  summary: A contact-like correction in the low-energy expansion of the Dirac equation, affecting primarily states with nonzero density at the nucleus.
-  citations:
-  - wp-physics-darwin_term
-  - nist-hydrogen
-- id: screening_effect
-  label: Electronic screening
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 29
-  kind: structure
-  conceptType: Many-electron effect
-  summary: Reduction and reshaping of the effective nuclear attraction experienced by an electron due to the other electrons’ charge distribution and correlations.
-  citations:
-  - wp-physics-screening_effect
-  - nist-atomic-spectroscopy
-- id: exchange_interaction
-  label: Exchange interaction
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 29
-  kind: structure
-  conceptType: Fermionic exchange effect
-  summary: Energy and state-structure effects arising from antisymmetry of identical-fermion states; it is not an additional fundamental force.
-  citations:
-  - wp-physics-exchange_interaction
-  - nist-atomic-spectroscopy
-  - nist-atomic-wavefunctions
-- id: hydrogen_atom
-  label: Hydrogen atom
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 29
-  kind: structure
-  conceptType: Atom
-  summary: The neutral one-proton, one-electron atom; its spectrum is the benchmark for quantum mechanics, relativity, nuclear effects, and QED.
-  citations:
-  - wp-physics-hydrogen_atom
-  - nlab-physics-hydrogen_atom
-  - nist-hydrogen
-  - nist-asd-levels
-- id: hydrogenic_ion
-  label: Hydrogen-like ion
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 29
-  kind: structure
-  conceptType: Ion class
-  summary: An ion with one bound electron and nuclear charge $Z$, such as $\mathrm{He}^+$.
-  citations:
-  - wp-physics-one_electron_atom
-  - nist-atomic-spectroscopy
-  - nist-asd-levels
-- id: many_electron_atom
-  label: Many-electron atom
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 29
-  kind: structure
-  conceptType: Composite quantum system
-  summary: An atom with two or more electrons, requiring antisymmetrization and treatment of electron–electron interaction and correlation.
-  citations:
-  - wp-physics-atomic_hamiltonian
-  - nist-atomic-spectroscopy
-  - nist-atomic-wavefunctions
-- id: orbital_quantum_number
-  label: Orbital angular-momentum quantum number $l$
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 29
-  kind: structure
-  conceptType: Quantum number
-  summary: The nonnegative integer labeling an orbital angular-momentum representation, with $l=0,\ldots,n-1$ for hydrogenic bound states.
-  citations:
-  - wp-physics-orbital_quantum_number
-  - nist-atomic-spectroscopy
-- id: principal_quantum_number
-  label: Principal quantum number $n$
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 29
-  kind: structure
-  conceptType: Quantum number
-  summary: The positive-integer radial/shell label for hydrogenic bound states and a principal shell label in central-field atomic descriptions.
-  citations:
-  - wp-physics-principal_quantum_number
-  - nist-atomic-spectroscopy
-- id: relativistic_kinetic_correction
-  label: Relativistic kinetic-energy correction
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 29
-  kind: structure
-  conceptType: Relativistic correction
-  summary: The leading correction to nonrelativistic kinetic energy from expanding the relativistic energy–momentum relation.
-  citations:
-  - wp-physics-fine_structure
-  - nist-hydrogen
-- id: spin_orbit_coupling
-  label: Spin–orbit coupling
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 29
-  kind: structure
-  conceptType: Relativistic interaction
-  summary: Coupling between an electron’s spin and orbital motion in the electric field, contributing to fine structure.
-  citations:
-  - wp-physics-spin_orbit_coupling
-  - nist-atomic-spectroscopy
-- id: atomic_orbital
-  label: Atomic orbital
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 30
-  kind: structure
-  conceptType: State representation
-  summary: A one-electron wavefunction or basis function used in exact one-electron atoms and approximate many-electron descriptions; it is not a classical electron trajectory.
-  citations:
-  - wp-physics-atomic_orbital
-  - nlab-physics-atomic_orbital
-  - iupac-atomic-orbital
-  - nist-atomic-states
-  sections:
-  - title: Qualification
-    body: Orbitals are not classical electron trajectories and are representation-dependent ingredients of atomic and molecular models.
-- id: atomic_state
-  label: Atomic state
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 30
-  kind: structure
-  conceptType: Quantum state
-  summary: A stationary, metastable, resonance, or continuum state of the full atom, labeled by total angular momentum, parity, configuration, and other quantum numbers.
-  citations:
-  - wp-physics-atomic_state
-  - nist-asd-levels
-  - nist-atomic-states
-- id: central_field_approximation
-  label: Central-field approximation
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 30
-  kind: structure
-  conceptType: Controlled approximation
-  summary: An approximation replacing the nonspherical instantaneous many-electron interaction by an effective spherically symmetric one-electron potential.
-  citations:
-  - wp-physics-central_field_approximation
-  - nist-atomic-spectroscopy
-  - nist-atomic-wavefunctions
-- id: configuration_state_function
-  label: Configuration-state function
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 30
-  kind: structure
-  conceptType: Antisymmetric basis state
-  summary: A symmetry-adapted linear combination of Slater determinants with specified angular momentum, spin, parity, or other quantum numbers.
-  citations:
-  - wp-physics-configuration_state_function
-  - nist-atomic-spectroscopy
-  - nist-atomic-states
-- id: electron_shell
-  label: Electron shell
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 30
-  kind: structure
-  conceptType: Organizational classification
-  summary: A group of one-electron states sharing a principal-shell label, especially a common principal quantum number in hydrogenic or central-field descriptions; it is a classification of states, not a literal spherical material layer.
-  citations:
-  - wp-physics-electron_shell
-  - nist-atomic-states
-- id: finite_nuclear_size_effect
-  label: Finite nuclear-size effect
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 30
-  kind: structure
-  conceptType: Nuclear-structure correction
-  summary: The shift of atomic levels caused by the extended nuclear charge distribution rather than an ideal point charge.
-  citations:
-  - wp-physics-finite_nuclear_size_effect
-  - nist-hydrogen
-  - nist-codata
-- id: independent_particle_model
-  label: Independent-particle model
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 30
-  kind: structure
-  conceptType: Mean-field approximation
-  summary: An approximation representing a many-electron state using independently occupied one-electron orbitals in an effective field, with antisymmetry imposed for fermions.
-  citations:
-  - wp-physics-independent_particle_model
-  - nist-atomic-wavefunctions
-  - nist-atomic-spectroscopy
-- id: magnetic_quantum_number
-  label: Magnetic quantum number $m$
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 30
-  kind: structure
-  conceptType: Quantum number
-  summary: The projection label of angular momentum along a chosen axis, ranging from $-j$ to $j$ in unit steps for angular momentum $j$.
-  citations:
-  - wp-physics-magnetic_quantum_number
-  - nist-atomic-spectroscopy
-- id: rutherford_model
-  label: Rutherford nuclear atom model
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 30
-  kind: structure
-  conceptType: Historical approximate model
-  summary: A small positive nucleus with orbiting electrons; it established nuclear concentration of charge but lacks quantum stability and spectra.
-  citations:
-  - wp-physics-rutherford_model
-  - nist-atomic-spectroscopy
-- id: spin_projection_quantum_number
-  label: Spin-projection quantum number $m_s$
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 30
-  kind: structure
-  conceptType: Quantum number
-  summary: The projection of electron spin along a chosen axis, $m_s=\pm1/2$.
-  citations:
-  - wp-physics-spin_projection_quantum_number
-  - nist-atomic-spectroscopy
-- id: atomic_energy_level
-  label: Atomic energy level
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 31
-  kind: structure
-  conceptType: Quantum state class
-  summary: A discrete energy eigenvalue or spectroscopically resolved level of an atom or atomic ion, including degeneracy and fine or hyperfine structure as appropriate.
-  citations:
-  - wp-physics-atomic_energy_level
-  - iupac-energy-level
-  - nist-asd-levels
-- id: bohr_model
-  label: Bohr model
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 31
-  kind: structure
-  conceptType: Historical semiclassical model
-  summary: A semiclassical one-electron model with quantized circular orbits, reproducing the gross hydrogen spectrum but not general quantum structure.
-  citations:
-  - wp-physics-bohr_model
-  - nist-hydrogen
-  - nist-atomic-spectroscopy
-- id: density_functional_theory
-  label: Density-functional theory
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 31
-  kind: structure
-  conceptType: Ground-state many-body formulation and approximation family
-  summary: An exact ground-state density formulation in the Hohenberg–Kohn sense, implemented in practice through Kohn–Sham orbitals and approximate exchange–correlation functionals.
-  citations:
-  - wp-physics-density_functional_theory
-  - nist-atomic-wavefunctions
-  - aps-hohenberg-kohn
-  - aps-kohn-sham
-- id: electron_configuration
-  label: Electron configuration
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 31
-  kind: structure
-  conceptType: Many-electron basis classification
-  summary: An occupation pattern over atomic orbitals or subshells used to organize many-electron basis states; the exact state can be a superposition of configurations.
-  citations:
-  - wp-physics-electron_configuration
-  - nlab-physics-electron_configuration
-  - nist-atomic-states
-  - nist-atomic-spectroscopy
-- id: electron_correlation
-  label: Electron correlation
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 31
-  kind: structure
-  conceptType: Many-body effect
-  summary: Electronic motion beyond a chosen independent-particle or Hartree–Fock description, including dynamical and near-degeneracy correlation.
-  citations:
-  - wp-physics-electron_correlation
-  - nist-atomic-wavefunctions
-- id: electron_subshell
-  label: Electron subshell
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 31
-  kind: structure
-  conceptType: Organizational classification
-  summary: A grouping of one-electron states by principal and orbital angular-momentum quantum numbers, refined by spin–orbit coupling.
-  citations:
-  - wp-physics-electron_shell
-  - nist-atomic-states
-- id: hartree_method
-  label: Hartree method
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 31
-  kind: structure
-  conceptType: Self-consistent-field approximation
-  summary: A variational product-state mean-field method in which each electron moves in the average electrostatic field of the others; it omits exact exchange antisymmetry.
-  citations:
-  - wp-physics-hartree_method
-  - nist-atomic-wavefunctions
-- id: hartree_fock_method
-  label: Hartree–Fock method
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 31
-  kind: structure
-  conceptType: Self-consistent-field approximation
-  summary: A variational single-Slater-determinant method including exchange exactly within that determinant but omitting correlation beyond it.
-  citations:
-  - wp-physics-hartree_fock_method
-  - nist-atomic-wavefunctions
-- id: jj_coupling
-  label: jj coupling
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 31
-  kind: structure
-  conceptType: Angular-momentum coupling scheme
-  summary: A coupling approximation in which each electron’s $l_i$ and $s_i$ first form $j_i$, after which the $j_i$ combine to total $J$.
-  citations:
-  - wp-physics-ls_coupling
-  - nist-atomic-spectroscopy
-- id: ls_coupling
-  label: LS coupling
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 31
-  kind: structure
-  conceptType: Angular-momentum coupling scheme
-  summary: A coupling approximation in which individual orbital angular momenta combine to total $L$, individual spins to total $S$, and then $L$ and $S$ combine to total $J$.
-  citations:
-  - wp-physics-ls_coupling
-  - nist-atomic-spectroscopy
-- id: rydberg_formula
-  label: Rydberg formula
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 31
-  kind: structure
-  conceptType: Spectral relation
-  summary: The leading hydrogenic relation between transition wavenumbers and principal quantum numbers, corrected in precision work for reduced mass, relativity, QED, and nuclear structure.
-  citations:
-  - wp-physics-rydberg_formula
-  - nist-hydrogen
-  - nist-codata
-- id: total_angular_momentum_quantum_number
-  label: Total angular-momentum quantum number $J$
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 31
-  kind: structure
-  conceptType: Quantum number
-  summary: The quantum number labeling total electronic angular momentum after coupling orbital and spin contributions.
-  citations:
-  - wp-physics-total_angular_momentum_quantum_number
-  - nist-atomic-spectroscopy
-- id: fine_structure
-  label: Atomic fine structure
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 32
-  kind: structure
-  conceptType: Relativistic energy structure
-  summary: Splittings from relativistic kinematics, spin–orbit coupling, and related relativistic electromagnetic terms, scaling roughly as powers of $Z\alpha$.
-  citations:
-  - wp-physics-fine_structure
-  - nlab-physics-fine_structure
-  - nist-atomic-spectroscopy
-  - nist-asd-levels
-- id: selection_rule
-  label: Atomic selection rule
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 32
-  kind: structure
-  conceptType: Symmetry-derived constraint
-  summary: A condition causing a transition matrix element to vanish or be suppressed under an approximation and specified interaction multipole.
-  citations:
-  - wp-physics-selection_rule
-  - nist-atomic-spectroscopy
-- id: atomic_term_symbol
-  label: Atomic term symbol
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 32
-  kind: structure
-  conceptType: State label
-  summary: A compact label such as $^{2S+1}L_J$ for angular-momentum coupling, parity, and related atomic-state quantum numbers.
-  citations:
-  - wp-physics-atomic_term_symbol
-  - nist-atomic-states
-  - nist-asd-levels
-- id: configuration_interaction_method
-  label: Configuration interaction
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 32
-  kind: structure
-  conceptType: Many-body approximation method
-  summary: A variational expansion of an atomic state in multiple configuration-state functions, recovering correlation within the chosen basis and excitation space.
-  citations:
-  - wp-physics-configuration_interaction_method
-  - nist-atomic-wavefunctions
-- id: coupled_cluster_method
-  label: Coupled-cluster method
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 32
-  kind: structure
-  conceptType: Many-body approximation method
-  summary: An exponential correlated-wavefunction method with systematic truncations such as singles and doubles, widely used for high-accuracy electronic structure.
-  citations:
-  - wp-physics-coupled_cluster_method
-  - nist-atomic-wavefunctions
-- id: hyperfine_structure
-  label: Atomic hyperfine structure
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 33
-  kind: structure
-  conceptType: Nuclear–electronic energy structure
-  summary: Splittings from interactions of electronic fields and angular momentum with nuclear magnetic dipole and electric quadrupole moments.
-  citations:
-  - wp-physics-hyperfine_structure
-  - nlab-physics-hyperfine_structure
-  - nist-atomic-spectroscopy
-  - nist-asd-levels
-- id: ionization_process
-  label: Atomic ionization
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 33
-  kind: structure
-  conceptType: Transformation process
-  summary: Removal of one or more bound electrons by photons, collisions, fields, or other interactions.
-  citations:
-  - wp-physics-ionization_process
-  - iupac-ionization
-  - nist-atomic-spectroscopy
-- id: atomic_spectrum
-  label: Atomic spectrum
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 33
-  kind: structure
-  conceptType: Observable pattern
-  summary: Discrete and continuum electromagnetic absorption or emission frequencies determined by atomic energy differences and transition amplitudes.
-  citations:
-  - wp-physics-atomic_spectrum
-  - nist-atomic-spectroscopy
-  - nist-atomic-spectra
-- id: atomic_transition
-  label: Atomic transition
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 33
-  kind: structure
-  conceptType: Quantum process
-  summary: A change between atomic states induced or accompanied by photon absorption, emission, collisions, or other interactions.
-  citations:
-  - wp-physics-atomic_energy_level
-  - nist-atomic-spectroscopy
-  - nist-asd-levels
-- id: lamb_shift
-  label: Lamb shift
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 33
-  kind: structure
-  conceptType: Atomic energy correction
-  summary: The QED-dominated splitting of levels that are degenerate in the Dirac–Coulomb approximation, notably hydrogen $2S_{1/2}$ and $2P_{1/2}$.
-  citations:
-  - wp-physics-lamb_shift
-  - nlab-physics-lamb_shift
-  - nist-hydrogen
-  - nobel-qed
-- id: absorption
-  label: Atomic absorption
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 34
-  kind: structure
-  conceptType: Radiative process
-  summary: A transition in which the atom gains energy from an electromagnetic quantum or classical field.
-  citations:
-  - wp-physics-absorption
-  - nist-atomic-spectroscopy
-- id: isotope_shift
-  label: Atomic isotope shift
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 34
-  kind: structure
-  conceptType: Nuclear-structure-dependent spectral shift
-  summary: The change of atomic transition frequency between isotopes due chiefly to nuclear-mass recoil and nuclear charge-radius differences.
-  citations:
-  - wp-physics-isotope_shift
-  - nist-atomic-spectroscopy
-  - iaea-livechart
-- id: electric_dipole_transition
-  label: Electric-dipole transition
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 34
-  kind: structure
-  conceptType: Leading radiative transition
-  summary: A transition governed at leading order by the electric dipole operator, with corresponding angular-momentum and parity selection rules.
-  citations:
-  - wp-physics-electric_dipole_transition
-  - nist-atomic-spectroscopy
-- id: ion
-  label: Ion
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 34
-  kind: structure
-  conceptType: Charged system
-  summary: An atom or molecular entity carrying a net electric charge because its total number of electrons differs from its total nuclear charge.
-  citations:
-  - wp-physics-ion
-  - iupac-ion
-  - iupac-ionization
-- id: spontaneous_emission
-  label: Spontaneous emission
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 34
-  kind: structure
-  conceptType: QED radiative process
-  summary: Decay of an excited atomic state by coupling to vacuum electromagnetic modes, with photon emission when allowed.
-  citations:
-  - wp-physics-spontaneous_emission
-  - nist-atomic-spectroscopy
-  - tong-qft
-- id: stark_effect
-  label: Stark effect
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 34
-  kind: structure
-  conceptType: External-field perturbation
-  summary: Splitting and shifting of atomic levels in an applied electric field.
-  citations:
-  - wp-physics-stark_effect
-  - nist-atomic-spectroscopy
-- id: stimulated_emission
-  label: Stimulated emission
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 34
-  kind: structure
-  conceptType: Driven radiative process
-  summary: Emission driven by an incident electromagnetic field, producing radiation coherent with the stimulating field in frequency, phase, polarization, and propagation mode.
-  citations:
-  - wp-physics-stimulated_emission
-  - nist-atomic-spectroscopy
-- id: zeeman_effect
-  label: Zeeman effect
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 34
-  kind: structure
-  conceptType: External-field perturbation
-  summary: Splitting and shifting of atomic levels in an applied magnetic field.
-  citations:
-  - wp-physics-zeeman_effect
-  - nist-atomic-spectroscopy
-- id: anion
-  label: Anion
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 35
-  kind: structure
-  conceptType: Ion class
-  summary: A negatively charged atom or molecule with more electrons than total nuclear charge.
-  citations:
-  - wp-physics-ion
-  - iupac-ion
-- id: cation
-  label: Cation
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 35
-  kind: structure
-  conceptType: Ion class
-  summary: A positively charged atom or molecule with fewer electrons than total nuclear charge.
-  citations:
-  - wp-physics-ion
-  - iupac-ion
-- id: molecule
-  label: Molecule
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 35
-  kind: structure
-  conceptType: Composite system
-  summary: An electrically neutral entity consisting of more than one atom; its bound structure and spectra arise from quantum states of electrons and nuclei.
-  citations:
-  - wp-physics-molecule
-  - iupac-molecule
-  scale: Molecular
-- id: ionization_energy
-  label: Ionization energy
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  level: 32
-  kind: structure
-  conceptType: Separation energy
-  summary: The minimum energy required to remove an electron from an atom or ion in its ground state, for a specified charge state and final channel.
-  citations:
-  - wp-physics-ionization_energy
-  - nist-ionization-energy
-  - nist-atomic-spectroscopy
-- id: balmer_hydrogen_spectrum_observations
-  label: Balmer hydrogen-spectrum observations
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  - experiments-observations
-  level: 30
-  kind: structure
-  conceptType: Canonical observation
-  summary: The visible hydrogen lines summarized by Balmer’s 1885 formula exhibited a regular discrete spectrum that classical atomic models could not explain.
-  citations:
-  - wp-physics-balmer_hydrogen_spectrum_observations
-  - nist-atomic-spectrum-history
-  status: Observed / performed
-  sections:
-  - title: Historical role
-    body: Hydrogen spectroscopy motivated empirical spectral formulas and later the Bohr model; modern quantum mechanics explains the levels and transition amplitudes.
-- id: perrin_brownian_motion_experiments
-  label: Perrin Brownian-motion experiments
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  - experiments-observations
-  level: 29
-  kind: structure
-  conceptType: Canonical experiment program
-  summary: Jean Perrin’s quantitative studies of Brownian particles tested Einstein’s statistical theory, estimated Avogadro’s number by several methods, and supplied strong evidence for molecular and atomic reality.
-  citations:
-  - wp-physics-perrin_brownian_motion_experiments
-  - nobel-perrin
-  status: Observed / performed
-- id: moseley_xray_spectroscopy
-  label: Moseley X-ray spectroscopy
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  - experiments-observations
-  level: 28
-  kind: structure
-  conceptType: Canonical measurement
-  summary: Moseley found that characteristic X-ray frequencies track an integer nuclear charge, establishing atomic number as a physical ordering principle.
-  citations:
-  - wp-physics-moseley_xray_spectroscopy
-  - nist-atomic-spectrum-history
-  status: Observed / performed
-- id: franck_hertz_experiment
-  label: Franck–Hertz experiment
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  - experiments-observations
-  level: 32
-  kind: structure
-  conceptType: Canonical experiment
-  summary: Electrons lose energy to mercury atoms in discrete increments, providing direct evidence for quantized atomic excitation energies.
-  citations:
-  - wp-physics-franck_hertz_experiment
-  - nobel-franck-hertz
-  status: Observed / performed
-  sections:
-  - title: Historical qualification
-    body: Franck and Hertz initially interpreted the observed threshold as ionization; its later interpretation as discrete excitation energy supplied the canonical quantum-level test.
-- id: lamb_retherford_experiment
-  label: Lamb–Retherford experiment
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  - experiments-observations
-  level: 34
-  kind: structure
-  conceptType: Canonical precision experiment
-  summary: Microwave spectroscopy showed that hydrogen’s $2S_{1/2}$ and $2P_{1/2}$ levels are not degenerate, revealing the Lamb shift and driving renormalized QED calculations.
-  citations:
-  - wp-physics-lamb_shift
-  - nobel-lamb
-  - nist-qed-tests
-  status: Observed / performed
-- id: proton_radius_puzzle
-  label: Proton-radius puzzle
-  primaryField: physics
-  fields:
-  - physics
-  primaryDomain: atomic-molecular-physics
-  domains:
-  - atomic-molecular-physics
-  - experiments-observations
-  level: 27
-  kind: structure
-  conceptType: Precision anomaly / problem
-  summary: Muonic-hydrogen spectroscopy initially inferred a proton charge radius significantly smaller than the value from ordinary hydrogen and electron scattering, motivating renewed recoil, finite-size, and radiative analyses.
-  citations:
-  - wp-physics-proton_radius_puzzle
-  - nist-codata-2022
-  status: Observed / performed
+  - id: nonrelativistic_qed
+    label: Nonrelativistic QED
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 18
+    kind: structure
+    conceptType: Low-energy effective field theory
+    summary: An effective field theory for nonrelativistic charged particles coupled to photons, organized in powers of velocity, $1/m$, and the fine-structure constant.
+    citations:
+      - wp-physics-nonrelativistic_qed
+      - burgess-eft
+      - penco-eft
+  - id: atomic_hamiltonian
+    label: Atomic Hamiltonian
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 23
+    kind: structure
+    conceptType: Many-body Hamiltonian
+    summary: The Hamiltonian describing nuclear and electronic kinetic energy plus electromagnetic interactions, with relativistic, finite-size, recoil, and QED refinements as required.
+    citations:
+      - wp-physics-atomic_hamiltonian
+      - nlab-physics-atomic_hamiltonian
+      - nist-atomic-spectroscopy
+      - nist-atomic-wavefunctions
+  - id: electromagnetic_binding
+    label: Electromagnetic atomic binding
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 23
+    kind: structure
+    conceptType: Binding mechanism
+    summary: The binding of electrons to a positively charged nucleus through the electromagnetic interaction, modified by quantum statistics, relativity, nuclear structure, and QED.
+    citations:
+      - wp-physics-electromagnetic_interaction
+      - nist-atomic-spectroscopy
+      - tong-em
+  - id: electron_electron_coulomb_interaction
+    label: Electron–electron Coulomb interaction
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 24
+    kind: structure
+    conceptType: Many-body interaction
+    summary: The repulsive pair interaction among atomic electrons, responsible for much of many-electron structure and correlation.
+    citations:
+      - wp-physics-electron_electron_coulomb_interaction
+      - nist-atomic-spectroscopy
+      - nist-atomic-wavefunctions
+  - id: electron_nucleus_coulomb_interaction
+    label: Electron–nucleus Coulomb interaction
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 24
+    kind: structure
+    conceptType: Binding interaction
+    summary: The attractive Coulomb interaction between negatively charged electrons and the positive nuclear charge distribution.
+    citations:
+      - wp-physics-electron_nucleus_coulomb_interaction
+      - nist-atomic-spectroscopy
+      - tong-quantum
+  - id: nonrelativistic_coulomb_hamiltonian
+    label: Nonrelativistic Coulomb Hamiltonian
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 24
+    kind: structure
+    conceptType: Effective Hamiltonian
+    summary: The Schrödinger many-body Hamiltonian with kinetic energies and instantaneous Coulomb interactions among nuclei and electrons.
+    citations:
+      - wp-physics-atomic_hamiltonian
+      - nist-atomic-spectroscopy
+      - tong-quantum
+  - id: center_of_mass_separation
+    label: Center-of-mass separation
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 25
+    kind: structure
+    conceptType: Exact or approximate reduction
+    summary: Separation of overall translational motion from internal atomic motion; exact for isolated nonrelativistic systems with translation-invariant interactions.
+    citations:
+      - wp-physics-center_of_mass_separation
+      - nist-atomic-spectroscopy
+  - id: relativistic_atomic_structure
+    label: Relativistic atomic structure
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 25
+    kind: structure
+    conceptType: Relativistic effective framework
+    summary: Atomic structure based on Dirac electrons and relativistic electromagnetic interactions, increasingly important for high nuclear charge and precision.
+    citations:
+      - wp-physics-relativistic_atomic_structure
+      - nist-atomic-spectroscopy
+      - nist-codata
+  - id: dirac_coulomb_hamiltonian
+    label: Dirac–Coulomb Hamiltonian
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 26
+    kind: structure
+    conceptType: Relativistic many-electron Hamiltonian
+    summary: A many-electron Hamiltonian using one-electron Dirac operators and instantaneous Coulomb interactions, usually in the no-pair approximation.
+    citations:
+      - wp-physics-relativistic_atomic_structure
+      - nist-atomic-spectroscopy
+  - id: infinite_nuclear_mass_approximation
+    label: Infinite-nuclear-mass approximation
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 26
+    kind: structure
+    conceptType: Controlled approximation
+    summary: An approximation fixing the nucleus at the origin and neglecting recoil, controlled by the electron-to-nucleus mass ratio.
+    citations:
+      - wp-physics-infinite_nuclear_mass_approximation
+      - nist-atomic-spectroscopy
+      - nist-codata
+  - id: reduced_mass_approximation
+    label: Reduced-mass treatment
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 26
+    kind: structure
+    conceptType: Finite-mass correction
+    summary: The exact two-body reduction or leading finite-nuclear-mass treatment replacing electron mass by electron–nucleus reduced mass.
+    citations:
+      - wp-physics-reduced_mass_approximation
+      - nist-hydrogen
+      - nist-codata
+  - id: atomic_qed_corrections
+    label: Atomic QED corrections
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 27
+    kind: structure
+    conceptType: Precision correction framework
+    summary: Radiative and vacuum effects from QED added to bound-state energies and transition amplitudes, including self-energy and vacuum polarization.
+    citations:
+      - wp-physics-quantum_electrodynamics
+      - nist-hydrogen
+      - nobel-qed
+  - id: breit_interaction
+    label: Breit interaction
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 27
+    kind: structure
+    conceptType: Relativistic correction
+    summary: The leading frequency-independent transverse-photon correction to the instantaneous Coulomb interaction between electrons.
+    citations:
+      - wp-physics-breit_interaction
+      - nist-atomic-spectroscopy
+  - id: chemical_element
+    label: Chemical element
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 27
+    kind: structure
+    conceptType: Classification by nuclear charge
+    summary: The class of atoms and ions with the same proton number $Z$.
+    citations:
+      - wp-physics-chemical_element
+      - iupac-atom
+      - iupac-nuclide
+  - id: nuclear_recoil
+    label: Nuclear recoil correction
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 27
+    kind: structure
+    conceptType: Finite-mass correction
+    summary: Corrections caused by nuclear motion, including reduced-mass and mass-polarization terms.
+    citations:
+      - wp-physics-nuclear_recoil
+      - nist-atomic-spectroscopy
+      - nist-hydrogen
+  - id: atom
+    label: Atom
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 28
+    kind: structure
+    conceptType: Composite system
+    summary: An electrically neutral system consisting of a nucleus and bound electrons, identified chemically by the proton number of its nucleus.
+    citations:
+      - wp-physics-atom
+      - nlab-physics-atom
+      - iupac-atom
+      - nist-atomic-spectroscopy
+    scale: Ångström
+  - id: electron_self_energy
+    label: Bound-electron self-energy
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 28
+    kind: structure
+    conceptType: QED radiative correction
+    summary: The radiative correction to an electron propagator or bound-electron energy arising from virtual electron–photon interactions, after regularization and renormalization.
+    citations:
+      - wp-physics-electron_self_energy
+      - nist-hydrogen
+      - nobel-qed
+  - id: one_electron_atom
+    label: One-electron atomic system
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 28
+    kind: structure
+    conceptType: Atomic system class
+    summary: An atom or ion with a single bound electron. In the nonrelativistic point-nucleus Coulomb model, center-of-mass separation reduces the exact two-body problem to a one-body equation with the electron–nucleus reduced mass; finite-size, relativistic, and QED effects are corrections.
+    citations:
+      - wp-physics-one_electron_atom
+      - nist-hydrogen
+      - nist-atomic-states
+  - id: vacuum_polarization
+    label: Vacuum polarization
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 28
+    kind: structure
+    conceptType: QED radiative correction
+    summary: A radiative correction in which charged-field loops modify the photon propagator and therefore the effective electromagnetic response, producing effects such as the Uehling potential.
+    citations:
+      - wp-physics-vacuum_polarization
+      - nist-hydrogen
+      - nobel-qed
+  - id: darwin_term
+    label: Darwin term
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 29
+    kind: structure
+    conceptType: Relativistic correction
+    summary: A contact-like correction in the low-energy expansion of the Dirac equation, affecting primarily states with nonzero density at the nucleus.
+    citations:
+      - wp-physics-darwin_term
+      - nist-hydrogen
+  - id: screening_effect
+    label: Electronic screening
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 29
+    kind: structure
+    conceptType: Many-electron effect
+    summary: Reduction and reshaping of the effective nuclear attraction experienced by an electron due to the other electrons’ charge distribution and correlations.
+    citations:
+      - wp-physics-screening_effect
+      - nist-atomic-spectroscopy
+  - id: exchange_interaction
+    label: Exchange interaction
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 29
+    kind: structure
+    conceptType: Fermionic exchange effect
+    summary: Energy and state-structure effects arising from antisymmetry of identical-fermion states; it is not an additional fundamental force.
+    citations:
+      - wp-physics-exchange_interaction
+      - nist-atomic-spectroscopy
+      - nist-atomic-wavefunctions
+  - id: hydrogen_atom
+    label: Hydrogen atom
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 29
+    kind: structure
+    conceptType: Atom
+    summary: The neutral one-proton, one-electron atom; its spectrum is the benchmark for quantum mechanics, relativity, nuclear effects, and QED.
+    citations:
+      - wp-physics-hydrogen_atom
+      - nlab-physics-hydrogen_atom
+      - nist-hydrogen
+      - nist-asd-levels
+  - id: hydrogenic_ion
+    label: Hydrogen-like ion
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 29
+    kind: structure
+    conceptType: Ion class
+    summary: An ion with one bound electron and nuclear charge $Z$, such as $\mathrm{He}^+$.
+    citations:
+      - wp-physics-one_electron_atom
+      - nist-atomic-spectroscopy
+      - nist-asd-levels
+  - id: many_electron_atom
+    label: Many-electron atom
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 29
+    kind: structure
+    conceptType: Composite quantum system
+    summary: An atom with two or more electrons, requiring antisymmetrization and treatment of electron–electron interaction and correlation.
+    citations:
+      - wp-physics-atomic_hamiltonian
+      - nist-atomic-spectroscopy
+      - nist-atomic-wavefunctions
+  - id: orbital_quantum_number
+    label: Orbital angular-momentum quantum number $l$
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 29
+    kind: structure
+    conceptType: Quantum number
+    summary: The nonnegative integer labeling an orbital angular-momentum representation, with $l=0,\ldots,n-1$ for hydrogenic bound states.
+    citations:
+      - wp-physics-orbital_quantum_number
+      - nist-atomic-spectroscopy
+  - id: principal_quantum_number
+    label: Principal quantum number $n$
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 29
+    kind: structure
+    conceptType: Quantum number
+    summary: The positive-integer radial/shell label for hydrogenic bound states and a principal shell label in central-field atomic descriptions.
+    citations:
+      - wp-physics-principal_quantum_number
+      - nist-atomic-spectroscopy
+  - id: relativistic_kinetic_correction
+    label: Relativistic kinetic-energy correction
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 29
+    kind: structure
+    conceptType: Relativistic correction
+    summary: The leading correction to nonrelativistic kinetic energy from expanding the relativistic energy–momentum relation.
+    citations:
+      - wp-physics-fine_structure
+      - nist-hydrogen
+  - id: spin_orbit_coupling
+    label: Spin–orbit coupling
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 29
+    kind: structure
+    conceptType: Relativistic interaction
+    summary: Coupling between an electron’s spin and orbital motion in the electric field, contributing to fine structure.
+    citations:
+      - wp-physics-spin_orbit_coupling
+      - nist-atomic-spectroscopy
+  - id: atomic_orbital
+    label: Atomic orbital
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 30
+    kind: structure
+    conceptType: State representation
+    summary: A one-electron wavefunction or basis function used in exact one-electron atoms and approximate many-electron descriptions; it is not a classical electron trajectory.
+    citations:
+      - wp-physics-atomic_orbital
+      - nlab-physics-atomic_orbital
+      - iupac-atomic-orbital
+      - nist-atomic-states
+    sections:
+      - title: Qualification
+        body: Orbitals are not classical electron trajectories and are representation-dependent ingredients of atomic and molecular models.
+  - id: atomic_state
+    label: Atomic state
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 30
+    kind: structure
+    conceptType: Quantum state
+    summary: A stationary, metastable, resonance, or continuum state of the full atom, labeled by total angular momentum, parity, configuration, and other quantum numbers.
+    citations:
+      - wp-physics-atomic_state
+      - nist-asd-levels
+      - nist-atomic-states
+  - id: central_field_approximation
+    label: Central-field approximation
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 30
+    kind: structure
+    conceptType: Controlled approximation
+    summary: An approximation replacing the nonspherical instantaneous many-electron interaction by an effective spherically symmetric one-electron potential.
+    citations:
+      - wp-physics-central_field_approximation
+      - nist-atomic-spectroscopy
+      - nist-atomic-wavefunctions
+  - id: configuration_state_function
+    label: Configuration-state function
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 30
+    kind: structure
+    conceptType: Antisymmetric basis state
+    summary: A symmetry-adapted linear combination of Slater determinants with specified angular momentum, spin, parity, or other quantum numbers.
+    citations:
+      - wp-physics-configuration_state_function
+      - nist-atomic-spectroscopy
+      - nist-atomic-states
+  - id: electron_shell
+    label: Electron shell
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 30
+    kind: structure
+    conceptType: Organizational classification
+    summary: A group of one-electron states sharing a principal-shell label, especially a common principal quantum number in hydrogenic or central-field descriptions; it is a classification of states, not a literal spherical material layer.
+    citations:
+      - wp-physics-electron_shell
+      - nist-atomic-states
+  - id: finite_nuclear_size_effect
+    label: Finite nuclear-size effect
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 30
+    kind: structure
+    conceptType: Nuclear-structure correction
+    summary: The shift of atomic levels caused by the extended nuclear charge distribution rather than an ideal point charge.
+    citations:
+      - wp-physics-finite_nuclear_size_effect
+      - nist-hydrogen
+      - nist-codata
+  - id: independent_particle_model
+    label: Independent-particle model
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 30
+    kind: structure
+    conceptType: Mean-field approximation
+    summary: An approximation representing a many-electron state using independently occupied one-electron orbitals in an effective field, with antisymmetry imposed for fermions.
+    citations:
+      - wp-physics-independent_particle_model
+      - nist-atomic-wavefunctions
+      - nist-atomic-spectroscopy
+  - id: magnetic_quantum_number
+    label: Magnetic quantum number $m$
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 30
+    kind: structure
+    conceptType: Quantum number
+    summary: The projection label of angular momentum along a chosen axis, ranging from $-j$ to $j$ in unit steps for angular momentum $j$.
+    citations:
+      - wp-physics-magnetic_quantum_number
+      - nist-atomic-spectroscopy
+  - id: rutherford_model
+    label: Rutherford nuclear atom model
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 30
+    kind: structure
+    conceptType: Historical approximate model
+    summary: A small positive nucleus with orbiting electrons; it established nuclear concentration of charge but lacks quantum stability and spectra.
+    citations:
+      - wp-physics-rutherford_model
+      - nist-atomic-spectroscopy
+  - id: spin_projection_quantum_number
+    label: Spin-projection quantum number $m_s$
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 30
+    kind: structure
+    conceptType: Quantum number
+    summary: The projection of electron spin along a chosen axis, $m_s=\pm1/2$.
+    citations:
+      - wp-physics-spin_projection_quantum_number
+      - nist-atomic-spectroscopy
+  - id: atomic_energy_level
+    label: Atomic energy level
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 31
+    kind: structure
+    conceptType: Quantum state class
+    summary: A discrete energy eigenvalue or spectroscopically resolved level of an atom or atomic ion, including degeneracy and fine or hyperfine structure as appropriate.
+    citations:
+      - wp-physics-atomic_energy_level
+      - iupac-energy-level
+      - nist-asd-levels
+  - id: bohr_model
+    label: Bohr model
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 31
+    kind: structure
+    conceptType: Historical semiclassical model
+    summary: A semiclassical one-electron model with quantized circular orbits, reproducing the gross hydrogen spectrum but not general quantum structure.
+    citations:
+      - wp-physics-bohr_model
+      - nist-hydrogen
+      - nist-atomic-spectroscopy
+  - id: density_functional_theory
+    label: Density-functional theory
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 31
+    kind: structure
+    conceptType: Ground-state many-body formulation and approximation family
+    summary: An exact ground-state density formulation in the Hohenberg–Kohn sense, implemented in practice through Kohn–Sham orbitals and approximate exchange–correlation functionals.
+    citations:
+      - wp-physics-density_functional_theory
+      - nist-atomic-wavefunctions
+      - aps-hohenberg-kohn
+      - aps-kohn-sham
+  - id: electron_configuration
+    label: Electron configuration
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 31
+    kind: structure
+    conceptType: Many-electron basis classification
+    summary: An occupation pattern over atomic orbitals or subshells used to organize many-electron basis states; the exact state can be a superposition of configurations.
+    citations:
+      - wp-physics-electron_configuration
+      - nlab-physics-electron_configuration
+      - nist-atomic-states
+      - nist-atomic-spectroscopy
+  - id: electron_correlation
+    label: Electron correlation
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 31
+    kind: structure
+    conceptType: Many-body effect
+    summary: Electronic motion beyond a chosen independent-particle or Hartree–Fock description, including dynamical and near-degeneracy correlation.
+    citations:
+      - wp-physics-electron_correlation
+      - nist-atomic-wavefunctions
+  - id: electron_subshell
+    label: Electron subshell
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 31
+    kind: structure
+    conceptType: Organizational classification
+    summary: A grouping of one-electron states by principal and orbital angular-momentum quantum numbers, refined by spin–orbit coupling.
+    citations:
+      - wp-physics-electron_shell
+      - nist-atomic-states
+  - id: hartree_method
+    label: Hartree method
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 31
+    kind: structure
+    conceptType: Self-consistent-field approximation
+    summary: A variational product-state mean-field method in which each electron moves in the average electrostatic field of the others; it omits exact exchange antisymmetry.
+    citations:
+      - wp-physics-hartree_method
+      - nist-atomic-wavefunctions
+  - id: hartree_fock_method
+    label: Hartree–Fock method
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 31
+    kind: structure
+    conceptType: Self-consistent-field approximation
+    summary: A variational single-Slater-determinant method including exchange exactly within that determinant but omitting correlation beyond it.
+    citations:
+      - wp-physics-hartree_fock_method
+      - nist-atomic-wavefunctions
+  - id: jj_coupling
+    label: jj coupling
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 31
+    kind: structure
+    conceptType: Angular-momentum coupling scheme
+    summary: A coupling approximation in which each electron’s $l_i$ and $s_i$ first form $j_i$, after which the $j_i$ combine to total $J$.
+    citations:
+      - wp-physics-ls_coupling
+      - nist-atomic-spectroscopy
+  - id: ls_coupling
+    label: LS coupling
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 31
+    kind: structure
+    conceptType: Angular-momentum coupling scheme
+    summary: A coupling approximation in which individual orbital angular momenta combine to total $L$, individual spins to total $S$, and then $L$ and $S$ combine to total $J$.
+    citations:
+      - wp-physics-ls_coupling
+      - nist-atomic-spectroscopy
+  - id: rydberg_formula
+    label: Rydberg formula
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 31
+    kind: structure
+    conceptType: Spectral relation
+    summary: The leading hydrogenic relation between transition wavenumbers and principal quantum numbers, corrected in precision work for reduced mass, relativity, QED, and nuclear structure.
+    citations:
+      - wp-physics-rydberg_formula
+      - nist-hydrogen
+      - nist-codata
+  - id: total_angular_momentum_quantum_number
+    label: Total angular-momentum quantum number $J$
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 31
+    kind: structure
+    conceptType: Quantum number
+    summary: The quantum number labeling total electronic angular momentum after coupling orbital and spin contributions.
+    citations:
+      - wp-physics-total_angular_momentum_quantum_number
+      - nist-atomic-spectroscopy
+  - id: fine_structure
+    label: Atomic fine structure
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 32
+    kind: structure
+    conceptType: Relativistic energy structure
+    summary: Splittings from relativistic kinematics, spin–orbit coupling, and related relativistic electromagnetic terms, scaling roughly as powers of $Z\alpha$.
+    citations:
+      - wp-physics-fine_structure
+      - nlab-physics-fine_structure
+      - nist-atomic-spectroscopy
+      - nist-asd-levels
+  - id: selection_rule
+    label: Atomic selection rule
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 32
+    kind: structure
+    conceptType: Symmetry-derived constraint
+    summary: A condition causing a transition matrix element to vanish or be suppressed under an approximation and specified interaction multipole.
+    citations:
+      - wp-physics-selection_rule
+      - nist-atomic-spectroscopy
+  - id: atomic_term_symbol
+    label: Atomic term symbol
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 32
+    kind: structure
+    conceptType: State label
+    summary: A compact label such as $^{2S+1}L_J$ for angular-momentum coupling, parity, and related atomic-state quantum numbers.
+    citations:
+      - wp-physics-atomic_term_symbol
+      - nist-atomic-states
+      - nist-asd-levels
+  - id: configuration_interaction_method
+    label: Configuration interaction
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 32
+    kind: structure
+    conceptType: Many-body approximation method
+    summary: A variational expansion of an atomic state in multiple configuration-state functions, recovering correlation within the chosen basis and excitation space.
+    citations:
+      - wp-physics-configuration_interaction_method
+      - nist-atomic-wavefunctions
+  - id: coupled_cluster_method
+    label: Coupled-cluster method
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 32
+    kind: structure
+    conceptType: Many-body approximation method
+    summary: An exponential correlated-wavefunction method with systematic truncations such as singles and doubles, widely used for high-accuracy electronic structure.
+    citations:
+      - wp-physics-coupled_cluster_method
+      - nist-atomic-wavefunctions
+  - id: hyperfine_structure
+    label: Atomic hyperfine structure
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 33
+    kind: structure
+    conceptType: Nuclear–electronic energy structure
+    summary: Splittings from interactions of electronic fields and angular momentum with nuclear magnetic dipole and electric quadrupole moments.
+    citations:
+      - wp-physics-hyperfine_structure
+      - nlab-physics-hyperfine_structure
+      - nist-atomic-spectroscopy
+      - nist-asd-levels
+  - id: ionization_process
+    label: Atomic ionization
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 33
+    kind: structure
+    conceptType: Transformation process
+    summary: Removal of one or more bound electrons by photons, collisions, fields, or other interactions.
+    citations:
+      - wp-physics-ionization_process
+      - iupac-ionization
+      - nist-atomic-spectroscopy
+  - id: atomic_spectrum
+    label: Atomic spectrum
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 33
+    kind: structure
+    conceptType: Observable pattern
+    summary: Discrete and continuum electromagnetic absorption or emission frequencies determined by atomic energy differences and transition amplitudes.
+    citations:
+      - wp-physics-atomic_spectrum
+      - nist-atomic-spectroscopy
+      - nist-atomic-spectra
+  - id: atomic_transition
+    label: Atomic transition
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 33
+    kind: structure
+    conceptType: Quantum process
+    summary: A change between atomic states induced or accompanied by photon absorption, emission, collisions, or other interactions.
+    citations:
+      - wp-physics-atomic_energy_level
+      - nist-atomic-spectroscopy
+      - nist-asd-levels
+  - id: lamb_shift
+    label: Lamb shift
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 33
+    kind: structure
+    conceptType: Atomic energy correction
+    summary: The QED-dominated splitting of levels that are degenerate in the Dirac–Coulomb approximation, notably hydrogen $2S_{1/2}$ and $2P_{1/2}$.
+    citations:
+      - wp-physics-lamb_shift
+      - nlab-physics-lamb_shift
+      - nist-hydrogen
+      - nobel-qed
+  - id: absorption
+    label: Atomic absorption
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 34
+    kind: structure
+    conceptType: Radiative process
+    summary: A transition in which the atom gains energy from an electromagnetic quantum or classical field.
+    citations:
+      - wp-physics-absorption
+      - nist-atomic-spectroscopy
+  - id: isotope_shift
+    label: Atomic isotope shift
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 34
+    kind: structure
+    conceptType: Nuclear-structure-dependent spectral shift
+    summary: The change of atomic transition frequency between isotopes due chiefly to nuclear-mass recoil and nuclear charge-radius differences.
+    citations:
+      - wp-physics-isotope_shift
+      - nist-atomic-spectroscopy
+      - iaea-livechart
+  - id: electric_dipole_transition
+    label: Electric-dipole transition
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 34
+    kind: structure
+    conceptType: Leading radiative transition
+    summary: A transition governed at leading order by the electric dipole operator, with corresponding angular-momentum and parity selection rules.
+    citations:
+      - wp-physics-electric_dipole_transition
+      - nist-atomic-spectroscopy
+  - id: ion
+    label: Ion
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 34
+    kind: structure
+    conceptType: Charged system
+    summary: An atom or molecular entity carrying a net electric charge because its total number of electrons differs from its total nuclear charge.
+    citations:
+      - wp-physics-ion
+      - iupac-ion
+      - iupac-ionization
+  - id: spontaneous_emission
+    label: Spontaneous emission
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 34
+    kind: structure
+    conceptType: QED radiative process
+    summary: Decay of an excited atomic state by coupling to vacuum electromagnetic modes, with photon emission when allowed.
+    citations:
+      - wp-physics-spontaneous_emission
+      - nist-atomic-spectroscopy
+      - tong-qft
+  - id: stark_effect
+    label: Stark effect
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 34
+    kind: structure
+    conceptType: External-field perturbation
+    summary: Splitting and shifting of atomic levels in an applied electric field.
+    citations:
+      - wp-physics-stark_effect
+      - nist-atomic-spectroscopy
+  - id: stimulated_emission
+    label: Stimulated emission
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 34
+    kind: structure
+    conceptType: Driven radiative process
+    summary: Emission driven by an incident electromagnetic field, producing radiation coherent with the stimulating field in frequency, phase, polarization, and propagation mode.
+    citations:
+      - wp-physics-stimulated_emission
+      - nist-atomic-spectroscopy
+  - id: zeeman_effect
+    label: Zeeman effect
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 34
+    kind: structure
+    conceptType: External-field perturbation
+    summary: Splitting and shifting of atomic levels in an applied magnetic field.
+    citations:
+      - wp-physics-zeeman_effect
+      - nist-atomic-spectroscopy
+  - id: anion
+    label: Anion
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 35
+    kind: structure
+    conceptType: Ion class
+    summary: A negatively charged atom or molecule with more electrons than total nuclear charge.
+    citations:
+      - wp-physics-ion
+      - iupac-ion
+  - id: cation
+    label: Cation
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 35
+    kind: structure
+    conceptType: Ion class
+    summary: A positively charged atom or molecule with fewer electrons than total nuclear charge.
+    citations:
+      - wp-physics-ion
+      - iupac-ion
+  - id: molecule
+    label: Molecule
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 35
+    kind: structure
+    conceptType: Composite system
+    summary: An electrically neutral entity consisting of more than one atom; its bound structure and spectra arise from quantum states of electrons and nuclei.
+    citations:
+      - wp-physics-molecule
+      - iupac-molecule
+    scale: Molecular
+  - id: ionization_energy
+    label: Ionization energy
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+    level: 32
+    kind: structure
+    conceptType: Separation energy
+    summary: The minimum energy required to remove an electron from an atom or ion in its ground state, for a specified charge state and final channel.
+    citations:
+      - wp-physics-ionization_energy
+      - nist-ionization-energy
+      - nist-atomic-spectroscopy
+  - id: balmer_hydrogen_spectrum_observations
+    label: Balmer hydrogen-spectrum observations
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+      - experiments-observations
+    level: 30
+    kind: structure
+    conceptType: Canonical observation
+    summary: The visible hydrogen lines summarized by Balmer’s 1885 formula exhibited a regular discrete spectrum that classical atomic models could not explain.
+    citations:
+      - wp-physics-balmer_hydrogen_spectrum_observations
+      - nist-atomic-spectrum-history
+    status: Observed / performed
+    sections:
+      - title: Historical role
+        body: Hydrogen spectroscopy motivated empirical spectral formulas and later the Bohr model; modern quantum mechanics explains the levels and transition amplitudes.
+  - id: perrin_brownian_motion_experiments
+    label: Perrin Brownian-motion experiments
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+      - experiments-observations
+    level: 29
+    kind: structure
+    conceptType: Canonical experiment program
+    summary: Jean Perrin’s quantitative studies of Brownian particles tested Einstein’s statistical theory, estimated Avogadro’s number by several methods, and supplied strong evidence for molecular and atomic reality.
+    citations:
+      - wp-physics-perrin_brownian_motion_experiments
+      - nobel-perrin
+    status: Observed / performed
+  - id: moseley_xray_spectroscopy
+    label: Moseley X-ray spectroscopy
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+      - experiments-observations
+    level: 28
+    kind: structure
+    conceptType: Canonical measurement
+    summary: Moseley found that characteristic X-ray frequencies track an integer nuclear charge, establishing atomic number as a physical ordering principle.
+    citations:
+      - wp-physics-moseley_xray_spectroscopy
+      - nist-atomic-spectrum-history
+    status: Observed / performed
+  - id: franck_hertz_experiment
+    label: Franck–Hertz experiment
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+      - experiments-observations
+    level: 32
+    kind: structure
+    conceptType: Canonical experiment
+    summary: Electrons lose energy to mercury atoms in discrete increments, providing direct evidence for quantized atomic excitation energies.
+    citations:
+      - wp-physics-franck_hertz_experiment
+      - nobel-franck-hertz
+    status: Observed / performed
+    sections:
+      - title: Historical qualification
+        body: Franck and Hertz initially interpreted the observed threshold as ionization; its later interpretation as discrete excitation energy supplied the canonical quantum-level test.
+  - id: lamb_retherford_experiment
+    label: Lamb–Retherford experiment
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+      - experiments-observations
+    level: 34
+    kind: structure
+    conceptType: Canonical precision experiment
+    summary: Microwave spectroscopy showed that hydrogen’s $2S_{1/2}$ and $2P_{1/2}$ levels are not degenerate, revealing the Lamb shift and driving renormalized QED calculations.
+    citations:
+      - wp-physics-lamb_shift
+      - nobel-lamb
+      - nist-qed-tests
+    status: Observed / performed
+  - id: proton_radius_puzzle
+    label: Proton-radius puzzle
+    primaryField: physics
+    fields:
+      - physics
+    primaryDomain: atomic-molecular-physics
+    domains:
+      - atomic-molecular-physics
+      - experiments-observations
+    level: 27
+    kind: structure
+    conceptType: Precision anomaly / problem
+    summary: Muonic-hydrogen spectroscopy initially inferred a proton charge radius significantly smaller than the value from ordinary hydrogen and electron scattering, motivating renewed recoil, finite-size, and radiative analyses.
+    citations:
+      - wp-physics-proton_radius_puzzle
+      - nist-codata-2022
+    status: Observed / performed
 edges:
-- id: angular_to_jjcoupling
-  source: many_electron_atom
-  target: jj_coupling
-  type: model-realization
-  label: $jj$ coupling regime
-  detail: $jj$ coupling is useful when individual spin–orbit couplings dominate residual interelectronic angular coupling.
-  citations:
-  - wp-physics-ls_coupling
-  - nist-atomic-spectroscopy
-- id: angular_to_lscoupling
-  source: many_electron_atom
-  target: ls_coupling
-  type: model-realization
-  label: LS coupling regime
-  detail: LS coupling is useful when electrostatic interactions dominate individual spin–orbit couplings in a many-electron atom.
-  citations:
-  - wp-physics-ls_coupling
-  - nist-atomic-spectroscopy
-- id: atom_to_energy_level
-  source: atom
-  target: atomic_energy_level
-  type: state-description
-  label: stationary energy states
-  detail: Atoms possess discrete bound-state energy levels and continua, measured through spectroscopic transitions.
-  citations:
-  - nist-atomic-spectra
-  - iupac-energy-level
-  - wp-physics-atomic_energy_level
-  - wp-physics-atom
-  - nlab-physics-atom
-- id: atom_to_state
-  source: atom
-  target: atomic_state
-  type: state-description
-  label: atomic quantum states
-  detail: The atom has a spectrum of bound, resonant, and continuum states.
-  citations:
-  - wp-physics-atomic_state
-  - nist-asd-levels
-  - wp-physics-atom
-  - nlab-physics-atom
-- id: atom_to_ion
-  source: atom
-  target: ion
-  type: transformation-process
-  label: ionization or electron attachment
-  detail: Removing electrons from, or attaching electrons to, an atom produces an atomic ion.
-  citations:
-  - iupac-ionization
-  - iupac-atom
-  - wp-physics-ion
-  - iupac-ion
-  - wp-physics-atom
-- id: atom_to_ionization
-  source: atom
-  target: ionization_process
-  type: transformation-process
-  label: electron removal
-  detail: Ionization removes a bound electron when sufficient energy or field strength is supplied.
-  citations:
-  - wp-physics-ionization_process
-  - iupac-ionization
-  - wp-physics-atom
-  - nlab-physics-atom
-- id: atom_to_manyelectron
-  source: atom
-  target: many_electron_atom
-  type: classification
-  label: many-electron atom
-  detail: Most neutral atoms have several interacting electrons.
-  citations:
-  - wp-physics-atomic_hamiltonian
-  - nist-atomic-spectroscopy
-  - wp-physics-atom
-  - nlab-physics-atom
-- id: atom_to_molecule_precise
-  source: atom
-  target: molecule
-  type: composition
-  label: atomic nuclei and electrons reorganized in molecular state
-  detail: Molecules are not classical sums of pre-existing intact atoms; their nuclei and electrons form a joint quantum bound state conventionally described by atomic composition.
-  citations:
-  - wp-physics-molecule
-  - iupac-molecule
-  - wp-physics-atom
-  - nlab-physics-atom
-- id: atom_to_nuclide
-  source: atom
-  target: nuclide
-  type: classification
-  label: specified nuclear composition
-  detail: A nuclide is a species of atom characterized by proton number, neutron number, and, when relevant, nuclear energy state.
-  citations:
-  - wp-physics-atom
-  - nlab-physics-atom
-  - iupac-atom
-  - nist-atomic-spectroscopy
-  - wp-physics-nuclide
-  - nlab-physics-nuclide
-  - iupac-nuclide
-  - iaea-livechart
-- id: atom_to_rutherford
-  source: atom
-  target: rutherford_model
-  type: model-realization
-  label: historical nuclear model
-  detail: The Rutherford model captures the concentration of positive charge in a nucleus but fails as a stable classical atom.
-  citations:
-  - wp-physics-rutherford_model
-  - nist-atomic-spectroscopy
-  - wp-physics-atom
-  - nlab-physics-atom
-- id: levels_to_spectrum
-  source: atomic_energy_level
-  target: atomic_spectrum
-  type: state-description
-  label: transition frequencies
-  detail: Differences between levels contribute spectral line frequencies, subject to transition matrix elements and broadening.
-  citations:
-  - wp-physics-atomic_spectrum
-  - nist-atomic-spectroscopy
-  - wp-physics-atomic_energy_level
-  - iupac-energy-level
-- id: atom_to_atomic_h
-  source: atomic_hamiltonian
-  target: atom
-  type: describes-governs
-  label: atomic bound-state dynamics
-  detail: An atomic Hamiltonian describes the internal dynamics and energy spectrum of an atom within its stated effective and approximation regime.
-  citations:
-  - wp-physics-atomic_hamiltonian
-  - nlab-physics-atomic_hamiltonian
-  - wp-physics-atom
-  - nlab-physics-atom
-- id: atomic_h_to_infinite_mass
-  source: atomic_hamiltonian
-  target: infinite_nuclear_mass_approximation
-  type: mathematical-limit
-  label: neglect nuclear recoil
-  detail: Fixing the nucleus is controlled by small electron-to-nuclear mass ratios, but precision work restores recoil and mass-polarization terms.
-  citations:
-  - wp-physics-infinite_nuclear_mass_approximation
-  - nist-atomic-spectroscopy
-  - wp-physics-atomic_hamiltonian
-  - nlab-physics-atomic_hamiltonian
-- id: atomic_h_to_coulomb_h
-  source: atomic_hamiltonian
-  target: nonrelativistic_coulomb_hamiltonian
-  type: mathematical-limit
-  label: leading nonrelativistic Coulomb model
-  detail: The Coulomb Hamiltonian is the leading nonrelativistic, instantaneous-interaction model when transverse-photon, relativistic, radiative, and finite-size effects are below the required accuracy. It may retain finite nuclear masses and recoil through the nuclear kinetic terms and reduced-mass separation.
-  citations:
-  - wp-physics-atomic_hamiltonian
-  - nist-atomic-spectroscopy
-- id: finite_mass_to_recoil
-  source: nuclear_recoil
-  target: atomic_hamiltonian
-  type: theory-component
-  label: finite-mass correction
-  detail: Nuclear recoil and mass-polarization terms are finite-nuclear-mass components of precision atomic Hamiltonians.
-  citations:
-  - wp-physics-nuclear_recoil
-  - nist-atomic-spectroscopy
-- id: atomic_h_to_relativistic
-  source: atomic_hamiltonian
-  target: relativistic_atomic_structure
-  type: framework-specialization
-  label: relativistic atomic description
-  detail: Relativistic atomic structure replaces or augments the nonrelativistic Hamiltonian with Dirac-based and QED-matched descriptions when $Z\alpha$ or required precision makes relativistic effects important.
-  citations:
-  - wp-physics-relativistic_atomic_structure
-  - nist-atomic-spectroscopy
-  - wp-physics-atomic_hamiltonian
-  - nlab-physics-atomic_hamiltonian
-- id: orbital_to_configuration
-  source: atomic_orbital
-  target: electron_configuration
-  type: theory-component
-  label: occupation basis
-  detail: Electron configurations record occupations of a chosen orbital or subshell basis; they are state descriptions, not material assemblies of orbitals.
-  citations:
-  - wp-physics-electron_configuration
-  - nlab-physics-electron_configuration
-- id: orbital_to_shell
-  source: atomic_orbital
-  target: electron_shell
-  type: theory-component
-  label: grouped by principal shell
-  detail: In hydrogenic and central-field classifications, one-electron orbitals sharing the principal quantum number are grouped into a shell; a shell is a state classification, not a material composite.
-  citations:
-  - wp-physics-electron_shell
-  - nist-atomic-states
-- id: atomicqed_to_selfenergy
-  source: electron_self_energy
-  target: atomic_qed_corrections
-  type: theory-component
-  label: self-energy correction
-  detail: Bound-electron self-energy is a principal atomic QED correction.
-  citations:
-  - wp-physics-electron_self_energy
-  - nist-hydrogen
-  - wp-physics-quantum_electrodynamics
-- id: atomicqed_to_lamb
-  source: atomic_qed_corrections
-  target: lamb_shift
-  type: describes-governs
-  label: radiative level splitting
-  detail: Self-energy and vacuum polarization dominate the Lamb shift, with recoil and nuclear-size contributions also relevant.
-  citations:
-  - wp-physics-lamb_shift
-  - nlab-physics-lamb_shift
-  - wp-physics-quantum_electrodynamics
-  - nist-hydrogen
-- id: atomicqed_to_vacpol
-  source: vacuum_polarization
-  target: atomic_qed_corrections
-  type: theory-component
-  label: vacuum-polarization correction
-  detail: Vacuum polarization modifies the nuclear Coulomb potential.
-  citations:
-  - wp-physics-vacuum_polarization
-  - nist-hydrogen
-  - wp-physics-quantum_electrodynamics
-- id: state_to_level
-  source: atomic_state
-  target: atomic_energy_level
-  type: state-description
-  label: energy level
-  detail: Energy levels are energies assigned to stationary or metastable atomic states.
-  citations:
-  - wp-physics-atomic_energy_level
-  - iupac-energy-level
-  - wp-physics-atomic_state
-  - nist-asd-levels
-- id: state_to_term
-  source: atomic_state
-  target: atomic_term_symbol
-  type: state-description
-  label: angular-momentum label
-  detail: Term symbols label symmetry and angular-momentum properties of atomic states.
-  citations:
-  - wp-physics-atomic_term_symbol
-  - nist-atomic-states
-  - wp-physics-atomic_state
-  - nist-asd-levels
-- id: state_to_transition
-  source: atomic_state
-  target: atomic_transition
-  type: transformation-process
-  label: state change
-  detail: Atomic transitions connect initial and final atomic states.
-  citations:
-  - wp-physics-atomic_energy_level
-  - nist-atomic-spectroscopy
-  - wp-physics-atomic_state
-  - nist-asd-levels
-- id: transition_to_absorption
-  source: atomic_transition
-  target: absorption
-  type: classification
-  label: upward radiative transition
-  detail: Absorption raises the atomic energy by taking energy from a field.
-  citations:
-  - wp-physics-absorption
-  - nist-atomic-spectroscopy
-  - wp-physics-atomic_energy_level
-- id: transition_to_e1
-  source: atomic_transition
-  target: electric_dipole_transition
-  type: classification
-  label: electric-dipole channel
-  detail: Electric-dipole transitions are the leading radiative multipole channel when allowed.
-  citations:
-  - wp-physics-electric_dipole_transition
-  - nist-atomic-spectroscopy
-  - wp-physics-atomic_energy_level
-- id: transition_to_spontaneous
-  source: atomic_transition
-  target: spontaneous_emission
-  type: classification
-  label: vacuum-induced emission
-  detail: Spontaneous emission lowers an excited state through coupling to the quantized field.
-  citations:
-  - wp-physics-spontaneous_emission
-  - nist-atomic-spectroscopy
-  - wp-physics-atomic_energy_level
-- id: transition_to_stimulated
-  source: atomic_transition
-  target: stimulated_emission
-  type: classification
-  label: field-stimulated emission
-  detail: Stimulated emission is induced by an incident field.
-  citations:
-  - wp-physics-stimulated_emission
-  - nist-atomic-spectroscopy
-  - wp-physics-atomic_energy_level
-- id: com_to_reducedmass
-  source: center_of_mass_separation
-  target: reduced_mass_approximation
-  type: framework-specialization
-  label: two-body reduced mass
-  detail: For a two-body atom the internal kinetic energy uses the exact reduced mass; for many-electron atoms related mass-polarization terms remain.
-  citations:
-  - wp-physics-reduced_mass_approximation
-  - nist-hydrogen
-  - wp-physics-center_of_mass_separation
-  - nist-atomic-spectroscopy
-- id: element_to_atom
-  source: chemical_element
-  target: atom
-  type: classification
-  label: neutral atomic representative
-  detail: A neutral atom is an atomic representative of an element when its nucleus has the element’s proton number.
-  citations:
-  - wp-physics-atom
-  - nlab-physics-atom
-  - wp-physics-chemical_element
-  - iupac-atom
-- id: csf_to_atomicstate
-  source: atomic_state
-  target: configuration_state_function
-  type: state-description
-  label: many-electron basis expansion
-  detail: Atomic states are expanded in configuration-state functions in multiconfiguration methods.
-  citations:
-  - wp-physics-configuration_state_function
-  - nist-atomic-spectroscopy
-  - nist-atomic-states
-  - wp-physics-atomic_state
-  - nist-asd-levels
-- id: binding_to_atom
-  source: electromagnetic_binding
-  target: atom
-  type: couples-interacts
-  label: electron–nucleus bound system
-  detail: Electromagnetic attraction binds electrons to the nucleus, while electron repulsion and fermionic statistics shape many-electron structure.
-  citations:
-  - wp-physics-atom
-  - nlab-physics-atom
-  - wp-physics-electromagnetic_interaction
-  - nist-atomic-spectroscopy
-- id: configuration_to_state
-  source: atomic_state
-  target: electron_configuration
-  type: state-description
-  label: configuration basis components
-  detail: An atomic state can be described by its electron-configuration content, but an exact many-electron eigenstate may superpose multiple configurations, so a single configuration is generally only a label or approximation.
-  citations:
-  - wp-physics-atomic_state
-  - nist-asd-levels
-  - wp-physics-electron_configuration
-  - nlab-physics-electron_configuration
-- id: ee_to_manyelectron
-  source: electron_electron_coulomb_interaction
-  target: many_electron_atom
-  type: couples-interacts
-  label: many-electron repulsion
-  detail: Electron–electron repulsion makes the atomic problem genuinely many-body.
-  citations:
-  - wp-physics-electron_electron_coulomb_interaction
-  - nist-atomic-spectroscopy
-  - nist-atomic-wavefunctions
-  - wp-physics-atomic_hamiltonian
-- id: enucleus_to_atom
-  source: electron_nucleus_coulomb_interaction
-  target: atom
-  type: couples-interacts
-  label: principal atomic binding interaction
-  detail: Electron–nucleus attraction is the principal binding interaction of an atom.
-  citations:
-  - wp-physics-electron_nucleus_coulomb_interaction
-  - nist-atomic-spectroscopy
-  - tong-quantum
-  - wp-physics-atom
-  - nlab-physics-atom
-  - iupac-atom
-- id: shell_to_subshell
-  source: electron_shell
-  target: electron_subshell
-  type: classification
-  label: angular-momentum subshell
-  detail: Shells decompose into subshells labeled by orbital angular momentum and, relativistically, total angular momentum.
-  citations:
-  - wp-physics-electron_shell
-  - nist-atomic-states
-- id: hf_to_ci
-  source: hartree_fock_method
-  target: configuration_interaction_method
-  type: framework-specialization
-  label: multi-configuration extension
-  detail: Configuration interaction expands beyond one Hartree–Fock determinant using selected excited determinants or configuration-state functions in a finite basis.
-  citations:
-  - wp-physics-configuration_interaction_method
-  - nist-atomic-wavefunctions
-- id: hf_to_cc
-  source: hartree_fock_method
-  target: coupled_cluster_method
-  type: framework-specialization
-  label: exponential correlated extension
-  detail: Coupled-cluster theory builds an exponential correlated ansatz, commonly from a Hartree–Fock reference; truncation such as CCSD defines the practical approximation.
-  citations:
-  - wp-physics-coupled_cluster_method
-  - nist-atomic-wavefunctions
-- id: hf_to_correlation
-  source: hartree_fock_method
-  target: electron_correlation
-  type: state-description
-  label: correlation beyond mean field
-  detail: Electron correlation is conventionally the difference between the exact nonrelativistic solution and the Hartree–Fock limit for the same Hamiltonian.
-  citations:
-  - wp-physics-electron_correlation
-  - nist-atomic-wavefunctions
-  - wp-physics-hartree_fock_method
-- id: hartree_to_hf
-  source: hartree_method
-  target: hartree_fock_method
-  type: framework-specialization
-  label: antisymmetric mean field
-  detail: Hartree–Fock replaces the Hartree product by a variational Slater determinant and thereby includes exchange while still omitting correlation beyond one determinant.
-  citations:
-  - wp-physics-hartree_fock_method
-  - nist-atomic-wavefunctions
-- id: hydrogen_to_rydberg
-  source: hydrogen_atom
-  target: rydberg_formula
-  type: describes-governs
-  label: gross hydrogen spectrum
-  detail: The Rydberg formula describes leading hydrogenic transition wavenumbers.
-  citations:
-  - wp-physics-hydrogen_atom
-  - nlab-physics-hydrogen_atom
-  - nist-hydrogen
-  - nist-asd-levels
-  - wp-physics-rydberg_formula
-  - nist-codata
-- id: ion_to_anion
-  source: ion
-  target: anion
-  type: classification
-  label: negative ion
-  detail: Anions have negative net charge.
-  citations:
-  - wp-physics-ion
-  - iupac-ion
-- id: ion_to_cation
-  source: ion
-  target: cation
-  type: classification
-  label: positive ion
-  detail: Cations have positive net charge.
-  citations:
-  - wp-physics-ion
-  - iupac-ion
-- id: ionization_to_ion
-  source: ionization_process
-  target: ion
-  type: transformation-process
-  label: charged residue
-  detail: Ionization by removing one or more electrons from a neutral atom or molecule produces a positive ion and free electron(s); electron attachment is a distinct process that can produce a negative ion.
-  citations:
-  - wp-physics-ion
-  - iupac-ion
-  - wp-physics-ionization_process
-  - iupac-ionization
-- id: jjcoupling_to_term
-  source: jj_coupling
-  target: atomic_term_symbol
-  type: state-description
-  label: $jj$-coupled labels
-  detail: In $jj$ coupling, term labels record the coupled one-electron $j_i$ values and total $J$.
-  citations:
-  - wp-physics-ls_coupling
-  - nist-atomic-spectroscopy
-  - wp-physics-atomic_term_symbol
-  - nist-atomic-states
-  - nist-asd-levels
-- id: lscoupling_to_term
-  source: ls_coupling
-  target: atomic_term_symbol
-  type: state-description
-  label: $^{2S+1}L_J$ labels
-  detail: LS-coupled states are labeled by term symbols $^{2S+1}L_J$.
-  citations:
-  - wp-physics-ls_coupling
-  - nist-atomic-spectroscopy
-  - wp-physics-atomic_term_symbol
-  - nist-atomic-states
-  - nist-asd-levels
-- id: manyatom_to_orbital
-  source: many_electron_atom
-  target: atomic_orbital
-  type: state-description
-  label: one-electron basis / mean-field orbital
-  detail: In many-electron atoms, orbitals are basis or mean-field functions used to construct antisymmetric states; they are not separately exact electron states in general.
-  citations:
-  - wp-physics-atomic_orbital
-  - nlab-physics-atomic_orbital
-  - wp-physics-atomic_hamiltonian
-  - nist-atomic-spectroscopy
-- id: manyatom_to_central
-  source: many_electron_atom
-  target: central_field_approximation
-  type: model-realization
-  label: spherical effective potential
-  detail: Central-field models average nonspherical and correlation effects into a radial one-electron potential.
-  citations:
-  - wp-physics-central_field_approximation
-  - nist-atomic-spectroscopy
-  - wp-physics-atomic_hamiltonian
-- id: manyatom_to_dft
-  source: many_electron_atom
-  target: density_functional_theory
-  type: model-realization
-  label: ground-state density formulation
-  detail: Hohenberg–Kohn theory gives an exact ground-state density formulation in principle; practical Kohn–Sham calculations depend on approximate exchange–correlation functionals.
-  citations:
-  - wp-physics-density_functional_theory
-  - nist-atomic-wavefunctions
-  - wp-physics-atomic_hamiltonian
-  - nist-atomic-spectroscopy
-  - aps-hohenberg-kohn
-  - aps-kohn-sham
-- id: manyatom_to_hf
-  source: many_electron_atom
-  target: hartree_fock_method
-  type: model-realization
-  label: single-determinant mean field
-  detail: Hartree–Fock is a variational restriction to a single Slater determinant; it gives an upper bound within that ansatz but omits correlation beyond the determinant and is not generally controlled by a universal small parameter.
-  citations:
-  - wp-physics-hartree_fock_method
-  - nist-atomic-wavefunctions
-  - wp-physics-atomic_hamiltonian
-  - nist-atomic-spectroscopy
-- id: manyatom_to_hartree
-  source: many_electron_atom
-  target: hartree_method
-  type: model-realization
-  label: product-state mean field
-  detail: Hartree theory restricts the many-electron wavefunction to a product of orbitals.
-  citations:
-  - wp-physics-hartree_method
-  - nist-atomic-wavefunctions
-  - wp-physics-atomic_hamiltonian
-  - nist-atomic-spectroscopy
-- id: manyatom_to_independent
-  source: many_electron_atom
-  target: independent_particle_model
-  type: model-realization
-  label: effective one-electron states
-  detail: Independent-particle models neglect explicit correlated motion beyond an average field, while enforcing fermion antisymmetry as appropriate.
-  citations:
-  - wp-physics-independent_particle_model
-  - nist-atomic-wavefunctions
-  - wp-physics-atomic_hamiltonian
-  - nist-atomic-spectroscopy
-- id: molecule_to_ion
-  source: molecule
-  target: ion
-  type: transformation-process
-  label: molecular ionization or electron attachment
-  detail: Removing an electron from, or attaching an electron to, a molecule produces a molecular ion.
-  citations:
-  - iupac-ion
-  - iupac-ionization
-  - iupac-molecule
-  - wp-physics-ion
-  - wp-physics-molecule
-- id: coulomb_h_to_com
-  source: nonrelativistic_coulomb_hamiltonian
-  target: center_of_mass_separation
-  type: canonical-construction
-  label: separate translational motion
-  detail: Translation invariance permits separation of overall center-of-mass motion from internal coordinates.
-  citations:
-  - wp-physics-center_of_mass_separation
-  - nist-atomic-spectroscopy
-  - wp-physics-atomic_hamiltonian
-- id: nrqed_to_atomicqed
-  source: nonrelativistic_qed
-  target: atomic_qed_corrections
-  type: describes-governs
-  label: bound-state radiative expansion
-  detail: NRQED organizes radiative, recoil, and relativistic corrections for light atomic bound states.
-  citations:
-  - wp-physics-quantum_electrodynamics
-  - nist-hydrogen
-  - wp-physics-nonrelativistic_qed
-  - burgess-eft
-- id: oneatom_to_orbital
-  source: one_electron_atom
-  target: atomic_orbital
-  type: state-description
-  label: exact one-electron wavefunction
-  detail: For one-electron atoms, stationary wavefunctions are exact atomic orbitals within the chosen Hamiltonian.
-  citations:
-  - wp-physics-atomic_orbital
-  - nlab-physics-atomic_orbital
-  - wp-physics-one_electron_atom
-  - nist-hydrogen
-- id: oneelectron_to_hydrogen
-  source: one_electron_atom
-  target: hydrogen_atom
-  type: classification
-  label: neutral hydrogen
-  detail: Hydrogen is the neutral one-electron atom with $Z=1$.
-  citations:
-  - wp-physics-hydrogen_atom
-  - nlab-physics-hydrogen_atom
-  - wp-physics-one_electron_atom
-  - nist-hydrogen
-- id: oneelectron_to_hydrogenic
-  source: one_electron_atom
-  target: hydrogenic_ion
-  type: classification
-  label: one-electron ion
-  detail: Hydrogen-like ions have one electron and $Z>1$.
-  citations:
-  - wp-physics-one_electron_atom
-  - nist-atomic-spectroscopy
-  - nist-hydrogen
-- id: l_to_subshell
-  source: orbital_quantum_number
-  target: electron_subshell
-  type: state-description
-  label: subshell label
-  detail: The orbital quantum number labels $s,p,d,f,\ldots$ subshells.
-  citations:
-  - wp-physics-orbital_quantum_number
-  - nist-atomic-spectroscopy
-  - wp-physics-electron_shell
-  - nist-atomic-states
-- id: n_to_shell
-  source: principal_quantum_number
-  target: electron_shell
-  type: state-description
-  label: principal shell label
-  detail: In central-field language, the principal quantum number primarily labels electron shells.
-  citations:
-  - wp-physics-principal_quantum_number
-  - nist-atomic-spectroscopy
-  - wp-physics-electron_shell
-  - nist-atomic-states
-- id: reducedmass_to_rydberg
-  source: reduced_mass_approximation
-  target: rydberg_formula
-  type: mathematical-limit
-  label: finite-mass Rydberg correction
-  detail: Replacing the electron mass by the reduced mass gives the leading finite-nuclear-mass correction to hydrogenic gross structure.
-  citations:
-  - wp-physics-reduced_mass_approximation
-  - nist-hydrogen
-  - nist-codata
-  - wp-physics-rydberg_formula
-- id: relatomic_to_fine
-  source: relativistic_atomic_structure
-  target: fine_structure
-  type: describes-governs
-  label: relativistic splitting
-  detail: Fine structure arises from the relativistic atomic Hamiltonian and its low-energy expansion.
-  citations:
-  - wp-physics-fine_structure
-  - nlab-physics-fine_structure
-  - wp-physics-relativistic_atomic_structure
-  - nist-atomic-spectroscopy
-- id: rutherford_to_bohr
-  source: rutherford_model
-  target: bohr_model
-  type: model-realization
-  label: quantized-orbit supplement
-  detail: The Bohr model adds ad hoc quantization to the Rutherford atom and works mainly for hydrogenic gross spectra.
-  citations:
-  - wp-physics-bohr_model
-  - nist-hydrogen
-  - wp-physics-rutherford_model
-  - nist-atomic-spectroscopy
-- id: screening_to_central
-  source: screening_effect
-  target: central_field_approximation
-  type: theory-component
-  label: screened effective potential
-  detail: Central-field models encode much of electron screening in an effective radial potential.
-  citations:
-  - wp-physics-screening_effect
-  - nist-atomic-spectroscopy
-  - wp-physics-central_field_approximation
-  - nist-atomic-wavefunctions
-- id: selection_to_e1
-  source: selection_rule
-  target: electric_dipole_transition
-  type: describes-governs
-  label: $E1$ selection rules
-  detail: Angular momentum and parity constrain electric-dipole matrix elements.
-  citations:
-  - wp-physics-electric_dipole_transition
-  - nist-atomic-spectroscopy
-  - wp-physics-selection_rule
-- id: spontaneous_to_photon
-  source: spontaneous_emission
-  target: photon
-  type: transformation-process
-  label: emitted photon
-  detail: An ordinary allowed one-photon radiative atomic decay produces a photon together with atomic recoil and finite linewidth; higher-order channels can emit two or more photons.
-  citations:
-  - nist-atomic-spectroscopy
-  - tong-qft
-- id: stimulated_to_photon
-  source: stimulated_emission
-  target: photon
-  type: transformation-process
-  label: additional photon in driven mode
-  detail: Stimulated emission increases the occupation of the coupled radiation mode; an exact photon-number statement depends on the field state.
-  citations:
-  - nist-atomic-spectroscopy
-  - tong-qft
-- id: atom_to_bindingenergy
-  source: atom
-  target: binding_energy
-  type: state-description
-  label: atomic breakup threshold
-  detail: An atom’s electronic binding energy is defined relative to a specified ionization or dissociation threshold.
-  citations:
-  - einstein-binding-energy
-  - nist-atomic-spectroscopy
-- id: atom_to_ionizationenergy
-  source: atom
-  target: ionization_energy
-  type: state-description
-  label: first ionization threshold
-  detail: A neutral atom has a first ionization energy defined by the minimum ground-state electron-removal channel.
-  citations:
-  - wp-physics-ionization_energy
-  - nist-ionization-energy
-- id: ionizationenergy_to_process
-  source: ionization_energy
-  target: ionization_process
-  type: describes-governs
-  label: threshold energy
-  detail: The ionization energy sets the lowest energetic threshold for the specified ionization process.
-  citations:
-  - wp-physics-ionization_energy
-  - nist-ionization-energy
-- id: atom_to_ground
-  source: atom
-  target: ground_state
-  type: state-description
-  label: atomic ground state
-  detail: Each stable atomic species and charge state has a lowest-energy state within the chosen Hamiltonian and sector.
-  citations:
-  - nist-atomic-states
-  - nist-asd-levels
-- id: atom_to_excited
-  source: atom
-  target: excited_state
-  type: state-description
-  label: atomic excited states
-  detail: Atoms possess excited bound, metastable, resonant, and continuum states above the ground state.
-  citations:
-  - nist-atomic-states
-  - nist-asd-levels
-- id: atomicstate_to_parity
-  source: atomic_state
-  target: parity_quantum_number
-  type: state-description
-  label: atomic-state parity
-  detail: Atomic configurations and levels are labeled by even or odd parity when inversion symmetry applies.
-  citations:
-  - nist-atomic-states
-  - nist-asd-levels
-- id: ee_to_coulomb_h
-  source: electron_electron_coulomb_interaction
-  target: nonrelativistic_coulomb_hamiltonian
-  type: theory-component
-  label: electron repulsion term
-  detail: Pairwise electron–electron Coulomb repulsion is an explicit term of the leading many-electron Hamiltonian.
-  citations:
-  - wp-physics-electron_electron_coulomb_interaction
-  - nist-atomic-spectroscopy
-- id: enucleus_to_coulomb_h
-  source: electron_nucleus_coulomb_interaction
-  target: nonrelativistic_coulomb_hamiltonian
-  type: theory-component
-  label: electron–nucleus attraction term
-  detail: Electron–nucleus Coulomb attraction, using a point or finite charge distribution as appropriate, is the principal binding term of the leading atomic Hamiltonian.
-  citations:
-  - wp-physics-electron_nucleus_coulomb_interaction
-  - nist-atomic-spectroscopy
-- id: hist_balmer_hydrogen_spectrum_observations_to_rydberg_formula
-  source: balmer_hydrogen_spectrum_observations
-  target: rydberg_formula
-  type: historically-motivated
-  label: regular hydrogen line series
-  detail: Balmer’s empirical pattern was generalized by Rydberg’s spectral formula.
-  citations:
-  - wp-physics-balmer_hydrogen_spectrum_observations
-  - nist-atomic-spectrum-history
-- id: hist_balmer_hydrogen_spectrum_observations_to_bohr_model
-  source: balmer_hydrogen_spectrum_observations
-  target: bohr_model
-  type: historically-motivated
-  label: discrete hydrogen spectrum
-  detail: The need to explain Balmer and Rydberg lines was a central target of Bohr’s quantized atomic model.
-  citations:
-  - wp-physics-balmer_hydrogen_spectrum_observations
-  - nist-atomic-spectrum-history
-- id: hist_proton_radius_puzzle_to_atomic_qed_corrections
-  source: proton_radius_puzzle
-  target: atomic_qed_corrections
-  type: historically-motivated
-  label: precision bound-state discrepancy
-  detail: The discrepancy forced renewed scrutiny of bound-state QED, recoil, spectroscopy, and systematic effects.
-  citations:
-  - wp-physics-proton_radius_puzzle
-  - nist-codata-2022
-- id: hist_proton_radius_puzzle_to_finite_nuclear_size_effect
-  source: proton_radius_puzzle
-  target: finite_nuclear_size_effect
-  type: historically-motivated
-  label: proton charge-radius sensitivity
-  detail: The puzzle highlighted how nuclear charge distributions shift atomic levels, especially in muonic hydrogen.
-  citations:
-  - wp-physics-proton_radius_puzzle
-  - nist-codata-2022
-- id: exp_chemical_element_by_moseley_xray_spectroscopy
-  source: chemical_element
-  target: moseley_xray_spectroscopy
-  type: experimentally-verified-by
-  label: element identity by atomic number
-  detail: Characteristic X-ray spectra tied chemical identity to integer atomic number.
-  citations:
-  - wp-physics-moseley_xray_spectroscopy
-  - nist-atomic-spectrum-history
-- id: exp_atomic_energy_level_by_franck_hertz_experiment
-  source: atomic_energy_level
-  target: franck_hertz_experiment
-  type: experimentally-verified-by
-  label: discrete excitation thresholds
-  detail: Repeated inelastic thresholds directly supported discrete atomic excitation energies.
-  citations:
-  - wp-physics-franck_hertz_experiment
-  - nobel-franck-hertz
-- id: exp_bohr_model_by_franck_hertz_experiment
-  source: bohr_model
-  target: franck_hertz_experiment
-  type: experimentally-verified-by
-  label: quantized atomic excitations
-  detail: The threshold spacing agreed qualitatively with the quantized-level picture central to the Bohr model.
-  citations:
-  - wp-physics-franck_hertz_experiment
-  - nobel-franck-hertz
-- id: exp_lamb_shift_by_lamb_retherford_experiment
-  source: lamb_shift
-  target: lamb_retherford_experiment
-  type: experimentally-verified-by
-  label: $2S_{1/2}$–$2P_{1/2}$ splitting
-  detail: The experiment directly established the level splitting now called the Lamb shift.
-  citations:
-  - wp-physics-lamb_shift
-  - nobel-lamb
-  - nist-qed-tests
-- id: exp_atomic_qed_corrections_by_lamb_retherford_experiment
-  source: atomic_qed_corrections
-  target: lamb_retherford_experiment
-  type: experimentally-verified-by
-  label: precision hydrogen radiative shift
-  detail: The observed splitting is a foundational benchmark for atomic QED corrections.
-  citations:
-  - wp-physics-lamb_shift
-  - nobel-lamb
-  - nist-qed-tests
-- id: exp_atom_by_perrin_brownian_motion_experiments
-  source: atom
-  target: perrin_brownian_motion_experiments
-  type: experimentally-verified-by
-  label: quantitative atomic theory
-  detail: Agreement among Brownian-motion measurements of molecular scales and Avogadro’s number provided strong evidence that atoms and molecules are physical constituents rather than merely calculational devices.
-  citations:
-  - wp-physics-perrin_brownian_motion_experiments
-  - nobel-perrin
+  - id: angular_to_jjcoupling
+    source: many_electron_atom
+    target: jj_coupling
+    type: model-realization
+    label: $jj$ coupling regime
+    detail: $jj$ coupling is useful when individual spin–orbit couplings dominate residual interelectronic angular coupling.
+    citations:
+      - wp-physics-ls_coupling
+      - nist-atomic-spectroscopy
+  - id: angular_to_lscoupling
+    source: many_electron_atom
+    target: ls_coupling
+    type: model-realization
+    label: LS coupling regime
+    detail: LS coupling is useful when electrostatic interactions dominate individual spin–orbit couplings in a many-electron atom.
+    citations:
+      - wp-physics-ls_coupling
+      - nist-atomic-spectroscopy
+  - id: atom_to_energy_level
+    source: atom
+    target: atomic_energy_level
+    type: state-description
+    label: stationary energy states
+    detail: Atoms possess discrete bound-state energy levels and continua, measured through spectroscopic transitions.
+    citations:
+      - nist-atomic-spectra
+      - iupac-energy-level
+      - wp-physics-atomic_energy_level
+      - wp-physics-atom
+      - nlab-physics-atom
+  - id: atom_to_state
+    source: atom
+    target: atomic_state
+    type: state-description
+    label: atomic quantum states
+    detail: The atom has a spectrum of bound, resonant, and continuum states.
+    citations:
+      - wp-physics-atomic_state
+      - nist-asd-levels
+      - wp-physics-atom
+      - nlab-physics-atom
+  - id: atom_to_ion
+    source: atom
+    target: ion
+    type: transformation-process
+    label: ionization or electron attachment
+    detail: Removing electrons from, or attaching electrons to, an atom produces an atomic ion.
+    citations:
+      - iupac-ionization
+      - iupac-atom
+      - wp-physics-ion
+      - iupac-ion
+      - wp-physics-atom
+  - id: atom_to_ionization
+    source: atom
+    target: ionization_process
+    type: transformation-process
+    label: electron removal
+    detail: Ionization removes a bound electron when sufficient energy or field strength is supplied.
+    citations:
+      - wp-physics-ionization_process
+      - iupac-ionization
+      - wp-physics-atom
+      - nlab-physics-atom
+  - id: atom_to_manyelectron
+    source: atom
+    target: many_electron_atom
+    type: classification
+    label: many-electron atom
+    detail: Most neutral atoms have several interacting electrons.
+    citations:
+      - wp-physics-atomic_hamiltonian
+      - nist-atomic-spectroscopy
+      - wp-physics-atom
+      - nlab-physics-atom
+  - id: atom_to_molecule_precise
+    source: atom
+    target: molecule
+    type: composition
+    label: atomic nuclei and electrons reorganized in molecular state
+    detail: Molecules are not classical sums of pre-existing intact atoms; their nuclei and electrons form a joint quantum bound state conventionally described by atomic composition.
+    citations:
+      - wp-physics-molecule
+      - iupac-molecule
+      - wp-physics-atom
+      - nlab-physics-atom
+  - id: atom_to_nuclide
+    source: atom
+    target: nuclide
+    type: classification
+    label: specified nuclear composition
+    detail: A nuclide is a species of atom characterized by proton number, neutron number, and, when relevant, nuclear energy state.
+    citations:
+      - wp-physics-atom
+      - nlab-physics-atom
+      - iupac-atom
+      - nist-atomic-spectroscopy
+      - wp-physics-nuclide
+      - nlab-physics-nuclide
+      - iupac-nuclide
+      - iaea-livechart
+  - id: atom_to_rutherford
+    source: atom
+    target: rutherford_model
+    type: model-realization
+    label: historical nuclear model
+    detail: The Rutherford model captures the concentration of positive charge in a nucleus but fails as a stable classical atom.
+    citations:
+      - wp-physics-rutherford_model
+      - nist-atomic-spectroscopy
+      - wp-physics-atom
+      - nlab-physics-atom
+  - id: levels_to_spectrum
+    source: atomic_energy_level
+    target: atomic_spectrum
+    type: state-description
+    label: transition frequencies
+    detail: Differences between levels contribute spectral line frequencies, subject to transition matrix elements and broadening.
+    citations:
+      - wp-physics-atomic_spectrum
+      - nist-atomic-spectroscopy
+      - wp-physics-atomic_energy_level
+      - iupac-energy-level
+  - id: atom_to_atomic_h
+    source: atomic_hamiltonian
+    target: atom
+    type: describes-governs
+    label: atomic bound-state dynamics
+    detail: An atomic Hamiltonian describes the internal dynamics and energy spectrum of an atom within its stated effective and approximation regime.
+    citations:
+      - wp-physics-atomic_hamiltonian
+      - nlab-physics-atomic_hamiltonian
+      - wp-physics-atom
+      - nlab-physics-atom
+  - id: atomic_h_to_infinite_mass
+    source: atomic_hamiltonian
+    target: infinite_nuclear_mass_approximation
+    type: mathematical-limit
+    label: neglect nuclear recoil
+    detail: Fixing the nucleus is controlled by small electron-to-nuclear mass ratios, but precision work restores recoil and mass-polarization terms.
+    citations:
+      - wp-physics-infinite_nuclear_mass_approximation
+      - nist-atomic-spectroscopy
+      - wp-physics-atomic_hamiltonian
+      - nlab-physics-atomic_hamiltonian
+  - id: atomic_h_to_coulomb_h
+    source: atomic_hamiltonian
+    target: nonrelativistic_coulomb_hamiltonian
+    type: mathematical-limit
+    label: leading nonrelativistic Coulomb model
+    detail: The Coulomb Hamiltonian is the leading nonrelativistic, instantaneous-interaction model when transverse-photon, relativistic, radiative, and finite-size effects are below the required accuracy. It may retain finite nuclear masses and recoil through the nuclear kinetic terms and reduced-mass separation.
+    citations:
+      - wp-physics-atomic_hamiltonian
+      - nist-atomic-spectroscopy
+  - id: finite_mass_to_recoil
+    source: nuclear_recoil
+    target: atomic_hamiltonian
+    type: theory-component
+    label: finite-mass correction
+    detail: Nuclear recoil and mass-polarization terms are finite-nuclear-mass components of precision atomic Hamiltonians.
+    citations:
+      - wp-physics-nuclear_recoil
+      - nist-atomic-spectroscopy
+  - id: atomic_h_to_relativistic
+    source: atomic_hamiltonian
+    target: relativistic_atomic_structure
+    type: framework-specialization
+    label: relativistic atomic description
+    detail: Relativistic atomic structure replaces or augments the nonrelativistic Hamiltonian with Dirac-based and QED-matched descriptions when $Z\alpha$ or required precision makes relativistic effects important.
+    citations:
+      - wp-physics-relativistic_atomic_structure
+      - nist-atomic-spectroscopy
+      - wp-physics-atomic_hamiltonian
+      - nlab-physics-atomic_hamiltonian
+  - id: orbital_to_configuration
+    source: atomic_orbital
+    target: electron_configuration
+    type: theory-component
+    label: occupation basis
+    detail: Electron configurations record occupations of a chosen orbital or subshell basis; they are state descriptions, not material assemblies of orbitals.
+    citations:
+      - wp-physics-electron_configuration
+      - nlab-physics-electron_configuration
+  - id: orbital_to_shell
+    source: atomic_orbital
+    target: electron_shell
+    type: theory-component
+    label: grouped by principal shell
+    detail: In hydrogenic and central-field classifications, one-electron orbitals sharing the principal quantum number are grouped into a shell; a shell is a state classification, not a material composite.
+    citations:
+      - wp-physics-electron_shell
+      - nist-atomic-states
+  - id: atomicqed_to_selfenergy
+    source: electron_self_energy
+    target: atomic_qed_corrections
+    type: theory-component
+    label: self-energy correction
+    detail: Bound-electron self-energy is a principal atomic QED correction.
+    citations:
+      - wp-physics-electron_self_energy
+      - nist-hydrogen
+      - wp-physics-quantum_electrodynamics
+  - id: atomicqed_to_lamb
+    source: atomic_qed_corrections
+    target: lamb_shift
+    type: describes-governs
+    label: radiative level splitting
+    detail: Self-energy and vacuum polarization dominate the Lamb shift, with recoil and nuclear-size contributions also relevant.
+    citations:
+      - wp-physics-lamb_shift
+      - nlab-physics-lamb_shift
+      - wp-physics-quantum_electrodynamics
+      - nist-hydrogen
+  - id: atomicqed_to_vacpol
+    source: vacuum_polarization
+    target: atomic_qed_corrections
+    type: theory-component
+    label: vacuum-polarization correction
+    detail: Vacuum polarization modifies the nuclear Coulomb potential.
+    citations:
+      - wp-physics-vacuum_polarization
+      - nist-hydrogen
+      - wp-physics-quantum_electrodynamics
+  - id: state_to_level
+    source: atomic_state
+    target: atomic_energy_level
+    type: state-description
+    label: energy level
+    detail: Energy levels are energies assigned to stationary or metastable atomic states.
+    citations:
+      - wp-physics-atomic_energy_level
+      - iupac-energy-level
+      - wp-physics-atomic_state
+      - nist-asd-levels
+  - id: state_to_term
+    source: atomic_state
+    target: atomic_term_symbol
+    type: state-description
+    label: angular-momentum label
+    detail: Term symbols label symmetry and angular-momentum properties of atomic states.
+    citations:
+      - wp-physics-atomic_term_symbol
+      - nist-atomic-states
+      - wp-physics-atomic_state
+      - nist-asd-levels
+  - id: state_to_transition
+    source: atomic_state
+    target: atomic_transition
+    type: transformation-process
+    label: state change
+    detail: Atomic transitions connect initial and final atomic states.
+    citations:
+      - wp-physics-atomic_energy_level
+      - nist-atomic-spectroscopy
+      - wp-physics-atomic_state
+      - nist-asd-levels
+  - id: transition_to_absorption
+    source: atomic_transition
+    target: absorption
+    type: classification
+    label: upward radiative transition
+    detail: Absorption raises the atomic energy by taking energy from a field.
+    citations:
+      - wp-physics-absorption
+      - nist-atomic-spectroscopy
+      - wp-physics-atomic_energy_level
+  - id: transition_to_e1
+    source: atomic_transition
+    target: electric_dipole_transition
+    type: classification
+    label: electric-dipole channel
+    detail: Electric-dipole transitions are the leading radiative multipole channel when allowed.
+    citations:
+      - wp-physics-electric_dipole_transition
+      - nist-atomic-spectroscopy
+      - wp-physics-atomic_energy_level
+  - id: transition_to_spontaneous
+    source: atomic_transition
+    target: spontaneous_emission
+    type: classification
+    label: vacuum-induced emission
+    detail: Spontaneous emission lowers an excited state through coupling to the quantized field.
+    citations:
+      - wp-physics-spontaneous_emission
+      - nist-atomic-spectroscopy
+      - wp-physics-atomic_energy_level
+  - id: transition_to_stimulated
+    source: atomic_transition
+    target: stimulated_emission
+    type: classification
+    label: field-stimulated emission
+    detail: Stimulated emission is induced by an incident field.
+    citations:
+      - wp-physics-stimulated_emission
+      - nist-atomic-spectroscopy
+      - wp-physics-atomic_energy_level
+  - id: com_to_reducedmass
+    source: center_of_mass_separation
+    target: reduced_mass_approximation
+    type: framework-specialization
+    label: two-body reduced mass
+    detail: For a two-body atom the internal kinetic energy uses the exact reduced mass; for many-electron atoms related mass-polarization terms remain.
+    citations:
+      - wp-physics-reduced_mass_approximation
+      - nist-hydrogen
+      - wp-physics-center_of_mass_separation
+      - nist-atomic-spectroscopy
+  - id: element_to_atom
+    source: chemical_element
+    target: atom
+    type: classification
+    label: neutral atomic representative
+    detail: A neutral atom is an atomic representative of an element when its nucleus has the element’s proton number.
+    citations:
+      - wp-physics-atom
+      - nlab-physics-atom
+      - wp-physics-chemical_element
+      - iupac-atom
+  - id: csf_to_atomicstate
+    source: atomic_state
+    target: configuration_state_function
+    type: state-description
+    label: many-electron basis expansion
+    detail: Atomic states are expanded in configuration-state functions in multiconfiguration methods.
+    citations:
+      - wp-physics-configuration_state_function
+      - nist-atomic-spectroscopy
+      - nist-atomic-states
+      - wp-physics-atomic_state
+      - nist-asd-levels
+  - id: binding_to_atom
+    source: electromagnetic_binding
+    target: atom
+    type: couples-interacts
+    label: electron–nucleus bound system
+    detail: Electromagnetic attraction binds electrons to the nucleus, while electron repulsion and fermionic statistics shape many-electron structure.
+    citations:
+      - wp-physics-atom
+      - nlab-physics-atom
+      - wp-physics-electromagnetic_interaction
+      - nist-atomic-spectroscopy
+  - id: configuration_to_state
+    source: atomic_state
+    target: electron_configuration
+    type: state-description
+    label: configuration basis components
+    detail: An atomic state can be described by its electron-configuration content, but an exact many-electron eigenstate may superpose multiple configurations, so a single configuration is generally only a label or approximation.
+    citations:
+      - wp-physics-atomic_state
+      - nist-asd-levels
+      - wp-physics-electron_configuration
+      - nlab-physics-electron_configuration
+  - id: ee_to_manyelectron
+    source: electron_electron_coulomb_interaction
+    target: many_electron_atom
+    type: couples-interacts
+    label: many-electron repulsion
+    detail: Electron–electron repulsion makes the atomic problem genuinely many-body.
+    citations:
+      - wp-physics-electron_electron_coulomb_interaction
+      - nist-atomic-spectroscopy
+      - nist-atomic-wavefunctions
+      - wp-physics-atomic_hamiltonian
+  - id: enucleus_to_atom
+    source: electron_nucleus_coulomb_interaction
+    target: atom
+    type: couples-interacts
+    label: principal atomic binding interaction
+    detail: Electron–nucleus attraction is the principal binding interaction of an atom.
+    citations:
+      - wp-physics-electron_nucleus_coulomb_interaction
+      - nist-atomic-spectroscopy
+      - tong-quantum
+      - wp-physics-atom
+      - nlab-physics-atom
+      - iupac-atom
+  - id: shell_to_subshell
+    source: electron_shell
+    target: electron_subshell
+    type: classification
+    label: angular-momentum subshell
+    detail: Shells decompose into subshells labeled by orbital angular momentum and, relativistically, total angular momentum.
+    citations:
+      - wp-physics-electron_shell
+      - nist-atomic-states
+  - id: hf_to_ci
+    source: hartree_fock_method
+    target: configuration_interaction_method
+    type: framework-specialization
+    label: multi-configuration extension
+    detail: Configuration interaction expands beyond one Hartree–Fock determinant using selected excited determinants or configuration-state functions in a finite basis.
+    citations:
+      - wp-physics-configuration_interaction_method
+      - nist-atomic-wavefunctions
+  - id: hf_to_cc
+    source: hartree_fock_method
+    target: coupled_cluster_method
+    type: framework-specialization
+    label: exponential correlated extension
+    detail: Coupled-cluster theory builds an exponential correlated ansatz, commonly from a Hartree–Fock reference; truncation such as CCSD defines the practical approximation.
+    citations:
+      - wp-physics-coupled_cluster_method
+      - nist-atomic-wavefunctions
+  - id: hf_to_correlation
+    source: hartree_fock_method
+    target: electron_correlation
+    type: state-description
+    label: correlation beyond mean field
+    detail: Electron correlation is conventionally the difference between the exact nonrelativistic solution and the Hartree–Fock limit for the same Hamiltonian.
+    citations:
+      - wp-physics-electron_correlation
+      - nist-atomic-wavefunctions
+      - wp-physics-hartree_fock_method
+  - id: hartree_to_hf
+    source: hartree_method
+    target: hartree_fock_method
+    type: framework-specialization
+    label: antisymmetric mean field
+    detail: Hartree–Fock replaces the Hartree product by a variational Slater determinant and thereby includes exchange while still omitting correlation beyond one determinant.
+    citations:
+      - wp-physics-hartree_fock_method
+      - nist-atomic-wavefunctions
+  - id: hydrogen_to_rydberg
+    source: hydrogen_atom
+    target: rydberg_formula
+    type: describes-governs
+    label: gross hydrogen spectrum
+    detail: The Rydberg formula describes leading hydrogenic transition wavenumbers.
+    citations:
+      - wp-physics-hydrogen_atom
+      - nlab-physics-hydrogen_atom
+      - nist-hydrogen
+      - nist-asd-levels
+      - wp-physics-rydberg_formula
+      - nist-codata
+  - id: ion_to_anion
+    source: ion
+    target: anion
+    type: classification
+    label: negative ion
+    detail: Anions have negative net charge.
+    citations:
+      - wp-physics-ion
+      - iupac-ion
+  - id: ion_to_cation
+    source: ion
+    target: cation
+    type: classification
+    label: positive ion
+    detail: Cations have positive net charge.
+    citations:
+      - wp-physics-ion
+      - iupac-ion
+  - id: ionization_to_ion
+    source: ionization_process
+    target: ion
+    type: transformation-process
+    label: charged residue
+    detail: Ionization by removing one or more electrons from a neutral atom or molecule produces a positive ion and free electron(s); electron attachment is a distinct process that can produce a negative ion.
+    citations:
+      - wp-physics-ion
+      - iupac-ion
+      - wp-physics-ionization_process
+      - iupac-ionization
+  - id: jjcoupling_to_term
+    source: jj_coupling
+    target: atomic_term_symbol
+    type: state-description
+    label: $jj$-coupled labels
+    detail: In $jj$ coupling, term labels record the coupled one-electron $j_i$ values and total $J$.
+    citations:
+      - wp-physics-ls_coupling
+      - nist-atomic-spectroscopy
+      - wp-physics-atomic_term_symbol
+      - nist-atomic-states
+      - nist-asd-levels
+  - id: lscoupling_to_term
+    source: ls_coupling
+    target: atomic_term_symbol
+    type: state-description
+    label: $^{2S+1}L_J$ labels
+    detail: LS-coupled states are labeled by term symbols $^{2S+1}L_J$.
+    citations:
+      - wp-physics-ls_coupling
+      - nist-atomic-spectroscopy
+      - wp-physics-atomic_term_symbol
+      - nist-atomic-states
+      - nist-asd-levels
+  - id: manyatom_to_orbital
+    source: many_electron_atom
+    target: atomic_orbital
+    type: state-description
+    label: one-electron basis / mean-field orbital
+    detail: In many-electron atoms, orbitals are basis or mean-field functions used to construct antisymmetric states; they are not separately exact electron states in general.
+    citations:
+      - wp-physics-atomic_orbital
+      - nlab-physics-atomic_orbital
+      - wp-physics-atomic_hamiltonian
+      - nist-atomic-spectroscopy
+  - id: manyatom_to_central
+    source: many_electron_atom
+    target: central_field_approximation
+    type: model-realization
+    label: spherical effective potential
+    detail: Central-field models average nonspherical and correlation effects into a radial one-electron potential.
+    citations:
+      - wp-physics-central_field_approximation
+      - nist-atomic-spectroscopy
+      - wp-physics-atomic_hamiltonian
+  - id: manyatom_to_dft
+    source: many_electron_atom
+    target: density_functional_theory
+    type: model-realization
+    label: ground-state density formulation
+    detail: Hohenberg–Kohn theory gives an exact ground-state density formulation in principle; practical Kohn–Sham calculations depend on approximate exchange–correlation functionals.
+    citations:
+      - wp-physics-density_functional_theory
+      - nist-atomic-wavefunctions
+      - wp-physics-atomic_hamiltonian
+      - nist-atomic-spectroscopy
+      - aps-hohenberg-kohn
+      - aps-kohn-sham
+  - id: manyatom_to_hf
+    source: many_electron_atom
+    target: hartree_fock_method
+    type: model-realization
+    label: single-determinant mean field
+    detail: Hartree–Fock is a variational restriction to a single Slater determinant; it gives an upper bound within that ansatz but omits correlation beyond the determinant and is not generally controlled by a universal small parameter.
+    citations:
+      - wp-physics-hartree_fock_method
+      - nist-atomic-wavefunctions
+      - wp-physics-atomic_hamiltonian
+      - nist-atomic-spectroscopy
+  - id: manyatom_to_hartree
+    source: many_electron_atom
+    target: hartree_method
+    type: model-realization
+    label: product-state mean field
+    detail: Hartree theory restricts the many-electron wavefunction to a product of orbitals.
+    citations:
+      - wp-physics-hartree_method
+      - nist-atomic-wavefunctions
+      - wp-physics-atomic_hamiltonian
+      - nist-atomic-spectroscopy
+  - id: manyatom_to_independent
+    source: many_electron_atom
+    target: independent_particle_model
+    type: model-realization
+    label: effective one-electron states
+    detail: Independent-particle models neglect explicit correlated motion beyond an average field, while enforcing fermion antisymmetry as appropriate.
+    citations:
+      - wp-physics-independent_particle_model
+      - nist-atomic-wavefunctions
+      - wp-physics-atomic_hamiltonian
+      - nist-atomic-spectroscopy
+  - id: molecule_to_ion
+    source: molecule
+    target: ion
+    type: transformation-process
+    label: molecular ionization or electron attachment
+    detail: Removing an electron from, or attaching an electron to, a molecule produces a molecular ion.
+    citations:
+      - iupac-ion
+      - iupac-ionization
+      - iupac-molecule
+      - wp-physics-ion
+      - wp-physics-molecule
+  - id: coulomb_h_to_com
+    source: nonrelativistic_coulomb_hamiltonian
+    target: center_of_mass_separation
+    type: canonical-construction
+    label: separate translational motion
+    detail: Translation invariance permits separation of overall center-of-mass motion from internal coordinates.
+    citations:
+      - wp-physics-center_of_mass_separation
+      - nist-atomic-spectroscopy
+      - wp-physics-atomic_hamiltonian
+  - id: nrqed_to_atomicqed
+    source: nonrelativistic_qed
+    target: atomic_qed_corrections
+    type: describes-governs
+    label: bound-state radiative expansion
+    detail: NRQED organizes radiative, recoil, and relativistic corrections for light atomic bound states.
+    citations:
+      - wp-physics-quantum_electrodynamics
+      - nist-hydrogen
+      - wp-physics-nonrelativistic_qed
+      - burgess-eft
+  - id: oneatom_to_orbital
+    source: one_electron_atom
+    target: atomic_orbital
+    type: state-description
+    label: exact one-electron wavefunction
+    detail: For one-electron atoms, stationary wavefunctions are exact atomic orbitals within the chosen Hamiltonian.
+    citations:
+      - wp-physics-atomic_orbital
+      - nlab-physics-atomic_orbital
+      - wp-physics-one_electron_atom
+      - nist-hydrogen
+  - id: oneelectron_to_hydrogen
+    source: one_electron_atom
+    target: hydrogen_atom
+    type: classification
+    label: neutral hydrogen
+    detail: Hydrogen is the neutral one-electron atom with $Z=1$.
+    citations:
+      - wp-physics-hydrogen_atom
+      - nlab-physics-hydrogen_atom
+      - wp-physics-one_electron_atom
+      - nist-hydrogen
+  - id: oneelectron_to_hydrogenic
+    source: one_electron_atom
+    target: hydrogenic_ion
+    type: classification
+    label: one-electron ion
+    detail: Hydrogen-like ions have one electron and $Z>1$.
+    citations:
+      - wp-physics-one_electron_atom
+      - nist-atomic-spectroscopy
+      - nist-hydrogen
+  - id: l_to_subshell
+    source: orbital_quantum_number
+    target: electron_subshell
+    type: state-description
+    label: subshell label
+    detail: The orbital quantum number labels $s,p,d,f,\ldots$ subshells.
+    citations:
+      - wp-physics-orbital_quantum_number
+      - nist-atomic-spectroscopy
+      - wp-physics-electron_shell
+      - nist-atomic-states
+  - id: n_to_shell
+    source: principal_quantum_number
+    target: electron_shell
+    type: state-description
+    label: principal shell label
+    detail: In central-field language, the principal quantum number primarily labels electron shells.
+    citations:
+      - wp-physics-principal_quantum_number
+      - nist-atomic-spectroscopy
+      - wp-physics-electron_shell
+      - nist-atomic-states
+  - id: reducedmass_to_rydberg
+    source: reduced_mass_approximation
+    target: rydberg_formula
+    type: mathematical-limit
+    label: finite-mass Rydberg correction
+    detail: Replacing the electron mass by the reduced mass gives the leading finite-nuclear-mass correction to hydrogenic gross structure.
+    citations:
+      - wp-physics-reduced_mass_approximation
+      - nist-hydrogen
+      - nist-codata
+      - wp-physics-rydberg_formula
+  - id: relatomic_to_fine
+    source: relativistic_atomic_structure
+    target: fine_structure
+    type: describes-governs
+    label: relativistic splitting
+    detail: Fine structure arises from the relativistic atomic Hamiltonian and its low-energy expansion.
+    citations:
+      - wp-physics-fine_structure
+      - nlab-physics-fine_structure
+      - wp-physics-relativistic_atomic_structure
+      - nist-atomic-spectroscopy
+  - id: rutherford_to_bohr
+    source: rutherford_model
+    target: bohr_model
+    type: model-realization
+    label: quantized-orbit supplement
+    detail: The Bohr model adds ad hoc quantization to the Rutherford atom and works mainly for hydrogenic gross spectra.
+    citations:
+      - wp-physics-bohr_model
+      - nist-hydrogen
+      - wp-physics-rutherford_model
+      - nist-atomic-spectroscopy
+  - id: screening_to_central
+    source: screening_effect
+    target: central_field_approximation
+    type: theory-component
+    label: screened effective potential
+    detail: Central-field models encode much of electron screening in an effective radial potential.
+    citations:
+      - wp-physics-screening_effect
+      - nist-atomic-spectroscopy
+      - wp-physics-central_field_approximation
+      - nist-atomic-wavefunctions
+  - id: selection_to_e1
+    source: selection_rule
+    target: electric_dipole_transition
+    type: describes-governs
+    label: $E1$ selection rules
+    detail: Angular momentum and parity constrain electric-dipole matrix elements.
+    citations:
+      - wp-physics-electric_dipole_transition
+      - nist-atomic-spectroscopy
+      - wp-physics-selection_rule
+  - id: spontaneous_to_photon
+    source: spontaneous_emission
+    target: photon
+    type: transformation-process
+    label: emitted photon
+    detail: An ordinary allowed one-photon radiative atomic decay produces a photon together with atomic recoil and finite linewidth; higher-order channels can emit two or more photons.
+    citations:
+      - nist-atomic-spectroscopy
+      - tong-qft
+  - id: stimulated_to_photon
+    source: stimulated_emission
+    target: photon
+    type: transformation-process
+    label: additional photon in driven mode
+    detail: Stimulated emission increases the occupation of the coupled radiation mode; an exact photon-number statement depends on the field state.
+    citations:
+      - nist-atomic-spectroscopy
+      - tong-qft
+  - id: atom_to_bindingenergy
+    source: atom
+    target: binding_energy
+    type: state-description
+    label: atomic breakup threshold
+    detail: An atom’s electronic binding energy is defined relative to a specified ionization or dissociation threshold.
+    citations:
+      - einstein-binding-energy
+      - nist-atomic-spectroscopy
+  - id: atom_to_ionizationenergy
+    source: atom
+    target: ionization_energy
+    type: state-description
+    label: first ionization threshold
+    detail: A neutral atom has a first ionization energy defined by the minimum ground-state electron-removal channel.
+    citations:
+      - wp-physics-ionization_energy
+      - nist-ionization-energy
+  - id: ionizationenergy_to_process
+    source: ionization_energy
+    target: ionization_process
+    type: describes-governs
+    label: threshold energy
+    detail: The ionization energy sets the lowest energetic threshold for the specified ionization process.
+    citations:
+      - wp-physics-ionization_energy
+      - nist-ionization-energy
+  - id: atom_to_ground
+    source: atom
+    target: ground_state
+    type: state-description
+    label: atomic ground state
+    detail: Each stable atomic species and charge state has a lowest-energy state within the chosen Hamiltonian and sector.
+    citations:
+      - nist-atomic-states
+      - nist-asd-levels
+  - id: atom_to_excited
+    source: atom
+    target: excited_state
+    type: state-description
+    label: atomic excited states
+    detail: Atoms possess excited bound, metastable, resonant, and continuum states above the ground state.
+    citations:
+      - nist-atomic-states
+      - nist-asd-levels
+  - id: atomicstate_to_parity
+    source: atomic_state
+    target: parity_quantum_number
+    type: state-description
+    label: atomic-state parity
+    detail: Atomic configurations and levels are labeled by even or odd parity when inversion symmetry applies.
+    citations:
+      - nist-atomic-states
+      - nist-asd-levels
+  - id: ee_to_coulomb_h
+    source: electron_electron_coulomb_interaction
+    target: nonrelativistic_coulomb_hamiltonian
+    type: theory-component
+    label: electron repulsion term
+    detail: Pairwise electron–electron Coulomb repulsion is an explicit term of the leading many-electron Hamiltonian.
+    citations:
+      - wp-physics-electron_electron_coulomb_interaction
+      - nist-atomic-spectroscopy
+  - id: enucleus_to_coulomb_h
+    source: electron_nucleus_coulomb_interaction
+    target: nonrelativistic_coulomb_hamiltonian
+    type: theory-component
+    label: electron–nucleus attraction term
+    detail: Electron–nucleus Coulomb attraction, using a point or finite charge distribution as appropriate, is the principal binding term of the leading atomic Hamiltonian.
+    citations:
+      - wp-physics-electron_nucleus_coulomb_interaction
+      - nist-atomic-spectroscopy
+  - id: hist_balmer_hydrogen_spectrum_observations_to_rydberg_formula
+    source: balmer_hydrogen_spectrum_observations
+    target: rydberg_formula
+    type: historically-motivated
+    label: regular hydrogen line series
+    detail: Balmer’s empirical pattern was generalized by Rydberg’s spectral formula.
+    citations:
+      - wp-physics-balmer_hydrogen_spectrum_observations
+      - nist-atomic-spectrum-history
+  - id: hist_balmer_hydrogen_spectrum_observations_to_bohr_model
+    source: balmer_hydrogen_spectrum_observations
+    target: bohr_model
+    type: historically-motivated
+    label: discrete hydrogen spectrum
+    detail: The need to explain Balmer and Rydberg lines was a central target of Bohr’s quantized atomic model.
+    citations:
+      - wp-physics-balmer_hydrogen_spectrum_observations
+      - nist-atomic-spectrum-history
+  - id: hist_proton_radius_puzzle_to_atomic_qed_corrections
+    source: proton_radius_puzzle
+    target: atomic_qed_corrections
+    type: historically-motivated
+    label: precision bound-state discrepancy
+    detail: The discrepancy forced renewed scrutiny of bound-state QED, recoil, spectroscopy, and systematic effects.
+    citations:
+      - wp-physics-proton_radius_puzzle
+      - nist-codata-2022
+  - id: hist_proton_radius_puzzle_to_finite_nuclear_size_effect
+    source: proton_radius_puzzle
+    target: finite_nuclear_size_effect
+    type: historically-motivated
+    label: proton charge-radius sensitivity
+    detail: The puzzle highlighted how nuclear charge distributions shift atomic levels, especially in muonic hydrogen.
+    citations:
+      - wp-physics-proton_radius_puzzle
+      - nist-codata-2022
+  - id: exp_chemical_element_by_moseley_xray_spectroscopy
+    source: chemical_element
+    target: moseley_xray_spectroscopy
+    type: experimentally-verified-by
+    label: element identity by atomic number
+    detail: Characteristic X-ray spectra tied chemical identity to integer atomic number.
+    citations:
+      - wp-physics-moseley_xray_spectroscopy
+      - nist-atomic-spectrum-history
+  - id: exp_atomic_energy_level_by_franck_hertz_experiment
+    source: atomic_energy_level
+    target: franck_hertz_experiment
+    type: experimentally-verified-by
+    label: discrete excitation thresholds
+    detail: Repeated inelastic thresholds directly supported discrete atomic excitation energies.
+    citations:
+      - wp-physics-franck_hertz_experiment
+      - nobel-franck-hertz
+  - id: exp_bohr_model_by_franck_hertz_experiment
+    source: bohr_model
+    target: franck_hertz_experiment
+    type: experimentally-verified-by
+    label: quantized atomic excitations
+    detail: The threshold spacing agreed qualitatively with the quantized-level picture central to the Bohr model.
+    citations:
+      - wp-physics-franck_hertz_experiment
+      - nobel-franck-hertz
+  - id: exp_lamb_shift_by_lamb_retherford_experiment
+    source: lamb_shift
+    target: lamb_retherford_experiment
+    type: experimentally-verified-by
+    label: $2S_{1/2}$–$2P_{1/2}$ splitting
+    detail: The experiment directly established the level splitting now called the Lamb shift.
+    citations:
+      - wp-physics-lamb_shift
+      - nobel-lamb
+      - nist-qed-tests
+  - id: exp_atomic_qed_corrections_by_lamb_retherford_experiment
+    source: atomic_qed_corrections
+    target: lamb_retherford_experiment
+    type: experimentally-verified-by
+    label: precision hydrogen radiative shift
+    detail: The observed splitting is a foundational benchmark for atomic QED corrections.
+    citations:
+      - wp-physics-lamb_shift
+      - nobel-lamb
+      - nist-qed-tests
+  - id: exp_atom_by_perrin_brownian_motion_experiments
+    source: atom
+    target: perrin_brownian_motion_experiments
+    type: experimentally-verified-by
+    label: quantitative atomic theory
+    detail: Agreement among Brownian-motion measurements of molecular scales and Avogadro’s number provided strong evidence that atoms and molecules are physical constituents rather than merely calculational devices.
+    citations:
+      - wp-physics-perrin_brownian_motion_experiments
+      - nobel-perrin

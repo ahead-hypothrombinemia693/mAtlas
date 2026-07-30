@@ -1,13 +1,7 @@
 id: orders-lattices-logics
 title: From orders to logics and spaces
-summary: Develop preorders, lattices, Boolean and Heyting algebras, frames,
-  locales, and Kripke semantics from binary relations.
-narrative: A preorder becomes a thin category, while antisymmetry yields a
-  partial order. Meets and joins produce semilattices and lattices; bounds and
-  distributivity lead toward Boolean and Heyting algebras. Complete Heyting
-  algebras are frames, whose opposites are locales. Boolean and modal algebras
-  support classical and modal semantics; Heyting algebras and Kripke frames
-  organize intuitionistic logic.
+summary: Develop preorders, lattices, Boolean and Heyting algebras, frames, locales, and Kripke semantics from binary relations.
+narrative: A preorder becomes a thin category, while antisymmetry yields a partial order. Meets and joins produce semilattices and lattices; bounds and distributivity lead toward Boolean and Heyting algebras. Complete Heyting algebras are frames, whose opposites are locales. Boolean and modal algebras support classical and modal semantics; Heyting algebras and Kripke frames organize intuitionistic logic.
 tags:
   - Mathematics
   - Order theory

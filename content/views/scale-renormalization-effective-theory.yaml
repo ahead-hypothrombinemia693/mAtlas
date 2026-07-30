@@ -1,15 +1,7 @@
 id: scale-renormalization-effective-theory
 title: Scale, renormalization, and effective theory
-summary: See why physical laws are organized by resolution scale, with running
-  couplings, coarse-graining, and effective descriptions connecting high- and
-  low-energy regimes.
-narrative: Begin with physical scale and interacting quantum fields.
-  Perturbation theory introduces regularization and renormalization; running
-  couplings encode scale dependence; the renormalization group and Wilsonian
-  effective action turn this into a flow through theory space. Effective field
-  theory then explains decoupling and controlled low-energy expansions,
-  illustrated by QED, QCD, Fermi theory, chiral and nuclear EFT, SMEFT, and
-  LEFT.
+summary: See why physical laws are organized by resolution scale, with running couplings, coarse-graining, and effective descriptions connecting high- and low-energy regimes.
+narrative: Begin with physical scale and interacting quantum fields. Perturbation theory introduces regularization and renormalization; running couplings encode scale dependence; the renormalization group and Wilsonian effective action turn this into a flow through theory space. Effective field theory then explains decoupling and controlled low-energy expansions, illustrated by QED, QCD, Fermi theory, chiral and nuclear EFT, SMEFT, and LEFT.
 tags:
   - Physics
   - Quantum field theory
