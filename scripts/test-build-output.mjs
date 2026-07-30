@@ -5,6 +5,7 @@ const dist = new URL('../dist/', import.meta.url);
 const graphData = JSON.parse(await readFile(new URL('.build/content/atlas.json', root), 'utf8'));
 const viewsData = JSON.parse(await readFile(new URL('.build/content/views.json', root), 'utf8'));
 const compiledProvenance = JSON.parse(await readFile(new URL('.build/content/provenance.json', root), 'utf8'));
+const removedDomains = JSON.parse(await readFile(new URL('.build/content/removed-domains.json', root), 'utf8'));
 const manifest = JSON.parse(await readFile(new URL('asset-manifest.json', dist), 'utf8'));
 const sitemap = await readFile(new URL('sitemap.xml', dist), 'utf8');
 const llms = await readFile(new URL('llms.txt', dist), 'utf8');
@@ -62,6 +63,10 @@ for (const key of ['graph', 'schema', 'views', 'provenance', 'searchIndex']) {
   if (!manifest.assets?.[key]?.startsWith('content/')) throw new Error(`asset-manifest.json does not publish ${key} under content/.`);
 }
 await assertMissing(new URL('data/', dist), 'The build still emits the retired /data/ directory.');
+await assertMissing(new URL('content/removed-domains.json', dist), 'Build-only removed-domain metadata was published at runtime.');
+if ('removedDomains' in (manifest.assets ?? {})) throw new Error('asset-manifest.json exposes build-only removed-domain metadata.');
+if (graphData.domains.foundation) throw new Error('Foundation remains an active runtime domain.');
+if (graphData.nodes.some((node) => node.primaryDomain === 'foundation' || node.domains.includes('foundation'))) throw new Error('A runtime node still references the removed Foundation domain.');
 if (manifest.content?.schemaVersion !== compiledProvenance.schemaVersion || manifest.content?.contentVersion !== compiledProvenance.contentVersion) throw new Error('asset-manifest.json does not expose the compiled content contract versions.');
 if (!manifest.assets?.views) throw new Error('asset-manifest.json does not include the hashed views data asset.');
 if (!manifest.assets?.provenance) throw new Error('asset-manifest.json does not include the hashed content provenance asset.');
@@ -139,6 +144,16 @@ if (!conceptsIndex.includes('<meta http-equiv="refresh" content="0; url=/directo
 if (!conceptsIndex.includes('window.location.replace(target)')) throw new Error('concepts/index.html lacks its JavaScript redirect to /directory/.');
 if (!conceptsIndex.includes('<link rel="canonical" href="https://atlas.madvay.com/directory/">')) throw new Error('concepts/index.html does not canonicalize to /directory/.');
 
+for (const removedDomain of removedDomains) {
+  const html = await readFile(new URL(`${removedDomain.path}/index.html`, dist), 'utf8');
+  const canonicalUrl = new URL(removedDomain.redirectTo, 'https://atlas.madvay.com/').toString();
+  if (!html.includes(`<meta http-equiv="refresh" content="0; url=${removedDomain.redirectTo}">`)) throw new Error(`Removed domain ${removedDomain.id} lacks its HTML redirect.`);
+  if (!html.includes(`const target = ${JSON.stringify(removedDomain.redirectTo)} + window.location.search + window.location.hash;`) || !html.includes('window.location.replace(target)')) throw new Error(`Removed domain ${removedDomain.id} lacks its JavaScript redirect.`);
+  if (!html.includes(`<link rel="canonical" href="${canonicalUrl}">`)) throw new Error(`Removed domain ${removedDomain.id} has the wrong canonical target.`);
+  if (sitemap.includes(`<loc>https://atlas.madvay.com/${removedDomain.path}/</loc>`)) throw new Error(`The sitemap lists removed domain ${removedDomain.id}.`);
+  if (directoryPage.includes(`href="/${removedDomain.path}/"`)) throw new Error(`The directory links to removed domain ${removedDomain.id}.`);
+}
+
 for (const view of viewsData.views) {
   const encodedId = encodeURIComponent(view.id);
   const html = await readFile(new URL(`views/${encodedId}/index.html`, dist), 'utf8');
@@ -213,4 +228,4 @@ for (const domainId of graphData.meta.domainOrder ?? Object.keys(graphData.domai
   if (!directoryPage.includes(`href="/${path}"`)) throw new Error(`The directory page does not link to domain ${domainId}.`);
 }
 
-console.log(`Verified cache recovery across the root and ${graphData.nodes.filter((node) => node.kind === 'structure').length} concept, ${Object.keys(graphData.fields).length} field, ${Object.keys(graphData.domains).length} domain, and ${viewsData.views.length} view pages, plus the atlas directory, redirects, SVG export, data assets, and sitemap entries.`);
+console.log(`Verified cache recovery across the root and ${graphData.nodes.filter((node) => node.kind === 'structure').length} concept, ${Object.keys(graphData.fields).length} field, ${Object.keys(graphData.domains).length} active domain, ${removedDomains.length} removed-domain redirect, and ${viewsData.views.length} view pages, plus the atlas directory, redirects, SVG export, data assets, and sitemap entries.`);

@@ -16,7 +16,6 @@ settings:
     - order
     - logic
     - algebra
-    - foundation
     - number-theory
     - topology
     - analysis

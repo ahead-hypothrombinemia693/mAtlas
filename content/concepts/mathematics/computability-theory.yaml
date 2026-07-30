@@ -204,7 +204,6 @@ nodes:
     primaryDomain: computability-theory
     domains:
       - computability-theory
-      - foundation
     level: 6
     kind: structure
     summary: The methodological thesis that every effectively calculable function is computable by a Turing machine, equivalently by other standard models of computation.

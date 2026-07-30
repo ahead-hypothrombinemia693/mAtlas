@@ -1,7 +1,7 @@
 {
-  "formatVersion": 1,
+  "formatVersion": 2,
   "schemaVersion": "1.0.0",
-  "contentVersion": "1.5.1",
+  "contentVersion": "1.5.2",
   "files": {
     "graph": "concepts/index.yaml",
     "schema": "schema.json",

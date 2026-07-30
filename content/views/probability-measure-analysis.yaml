@@ -11,7 +11,6 @@ settings:
     - mathematics
   domains:
     - set-theory
-    - foundation
     - measure
     - probability
     - analysis

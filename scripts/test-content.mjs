@@ -9,26 +9,34 @@ import { loadSourceContent } from './content/load.mjs';
 
 const digest = (contents) => createHash('sha256').update(contents).digest('hex');
 const source = await loadSourceContent();
-const [graphBytes, schemaBytes, viewsBytes, provenanceBytes] = await Promise.all([
+const [graphBytes, schemaBytes, viewsBytes, removedDomainsBytes, provenanceBytes] = await Promise.all([
   readFile(new URL(COMPILED_CONTENT_FILES.graph, compiledContentDirectory)),
   readFile(new URL(COMPILED_CONTENT_FILES.schema, compiledContentDirectory)),
   readFile(new URL(COMPILED_CONTENT_FILES.views, compiledContentDirectory)),
+  readFile(new URL(COMPILED_CONTENT_FILES.removedDomains, compiledContentDirectory)),
   readFile(new URL(COMPILED_CONTENT_FILES.provenance, compiledContentDirectory))
 ]);
 const graph = JSON.parse(graphBytes);
 const schema = JSON.parse(schemaBytes);
 const views = JSON.parse(viewsBytes);
+const removedDomains = JSON.parse(removedDomainsBytes);
 const provenance = JSON.parse(provenanceBytes);
 
 assert.deepEqual(graph, source.graph, 'compiled graph must preserve source content');
 assert.deepEqual(schema, source.schema, 'compiled schema must preserve source content');
 assert.deepEqual(views, source.viewsData, 'compiled views must preserve source content');
+assert.deepEqual(removedDomains, source.removedDomains, 'compiled removed-domain redirects must preserve source content');
+assert.deepEqual(source.removedDomains, [{ id: 'foundation', path: 'math/foundation', redirectTo: '/math/' }]);
+assert.equal(source.graph.domains.foundation, undefined, 'Foundation must not remain an active domain.');
+assert.ok(source.graph.nodes.every((node) => node.primaryDomain !== 'foundation' && !node.domains.includes('foundation')), 'No node may retain the removed Foundation domain.');
+assert.ok(source.viewsData.views.every((view) => !view.settings.domains.includes('foundation') && !(view.settings.excludedDomains ?? []).includes('foundation')), 'No view may retain the removed Foundation domain.');
 assert.equal(provenance.schemaVersion, source.manifest.schemaVersion);
 assert.equal(provenance.contentVersion, source.manifest.contentVersion);
 assert.ok(SUPPORTED_SCHEMA_VERSIONS.has(provenance.schemaVersion));
 assert.equal(provenance.compiled.graph.sha256, digest(graphBytes));
 assert.equal(provenance.compiled.schema.sha256, digest(schemaBytes));
 assert.equal(provenance.compiled.views.sha256, digest(viewsBytes));
+assert.equal(provenance.compiled.removedDomains.sha256, digest(removedDomainsBytes));
 assert.equal(provenance.license.identifier, 'CC-BY-SA-4.0');
 console.log('Verified the compiled content boundary, versions, hashes, and license provenance.');
 

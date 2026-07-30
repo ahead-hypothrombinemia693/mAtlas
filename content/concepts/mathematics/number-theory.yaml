@@ -5,7 +5,6 @@ nodes:
     domains:
       - number-theory
       - logic
-      - foundation
     level: 3
     kind: structure
     summary: A set with zero and successor satisfying the second-order Peano axioms.
@@ -38,7 +37,6 @@ nodes:
       - number-theory
       - algebra
       - order
-      - foundation
       - set-theory
     level: 7
     conceptType: Number system
@@ -844,6 +842,30 @@ nodes:
     primaryField: mathematics
     fields:
       - mathematics
+  - id: successor_structure
+    label: Successor structure
+    primaryDomain: number-theory
+    domains:
+      - logic
+      - number-theory
+    level: 2
+    kind: structure
+    summary: A set equipped with a distinguished zero and a unary successor operation.
+    carriers:
+      - set $N$
+    data:
+      - distinguished element $0$
+      - 'successor map $S: N\to N$'
+    axioms: []
+    induces: []
+    notes: The second-order Peano axioms are categorical under full second-order semantics. First-order Peano arithmetic is not categorical by the compactness and Löwenheim–Skolem theorems.
+    citations:
+      - wp-peano
+      - openlogic-set-theory
+    primaryField: mathematics
+    fields:
+      - mathematics
+    conceptType: Foundational structure
 edges:
   - id: euclidean_domain_to_pid
     source: euclidean_domain
@@ -1281,3 +1303,12 @@ edges:
     citations:
       - openlogic-incompleteness
       - godel-incompleteness-paper
+  - id: successor_structure_to_peano_system
+    source: successor_structure
+    target: peano_system
+    type: impose-axiom
+    label: + Peano axioms
+    detail: Require successor injectivity, zero not to be a successor, and the adopted second-order induction axiom.
+    citations:
+      - wp-peano
+      - milne-algebraic-number-theory

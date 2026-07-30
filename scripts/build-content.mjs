@@ -20,6 +20,7 @@ if (failures.length) {
 const graphBytes = normalizeJson(content.graph);
 const schemaBytes = normalizeJson(content.schema);
 const viewsBytes = normalizeJson(content.viewsData);
+const removedDomainsBytes = normalizeJson(content.removedDomains);
 const provenance = {
   formatVersion: CONTENT_BUILD_FORMAT_VERSION,
   schemaVersion: content.manifest.schemaVersion,
@@ -39,7 +40,8 @@ const provenance = {
   compiled: {
     graph: { file: COMPILED_CONTENT_FILES.graph, sha256: digest(graphBytes) },
     schema: { file: COMPILED_CONTENT_FILES.schema, sha256: digest(schemaBytes) },
-    views: { file: COMPILED_CONTENT_FILES.views, sha256: digest(viewsBytes) }
+    views: { file: COMPILED_CONTENT_FILES.views, sha256: digest(viewsBytes) },
+    removedDomains: { file: COMPILED_CONTENT_FILES.removedDomains, sha256: digest(removedDomainsBytes) }
   }
 };
 const provenanceBytes = normalizeJson(provenance);
@@ -52,6 +54,7 @@ await Promise.all([
   writeFile(new URL(COMPILED_CONTENT_FILES.graph, `file://${temporaryPath}`), graphBytes),
   writeFile(new URL(COMPILED_CONTENT_FILES.schema, `file://${temporaryPath}`), schemaBytes),
   writeFile(new URL(COMPILED_CONTENT_FILES.views, `file://${temporaryPath}`), viewsBytes),
+  writeFile(new URL(COMPILED_CONTENT_FILES.removedDomains, `file://${temporaryPath}`), removedDomainsBytes),
   writeFile(new URL(COMPILED_CONTENT_FILES.provenance, `file://${temporaryPath}`), provenanceBytes)
 ]);
 await rm(compiledContentDirectory, { recursive: true, force: true });

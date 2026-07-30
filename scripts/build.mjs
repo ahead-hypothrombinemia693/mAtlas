@@ -56,9 +56,11 @@ const graphBytes = await readFile(new URL('atlas.json', compiledContent));
 const schemaBytes = await readFile(new URL('schema.json', compiledContent));
 const viewsBytes = await readFile(new URL('views.json', compiledContent));
 const provenanceBytes = await readFile(new URL('provenance.json', compiledContent));
+const removedDomainsBytes = await readFile(new URL('removed-domains.json', compiledContent));
 const graphData = JSON.parse(graphBytes.toString('utf8'));
 const viewsData = JSON.parse(viewsBytes.toString('utf8'));
 const provenance = JSON.parse(provenanceBytes.toString('utf8'));
+const removedDomains = JSON.parse(removedDomainsBytes.toString('utf8'));
 const graphFile = `atlas.${digest(graphBytes)}.json`;
 const schemaFile = `schema.${digest(schemaBytes)}.json`;
 const viewsFile = `views.${digest(viewsBytes)}.json`;
@@ -134,7 +136,8 @@ await generateConceptPages({
   graphData,
   templateHtml: builtTemplate,
   distUrl: dist,
-  domainImages: staticSvgs.domains
+  domainImages: staticSvgs.domains,
+  removedDomains
 });
 await generateViewPages({ graphData, viewsData, templateHtml: builtTemplate, distUrl: dist });
 await generateDirectoryPage({
@@ -181,4 +184,4 @@ const manifest = {
   }
 };
 await writeFile(new URL('asset-manifest.json', dist), `${JSON.stringify(manifest, null, 2)}\n`);
-console.log(`Built ${graphData.nodes.length} nodes, ${graphData.edges.length} edges, ${Object.keys(graphData.domains).length} domain pages and SVGs, ${viewsData.views.length} views, static/atlas.svg, and directory/ into dist/.`);
+console.log(`Built ${graphData.nodes.length} nodes, ${graphData.edges.length} edges, ${Object.keys(graphData.domains).length} active domain pages and SVGs, ${removedDomains.length} removed-domain redirects, ${viewsData.views.length} views, static/atlas.svg, and directory/ into dist/.`);

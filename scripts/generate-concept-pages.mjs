@@ -134,9 +134,8 @@ function renderConceptPage(templateHtml, { graphData, node }) {
   return html.replace('</body>', `${renderStaticLinkSection(graphData, node)}\n</body>`);
 }
 
-export function renderConceptIndexRedirect() {
-  const targetPath = '/directory/';
-  const canonicalUrl = appUrl('directory/');
+function renderRedirectPage({ targetPath, pageTitle, heading, linkLabel }) {
+  const canonicalUrl = appUrl(targetPath.slice(1));
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -145,7 +144,7 @@ export function renderConceptIndexRedirect() {
   <meta name="robots" content="noindex,follow">
   <link rel="canonical" href="${canonicalUrl}">
   <meta http-equiv="refresh" content="0; url=${targetPath}">
-  <title>Redirecting to the Atlas Directory</title>
+  <title>${escapeHtml(pageTitle)}</title>
   <script>
     (() => {
       const target = ${JSON.stringify(targetPath)} + window.location.search + window.location.hash;
@@ -155,11 +154,29 @@ export function renderConceptIndexRedirect() {
 </head>
 <body>
   <main>
-    <h1>Atlas Directory moved</h1>
-    <p><a href="${targetPath}">Continue to the Atlas Directory</a>.</p>
+    <h1>${escapeHtml(heading)}</h1>
+    <p><a href="${targetPath}">${escapeHtml(linkLabel)}</a>.</p>
   </main>
 </body>
 </html>`;
+}
+
+export function renderConceptIndexRedirect() {
+  return renderRedirectPage({
+    targetPath: '/directory/',
+    pageTitle: 'Redirecting to the Atlas Directory',
+    heading: 'Atlas Directory moved',
+    linkLabel: 'Continue to the Atlas Directory'
+  });
+}
+
+export function renderRemovedDomainRedirect(removedDomain) {
+  return renderRedirectPage({
+    targetPath: removedDomain.redirectTo,
+    pageTitle: 'Redirecting to the Atlas',
+    heading: 'This domain has been merged',
+    linkLabel: 'Continue to the active atlas section'
+  });
 }
 
 function orderedIds(order, values) {
@@ -293,7 +310,7 @@ export function renderScopePage(templateHtml, graphData, fieldId, domainId = nul
   return html.replace(/<noscript>[\s\S]*?<\/noscript>/, renderScopeFallback(graphData, fieldId, domainId));
 }
 
-export async function generateConceptPages({ graphData, templateHtml, distUrl, domainImages = {} }) {
+export async function generateConceptPages({ graphData, templateHtml, distUrl, domainImages = {}, removedDomains = [] }) {
   const concepts = graphData.nodes.filter((node) => node.kind === 'structure');
   await mkdir(new URL('concepts/', distUrl), { recursive: true });
   await writeFile(new URL('concepts/index.html', distUrl), minifyHtml(renderConceptIndexRedirect()));
@@ -313,5 +330,10 @@ export async function generateConceptPages({ graphData, templateHtml, distUrl, d
     const pageDir = new URL(domainPath(graphData, domainId), distUrl);
     await mkdir(pageDir, { recursive: true });
     await writeFile(new URL('index.html', pageDir), minifyHtml(renderScopePage(templateHtml, graphData, fieldId, domainId, domainImages[domainId])));
+  }));
+  await Promise.all(removedDomains.map(async (removedDomain) => {
+    const pageDir = new URL(`${removedDomain.path}/`, distUrl);
+    await mkdir(pageDir, { recursive: true });
+    await writeFile(new URL('index.html', pageDir), minifyHtml(renderRemovedDomainRedirect(removedDomain)));
   }));
 }

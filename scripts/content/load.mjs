@@ -65,6 +65,47 @@ function duplicateValues(values) {
   return duplicates;
 }
 
+function loadRemovedDomains(index, fieldsList, domainsList) {
+  const entries = index.removedDomains ?? [];
+  if (!Array.isArray(entries)) {
+    throw new Error('content/concepts/index.yaml removedDomains must be a sequence when provided.');
+  }
+  const activePaths = new Set();
+  for (const [fieldId, field] of Object.entries(fieldsList.map)) {
+    if (typeof field?.path === 'string') activePaths.add(field.path);
+    for (const [domainId, domain] of Object.entries(domainsList.map)) {
+      if (domain?.field === fieldId && typeof field?.path === 'string') activePaths.add(`${field.path}/${domainId}`);
+    }
+  }
+  const ids = new Set();
+  const paths = new Set();
+  return entries.map((entry, indexOffset) => {
+    const label = `content/concepts/index.yaml removedDomains[${indexOffset}]`;
+    if (!entry || typeof entry !== 'object' || Array.isArray(entry)) {
+      throw new Error(`${label} must be an object.`);
+    }
+    const keys = Object.keys(entry);
+    for (const key of keys) if (!['id', 'path', 'redirectTo'].includes(key)) throw new Error(`${label} has unknown property "${key}".`);
+    if (typeof entry.id !== 'string' || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/u.test(entry.id)) {
+      throw new Error(`${label}.id must be a lowercase kebab-case domain id.`);
+    }
+    if (ids.has(entry.id)) throw new Error(`${label}.id duplicates removed domain "${entry.id}".`);
+    if (domainsList.map[entry.id]) throw new Error(`${label}.id conflicts with active domain "${entry.id}".`);
+    if (typeof entry.path !== 'string' || !/^[A-Za-z0-9._~-]+(?:\/[A-Za-z0-9._~-]+)*$/u.test(entry.path)) {
+      throw new Error(`${label}.path must be a root-relative page path without leading or trailing slashes.`);
+    }
+    if (paths.has(entry.path)) throw new Error(`${label}.path duplicates removed-domain path "${entry.path}".`);
+    if (activePaths.has(entry.path)) throw new Error(`${label}.path conflicts with active taxonomy page "${entry.path}".`);
+    if (typeof entry.redirectTo !== 'string' || !/^\/(?:[A-Za-z0-9._~-]+\/)*$/u.test(entry.redirectTo)) {
+      throw new Error(`${label}.redirectTo must be an absolute site path ending in a slash.`);
+    }
+    if (`/${entry.path}/` === entry.redirectTo) throw new Error(`${label}.redirectTo must not redirect to itself.`);
+    ids.add(entry.id);
+    paths.add(entry.path);
+    return { id: entry.id, path: entry.path, redirectTo: entry.redirectTo };
+  });
+}
+
 function indexedListToMap(indexList, label) {
   if (!Array.isArray(indexList) || indexList.length === 0) {
     throw new Error(`${label} must be a non-empty sequence of objects with id fields.`);
@@ -130,6 +171,7 @@ async function loadStructuredGraphFromYaml(indexUrl) {
   const fieldsList = indexedListToMap(index.fields, 'content/concepts/index.yaml fields');
   const domainsList = indexedListToMap(index.domains, 'content/concepts/index.yaml domains');
   const edgeTypesList = indexedListToMap(index.edgeTypes, 'content/concepts/index.yaml edgeTypes');
+  const removedDomains = loadRemovedDomains(index, fieldsList, domainsList);
   for (const [domainId, domain] of Object.entries(domainsList.map)) {
     if (typeof domain?.field !== 'string' || !fieldsList.map[domain.field]) {
       throw new Error(`content/concepts/index.yaml domains entry "${domainId}" must reference a known field id.`);
@@ -223,14 +265,17 @@ async function loadStructuredGraphFromYaml(indexUrl) {
     edgeTypeOrder: edgeTypesList.ids
   };
   return {
-    meta,
-    citationLegend: sourcePart.citationLegend,
-    domains: domainsList.map,
-    fields: fieldsList.map,
-    edgeTypes: edgeTypesList.map,
-    sources: sourcePart.sources,
-    nodes,
-    edges
+    graph: {
+      meta,
+      citationLegend: sourcePart.citationLegend,
+      domains: domainsList.map,
+      fields: fieldsList.map,
+      edgeTypes: edgeTypesList.map,
+      sources: sourcePart.sources,
+      nodes,
+      edges
+    },
+    removedDomains
   };
 }
 
@@ -262,9 +307,9 @@ async function loadJsonOrYaml(url, label) {
     return { data: parseJson(bytes, contentRelativeLabel(url)), bytes };
   }
   if (label === 'graph') {
-    const data = await loadStructuredGraphFromYaml(url);
-    const { bytes } = await writeIntermediateJson('structures.json', data);
-    return { data, bytes };
+    const { graph, removedDomains } = await loadStructuredGraphFromYaml(url);
+    const { bytes } = await writeIntermediateJson('structures.json', graph);
+    return { data: graph, bytes, removedDomains };
   }
   const data = await loadViewsFromYaml(url);
   const { bytes } = await writeIntermediateJson('views.json', data);
@@ -291,6 +336,7 @@ export async function loadSourceContent() {
     schemaBytes,
     viewsData: viewsResult.data,
     viewsBytes: viewsResult.bytes,
+    removedDomains: graphResult.removedDomains ?? [],
     urls: { graphUrl, schemaUrl, viewsUrl }
   };
 }

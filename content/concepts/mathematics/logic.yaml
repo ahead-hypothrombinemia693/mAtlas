@@ -4,7 +4,6 @@ nodes:
     primaryDomain: logic
     domains:
       - logic
-      - foundation
       - universal-algebra
     level: 1
     kind: structure
@@ -27,7 +26,6 @@ nodes:
     primaryDomain: logic
     domains:
       - logic
-      - foundation
     level: 2
     kind: structure
     summary: A set of first-order sentences in a fixed signature.
@@ -73,7 +71,6 @@ nodes:
     primaryDomain: logic
     domains:
       - logic
-      - foundation
       - algebra
     level: 2
     kind: junction
@@ -100,7 +97,6 @@ nodes:
     primaryDomain: logic
     domains:
       - logic
-      - foundation
       - algebra
       - universal-algebra
     level: 3
@@ -148,7 +144,6 @@ nodes:
     primaryDomain: logic
     domains:
       - logic
-      - foundation
     level: 4
     kind: junction
     summary: Combine a first-order theory with a structure in the same signature and impose satisfaction.
@@ -222,7 +217,6 @@ nodes:
     domains:
       - logic
       - computability-theory
-      - foundation
     level: 4
     kind: structure
     summary: A finitary, syntactically specified collection of formulas, axioms, and inference rules defining formal derivability.
@@ -246,7 +240,6 @@ nodes:
     primaryDomain: logic
     domains:
       - logic
-      - foundation
       - computability-theory
     level: 5
     kind: structure
@@ -269,7 +262,6 @@ nodes:
     primaryDomain: logic
     domains:
       - logic
-      - foundation
       - computability-theory
     level: 5
     kind: structure
@@ -293,7 +285,6 @@ nodes:
     domains:
       - logic
       - computability-theory
-      - foundation
       - number-theory
     level: 8
     kind: junction
@@ -323,7 +314,6 @@ nodes:
     domains:
       - logic
       - computability-theory
-      - foundation
     level: 8
     kind: structure
     summary: Every consistent, effectively axiomatized formal theory strong enough to represent elementary arithmetic is syntactically incomplete.
@@ -347,7 +337,6 @@ nodes:
     domains:
       - logic
       - computability-theory
-      - foundation
       - number-theory
     level: 9
     kind: junction
@@ -377,7 +366,6 @@ nodes:
     domains:
       - logic
       - computability-theory
-      - foundation
     level: 9
     kind: structure
     summary: A consistent, effectively axiomatized theory strong enough for the incompleteness machinery cannot prove its own suitably formalized consistency.
@@ -391,6 +379,28 @@ nodes:
     notes: ''
     citations:
       - godel-incompleteness-paper
+      - openlogic-incompleteness
+    primaryField: mathematics
+    fields:
+      - mathematics
+  - id: hilbert_program
+    label: Hilbert’s program
+    primaryDomain: logic
+    domains:
+      - logic
+      - computability-theory
+    level: 3
+    kind: structure
+    summary: The program of formalizing broad parts of mathematics and proving their consistency by secure finitary methods.
+    carriers:
+      - formalized mathematics
+    data:
+      - finitary metamathematical methods
+    axioms: []
+    induces:
+      - Consistency and completeness goals
+    notes: The incompleteness theorems constrain the original program; they do not eliminate formal axiomatic or proof-theoretic research.
+    citations:
       - openlogic-incompleteness
     primaryField: mathematics
     fields:
@@ -583,3 +593,11 @@ edges:
     citations:
       - openlogic-incompleteness
       - godel-incompleteness-paper
+  - id: story_hilbert_program_to_formal_proof_system_historically_motivated
+    source: hilbert_program
+    target: formal_proof_system
+    type: historically-motivated
+    label: formalize mathematics
+    detail: Hilbert’s program motivated precise formal systems and metamathematical consistency proofs.
+    citations:
+      - openlogic-incompleteness

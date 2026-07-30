@@ -11,7 +11,7 @@ settings:
   fields:
     - mathematics
   domains:
-    - foundation
+    - set-theory
     - universal-algebra
     - algebra
     - representation-theory

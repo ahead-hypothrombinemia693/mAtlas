@@ -12,7 +12,6 @@ settings:
   domains:
     - logic
     - computability-theory
-    - foundation
     - set-theory
     - number-theory
   edgeTypes:

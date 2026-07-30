@@ -8,7 +8,7 @@ tests.
 
 ## Source files
 
-- `concepts/index.yaml`, `concepts/sources.yaml`, and `concepts/<field-id>/<domain-id>.yaml` — split canonical graph, taxonomy, relations, citations, and source metadata.
+- `concepts/index.yaml`, `concepts/sources.yaml`, and `concepts/<field-id>/<domain-id>.yaml` — split canonical graph, taxonomy, relations, citations, and source metadata. `removedDomains` entries in the index preserve retired domain URLs as build-generated redirects without exposing them in runtime graph JSON.
 - `views/index.yaml` and `views/*.yaml` — split curated guided-view definitions and editorial narratives.
 - `schema.json` — machine-readable graph schema published with the content.
 - `manifest.json` — content and schema contract versions plus source file mapping.
@@ -34,7 +34,7 @@ npm run test:content
 
 Validation is split into schema/shape, reference, semantic, editorial, and
 renderer-compatibility layers. Compilation writes normalized files and a
-hash-based `provenance.json` to `.build/content/`. Published hashed JSON files
+hash-based `provenance.json` plus build-only `removed-domains.json` to `.build/content/`. Published hashed JSON files
 are produced only from that compiled directory and are served under the public
 `/content/` namespace; `/data/` is not emitted. YAML sources are assembled into
 intermediate JSON during content compilation so the deployed contract remains

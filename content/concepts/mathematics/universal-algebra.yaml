@@ -5,7 +5,6 @@ nodes:
     domains:
       - universal-algebra
       - logic
-      - foundation
     level: 2
     kind: structure
     summary: A signature containing operation symbols with specified arities and no relation symbols.
@@ -53,7 +52,6 @@ nodes:
     domains:
       - universal-algebra
       - logic
-      - foundation
     level: 3
     kind: junction
     summary: Interpret an algebraic signature by operations on one carrier set.

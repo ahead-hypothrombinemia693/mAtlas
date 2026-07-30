@@ -12,7 +12,6 @@ settings:
     - mathematics
   domains:
     - set-theory
-    - foundation
     - order
     - topology
     - analysis

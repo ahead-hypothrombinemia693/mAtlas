@@ -4,7 +4,6 @@ nodes:
     primaryDomain: category-theory
     domains:
       - category-theory
-      - foundation
     level: 3
     kind: structure
     summary: A collection of objects and morphisms with identities and associative composition; size is controlled by an ambient set-theoretic convention.
@@ -153,7 +152,6 @@ nodes:
     primaryDomain: category-theory
     domains:
       - category-theory
-      - foundation
     level: 4
     kind: structure
     summary: A category whose objects and morphisms form sets.

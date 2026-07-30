@@ -32,7 +32,6 @@ nodes:
     domains:
       - algebraic-topology
       - topology
-      - foundation
     level: 3
     kind: structure
     summary: A topological space with a distinguished basepoint.

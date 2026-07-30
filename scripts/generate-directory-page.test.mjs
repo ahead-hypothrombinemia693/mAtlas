@@ -5,7 +5,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { generateDirectoryPage, inlineSvgFragment, renderDirectoryPage } from './generate-directory-page.mjs';
-import { renderConceptIndexRedirect, renderScopePage } from './generate-concept-pages.mjs';
+import { renderConceptIndexRedirect, renderRemovedDomainRedirect, renderScopePage } from './generate-concept-pages.mjs';
 import { minifyHtml } from './minify-html.mjs';
 
 const root = new URL('../', import.meta.url);
@@ -80,6 +80,17 @@ test('concepts index redirects in HTML and JavaScript to the directory', () => {
   assert.ok(html.includes('const target = "/directory/" + window.location.search + window.location.hash;'));
   assert.ok(html.includes('window.location.replace(target);'));
   assert.ok(html.includes('<a href="/directory/">Continue to the Atlas Directory</a>'));
+});
+
+
+test('removed domain pages redirect in HTML and JavaScript to their replacement', () => {
+  const html = renderRemovedDomainRedirect({ id: 'foundation', path: 'math/foundation', redirectTo: '/math/' });
+  assert.ok(html.includes('<meta name="robots" content="noindex,follow">'));
+  assert.ok(html.includes('<link rel="canonical" href="https://atlas.madvay.com/math/">'));
+  assert.ok(html.includes('<meta http-equiv="refresh" content="0; url=/math/">'));
+  assert.ok(html.includes('const target = "/math/" + window.location.search + window.location.hash;'));
+  assert.ok(html.includes('window.location.replace(target);'));
+  assert.ok(html.includes('<a href="/math/">Continue to the active atlas section</a>'));
 });
 
 test('field and domain scope pages expose canonical routes and crawlable navigation', async () => {

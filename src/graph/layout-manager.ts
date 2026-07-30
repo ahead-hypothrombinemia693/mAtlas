@@ -146,14 +146,14 @@ export class LayoutManager {
     for (const fieldId of model.fieldOrder) {
       const fieldDomains = model.domainOrder.filter((id) => model.fieldForDomain(id) === fieldId);
       const laneSpacing = fieldDomains.length > 14 ? 720 : fieldDomains.length > 8 ? 650 : 560;
-      if (fieldId === 'mathematics' && fieldDomains.includes('foundation')) {
-        const foundationIndex = fieldDomains.indexOf('foundation');
-        const leftDomains = fieldDomains.slice(0, foundationIndex).filter((id) => id !== 'set-theory');
-        const rightDomains = fieldDomains.slice(foundationIndex + 1);
-        centers.foundation = 0;
-        if (model.data.domains['set-theory']) centers['set-theory'] = -Math.min(320, laneSpacing * 0.45);
+      if (fieldId === 'mathematics' && fieldDomains.includes('set-theory')) {
+        const rightStart = fieldDomains.indexOf('number-theory');
+        const splitIndex = rightStart >= 0 ? rightStart : fieldDomains.length;
+        const leftDomains = fieldDomains.slice(0, splitIndex).filter((id) => id !== 'set-theory');
+        const rightDomains = fieldDomains.slice(splitIndex);
+        centers['set-theory'] = 0;
         leftDomains.forEach((id, index) => {
-          centers[id] = -((leftDomains.length - index) * laneSpacing + Math.min(320, laneSpacing * 0.45));
+          centers[id] = -(leftDomains.length - index) * laneSpacing;
         });
         rightDomains.forEach((id, index) => { centers[id] = (index + 1) * laneSpacing; });
         continue;

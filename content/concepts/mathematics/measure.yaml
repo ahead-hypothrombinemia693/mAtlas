@@ -54,7 +54,6 @@ nodes:
     primaryDomain: measure
     domains:
       - measure
-      - foundation
     level: 3
     kind: junction
     summary: Combine a function with measurable structures on its domain and codomain, then impose measurability.
@@ -103,7 +102,6 @@ nodes:
     primaryDomain: measure
     domains:
       - measure
-      - foundation
     level: 3
     kind: structure
     summary: A function whose inverse images of measurable sets are measurable.

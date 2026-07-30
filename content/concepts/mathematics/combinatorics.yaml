@@ -5,7 +5,6 @@ nodes:
     domains:
       - combinatorics
       - category-theory
-      - foundation
     level: 2
     kind: structure
     summary: A vertex set and an arrow set equipped with source and target maps; loops and parallel arrows are allowed.
@@ -28,7 +27,6 @@ nodes:
     primaryDomain: combinatorics
     domains:
       - combinatorics
-      - foundation
     level: 2
     kind: structure
     summary: An undirected incidence graph with a vertex set and an edge set; loops and parallel edges are allowed.
