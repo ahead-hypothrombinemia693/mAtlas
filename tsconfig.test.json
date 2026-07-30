@@ -16,6 +16,7 @@
     "src/core/text.ts",
     "src/core/search.ts",
     "src/model/graph-model.ts",
+    "src/model/prerequisite-closure.ts",
     "src/state/ui-state.ts",
     "src/state/view-state.ts",
     "src/state/view-sequence.ts",

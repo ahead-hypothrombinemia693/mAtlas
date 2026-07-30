@@ -1,5 +1,6 @@
 export type NodeKind = 'structure' | 'junction';
 export type LineStyle = 'solid' | 'dashed' | 'dotted';
+export type PrerequisiteTraversal = 'incoming' | 'outgoing' | 'both';
 export type LayoutName = 'atlas' | 'breadthfirst' | 'cose-bilkent';
 export type CrossFieldVisibility = 'contextual' | 'all' | 'hidden';
 export type HistoryMode = 'push' | 'replace' | null;
@@ -38,6 +39,7 @@ export interface EdgeTypeDefinition {
   label: string;
   short: string;
   description: MathText;
+  prerequisiteTraversal: PrerequisiteTraversal;
   color: string;
   endpointLabels: {
     source: string;

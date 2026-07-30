@@ -4084,13 +4084,3 @@ edges:
     citations:
       - wp-physics-canonical_quantization
       - nlab-physics-canonical_quantization
-  - id: story_quantum_field_theory_to_fock_space_state_description
-    source: quantum_field_theory
-    target: fock_space
-    type: state-description
-    label: uses particle-number sectors in free or asymptotic regimes
-    detail: Free fields and asymptotic particle states are naturally represented in Fock space. Generic interacting QFT need not admit a global particle interpretation or a Fock representation unitarily equivalent to the free one.
-    citations:
-      - tong-qft
-      - wp-fock_space
-      - nlab-fock_space

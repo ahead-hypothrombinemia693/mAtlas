@@ -20,7 +20,7 @@ function fixture() {
     },
     edgeTypes: {
       'built-from': {
-        label: 'Built from', short: 'build', description: 'build', color: '#555',
+        label: 'Built from', short: 'build', description: 'build', prerequisiteTraversal: 'incoming', color: '#555',
         endpointLabels: { source: 'Builds toward', target: 'Built from' }
       }
     },

@@ -1,4 +1,5 @@
 import type { AppState, GraphData, GraphEdge, GraphNode } from '../types.js';
+import { buildPrerequisiteAdjacency, prerequisiteClosureNodeIds, type PrerequisiteAdjacency } from './prerequisite-closure.js';
 
 export class GraphModel {
   readonly fieldOrder: string[];
@@ -7,7 +8,7 @@ export class GraphModel {
   readonly defaultEdgeTypeIds: string[];
   readonly nodeRecord: ReadonlyMap<string, GraphNode>;
   readonly edgeRecord: ReadonlyMap<string, GraphEdge>;
-  readonly incomingBaseEdges: ReadonlyMap<string, GraphEdge[]>;
+  readonly prerequisiteAdjacency: PrerequisiteAdjacency;
   readonly allEdges: GraphEdge[];
   readonly knownFieldIds: ReadonlySet<string>;
   readonly knownDomainIds: ReadonlySet<string>;
@@ -24,7 +25,7 @@ export class GraphModel {
     const collapsedEdges = this.buildCollapsedConstructionEdges();
     this.allEdges = [...data.edges, ...collapsedEdges];
     this.edgeRecord = new Map(this.allEdges.map((edge) => [edge.id, edge]));
-    this.incomingBaseEdges = this.indexIncomingEdges(data.edges);
+    this.prerequisiteAdjacency = buildPrerequisiteAdjacency(data.edges, data.edgeTypes);
     this.knownFieldIds = new Set(Object.keys(data.fields));
     this.knownDomainIds = new Set(Object.keys(data.domains));
     this.knownEdgeTypeIds = new Set(this.defaultEdgeTypeIds);
@@ -87,22 +88,10 @@ export class GraphModel {
 
   transitivePrerequisiteNodeIds(
     rootNodeIds: readonly string[],
-    edgeAllowed: (edge: GraphEdge) => boolean
+    edgeAllowed: (edge: GraphEdge) => boolean,
+    nodeAllowed: (nodeId: string) => boolean = () => true
   ): Set<string> {
-    const required = new Set(rootNodeIds);
-    const queue = [...rootNodeIds];
-
-    for (let index = 0; index < queue.length; index += 1) {
-      const targetId = queue[index];
-      if (!targetId) continue;
-      for (const edge of this.incomingBaseEdges.get(targetId) ?? []) {
-        if (!edgeAllowed(edge) || required.has(edge.source)) continue;
-        required.add(edge.source);
-        queue.push(edge.source);
-      }
-    }
-
-    return required;
+    return prerequisiteClosureNodeIds(rootNodeIds, this.prerequisiteAdjacency, edgeAllowed, nodeAllowed);
   }
 
   isCrossFieldEdge(edge: GraphEdge): boolean {
@@ -122,31 +111,14 @@ export class GraphModel {
         && this.nodeMatchesSelectedTaxonomy(node, state)
         && !this.nodeExcludedByTaxonomy(node, state))
       .map((node) => node.id);
-    const required = new Set(roots);
-    const queue = [...roots];
-
-    for (let index = 0; index < queue.length; index += 1) {
-      const targetId = queue[index];
-      if (!targetId) continue;
-      for (const edge of this.incomingBaseEdges.get(targetId) ?? []) {
-        const source = this.nodeRecord.get(edge.source);
-        if (!state.selectedEdgeTypes.has(edge.type) || !edgeAllowed(edge) || required.has(edge.source)
-          || (source && this.nodeExcludedByTaxonomy(source, state))) continue;
-        required.add(edge.source);
-        queue.push(edge.source);
+    return this.transitivePrerequisiteNodeIds(
+      roots,
+      (edge) => state.selectedEdgeTypes.has(edge.type) && edgeAllowed(edge),
+      (nodeId) => {
+        const node = this.nodeRecord.get(nodeId);
+        return !node || !this.nodeExcludedByTaxonomy(node, state);
       }
-    }
-    return required;
-  }
-
-  private indexIncomingEdges(edges: GraphEdge[]): Map<string, GraphEdge[]> {
-    const incoming = new Map<string, GraphEdge[]>();
-    for (const edge of edges) {
-      const targetEdges = incoming.get(edge.target) ?? [];
-      targetEdges.push(edge);
-      incoming.set(edge.target, targetEdges);
-    }
-    return incoming;
+    );
   }
 
   private buildCollapsedConstructionEdges(): GraphEdge[] {

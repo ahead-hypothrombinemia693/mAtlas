@@ -1,0 +1,41 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { buildPrerequisiteAdjacency, prerequisiteClosureNodeIds } from '../../.test-build/model/prerequisite-closure.js';
+
+const edgeTypes = {
+  incoming: { prerequisiteTraversal: 'incoming' },
+  outgoing: { prerequisiteTraversal: 'outgoing' },
+  both: { prerequisiteTraversal: 'both' }
+};
+
+const edges = [
+  { id: 'a-to-b', source: 'a', target: 'b', type: 'incoming' },
+  { id: 'b-to-c', source: 'b', target: 'c', type: 'outgoing' },
+  { id: 'c-to-d', source: 'c', target: 'd', type: 'both' }
+];
+
+test('prerequisite closure follows the edge-type traversal declaration', () => {
+  const adjacency = buildPrerequisiteAdjacency(edges, edgeTypes);
+  assert.deepEqual([...prerequisiteClosureNodeIds(['b'], adjacency, () => true)].sort(), ['a', 'b', 'c', 'd']);
+  assert.deepEqual([...prerequisiteClosureNodeIds(['a'], adjacency, () => true)], ['a']);
+  assert.deepEqual([...prerequisiteClosureNodeIds(['d'], adjacency, () => true)].sort(), ['c', 'd']);
+});
+
+test('prerequisite closure applies edge and node predicates in one traversal implementation', () => {
+  const adjacency = buildPrerequisiteAdjacency(edges, edgeTypes);
+  assert.deepEqual(
+    [...prerequisiteClosureNodeIds(['b'], adjacency, (edge) => edge.id !== 'b-to-c')].sort(),
+    ['a', 'b']
+  );
+  assert.deepEqual(
+    [...prerequisiteClosureNodeIds(['b'], adjacency, () => true, (nodeId) => nodeId !== 'c')].sort(),
+    ['a', 'b']
+  );
+});
+
+test('prerequisite adjacency rejects missing traversal metadata', () => {
+  assert.throws(
+    () => buildPrerequisiteAdjacency([{ id: 'bad', source: 'a', target: 'b', type: 'missing' }], {}),
+    /must define prerequisiteTraversal/
+  );
+});

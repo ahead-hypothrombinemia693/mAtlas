@@ -112,6 +112,8 @@ A concept may eventually belong to several fields. Boundary concepts such as ato
 
 ### Relations
 
+Each edge type declares how it participates in prerequisite closure. `incoming` means the source is added when the target is already in the closure, `outgoing` means the target is added when the source is already in the closure, and `both` permits either traversal. This metadata is the single definition used by filtering and breadth-first layout root selection.
+
 The original mathematical relation types remain. The multi-field model adds relation types for:
 
 - mathematical formulation

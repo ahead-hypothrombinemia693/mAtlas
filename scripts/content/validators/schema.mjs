@@ -12,6 +12,8 @@ import {
 
 export const name = 'schema';
 
+const allowedPrerequisiteTraversals = new Set(['incoming', 'outgoing', 'both']);
+
 export function validate(context) {
   const { graph, manifest, schema, viewsData } = context;
   const errors = [];
@@ -74,7 +76,10 @@ export function validate(context) {
   for (const [id, edgeType] of entriesOrEmpty(graph?.edgeTypes)) {
     const path = `graph.edgeTypes.${id}`;
     requireObject(errors, edgeType, path);
-    for (const key of ['label', 'short', 'description', 'color']) requireString(errors, edgeType?.[key], `${path}.${key}`);
+    for (const key of ['label', 'short', 'description', 'color', 'prerequisiteTraversal']) requireString(errors, edgeType?.[key], `${path}.${key}`);
+    if (!allowedPrerequisiteTraversals.has(edgeType?.prerequisiteTraversal)) {
+      errors.push(`${path}.prerequisiteTraversal must be incoming, outgoing, or both.`);
+    }
     requireObject(errors, edgeType?.endpointLabels, `${path}.endpointLabels`);
     requireString(errors, edgeType?.endpointLabels?.source, `${path}.endpointLabels.source`);
     requireString(errors, edgeType?.endpointLabels?.target, `${path}.endpointLabels.target`);

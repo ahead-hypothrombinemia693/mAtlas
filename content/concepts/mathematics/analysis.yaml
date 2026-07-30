@@ -2314,3 +2314,13 @@ edges:
       - wp-cardinality-continuum
       - wp-construction-reals
     overview: true
+  - id: story_fock_space_to_quantum_field_theory_mathematical_formulation
+    source: fock_space
+    target: quantum_field_theory
+    type: mathematical-formulation
+    label: supplies particle-number state space in free or asymptotic regimes
+    detail: Free fields and asymptotic particle states are naturally represented in Fock space. Generic interacting QFT need not admit a global particle interpretation or a Fock representation unitarily equivalent to the free one.
+    citations:
+      - tong-qft
+      - wp-fock_space
+      - nlab-fock_space
