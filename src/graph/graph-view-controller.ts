@@ -3,7 +3,7 @@ import { byId } from '../core/dom.js';
 import type { GraphModel } from '../model/graph-model.js';
 import type { AppState, GraphEdge, LayoutName, Preferences } from '../types.js';
 import type { LabelSizer } from './label-sizer.js';
-import { classifyNodeVisibility, isCrossFieldEdgeAllowed, isWrongJunctionMode } from './visibility-policy.js';
+import { isCrossFieldEdgeAllowed, resolveFilterVisibility } from './visibility-policy.js';
 import { renderHtml } from '../ui/render.js';
 
 export interface GraphViewControllerOptions {
@@ -51,54 +51,31 @@ export class GraphViewController {
     const required = state.hidePrerequisites
       ? new Set<string>()
       : model.requiredNodeIds(state, (edge) => !model.isCrossFieldEdge(edge) || this.crossFieldEdgeAllowed(edge));
-
-    const edgeVisibleSet = new Set<string>();
-    cy.edges().forEach((element) => {
-      const record = model.edgeRecord.get(element.id());
-      if (!record) return;
-      const endpointsHidden = element.source().hasClass('filter-hidden') || element.target().hasClass('filter-hidden');
-      const wrongJunctionMode = isWrongJunctionMode(
-        record,
-        model.nodeRecord.get(record.source)?.kind,
-        model.nodeRecord.get(record.target)?.kind,
-        state.showJunctions
-      );
-      if (!state.selectedEdgeTypes.has(record.type)
-        || endpointsHidden
-        || wrongJunctionMode
-        || !this.crossFieldEdgeAllowed(record)) return;
-      edgeVisibleSet.add(record.source);
-      edgeVisibleSet.add(record.target);
-    });
+    const visibility = resolveFilterVisibility(
+      model.data.nodes.map((record) => ({
+        id: record.id,
+        kind: record.kind,
+        taxonomyVisible: model.nodeMatchesSelectedTaxonomy(record, state)
+          && !model.nodeExcludedByTaxonomy(record, state),
+        dependencyVisible: required.has(record.id)
+      })),
+      model.allEdges,
+      {
+        showJunctions: state.showJunctions,
+        hideIsolates: state.hideIsolates,
+        edgeAllowed: (edge) => state.selectedEdgeTypes.has(edge.type) && this.crossFieldEdgeAllowed(edge)
+      }
+    );
 
     cy.batch(() => {
       cy.elements().removeClass('filter-hidden dependency-faded dependency-context prerequisite-undimmed prerequisite-highlight cross-field-edge');
 
       cy.nodes().forEach((element) => {
-        const record = model.nodeRecord.get(element.id());
-        if (!record) {
+        const nodeVisibility = visibility.nodeVisibility.get(element.id()) ?? 'hidden';
+        if (nodeVisibility === 'hidden') {
           element.addClass('filter-hidden');
-          return;
-        }
-        const nodeMatches = model.nodeMatchesSelectedTaxonomy(record, state) && !model.nodeExcludedByTaxonomy(record, state);
-        const visibility = classifyNodeVisibility(
-          record.kind,
-          nodeMatches,
-          required.has(record.id),
-          state.showJunctions
-        );
-        if (visibility === 'hidden') {
-          element.addClass('filter-hidden');
-        } else if (visibility === 'dependency-context') {
+        } else if (nodeVisibility === 'dependency-context') {
           element.addClass('dependency-faded');
-        }
-        if (state.hideIsolates && visibility === 'visible') {
-          const recordKind = record.kind;
-          const isStructure = recordKind === 'structure';
-          const hasRelation = isStructure && edgeVisibleSet.has(record.id);
-          if (!hasRelation && !required.has(record.id)) {
-            element.addClass('filter-hidden');
-          }
         }
       });
 
@@ -108,20 +85,9 @@ export class GraphViewController {
           element.addClass('filter-hidden');
           return;
         }
-        const endpointsHidden = element.source().hasClass('filter-hidden') || element.target().hasClass('filter-hidden');
-        const wrongJunctionMode = isWrongJunctionMode(
-          record,
-          model.nodeRecord.get(record.source)?.kind,
-          model.nodeRecord.get(record.target)?.kind,
-          state.showJunctions
-        );
-        const crossField = model.isCrossFieldEdge(record);
-        if (crossField) element.addClass('cross-field-edge');
+        if (model.isCrossFieldEdge(record)) element.addClass('cross-field-edge');
 
-        if (!state.selectedEdgeTypes.has(record.type)
-          || endpointsHidden
-          || wrongJunctionMode
-          || !this.crossFieldEdgeAllowed(record)) {
+        if (!visibility.visibleEdgeIds.has(record.id)) {
           element.addClass('filter-hidden');
         } else if (element.source().hasClass('dependency-faded') || element.target().hasClass('dependency-faded')) {
           element.addClass('dependency-context');
