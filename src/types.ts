@@ -149,6 +149,7 @@ export interface Preferences {
   hideEdgesWhileMoving: boolean;
   allowNodeMovement: boolean;
   dimPrerequisites: boolean;
+  highlightPrerequisites: boolean;
 }
 
 export interface UrlUiState {

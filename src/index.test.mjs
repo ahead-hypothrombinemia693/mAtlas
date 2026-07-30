@@ -34,3 +34,9 @@ test('the isolated-node display option is absent', () => {
   assert.equal(html.includes('Hide isolated'), false);
   assert.equal(styles.includes('hide-isolated'), false);
 });
+
+
+test('prerequisite highlighting is an opt-in browser preference', () => {
+  assert.match(html, /id="highlightPrerequisitesToggle"[^>]*type="checkbox"/);
+  assert.doesNotMatch(html, /id="highlightPrerequisitesToggle"[^>]*checked/);
+});

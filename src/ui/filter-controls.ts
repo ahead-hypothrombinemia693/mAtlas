@@ -115,6 +115,7 @@ export class FilterControls {
     byId<HTMLInputElement>('hideEdgesWhileMovingToggle').checked = preferences.hideEdgesWhileMoving;
     byId<HTMLInputElement>('allowNodeMovementToggle').checked = preferences.allowNodeMovement;
     byId<HTMLInputElement>('dimPrerequisitesToggle').checked = preferences.dimPrerequisites;
+    byId<HTMLInputElement>('highlightPrerequisitesToggle').checked = preferences.highlightPrerequisites;
   }
 
   updateFieldAllButtonLabel(): void {
@@ -157,7 +158,7 @@ export class FilterControls {
       this.options.setPreferences({ ...DEFAULT_PREFERENCES });
       this.syncPreferences();
     });
-    for (const id of ['highResolution', 'transitions', 'motionBlur', 'formulaeInGraph', 'indicateOtherDomains', 'showGraphEdgeLabels', 'hideEdgesWhileMoving', 'allowNodeMovement', 'dimPrerequisites'] as const) {
+    for (const id of ['highResolution', 'transitions', 'motionBlur', 'formulaeInGraph', 'indicateOtherDomains', 'showGraphEdgeLabels', 'hideEdgesWhileMoving', 'allowNodeMovement', 'dimPrerequisites', 'highlightPrerequisites'] as const) {
       byId<HTMLInputElement>(`${id}Toggle`).addEventListener('change', (event) => {
         this.options.setPreferences({ ...this.options.preferences(), [id]: (event.currentTarget as HTMLInputElement).checked });
       });

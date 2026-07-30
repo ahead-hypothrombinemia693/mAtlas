@@ -15,7 +15,8 @@ test('preferences have performance-conscious defaults and their own storage name
     showGraphEdgeLabels: true,
     hideEdgesWhileMoving: true,
     allowNodeMovement: false,
-    dimPrerequisites: true
+    dimPrerequisites: true,
+    highlightPrerequisites: false
   });
   assert.equal(parsePreferences('{bad').formulaeInGraph, false);
 });
@@ -27,8 +28,10 @@ test('preferences restore valid booleans and default missing values', () => {
   assert.equal(preferences.transitions, true);
   assert.equal(preferences.indicateOtherDomains, true);
   assert.equal(preferences.allowNodeMovement, false);
+  assert.equal(preferences.highlightPrerequisites, false);
 
-  const enabled = parsePreferences(JSON.stringify({ version: 1, allowNodeMovement: true }));
+  const enabled = parsePreferences(JSON.stringify({ version: 1, allowNodeMovement: true, highlightPrerequisites: true }));
   assert.equal(enabled.allowNodeMovement, true);
+  assert.equal(enabled.highlightPrerequisites, true);
 });
 

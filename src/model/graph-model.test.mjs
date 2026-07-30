@@ -65,6 +65,24 @@ test('GraphModel finds transitive prerequisites through selected edge types', ()
   assert.deepEqual([...model.requiredNodeIds(state, () => true)], ['group']);
 });
 
+test('GraphModel returns the exact prerequisite edges, including collapsed construction representatives', () => {
+  const model = new GraphModel(fixture());
+  const closure = model.transitivePrerequisiteElementIds(['space'], () => true);
+  assert.deepEqual([...closure.nodeIds].sort(), ['group', 'junction', 'set', 'space']);
+  assert.deepEqual([...closure.edgeIds].sort(), [
+    'collapsed_junction_group_space',
+    'collapsed_junction_set_space',
+    'group-junction',
+    'junction-space',
+    'set-group',
+    'set-junction'
+  ]);
+
+  const filtered = model.transitivePrerequisiteElementIds(['space'], (edge) => edge.id !== 'group-junction');
+  assert.equal(filtered.edgeIds.has('collapsed_junction_group_space'), false);
+  assert.equal(filtered.edgeIds.has('collapsed_junction_set_space'), true);
+});
+
 test('GraphModel identifies cross-field edges', () => {
   const model = new GraphModel(fixture());
   assert.equal(model.isCrossFieldEdge(model.edgeRecord.get('set-group')), false);

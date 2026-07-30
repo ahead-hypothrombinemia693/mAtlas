@@ -636,6 +636,10 @@ body:not(.atlas-loading) .graph-loader {
   color: #7c2d12;
 }
 
+.graph-math-node-label.prerequisite-highlight {
+  color: #0c4a6e;
+}
+
 .graph-math-edge-label {
   width: max-content;
   color: #334155;
@@ -648,6 +652,12 @@ body:not(.atlas-loading) .graph-loader {
 .graph-math-edge-label.synthetic {
   background: rgba(255, 247, 237, .92);
   border-color: #fed7aa;
+}
+
+.graph-math-edge-label.prerequisite-highlight {
+  background: rgba(224, 242, 254, .96);
+  border-color: #7dd3fc;
+  color: #0c4a6e;
 }
 
 .graph-hint {

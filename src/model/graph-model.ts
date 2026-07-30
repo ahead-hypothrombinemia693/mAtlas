@@ -1,5 +1,5 @@
 import type { AppState, GraphData, GraphEdge, GraphNode } from '../types.js';
-import { buildPrerequisiteAdjacency, prerequisiteClosureNodeIds, type PrerequisiteAdjacency } from './prerequisite-closure.js';
+import { buildPrerequisiteAdjacency, prerequisiteClosure, type PrerequisiteAdjacency, type PrerequisiteClosure } from './prerequisite-closure.js';
 
 export class GraphModel {
   readonly fieldOrder: string[];
@@ -15,6 +15,7 @@ export class GraphModel {
   readonly knownEdgeTypeIds: ReadonlySet<string>;
   readonly knownNodeIds: ReadonlySet<string>;
   readonly knownEdgeIds: ReadonlySet<string>;
+  private readonly collapsedEdgeComponents = new Map<string, readonly [string, string]>();
 
   constructor(readonly data: GraphData) {
     this.fieldOrder = data.meta.fieldOrder ?? Object.keys(data.fields);
@@ -86,12 +87,24 @@ export class GraphModel {
       && !excludedFields.has(this.fieldForDomain(domainId)));
   }
 
+  transitivePrerequisiteElementIds(
+    rootNodeIds: readonly string[],
+    edgeAllowed: (edge: GraphEdge) => boolean,
+    nodeAllowed: (nodeId: string) => boolean = () => true
+  ): PrerequisiteClosure {
+    const closure = prerequisiteClosure(rootNodeIds, this.prerequisiteAdjacency, edgeAllowed, nodeAllowed);
+    for (const [edgeId, [inputEdgeId, outputEdgeId]] of this.collapsedEdgeComponents) {
+      if (closure.edgeIds.has(inputEdgeId) && closure.edgeIds.has(outputEdgeId)) closure.edgeIds.add(edgeId);
+    }
+    return closure;
+  }
+
   transitivePrerequisiteNodeIds(
     rootNodeIds: readonly string[],
     edgeAllowed: (edge: GraphEdge) => boolean,
     nodeAllowed: (nodeId: string) => boolean = () => true
   ): Set<string> {
-    return prerequisiteClosureNodeIds(rootNodeIds, this.prerequisiteAdjacency, edgeAllowed, nodeAllowed);
+    return this.transitivePrerequisiteElementIds(rootNodeIds, edgeAllowed, nodeAllowed).nodeIds;
   }
 
   isCrossFieldEdge(edge: GraphEdge): boolean {
@@ -147,7 +160,7 @@ export class GraphModel {
       if (!outputEdge) continue;
 
       for (const inputEdge of inputEdges) {
-        collapsed.push({
+        const collapsedEdge: GraphEdge = {
           id: `collapsed_${junction.id}_${inputEdge.source}_${outputEdge.target}`,
           source: inputEdge.source,
           target: outputEdge.target,
@@ -157,7 +170,9 @@ export class GraphModel {
           citations: [...new Set([...inputEdge.citations, ...outputEdge.citations, ...junction.citations])],
           synthetic: true,
           junctionId: junction.id
-        });
+        };
+        collapsed.push(collapsedEdge);
+        this.collapsedEdgeComponents.set(collapsedEdge.id, [inputEdge.id, outputEdge.id]);
       }
     }
     return collapsed;

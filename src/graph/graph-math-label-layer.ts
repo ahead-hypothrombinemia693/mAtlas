@@ -173,6 +173,7 @@ export class GraphMathLabelLayer {
       }
 
       label.hidden = false;
+      label.classList.toggle('prerequisite-highlight', element.hasClass('prerequisite-highlight'));
       label.style.opacity = String(opacity);
       label.style.zIndex = element.selected() ? '4' : element.isNode() ? '2' : '1';
     }

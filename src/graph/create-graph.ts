@@ -129,6 +129,21 @@ export const graphStyles: cytoscape.StylesheetJson = [
   { selector: 'node.dependency-faded.prerequisite-undimmed', style: { 'background-opacity': 0.92 } },
   { selector: 'edge.dependency-context.prerequisite-undimmed', style: { opacity: 1 } },
   { selector: 'node.dependency-faded.hover-emphasis, edge.dependency-context.hover-emphasis', style: { opacity: 0.68 } },
+  {
+    selector: 'node.prerequisite-highlight',
+    style: {
+      opacity: 1, 'background-color': '#bae6fd', 'background-opacity': 1,
+      'border-width': 4, 'border-color': '#38bdf8', color: '#0c4a6e'
+    }
+  },
+  {
+    selector: 'edge.prerequisite-highlight',
+    style: {
+      display: 'element', opacity: 1, width: 4, 'line-color': '#7dd3fc',
+      'target-arrow-color': '#7dd3fc', 'z-index': 998
+    }
+  },
+  { selector: 'node.prerequisite-highlight.search-match', style: { 'border-width': 5, 'border-color': '#facc15' } },
   { selector: 'node:selected', style: { 'border-width': 5, 'border-color': '#0f172a', 'background-opacity': 1 } },
   { selector: 'edge:selected', style: { width: 5, 'z-index': 999 } }
 ];
@@ -178,9 +193,9 @@ export function applyRendererPreferences(cy: cytoscape.Core, preferences: Prefer
     nodes.panify();
   }
   cy.style()
-    .selector('node').style('transition-property', preferences.transitions ? 'opacity, border-width, border-color, background-opacity' : 'none')
+    .selector('node').style('transition-property', preferences.transitions ? 'opacity, border-width, border-color, background-color, background-opacity, color' : 'none')
     .style('transition-duration', preferences.transitions ? 120 : 0)
-    .selector('edge').style('transition-property', preferences.transitions ? 'opacity, width' : 'none')
+    .selector('edge').style('transition-property', preferences.transitions ? 'opacity, width, line-color, target-arrow-color' : 'none')
     .style('transition-duration', preferences.transitions ? 120 : 0)
     .update();
   cy.resize();

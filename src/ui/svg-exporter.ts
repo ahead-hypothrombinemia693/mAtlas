@@ -130,13 +130,16 @@ export class SvgExporter {
       const targetHalf = targetRecord.kind === 'junction' ? { w: 62, h: 33 } : { w: 86, h: 33 };
       const start = this.rectangleBoundaryPoint(source, control, sourceHalf.w, sourceHalf.h);
       const end = this.rectangleBoundaryPoint(target, control, targetHalf.w, targetHalf.h);
-      const color = data.edgeTypes[record.type]?.color ?? '#64748b';
+      const prerequisiteHighlighted = element.hasClass('prerequisite-highlight');
+      const color = prerequisiteHighlighted ? '#7dd3fc' : data.edgeTypes[record.type]?.color ?? '#64748b';
       const dash = this.lineDash(record.synthetic ? 'dashed' : data.edgeTypes[record.type]?.lineStyle);
       const selected = element.selected();
-      const strokeWidth = selected ? 4.5 : record.synthetic ? 2.6 : 2.1;
-      const edgeOpacity = element.hasClass('neighborhood-dim')
-        ? 0.14
-        : element.hasClass('dependency-context') && this.preferences().dimPrerequisites ? 0.46 : 1;
+      const strokeWidth = selected ? 4.5 : prerequisiteHighlighted ? 4 : record.synthetic ? 2.6 : 2.1;
+      const edgeOpacity = prerequisiteHighlighted
+        ? 1
+        : element.hasClass('neighborhood-dim')
+          ? 0.14
+          : element.hasClass('dependency-context') && this.preferences().dimPrerequisites ? 0.46 : 1;
       parts.push(`<path d="M ${start.x.toFixed(2)} ${start.y.toFixed(2)} Q ${control.x.toFixed(2)} ${control.y.toFixed(2)} ${end.x.toFixed(2)} ${end.y.toFixed(2)}" fill="none" stroke="${escapeHtml(color)}" stroke-width="${strokeWidth}"${dash ? ` stroke-dasharray="${dash}"` : ''} opacity="${edgeOpacity}"/>`);
       const tangentX = end.x - control.x;
       const tangentY = end.y - control.y;
@@ -164,10 +167,13 @@ export class SvgExporter {
       const fallbackHeight = labelLines.length * lineHeight + 6;
       parts.push(`<g transform="translate(${labelX.toFixed(2)} ${labelY.toFixed(2)}) rotate(${normalizedAngle.toFixed(2)})" opacity="${edgeOpacity}">`);
       parts.push('<g>');
-      parts.push(`<rect x="${(-fallbackWidth / 2).toFixed(2)}" y="${(-fallbackHeight / 2).toFixed(2)}" width="${fallbackWidth.toFixed(2)}" height="${fallbackHeight.toFixed(2)}" rx="3" fill="${record.synthetic ? '#fff7ed' : '#ffffff'}" fill-opacity="0.9" stroke="${record.synthetic ? '#fed7aa' : '#e2e8f0'}" stroke-width="1"/>`);
+      const labelFill = prerequisiteHighlighted ? '#e0f2fe' : record.synthetic ? '#fff7ed' : '#ffffff';
+      const labelStroke = prerequisiteHighlighted ? '#7dd3fc' : record.synthetic ? '#fed7aa' : '#e2e8f0';
+      const labelColor = prerequisiteHighlighted ? '#0c4a6e' : '#334155';
+      parts.push(`<rect x="${(-fallbackWidth / 2).toFixed(2)}" y="${(-fallbackHeight / 2).toFixed(2)}" width="${fallbackWidth.toFixed(2)}" height="${fallbackHeight.toFixed(2)}" rx="3" fill="${labelFill}" fill-opacity="0.9" stroke="${labelStroke}" stroke-width="1"/>`);
       labelLines.forEach((line, index) => {
         const y = (index - (labelLines.length - 1) / 2) * lineHeight + 3;
-        parts.push(`<text x="0" y="${y.toFixed(2)}" text-anchor="middle" font-family="${escapeHtml(this.fontFamily)}" font-size="9" font-weight="600" fill="#334155">${escapeHtml(line)}</text>`);
+        parts.push(`<text x="0" y="${y.toFixed(2)}" text-anchor="middle" font-family="${escapeHtml(this.fontFamily)}" font-size="9" font-weight="600" fill="${labelColor}">${escapeHtml(line)}</text>`);
       });
       parts.push('</g>');
       parts.push('</g>');
@@ -183,22 +189,24 @@ export class SvgExporter {
       const x = position.x - nodeWidth / 2;
       const y = position.y - nodeHeight / 2;
       const isDependencyFaded = element.hasClass('dependency-faded');
-      const opacity = element.hasClass('neighborhood-dim') ? 0.46 : 1;
+      const prerequisiteHighlighted = element.hasClass('prerequisite-highlight');
+      const opacity = prerequisiteHighlighted ? 1 : element.hasClass('neighborhood-dim') ? 0.46 : 1;
       const selected = element.selected();
       const emphasized = element.hasClass('neighborhood-emphasis');
       const searchMatch = element.hasClass('search-match');
-      const borderColor = selected ? '#0f172a' : searchMatch ? '#facc15' : emphasized ? '#f59e0b' : isJunction ? '#b45309' : '#ffffff';
-      const borderWidth = selected || searchMatch ? 5 : emphasized ? 4 : isJunction ? 3 : 2;
+      const borderColor = selected ? '#0f172a' : searchMatch ? '#facc15' : prerequisiteHighlighted ? '#38bdf8' : emphasized ? '#f59e0b' : isJunction ? '#b45309' : '#ffffff';
+      const borderWidth = selected || searchMatch ? 5 : prerequisiteHighlighted || emphasized ? 4 : isJunction ? 3 : 2;
       const linkHref = record.kind === 'structure'
         ? `https://atlas.madvay.com/concepts/${encodeURIComponent(record.id)}/`
         : `https://atlas.madvay.com/?node=${encodeURIComponent(record.id)}`;
       parts.push(`<a href="${linkHref}" xlink:href="${linkHref}" target="_blank" rel="noopener">`);
       if (isJunction) {
-        const backgroundOpacity = isDependencyFaded && this.preferences().dimPrerequisites ? 0.46 : 1;
-        parts.push(`<rect x="${x}" y="${y}" width="${nodeWidth}" height="${nodeHeight}" rx="8" fill="#fff7ed" stroke="${borderColor}" stroke-width="${borderWidth}" stroke-dasharray="8 5" fill-opacity="${backgroundOpacity}" opacity="${opacity}"/>`);
+        const backgroundOpacity = prerequisiteHighlighted ? 1 : isDependencyFaded && this.preferences().dimPrerequisites ? 0.46 : 1;
+        const fill = prerequisiteHighlighted ? '#bae6fd' : '#fff7ed';
+        parts.push(`<rect x="${x}" y="${y}" width="${nodeWidth}" height="${nodeHeight}" rx="8" fill="${fill}" stroke="${borderColor}" stroke-width="${borderWidth}" stroke-dasharray="8 5" fill-opacity="${backgroundOpacity}" opacity="${opacity}"/>`);
       } else {
-        const fill = data.domains[record.primaryDomain]?.color ?? '#64748b';
-        const backgroundOpacity = isDependencyFaded && this.preferences().dimPrerequisites ? 0.46 : 0.92;
+        const fill = prerequisiteHighlighted ? '#bae6fd' : data.domains[record.primaryDomain]?.color ?? '#64748b';
+        const backgroundOpacity = prerequisiteHighlighted ? 1 : isDependencyFaded && this.preferences().dimPrerequisites ? 0.46 : 0.92;
         parts.push(`<rect x="${x}" y="${y}" width="${nodeWidth}" height="${nodeHeight}" rx="8" fill="${escapeHtml(fill)}" fill-opacity="${backgroundOpacity}" stroke="${borderColor}" stroke-width="${borderWidth}" opacity="${opacity}"/>`);
         const additionalDomains = this.model.nodeDomainIds(record).slice(1);
         if (additionalDomains.length) {
@@ -215,7 +223,7 @@ export class SvgExporter {
       const fontSize = Math.min(16, this.fittingLabelCap(record, label));
       const lines = this.wrappedLines(label, fontSize, isJunction ? 92 : 144);
       const lineHeight = fontSize * 1.16;
-      const textColor = isJunction ? '#7c2d12' : '#ffffff';
+      const textColor = prerequisiteHighlighted ? '#0c4a6e' : isJunction ? '#7c2d12' : '#ffffff';
       lines.forEach((line, index) => {
         const textY = position.y + (index - (lines.length - 1) / 2) * lineHeight + fontSize * 0.34;
         parts.push(`<text x="${position.x}" y="${textY.toFixed(2)}" text-anchor="middle" font-family="${escapeHtml(this.fontFamily)}" font-size="${fontSize.toFixed(2)}" font-weight="600" fill="${textColor}" opacity="${opacity}">${escapeHtml(line)}</text>`);

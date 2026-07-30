@@ -72,7 +72,7 @@ export class GraphViewController {
     });
 
     cy.batch(() => {
-      cy.elements().removeClass('filter-hidden dependency-faded dependency-context prerequisite-undimmed cross-field-edge');
+      cy.elements().removeClass('filter-hidden dependency-faded dependency-context prerequisite-undimmed prerequisite-highlight cross-field-edge');
 
       cy.nodes().forEach((element) => {
         const record = model.nodeRecord.get(element.id());
@@ -136,6 +136,7 @@ export class GraphViewController {
     });
 
     if (state.neighborhoodActive) this.applyNeighborhoodHighlight(false);
+    this.syncSelectedPrerequisiteHighlight({ updateEdgeStyles: false });
     this.updateStatus();
     this.options.scheduleFieldBands();
     this.options.updateFiltersToggleCount();
@@ -213,6 +214,7 @@ export class GraphViewController {
       }
     } else {
       this.applyNeighborhoodHighlight(fitAfter);
+      this.syncSelectedPrerequisiteHighlight();
     }
   }
 
@@ -220,6 +222,51 @@ export class GraphViewController {
     const selected = this.options.cy.$(':selected').first();
     if (!selected || selected.empty()) return;
     this.setNeighborhoodHighlight(!this.options.state.neighborhoodActive, selected.id(), false);
+  }
+
+  syncSelectedPrerequisiteHighlight({ updateEdgeStyles = true }: { updateEdgeStyles?: boolean } = {}): void {
+    const { cy, model, state } = this.options;
+    const refreshEdgeStyles = (): void => {
+      if (!updateEdgeStyles) return;
+      this.lastEdgeZoomActive = null;
+      this.updateEdgeZoomStyles();
+    };
+
+    cy.elements('.prerequisite-highlight').removeClass('prerequisite-highlight');
+    if (!this.options.preferences().highlightPrerequisites) {
+      refreshEdgeStyles();
+      return;
+    }
+
+    const selected = cy.$('node:selected').first();
+    if (!selected || selected.empty() || selected.hasClass('filter-hidden')) {
+      refreshEdgeStyles();
+      return;
+    }
+
+    const closure = model.transitivePrerequisiteElementIds(
+      [selected.id()],
+      (edge) => state.selectedEdgeTypes.has(edge.type)
+        && (!model.isCrossFieldEdge(edge) || this.crossFieldEdgeAllowed(edge)),
+      (nodeId) => {
+        const node = model.nodeRecord.get(nodeId);
+        return !node || !model.nodeExcludedByTaxonomy(node, state);
+      }
+    );
+    closure.nodeIds.delete(selected.id());
+
+    cy.batch(() => {
+      for (const nodeId of closure.nodeIds) {
+        const node = cy.getElementById(nodeId);
+        if (node && !node.empty() && !node.hasClass('filter-hidden')) node.addClass('prerequisite-highlight');
+      }
+      for (const edgeId of closure.edgeIds) {
+        const edge = cy.getElementById(edgeId);
+        if (edge && !edge.empty() && !edge.hasClass('filter-hidden')) edge.addClass('prerequisite-highlight');
+      }
+    });
+
+    refreshEdgeStyles();
   }
 
   updateStatus(): void {
@@ -267,9 +314,14 @@ export class GraphViewController {
         edge.style('events', 'no');
         return;
       }
+      const prerequisiteHighlighted = edge.hasClass('prerequisite-highlight');
       const baseOpacity = edge.hasClass('dependency-context') && this.options.preferences().dimPrerequisites
-        ? 0.46 : edge.hasClass('neighborhood-dim') ? 0.14 : 1;
-      if (!state.edgeZoomActivation) {
+        ? 0.46
+        : edge.hasClass('neighborhood-dim') ? 0.14 : 1;
+      if (prerequisiteHighlighted) {
+        edge.style('opacity', 1);
+        edge.style('events', !state.edgeZoomActivation || activeAtZoom ? 'yes' : 'no');
+      } else if (!state.edgeZoomActivation) {
         edge.style('opacity', baseOpacity);
         edge.style('events', 'yes');
       } else if (activeAtZoom) {

@@ -43,7 +43,7 @@ test('renderer preferences change the live renderer and immediately redraw both 
     fixture.graph.owner = fixture;
     applyRendererPreferences(fixture.graph, {
       version: 1, highResolution: true, transitions: true, motionBlur: true, formulaeInGraph: false,
-      indicateOtherDomains: true, showGraphEdgeLabels: true, hideEdgesWhileMoving: false, allowNodeMovement: false, dimPrerequisites: true
+      indicateOtherDomains: true, showGraphEdgeLabels: true, hideEdgesWhileMoving: false, allowNodeMovement: false, dimPrerequisites: true, highlightPrerequisites: false
     });
     assert.equal(fixture.renderer.forcedPixelRatio, null);
     assert.equal(fixture.renderer.motionBlurEnabled, true);
@@ -54,7 +54,7 @@ test('renderer preferences change the live renderer and immediately redraw both 
 
     applyRendererPreferences(fixture.graph, {
       version: 1, highResolution: false, transitions: false, motionBlur: false, formulaeInGraph: true,
-      indicateOtherDomains: true, showGraphEdgeLabels: false, hideEdgesWhileMoving: true, allowNodeMovement: true, dimPrerequisites: false
+      indicateOtherDomains: true, showGraphEdgeLabels: false, hideEdgesWhileMoving: true, allowNodeMovement: true, dimPrerequisites: false, highlightPrerequisites: true
     });
     assert.equal(fixture.renderer.forcedPixelRatio, 1.5);
     assert.equal(fixture.renderer.motionBlurEnabled, false);

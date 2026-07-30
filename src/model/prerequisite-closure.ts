@@ -5,6 +5,11 @@ export interface PrerequisiteStep {
   nodeId: string;
 }
 
+export interface PrerequisiteClosure {
+  nodeIds: Set<string>;
+  edgeIds: Set<string>;
+}
+
 export type PrerequisiteAdjacency = ReadonlyMap<string, readonly PrerequisiteStep[]>;
 
 function appendStep(adjacency: Map<string, PrerequisiteStep[]>, fromNodeId: string, step: PrerequisiteStep): void {
@@ -35,24 +40,36 @@ export function buildPrerequisiteAdjacency(
   return adjacency;
 }
 
-export function prerequisiteClosureNodeIds(
+export function prerequisiteClosure(
   rootNodeIds: readonly string[],
   adjacency: PrerequisiteAdjacency,
   edgeAllowed: (edge: GraphEdge) => boolean,
   nodeAllowed: (nodeId: string) => boolean = () => true
-): Set<string> {
-  const closure = new Set(rootNodeIds);
+): PrerequisiteClosure {
+  const nodeIds = new Set(rootNodeIds);
+  const edgeIds = new Set<string>();
   const queue = [...rootNodeIds];
 
   for (let index = 0; index < queue.length; index += 1) {
     const nodeId = queue[index];
     if (!nodeId) continue;
     for (const step of adjacency.get(nodeId) ?? []) {
-      if (!edgeAllowed(step.edge) || closure.has(step.nodeId) || !nodeAllowed(step.nodeId)) continue;
-      closure.add(step.nodeId);
+      if (!edgeAllowed(step.edge) || !nodeAllowed(step.nodeId)) continue;
+      edgeIds.add(step.edge.id);
+      if (nodeIds.has(step.nodeId)) continue;
+      nodeIds.add(step.nodeId);
       queue.push(step.nodeId);
     }
   }
 
-  return closure;
+  return { nodeIds, edgeIds };
+}
+
+export function prerequisiteClosureNodeIds(
+  rootNodeIds: readonly string[],
+  adjacency: PrerequisiteAdjacency,
+  edgeAllowed: (edge: GraphEdge) => boolean,
+  nodeAllowed: (nodeId: string) => boolean = () => true
+): Set<string> {
+  return prerequisiteClosure(rootNodeIds, adjacency, edgeAllowed, nodeAllowed).nodeIds;
 }
