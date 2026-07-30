@@ -4,6 +4,24 @@ import { stripInlineMathText } from '../core/text.js';
 import type { AppState, GraphNode, LineStyle, Point, Preferences } from '../types.js';
 import type { GraphModel } from '../model/graph-model.js';
 
+export interface SvgExportResult {
+  svg: string;
+  nodeCount: number;
+  edgeCount: number;
+  width: number;
+  height: number;
+}
+
+interface SvgExportContent {
+  nodes: cytoscape.NodeCollection;
+  edges: cytoscape.EdgeCollection;
+  accessibleTitle: string;
+  accessibleDescription: string;
+  exportNote: string;
+  allowEmpty?: boolean;
+  minimumWidth?: number;
+}
+
 export class SvgExporter {
   private readonly context = document.createElement('canvas').getContext('2d');
   private readonly fontFamily = 'Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
@@ -16,22 +34,57 @@ export class SvgExporter {
     private readonly preferences: () => Preferences
   ) {}
 
-  serializeVisible(): { svg: string; nodeCount: number; edgeCount: number } | null {
+  serializeVisible(): SvgExportResult | null {
     const visibleNodes = this.cy.nodes().not('.filter-hidden');
     const visibleEdges = this.cy.edges().not('.filter-hidden').filter((element) => {
       const edge = element as cytoscape.EdgeSingular;
       return !edge.source().hasClass('filter-hidden') && !edge.target().hasClass('filter-hidden');
     });
-    if (!visibleNodes.length) return null;
+    return this.serialize({
+      nodes: visibleNodes,
+      edges: visibleEdges,
+      accessibleTitle: this.model.data.meta.title,
+      accessibleDescription: `${this.model.data.meta.description} Exported from the current visible graph.`,
+      exportNote: 'Exported from the current visible graph; use the atlas site for the latest data and terms.'
+    });
+  }
 
-    const box = visibleNodes.boundingBox({ includeLabels: false, includeOverlays: false });
+  serializePrimaryDomain(domainId: string): SvgExportResult | null {
+    const domain = this.model.data.domains[domainId];
+    if (!domain) return null;
+    const nodes = this.cy.nodes().filter((element) => this.model.nodeRecord.get(element.id())?.primaryDomain === domainId);
+    const nodeIds = new Set(nodes.map((element) => element.id()));
+    const edges = this.cy.edges().filter((element) => {
+      const record = this.model.edgeRecord.get(element.id());
+      return Boolean(record && !record.synthetic && nodeIds.has(record.source) && nodeIds.has(record.target));
+    });
+    return this.serialize({
+      nodes,
+      edges,
+      accessibleTitle: `${domain.label} — ${this.model.data.meta.title}`,
+      accessibleDescription: `${domain.label} domain export from ${this.model.data.meta.title}. It contains only nodes whose primary domain is ${domain.label}, with every recorded relation between those nodes.`,
+      exportNote: nodes.length
+        ? `${domain.label}: primary-domain nodes and all relations between them.`
+        : `${domain.label}: no nodes currently use this as their primary domain.`,
+      allowEmpty: true,
+      minimumWidth: 720
+    });
+  }
+
+  private serialize(content: SvgExportContent): SvgExportResult | null {
+    const { nodes: visibleNodes, edges: visibleEdges, accessibleTitle, accessibleDescription, exportNote, allowEmpty = false, minimumWidth = 0 } = content;
+    if (!visibleNodes.length && !allowEmpty) return null;
+
+    const box = visibleNodes.length
+      ? visibleNodes.boundingBox({ includeLabels: false, includeOverlays: false })
+      : { x1: 0, y1: 0, w: 840, h: 180 };
     const margin = 90;
     const headerHeight = 68;
     const minX = box.x1 - margin;
     const minY = box.y1 - margin - headerHeight;
     const graphWidth = (box.w + margin * 2) * 0.5;
     const graphHeight = (box.h + margin * 2) * 0.5;
-    const width = graphWidth;
+    const width = Math.max(minimumWidth, graphWidth);
     const height = headerHeight + graphHeight;
     const graphOriginX = minX;
     const graphOriginY = minY + headerHeight;
@@ -41,16 +94,16 @@ export class SvgExporter {
     const data = this.model.data;
     parts.push('<?xml version="1.0" encoding="UTF-8"?>');
     parts.push(`<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${Math.ceil(width)}" height="${Math.ceil(height)}" viewBox="${minX} ${minY} ${width} ${height}" role="img" aria-labelledby="atlas-title atlas-desc">`);
-    parts.push(`<title id="atlas-title">${escapeHtml(data.meta.title)}</title>`);
-    parts.push(`<desc id="atlas-desc">${escapeHtml(data.meta.description)} Exported from the current visible graph.</desc>`);
+    parts.push(`<title id="atlas-title">${escapeHtml(accessibleTitle)}</title>`);
+    parts.push(`<desc id="atlas-desc">${escapeHtml(accessibleDescription)}</desc>`);
+    parts.push('<metadata><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"><rdf:Description rdf:about=""><dc:creator>Advay Mengle</dc:creator><dc:title>mAtlas - Atlas of Fundamental Concepts</dc:title><dc:rights>mAtlas - Copyright (c) 2026 Advay Mengle - https://atlas.madvay.com/</dc:rights><cc:license rdf:resource="https://creativecommons.org/licenses/by-sa/4.0/"/></rdf:Description></rdf:RDF></metadata>');
     parts.push('<defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="0.7" fill="#cbd5e1" opacity="0.55"/></pattern></defs>');
     parts.push(`<rect x="${minX}" y="${minY}" width="${width}" height="${height}" fill="#fbfcfe"/>`);
     parts.push(`<rect x="${minX}" y="${minY}" width="${width}" height="${headerHeight}" fill="#ffffff" opacity="0.93"/>`);
     parts.push(`<g transform="translate(${minX + 24} ${minY + 20})"><image href="${SvgExporter.logoDataUri}" width="48" height="48"/></g>`);
     parts.push(`<text x="${minX + 86}" y="${minY + 28}" font-family="${escapeHtml(this.fontFamily)}" font-size="20" font-weight="700" fill="#172033">Atlas of Fundamental Concepts</text>`);
     parts.push(`<text x="${minX + 86}" y="${minY + 46}" font-family="${escapeHtml(this.fontFamily)}" font-size="11" fill="#475569"><a href="https://atlas.madvay.com" xlink:href="https://atlas.madvay.com">https://atlas.madvay.com</a> · © 2026 Advay Mengle · <a href="https://creativecommons.org/licenses/by-sa/4.0/" xlink:href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a></text>`);
-    parts.push(`<text x="${minX + 86}" y="${minY + 62}" font-family="${escapeHtml(this.fontFamily)}" font-size="9" fill="#64748b">Exported from the current visible graph; use the atlas site for the latest data and terms.</text>`);
-    parts.push(`<text x="${minX + 26}" y="${minY + 87}" font-family="${escapeHtml(this.fontFamily)}" font-size="11" fill="#64748b">General structures are above; added data and axioms generally move downward.</text>`);
+    parts.push(`<text x="${minX + 86}" y="${minY + 62}" font-family="${escapeHtml(this.fontFamily)}" font-size="9" fill="#64748b">${escapeHtml(exportNote)}</text>`);
     parts.push(`<g transform="translate(${graphOriginX} ${graphOriginY}) scale(0.5) translate(${-graphOriginX} ${-graphOriginY})">`);
     parts.push(`<rect x="${minX}" y="${minY + headerHeight}" width="${graphOriginalWidth}" height="${graphOriginalHeight}" fill="url(#grid)"/>`);
 
@@ -175,7 +228,9 @@ export class SvgExporter {
     return {
       svg: parts.join(''),
       nodeCount: visibleNodes.length,
-      edgeCount: visibleEdges.length
+      edgeCount: visibleEdges.length,
+      width: Math.ceil(width),
+      height: Math.ceil(height)
     };
   }
 

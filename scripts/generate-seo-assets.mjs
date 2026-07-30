@@ -53,19 +53,22 @@ function sitemapEntry(url, { lastModified, imageUrl } = {}) {
   return `  <url>${children.join('')}</url>`;
 }
 
-function buildSitemapXml(graphData, viewsData, atlasSvgPath, directoryPath, lastModified) {
+function buildSitemapXml(graphData, viewsData, atlasSvgPath, directoryPath, domainImages, lastModified) {
   const concepts = graphData.nodes.filter((node) => node.kind === 'structure');
   const fieldUrls = (graphData.meta.fieldOrder ?? Object.keys(graphData.fields))
     .map((fieldId) => appUrl(fieldPath(graphData, fieldId)));
-  const domainUrls = (graphData.meta.domainOrder ?? Object.keys(graphData.domains))
-    .map((domainId) => appUrl(domainPath(graphData, domainId)));
+  const domainEntries = (graphData.meta.domainOrder ?? Object.keys(graphData.domains))
+    .map((domainId) => ({
+      url: appUrl(domainPath(graphData, domainId)),
+      imageUrl: domainImages?.[domainId] ? appUrl(domainImages[domainId].path) : undefined
+    }));
   const viewUrls = viewsData.views.map((view) => appUrl(`views/${encodeURIComponent(view.id)}/`));
   const atlasSvgUrl = appUrl(atlasSvgPath);
   const directoryUrl = appUrl(directoryPath);
   const urls = [
     appUrl(),
     ...fieldUrls,
-    ...domainUrls,
+    ...domainEntries.map((entry) => entry.url),
     directoryUrl,
     appUrl('views/'),
     ...viewUrls,
@@ -77,7 +80,9 @@ function buildSitemapXml(graphData, viewsData, atlasSvgPath, directoryPath, last
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">',
     ...urls.map((url) => sitemapEntry(url, {
       lastModified,
-      imageUrl: url === directoryUrl ? atlasSvgUrl : undefined
+      imageUrl: url === directoryUrl
+        ? atlasSvgUrl
+        : domainEntries.find((entry) => entry.url === url)?.imageUrl
     })),
     '</urlset>',
     ''
@@ -128,12 +133,13 @@ export async function generateSeoAssets({
   viewsPath = 'content/views.json',
   atlasSvgPath = 'static/atlas.svg',
   directoryPath = 'directory/',
+  domainImages = {},
   lastModified
 }) {
   await mkdir(new URL('content/', distUrl), { recursive: true });
   await Promise.all([
     writeFile(new URL('robots.txt', distUrl), buildRobotsTxt()),
-    writeFile(new URL('sitemap.xml', distUrl), buildSitemapXml(graphData, viewsData, atlasSvgPath, directoryPath, lastModified)),
+    writeFile(new URL('sitemap.xml', distUrl), buildSitemapXml(graphData, viewsData, atlasSvgPath, directoryPath, domainImages, lastModified)),
     writeFile(new URL('llms.txt', distUrl), buildLlmsTxt(graphData, viewsData, graphDataPath, schemaPath, viewsPath, atlasSvgPath, directoryPath)),
     writeFile(new URL('opensearch.xml', distUrl), buildOpenSearchXml()),
     writeFile(new URL('content/search-index.json', distUrl), buildSearchIndex(graphData))

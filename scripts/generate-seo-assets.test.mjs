@@ -14,6 +14,10 @@ test('SEO assets publish and associate the directory page and standalone SVG', a
   const directory = await mkdtemp(join(tmpdir(), 'atlas-seo-'));
   try {
     const distUrl = pathToFileURL(`${directory}/`);
+    const firstDomainId = graphData.meta.domainOrder[0];
+    const domainImages = {
+      [firstDomainId]: { path: `static/domains/${encodeURIComponent(firstDomainId)}.svg`, width: 1200, height: 700 }
+    };
     await generateSeoAssets({
       graphData,
       viewsData,
@@ -23,6 +27,7 @@ test('SEO assets publish and associate the directory page and standalone SVG', a
       viewsPath: 'content/views.test.json',
       atlasSvgPath: 'static/atlas.svg',
       directoryPath: 'directory/',
+      domainImages,
       lastModified: '2026-07-28'
     });
     const sitemap = await readFile(new URL('sitemap.xml', distUrl), 'utf8');
@@ -34,10 +39,9 @@ test('SEO assets publish and associate the directory page and standalone SVG', a
     assert.match(sitemap, /xmlns:image="http:\/\/www\.google\.com\/schemas\/sitemap-image\/1\.1"/);
     assert.ok(sitemap.includes('<loc>https://atlas.madvay.com/directory/</loc><lastmod>2026-07-28</lastmod><image:image><image:loc>https://atlas.madvay.com/static/atlas.svg</image:loc></image:image>'));
     assert.ok(sitemap.includes('<loc>https://atlas.madvay.com/static/atlas.svg</loc><lastmod>2026-07-28</lastmod>'));
-    const firstDomainId = graphData.meta.domainOrder[0];
     const firstDomain = graphData.domains[firstDomainId];
     const firstDomainUrl = `https://atlas.madvay.com/${graphData.fields[firstDomain.field].path}/${encodeURIComponent(firstDomainId)}/`;
-    assert.ok(sitemap.includes(`<loc>${firstDomainUrl}</loc><lastmod>2026-07-28</lastmod>`));
+    assert.ok(sitemap.includes(`<loc>${firstDomainUrl}</loc><lastmod>2026-07-28</lastmod><image:image><image:loc>https://atlas.madvay.com/${domainImages[firstDomainId].path}</image:loc></image:image>`));
     assert.ok(!sitemap.includes('<loc>https://atlas.madvay.com/concepts/</loc>'));
     assert.ok(!sitemap.includes('<loc>https://atlas.madvay.com/static/atlas/</loc>'));
     assert.ok(!sitemap.includes('/m/'));

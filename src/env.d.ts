@@ -8,9 +8,24 @@ interface AtlasRecoveryController {
   isReloading(): boolean;
 }
 
+
+interface AtlasSvgExportResult {
+  svg: string;
+  nodeCount: number;
+  edgeCount: number;
+  width: number;
+  height: number;
+}
+
+interface AtlasStaticSvgExporter {
+  serializeVisible(): AtlasSvgExportResult | null;
+  serializePrimaryDomain(domainId: string): AtlasSvgExportResult | null;
+}
+
 interface Window {
   cy?: import('cytoscape').Core;
   __atlasRecovery?: AtlasRecoveryController;
+  __atlasStaticSvgExporter?: AtlasStaticSvgExporter;
 }
 
 declare module 'cytoscape-cose-bilkent' {

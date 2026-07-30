@@ -24,16 +24,6 @@ import { renderHtml } from '../ui/render.js';
 import { rankNodeMatches } from '../core/search.js';
 import { fetchAtlasJson } from './data-loader.js';
 
-function encodeUtf8Base64(value: string): string {
-  const bytes = new TextEncoder().encode(value);
-  const chunks: string[] = [];
-  const chunkSize = 0x8000;
-  for (let offset = 0; offset < bytes.length; offset += chunkSize) {
-    chunks.push(String.fromCharCode(...bytes.subarray(offset, offset + chunkSize)));
-  }
-  return window.btoa(chunks.join(''));
-}
-
 export async function startAtlasApp(): Promise<void> {
   'use strict';
 
@@ -543,15 +533,11 @@ export async function startAtlasApp(): Promise<void> {
 
   const svgExporter = new SvgExporter(cy, model, state, () => preferences);
   const exportVisibleSvg = (): void => svgExporter.exportVisible();
-  const publishStaticAtlasSvg = (): void => {
-    const result = svgExporter.serializeVisible();
-    if (!result) throw new Error('The all-in graph has no visible nodes to export.');
-    const output = document.createElement('pre');
-    output.id = 'atlas-static-svg-output';
-    output.dataset.nodes = String(result.nodeCount);
-    output.dataset.edges = String(result.edgeCount);
-    output.textContent = encodeUtf8Base64(result.svg);
-    document.body.replaceChildren(output);
+  const publishStaticSvgExporter = (): void => {
+    window.__atlasStaticSvgExporter = {
+      serializeVisible: () => svgExporter.serializeVisible(),
+      serializePrimaryDomain: (domainId: string) => svgExporter.serializePrimaryDomain(domainId)
+    };
     document.documentElement.dataset.atlasStaticSvg = 'ready';
   };
 
@@ -692,7 +678,7 @@ export async function startAtlasApp(): Promise<void> {
     if (!visible.empty()) cy.fit(visible, 58);
     updateSemanticLabelSizes(true);
     if (staticAtlasSvgMode) {
-      window.requestAnimationFrame(publishStaticAtlasSvg);
+      window.requestAnimationFrame(publishStaticSvgExporter);
       return;
     }
     applyLocationState({ initial: true });

@@ -5,13 +5,23 @@ const STATIC_EXPORT_MARKER = '<meta name="atlas:static-svg-build" content="1">';
 const SITE_ORIGIN = 'https://atlas.madvay.com/';
 const BUILD_TIMEOUT_MS = 120_000;
 
-function decodeSvg(base64) {
-  const svg = Buffer.from(base64, 'base64').toString('utf8');
-  if (!svg.startsWith('<?xml version="1.0" encoding="UTF-8"?>') || !svg.includes('<svg ') || !svg.endsWith('</svg>')) {
-    throw new Error('The runtime SVG exporter returned malformed output.');
+function validateSvgResult(result, label) {
+  if (!result || typeof result.svg !== 'string'
+    || !result.svg.startsWith('<?xml version="1.0" encoding="UTF-8"?>')
+    || !result.svg.includes('<svg ')
+    || !result.svg.endsWith('</svg>')) {
+    throw new Error(`The runtime SVG exporter returned malformed output for ${label}.`);
   }
-  return svg;
+  if (!Number.isFinite(result.width) || result.width <= 0 || !Number.isFinite(result.height) || result.height <= 0) {
+    throw new Error(`The runtime SVG exporter returned invalid dimensions for ${label}.`);
+  }
+  return result;
 }
+
+function domainSvgPath(domainId) {
+  return `static/domains/${encodeURIComponent(domainId)}.svg`;
+}
+
 
 function escapeInlineScript(value) {
   return value.replaceAll('</script', '<\\/script').replaceAll('<!--', '<\\!--');
@@ -106,33 +116,89 @@ async function selfContainedBuildPage(distUrl) {
     .replace('</head>', `  ${fetchShim}\n</head>`);
 }
 
-export async function generateStaticAtlasSvg({ distUrl }) {
+async function openStaticExporter(distUrl) {
   const buildPage = await selfContainedBuildPage(distUrl);
   const browser = await puppeteer.launch({
     headless: true,
     args: ['--no-sandbox', '--disable-dev-shm-usage', '--disable-background-networking']
   });
+  const page = await browser.newPage();
+  await page.setViewport({ width: 1440, height: 1000, deviceScaleFactor: 1 });
+  const diagnostics = [];
+  page.on('console', (message) => diagnostics.push(message.text()));
+  page.on('pageerror', (error) => diagnostics.push(error.message));
+  await page.setContent(buildPage, { waitUntil: 'domcontentloaded', timeout: BUILD_TIMEOUT_MS });
   try {
-    const page = await browser.newPage();
-    await page.setViewport({ width: 1440, height: 1000, deviceScaleFactor: 1 });
-    const diagnostics = [];
-    page.on('console', (message) => diagnostics.push(message.text()));
-    page.on('pageerror', (error) => diagnostics.push(error.message));
-    await page.setContent(buildPage, { waitUntil: 'domcontentloaded', timeout: BUILD_TIMEOUT_MS });
-    try {
-      await page.waitForFunction(
-        () => Boolean(document.getElementById('atlas-static-svg-output')?.textContent),
-        { timeout: BUILD_TIMEOUT_MS, polling: 50 }
-      );
-    } catch (error) {
-      const detail = diagnostics.length ? `\n${diagnostics.slice(-20).join('\n')}` : '';
-      throw new Error(`The runtime SVG exporter did not publish its build result.${detail}`, { cause: error });
-    }
-    const encoded = await page.$eval('#atlas-static-svg-output', (element) => element.textContent ?? '');
-    const svg = decodeSvg(encoded);
+    await page.waitForFunction(
+      () => document.documentElement.dataset.atlasStaticSvg === 'ready'
+        && Boolean(window.__atlasStaticSvgExporter),
+      { timeout: BUILD_TIMEOUT_MS, polling: 50 }
+    );
+  } catch (error) {
+    await browser.close();
+    const detail = diagnostics.length ? `\n${diagnostics.slice(-20).join('\n')}` : '';
+    throw new Error(`The runtime SVG exporter did not become ready.${detail}`, { cause: error });
+  }
+  return { browser, page };
+}
+
+async function serializeInPage(page, method, argument, label) {
+  const result = await page.evaluate(({ method, argument }) => {
+    const exporter = window.__atlasStaticSvgExporter;
+    if (!exporter) throw new Error('Missing runtime SVG exporter.');
+    return method === 'domain'
+      ? exporter.serializePrimaryDomain(argument)
+      : exporter.serializeVisible();
+  }, { method, argument });
+  return validateSvgResult(result, label);
+}
+
+export async function generateStaticAtlasSvg({ distUrl }) {
+  const { browser, page } = await openStaticExporter(distUrl);
+  try {
+    const result = await serializeInPage(page, 'visible', '', 'the all-in atlas');
     await mkdir(new URL('static/', distUrl), { recursive: true });
-    await writeFile(new URL('static/atlas.svg', distUrl), svg);
-    return svg;
+    await writeFile(new URL('static/atlas.svg', distUrl), result.svg);
+    return result.svg;
+  } finally {
+    await browser.close();
+  }
+}
+
+export async function generateStaticAtlasSvgs({ distUrl, graphData }) {
+  const { browser, page } = await openStaticExporter(distUrl);
+  try {
+    const atlas = await serializeInPage(page, 'visible', '', 'the all-in atlas');
+    await Promise.all([
+      mkdir(new URL('static/', distUrl), { recursive: true }),
+      mkdir(new URL('static/domains/', distUrl), { recursive: true })
+    ]);
+    await writeFile(new URL('static/atlas.svg', distUrl), atlas.svg);
+
+    const domains = {};
+    for (const domainId of graphData.meta.domainOrder ?? Object.keys(graphData.domains)) {
+      const result = await serializeInPage(page, 'domain', domainId, `domain ${domainId}`);
+      const path = domainSvgPath(domainId);
+      await writeFile(new URL(path, distUrl), result.svg);
+      domains[domainId] = {
+        path,
+        width: result.width,
+        height: result.height,
+        nodeCount: result.nodeCount,
+        edgeCount: result.edgeCount
+      };
+    }
+    return {
+      atlas: {
+        svg: atlas.svg,
+        path: 'static/atlas.svg',
+        width: atlas.width,
+        height: atlas.height,
+        nodeCount: atlas.nodeCount,
+        edgeCount: atlas.edgeCount
+      },
+      domains
+    };
   } finally {
     await browser.close();
   }

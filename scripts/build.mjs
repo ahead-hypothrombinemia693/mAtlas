@@ -7,7 +7,7 @@ import { build } from 'esbuild-wasm';
 import { generateSeoAssets } from './generate-seo-assets.mjs';
 import { generateConceptPages } from './generate-concept-pages.mjs';
 import { generateViewPages } from './generate-view-pages.mjs';
-import { generateStaticAtlasSvg } from './generate-static-atlas-svg.mjs';
+import { generateStaticAtlasSvgs } from './generate-static-atlas-svg.mjs';
 import { generateDirectoryPage } from './generate-directory-page.mjs';
 
 const root = new URL('../', import.meta.url);
@@ -128,12 +128,17 @@ await Promise.all([
   cp(new URL('content/LICENSE', root), new URL('CONTENT_LICENSE', dist))
 ]);
 
-await generateConceptPages({ graphData, templateHtml: builtTemplate, distUrl: dist });
+const staticSvgs = await generateStaticAtlasSvgs({ distUrl: dist, graphData });
+await generateConceptPages({
+  graphData,
+  templateHtml: builtTemplate,
+  distUrl: dist,
+  domainImages: staticSvgs.domains
+});
 await generateViewPages({ graphData, viewsData, templateHtml: builtTemplate, distUrl: dist });
-const atlasSvg = await generateStaticAtlasSvg({ distUrl: dist });
 await generateDirectoryPage({
   graphData,
-  svg: atlasSvg,
+  svg: staticSvgs.atlas.svg,
   distUrl: dist,
   graphDataPath: `content/${graphFile}`,
   atlasSvgPath: 'static/atlas.svg',
@@ -149,6 +154,7 @@ await generateSeoAssets({
   viewsPath: `content/${viewsFile}`,
   atlasSvgPath: 'static/atlas.svg',
   directoryPath: 'directory/',
+  domainImages: staticSvgs.domains,
   lastModified
 });
 
@@ -167,10 +173,11 @@ const manifest = {
     provenance: `content/${provenanceFile}`,
     contentLicense: 'CONTENT_LICENSE',
     atlasSvg: 'static/atlas.svg',
+    domainSvgs: Object.fromEntries(Object.entries(staticSvgs.domains).map(([domainId, image]) => [domainId, image.path])),
     directory: 'directory/',
     searchIndex: 'content/search-index.json',
     openSearch: 'opensearch.xml'
   }
 };
 await writeFile(new URL('asset-manifest.json', dist), `${JSON.stringify(manifest, null, 2)}\n`);
-console.log(`Built ${graphData.nodes.length} nodes, ${graphData.edges.length} edges, ${Object.keys(graphData.domains).length} domain pages, ${viewsData.views.length} views, static/atlas.svg, and directory/ into dist/.`);
+console.log(`Built ${graphData.nodes.length} nodes, ${graphData.edges.length} edges, ${Object.keys(graphData.domains).length} domain pages and SVGs, ${viewsData.views.length} views, static/atlas.svg, and directory/ into dist/.`);

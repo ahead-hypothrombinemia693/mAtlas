@@ -95,7 +95,14 @@ test('field and domain scope pages expose canonical routes and crawlable navigat
   assert.ok(fieldHtml.includes('<meta name="atlas:scope" content="mathematics">'));
   assert.ok(fieldHtml.includes(`href="/${field.path}/${encodeURIComponent(domainId)}/"`));
 
-  const domainHtml = renderScopePage(templateHtml, graphData, 'mathematics', domainId);
+  const domainImage = {
+    path: `static/domains/${encodeURIComponent(domainId)}.svg`,
+    width: 1200,
+    height: 700,
+    nodeCount: 12,
+    edgeCount: 15
+  };
+  const domainHtml = renderScopePage(templateHtml, graphData, 'mathematics', domainId, domainImage);
   assert.ok(domainHtml.includes(`<link rel="canonical" href="https://atlas.madvay.com/${field.path}/${encodeURIComponent(domainId)}/">`));
   assert.ok(domainHtml.includes('<base href="../../">'));
   assert.ok(domainHtml.includes('<meta name="atlas:scope" content="mathematics">'));
@@ -103,6 +110,15 @@ test('field and domain scope pages expose canonical routes and crawlable navigat
   assert.ok(domainHtml.includes(`<link rel="up" href="/${field.path}/">`));
   assert.ok(domainHtml.includes('<script id="taxonomy-page-jsonld" type="application/ld+json">'));
   assert.ok(domainHtml.includes(domain.label));
+  assert.ok(domainHtml.includes(`<meta property="og:image" content="https://atlas.madvay.com/${domainImage.path}">`));
+  assert.ok(domainHtml.includes('<meta property="og:image:width" content="1200">'));
+  assert.ok(domainHtml.includes('<meta property="og:image:height" content="700">'));
+  assert.ok(domainHtml.includes(`<meta itemprop="thumbnailUrl" content="https://atlas.madvay.com/${domainImage.path}">`));
+  assert.ok(domainHtml.includes(`<link rel="image_src" href="https://atlas.madvay.com/${domainImage.path}">`));
+  assert.ok(domainHtml.includes(`<meta itemprop="image" content="https://atlas.madvay.com/${domainImage.path}">`));
+  assert.ok(domainHtml.includes(`<meta name="twitter:image" content="https://atlas.madvay.com/${domainImage.path}">`));
+  assert.ok(domainHtml.includes(`class="domain-static-graph" src="/${domainImage.path}" width="1200" height="700"`));
+  assert.ok(domainHtml.includes('"primaryImageOfPage"'));
   const member = graphData.nodes.find((node) => node.kind === 'structure' && (node.domains ?? [node.primaryDomain]).includes(domainId));
   assert.ok(member && domainHtml.includes(`href="/concepts/${encodeURIComponent(member.id)}/"`));
 });

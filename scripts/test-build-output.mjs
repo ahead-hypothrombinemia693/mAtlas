@@ -39,6 +39,17 @@ function assertCacheRecovery(html, pageLabel) {
   if (!canonicals.length || canonicals.some((href) => href.includes(recoveryParameter))) throw new Error(`${pageLabel} has a missing or cache-polluted canonical URL.`);
 }
 
+const svgMetadataFragment = '<metadata><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"><rdf:Description rdf:about=""><dc:creator>Advay Mengle</dc:creator><dc:title>mAtlas - Atlas of Fundamental Concepts</dc:title><dc:rights>mAtlas - Copyright (c) 2026 Advay Mengle - https://atlas.madvay.com/</dc:rights><cc:license rdf:resource="https://creativecommons.org/licenses/by-sa/4.0/"/></rdf:Description></rdf:RDF></metadata>';
+function assertSvgMetadata(svg, label) {
+  if (!svg.includes(svgMetadataFragment)) throw new Error(`${label} lacks the required RDF/Dublin Core/Creative Commons metadata.`);
+}
+
+function svgDimensions(svg, label) {
+  const match = svg.match(/<svg\b[^>]*\bwidth="(\d+)"[^>]*\bheight="(\d+)"/);
+  if (!match) throw new Error(`${label} lacks integer width and height attributes.`);
+  return { width: Number(match[1]), height: Number(match[2]) };
+}
+
 assertCacheRecovery(appIndex, 'The application root');
 
 if (!appIndex.includes('rel="search" type="application/opensearchdescription+xml"')) throw new Error('The application does not advertise OpenSearch discovery.');
@@ -57,6 +68,7 @@ if (!manifest.assets?.provenance) throw new Error('asset-manifest.json does not 
 if (manifest.assets?.contentLicense !== 'CONTENT_LICENSE') throw new Error('asset-manifest.json does not expose the content license notice.');
 if (!manifest.assets?.css) throw new Error('asset-manifest.json does not include the application stylesheet.');
 if (manifest.assets?.atlasSvg !== 'static/atlas.svg') throw new Error('asset-manifest.json does not expose the stable static/atlas.svg path.');
+if (Object.keys(manifest.assets?.domainSvgs ?? {}).length !== Object.keys(graphData.domains).length) throw new Error('asset-manifest.json does not expose one SVG path per domain.');
 if (manifest.assets?.directory !== 'directory/') throw new Error('asset-manifest.json does not expose the stable directory/ page.');
 if ('atlasPage' in (manifest.assets ?? {})) throw new Error('asset-manifest.json still exposes the retired atlasPage entry.');
 await access(new URL(manifest.assets.views, dist));
@@ -101,6 +113,7 @@ if (llms.includes('https://atlas.madvay.com/data/')) throw new Error('llms.txt s
 if (!directoryPage.includes(`href="/${manifest.assets.graph}"`) || directoryPage.includes('href="/data/')) throw new Error('The directory page does not link to graph JSON under /content/.');
 if (!atlasSvg.startsWith('<?xml version="1.0" encoding="UTF-8"?>')) throw new Error('static/atlas.svg is not the runtime SVG export format.');
 if (!atlasSvg.includes('<title id="atlas-title">') || !atlasSvg.endsWith('</svg>')) throw new Error('static/atlas.svg is incomplete.');
+assertSvgMetadata(atlasSvg, 'static/atlas.svg');
 const structureCount = graphData.nodes.filter((node) => node.kind === 'structure').length;
 const junctionCount = graphData.nodes.length - structureCount;
 const exportedConceptLinks = atlasSvg.match(/<a href="https:\/\/atlas\.madvay\.com\/concepts\//g)?.length ?? 0;
@@ -158,13 +171,45 @@ for (const domainId of graphData.meta.domainOrder ?? Object.keys(graphData.domai
   const encodedId = encodeURIComponent(domainId);
   const path = `${field.path}/${encodedId}/`;
   const html = await readFile(new URL(`${path}index.html`, dist), 'utf8');
+  const imagePath = manifest.assets.domainSvgs?.[domainId];
+  const expectedImagePath = `static/domains/${encodedId}.svg`;
+  if (imagePath !== expectedImagePath) throw new Error(`Domain ${domainId} has the wrong SVG manifest path: ${imagePath}.`);
+  const domainSvg = await readFile(new URL(imagePath, dist), 'utf8');
+  const dimensions = svgDimensions(domainSvg, imagePath);
+  assertSvgMetadata(domainSvg, imagePath);
+  const primaryNodes = graphData.nodes.filter((node) => node.primaryDomain === domainId);
+  const primaryNodeIds = new Set(primaryNodes.map((node) => node.id));
+  const expectedConceptLinks = primaryNodes.filter((node) => node.kind === 'structure').length;
+  const expectedJunctionLinks = primaryNodes.length - expectedConceptLinks;
+  const actualConceptLinks = domainSvg.match(/<a href="https:\/\/atlas\.madvay\.com\/concepts\//g)?.length ?? 0;
+  const actualJunctionLinks = domainSvg.match(/<a href="https:\/\/atlas\.madvay\.com\/\?node=/g)?.length ?? 0;
+  if (actualConceptLinks !== expectedConceptLinks || actualJunctionLinks !== expectedJunctionLinks) {
+    throw new Error(`${imagePath} contains ${actualConceptLinks} structure and ${actualJunctionLinks} junction links; expected ${expectedConceptLinks} and ${expectedJunctionLinks}.`);
+  }
+  const expectedEdges = graphData.edges.filter((edge) => primaryNodeIds.has(edge.source) && primaryNodeIds.has(edge.target)).length;
+  const actualEdges = domainSvg.match(/<path d="M [^"]+" fill="none" stroke=/g)?.length ?? 0;
+  if (actualEdges !== expectedEdges) throw new Error(`${imagePath} contains ${actualEdges} relations; expected all ${expectedEdges} internal relations.`);
   assertCacheRecovery(html, `Static domain page ${domainId}`);
   if (!html.includes(`<meta name="atlas:scope" content="${domain.field}">`)) throw new Error(`Static domain page for ${domainId} lacks its field metadata.`);
   if (!html.includes(`<meta name="atlas:domain" content="${domainId}">`)) throw new Error(`Static domain page for ${domainId} lacks its domain metadata.`);
   if (!html.includes('<base href="../../">')) throw new Error(`Static domain page for ${domainId} has the wrong base path.`);
   if (!html.includes(`<link rel="canonical" href="https://atlas.madvay.com/${path}">`)) throw new Error(`Static domain page for ${domainId} has the wrong canonical URL.`);
   if (!html.includes('<script id="taxonomy-page-jsonld" type="application/ld+json">')) throw new Error(`Static domain page for ${domainId} lacks taxonomy JSON-LD.`);
+  const imageUrl = `https://atlas.madvay.com/${imagePath}`;
+  if (!html.includes(`<meta property="og:image" content="${imageUrl}">`)) throw new Error(`Static domain page for ${domainId} lacks its Open Graph SVG.`);
+  if (!html.includes(`<meta property="og:image:width" content="${dimensions.width}">`) || !html.includes(`<meta property="og:image:height" content="${dimensions.height}">`)) throw new Error(`Static domain page for ${domainId} has incorrect SVG dimensions.`);
+  for (const metadata of [
+    `<meta itemprop="thumbnailUrl" content="${imageUrl}">`,
+    `<link rel="image_src" href="${imageUrl}">`,
+    `<meta itemprop="image" content="${imageUrl}">`,
+    `<meta name="twitter:image" content="${imageUrl}">`
+  ]) {
+    if (!html.includes(metadata)) throw new Error(`Static domain page for ${domainId} lacks image metadata: ${metadata}`);
+  }
+  if (!html.includes(`class="domain-static-graph" src="/${imagePath}" width="${dimensions.width}" height="${dimensions.height}"`)) throw new Error(`Static domain page for ${domainId} does not show its generated SVG while loading.`);
+  if (!html.includes('"primaryImageOfPage"') || !html.includes(`"contentUrl": "${imageUrl}"`)) throw new Error(`Static domain page for ${domainId} lacks SVG structured data.`);
   if (!sitemap.includes(`<loc>https://atlas.madvay.com/${path}</loc>`)) throw new Error(`The sitemap omits domain ${domainId}.`);
+  if (!sitemap.includes(`<loc>https://atlas.madvay.com/${path}</loc><lastmod>`) || !sitemap.includes(`<image:loc>${imageUrl}</image:loc>`)) throw new Error(`The sitemap does not associate domain ${domainId} with its SVG.`);
   if (!directoryPage.includes(`href="/${path}"`)) throw new Error(`The directory page does not link to domain ${domainId}.`);
 }
 

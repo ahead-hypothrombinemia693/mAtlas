@@ -60,6 +60,14 @@ test('static export uses the npm-managed browser and domain markers stay consist
   assert.doesNotMatch(exporter, /katex|foreignObject|renderText|svgCssText/i);
   assert.match(exporter, /preferences\(\)\.showGraphEdgeLabels/);
   assert.match(exporter, /preferences\(\)\.dimPrerequisites/);
+  assert.match(exporter, /serializePrimaryDomain\(domainId: string\)/);
+  assert.match(exporter, /record && !record\.synthetic && nodeIds\.has\(record\.source\) && nodeIds\.has\(record\.target\)/);
+  assert.match(exporter, /<metadata><rdf:RDF/);
+  assert.match(exporter, /http:\/\/www\.w3\.org\/1999\/02\/22-rdf-syntax-ns#/);
+  assert.match(exporter, /http:\/\/purl\.org\/dc\/elements\/1\.1\//);
+  assert.match(exporter, /http:\/\/creativecommons\.org\/ns#/);
+  assert.match(exporter, /<dc:creator>Advay Mengle<\/dc:creator>/);
+  assert.match(generator, /static\/domains\/\$\{encodeURIComponent\(domainId\)\}\.svg/);
   assert.doesNotMatch(exporter, /markerY[^\n]*<rect|stroke-opacity="0\.3"/);
   assert.doesNotMatch(styles, /\.graph-domain-markers\s*\{[^}]*?(?:background|box-shadow|contain):/s);
   assert.doesNotMatch(styles, /\.graph-domain-markers\s*>\s*span\s*\{[^}]*border:/s);
