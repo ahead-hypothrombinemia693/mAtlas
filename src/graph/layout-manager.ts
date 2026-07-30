@@ -159,6 +159,20 @@ export class LayoutManager {
         continue;
       }
 
+      if (fieldId === 'physics' && fieldDomains.includes('quantum-mechanics')) {
+        const pivotIndex = fieldDomains.indexOf('quantum-mechanics');
+        const leftDomains = fieldDomains.slice(0, pivotIndex);
+        const rightDomains = fieldDomains.slice(pivotIndex + 1);
+        centers['quantum-mechanics'] = 0;
+        leftDomains.reverse().forEach((id, index) => {
+          centers[id] = -(index + 1) * laneSpacing;
+        });
+        rightDomains.forEach((id, index) => {
+          centers[id] = (index + 1) * laneSpacing;
+        });
+        continue;
+      }
+
       const buckets = new Map<number, string[]>();
       for (const id of fieldDomains) {
         const order = model.data.domains[id]?.order ?? 0;
