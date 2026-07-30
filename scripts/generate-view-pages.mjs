@@ -1,6 +1,7 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 import { escapeHtml, renderInlineMath } from './inline-math.mjs';
 import { replaceInlineLatexWithUnicode } from './lightweight-math.mjs';
+import { minifyHtml } from './minify-html.mjs';
 
 const SITE_ORIGIN = 'https://atlas.madvay.com';
 const appUrl = (pathname = '') => new URL(pathname, `${SITE_ORIGIN}/`).toString();
@@ -97,10 +98,10 @@ function renderViewIndex(graphData, viewsData) {
 
 export async function generateViewPages({ graphData, viewsData, templateHtml, distUrl }) {
   await mkdir(new URL('views/', distUrl), { recursive: true });
-  await writeFile(new URL('views/index.html', distUrl), renderViewIndex(graphData, viewsData));
+  await writeFile(new URL('views/index.html', distUrl), minifyHtml(renderViewIndex(graphData, viewsData)));
   await Promise.all(viewsData.views.map(async (view) => {
     const pageDir = new URL(viewPath(view.id), distUrl);
     await mkdir(pageDir, { recursive: true });
-    await writeFile(new URL('index.html', pageDir), renderViewPage(templateHtml, graphData, view));
+    await writeFile(new URL('index.html', pageDir), minifyHtml(renderViewPage(templateHtml, graphData, view)));
   }));
 }

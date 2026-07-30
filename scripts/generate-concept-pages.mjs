@@ -1,5 +1,6 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 import { escapeHtml, renderInlineMath, stripInlineMath } from './inline-math.mjs';
+import { minifyHtml } from './minify-html.mjs';
 
 const SITE_ORIGIN = 'https://atlas.madvay.com';
 
@@ -295,22 +296,22 @@ export function renderScopePage(templateHtml, graphData, fieldId, domainId = nul
 export async function generateConceptPages({ graphData, templateHtml, distUrl, domainImages = {} }) {
   const concepts = graphData.nodes.filter((node) => node.kind === 'structure');
   await mkdir(new URL('concepts/', distUrl), { recursive: true });
-  await writeFile(new URL('concepts/index.html', distUrl), renderConceptIndexRedirect());
+  await writeFile(new URL('concepts/index.html', distUrl), minifyHtml(renderConceptIndexRedirect()));
   await Promise.all(concepts.map(async (node) => {
     const pageDir = new URL(conceptPath(node.id), distUrl);
     await mkdir(pageDir, { recursive: true });
-    await writeFile(new URL('index.html', pageDir), renderConceptPage(templateHtml, { graphData, node }));
+    await writeFile(new URL('index.html', pageDir), minifyHtml(renderConceptPage(templateHtml, { graphData, node })));
   }));
   await Promise.all((graphData.meta.fieldOrder ?? Object.keys(graphData.fields)).map(async (fieldId) => {
     const field = graphData.fields[fieldId];
     const pageDir = new URL(`${field.path}/`, distUrl);
     await mkdir(pageDir, { recursive: true });
-    await writeFile(new URL('index.html', pageDir), renderScopePage(templateHtml, graphData, fieldId));
+    await writeFile(new URL('index.html', pageDir), minifyHtml(renderScopePage(templateHtml, graphData, fieldId)));
   }));
   await Promise.all((graphData.meta.domainOrder ?? Object.keys(graphData.domains)).map(async (domainId) => {
     const fieldId = graphData.domains[domainId].field;
     const pageDir = new URL(domainPath(graphData, domainId), distUrl);
     await mkdir(pageDir, { recursive: true });
-    await writeFile(new URL('index.html', pageDir), renderScopePage(templateHtml, graphData, fieldId, domainId, domainImages[domainId]));
+    await writeFile(new URL('index.html', pageDir), minifyHtml(renderScopePage(templateHtml, graphData, fieldId, domainId, domainImages[domainId])));
   }));
 }

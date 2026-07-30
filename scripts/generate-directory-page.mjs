@@ -1,5 +1,6 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 import { escapeHtml, renderInlineMath, stripInlineMath } from './inline-math.mjs';
+import { minifyHtml } from './minify-html.mjs';
 
 const SITE_ORIGIN = 'https://atlas.madvay.com';
 const appUrl = (pathname = '') => new URL(pathname, `${SITE_ORIGIN}/`).toString();
@@ -250,6 +251,6 @@ export async function generateDirectoryPage(options) {
   const pageDirectory = new URL(pagePath, options.distUrl);
   await mkdir(pageDirectory, { recursive: true });
   const html = renderDirectoryPage(options);
-  await writeFile(new URL('index.html', pageDirectory), html);
+  await writeFile(new URL('index.html', pageDirectory), minifyHtml(html));
   return html;
 }

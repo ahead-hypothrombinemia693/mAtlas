@@ -7,7 +7,7 @@ import { compiledContentDirectory } from './content/paths.mjs';
 import { validateContent, validationSummary } from './content/validate.mjs';
 
 const digest = (contents) => createHash('sha256').update(contents).digest('hex');
-const normalizeJson = (value) => Buffer.from(`${JSON.stringify(value, null, 2)}\n`);
+const normalizeJson = (value) => Buffer.from(JSON.stringify(value));
 
 const content = await loadSourceContent();
 const failures = validateContent(content).flatMap((result) => result.errors.map((error) => `[${result.name}] ${error}`));

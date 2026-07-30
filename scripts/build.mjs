@@ -9,6 +9,7 @@ import { generateConceptPages } from './generate-concept-pages.mjs';
 import { generateViewPages } from './generate-view-pages.mjs';
 import { generateStaticAtlasSvgs } from './generate-static-atlas-svg.mjs';
 import { generateDirectoryPage } from './generate-directory-page.mjs';
+import { minifyHtml } from './minify-html.mjs';
 
 const root = new URL('../', import.meta.url);
 const dist = new URL('../dist/', import.meta.url);
@@ -111,7 +112,7 @@ const builtTemplate = sourceTemplate
   .replaceAll('__ATLAS_SCHEMA_URL__', `./content/${schemaFile}`)
   .replaceAll('__ATLAS_VIEWS_URL__', `./content/${viewsFile}`)
   .replaceAll('__ATLAS_PROVENANCE_URL__', `./content/${provenanceFile}`);
-await writeFile(new URL('index.html', dist), builtTemplate);
+await writeFile(new URL('index.html', dist), minifyHtml(builtTemplate));
 
 await Promise.all([
   cp(new URL('src/assets/', root), new URL('assets/', dist), { recursive: true }),
